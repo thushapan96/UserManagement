@@ -1,0 +1,109 @@
+@media screen and (max-width:1023px) {
+}
+@media screen and (max-width:767px) {
+.d-hide { display: block !important; }
+.m-hide { display: none !important; }
+
+.navbar-toggler { content: ''; background: url(../images/menu.svg) center top no-repeat; width: 42px; height: 32px; background-size: 100%; position: absolute; top: 11px; right: 15px; }
+header.fixed { background: rgb(25 165 246 / 100%) }
+.navbar-collapse { background: rgb(25 165 246 / 100%); margin: 15px 0 0; position: absolute; width: 100%; left: 0; top: 35px; }
+header .navbar-expand-md .navbar-nav .nav-link { font-size: 16px; padding: 15px 20px; }
+.heroarea { background: url(../images/m-slide.png) center top no-repeat; height: 667px; padding: 230px 0 100px; }
+.heroarea h1 { font-size: 30px; margin-bottom: 15px; }
+.heroarea h2 { font-size: 22px; margin-bottom: 40px; }
+.heroarea h3 { font-size: 24px; font-weight: 300; margin-bottom: 35px; letter-spacing: 2px; }
+.heroarea p a { padding: 14px 25px; border-radius: 30px; margin: 0 5px; font-size: 18px; }
+.PilotProgram { padding: 40px 0; }
+.PilotProgram h2 { font-size: 30px; }
+.PilotProgram h3 { font-size: 18px; margin: 10px 0 15px; line-height: 24px; }
+.PilotProgram p { font-size: 14px; line-height: 24px; margin-bottom: 30px; }
+.PilotProgram h4 { font-size: 13px; margin: 15px 0 20px; line-height: 22px; }
+.aboutwrap { padding: 40px 0 50px; }
+.aboutwrap h2 { font-size: 20px; margin-bottom: 15px; }
+.aboutwrap h3 { font-size: 16px; margin-top: 10px; margin-left: 0; }
+.aboutwrap h4 { font-size: 28px; margin-left: 0; }
+.aboutwrap p { font-size: 15px; line-height: 25px; margin-left: 0; }
+.departureWrap { padding: 30px 0; }
+.departureWrap h2 { font-size: 24px; margin-bottom: 30px; line-height: normal; }
+.departureWrap p { font-size: 15px; line-height: 26px; padding: 0 0 20px; }
+.StaffingBx { width: 100%; padding: 120px 15px; }
+.Staffingwrap h2 { font-size: 40px; }
+.Staffingwrap p { font-size: 20px; line-height: 32px; }
+.RecruitingBx { width: 100%; padding: 120px 15px; }
+.findPlane { padding: 120px 0; }
+.findPlane h2 { font-size: 30px; line-height: 44px; }
+.findPlane p { font-size: 20px; line-height: 32px; }
+.staffed-again { height: auto; padding: 30px 0 240px; background-size: 240%; }
+.staffed-again h2 { font-size: 30px; margin-bottom: 10px; }
+.staffed-again p { font-size: 14px; line-height: 24px; }
+footer { padding: 30px 0 0; }
+footer h4 { font-size: 18px; margin-bottom: 10px; margin-top: 30px; }
+.copyright { font-size: 12px; margin: 20px 0 0; }
+.find-btn { font-size: 14px; padding: 12px 25px; }
+.StayConnected { padding: 100px 0 40px; }
+.StayConnected h1 { font-size: 32px; margin-bottom: 25px; }
+.whiteBox { border-radius: 10px; }
+.news-title { font-size: 16px; line-height: 28px; margin-bottom: 25px; }
+.news-title br { display: none; }
+.StayConnected .form-group { margin-bottom: 15px; }
+.StayConnected .form-control { height: 46px; font-size: 15px; }
+.client-btn { padding: 10px 13px; font-size: 16px; line-height: 22px; }
+.reg-btn { padding: 10px 13px; font-size: 16px; line-height: 22px; }
+.great-title { padding: 25px 0 15px; font-size: 16px;}
+
+.custom-box .custom-control {
+    margin-bottom: 15px;
+}
+.custom-box .custom-control-label {
+    font-size: 14px;
+}
+.AircraftBx a {
+    padding: 13px 30px;
+    margin-right: 0;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.crewTable {
+    overflow-x: scroll;
+}
+.crewTable table{ width:800px; max-width:800px;}
+.or-pasword {
+    margin: 0px 0 30px;
+    height: 30px;
+}
+
+.MyHangerWrap {
+    padding: 110px 0 50px;
+}
+.MyHangerWrap h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.trips-txt {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 24px;
+}
+.MyHangerWrap .card {
+    margin-bottom: 15px;
+}
+.ActiveTrips {
+    margin-bottom: 20px;
+    overflow-x: scroll;
+}
+.ActiveTrips #table_detail {
+    width: 780px;
+}
+.BalanceHistory {
+    padding: 15px;
+	overflow-x:scroll;
+}
+.BalanceHistory table{ width:800px;}
+.cardProfile {
+    padding: 15px;
+    margin: 20px 0 0;
+}
+
+}
