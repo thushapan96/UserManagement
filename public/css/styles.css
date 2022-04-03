@@ -44,6 +44,13 @@ header.fixed { box-shadow:0 2px 6px rgba(0,0,0,0.1); padding:4px 0; animation:sl
 
 /* Hero Area */
 .heroarea{ width:100%; position:relative; background:url(../images/canadai.png) center top no-repeat; height:970px; text-align:center; padding:250px 0 0;}
+.canadaheroarea{ width:100%; position:relative; background:url(../images/inspired.jpeg) center top no-repeat; height:550px; text-align:center; padding:250px 0 0;}
+.whycanadaheroarea{ width:100%; position:relative; background:url(../images/cmy.jpeg) center top no-repeat; height:500px; text-align:center; padding:250px 0 0;}
+
+.whycanadaheroarea h1{ color:rgb(185, 185, 185); font-size:45px; font-weight:600; margin-bottom:30px; line-height:normal;}
+.canadaheroarea h1{ color:rgb(247, 247, 247); font-size:45px; font-weight:600; margin-bottom:30px; line-height:normal;}
+
+
 .heroarea h1{ color:#fff; font-size:45px; font-weight:600; margin-bottom:30px; line-height:normal;}
 .heroarea h2{ font-size:35px; color:#fff; font-weight:300; margin-bottom:90px;}
 .heroarea h3{ font-size:40px; color:#fff; font-weight:200; text-transform:uppercase; margin-bottom:55px; letter-spacing:5px;}
@@ -116,8 +123,8 @@ header.innerHeader{ background:rgb(25 165 246 / 100%)}
 .StayConnected .form-group{ margin-bottom:25px;}
 .StayConnected .form-control{ border:1px solid #C4C4C4; height:50px;}
 .StayConnected .form-control.message{ height:120px;}
-.client-btn{ display:inline-block; padding:16px 25px; color:#fff; border-radius:5px; font-size:18px; cursor:pointer; background:#19A5F6; border:0px;}
-.reg-btn{ display:inline-block; padding:16px 25px; color:#fff; border-radius:5px; font-size:18px; cursor:pointer; background:#646464; border:0px; float:right;}
+.client-btn{ display:inline-block; padding:16px 25px; color:#fff; border-radius:5px; font-size:18px; cursor:pointer; background:#19A5F6; border:0px;float:right;}
+.reg-btn{ display:inline-block; padding:16px 25px; color:#fff; border-radius:5px; font-size:18px; cursor:pointer; background:#646464; border:0px; float:left;}
 .client-btn:hover, .reg-btn:hover{ background:#000;}
 .great-title{ width:100%; text-align:center; padding:25px 0; color:#646464; font-size:22px; text-align:center;}
 .upload-images { width: 100%; margin: auto; text-align: center;}

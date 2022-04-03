@@ -17,3 +17,13 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/canadainspair' , function(){
+return view('canadainspair');
+})->name('canadainspair');
+
+Route::get('/whycanada' , function(){
+    return view('whycanada');
+    })->name('whycanada');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

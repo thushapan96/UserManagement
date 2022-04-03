@@ -12,6 +12,8 @@
   <link href="{{asset('css/slick.css')}}" rel="stylesheet" type="text/css" />
   <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css" />
   <link href="{{asset('css/responsive.css')}}" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/countrySelect.css">
+
 
 
 </head>
@@ -25,7 +27,10 @@
   <script type="text/javascript" src="{{asset('js/float-panel.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/slick.js')}}"></script>
+  <script src="js/countrySelect.js"></script>
+
   <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
+
   <!-- Header -->
   @include('layouts.header')
   <!-- content -->
