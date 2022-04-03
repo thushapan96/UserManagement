@@ -64,14 +64,14 @@ header.fixed { box-shadow:0 2px 6px rgba(0,0,0,0.1); padding:4px 0; animation:sl
 .PilotProgram h2{ font-size:45px; color:#a52514;}
 .PilotProgram h3{ color:#113086; font-size:24px; margin:15px 0 20px; line-height:26px;}
 .PilotProgram h4{ color:#113086; font-size:16px; margin:15px 0 0; line-height:26px;}
-.PilotProgram p{ font-size:16px; color:#a52514; line-height:28px; margin-bottom:50px;}
+.PilotProgram p{ font-size:16px; color:#000000; line-height:28px; margin-bottom:50px;}
 
 /* About Us */
 .aboutwrap{ width:100%; padding:80px 0 100px; background:url(../images/aboutbg.svg) center top no-repeat;}
 .aboutwrap h2{ color:#c72914; font-weight:300; font-size:30px; margin-bottom:60px; text-align:center;}
 .aboutwrap h3{ color:#113086; font-size:20px; margin-bottom:10px; margin-left:30px;}
 .aboutwrap h4{ color:#a52514; font-size:45px; margin-bottom:15px; font-weight:600; margin-left:30px;}
-.aboutwrap p{ font-size:18px; line-height:28px; color:rgba(34, 35, 145, 0.75); margin-left:30px;}
+.aboutwrap p{ font-size:18px; line-height:28px; color:rgba(0, 0, 0, 0.75); margin-left:30px;}
 
 /* Departure */
 .departureWrap{ width:100%; padding:90px 0 100px; position:relative; text-align:center;}
@@ -90,7 +90,7 @@ header.fixed { box-shadow:0 2px 6px rgba(0,0,0,0.1); padding:4px 0; animation:sl
 .findPlane{ width:100%; position:relative; padding:180px 0; background:url(../images/finbacppp.png) center top no-repeat; background-size:cover; text-align:center;}
 .findPlane h2{ color:#113086; font-size:52px; font-weight:300; line-height:normal; margin-bottom:25px;}
 .findPlane h2 span{ font-weight:500; color:#c72914;}
-.findPlane p{ color:#b92f2f; font-size:20px; line-height:32px; font-weight:300;}
+.findPlane p{ color:#000000; font-size:20px; line-height:32px; font-weight:300;}
 
 /* Staffed Again */
 .staffed-again{ width:100%; position:relative; background:url(../images/d.jpg) center top no-repeat; height:600px; padding:90px 0 0;}
