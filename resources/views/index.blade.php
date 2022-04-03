@@ -9,7 +9,7 @@
   <h2 class="wow fadeInUp" data-wow-duration="200ms" data-wow-delay="50ms">We provide Services for Migration, Study, Work and Business incorporation in Canada</h2>
   
   <h3 class="wow fadeInUp" data-wow-duration="150ms" data-wow-delay="50ms">I'm looking for</h3>
-  <p><a href="#" class="crew-btn wow fadeInLeft" data-wow-duration="200ms" data-wow-delay="50ms">Join as Candidate</a> <a href="#" class="crew-btn wow fadeInRight" data-wow-duration="250ms" data-wow-delay="50ms">Join as Service Provider</a></p>
+  <p><a href="{{route('register')}}" class="crew-btn wow fadeInLeft" data-wow-duration="200ms" data-wow-delay="50ms">Join as Candidate</a> <a href="{{route('register')}}" class="crew-btn wow fadeInRight" data-wow-duration="250ms" data-wow-delay="50ms">Join as Service Provider</a></p>
  </div>
 </section>
 

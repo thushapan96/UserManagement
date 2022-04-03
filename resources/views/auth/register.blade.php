@@ -60,7 +60,7 @@
     </div>
     
     <div class="col-lg-6 col-md-6 col-6">
-     <button type="submit"  class="reg-btn"><a href="{{route('login')}}">Login</a></button>
+     <button type="submit"  class="reg-btn"><a href="{{route('login')}}" style="color:white">Login</a></button>
     </div>
     <div class="col-lg-6 col-md-6 col-6">
      <button type="submit" class="client-btn">Submit</button>
