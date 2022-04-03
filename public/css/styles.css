@@ -51,33 +51,33 @@ header.fixed { box-shadow:0 2px 6px rgba(0,0,0,0.1); padding:4px 0; animation:sl
 .canadaheroarea h1{ color:rgb(247, 247, 247); font-size:45px; font-weight:600; margin-bottom:30px; line-height:normal;}
 
 
-.heroarea h1{ color:#fff; font-size:45px; font-weight:600; margin-bottom:30px; line-height:normal;}
-.heroarea h2{ font-size:35px; color:#fff; font-weight:300; margin-bottom:90px;}
-.heroarea h3{ font-size:40px; color:#fff; font-weight:200; text-transform:uppercase; margin-bottom:55px; letter-spacing:5px;}
+.heroarea h1{ color:#a52514; font-size:45px; font-weight:600; margin-bottom:30px; line-height:normal;}
+.heroarea h2{ font-size:35px; color:#113086; font-weight:300; margin-bottom:90px;}
+.heroarea h3{ font-size:40px; color:#113086; font-weight:200; text-transform:uppercase; margin-bottom:55px; letter-spacing:5px;}
 .heroarea p a{ display:inline-block; padding:18px 35px; color:#fff; border-radius:30px; margin:0 25px; font-size:24px;}
-.heroarea p a.crew-btn{ background:#19A5F6;}
+.heroarea p a.crew-btn{ background:#a52514;}
 .heroarea p a.job-btn{ background:#A9AAAA;}
-.heroarea p a:hover{ background:#646464 !important;}
+.heroarea p a:hover{ background:#113086 !important;}
 
 /* Pilot Program */
 .PilotProgram{ width:100%; padding:80px 0 90px; position:relative; text-align:center;}
-.PilotProgram h2{ font-size:45px; color:#19A5F6;}
-.PilotProgram h3{ color:#646464; font-size:24px; margin:15px 0 20px; line-height:26px;}
-.PilotProgram h4{ color:#646464; font-size:16px; margin:15px 0 0; line-height:26px;}
-.PilotProgram p{ font-size:16px; color:#929292; line-height:28px; margin-bottom:50px;}
+.PilotProgram h2{ font-size:45px; color:#a52514;}
+.PilotProgram h3{ color:#113086; font-size:24px; margin:15px 0 20px; line-height:26px;}
+.PilotProgram h4{ color:#113086; font-size:16px; margin:15px 0 0; line-height:26px;}
+.PilotProgram p{ font-size:16px; color:#a52514; line-height:28px; margin-bottom:50px;}
 
 /* About Us */
 .aboutwrap{ width:100%; padding:80px 0 100px; background:url(../images/aboutbg.svg) center top no-repeat;}
-.aboutwrap h2{ color:#fff; font-weight:300; font-size:30px; margin-bottom:60px; text-align:center;}
-.aboutwrap h3{ color:#fff; font-size:20px; margin-bottom:10px; margin-left:30px;}
-.aboutwrap h4{ color:#fff; font-size:45px; margin-bottom:15px; font-weight:600; margin-left:30px;}
-.aboutwrap p{ font-size:18px; line-height:28px; color:rgb(255 255 255 / 75%); margin-left:30px;}
+.aboutwrap h2{ color:#c72914; font-weight:300; font-size:30px; margin-bottom:60px; text-align:center;}
+.aboutwrap h3{ color:#113086; font-size:20px; margin-bottom:10px; margin-left:30px;}
+.aboutwrap h4{ color:#a52514; font-size:45px; margin-bottom:15px; font-weight:600; margin-left:30px;}
+.aboutwrap p{ font-size:18px; line-height:28px; color:rgba(34, 35, 145, 0.75); margin-left:30px;}
 
 /* Departure */
 .departureWrap{ width:100%; padding:90px 0 100px; position:relative; text-align:center;}
-.departureWrap h2{ color:#19A5F6; font-size:30px; margin-bottom:80px; font-weight:400;}
-.departureWrap h3{ font-size:24px; color:#646464; margin:20px 0 10px; font-weight:600; line-height:22px;}
-.departureWrap p{ font-size:16px; color:#929292; line-height:26px; padding:0 10px;}
+.departureWrap h2{ color:#c72914; font-size:30px; margin-bottom:80px; font-weight:400;}
+.departureWrap h3{ font-size:24px; color:#3c5ebd; margin:20px 0 10px; font-weight:600; line-height:22px;}
+.departureWrap p{ font-size:16px; color:#113086; line-height:26px; padding:0 10px;}
 
 /* Staffing */
 .Staffingwrap{ width:100%; position:relative; text-align:center;}
@@ -88,9 +88,9 @@ header.fixed { box-shadow:0 2px 6px rgba(0,0,0,0.1); padding:4px 0; animation:sl
 
 /* Find Plane */
 .findPlane{ width:100%; position:relative; padding:180px 0; background:url(../images/finbacppp.png) center top no-repeat; background-size:cover; text-align:center;}
-.findPlane h2{ color:#646464; font-size:52px; font-weight:300; line-height:normal; margin-bottom:25px;}
-.findPlane h2 span{ font-weight:500;}
-.findPlane p{ color:#646464; font-size:20px; line-height:32px; font-weight:300;}
+.findPlane h2{ color:#113086; font-size:52px; font-weight:300; line-height:normal; margin-bottom:25px;}
+.findPlane h2 span{ font-weight:500; color:#c72914;}
+.findPlane p{ color:#b92f2f; font-size:20px; line-height:32px; font-weight:300;}
 
 /* Staffed Again */
 .staffed-again{ width:100%; position:relative; background:url(../images/d.jpg) center top no-repeat; height:600px; padding:90px 0 0;}
