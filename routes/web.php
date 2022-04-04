@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use HTTP\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,10 @@ return view('canadainspair');
 Route::get('/whycanada' , function(){
     return view('whycanada');
     })->name('whycanada');
+
+Route::get('register', 'UserController@register')->name('register');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

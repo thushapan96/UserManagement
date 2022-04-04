@@ -5,7 +5,7 @@
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix">
     <div class="container">
-        <h1>Register</h1>
+        <h1>Register as a {{request()->query('role')}}</h1>
 
         <div class="whiteBox clearfix">
             <!--div class="news-title">
@@ -40,28 +40,54 @@
                         </select>
                     </div>
                 </div>
+                @if(request()->query('role') == "candidate")
+
+
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="form-group"><input class="form-control" type="email" placeholder="Country of Citizenship"></div>
+                </div>
+                @endif
+
+
+                @if(request()->query('role') == "Service Provider")
 
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-group">
                         <select class="form-control" id="type" placeholder="a">
                             <option>Join As</option>
-                            <option value="Candidate">Candidate</option>
-                            <option value="Consultant">Consultant</option>
-                            <option value="Institution">Institution</option>
+                            <option value="Consultant">School</option>
+                            <option value="Institution">College</option>
+                            <option value="Business">University</option>
+                            <option value="Business">RCIC Consultant</option>
+                            <option value="Business">Consultant</option>
                             <option value="Business">Business</option>
+
+
+                            <option value="Business">Institution</option>
+
+                            <option value="Business">Lawyer/Attorney
+</option>
+                            <option value="Business">Chartered Accountant
+</option>
+
+                            <option value="Business">Business</option>
+
                         </select>
                     </div>
                 </div>
+                @endif
+                @if(request()->query('role') == "candidate")
 
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-group">
-                        <select class="form-control" disabled id="service" placeholder="a">
+                        <select class="form-control"  id="service" placeholder="a">
                             <option>Select Service</option>
                             <option value="single">Single</option>
                             <option value="multiple">Multiple</option>
                         </select>
                     </div>
                 </div>
+                @endif
 
             </div>
 
@@ -305,6 +331,11 @@
     </div>
 
     <div class="great-title">You Are Welcome !</div>
+    @if(request()->query('role') == "candidate")
+
+    <p class="great-title">Candidate can register to avail services for Migration, Study, Work, Visa and Business
+        @endif
+</p>
 
 
 
@@ -335,22 +366,22 @@ $(document).ready(function() {
         service = $('#service option:selected').val();
 
         if (service == 'Select Service') {
-            $('.singleservicecandidate').addClass('d-none');
-            $('.multiservicecandidate').addClass('d-none');
+            $('.singleCandidate').addClass('d-none');
+            $('.multipleCandidate').addClass('d-none');
 
         }
         if (service == 'single') {
-            $('.singleservicecandidate').removeClass('d-none');
-            $('.multiservicecandidate').addClass('d-none');
+            $('.singleCandidate').removeClass('d-none');
+            $('.multipleCandidate').addClass('d-none');
 
 
         }
         if (service == 'multiple') {
-            $('.singleservicecandidate').addClass('d-none');
-            $('.multiservicecandidate').removeClass('d-none');
+            $('.singleCandidate').addClass('d-none');
+            $('.multipleCandidate').removeClass('d-none');
 
         }
-        myFun();
+        // myFun();
 
     });
 
