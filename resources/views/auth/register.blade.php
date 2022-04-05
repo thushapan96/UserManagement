@@ -44,10 +44,39 @@
 
 
                 <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group"><input class="form-control" type="email" placeholder="Country of Citizenship"></div>
+                    <div class="form-group"><input class="form-control" type="email"
+                            placeholder="Country of Citizenship"></div>
                 </div>
                 @endif
 
+
+                @if(request()->query('role') == "Service Provider")
+
+                <div class="col-lg-6 col-md-6 col-12">
+    <div class="form-group">
+        <select class="form-control"  id="service" placeholder="a">
+            <option>Select Service Type</option>
+            <option value="Consultation">Consultation</option>
+            <option value="Institution">Institution</option>
+            <option value="Business">Business</option>
+
+        </select>
+    </div>
+</div>
+                
+                @endif
+                @if(request()->query('role') == "candidate")
+
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="form-group">
+                        <select class="form-control" id="service" placeholder="a">
+                            <option>Select Service</option>
+                            <option value="single">Single</option>
+                            <option value="multiple">Multiple</option>
+                        </select>
+                    </div>
+                </div>
+                @endif
 
                 @if(request()->query('role') == "Service Provider")
 
@@ -64,42 +93,15 @@
 
                             <option value="Business">Immigration Lawyer/Attorney
 
-</option>
+                            </option>
                             <option value="Business">Chartered Accountant
-</option>
+                            </option>
 
 
                         </select>
                     </div>
                 </div>
                 @endif
-                @if(request()->query('role') == "candidate")
-
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                        <select class="form-control"  id="service" placeholder="a">
-                            <option>Select Service</option>
-                            <option value="single">Single</option>
-                            <option value="multiple">Multiple</option>
-                        </select>
-                    </div>
-                </div>
-                @endif
-
-                @if(request()->query('role') == "Service Provider")
-
-<div class="col-lg-6 col-md-6 col-12">
-    <div class="form-group">
-        <select class="form-control"  id="service" placeholder="a">
-            <option>Select Service Type</option>
-            <option value="Consultation">Consultation</option>
-            <option value="Institution">Institution</option>
-            <option value="Business">Business</option>
-
-        </select>
-    </div>
-</div>
-@endif
 
             </div>
 
@@ -347,7 +349,7 @@
 
     <p class="great-title">Candidate can register to avail services for Migration, Study, Work, Visa and Business
         @endif
-</p>
+    </p>
 
 
 
