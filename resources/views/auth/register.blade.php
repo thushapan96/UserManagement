@@ -59,18 +59,15 @@
                             <option value="Institution">College</option>
                             <option value="Business">University</option>
                             <option value="Business">RCIC Consultant</option>
-                            <option value="Business">Consultant</option>
-                            <option value="Business">Business</option>
 
 
-                            <option value="Business">Institution</option>
 
-                            <option value="Business">Lawyer/Attorney
+                            <option value="Business">Immigration Lawyer/Attorney
+
 </option>
                             <option value="Business">Chartered Accountant
 </option>
 
-                            <option value="Business">Business</option>
 
                         </select>
                     </div>
@@ -88,6 +85,21 @@
                     </div>
                 </div>
                 @endif
+
+                @if(request()->query('role') == "Service Provider")
+
+<div class="col-lg-6 col-md-6 col-12">
+    <div class="form-group">
+        <select class="form-control"  id="service" placeholder="a">
+            <option>Select Service Type</option>
+            <option value="Consultation">Consultation</option>
+            <option value="Institution">Institution</option>
+            <option value="Business">Business</option>
+
+        </select>
+    </div>
+</div>
+@endif
 
             </div>
 
