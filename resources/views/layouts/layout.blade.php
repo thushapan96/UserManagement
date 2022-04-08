@@ -31,6 +31,7 @@
   <script type="text/javascript" src="{{asset('js/wow.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/slick.js')}}"></script>
   <script src="js/countrySelect.js"></script>
+  <script src="https://kit.fontawesome.com/da7b5e75f1.js" crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
 

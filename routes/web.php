@@ -26,6 +26,10 @@ Route::get('/whycanada' , function(){
     return view('whycanada');
     })->name('whycanada');
 
+    Route::get('/reg' , function(){
+        return view('register');
+        })->name('register');
+
 Route::get('register', 'UserController@register')->name('register');
 
 
