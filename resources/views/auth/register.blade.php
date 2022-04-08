@@ -7,7 +7,7 @@
     <div class="container">
         <h1>Register as a {{request()->query('role')}}</h1>
 
-        <div class="whiteBox clearfix">
+        <div class="whiteBox regas clearfix">
             <!--div class="news-title">
    Join our mailing list to get the latest news, <br>special offers and invitations to exclusive events.
    </div-->
