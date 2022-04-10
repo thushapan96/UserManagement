@@ -6,30 +6,38 @@
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix">
     <div class="container">
-        <h1>Candidate Registation</h1>
+        <h1>Candidate Registation - Academics</h1>
 
         <div class="whiteBox clearfix">
             <!--div class="news-title">You have questions, let's have a conversation </div-->
             <div class="row custom-box">
 
-                <div class="col-lg-4 col-md-4 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input class="form-control " type="text" placeholder="First Name">
+                        <label>Language Proficiency
+
+                        </label>
+                        <select class="form-control">
+                            <option>English</option>
+                            <option>Tamil</option>
+                        </select>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-12 mt-2">
+
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-group">
-                        <label> </label>
-                        <input class="form-control " type="text" placeholder="Middle Name">
+                        <label>Level
+
+                        </label>
+                        <select class="form-control">
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Competent</option>
+
+                        </select>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-12 mt-2">
-                    <div class="form-group">
-                        <label> </label>
-                        <input class="form-control " type="text" placeholder="Last Name">
-                    </div>
-                </div>
+              
 
             </div>
 
