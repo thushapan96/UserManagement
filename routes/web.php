@@ -28,11 +28,11 @@ Route::get('/whycanada', function () {
 })->name('whycanada');
 
 Route::get('/register/step1', function () {
-    return view('register');
+    return view('register/register');
 })->name('register2');
 
 Route::get('/register/step2', function () {
-    return view('registerformone');
+    return view('register/registerformone');
 })->name('register2');
 
 Route::get('register', 'UserController@register')->name('register');
