@@ -37,7 +37,7 @@
                         </select>
                     </div>
                 </div>
-              
+
 
             </div>
 
@@ -96,8 +96,7 @@
 
                 <div class="col-lg-9 col-md-9 col-12">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheckaddress"
-                            name="same_Correspondence_address" value="1">
+                        <input type="checkbox" class="custom-control-input" id="customCheckaddress" name="same_Correspondence_address" value="1">
                         <label class="custom-control-label" for="customCheckaddress"> Check the Box if Correspondence
                             Address
                             is same as Present Residential Address. </label>
@@ -358,9 +357,8 @@
                                 </div>
                             </a>
                             <a class="instagram" href="##">
-                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i
-                                        class="fa-brands fa-instagram-square"></i></div>
-                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
+                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
+                                <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
                                     <div class="form-group">
                                         <label> </label>
                                         <input class="form-control " type="text" placeholder="Instagram Profile ">
@@ -394,13 +392,13 @@
                         <textarea class="form-control"></textarea>
                     </div>
                 </div>
-        <div class="col-lg-12 col-md-12 col-12">
-        <a href="step2">   <button type="submit" class="client-btn">Submit And Next</button> </a>
+                <div class="col-lg-12 col-md-12 col-12">
+                    <a href="step2"> <button type="submit" class="client-btn">Submit And Next</button> </a>
                 </div>
-    </div>
             </div>
-
         </div>
+
+    </div>
 
     <div id="map" style=" height: 500px; width:100%"> </div>
 
@@ -411,28 +409,28 @@
 
     </div>
     <script>
-    $(document).ready(function() {
-        $('[name="same_Correspondence_address"]').change(function() {
-            if ($(this).is(':checked')) {
-                // Do something...
-                $('#sameaddress').addClass('d-none');
-            } else {
-                $('#sameaddress').removeClass('d-none');
-            };
+        $(document).ready(function() {
+            $('[name="same_Correspondence_address"]').change(function() {
+                if ($(this).is(':checked')) {
+                    // Do something...
+                    $('#sameaddress').addClass('d-none');
+                } else {
+                    $('#sameaddress').removeClass('d-none');
+                };
+            });
+            $('.facebook').on("click", function() {
+                $('#facebook').removeClass('d-none');
+            });
+            $('.linkedin').on("click", function() {
+                $('#linkedin').removeClass('d-none');
+            });
+            $('.instagram').on("click", function() {
+                $('#instagram').removeClass('d-none');
+            });
+            $('.twitter').on("click", function() {
+                $('#twitter').removeClass('d-none');
+            })
         });
-        $('.facebook').on("click",function(){
-    $('#facebook').removeClass('d-none');
-});
-$('.linkedin').on("click",function(){
-    $('#linkedin').removeClass('d-none');
-});
-$('.instagram').on("click",function(){
-    $('#instagram').removeClass('d-none');
-});
-$('.twitter').on("click",function(){
-    $('#twitter').removeClass('d-none');
-})
-    });
     </script>
 
     <!-- ......................script for google map view.................... -->
