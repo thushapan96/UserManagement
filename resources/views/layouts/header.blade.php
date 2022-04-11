@@ -3,7 +3,7 @@
  <nav class="navbar navbar-expand-md">
  <div class="container">
   <!-- Brand -->
-  <a class="navbar-brand" href="/"><img src="images/logo.png" width="200px" alt="Logo"></a>
+  <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" width="200px" alt="Logo"></a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
