@@ -27,11 +27,11 @@ Route::get('/whycanada', function () {
     return view('whycanada');
 })->name('whycanada');
 
-Route::get('/register/step1', function () {
+Route::get('/register/candidate/personal', function () {
     return view('register/register');
 })->name('register2');
 
-Route::get('/register/step2', function () {
+Route::get('/register/candidate/acadamic', function () {
     return view('register/registerformone');
 })->name('register2');
 
