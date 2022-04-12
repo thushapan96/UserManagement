@@ -49,6 +49,14 @@ Route::get('register/business', function () {
     return view('register.business');
 });
 
+Route::get('register/workexperience', function () {
+    return view('register.workexperience');
+});
+
+Route::get('register/sponsor', function () {
+    return view('register.sponsor');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

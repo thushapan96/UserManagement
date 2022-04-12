@@ -728,7 +728,7 @@
                                 
                                 <input class="form-control " type="text">
                             </div>
-                            <div class="class="input-group-append"">
+                            <div class="input-group-append">
                             <br><br><br>
                             <button id="removeRow" type="button" class="btn btn-danger btn-sm">Remove</button>
                             </div>
