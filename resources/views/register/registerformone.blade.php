@@ -177,89 +177,53 @@
 
             </div>
             <hr>
-<div class="row ">
-   <div class="col-lg-12 col-md-12 mt-2 col-12">
-   <button type="" class="add-btn ">Add School</button>
-
-</div>
-<div class="col-lg-12 col-md-12  mt-2 col-12">
-
-<button type="" class="add-btn  ">Add College</button></div>
-
-
-<div class="col-lg-12 col-md-12 mt-2 col-12">
-
-<button type="" class="add-btn ">Add Post Graduation</button></div>
-
-
-<div class="col-lg-12 col-md-12 mt-2 col-12">
-
-<button type="" class="add-btn ">Add Other Qualification</button></div>
-
-
-
-
-          
-            </div>
-
-            <div class="container addschool">
-                <div class="whiteBox clearfix">
-                    <div class="row custom-box">
-
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>School Name</label>
-                                <input class="form-control " type="text" placeholder="First Name">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12 mt-2">
-                            <div class="form-group">
-                                <label>School Address </label>
-                                <input class="form-control " type="text" placeholder="Middle Name">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12 mt-2">
-                            <div class="form-group">
-                                <label>Year Completed </label>
-                                <input class="form-control " type="text" placeholder="Last Name">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row custom-box">
-
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>Applicable ECA Validity
-
-                                </label>
-                                <select class="form-control">
-                                    <option>Select Option</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
-
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-
-                            <div class="upload-images">
-                                <label for="upload-images">
-                                    <p>
-                                        Other Attachment </p>
-                                    <span>Browse</span>
-
-                                </label>
-                                <input type="file" id="upload-images" name="image" accept="image/*" hidden="">
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="row ml-2">
+                <div class="col-lg-12 col-md-12 mt-2 col-12">
+                    <button type="" class="add-btn " id="addschoolbtn"><i class="fa-solid fa-plus"></i> Add
+                        School</button>
 
                 </div>
+
+                <div id="addschoolrow">
+
+                </div>
+                <div class="col-lg-12 col-md-12  mt-2 col-12">
+
+                    <button type="" class="add-btn  " id="collegebtn"><i class="fa-solid fa-plus"></i> Add
+                        College</button>
+                </div>
+                <div id="addcollegerow">
+
+</div>
+
+                <div class="col-lg-12 col-md-12 mt-2 col-12">
+
+                    <button type="" class="add-btn " id="pgbtn"><i class="fa-solid fa-plus"></i> Add Post
+                        Graduation</button>
+                </div>
+                <div id="addpgrow">
+
+</div>
+
+                <div class="col-lg-12 col-md-12 mt-2 col-12">
+
+                    <button type="" class="add-btn " id="otherbtn"><i class="fa-solid fa-plus"></i> Add Other
+                        Qualification</button>
+                </div>
+
+                <div id="addotherrow">
+
+</div>
+
+
+
+
             </div>
 
+            <div class="col-lg-12 col-md-12 col-12">
+        <a href="{{route('candidate_acadamic')}}">   <button type="submit" class="client-btn">Submit And Next</button> </a>
+                </div>
+          
 
 
         </div>
@@ -364,7 +328,325 @@
 
     });
     </script>
+
+
     <!-- ...................end...script for google map view.................... -->
+
+    <script>
+    $(document).ready(function() {
+
+        // for school
+        $("#addschoolbtn").click(function() {
+
+            var html = '';
+
+            html = `<div  id="addschoolform">
+<div class="col-lg-12 col-md-12 col-12 container addschool mt-4" >
+                <div class="whiteBox clearfix">
+                    <div class="row custom-box">
+
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group">
+                                <label>School Name</label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="form-group">
+                                <label>School Address </label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="form-group">
+                                <label>Year Completed </label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row custom-box">
+
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="form-group">
+                                <label>Applicable ECA Validity
+
+                                </label>
+                                <select class="form-control">
+                                    <option>Select Option</option>
+                                    <option>Yes</option>
+                                    <option>No</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-12">
+
+                            <div class="upload-images">
+                                <label for="upload-images">
+                                    <p>
+                                        Other Attachment </p>
+                                    <span>Browse</span>
+
+                                </label>
+                                <input type="file" id="upload-images" name="image" accept="image/*" hidden="">
+                            </div>
+                        </div>
+
+                    </div>
+                    <button  class=" closebtn client-btn" id="removeschool"><a 
+                            style="color:white"><i class="fa-solid fa-minus"></i> Remove</a></button>
+                </div>
+            </div>
+        </div>
+       <br>
+        `
+
+            $('#addschoolrow').append(html);
+        });
+
+        // remove row
+        $(document).on('click', '#removeschool', function() {
+            $(this).closest('#addschoolform').remove();
+        });
+
+        // college
+
+        $("#collegebtn").click(function() {
+
+            var html = '';
+
+            html = `<div  id="addschoolform">
+            <div class="container addcollege mt-4">
+                <div class="whiteBox clearfix">
+                    <div class="row custom-box">
+
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group">
+                                <label>College Name</label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="form-group">
+                                <label>College Address </label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="form-group">
+                                <label>PG/PHD Year Completed </label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row custom-box">
+
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="form-group">
+                                <label>Applicable ECA Validity
+
+                                </label>
+                                <select class="form-control">
+                                    <option>Select Option</option>
+                                    <option>Yes</option>
+                                    <option>No</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-12">
+
+                            <div class="upload-images">
+                                <label for="upload-images">
+                                    <p>
+                                        Other Attachment </p>
+                                    <span>Browse</span>
+
+                                </label>
+                                <input type="file" id="upload-images" name="image" accept="image/*" hidden="">
+                            </div>
+                        </div>
+
+                    </div>
+                    <button type="submit" class=" closebtn client-btn" id="removecollege"><a 
+                            style="color:white"><i class="fa-solid fa-minus"></i> Remove</a></button>
+                </div>
+            </div></div>
+        `
+
+            $('#addcollegerow').append(html);
+        });
+
+        // remove row
+        $(document).on('click', '#removecollege', function() {
+            $(this).closest('#addschoolform').remove();
+        });
+
+// Pg
+
+$("#pgbtn").click(function() {
+
+var html = '';
+
+html = `<div  id="addpgform">  <div class="container addpg mt-4">
+<div class="whiteBox clearfix">
+                    <div class="row custom-box">
+
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group">
+                                <label>PG Name</label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="form-group">
+                                <label>PG Address </label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="form-group">
+                                <label>Year Completed </label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row custom-box">
+
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="form-group">
+                                <label>Applicable ECA Validity
+
+                                </label>
+                                <select class="form-control">
+                                    <option>Select Option</option>
+                                    <option>Yes</option>
+                                    <option>No</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-12">
+
+                            <div class="upload-images">
+                                <label for="upload-images">
+                                    <p>
+                                        Other Attachment </p>
+                                    <span>Browse</span>
+
+                                </label>
+                                <input type="file" id="upload-images" name="image" accept="image/*" hidden="">
+                            </div>
+                        </div>
+
+                    </div>
+                    <button type="submit" class=" closebtn client-btn" id="removepg"><a  style="color:white">
+                            <i class="fa-solid fa-minus"></i> Remove</a></button>
+                </div>
+            </div></div>
+`
+
+$('#addpgrow').append(html);
+});
+
+// remove row
+$(document).on('click', '#removepg', function() {
+$(this).closest('#addpgform').remove();
+});
+
+// other
+
+
+$("#otherbtn").click(function() {
+
+var html = '';
+
+html = `
+<div  id="addpgform">
+            <div class="container addother mt-4">
+                <div class="whiteBox clearfix">
+                    <div class="row custom-box">
+
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group">
+                                <label>Technical Qualifications</label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="form-group">
+                                <label>Name of Institute </label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="form-group">
+                                <label>Institute Address </label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                    <div class="row custom-box">
+                    <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="form-group">
+                                <label>Year Completed </label>
+                                <input class="form-control " type="text" >
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group">
+                                <label>Applicable ECA Validity
+
+                                </label>
+                                <select class="form-control">
+                                    <option>Select Option</option>
+                                    <option>Yes</option>
+                                    <option>No</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-12">
+
+                            <div class="upload-images">
+                                <label for="upload-images">
+                                    <p>
+                                        Other Attachment </p>
+                                    <span>Browse</span>
+
+                                </label>
+                                <input type="file" id="upload-images" name="image" accept="image/*" hidden="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class=" closebtn client-btn" id="removeother"><a 
+                            style="color:white"><i class="fa-solid fa-minus"></i> Remove</a></button>
+
+                </div>
+            </div></div>
+`
+
+$('#addotherrow').append(html);
+});
+
+// remove row
+$(document).on('click', '#removeother', function() {
+$(this).closest('#addpgform').remove();
+});
+
+    });
+    </script>
 </section>
 
 
