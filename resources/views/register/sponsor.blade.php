@@ -6,7 +6,7 @@
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix">
     <div class="container">
-        <h1> Sponsor</h1>
+        <h1> Candidate Registation - Sponsor</h1>
 
         <div class="whiteBox clearfix">
 
@@ -149,7 +149,7 @@
             </div>
 
             <div class="float-right">
-                <button type="submit" class="client-btn">Submit </button>
+                <button type="submit" class="client-btn">Submit And Finish </button>
             </div>
         </div>
     </div>

@@ -5,10 +5,10 @@
 
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix">
-    <h1>College Enrollment</h1>
+    <h1> {{request()->query('service')}} Enrollment</h1>
     <div class="container">
 
-        <h6>College to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access , explore and know more about the Courses and other Services.</h6>
+        <h6>{{request()->query('service')}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access , explore and know more about the Courses and other Services.</h6>
         <h6></h6>
         <br>
         <div class="whiteBox clearfix" style="max-width: none;">
@@ -17,7 +17,7 @@
 
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="form-group">
-                        <label>Name of the College *
+                        <label>Name of the {{request()->query('service')}} *
 
                         </label>
                         <input class="form-control " type="text">
@@ -26,7 +26,7 @@
 
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="form-group">
-                        <label>College Registration Number *
+                        <label>{{request()->query('service')}} Registration Number *
 
                         </label>
                         <input class="form-control " type="text">
@@ -35,7 +35,7 @@
 
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="form-group">
-                        <label>College Registrar Office *
+                        <label>{{request()->query('service')}} Registrar Office *
 
                         </label>
                         <input class="form-control " type="text">
@@ -248,7 +248,7 @@
 
                 <div class="col-lg-3 col-md-3 col-12">
                     <div class="form-group">
-                        <label>College Ranking
+                        <label>{{request()->query('service')}} Ranking
                         </label>
                         <br>
                         <br>
@@ -408,7 +408,7 @@
 
                 <div class="col-lg-3 col-md-3 col-12">
                     <div class="form-group custom-checkbox">
-                        <label>Is your college required any of the following?
+                        <label>Is your {{request()->query('service')}} required any of the following?
                         </label>
                         <br>
                         <div class="custom-control custom-checkbox">
@@ -526,7 +526,7 @@
             <div class="row custom-box">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-group">
-                        <label>College Introductory Video URL Link display on Canada Inspire Portal
+                        <label>{{request()->query('service')}} Introductory Video URL Link display on Canada Inspire Portal
                         </label>
                         <input class="form-control " type="text">
                     </div>
@@ -571,7 +571,7 @@
             <div class="row custom-box">
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="form-group">
-                        <label>College Brief Introduction
+                        <label>{{request()->query('service')}} Brief Introduction
                         </label>
                         <br>
 
@@ -583,7 +583,7 @@
             <div class="row custom-box">
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="form-group">
-                        <label>About College History
+                        <label>About {{request()->query('service')}} History
                         </label>
                         <br>
 
@@ -595,7 +595,7 @@
             <div class="row custom-box">
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="form-group">
-                        <label>College Achievements
+                        <label>{{request()->query('service')}} Achievements
                         </label>
                         <br>
 

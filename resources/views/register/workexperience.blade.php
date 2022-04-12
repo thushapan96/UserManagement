@@ -6,7 +6,7 @@
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix">
     <div class="container">
-        <h1>Work Experience</h1>
+        <h1>Candidate Registation - Work Experience</h1>
 
         <div class="whiteBox clearfix">
 
@@ -98,12 +98,13 @@
 
             <button id="addRow" type="button" class="btn crew-btn">Add WorkPlace </button>
             <div class="float-right">
-                <button type="submit" class="client-btn">Submit </button>
+           
+                <a href="{{route('candidate_sponsor')}}">   <button type="submit" class="client-btn">Submit And Next </button></a>
             </div>
         </div>
 
 
-
+       
 
 
     </div>

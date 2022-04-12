@@ -5,10 +5,10 @@
 
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix">
-    <h1>RCIC Consultant Enrollment</h1>
+    <h1>{{request()->query('service')}} Enrollment</h1>
     <div class="container">
 
-        <h6>RCIC Consultants to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access, explore and know more about the Consultants services and specialization.</h6>
+        <h6>{{request()->query('service')}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access, explore and know more about the Consultants services and specialization.</h6>
         <h6></h6>
         <br>
         <div class="whiteBox clearfix" style="max-width: none;">
@@ -33,7 +33,7 @@
 
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="form-group">
-                        <label>RCIC Registration Number *
+                        <label>Registration Number *
                         </label>
                         <input class="form-control " type="text">
                     </div>

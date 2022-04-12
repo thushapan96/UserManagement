@@ -39,7 +39,7 @@ Route::get('register', 'UserController@register')->name('register');
 
 Route::get('register/institude', function () {
     return view('register.institude');
-});
+})->name('register.institude');
 
 Route::get('register/consultant', function () {
     return view('register.consultant');
@@ -49,13 +49,13 @@ Route::get('register/business', function () {
     return view('register.business');
 });
 
-Route::get('register/workexperience', function () {
+Route::get('register/candidate/workexperience', function () {
     return view('register.workexperience');
-});
+})->name('candidate_workexperience');
 
-Route::get('register/sponsor', function () {
+Route::get('register/candidate/sponsor', function () {
     return view('register.sponsor');
-});
+})->name('candidate_sponsor');
 
 Auth::routes();
 

@@ -221,7 +221,7 @@
             </div>
 
             <div class="col-lg-12 col-md-12 col-12">
-        <a href="{{route('candidate_acadamic')}}">   <button type="submit" class="client-btn">Submit And Next</button> </a>
+        <a href="{{route('candidate_workexperience')}}">   <button type="submit" class="client-btn">Submit And Next</button> </a>
                 </div>
           
 

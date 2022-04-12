@@ -82,19 +82,19 @@
 
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-group">
-                        <select class="form-control" id="type" placeholder="a">
+                        <select class="form-control" id="typeservice" placeholder="a">
                             <option>Join As</option>
-                            <option value="Consultant">School</option>
-                            <option value="Institution">College</option>
-                            <option value="Business">University</option>
-                            <option value="Business">RCIC Consultant</option>
+                            <option data-name="/register/institude?service=School" value="School">School</option>
+                            <option data-name="/register/institude?service=College" value="College">College</option>
+                            <option data-name="/register/institude?service=University" value="University">University</option>
+                            <option data-name="/register/consultant?service=RCIC Consultant" value="RCIC Consultant">RCIC Consultant</option>
 
 
 
-                            <option value="Business">Immigration Lawyer/Attorney
+                            <option data-name="/register/consultant?service=Immigration Lawyer/Attorney" value="Immigration Lawyer/Attorney">Immigration Lawyer/Attorney
 
                             </option>
-                            <option value="Business">Chartered Accountant
+                            <option data-name="/register/business?service=Chartered Accountant" value="Chartered Accountant">Chartered Accountant
                             </option>
 
 
@@ -334,9 +334,20 @@
                     <button type="submit" class="reg-btn"><a href="{{route('login')}}"
                             style="color:white">Login</a></button>
                 </div>
+                @if(request()->query('role') == "candidate")
+
                 <div class="col-lg-6 col-md-6 col-6">
                     <a href="{{route('candidate_personal')}}" class="client-btn">Submit</a>
                 </div>
+
+                @endif
+                @if(request()->query('role') == "Service Provider")
+
+<div class="col-lg-6 col-md-6 col-6">
+    <a href="" class="client-btn " id="servicesubmit">Submit</a>
+</div>
+
+@endif
 
 
         </div>
@@ -414,6 +425,19 @@ $(document).ready(function() {
 
 
     };
+
+    $(document).on('change', '#typeservice', function() {
+       
+        var url = $('#typeservice option:selected').data('name');
+      
+     
+console.log(url);
+$("#servicesubmit").attr("href", url)
+
+
+    });
+
+    
 
 });
 </script>
