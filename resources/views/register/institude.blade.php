@@ -313,7 +313,7 @@
 
                     </div>
                     <div id="newRow"></div>
-                    <button id="addRow" type="button" class="btn btn-info">Add Course</button>
+                    <button id="addRow" type="button" class="btn crew-btn">Add Course</button>
                 </div>
 
             </div>

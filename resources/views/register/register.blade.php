@@ -6,7 +6,7 @@
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix">
     <div class="container">
-        <h1>Candidate Registation</h1>
+        <h1>Candidate Registation - Personal Info</h1>
 
         <div class="whiteBox clearfix">
             <!--div class="news-title">You have questions, let's have a conversation </div-->
@@ -387,7 +387,7 @@
                     </div>
                 </div>
         <div class="col-lg-12 col-md-12 col-12">
-        <a href="step2">   <button type="submit" class="client-btn">Submit And Next</button> </a>
+        <a href="{{route('candidate_acadamic')}}">   <button type="submit" class="client-btn">Submit And Next</button> </a>
                 </div>
     </div>
             </div>
