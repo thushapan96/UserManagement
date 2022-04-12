@@ -335,7 +335,7 @@
                             style="color:white">Login</a></button>
                 </div>
                 <div class="col-lg-6 col-md-6 col-6">
-                    <button type="submit" class="client-btn">Submit</button>
+                    <a href="{{route('candidate_personal')}}" class="client-btn">Submit</a>
                 </div>
 
 
