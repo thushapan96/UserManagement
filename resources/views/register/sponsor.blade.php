@@ -1,11 +1,5 @@
-@extends('layouts.layout')
 
-@section('content')
-
-
-<!-- Subscribe & Stay Connected. Start -->
-<section class="StayConnected clearfix">
-    <div class="container">
+ 
         <h1> Candidate Registation - Sponsor</h1>
 
         <div class="whiteBox clearfix">
@@ -152,8 +146,8 @@
                 <button type="submit" class="client-btn">Submit And Finish </button>
             </div>
         </div>
-    </div>
-</section>
+    
+
 
 <div id="map" style=" height: 500px; width:100%"> </div>
 
@@ -217,4 +211,3 @@
 
     });
 </script>
-@endsection
