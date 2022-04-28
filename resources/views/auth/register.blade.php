@@ -337,14 +337,14 @@
                 @if(request()->query('role') == "candidate")
 
                 <div class="col-lg-6 col-md-6 col-6">
-                    <a href="{{route('candidate_personal')}}" class="client-btn">Submit</a>
+                    <a href="{{route('register')}}" class="client-btn">Submit</a>
                 </div>
 
                 @endif
                 @if(request()->query('role') == "Service Provider")
 
 <div class="col-lg-6 col-md-6 col-6">
-    <a href="" class="client-btn " id="servicesubmit">Submit</a>
+    <a href="{{route('register')}}" class="client-btn " id="servicesubmit">Submit</a>
 </div>
 
 @endif
