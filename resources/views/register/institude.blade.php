@@ -11,625 +11,672 @@
         <h6>{{request()->query('service')}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access , explore and know more about the Courses and other Services.</h6>
         <h6></h6>
         <br>
-        <div class="whiteBox clearfix" style="max-width: none;">
-            <!--div class="news-title">You have questions, let's have a conversation </div-->
-            <div class="row custom-box">
+        <form id="form" action="{{route('add.institution')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="whiteBox clearfix" style="max-width: none;">
+                <!--div class="news-title">You have questions, let's have a conversation </div-->
+                <div class="row custom-box">
 
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
-                        <label>Name of the {{request()->query('service')}} *
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="form-group">
+                            <label>Name of the {{request()->query('service')}} *
+                            </label>
+                            <input class="form-control" type="text" name="name" id="name" value="" onkeyup='sessionStorage.setItem("name",this.value)' />
 
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
-                        <label>{{request()->query('service')}} Registration Number *
-
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
-                        <label>{{request()->query('service')}} Registrar Office *
-
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-
-            </div>
-
-            <hr>
-
-            <div class="row custom-box">
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Country *
-
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Province/Region *
-
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>City *
-
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Street *
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-
-            </div>
-
-            <hr>
-            <div class="row custom-box">
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Postal Code *
-                        </label>
-                        <br>
-                        <br>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Email address for correspondence *
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>URL - Website Address *
-                        </label>
-                        <br>
-                        <br>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Contact Number *
-                        </label>
-                        <br>
-                        <br>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-
-            </div>
-
-
-            <hr>
-
-            <div class="row custom-box">
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Admission Cell - Contact Person *
-
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Email address of Admission Cell *
-
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="form-group">
-                        <label>Dean - Contact Name *
-
-                        </label>
-
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="form-group">
-                        <label>Dean Email ID *
-                        </label>
-                        <br>
-                        <br>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="form-group">
-                        <label>Dean Contact Number *
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-
-            </div>
-            <hr>
-            <div class="row custom-box">
-
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="form-group">
-                        <label>Type of Courses *
-                        </label>
-                        <br>
-
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Courses1" name="Courses1" value="">
-                            <label class="custom-control-label" for="Courses1"> In Campus</label><br>
+                            <input class="form-control " type="text" name="type" value="{{request()->query('service')}}" hidden>
                         </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Courses2" name="Courses2" value="">
-                            <label class="custom-control-label" for="Courses2"> Online</label><br>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="form-group">
+                            <label>{{request()->query('service')}} Registration Number *
+
+                            </label>
+                            <input class="form-control " type="text" id="registration_number" name="registration_number" value="{{ old('registration_number')}}" onkeyup='sessionStorage.setItem("registration_number",this.value)'>
                         </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Courses3" name="Courses3" value="">
-                            <label class="custom-control-label" for="Courses3"> Distant</label><br>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="form-group">
+                            <label>{{request()->query('service')}} Registrar Office area*
+
+                            </label>
+                            <input class="form-control " type="text" name="registrar_office_area" value="{{ old('registrar_office_area')}}" onkeyup='sessionStorage.setItem("registrar_office_area",this.value)'>
                         </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Courses4" name="Courses4" value="">
-                            <label class="custom-control-label" for="Courses4"> Others</label>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="row custom-box">
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Country *
+                            </label>
+                            <input class="form-control " type="text" name="country" value="{{ old('country')}}" onkeyup='sessionStorage.setItem("country",this.value)'>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Province/Region *
+                            </label>
+                            <input class="form-control " type="text" name="region" value="{{ old('region')}}" onkeyup='sessionStorage.setItem("region",this.value)'>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>City *
+                            </label>
+                            <input class="form-control " type="text" name="city" value="{{ old('city')}}" onkeyup='sessionStorage.setItem("city",this.value)'>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Street *
+                            </label>
+                            <input class="form-control " type="text" name="streat" value="{{ old('streat')}}" onkeyup='sessionStorage.setItem("streat",this.value)'>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr>
+                <div class="row custom-box">
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Postal Code *
+                            </label>
+                            <br>
+                            <br>
+                            <input class="form-control " type="text" name="postal_code" value="{{ old('postal_code')}}" onkeyup='sessionStorage.setItem("postal_code",this.value)'>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Email address for correspondence *
+                            </label>
+                            <input class="form-control" type="text" name="email" value="{{ old('email')}}" onkeyup='sessionStorage.setItem("email",this.value)'>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>URL - Website Address *
+                            </label>
+                            <br>
+                            <br>
+                            <input class="form-control " type="text" name="website_address" value="{{ old('website_address')}}" onkeyup='sessionStorage.setItem("website_address",this.value)'>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Contact Number *
+                            </label>
+                            <br>
+                            <br>
+                            <input class="form-control " type="text" name="phone" value="{{ old('phone')}}" onkeyup='sessionStorage.setItem("phone",this.value)'>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <hr>
+
+                <div class="row custom-box">
+
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="form-group">
+                            <label>Admission Cell - Contact Person *
+
+                            </label>
+                            <input class="form-control " type="text" name="admission_phone" value="{{ old('admission_phone')}}" onkeyup='sessionStorage.setItem("admission_phone",this.value)'>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="form-group">
+                            <label>Email address of Admission Cell *
+
+                            </label>
+                            <input class="form-control " type="text" name="admission_email" value="{{ old('admission_email')}}" onkeyup='sessionStorage.setItem("admission_email",this.value)'>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="form-group">
+                            <label>Dean - Contact Name *
+
+                            </label>
+
+                            <input class="form-control " type="text" name="dean_name" value="{{ old('dean_name')}}" onkeyup='sessionStorage.setItem("dean_name",this.value)'>
+                        </div>
+                    </div>
+
+
+                </div>
+                <hr>
+                <div class="row custom-box">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="form-group">
+                            <label>Dean Email ID *
+                            </label>
+
+                            <input class="form-control " type="text" name="dean_email" value="{{ old('dean_email')}}" onkeyup='sessionStorage.setItem("dean_email",this.value)'>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="form-group">
+                            <label>Dean Contact Number *
+                            </label>
+                            <input class="form-control " type="text" name="dean_phone" value="{{ old('dean_phone')}}" onkeyup='sessionStorage.setItem("dean_phone",this.value)'>
                         </div>
                     </div>
                 </div>
+                <hr>
+                <div class="row custom-box">
 
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="form-group">
-                        <label>Intake *
-                        </label>
-                        <br>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Intake1" name="Intake1" value="">
-                            <label class="custom-control-label" for="Intake1"> January</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Intake2" name="Intake2" value="">
-                            <label class="custom-control-label" for="Intake2">May</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Intake3" name="Intake3" value="">
-                            <label class="custom-control-label" for="Intake3">September</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Intake4" name="Intake4" value="">
-                            <label class="custom-control-label" for="Intake4">Others</label>
-                        </div>
-                    </div>
-                </div>
+                    <div class="col-lg-2 col-md-2 col-12">
+                        <div class="form-group">
+                            <label>Type of Courses *
+                            </label>
+                            <br>
 
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="form-group">
-                        <label>Admission Type *
-                        </label>
-                        <br>
-                        <br>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>{{request()->query('service')}} Ranking
-                        </label>
-                        <br>
-                        <br>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Ranking Criteria & Ranking Bodies
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row custom-box">
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Year of Establishment
-                        </label>
-                        <input class="form-control " type="text" placeholder="Year of Registration">
-                        <small>Year of Registration</small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Offering Services Since
-                        </label>
-                        <input class="form-control " type="text" placeholder="Number of Years">
-                        <small>Number of Years</small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Response Time
-                        </label>
-                        <input class="form-control " type="text" placeholder="24 or 48 or 72 Hours">
-                        <small>Number of Cases Enrolled till Date</small>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Mode of Communication
-                        </label>
-
-                        <input class="form-control " type="text" placeholder="Email / Messaging / Telephone">
-                        <small>Successful Cases in %</small>
-                    </div>
-                </div>
-
-            </div>
-            <hr>
-            <div class="row custom-box">
-
-                <div class="col-lg-12col-md-12 col-12">
-                    <div class="form-group">
-                        <label>Courses Offered
-                        </label>
-                        <input class="form-control " type="text">
-
-                    </div>
-                    <div id="newRow"></div>
-                    <button id="addRow" type="button" class="btn crew-btn">Add Course</button>
-                </div>
-
-            </div>
-            <hr>
-            <div class="row custom-box">
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Total Number of Students Enrolled
-                        </label>
-                        <input class="form-control " type="text">
-
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Total Number of Successful Students
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Is it Financial Aided?
-                        </label>
-                        <br>
-                        <br>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Is Transfer of Credits available?
-                        </label>
-                        <br>
-                        <br>
-                        <input class="form-control " type="number" min="1">
-                    </div>
-                </div>
-
-            </div>
-            <hr>
-            <div class="row custom-box">
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="custom-control custom-checkbox">
-                        <label>What type of Certificate do you Offer?
-                        </label>
-                        <br>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Diploma" name="Diploma" value="">
-                            <label class="custom-control-label" for="Diploma"> Diploma</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="PG Diploma" name="PG Diploma" value="">
-                            <label class="custom-control-label" for="PG Diploma"> PG Diploma</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id=" Certification" name=" Certification" value="">
-                            <label class="custom-control-label" for=" Certification"> Certification</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Courses4" name="Courses4" value="">
-                            <label class="custom-control-label" for="Courses4"> Others</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="custom-control custom-checkbox">
-                        <label>Course Duration?
-                        </label>
-                        <br>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="6 Months" name="6 Months" value="">
-                            <label class="custom-control-label" for="6 Months"> 6 Months</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="12 Months" name="12 Months" value="">
-                            <label class="custom-control-label" for="12 Months">12 Months</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="18 Months" name="18 Months" value="">
-                            <label class="custom-control-label" for="18 Months">18 Months</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="Duration" name="Duration" value="">
-                            <label class="custom-control-label" for="Duration">Others</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group custom-checkbox">
-                        <label>Is your {{request()->query('service')}} required any of the following?
-                        </label>
-                        <br>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="GRE" name="GRE" value="">
-                            <label class="custom-control-label" for="GRE"> GRE</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="TOEFL" name="TOEFL" value="">
-                            <label class="custom-control-label" for="TOEFL">TOEFL </label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="GMAT" name="GMAT" value="">
-                            <label class="custom-control-label" for="GMAT">GMAT</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="SAT" name="SAT" value="">
-                            <label class="custom-control-label" for="SAT">SAT</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="others5" name="others5" value="">
-                            <label class="custom-control-label" for="others5">Others</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group custom-checkbox">
-                        <label>What type of Language Test do you accept?
-                        </label>
-                        <br>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="IELTS" name="IELTS" value="">
-                            <label class="custom-control-label" for="IELTS"> IELTS</label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="PTE" name="PTE" value="">
-                            <label class="custom-control-label" for="PTE">PTE </label><br>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="others5" name="others5" value="">
-                            <label class="custom-control-label" for="others5">Others</label>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <hr>
-            <div class="row custom-box">
-
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Do you offer Scholarships?
-                        </label>
-                        <div class="col-lg-2 col-md-2 col-2 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="Scholarshipsyes" name="Scholarships">
-                                <label class="custom-control-label mt-1" for="Scholarshipsyes">Yes</label>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox1" name="course_type[]" value="In Campus" {{ old('course_type[]') == "In Campus" ? 'selected' : '' }}>
+                                <label class="custom-control-label" for="checkbox1"> In Campus</label><br>
                             </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-2 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="Scholarshipsno" name="Scholarships">
-                                <label class="custom-control-label mt-1" for="Scholarshipsno">No</label>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox2" name="course_type[]" value="Online" {{ old('course_type[]') == 'Online' ? 'selected' : '' }}>
+                                <label class="custom-control-label" for="checkbox2"> Online</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox3" name="course_type[]" value="Distant" {{ old('course_type[]') == 'Distant' ? 'selected' : '' }}>
+                                <label class="custom-control-label" for="checkbox3"> Distant</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox4" name="course_type[]" value="Others" {{ old('course_type[]') == 'Others' ? 'selected' : '' }}>
+                                <label class="custom-control-label" for="checkbox4"> Others</label>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Do you conduct Webinars?
-                        </label>
-                        <div class="col-lg-2 col-md-2 col-2 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="Webinarsyes" name="Webinars">
-                                <label class="custom-control-label mt-1" for="Webinarsyes">Yes</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-2 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="Webinarsno" name="Webinars">
-                                <label class="custom-control-label mt-1" for="Webinarsno">No</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Admission Criteria Website/URL Link
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12">
-                    <div class="form-group">
-                        <label>Fee Structure Website/URL Link
-                        </label>
-                        <input class="form-control " type="text" min="1">
-                    </div>
-                </div>
 
-            </div>
-            <hr>
-
-            <div class="row custom-box">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                        <label>Is ECA (Education Certificate Assessment) required? If "YES" specify name of the Organization
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row custom-box">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                        <label>{{request()->query('service')}} Introductory Video URL Link display on Canada Inspire Portal
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="form-group">
-                        <label>Do you have any Privacy Policies?
-                        </label>
-                        <div class="col-lg-2 col-md-2 col-2 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="Policies" name="Policies">
-                                <label class="custom-control-label mt-1" for="Policies">Yes</label>
+                    <div class="col-lg-2 col-md-2 col-12">
+                        <div class="form-group">
+                            <label>Intake *
+                            </label>
+                            <br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox5" name="intake[]" value="January" {{ old('intake[]') == 'January' ? 'selected' : '' }}>
+                                <label class="custom-control-label" for="checkbox5"> January</label><br>
                             </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-2 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="Policiesno" name="Policies">
-                                <label class="custom-control-label mt-1" for="Policiesno">No</label>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox6" name="intake[]" value="May" {{ old('intake[]') == 'May' ? 'selected' : '' }}>
+                                <label class="custom-control-label" for="checkbox6">May</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox7" name="intake[]" value="September" {{ old('intake[]') == 'September' ? 'selected' : '' }}>
+                                <label class="custom-control-label" for="checkbox7">September</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox8" name="intake[]" value="Others" {{ old('intake[]') == 'Others' ? 'selected' : '' }}>
+                                <label class="custom-control-label" for="checkbox8">Others</label>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="form-group">
-                        <label>If Yes, Enclose the Document
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-12">
-                    <div class="form-group">
-                        <label>Terms if Any
-                        </label>
-                        <br>
-                        <br>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-            </div>
-            <hr>
 
-            <div class="row custom-box">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                        <label>{{request()->query('service')}} Brief Introduction
-                        </label>
-                        <br>
+                    <div class="col-lg-4 col-md-2 col-12">
+                        <div class="form-group">
+                            <label>Admission Type *
+                            </label>
+                            <br>
+                            <br>
+                            <input class="form-control " type="text" name="admission_type">
+                        </div>
+                    </div>
 
-                        <textarea style="width:100%;" rows="9"></textarea>
+                    <div class="col-lg-4 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>{{request()->query('service')}} Ranking
+                            </label>
+                            <br>
+                            <br>
+                            <input class="form-control " type="text" name="college_ranking">
+                        </div>
+                    </div>
+
+
+                </div>
+                <hr>
+                <div class="row custom-box">
+                    <div class=" col-12">
+                        <div class="form-group">
+                            <label>Ranking Criteria & Ranking Bodies
+                            </label>
+                            <textarea style="width:100%;" rows="5" name="ranking_criteria"></textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-            <div class="row custom-box">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                        <label>About {{request()->query('service')}} History
-                        </label>
-                        <br>
+                <hr>
+                <div class="row custom-box">
 
-                        <textarea style="width:100%;" rows="9"></textarea>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Year of Establishment
+                            </label>
+                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year">
+                            <small>Year of Registration</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Offering Services Since
+                            </label>
+                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year">
+                            <small>Number of Years</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Response Time
+                            </label>
+                            <input class="form-control " type="text" placeholder="24 or 48 or 72 Hours" name="response_time">
+                            <small>Number of Cases Enrolled till Date</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Mode of Communication
+                            </label>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-checkbox ">
+                                    <input type="checkbox" class="custom-control-input" id="checkbox9" name="communication_mode[]" value="{{ old('communication_mode[]') == 'email' ? 'checked' : '' }}">
+                                    <label class="custom-control-label mt-1" for="checkbox9">email</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-checkbox ">
+                                    <input type="checkbox" class="custom-control-input " id="checkbox10" name="communication_mode[]" value="{{ old('communication_mode[]') == 'phone' ? 'checked' : '' }}">
+                                    <label class="custom-control-label mt-1" for="checkbox10">phone</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-checkbox ">
+                                    <input type="checkbox" class="custom-control-input " id="checkbox11" name="communication_mode[]" value="{{ old('communication_mode[]') == 'Messaging' ? 'checked' : '' }}">
+                                    <label class="custom-control-label mt-1" for="checkbox11">Messaging</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+
+                <div class="row custom-box">
+
+                    <div class="col-lg-12col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Courses Offered
+                            </label>
+                            <input class="form-control " type="text" name="offer_course[]" value="{{ old('offer_course')}}">
+
+                        </div>
+                        <div id="newRow"></div>
+                        <button id="addRow" type="button" class="btn crew-btn" name="">Add Course</button>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="row custom-box">
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Total Number of Students Enrolled
+                            </label>
+                            <input class="form-control " type="text" name="no_student">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Total Number of Successful Students
+                            </label>
+                            <input class="form-control " type="text" name="no_success_student">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Is it Financial Aided?
+                            </label>
+                            <br>
+                            <br>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Financialyes" name="is_financial" value="yes" {{ old('is_financial') == 'yes' ? 'selected' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Financialyes">Yes</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Financialno" name="is_financial" value="no" {{ old('is_financial') == 'no' ? 'selected' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Financialno">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Is Transfer of Credits available?
+                            </label>
+                            <br>
+                            <br>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Creditsyes" name="is_credit" value="yes">
+                                    <label class="custom-control-label mt-1" for="Creditsyes">Yes</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Creditsno" name="is_credit" value="no">
+                                    <label class="custom-control-label mt-1" for="Creditsno">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="row custom-box">
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="custom-control custom-checkbox">
+                            <label>What type of Certificate do you Offer?
+                            </label>
+                            <br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox12" name="certificate_type[]" value="Diploma">
+                                <label class="custom-control-label" for="checkbox12"> Diploma</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox13" name="certificate_type[]" value="PG Diploma">
+                                <label class="custom-control-label" for="checkbox13"> PG Diploma</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id=" checkbox14" name=" certificate_type[]" value="Certification">
+                                <label class="custom-control-label" for=" checkbox14"> Certification</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox15" name="certificate_type[]" value="Others">
+                                <label class="custom-control-label" for="checkbox15"> Others</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="custom-control custom-checkbox">
+                            <label>Course Duration?
+                            </label>
+                            <br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox16" name="course_duration[]" value="6 Months">
+                                <label class="custom-control-label" for="checkbox16"> 6 Months</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox17" name="course_duration[]" value="12 Months">
+                                <label class="custom-control-label" for="checkbox17">12 Months</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox18" name="course_duration[]" value="18 Months">
+                                <label class="custom-control-label" for="checkbox18">18 Months</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox19" name="course_duration[]" value="Duration">
+                                <label class="custom-control-label" for="checkbox19">Others</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group custom-checkbox">
+                            <label>Is your {{request()->query('service')}} required any of the following?
+                            </label>
+                            <br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox20" name="other_require[]" value="GRE">
+                                <label class="custom-control-label" for="checkbox20"> GRE</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox21" name="other_require[]" value="TOEFL">
+                                <label class="custom-control-label" for="checkbox21">TOEFL </label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox22" name="other_require[]" value="GMAT">
+                                <label class="custom-control-label" for="checkbox22">GMAT</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox23" name="other_require[]" value="SAT">
+                                <label class="custom-control-label" for="checkbox23">SAT</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox24" name="other_require[]" value="Others">
+                                <label class="custom-control-label" for="checkbox24">Others</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group custom-checkbox">
+                            <label>What type of Language Test do you accept?
+                            </label>
+                            <br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox25" name="language_test_type[]" value="IELTS">
+                                <label class="custom-control-label" for="checkbox25"> IELTS</label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox26" name="language_test_type[]" value="PTE">
+                                <label class="custom-control-label" for="checkbox26">PTE </label><br>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox27" name="language_test_type[]" value="Others">
+                                <label class="custom-control-label" for="checkbox27">Others</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <hr>
+                <div class="row custom-box">
+
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Do you offer Scholarships?
+                            </label>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Scholarshipsyes" name="is_scholarship_offer" value="yes" {{ old('is_scholarship_offer') == 'yes' ? 'selected' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Scholarshipsyes">Yes</label>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Scholarshipsno" name="is_scholarship_offer" value="no" {{ old('is_scholarship_offer') == 'no' ? 'selected' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Scholarshipsno">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Do you conduct Webinars?
+                            </label>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Webinarsyes" name="is_conduct_webinar" value="yes" {{ old('is_conduct_webinar') == 'yes' ? 'selected' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Webinarsyes">Yes</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Webinarsno" name="is_conduct_webinar" value="no" {{ old('is_conduct_webinar') == 'no' ? 'selected' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Webinarsno">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Admission Criteria Website/URL Link
+                            </label>
+                            <input class="form-control " type="text" name="admission_criteria_website">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Fee Structure Website/URL Link
+                            </label>
+                            <input class="form-control " type="text" min="1" name="fee_structure_website">
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Is ECA (Education Certificate Assessment) required? If "YES" specify name of the Organization
+                            </label>
+                            <input class="form-control " type="text" name="eca">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-            <div class="row custom-box">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                        <label>{{request()->query('service')}} Achievements
-                        </label>
-                        <br>
+                <hr>
+                <div class="row custom-box">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="form-group">
+                            <label>{{request()->query('service')}} Introductory Video URL Link display on Canada Inspire Portal
+                            </label>
+                            <input class="form-control " type="text" name="vedio_url">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>Do you have any Privacy Policies?
+                            </label>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Policies" name="is_privacy_policy" value="yes" {{ old('is_privacy_policy') == 'yes' ? 'selected' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Policies">Yes</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Policiesno" name="is_privacy_policy" value="no" {{ old('is_privacy_policy') == 'no' ? 'selected' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Policiesno">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="form-group">
+                            <label>If Yes, Enclose the Document
+                            </label>
+                            <br><br>
+                            <input class="form-control " type="file" name="privacy_policy_document">
+                        </div>
+                    </div>
 
-                        <textarea style="width:100%;" rows="9"></textarea>
+                </div>
+                <hr>
+                <div class="row custom-box">
+                    <div class=" col-12">
+                        <div class="form-group">
+                            <label>Terms if Any
+                            </label>
+                            <br>
+                            <br>
+                            <textarea style="width:100%;" rows="6" name="privacy_policy_detail"></textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-          
-            <div class="row custom-box">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                        <label>Awards and Certifications
-                        </label>
-                        <br>
+                <hr>
 
-                        <textarea style="width:100%;" rows="9"></textarea>
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>{{request()->query('service')}} Brief Introduction
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;" rows="9" name="brief_introduction"></textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-            <div class="row custom-box">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                        <label>We are looking forward to have your valuable Comments/Remarks to add or modify on the above given information to make it more informative.
-                        </label>
-                        <br>
+                <hr>
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>About {{request()->query('service')}} History
+                            </label>
+                            <br>
 
-                        <textarea style="width:100%;" rows="9"></textarea>
+                            <textarea style="width:100%;" rows="9" name="history"></textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-            <div class="row custom-box">
+                <hr>
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>{{request()->query('service')}} Achievements
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;" rows="9" name="achievement"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Awards and Certifications
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;" rows="9" name="Award"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>We are looking forward to have your valuable Comments/Remarks to add or modify on the above given information to make it more informative.
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;" rows="9" name="Comment"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- <div class="row custom-box">
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="form-group">
                         <label>Canada Inspire provides Additional Services :-
@@ -639,8 +686,8 @@
                         <textarea style="width:100%;" rows="9"></textarea>
                     </div>
                 </div>
-            </div>
-            <hr>
+            </div> -->
+                <!-- <hr>
             <div class="row custom-box">
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="form-group">
@@ -651,88 +698,88 @@
                         <textarea style="width:100%;" rows="9"></textarea>
                     </div>
                 </div>
-            </div>
-            <hr>
+            </div> -->
+                <hr>
 
-            <div class="row mb-1">
+                <div class="row mb-1">
 
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                        <label>Social Media Profile
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Social Media Profile
 
-                        </label>
-                        <div class="row">
-                            <a class="facebook" href="##">
-                                <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
-                                </div>
-                                <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
-                                    <div class="form-group">
-                                        <label> </label>
-                                        <input class="form-control " type="text" placeholder="Facebook link ">
+                            </label>
+                            <div class="row">
+                                <a class="facebook" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
                                     </div>
-                                </div>
-                            </a>
-                            <a class="twitter" href="##">
-                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
-                                </div>
-                                <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
-                                    <div class="form-group">
-                                        <label> </label>
-                                        <input class="form-control " type="text" placeholder="Twitter link ">
+                                    <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
+                                        <div class="form-group">
+                                            <label> </label>
+                                            <input class="form-control " type="text" placeholder="Facebook link " name="fb_link">
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a class="instagram" href="##">
-                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
-                                <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
-                                    <div class="form-group">
-                                        <label> </label>
-                                        <input class="form-control " type="text" placeholder="Instagram link ">
+                                </a>
+                                <a class="twitter" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
                                     </div>
-                                </div>
-                            </a>
-                            <a class="linkedin" href="##">
-                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
-                                </div>
-                                <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
-                                    <div class="form-group">
-                                        <label> </label>
-                                        <input class="form-control " type="text" placeholder="Linkedin Profile ">
+                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
+                                        <div class="form-group">
+                                            <label> </label>
+                                            <input class="form-control " type="text" placeholder="Twitter link " name="twitter_link">
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a class="youtube" href="##">
-                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
-                                </div>
-                                <div class="col-lg-11 col-md-11 col-11 d-none " id="youtube">
-                                    <div class="form-group">
-                                        <label> </label>
-                                        <input class="form-control " type="text" placeholder="youtube link ">
+                                </a>
+                                <a class="instagram" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
+                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
+                                        <div class="form-group">
+                                            <label> </label>
+                                            <input class="form-control " type="text" placeholder="Instagram link " name="insta_link">
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a class="google" href="##">
-                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
-                                </div>
-                                <div class="col-lg-11 col-md-11 col-11 d-none " id="google">
-                                    <div class="form-group">
-                                        <label> </label>
-                                        <input class="form-control " type="text" placeholder="google review link ">
+                                </a>
+                                <a class="linkedin" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
                                     </div>
-                                </div>
-                            </a>
+                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
+                                        <div class="form-group">
+                                            <label> </label>
+                                            <input class="form-control " type="text" placeholder="Linkedin Profile " name="Linkedin_link">
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="youtube" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
+                                    </div>
+                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="youtube">
+                                        <div class="form-group">
+                                            <label> </label>
+                                            <input class="form-control " type="text" placeholder="youtube link " name="youtube_link">
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="google" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
+                                    </div>
+                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="google">
+                                        <div class="form-group">
+                                            <label> </label>
+                                            <input class="form-control " type="text" placeholder="google review link " name="google_review_link">
+                                        </div>
+                                    </div>
+                                </a>
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-            <div class="float-right">
-                <button type="submit" class="client-btn">Submit </button>
-            </div>
+                <hr>
+                <div class="float-right">
+                    <button type="submit" class="client-btn">Submit </button>
+                </div>
 
-        </div>
-
+            </div>
+        </form>
     </div>
 
     <div id="map" style=" height: 500px; width:100%"> </div>
@@ -745,6 +792,9 @@
     </div>
     <script>
         $(document).ready(function() {
+
+            
+
             $('[name="same_Correspondence_address"]').change(function() {
                 if ($(this).is(':checked')) {
                     // Do something...
@@ -777,18 +827,32 @@
                 var html = '';
                 html += '<div id="inputFormRow">';
                 html += '<div class="input-group mb-3">';
-                html += '<input type="text" name="courses[]" class="form-control m-input" placeholder="Enter courses" autocomplete="off">';
+                html += '<input type="text" name="offer_course[]" class="form-control m-input addinput" placeholder="Enter courses" autocomplete="off" value="" />';
                 html += '<div class="input-group-append">';
                 html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';
                 html += '</div>';
                 html += '</div>';
 
                 $('#newRow').append(html);
+                sessionStorage.setItem("appendhtml", $('#newRow').html());
+
+               
+
             });
 
+            $(".addinput").keyup(function() {
+                    console.log("val" + $(this).val())
+                    $(this).attr("value", $(this).val());
+                    console.log("attrr" + $(this).attr('value'));
+                    sessionStorage.setItem("appendhtml", $('#newRow').html());
+                    console.log(sessionStorage.getItem("appendhtml"))
+                });
+                
             // remove row
             $(document).on('click', '#removeRow', function() {
                 $(this).closest('#inputFormRow').remove();
+                sessionStorage.setItem("appendhtml", $('#newRow').html());
+
             });
         });
     </script>

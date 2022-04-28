@@ -1,0 +1,12 @@
+Evaluation of  defeciency identifier of plants
+
+
+According to implementation,   I have got 80% accuracy.
+InceptionV3 as the model to train the dataset.
+I have categorized the images of the leaves according to nitrogen percentage.
+I have used different transfer learning methods such as Vgg 16, 
+Resnet,Inception v3 and measure the accuracy.Transfer learning technique inception V3 gave high
+ accuracy among the other techniques I have used, and  image classification
+task as properly done ith the given data set.  
+Also the correct nitrogen percentage was given as an output after I test it.
+
