@@ -48,12 +48,15 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+    {        
+        //dd($data);
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'country_of_citizenship'=>['required'],
+            'service_type'=>['required']
         ]);
+
     }
 
     /**
@@ -64,10 +67,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if($data['service_type'] == 'single'){
+            $service = $data['service_single'];
+        }else{
+            $service = $data['services'];
+        }
+
         return User::create([
-            'name' => $data['name'],
+            'country' => $data['country'],
+            'country_of_citizenship' => $data['country_of_citizenship'],
             'email' => $data['email'],
+            'service_type' => $data['service_type'],
+            'service' => $service,
             'password' => Hash::make($data['password']),
         ]);
+
+        dd($data);
     }
 }
