@@ -10,8 +10,10 @@ class Team extends Model
     use HasFactory;
     protected $table = 'teams';
 
-    public function providers()
+    public function consultants()
     {
-        return $this->belongsTo(Provider::class,'foreign_key', 'provider_id');
+        return $this->belongsTo(Consultant::class,'foreign_key', 'provider_id');
     }
+
+  
 }

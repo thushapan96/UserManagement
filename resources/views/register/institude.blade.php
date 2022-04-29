@@ -21,8 +21,7 @@
                         <div class="form-group">
                             <label>Name of the {{request()->query('service')}} *
                             </label>
-                            <input class="form-control" type="text" name="name" id="name" value="" onkeyup='sessionStorage.setItem("name",this.value)' />
-
+                            <input class="form-control" type="text" name="name" id="name" value="{{old('name')}}" />
                             <input class="form-control " type="text" name="type" value="{{request()->query('service')}}" hidden>
                         </div>
                     </div>
@@ -30,9 +29,9 @@
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="form-group">
                             <label>{{request()->query('service')}} Registration Number *
-
                             </label>
-                            <input class="form-control " type="text" id="registration_number" name="registration_number" value="{{ old('registration_number')}}" onkeyup='sessionStorage.setItem("registration_number",this.value)'>
+                            <input class="form-control " type="text" id="registration_number" name="registration_number" value="{{old('registration_number')}}">
+
                         </div>
                     </div>
 
@@ -41,7 +40,7 @@
                             <label>{{request()->query('service')}} Registrar Office area*
 
                             </label>
-                            <input class="form-control " type="text" name="registrar_office_area" value="{{ old('registrar_office_area')}}" onkeyup='sessionStorage.setItem("registrar_office_area",this.value)'>
+                            <input class="form-control " type="text" name="registrar_office_area" value="{{old('registrar_office_area')}}">
                         </div>
                     </div>
 
@@ -55,7 +54,7 @@
                         <div class="form-group">
                             <label>Country *
                             </label>
-                            <input class="form-control " type="text" name="country" value="{{ old('country')}}" onkeyup='sessionStorage.setItem("country",this.value)'>
+                            <input class="form-control " type="text" name="country" value="{{old('country')}}">
                         </div>
                     </div>
 
@@ -63,7 +62,7 @@
                         <div class="form-group">
                             <label>Province/Region *
                             </label>
-                            <input class="form-control " type="text" name="region" value="{{ old('region')}}" onkeyup='sessionStorage.setItem("region",this.value)'>
+                            <input class="form-control " type="text" name="region" value="{{old('region')}}">
                         </div>
                     </div>
 
@@ -71,7 +70,7 @@
                         <div class="form-group">
                             <label>City *
                             </label>
-                            <input class="form-control " type="text" name="city" value="{{ old('city')}}" onkeyup='sessionStorage.setItem("city",this.value)'>
+                            <input class="form-control " type="text" name="city" value="{{old('city')}}">
                         </div>
                     </div>
 
@@ -79,7 +78,7 @@
                         <div class="form-group">
                             <label>Street *
                             </label>
-                            <input class="form-control " type="text" name="streat" value="{{ old('streat')}}" onkeyup='sessionStorage.setItem("streat",this.value)'>
+                            <input class="form-control " type="text" name="streat" value="{{old('streat')}}">
                         </div>
                     </div>
 
@@ -94,7 +93,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="postal_code" value="{{ old('postal_code')}}" onkeyup='sessionStorage.setItem("postal_code",this.value)'>
+                            <input class="form-control " type="text" name="postal_code" value="{{old('postal_code')}}">
                         </div>
                     </div>
 
@@ -102,7 +101,7 @@
                         <div class="form-group">
                             <label>Email address for correspondence *
                             </label>
-                            <input class="form-control" type="text" name="email" value="{{ old('email')}}" onkeyup='sessionStorage.setItem("email",this.value)'>
+                            <input class="form-control" type="text" name="email" value="{{old('email')}}">
                         </div>
                     </div>
 
@@ -112,7 +111,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="website_address" value="{{ old('website_address')}}" onkeyup='sessionStorage.setItem("website_address",this.value)'>
+                            <input class="form-control " type="text" name="website_address" value="{{old('website_address')}}">
                         </div>
                     </div>
 
@@ -122,7 +121,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="phone" value="{{ old('phone')}}" onkeyup='sessionStorage.setItem("phone",this.value)'>
+                            <input class="form-control " type="text" name="phone" value="{{old('phone')}}">
                         </div>
                     </div>
 
@@ -139,7 +138,7 @@
                             <label>Admission Cell - Contact Person *
 
                             </label>
-                            <input class="form-control " type="text" name="admission_phone" value="{{ old('admission_phone')}}" onkeyup='sessionStorage.setItem("admission_phone",this.value)'>
+                            <input class="form-control " type="text" name="admission_phone" value="{{old('admission_phone')}}">
                         </div>
                     </div>
 
@@ -148,7 +147,7 @@
                             <label>Email address of Admission Cell *
 
                             </label>
-                            <input class="form-control " type="text" name="admission_email" value="{{ old('admission_email')}}" onkeyup='sessionStorage.setItem("admission_email",this.value)'>
+                            <input class="form-control " type="text" name="admission_email" value="{{old('admission_email')}}">
                         </div>
                     </div>
 
@@ -158,7 +157,7 @@
 
                             </label>
 
-                            <input class="form-control " type="text" name="dean_name" value="{{ old('dean_name')}}" onkeyup='sessionStorage.setItem("dean_name",this.value)'>
+                            <input class="form-control " type="text" name="dean_name" value="{{old('dean_name')}}">
                         </div>
                     </div>
 
@@ -171,7 +170,7 @@
                             <label>Dean Email ID *
                             </label>
 
-                            <input class="form-control " type="text" name="dean_email" value="{{ old('dean_email')}}" onkeyup='sessionStorage.setItem("dean_email",this.value)'>
+                            <input class="form-control " type="text" name="dean_email" value="{{old('dean_email')}}">
                         </div>
                     </div>
 
@@ -179,7 +178,7 @@
                         <div class="form-group">
                             <label>Dean Contact Number *
                             </label>
-                            <input class="form-control " type="text" name="dean_phone" value="{{ old('dean_phone')}}" onkeyup='sessionStorage.setItem("dean_phone",this.value)'>
+                            <input class="form-control " type="text" name="dean_phone" value="{{old('dean_phone')}}">
                         </div>
                     </div>
                 </div>
@@ -193,19 +192,19 @@
                             <br>
 
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox1" name="course_type[]" value="In Campus" {{ old('course_type[]') == "In Campus" ? 'selected' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox1" name="course_type[]" value="In Campus" {{ (is_array(old('course_type')) and in_array("In Campus", old('course_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox1"> In Campus</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox2" name="course_type[]" value="Online" {{ old('course_type[]') == 'Online' ? 'selected' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox2" name="course_type[]" value="Online" {{ (is_array(old('course_type')) and in_array("Online", old('course_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox2"> Online</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox3" name="course_type[]" value="Distant" {{ old('course_type[]') == 'Distant' ? 'selected' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox3" name="course_type[]" value="Distant" {{ (is_array(old('course_type')) and in_array("Distant", old('course_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox3"> Distant</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox4" name="course_type[]" value="Others" {{ old('course_type[]') == 'Others' ? 'selected' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox4" name="course_type[]" value="Others" {{ (is_array(old('course_type')) and in_array("Others", old('course_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox4"> Others</label>
                             </div>
                         </div>
@@ -217,19 +216,19 @@
                             </label>
                             <br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox5" name="intake[]" value="January" {{ old('intake[]') == 'January' ? 'selected' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox5" name="intake[]" value="January" {{ (is_array(old('intake')) and in_array("January", old('intake'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox5"> January</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox6" name="intake[]" value="May" {{ old('intake[]') == 'May' ? 'selected' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox6" name="intake[]" value="May" {{ (is_array(old('intake')) and in_array("May", old('intake'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox6">May</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox7" name="intake[]" value="September" {{ old('intake[]') == 'September' ? 'selected' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox7" name="intake[]" value="September" {{ (is_array(old('intake')) and in_array("September", old('intake'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox7">September</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox8" name="intake[]" value="Others" {{ old('intake[]') == 'Others' ? 'selected' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox8" name="intake[]" value="Others" {{ (is_array(old('intake')) and in_array("Others", old('intake'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox8">Others</label>
                             </div>
                         </div>
@@ -241,7 +240,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="admission_type">
+                            <input class="form-control " type="text" name="admission_type" value="{{old('admission_type')}}">
                         </div>
                     </div>
 
@@ -251,7 +250,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="college_ranking">
+                            <input class="form-control " type="text" name="college_ranking" value="{{old('college_ranking')}}">
                         </div>
                     </div>
 
@@ -263,7 +262,7 @@
                         <div class="form-group">
                             <label>Ranking Criteria & Ranking Bodies
                             </label>
-                            <textarea style="width:100%;" rows="5" name="ranking_criteria"></textarea>
+                            <textarea style="width:100%;" rows="5" name="ranking_criteria" vaue="{{old('ranking_criteria')}}"></textarea>
                         </div>
                     </div>
                 </div>
@@ -274,7 +273,7 @@
                         <div class="form-group">
                             <label>Year of Establishment
                             </label>
-                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year">
+                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{old('establishment_year')}}">
                             <small>Year of Registration</small>
                         </div>
                     </div>
@@ -282,7 +281,7 @@
                         <div class="form-group">
                             <label>Offering Services Since
                             </label>
-                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year">
+                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{old('offering_year')}}">
                             <small>Number of Years</small>
                         </div>
                     </div>
@@ -290,7 +289,7 @@
                         <div class="form-group">
                             <label>Response Time
                             </label>
-                            <input class="form-control " type="text" placeholder="24 or 48 or 72 Hours" name="response_time">
+                            <input class="form-control " type="text" placeholder="24 or 48 or 72 Hours" name="response_time" value="{{old('response_time')}}">
                             <small>Number of Cases Enrolled till Date</small>
                         </div>
                     </div>
@@ -300,19 +299,19 @@
                             </label>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-checkbox ">
-                                    <input type="checkbox" class="custom-control-input" id="checkbox9" name="communication_mode[]" value="{{ old('communication_mode[]') == 'email' ? 'checked' : '' }}">
+                                    <input type="checkbox" class="custom-control-input" id="checkbox9" name="communication_mode[]" value="email" {{ (is_array(old('communication_mode')) and in_array("email", old('communication_mode'))) ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="checkbox9">email</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-checkbox ">
-                                    <input type="checkbox" class="custom-control-input " id="checkbox10" name="communication_mode[]" value="{{ old('communication_mode[]') == 'phone' ? 'checked' : '' }}">
+                                    <input type="checkbox" class="custom-control-input " id="checkbox10" name="communication_mode[]" value="phone" {{ (is_array(old('communication_mode')) and in_array("phone", old('communication_mode'))) ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="checkbox10">phone</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-checkbox ">
-                                    <input type="checkbox" class="custom-control-input " id="checkbox11" name="communication_mode[]" value="{{ old('communication_mode[]') == 'Messaging' ? 'checked' : '' }}">
+                                    <input type="checkbox" class="custom-control-input " id="checkbox11" name="communication_mode[]" value="Messaging" {{ (is_array(old('communication_mode')) and in_array("Messaging", old('communication_mode'))) ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="checkbox11">Messaging</label>
                                 </div>
                             </div>
@@ -328,7 +327,7 @@
                         <div class="form-group">
                             <label>Courses Offered
                             </label>
-                            <input class="form-control " type="text" name="offer_course[]" value="{{ old('offer_course')}}">
+                            <input class="form-control " type="text" id="offer_course" name="offer_course[]" value="" onkeyup='sessionStorage.setItem("offer_course",this.value)'>
 
                         </div>
                         <div id="newRow"></div>
@@ -343,7 +342,7 @@
                         <div class="form-group">
                             <label>Total Number of Students Enrolled
                             </label>
-                            <input class="form-control " type="text" name="no_student">
+                            <input class="form-control " type="text" name="no_student" value="{{old('no_student')}}">
 
                         </div>
                     </div>
@@ -351,7 +350,7 @@
                         <div class="form-group">
                             <label>Total Number of Successful Students
                             </label>
-                            <input class="form-control " type="text" name="no_success_student">
+                            <input class="form-control " type="text" name="no_success_student" value="{{old('no_success_student')}}">
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-12">
@@ -362,13 +361,13 @@
                             <br>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Financialyes" name="is_financial" value="yes" {{ old('is_financial') == 'yes' ? 'selected' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Financialyes" name="is_financial" value="yes" {{ old('is_financial') == "yes" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Financialyes">Yes</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Financialno" name="is_financial" value="no" {{ old('is_financial') == 'no' ? 'selected' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Financialno" name="is_financial" value="no" {{ old('is_financial') == "no" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Financialno">No</label>
                                 </div>
                             </div>
@@ -382,13 +381,13 @@
                             <br>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Creditsyes" name="is_credit" value="yes">
+                                    <input type="radio" class="custom-control-input " id="Creditsyes" name="is_credit" value="yes" {{ old('is_credit') == "yes" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Creditsyes">Yes</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Creditsno" name="is_credit" value="no">
+                                    <input type="radio" class="custom-control-input " id="Creditsno" name="is_credit" value="no" {{ old('is_credit') == "no" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Creditsno">No</label>
                                 </div>
                             </div>
@@ -405,19 +404,19 @@
                             </label>
                             <br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox12" name="certificate_type[]" value="Diploma">
+                                <input class="custom-control-input" type="checkbox" id="checkbox12" name="certificate_type[]" value="Diploma" {{ (is_array(old('certificate_type')) and in_array("Diploma", old('certificate_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox12"> Diploma</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox13" name="certificate_type[]" value="PG Diploma">
+                                <input class="custom-control-input" type="checkbox" id="checkbox13" name="certificate_type[]" value="PG Diploma" {{ (is_array(old('certificate_type')) and in_array("PG Diploma", old('certificate_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox13"> PG Diploma</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id=" checkbox14" name=" certificate_type[]" value="Certification">
+                                <input class="custom-control-input" type="checkbox" id=" checkbox14" name=" certificate_type[]" value="Certification" {{ (is_array(old('certificate_type')) and in_array("Certification", old('certificate_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for=" checkbox14"> Certification</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox15" name="certificate_type[]" value="Others">
+                                <input class="custom-control-input" type="checkbox" id="checkbox15" name="certificate_type[]" value="Others" {{ (is_array(old('certificate_type')) and in_array("Others", old('certificate_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox15"> Others</label>
                             </div>
                         </div>
@@ -429,19 +428,19 @@
                             </label>
                             <br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox16" name="course_duration[]" value="6 Months">
+                                <input class="custom-control-input" type="checkbox" id="checkbox16" name="course_duration[]" value="6 Months" {{ (is_array(old('6 Months')) and in_array("Diploma", old('course_duration'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox16"> 6 Months</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox17" name="course_duration[]" value="12 Months">
+                                <input class="custom-control-input" type="checkbox" id="checkbox17" name="course_duration[]" value="12 Months" {{ (is_array(old('12 Months')) and in_array("Diploma", old('course_duration'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox17">12 Months</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox18" name="course_duration[]" value="18 Months">
+                                <input class="custom-control-input" type="checkbox" id="checkbox18" name="course_duration[]" value="18 Months" {{ (is_array(old('18 Months')) and in_array("Diploma", old('course_duration'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox18">18 Months</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox19" name="course_duration[]" value="Duration">
+                                <input class="custom-control-input" type="checkbox" id="checkbox19" name="course_duration[]" value="Duration" {{ (is_array(old('Duration')) and in_array("Diploma", old('course_duration'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox19">Others</label>
                             </div>
                         </div>
@@ -453,23 +452,23 @@
                             </label>
                             <br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox20" name="other_require[]" value="GRE">
+                                <input class="custom-control-input" type="checkbox" id="checkbox20" name="other_require[]" value="GRE" {{ (is_array(old('other_require')) and in_array("GRE", old('other_require'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox20"> GRE</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox21" name="other_require[]" value="TOEFL">
+                                <input class="custom-control-input" type="checkbox" id="checkbox21" name="other_require[]" value="TOEFL" {{ (is_array(old('other_require')) and in_array("TOEFL", old('other_require'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox21">TOEFL </label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox22" name="other_require[]" value="GMAT">
+                                <input class="custom-control-input" type="checkbox" id="checkbox22" name="other_require[]" value="GMAT" {{ (is_array(old('other_require')) and in_array("GMAT", old('other_require'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox22">GMAT</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox23" name="other_require[]" value="SAT">
+                                <input class="custom-control-input" type="checkbox" id="checkbox23" name="other_require[]" value="SAT" {{ (is_array(old('other_require')) and in_array("SAT", old('other_require'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox23">SAT</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox24" name="other_require[]" value="Others">
+                                <input class="custom-control-input" type="checkbox" id="checkbox24" name="other_require[]" value="Others" {{ (is_array(old('other_require')) and in_array("Others", old('other_require'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox24">Others</label>
                             </div>
                         </div>
@@ -481,15 +480,15 @@
                             </label>
                             <br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox25" name="language_test_type[]" value="IELTS">
+                                <input class="custom-control-input" type="checkbox" id="checkbox25" name="language_test_type[]" value="IELTS" {{ (is_array(old('language_test_type')) and in_array("IELTS", old('language_test_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox25"> IELTS</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox26" name="language_test_type[]" value="PTE">
+                                <input class="custom-control-input" type="checkbox" id="checkbox26" name="language_test_type[]" value="PTE" {{ (is_array(old('language_test_type')) and in_array("PTE", old('language_test_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox26">PTE </label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox27" name="language_test_type[]" value="Others">
+                                <input class="custom-control-input" type="checkbox" id="checkbox27" name="language_test_type[]" value="Others" {{ (is_array(old('language_test_type')) and in_array("Others", old('language_test_type'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox27">Others</label>
                             </div>
                         </div>
@@ -506,14 +505,14 @@
                             </label>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Scholarshipsyes" name="is_scholarship_offer" value="yes" {{ old('is_scholarship_offer') == 'yes' ? 'selected' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Scholarshipsyes" name="is_scholarship_offer" value="yes" {{ old('is_scholarship_offer') == "yes" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Scholarshipsyes">Yes</label>
 
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Scholarshipsno" name="is_scholarship_offer" value="no" {{ old('is_scholarship_offer') == 'no' ? 'selected' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Scholarshipsno" name="is_scholarship_offer" value="no" {{ old('is_scholarship_offer') == "no" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Scholarshipsno">No</label>
                                 </div>
                             </div>
@@ -525,13 +524,13 @@
                             </label>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Webinarsyes" name="is_conduct_webinar" value="yes" {{ old('is_conduct_webinar') == 'yes' ? 'selected' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Webinarsyes" name="is_conduct_webinar" value="yes" {{ old('is_conduct_webinar') == "yes" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Webinarsyes">Yes</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Webinarsno" name="is_conduct_webinar" value="no" {{ old('is_conduct_webinar') == 'no' ? 'selected' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Webinarsno" name="is_conduct_webinar" value="no" {{ old('is_conduct_webinar') == "no" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Webinarsno">No</label>
                                 </div>
                             </div>
@@ -541,14 +540,14 @@
                         <div class="form-group">
                             <label>Admission Criteria Website/URL Link
                             </label>
-                            <input class="form-control " type="text" name="admission_criteria_website">
+                            <input class="form-control " type="text" name="admission_criteria_website" value="{{old('admission_criteria_website')}}">
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-12">
                         <div class="form-group">
                             <label>Fee Structure Website/URL Link
                             </label>
-                            <input class="form-control " type="text" min="1" name="fee_structure_website">
+                            <input class="form-control " type="text" min="1" name="fee_structure_website" value="{{old('fee_structure_website')}}">
                         </div>
                     </div>
 
@@ -560,7 +559,7 @@
                         <div class="form-group">
                             <label>Is ECA (Education Certificate Assessment) required? If "YES" specify name of the Organization
                             </label>
-                            <input class="form-control " type="text" name="eca">
+                            <input class="form-control " type="text" name="eca" value="{{old('eca')}}">
                         </div>
                     </div>
                 </div>
@@ -570,7 +569,7 @@
                         <div class="form-group">
                             <label>{{request()->query('service')}} Introductory Video URL Link display on Canada Inspire Portal
                             </label>
-                            <input class="form-control " type="text" name="vedio_url">
+                            <input class="form-control " type="text" name="vedio_url" value="{{old('vedio_url')}}">
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-12">
@@ -579,13 +578,13 @@
                             </label>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Policies" name="is_privacy_policy" value="yes" {{ old('is_privacy_policy') == 'yes' ? 'selected' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Policies" name="is_privacy_policy" value="yes" {{ old('is_privacy_policy') == "yes" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Policies">Yes</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Policiesno" name="is_privacy_policy" value="no" {{ old('is_privacy_policy') == 'no' ? 'selected' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Policiesno" name="is_privacy_policy" value="no" {{ old('is_privacy_policy') == "no" ? "checked":"" }}>
                                     <label class="custom-control-label mt-1" for="Policiesno">No</label>
                                 </div>
                             </div>
@@ -596,7 +595,7 @@
                             <label>If Yes, Enclose the Document
                             </label>
                             <br><br>
-                            <input class="form-control " type="file" name="privacy_policy_document">
+                            <input class="form-control " type="file" id="privacy_policy_document" name="privacy_policy_document" value="{{old('privacy_policy_document')}}" onchange='console.log("privacy_policy_document",this.value)'>
                         </div>
                     </div>
 
@@ -609,7 +608,7 @@
                             </label>
                             <br>
                             <br>
-                            <textarea style="width:100%;" rows="6" name="privacy_policy_detail"></textarea>
+                            <textarea style="width:100%;" rows="6" name="privacy_policy_detail" value="{{old('privacy_policy_detail')}}"></textarea>
                         </div>
                     </div>
                 </div>
@@ -622,7 +621,7 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="brief_introduction"></textarea>
+                            <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{old('brief_introduction')}}"></textarea>
                         </div>
                     </div>
                 </div>
@@ -634,7 +633,7 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="history"></textarea>
+                            <textarea style="width:100%;" rows="9" name="history" value="{{old('history')}}"></textarea>
                         </div>
                     </div>
                 </div>
@@ -646,7 +645,7 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="achievement"></textarea>
+                            <textarea style="width:100%;" rows="9" name="achievement" value="{{old('achievement')}}"></textarea>
                         </div>
                     </div>
                 </div>
@@ -659,7 +658,7 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="Award"></textarea>
+                            <textarea style="width:100%;" rows="9" name="Award" value="{{old('Award')}}"></textarea>
                         </div>
                     </div>
                 </div>
@@ -671,34 +670,23 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="Comment"></textarea>
+                            <textarea style="width:100%;" rows="9" name="Comment" value="{{old('name')}}"></textarea>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <!-- <div class="row custom-box">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                        <label>Canada Inspire provides Additional Services :-
-                        </label>
-                        <br>
+              
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Canada Inspire provides Additional Services :-
+                            </label>
+                            <br>
 
-                        <textarea style="width:100%;" rows="9"></textarea>
+                            <textarea style="width:100%;" rows="9" id=""></textarea>
+                        </div>
                     </div>
                 </div>
-            </div> -->
-                <!-- <hr>
-            <div class="row custom-box">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group">
-                        <label>Instructions for the Form Designer/Developer
-                        </label>
-                        <br>
-
-                        <textarea style="width:100%;" rows="9"></textarea>
-                    </div>
-                </div>
-            </div> -->
                 <hr>
 
                 <div class="row mb-1">
@@ -715,7 +703,7 @@
                                     <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
                                         <div class="form-group">
                                             <label> </label>
-                                            <input class="form-control " type="text" placeholder="Facebook link " name="fb_link">
+                                            <input class="form-control " type="text" placeholder="Facebook link " name="fb_link" value="{{old('fb_link')}}">
                                         </div>
                                     </div>
                                 </a>
@@ -725,7 +713,7 @@
                                     <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
                                         <div class="form-group">
                                             <label> </label>
-                                            <input class="form-control " type="text" placeholder="Twitter link " name="twitter_link">
+                                            <input class="form-control " type="text" placeholder="Twitter link " name="twitter_link" value="{{old('twitter_link')}}">
                                         </div>
                                     </div>
                                 </a>
@@ -734,7 +722,7 @@
                                     <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
                                         <div class="form-group">
                                             <label> </label>
-                                            <input class="form-control " type="text" placeholder="Instagram link " name="insta_link">
+                                            <input class="form-control " type="text" placeholder="Instagram link " name="insta_link" value="{{old('insta_link')}}">
                                         </div>
                                     </div>
                                 </a>
@@ -744,7 +732,7 @@
                                     <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
                                         <div class="form-group">
                                             <label> </label>
-                                            <input class="form-control " type="text" placeholder="Linkedin Profile " name="Linkedin_link">
+                                            <input class="form-control " type="text" placeholder="Linkedin Profile " name="Linkedin_link" value="{{old('Linkedin_link')}}">
                                         </div>
                                     </div>
                                 </a>
@@ -754,7 +742,7 @@
                                     <div class="col-lg-11 col-md-11 col-11 d-none " id="youtube">
                                         <div class="form-group">
                                             <label> </label>
-                                            <input class="form-control " type="text" placeholder="youtube link " name="youtube_link">
+                                            <input class="form-control " type="text" placeholder="youtube link " name="youtube_link" value="{{old('youtube_link')}}">
                                         </div>
                                     </div>
                                 </a>
@@ -764,7 +752,7 @@
                                     <div class="col-lg-11 col-md-11 col-11 d-none " id="google">
                                         <div class="form-group">
                                             <label> </label>
-                                            <input class="form-control " type="text" placeholder="google review link " name="google_review_link">
+                                            <input class="form-control " type="text" placeholder="google review link " name="google_review_link" value="{{old('google_review_link')}}">
                                         </div>
                                     </div>
                                 </a>
@@ -792,9 +780,19 @@
     </div>
     <script>
         $(document).ready(function() {
-
-            
-
+            if (sessionStorage.getItem("offer_course")) {
+                $('#offer_course').val(sessionStorage.getItem("offer_course"))
+            }
+            if (sessionStorage.getItem("appendhtml")) {
+                $('#newRow').html(sessionStorage.getItem("appendhtml"))
+            }
+            // if (sessionStorage.getItem("privacy_policy_document")) {
+            //     console.log('irukuuu')
+            //     $('#privacy_policy_document').attr("value","pre slide.txt")
+            // }else{
+            //     console.log('illa')
+            // }
+       
             $('[name="same_Correspondence_address"]').change(function() {
                 if ($(this).is(':checked')) {
                     // Do something...
@@ -836,18 +834,25 @@
                 $('#newRow').append(html);
                 sessionStorage.setItem("appendhtml", $('#newRow').html());
 
-               
-
-            });
-
-            $(".addinput").keyup(function() {
+                $(".addinput").keyup(function() {
                     console.log("val" + $(this).val())
                     $(this).attr("value", $(this).val());
                     console.log("attrr" + $(this).attr('value'));
                     sessionStorage.setItem("appendhtml", $('#newRow').html());
                     console.log(sessionStorage.getItem("appendhtml"))
                 });
-                
+
+
+            });
+
+            $(".addinput").keyup(function() {
+                console.log("val" + $(this).val())
+                $(this).attr("value", $(this).val());
+                console.log("attrr" + $(this).attr('value'));
+                sessionStorage.setItem("appendhtml", $('#newRow').html());
+                console.log(sessionStorage.getItem("appendhtml"))
+            });
+
             // remove row
             $(document).on('click', '#removeRow', function() {
                 $(this).closest('#inputFormRow').remove();
