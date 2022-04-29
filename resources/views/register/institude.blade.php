@@ -842,7 +842,6 @@
                     console.log(sessionStorage.getItem("appendhtml"))
                 });
 
-
             });
 
             $(".addinput").keyup(function() {

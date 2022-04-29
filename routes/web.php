@@ -37,9 +37,7 @@ Route::get('/register/candidate/acadamic', function () {
 
 Route::get('register', 'UserController@register')->name('register');
 
-Route::get('register/institude', function () {
- return view('register.institude');
-})->name('register.institude');
+
 
 Route::get('/register/institude', [App\Http\Controllers\InstitutionController::class, 'index'])->name('register.institude');
 Route::post('/register/institude', [App\Http\Controllers\InstitutionController::class, 'store'])->name('add.institution');

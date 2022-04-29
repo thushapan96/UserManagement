@@ -9,11 +9,14 @@ class Team extends Model
 {
     use HasFactory;
     protected $table = 'teams';
+    protected $primaryKey = 'id';
 
     public function consultants()
     {
-        return $this->belongsTo(Consultant::class,'foreign_key', 'provider_id');
+        return $this->belongsTo(Consultant::class,'id','provider_id');
     }
+    protected $fillable = [
+     "provider_id","member","Designation","expertise_area","experience_year","no_success"
+    ];
 
-  
 }
