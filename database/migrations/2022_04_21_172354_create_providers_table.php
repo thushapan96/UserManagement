@@ -21,6 +21,8 @@ class CreateProvidersTable extends Migration
             $table->string('registration_number')->unique();
             $table->string('registrar_office_area');
             $table->string('status');
+            $table->string('company_name');
+            $table->json('language_known');
 
             $table->string('country');
             $table->string('region');
@@ -31,13 +33,13 @@ class CreateProvidersTable extends Migration
             $table->string('website_address');
             $table->string('phone');
 
-            $table->string('specialization');
+            $table->json('specialization');
             $table->string('express_entry_success')->nullable();
             $table->string('pnp_success')->nullable();
             $table->string('lmia_success')->nullable();
             $table->string('other_success')->nullable();
-            $table->string('offering_service');
-            $table->string('other_service')->nullable();
+            $table->json('offering_service');
+            $table->json('other_service')->nullable();
             $table->string('student_visa_success')->nullable();
             $table->string('tourist_visa_success')->nullable();
             $table->string('family_visa_success')->nullable();
@@ -45,13 +47,15 @@ class CreateProvidersTable extends Migration
 
             $table->string('establishment_year');
             $table->string('offering_year');
-            $table->string('response_time');
+            $table->string('total_cases_taken');
+            $table->string('communication_mode_success');
             $table->string('communication_mode');
             //$table->string('offer_course');
             
             $table->string('initial_chargeable_type')->nullable();
             $table->text('initial_chargeable_comment')->nullable();
             $table->string('vedio_url')->nullable();
+            $table->string('is_Policies')->nullable();
             $table->string('privacy_policy_document')->nullable();
             $table->text('privacy_policy_detail')->nullable();
             $table->text('team_info')->nullable();

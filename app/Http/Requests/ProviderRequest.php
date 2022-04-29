@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class InstitutionRequest extends FormRequest
+class ProviderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class InstitutionRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,16 +24,7 @@ class InstitutionRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'registration_number' => 'required'
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'name.required' => 'name field is required',
-            'registration_number.required' => 'Please enter field',
+            //
         ];
     }
 }

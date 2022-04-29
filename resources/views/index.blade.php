@@ -160,4 +160,10 @@ If the school admits you as a student, they will send you an acceptance letter. 
  </div>
 </section>
 
+<script>
+  $(document).ready(function() {
+    sessionStorage.clear();
+  });
+  </script>
+
 @endsection

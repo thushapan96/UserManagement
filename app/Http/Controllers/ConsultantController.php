@@ -3,18 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Institution;
-use App\Http\Requests\InstitutionRequest;
-use App\Http\Controllers\Controller;
+use App\Models\Provider;
 
-
-
-
-class InstitutionController extends Controller
+class ConsultantController extends Controller
 {
     public function index()
     {
-        return view('register.institude');
+        return view('register.consultant');
     }
 
     /**
@@ -23,7 +18,7 @@ class InstitutionController extends Controller
      * @param  \Illuminate\Http\InstitutionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(InstitutionRequest $request)
+    public function store(Request $request)
     {
 
         if ($request->privacy_policy_document) {
@@ -36,7 +31,7 @@ class InstitutionController extends Controller
             $request->privacy_policy_document =  $name;
         }
 
-        Institution::create($request->all());
+        Provider::create($request->all());
 
         return redirect('/');
     }

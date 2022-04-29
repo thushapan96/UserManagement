@@ -1,0 +1,6 @@
+,Plant Name,Nutrition Deficiency,Temperature,Soil type,Fertilizers
+0,Tomato,Lack of nitrogen (N)	,22-26,Sandy soil,Alfalfa meal
+1,Tomato,Lack of nitrogen (N)	,26-30,Sandy soil,                            Bloodmeal  
+2,Tomato,Lack of nitrogen (N)	,30-32,Sandy soil,Bonemeal
+3,Tomato,Lack of nitrogen (N)	,32-24,Sandy soil,Cottonseed meal
+4,Tomato,Lack of nitrogen (N)	,34-36,Slit soil,Epsom slats
