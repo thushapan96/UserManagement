@@ -16,7 +16,6 @@
     <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/countrySelect.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/loadingio/ldbutton@v1.0.1/dist/ldbtn.min.css" />
 
 
 

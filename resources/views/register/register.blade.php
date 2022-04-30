@@ -436,13 +436,9 @@
 
                             <div class="col-lg-12 col-md-12 col-12">
                                 <a href="{{route('candidate_personal_add')}}"> <button type="submit"
-                                        class="client-btn ld-ext-right">Submit
+                                        class="client-btn">Submit
                                         And
                                         Next</button> </a>
-                            </div>
-                            <div class="btn btn-primary ld-ext-right" onclick="this.classList.toggle('running')">
-                                Clike Me
-                                <div class="ld ld-ring ld-spin"></div>
                             </div>
                         </div>
                     </div>
@@ -598,30 +594,28 @@
 
         $("#personal_form").submit(function(e) {
 
-            e.preventDefault(); // avoid to execute the actual submit of the form.
+e.preventDefault(); // avoid to execute the actual submit of the form.
 
-            var form = $(this);
-            var actionUrl = form.attr('action');
+var form = $(this);
+var actionUrl = form.attr('action');
 
-            $.ajax({
-                type: "POST",
-                url: actionUrl,
-                data: form.serialize(), // serializes the form's elements.
-                beforeSend: function() {
+$.ajax({
+    type: "POST",
+    url: actionUrl,
+    data: form.serialize(), // serializes the form's elements.
+    
+    success: function(data)
+    {
 
-                }
+        $('.tab-pane').fadeOut();
+            $("#menu1").fadeIn();
+            $(".nav-link").removeClass('active')
+            $('#amenu1').addClass('active')
 
-                success: function(data) {
+    }
+});
 
-                    $('.tab-pane').fadeOut();
-                    $("#menu1").fadeIn();
-                    $(".nav-link").removeClass('active')
-                    $('#amenu1').addClass('active')
-
-                }
-            });
-
-        });
+});
 
     });
     </script>
