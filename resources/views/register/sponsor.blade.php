@@ -33,7 +33,7 @@
 
     </div>
 
-  
+
 
     <div class="row mt-4 custom-box">
         <div class="col-lg-4 col-md-4 col-12">
@@ -76,7 +76,7 @@
 
     </div>
 
- 
+
     <div class="row mt-4 custom-box">
 
         <div class="col-lg-4 col-md-4 col-12">
@@ -105,7 +105,35 @@
         </div>
 
     </div>
-   
+
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Region Or State">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Pin Code">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
+
+                <input class="form-control l-icon" type="text" placeholder="Choose Country" name="Choose Country" id="pac-input2" value="" required>
+
+            </div>
+        </div>
+
+    </div>
+
     <div class="row mt-4 custom-box">
         <div class="col-lg-6 col-md-6 col-12">
             <div class="form-group">
