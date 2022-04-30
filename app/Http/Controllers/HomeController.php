@@ -28,11 +28,23 @@ class HomeController extends Controller
 
         }
         else{
+
+            $service = Auth::user()->service ;
+
+            if(Auth::user()->service_type == 'Institution'){
+                return redirect(route('register.institude',['service'=>$service]));
+
+            }
+            elseif(Auth::user()->service_type == 'Consultation'){
+                return redirect(route('register.consultant',['service'=>$service]));
+
+            }
+            elseif(Auth::user()->service_type == 'Business'){
+                return redirect(route('register.business',['service'=>$service]));
+
+            }
+
             
-            dd(
-                Auth::user()->service 
-            );
-            return redirect(route('candidate_personal'));
 
         }
     }
