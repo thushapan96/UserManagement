@@ -16,42 +16,13 @@ class CandidateAcademicsTable extends Migration
         Schema::create('candidate_academics', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
 
-            $table->string('first_name');
-            $table->string('middle_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('residential_streat')->nullable();
-            $table->string('residential_streat2')->nullable();
-            $table->string('residential_city')->nullable();
-            $table->string('residential_region')->nullable();
-            $table->string('residential_pincode')->nullable();
-            $table->string('residential_country')->nullable();
-
-            $table->string('corosponding_streat')->nullable();
-            $table->string('corosponding_streat2')->nullable();
-            $table->string('corosponding_city')->nullable();
-            $table->string('corosponding_region')->nullable();
-            $table->string('corosponding_pincode')->nullable();
-            $table->string('corosponding_country')->nullable();
-
-
-            $table->string('mobile')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email')->nullable();
-            $table->string('birth_date')->nullable();
-            $table->string('gender')->nullable();
-
-            $table->string('is_already_apply')->nullable();
-            $table->string('possible_start_date')->nullable();
-            $table->string('immigration_purpose')->nullable();
-            $table->string('immigration_preference')->nullable();
-            $table->string('is_vaccinate')->nullable();
-
-            $table->string('fb_link')->nullable();
-            $table->string('youtube_link')->nullable();
-            $table->string('twitter_link')->nullable();
-            $table->string('insta_link')->nullable();
-            $table->string('Linkedin_link')->nullable();
-            $table->string('google_review_link')->nullable();
+            $table->string('language_proficiency');
+            $table->string('language_level')->nullable();
+            $table->string('language_certified_by')->nullable();
+            $table->string('language_attachment')->nullable();
+            $table->string('applicant_test_name')->nullable();
+            $table->string('test_valid_upto')->nullable();
+            $table->string('test_attachment')->nullable();
 
             $table->timestamps();
         });

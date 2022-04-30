@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CandidatePersonalTable extends Migration
+class CandidatePersonalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,9 @@ class CandidatePersonalTable extends Migration
     {
         Schema::create('candidate_personals', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();  
-                    
-            $table->string('first_name');
-            $table->string('middle_name')->nullable();
+
+            $table->string('language_proficiency');
+            $table->string('level')->nullable();
             $table->string('last_name')->nullable();
             $table->string('residential_streat')->nullable();
             $table->string('residential_streat2')->nullable();
