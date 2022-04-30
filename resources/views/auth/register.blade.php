@@ -52,7 +52,13 @@
                                 placeholder="Country of Citizenship"></div>
                     </div>
                     @endif
+                    @if(request()->query('role') == "candidate")
+                    <input class="form-control" name="role" value="candidate" hidden type="text">
+                    @endif
+                    @if(request()->query('role') == "Service Provider")
+                    <input class="form-control" name="role" value="provider" hidden type="text">
 
+                    @endif
 
                     @if(request()->query('role') == "Service Provider")
 
@@ -217,21 +223,21 @@
                     <div class="col-lg-2 col-md-2 col-2">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck" name="services[]"
-                                value="service_multi_study">
+                                value="study">
                             <label class="custom-control-label" for="customCheck">Study </label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                name="services[]" value="service_multi_migration">
+                                name="service[]" value="migration">
                             <label class="custom-control-label" for="customCheck1">Migration </label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-checkbox ">
                             <input type="checkbox" class="custom-control-input " id="customCheck2"
-                                name="services[]" value="service_multi_work">
+                                name="service[]" value="work">
                             <label class="custom-control-label" for="customCheck2">Work</label>
                         </div>
                     </div>
@@ -239,21 +245,21 @@
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-checkbox ">
                             <input type="checkbox" class="custom-control-input " id="customCheck3"
-                                name="services[]" value="service_multi_business">
+                                name="service[]" value="business">
                             <label class="custom-control-label" for="customCheck3">Business</label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-checkbox ">
                             <input type="checkbox" class="custom-control-input " id="customCheck4"
-                                name="services[]" value="service_multi_visa">
+                                name="service[]" value="visa">
                             <label class="custom-control-label" for="customCheck4">Visa</label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-checkbox ">
                             <input type="checkbox" class="custom-control-input " id="customCheck5"
-                                name="services[]" value="service_multi_others">
+                                name="service[]" value="others">
                             <label class="custom-control-label" for="customCheck5">Others</label>
                         </div>
                     </div>

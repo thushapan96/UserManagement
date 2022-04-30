@@ -49,13 +49,23 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {        
-        //dd($data);
-        return Validator::make($data, [
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'country_of_citizenship'=>['required'],
-            'service_type'=>['required']
-        ]);
+        if($data['role'] == 'provider'){
+            return Validator::make($data, [
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'service_type'=>['required'],
+                'service'=>['required']
+            ]);
+        }else{
+            return Validator::make($data, [
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'country_of_citizenship'=>['required'],
+                'service_type'=>['required'],
+                'service'=>['required']
+            ]);
+        }
+       
 
     }
 
@@ -67,21 +77,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         if($data['service_type'] == 'single'){
             $service = $data['service_single'];
         }else{
-            $service = $data['services'];
+            $service = $data['service'];
         }
+        if($data['role'] == 'provider'){
+            $country_of_citizenship = "no";
+        }
+        else{
+            $country_of_citizenship = $data['country_of_citizenship'];
+        }
+
 
         return User::create([
             'country' => $data['country'],
-            'country_of_citizenship' => $data['country_of_citizenship'],
+            'country_of_citizenship' => $country_of_citizenship,
             'email' => $data['email'],
             'service_type' => $data['service_type'],
+            'role' => $data['role'],
             'service' => $service,
             'password' => Hash::make($data['password']),
         ]);
-
-        dd($data);
+        return redirect(route('candidate_workexperience'));
     }
 }
