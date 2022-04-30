@@ -4,6 +4,8 @@
 <h1>Candidate Registation - Academic</h1>
 
 <div class="whiteBox clearfix">
+    <form id="academy_form" action="{{route('candidate_academy_add')}}" method="POST">
+        @csrf
     <!--div class="news-title">You have questions, let's have a conversation </div-->
     <div class="row mt-4 custom-box">
 
@@ -12,7 +14,7 @@
                 <label>Language Proficiency
 
                 </label>
-                <select class="form-control">
+                <select name="language_proficiency" class="form-control">
                     <option>English</option>
                     <option>Tamil</option>
                 </select>
@@ -24,7 +26,7 @@
                 <label>Level
 
                 </label>
-                <select class="form-control">
+                <select name="language_level" class="form-control">
                     <option>Beginner</option>
                     <option>Intermediate</option>
                     <option>Competent</option>
@@ -42,7 +44,7 @@
                 <label>
                     <p>Certified By </p>
                 </label>
-                <input type="text" class="form-control" name="image">
+                <input type="text" class="form-control" name="language_certified_by">
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-12">
@@ -50,7 +52,7 @@
                 <label>
                     <p>Attachment </p>
                 </label>
-                <input type="file" class="form-control" name="image">
+                <input type="file" class="form-control" name="language_attachment">
             </div>
         </div>
     </div>
@@ -59,7 +61,7 @@
         <div class="col-lg-3 col-md-3 col-12">
             <div class="form-group">
                 <label>Applicant Test Scores</label>
-                <select class="form-control" id="" name="applicant_test_name">
+                <select class="form-control" id="" name="applicant_test_name[]">
                     <option>Select</option>
                     <option value="IELTS">IELTS</option>
                     <option value="TOFEL">TOFEL</option>
@@ -79,75 +81,76 @@
         <div class="col-lg-3 col-md-3 col-12">
             <div class="form-group">
                 <label>If Other Applicant</label>
-                <input class="form-control " type="text" name="applicant_test_name">
+                <input class="form-control " type="text" name="applicant_test_name[]">
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-12 ">
             <div class="form-group">
                 <label> Valid Upto
                 </label>
-                <input class="form-control " type="text" placeholder="Valid Upto">
+                <input class="form-control " name="test_valid_upto" type="text" placeholder="Valid Upto">
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-12 ">
             <div class="form-group">
                 <label>Attachment
                 </label>
-                <input type="file" class="form-control" name="image">
+                <input type="file" class="form-control" name="test_attachment">
             </div>
         </div>
     </div>
 
     <hr>
+<!--     
     <div class="row mt-4 mb-4">
-        <div class="col-lg-2 col-md-2 col-12 ">
+        <div class="col-lg-3 col-md-3 col-12 ">
             <div class="form-group">
                 <label> add Score Breakup
                 </label>
                 <input class="form-control " type="text" placeholder="Score Breakup">
             </div>
         </div>
-        <div class="col-lg-12 col-md-12 col-12">
+        <div class="col-lg-9 col-md-9 col-12">
             <label>Select Paper
 
 
             </label>
-        </div>
+            <div class="row">
         <div class="col-lg-2 col-md-2 col-12 ">
             <div class="custom-control custom-radio ">
                 <input type="radio" class="custom-control-input " id="customradio6" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio6">Paper 01</label>
+                <label class="custom-control-label mt-1" for="customradio6">Paper 1</label>
             </div>
         </div>
         <div class="col-lg-2 col-md-2 col-12 ">
             <div class="custom-control custom-radio ">
                 <input type="radio" class="custom-control-input " id="customradio7" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio7">Paper 02</label>
+                <label class="custom-control-label mt-1" for="customradio7">Paper 2</label>
             </div>
         </div>
         <div class="col-lg-2 col-md-2 col-12 ">
             <div class="custom-control custom-radio ">
                 <input type="radio" class="custom-control-input " id="customradio8" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio8">Paper 03</label>
+                <label class="custom-control-label mt-1" for="customradio8">Paper 3</label>
             </div>
         </div>
         <div class="col-lg-2 col-md-2 col-12 ">
             <div class="custom-control custom-radio ">
                 <input type="radio" class="custom-control-input " id="customradio9" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio9">Paper 04</label>
+                <label class="custom-control-label mt-1" for="customradio9">Paper 4</label>
             </div>
         </div>
         <div class="col-lg-2 col-md-2 col-12 ">
             <div class="custom-control custom-radio ">
                 <input type="radio" class="custom-control-input " id="customradio10" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio10">Paper 05</label>
+                <label class="custom-control-label mt-1" for="customradio10">Paper 5</label>
             </div>
+        </div>
+        </div>
         </div>
 
     </div>
-    <hr>
-
-    <hr>
+    <hr> -->
     <div id="addschoolrow">
 
     </div>
@@ -180,8 +183,9 @@
 
 
     <div class="col-lg-12 col-md-12 col-12">
-        <a href="{{route('candidate_workexperience')}}"> <button type="submit" class="client-btn">Submit AndNext</button> </a>
+        <button type="submit" class="client-btn">Submit AndNext</button> 
     </div>
+    </form>
 
 </div>
 
@@ -270,7 +274,7 @@
 
             var html = '';
 
-            html = `<div  id="addschoolform">
+            html = `<div  id="addschoolform"> 
 <div class="col-lg-12 col-md-12 col-12 container addschool mt-4" >
                 <div class="whiteBox clearfix">
                     <div class="row custom-box">
@@ -278,19 +282,22 @@
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
                                 <label>School Name</label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="name[]" type="text" >
+                                <input class="form-control " hidden name="type[]" value="school" type="text" >
+                                <input class="form-control " hidden name="tech[]" value="NA" type="text" >
+
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>School Address </label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control name="address[]" " type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Year Completed </label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="year_completed[]" type="text" >
                             </div>
                         </div>
 
@@ -302,7 +309,7 @@
                                 <label>Applicable ECA Validity
 
                                 </label>
-                                <select class="form-control">
+                                <select name="eca[]" class="form-control">
                                     <option>Select Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
@@ -314,7 +321,7 @@
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Country</label>
-                                <input class="form-control " type="text" >
+                                <input name="country[]" class="form-control " type="text" >
                             </div>
                         </div>
 
@@ -324,7 +331,7 @@
                                 <label>
                                     <p>Other Attachment </p>
                                 </label>
-                                <input type="file"  class="form-control" name="" >
+                                <input type="file"   class="form-control" name="attachment[]" >
                             </div>
                         </div>
 
@@ -358,19 +365,21 @@
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
                                 <label>College Name</label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="name[]" type="text" >
+                                <input class="form-control " hidden name="type[]" value="college" type="text" >
+                                <input class="form-control " hidden name="tech[]" value="NA" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>College Address </label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="address[]" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>PG/PHD Year Completed </label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="year_completed[]" type="text" >
                             </div>
                         </div>
 
@@ -382,7 +391,7 @@
                                 <label>Applicable ECA Validity
 
                                 </label>
-                                <select class="form-control">
+                                <select name="eca[]" class="form-control">
                                     <option>Select Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
@@ -394,7 +403,7 @@
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Country</label>
-                                <input class="form-control " type="text" >
+                                <input name="country[]" class="form-control " type="text" >
                             </div>
                         </div>
 
@@ -404,7 +413,7 @@
                                 <label>
                                     <p>Other Attachment </p>
                                 </label>
-                                <input type="file"  class="form-control" name="" >
+                                <input type="file"  class="form-control" name="attachment[]" >
                             </div>
                         </div>
 
@@ -436,19 +445,21 @@
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
                                 <label>PG Name</label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="name[]" type="text" >
+                                <input class="form-control " hidden name="type[]" value="PG" type="text" >
+                                <input class="form-control " hidden name="tech[]" value="NA" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>PG Address </label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="address[]" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Year Completed </label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="year_completed[]" type="text" >
                             </div>
                         </div>
 
@@ -459,7 +470,7 @@
                                 <label>Applicable ECA Validity
 
                                 </label>
-                                <select class="form-control">
+                                <select name="eca[]" class="form-control">
                                     <option>Select Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
@@ -471,7 +482,7 @@
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Country</label>
-                                <input class="form-control " type="text" >
+                                <input name="country[]" class="form-control " type="text" >
                             </div>
                         </div>
 
@@ -481,7 +492,7 @@
                                 <label>
                                     <p>Other Attachment </p>
                                 </label>
-                                <input type="file"  class="form-control" name="" >
+                                <input type="file"  class="form-control" name="attachment[]" >
                             </div>
                         </div>
 
@@ -516,19 +527,20 @@
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
                                 <label>Technical Qualifications</label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="tech[]" type="text" >
+                                <input class="form-control " hidden name="type[]" value="college" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Name of Institute </label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="name[]" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Institute Address </label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="address[]" type="text" >
                             </div>
                         </div>
                        
@@ -538,7 +550,7 @@
                     <div class="col-lg-3 col-md-3 col-12 ">
                             <div class="form-group">
                                 <label>Year Completed </label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="year_completed[]" type="text" >
                             </div>
                         </div>
                     <div class="col-lg-3 col-md-3 col-12">
@@ -546,7 +558,7 @@
                                 <label>Applicable ECA Validity
 
                                 </label>
-                                <select class="form-control">
+                                <select name="eca[]" class="form-control">
                                     <option>Select Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
@@ -558,7 +570,7 @@
                         <div class="col-lg-3 col-md-3 col-12 ">
                             <div class="form-group">
                                 <label>Country</label>
-                                <input class="form-control " type="text" >
+                                <input class="form-control " name="country[]" type="text" >
                             </div>
                         </div>
 
@@ -568,7 +580,7 @@
                                 <label>
                                     <p>Other Attachment </p>
                                 </label>
-                                <input type="file"  class="form-control" name="" >
+                                <input type="file"  class="form-control" name="address[]" >
                             </div>
                         </div>
                     </div>
