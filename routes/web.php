@@ -50,6 +50,8 @@ Route::post('/register/consultant', [App\Http\Controllers\ConsultantController::
 Route::get('/register/business', [App\Http\Controllers\ConsultantController::class, 'business'])->name('register.business');
 
 
+Route::post('/candidate/personal/add', [App\Http\Controllers\CandidatePersonalController::class, 'store'])->name('candidate_personal_add');
+
 Route::get('register/candidate/workexperience', function () {
     return view('register.workexperience');
 })->name('candidate_workexperience');

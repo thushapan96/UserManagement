@@ -6,425 +6,431 @@
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix">
     <div class="container ">
-    <div class="whiteBoxtab ">
+        <div class="whiteBoxtab ">
 
-        <div class="cardf">
-            <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                <a class="nav-link active" style="cursor:pointer;padding: 1.15rem 5rem;" aria-current="page"
-                    id="amenu">personal</a>
-                <a class="nav-link " style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu1">academy</a>
-                <a class="nav-link" style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu2">work</a>
-                <a class="nav-link " style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu3">sponsor</a>
-            </nav>
-        </div></div>
-        <br>        <br>
+            <div class="cardf">
+                <nav class="nav nav-pills nav-fill justify-content-center "
+                    style="cursor:pointer;padding: .15rem 0.5rem;">
+                    <a class="nav-link active" style="cursor:pointer;padding: 1.15rem 5rem;" aria-current="page"
+                        id="amenu">personal</a>
+                    <a class="nav-link " style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu1">academy</a>
+                    <a class="nav-link" style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu2">work</a>
+                    <a class="nav-link " style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu3">sponsor</a>
+                </nav>
+            </div>
+        </div>
+        <br> <br>
 
         <div class="">
             <div id="menu" class="tab-pane  ">
                 <h1>Candidate Registation - Personal Info</h1>
+                <form action="{{route('candidate_personal_add')}}" method="POST">
+                    @csrf
+                    <div class="whiteBox clearfix">
+                        <!--div class="news-title">You have questions, let's have a conversation </div-->
+                        <div class="row custom-box">
 
-                <div class="whiteBox clearfix">
-                    <!--div class="news-title">You have questions, let's have a conversation </div-->
-                    <div class="row custom-box">
-
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input class="form-control " type="text" placeholder="First Name">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12 mt-2">
-                            <div class="form-group">
-                                <label> </label>
-                                <input class="form-control " type="text" placeholder="Middle Name">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12 mt-2">
-                            <div class="form-group">
-                                <label> </label>
-                                <input class="form-control " type="text" placeholder="Last Name">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <hr>
-
-                    <div class="row custom-box">
-
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>Present Residential Address</label>
-                                <input class="form-control " type="text" placeholder="Street Address">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12 mt-2">
-                            <div class="form-group">
-                                <label> </label>
-                                <input class="form-control " type="text" placeholder="Street Address 2">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12 mt-2">
-                            <div class="form-group">
-                                <label> </label>
-                                <input class="form-control " type="text" placeholder="City">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label></label>
-                                <input class="form-control " type="text" placeholder="Region or State">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12 ">
-                            <div class="form-group">
-                                <label> </label>
-                                <input class="form-control " type="text" placeholder="Pin Code ">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label></label>
-                                <input class="form-control l-icon" type="text" placeholder="Choose Country"
-                                    name="Choose Country" id="pac-input2" value="" required>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <hr>
-                    <div class="row custom-box">
-
-                        <div class="col-lg-3 col-md-3 col-12 m-1 ">
-                            <div class="form-group">
-                                <label>Corosponding Address</label>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-9 col-md-9 col-12">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheckaddress"
-                                    name="same_Correspondence_address" value="1">
-                                <label class="custom-control-label" for="customCheckaddress"> Check the Box if
-                                    Correspondence
-                                    Address
-                                    is same as Present Residential Address. </label>
-                            </div>
-                        </div>
-
-                        <div class="row m-1 sameaddress" id="sameaddress">
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                    <label></label>
-                                    <input class="form-control " type="text" placeholder="Street Address">
+                                    <label>Name</label>
+                                    <input name="first_name" class="form-control " type="text" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12 mt-2">
+                                <div class="form-group">
+                                    <label> </label>
+                                    <input name="middle_name" class="form-control " type="text" placeholder="Middle Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12 mt-2">
+                                <div class="form-group">
+                                    <label> </label>
+                                    <input name="last_name" class="form-control " type="text" placeholder="Last Name">
                                 </div>
                             </div>
 
+                        </div>
 
-                            <div class="col-lg-4 col-md-4 col-12 ">
+                        <hr>
+
+                        <div class="row custom-box">
+
+                            <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                    <label> </label>
-                                    <input class="form-control " type="text" placeholder="Street Address 2">
+                                    <label>Present Residential Address</label>
+                                    <input name="address_one" class="form-control " type="text" placeholder="Street Address">
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input class="form-control " type="text" placeholder="City">
+                                    <input name="address_two" class="form-control " type="text" placeholder="Street Address 2">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12 mt-2">
+                                <div class="form-group">
+                                    <label> </label>
+                                    <input name="city" class="form-control " type="text" placeholder="City">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label></label>
-                                    <input class="form-control " type="text" placeholder="Region or State">
+                                    <input name="region" class="form-control " type="text" placeholder="Region or State">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 ">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input class="form-control " type="text" placeholder="Pin Code ">
+                                    <input name="pin_code" class="form-control " type="text" placeholder="Pin Code ">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label></label>
                                     <input class="form-control l-icon" type="text" placeholder="Choose Country"
-                                        name="Choose Country" id="pac-input1" value="" required>
+                                        name="country" id="pac-input2" value="" required>
 
                                 </div>
                             </div>
 
                         </div>
-                    </div>
-                    <hr>
 
-                    <div class="row mb-4">
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>Contact Info</label>
-                                <input class="form-control " type="text" placeholder="Mobile">
+                        <hr>
+                        <div class="row custom-box">
+
+                            <div class="col-lg-3 col-md-3 col-12 m-1 ">
+                                <div class="form-group">
+                                    <label>Corosponding Address</label>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-12">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckaddress"
+                                        name="same_Correspondence_address" value="1">
+                                    <label class="custom-control-label" for="customCheckaddress"> Check the Box if
+                                        Correspondence
+                                        Address
+                                        is same as Present Residential Address. </label>
+                                </div>
+                            </div>
+
+                            <div class="row m-1 sameaddress" id="sameaddress">
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input class="form-control " name="c_address_one"type="text" placeholder="Street Address">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-4 col-12 ">
+                                    <div class="form-group">
+                                        <label> </label>
+                                        <input class="form-control " name="c_address_two" type="text" placeholder="Street Address 2">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12 ">
+                                    <div class="form-group">
+                                        <label> </label>
+                                        <input class="form-control " name="c_city" type="text" placeholder="City">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input class="form-control " name="c_region" type="text"  placeholder="Region or State">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12 ">
+                                    <div class="form-group">
+                                        <label> </label>
+                                        <input class="form-control " name="c_pin_code" type="text" placeholder="Pin Code ">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input class="form-control l-icon" type="text" placeholder="Choose Country"
+                                            name="c_country" id="pac-input1" value="" required>
+
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-12 mt-2">
-                            <div class="form-group">
-                                <label></label>
-                                <input class="form-control " type="text" placeholder="Phone">
+                        <hr>
+
+                        <div class="row mb-4">
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="form-group">
+                                    <label>Contact Info</label>
+                                    <input name="mobile" class="form-control " type="text" placeholder="Mobile">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12 mt-2">
-                            <div class="form-group">
-                                <label></label>
-                                <input class="form-control " type="text" placeholder="Email">
+                            <div class="col-lg-4 col-md-4 col-12 mt-2">
+                                <div class="form-group">
+                                    <label></label>
+                                    <input name="phone" class="form-control " type="text" placeholder="Phone">
+                                </div>
                             </div>
-                        </div>
-
-                    </div>
-
-
-                    <hr>
-
-                    <div class="row mb-4">
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>Date of Birth</label>
-                                <input class="form-control" type="date" placeholder="Date of Birth">
+                            <div class="col-lg-4 col-md-4 col-12 mt-2">
+                                <div class="form-group">
+                                    <label></label>
+                                    <input name="email" class="form-control " type="text" placeholder="Email">
+                                </div>
                             </div>
+
                         </div>
-                        <div class="row">
+
+
+                        <hr>
+
+                        <div class="row mb-4">
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <input name="dob" class="form-control" type="date" placeholder="Date of Birth">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <label>Gender</label>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-2 ">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" class="custom-control-input" id="customradio" name="gender"
+                                            value="male">
+                                        <label class="custom-control-label mt-1" for="customradio">Male</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-2 ">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" class="custom-control-input" id="customradio1" name="gender"
+                                            value="female">
+                                        <label class="custom-control-label mt-1" for="customradio1">Female</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-2 ">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" class="custom-control-input" id="customradio2" name="gender"
+                                            value="other">
+                                        <label class="custom-control-label mt-1" for="customradio2">Other</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-4 ">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" class="custom-control-input " id="customradio3" name="gender"
+                                            value="Prefer Not to say">
+                                        <label class="custom-control-label mt-1" for="customradio3">Prefer Not to say
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <hr>
+
+                        <div class="row mb-4">
                             <div class="col-lg-12 col-md-12 col-12">
-                                <label>Gender</label>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-2 ">
-                                <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio" name="a"
-                                        value="1">
-                                    <label class="custom-control-label mt-1" for="customradio">Male</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-2 ">
-                                <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio1" name="a"
-                                        value="1">
-                                    <label class="custom-control-label mt-1" for="customradio1">Female</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-2 ">
-                                <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio2" name="a"
-                                        value="1">
-                                    <label class="custom-control-label mt-1" for="customradio2">Other</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-4 ">
-                                <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio3" name="a"
-                                        value="1">
-                                    <label class="custom-control-label mt-1" for="customradio3">Prefer Not to say
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <hr>
-
-                    <div class="row mb-4">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <label>Have you applied Visa for USA and Canada
-                            </label>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-2 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="customradio4" name="a" value="1">
-                                <label class="custom-control-label mt-1" for="customradio4">Yes</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-2 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="customradio5" name="a" value="1">
-                                <label class="custom-control-label mt-1" for="customradio5">No</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-1">
-
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>Possible Start Date
+                                <label>Have you applied Visa for USA and Canada
                                 </label>
-                                <input class="form-control" type="date" placeholder="For Immigration Process">
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <label>Which Describes you best?
-
-
-                            </label>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="customradio6" name="a" value="1">
-                                <label class="custom-control-label mt-1" for="customradio6">Student</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="customradio7" name="a" value="1">
-                                <label class="custom-control-label mt-1" for="customradio7">Employed</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="customradio8" name="a" value="1">
-                                <label class="custom-control-label mt-1" for="customradio8">SelfEmployed</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="customradio9" name="a" value="1">
-                                <label class="custom-control-label mt-1" for="customradio9">Retired</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="customradio10" name="a" value="1">
-                                <label class="custom-control-label mt-1" for="customradio10">Business</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12 ">
-                            <div class="custom-control custom-radio ">
-                                <input type="radio" class="custom-control-input " id="customradio11" name="a" value="1">
-                                <label class="custom-control-label mt-1" for="customradio11">Unemployed</label>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row mb-4">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>Preference of Immigration
-                                </label>
-                                <select class="form-control">
-                                    <option>PNP</option>
-                                    <option>AIPP</option>
-                                    <option>Visit</option>
-                                    <option>Student</option>
-                                    <option>Business</option>
-                                </select>
-                            </div>
-                        </div>
-
-
-                        <div class="col-lg-12 col-md-12 col-12 ">
-                            <label>Have you been Vaccinated against COVID
-                            </label>
-                        </div>
-                        <div class="row">
-
-                            <div class="col-lg-6 col-md-6 col-12 ml-3 ">
+                            <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio4" name="a"
-                                        value="1">
+                                    <input type="radio" class="custom-control-input " id="customradio4" name="apply_visa"
+                                        value="yes">
                                     <label class="custom-control-label mt-1" for="customradio4">Yes</label>
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-md-2 col-12 ">
+                            <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio5" name="a"
-                                        value="1">
+                                    <input type="radio" class="custom-control-input " id="customradio5" name="apply_visa"
+                                        value="no">
                                     <label class="custom-control-label mt-1" for="customradio5">No</label>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="row mb-1">
 
-                    </div>
-                    <div class="row mb-1">
-
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Social Media Profile
-
-                                </label>
-                                <div class="row">
-                                    <a class="facebook" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i
-                                                class="fa-brands fa-facebook"></i>
-                                        </div>
-                                        <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control " type="text"
-                                                    placeholder="Facebook Profile ">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="twitter" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i
-                                                class="fa-brands fa-twitter"></i>
-                                        </div>
-                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control " type="text" placeholder="Twitter Profile ">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="instagram" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i
-                                                class="fa-brands fa-instagram-square"></i></div>
-                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control " type="text"
-                                                    placeholder="Instagram Profile ">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="linkedin" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i
-                                                class="fa-brands fa-linkedin"></i>
-                                        </div>
-                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control " type="text"
-                                                    placeholder="Linkedin Profile ">
-                                            </div>
-                                        </div>
-                                    </a>
-
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>Possible Start Date
+                                    </label>
+                                    <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process">
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <hr>
-                    <div class="row mb-1">
+                        <div class="row mb-4">
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <label>Which Describes you best?
 
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>How did you hear about usd?
 
                                 </label>
-                                <textarea class="form-control"></textarea>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="customradio6" name="occupation"
+                                        value="Student">
+                                    <label class="custom-control-label mt-1" for="customradio6">Student</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="customradio7" name="occupation"
+                                        value="Employed">
+                                    <label class="custom-control-label mt-1" for="customradio7">Employed</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="customradio8" name="occupation"
+                                        value="Self Employed">
+                                    <label class="custom-control-label mt-1" for="customradio8">SelfEmployed</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="customradio9" name="occupation"
+                                        value="Retired">
+                                    <label class="custom-control-label mt-1" for="customradio9">Retired</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="customradio10" name="occupation"
+                                        value="Business">
+                                    <label class="custom-control-label mt-1" for="customradio10">Business</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="customradio11" name="occupation"
+                                        value="Unemployed">
+                                    <label class="custom-control-label mt-1" for="customradio11">Unemployed</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <a href="{{route('candidate_acadamic')}}"> <button type="submit" class="client-btn">Submit
-                                    And
-                                    Next</button> </a>
+
+
+                        <div class="row mb-4">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>Preference of Immigration
+                                    </label>
+                                    <select name="preference_of_Immigration" class="form-control">
+                                        <option value="PNP">PNP</option>
+                                        <option value="AIPP">AIPP</option>
+                                        <option value="Visit">Visit</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Business">Business</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-12 col-md-12 col-12 ">
+                                <label>Have you been Vaccinated against COVID
+                                </label>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-6 col-md-6 col-12 ml-3 ">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" class="custom-control-input " id="customradio12" name="covid_vaccinated"
+                                            value="Yes">
+                                        <label class="custom-control-label mt-1" for="customradio12">Yes</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-12 ">
+                                    <div class="custom-control custom-radio ">
+                                        <input type="radio" class="custom-control-input " id="customradio13" name="covid_vaccinated"
+                                            value="No">
+                                        <label class="custom-control-label mt-1" for="customradio13">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row mb-1">
+
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+                                    <label>Social Media Profile
+
+                                    </label>
+                                    <div class="row">
+                                        <a class="facebook" href="##">
+                                            <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i
+                                                    class="fa-brands fa-facebook"></i>
+                                            </div>
+                                            <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
+                                                <div class="form-group">
+                                                    <label> </label>
+                                                    <input name="facebook_profile" class="form-control " type="text"
+                                                        placeholder="Facebook Profile ">
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="twitter" href="##">
+                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i
+                                                    class="fa-brands fa-twitter"></i>
+                                            </div>
+                                            <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
+                                                <div class="form-group">
+                                                    <label> </label>
+                                                    <input name="twitter_profile" class="form-control " type="text"
+                                                        placeholder="Twitter Profile ">
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="instagram" href="##">
+                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i
+                                                    class="fa-brands fa-instagram-square"></i></div>
+                                            <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
+                                                <div class="form-group">
+                                                    <label> </label>
+                                                    <input name="instagram_profile" class="form-control " type="text"
+                                                        placeholder="Instagram Profile ">
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="linkedin" href="##">
+                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i
+                                                    class="fa-brands fa-linkedin"></i>
+                                            </div>
+                                            <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
+                                                <div class="form-group">
+                                                    <label> </label>
+                                                    <input name="linkedin_profile" class="form-control " type="text"
+                                                        placeholder="Linkedin Profile ">
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row mb-1">
+
+                          
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <a href="{{route('candidate_personal_add')}}"> <button type="submit"
+                                        class="client-btn">Submit
+                                        And
+                                        Next</button> </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                </form>
             </div>
 
             <div id="menu1" class="tab-pane ">
