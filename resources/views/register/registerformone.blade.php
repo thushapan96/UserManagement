@@ -155,25 +155,25 @@
 
     </div>
     <div class="col-lg-12 col-md-12 mt-2 col-12">
-        <button type="" class="add-btn " id="addschoolbtn"><i class="fa-solid fa-plus"></i> Add School</button>
+        <button type="button" class="add-btn " id="addschoolbtn"><i class="fa-solid fa-plus"></i> Add School</button>
 
     </div>
     <div id="addcollegerow">
 
     </div>
     <div class="col-lg-12 col-md-12  mt-2 col-12">
-        <button type="" class="add-btn  " id="collegebtn"><i class="fa-solid fa-plus"></i> Add College</button>
+        <button type="button" class="add-btn  " id="collegebtn"><i class="fa-solid fa-plus"></i> Add College</button>
     </div>
     <div id="addpgrow">
 
     </div>
     <div class="col-lg-12 col-md-12 mt-2 col-12">
-        <button type="" class="add-btn " id="pgbtn"><i class="fa-solid fa-plus"></i> Add PostGraduation</button>
+        <button type="button" class="add-btn " id="pgbtn"><i class="fa-solid fa-plus"></i> Add PostGraduation</button>
     </div>
     <div id="addotherrow">
     </div>
     <div class="col-lg-12 col-md-12 mt-2 col-12">
-        <button type="" class="add-btn " id="otherbtn"><i class="fa-solid fa-plus"></i> Add OtherQualification</button>
+        <button type="button" class="add-btn " id="otherbtn"><i class="fa-solid fa-plus"></i> Add OtherQualification</button>
     </div>
 
   
@@ -291,7 +291,7 @@
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>School Address </label>
-                                <input class="form-control name="address[]" " type="text" >
+                                <input class="form-control" name="address[]"  type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
@@ -310,7 +310,7 @@
 
                                 </label>
                                 <select name="eca[]" class="form-control">
-                                    <option>Select Option</option>
+                                    <option value="">Select Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
 
@@ -392,7 +392,7 @@
 
                                 </label>
                                 <select name="eca[]" class="form-control">
-                                    <option>Select Option</option>
+                                    <option value="">Select Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
 
@@ -471,7 +471,7 @@
 
                                 </label>
                                 <select name="eca[]" class="form-control">
-                                    <option>Select Option</option>
+                                    <option value="">Select Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
 
@@ -559,7 +559,7 @@
 
                                 </label>
                                 <select name="eca[]" class="form-control">
-                                    <option>Select Option</option>
+                                    <option value="">Select Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
 
@@ -580,7 +580,7 @@
                                 <label>
                                     <p>Other Attachment </p>
                                 </label>
-                                <input type="file"  class="form-control" name="address[]" >
+                                <input type="file"  class="form-control" name="attachment[]" >
                             </div>
                         </div>
                     </div>
