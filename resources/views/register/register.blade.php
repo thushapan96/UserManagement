@@ -24,7 +24,7 @@
         <div class="">
             <div id="menu" class="tab-pane  ">
                 <h1>Candidate Registation - Personal Info</h1>
-                <form action="{{route('candidate_personal_add')}}" method="POST">
+                <form id="personal_form" action="{{route('candidate_personal_add')}}" method="POST">
                     @csrf
                     <div class="whiteBox clearfix">
                         <!--div class="news-title">You have questions, let's have a conversation </div-->
@@ -39,7 +39,8 @@
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="middle_name" class="form-control " type="text" placeholder="Middle Name">
+                                    <input name="middle_name" class="form-control " type="text"
+                                        placeholder="Middle Name">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
@@ -58,38 +59,42 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Present Residential Address</label>
-                                    <input name="address_one" class="form-control " type="text" placeholder="Street Address">
+                                    <input name="residential_street" class="form-control " type="text"
+                                        placeholder="Street Address">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="address_two" class="form-control " type="text" placeholder="Street Address 2">
+                                    <input name="residential_street2" class="form-control " type="text"
+                                        placeholder="Street Address 2">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="city" class="form-control " type="text" placeholder="City">
+                                    <input name="residential_city" class="form-control " type="text" placeholder="City">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label></label>
-                                    <input name="region" class="form-control " type="text" placeholder="Region or State">
+                                    <input name="residential_region" class="form-control " type="text"
+                                        placeholder="Region or State">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 ">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="pin_code" class="form-control " type="text" placeholder="Pin Code ">
+                                    <input name="residential_pincode" class="form-control " type="text"
+                                        placeholder="Pin Code ">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label></label>
                                     <input class="form-control l-icon" type="text" placeholder="Choose Country"
-                                        name="country" id="pac-input2" value="" required>
+                                        name="residential_country" id="pac-input2" value="" required>
 
                                 </div>
                             </div>
@@ -120,7 +125,8 @@
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                         <label></label>
-                                        <input class="form-control " name="c_address_one"type="text" placeholder="Street Address">
+                                        <input class="form-control " name="corosponding_street" type="text"
+                                            placeholder="Street Address">
                                     </div>
                                 </div>
 
@@ -128,32 +134,36 @@
                                 <div class="col-lg-4 col-md-4 col-12 ">
                                     <div class="form-group">
                                         <label> </label>
-                                        <input class="form-control " name="c_address_two" type="text" placeholder="Street Address 2">
+                                        <input class="form-control " name="corosponding_street2" type="text"
+                                            placeholder="Street Address 2">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12 ">
                                     <div class="form-group">
                                         <label> </label>
-                                        <input class="form-control " name="c_city" type="text" placeholder="City">
+                                        <input class="form-control " name="corosponding_city" type="text"
+                                            placeholder="City">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                         <label></label>
-                                        <input class="form-control " name="c_region" type="text"  placeholder="Region or State">
+                                        <input class="form-control " name="corosponding_region" type="text"
+                                            placeholder="Region or State">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12 ">
                                     <div class="form-group">
                                         <label> </label>
-                                        <input class="form-control " name="c_pin_code" type="text" placeholder="Pin Code ">
+                                        <input class="form-control " name="corosponding_pincode" type="text"
+                                            placeholder="Pin Code ">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                         <label></label>
                                         <input class="form-control l-icon" type="text" placeholder="Choose Country"
-                                            name="c_country" id="pac-input1" value="" required>
+                                            name="corosponding_country" id="pac-input1" value="">
 
                                     </div>
                                 </div>
@@ -191,7 +201,8 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Date of Birth</label>
-                                    <input name="dob" class="form-control" type="date" placeholder="Date of Birth">
+                                    <input name="birth_date" class="form-control" type="date"
+                                        placeholder="Date of Birth">
                                 </div>
                             </div>
                             <div class="row">
@@ -221,8 +232,8 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-4 ">
                                     <div class="custom-control custom-radio ">
-                                        <input type="radio" class="custom-control-input " id="customradio3" name="gender"
-                                            value="Prefer Not to say">
+                                        <input type="radio" class="custom-control-input " id="customradio3"
+                                            name="gender" value="Prefer Not to say">
                                         <label class="custom-control-label mt-1" for="customradio3">Prefer Not to say
                                         </label>
                                     </div>
@@ -240,15 +251,15 @@
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio4" name="apply_visa"
-                                        value="yes">
+                                    <input type="radio" class="custom-control-input " id="customradio4"
+                                        name="is_already_apply" value="yes">
                                     <label class="custom-control-label mt-1" for="customradio4">Yes</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio5" name="apply_visa"
-                                        value="no">
+                                    <input type="radio" class="custom-control-input " id="customradio5"
+                                        name="is_already_apply" value="no">
                                     <label class="custom-control-label mt-1" for="customradio5">No</label>
                                 </div>
                             </div>
@@ -260,7 +271,8 @@
                                 <div class="form-group">
                                     <label>Possible Start Date
                                     </label>
-                                    <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process">
+                                    <input class="form-control" type="date" name="possible_start_date"
+                                        placeholder="For Immigration Process">
                                 </div>
                             </div>
                         </div>
@@ -274,43 +286,43 @@
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio6" name="occupation"
-                                        value="Student">
+                                    <input type="radio" class="custom-control-input " id="customradio6"
+                                        name="immigration_purpose" value="Student">
                                     <label class="custom-control-label mt-1" for="customradio6">Student</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio7" name="occupation"
-                                        value="Employed">
+                                    <input type="radio" class="custom-control-input " id="customradio7"
+                                        name="immigration_purpose" value="Employed">
                                     <label class="custom-control-label mt-1" for="customradio7">Employed</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio8" name="occupation"
-                                        value="Self Employed">
+                                    <input type="radio" class="custom-control-input " id="customradio8"
+                                        name="immigration_purpose" value="Self Employed">
                                     <label class="custom-control-label mt-1" for="customradio8">SelfEmployed</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio9" name="occupation"
-                                        value="Retired">
+                                    <input type="radio" class="custom-control-input " id="customradio9"
+                                        name="immigration_purpose" value="Retired">
                                     <label class="custom-control-label mt-1" for="customradio9">Retired</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio10" name="occupation"
-                                        value="Business">
+                                    <input type="radio" class="custom-control-input " id="customradio10"
+                                        name="immigration_purpose" value="Business">
                                     <label class="custom-control-label mt-1" for="customradio10">Business</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="customradio11" name="occupation"
-                                        value="Unemployed">
+                                    <input type="radio" class="custom-control-input " id="customradio11"
+                                        name="immigration_purpose" value="Unemployed">
                                     <label class="custom-control-label mt-1" for="customradio11">Unemployed</label>
                                 </div>
                             </div>
@@ -322,7 +334,7 @@
                                 <div class="form-group">
                                     <label>Preference of Immigration
                                     </label>
-                                    <select name="preference_of_Immigration" class="form-control">
+                                    <select name="immigration_preference" class="form-control">
                                         <option value="PNP">PNP</option>
                                         <option value="AIPP">AIPP</option>
                                         <option value="Visit">Visit</option>
@@ -341,15 +353,15 @@
 
                                 <div class="col-lg-6 col-md-6 col-12 ml-3 ">
                                     <div class="custom-control custom-radio ">
-                                        <input type="radio" class="custom-control-input " id="customradio12" name="covid_vaccinated"
-                                            value="Yes">
+                                        <input type="radio" class="custom-control-input " id="customradio12"
+                                            name="is_vaccinate" value="Yes">
                                         <label class="custom-control-label mt-1" for="customradio12">Yes</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-12 ">
                                     <div class="custom-control custom-radio ">
-                                        <input type="radio" class="custom-control-input " id="customradio13" name="covid_vaccinated"
-                                            value="No">
+                                        <input type="radio" class="custom-control-input " id="customradio13"
+                                            name="is_vaccinate" value="No">
                                         <label class="custom-control-label mt-1" for="customradio13">No</label>
                                     </div>
                                 </div>
@@ -372,7 +384,7 @@
                                             <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
                                                 <div class="form-group">
                                                     <label> </label>
-                                                    <input name="facebook_profile" class="form-control " type="text"
+                                                    <input name="fb_link" class="form-control " type="text"
                                                         placeholder="Facebook Profile ">
                                                 </div>
                                             </div>
@@ -384,7 +396,7 @@
                                             <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
                                                 <div class="form-group">
                                                     <label> </label>
-                                                    <input name="twitter_profile" class="form-control " type="text"
+                                                    <input name="twitter_link" class="form-control " type="text"
                                                         placeholder="Twitter Profile ">
                                                 </div>
                                             </div>
@@ -395,7 +407,7 @@
                                             <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
                                                 <div class="form-group">
                                                     <label> </label>
-                                                    <input name="instagram_profile" class="form-control " type="text"
+                                                    <input name="insta_link" class="form-control " type="text"
                                                         placeholder="Instagram Profile ">
                                                 </div>
                                             </div>
@@ -407,7 +419,7 @@
                                             <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
                                                 <div class="form-group">
                                                     <label> </label>
-                                                    <input name="linkedin_profile" class="form-control " type="text"
+                                                    <input name="Linkedin_link" class="form-control " type="text"
                                                         placeholder="Linkedin Profile ">
                                                 </div>
                                             </div>
@@ -421,12 +433,16 @@
                         <hr>
                         <div class="row mb-1">
 
-                          
+
                             <div class="col-lg-12 col-md-12 col-12">
                                 <a href="{{route('candidate_personal_add')}}"> <button type="submit"
-                                        class="client-btn">Submit
+                                        class="client-btn ld-ext-right">Submit
                                         And
                                         Next</button> </a>
+                            </div>
+                            <div class="btn btn-primary ld-ext-right" onclick="this.classList.toggle('running')">
+                                Clike Me
+                                <div class="ld ld-ring ld-spin"></div>
                             </div>
                         </div>
                     </div>
@@ -573,6 +589,39 @@
 
         }
 
+
+    });
+    </script>
+
+    <script>
+    $(document).ready(function() {
+
+        $("#personal_form").submit(function(e) {
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+
+            var form = $(this);
+            var actionUrl = form.attr('action');
+
+            $.ajax({
+                type: "POST",
+                url: actionUrl,
+                data: form.serialize(), // serializes the form's elements.
+                beforeSend: function() {
+
+                }
+
+                success: function(data) {
+
+                    $('.tab-pane').fadeOut();
+                    $("#menu1").fadeIn();
+                    $(".nav-link").removeClass('active')
+                    $('#amenu1').addClass('active')
+
+                }
+            });
+
+        });
 
     });
     </script>

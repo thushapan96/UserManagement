@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CandidatePersonalTable extends Migration
+class CandidatePersonalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,15 +19,15 @@ class CandidatePersonalTable extends Migration
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('residential_streat')->nullable();
-            $table->string('residential_streat2')->nullable();
+            $table->string('residential_street')->nullable();
+            $table->string('residential_street2')->nullable();
             $table->string('residential_city')->nullable();
             $table->string('residential_region')->nullable();
             $table->string('residential_pincode')->nullable();
             $table->string('residential_country')->nullable();
 
-            $table->string('corosponding_streat')->nullable();
-            $table->string('corosponding_streat2')->nullable();
+            $table->string('corosponding_street')->nullable();
+            $table->string('corosponding_street2')->nullable();
             $table->string('corosponding_city')->nullable();
             $table->string('corosponding_region')->nullable();
             $table->string('corosponding_pincode')->nullable();
@@ -47,11 +47,9 @@ class CandidatePersonalTable extends Migration
             $table->string('is_vaccinate')->nullable();
 
             $table->string('fb_link')->nullable();
-            $table->string('youtube_link')->nullable();
             $table->string('twitter_link')->nullable();
             $table->string('insta_link')->nullable();
             $table->string('Linkedin_link')->nullable();
-            $table->string('google_review_link')->nullable();
 
             $table->timestamps();
         });
