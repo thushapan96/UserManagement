@@ -15,9 +15,8 @@ class CandidatePersonalsTable extends Migration
     {
         Schema::create('candidate_personals', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();  
-
-            $table->string('language_proficiency');
-            $table->string('level')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('residential_street')->nullable();
             $table->string('residential_street2')->nullable();

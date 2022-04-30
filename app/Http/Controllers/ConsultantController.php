@@ -26,16 +26,13 @@ class ConsultantController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $team_name = $request->team_name;
         $team_area_expertise = $request->team_area_expertise;
         $team_experience_year = $request->team_experience_year;
         $team_designation = $request->team_designation;
         $team_number_success_cases = $request->team_number_success_cases;
 
-        $count =  count($team_name);
-
+        $count =  count($team_name);  
 
         if ($request->privacy_policy_document) {
             $files = $request->privacy_policy_document;
@@ -46,7 +43,6 @@ class ConsultantController extends Controller
             $files->move($destinationPath, $name);
             $request->privacy_policy_document =  $name;
         }
-
 
         $Consultant =   Consultant::create($request->all());
 

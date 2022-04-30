@@ -1,152 +1,233 @@
+<h1> Candidate Registation - Sponsor</h1>
 
- 
-        <h1> Candidate Registation - Sponsor</h1>
-
-        <div class="whiteBox clearfix">
+<div class="whiteBox clearfix">
 
 
-            <h6>Sponsor Details</h6>
-            <!--div class="news-title">You have questions, let's have a conversation </div-->
-            <div class="row mt-4 custom-box">
+    <h6>Sponsor Details</h6>
+    <!--div class="news-title">You have questions, let's have a conversation </div-->
+    <div class="row mt-4 custom-box">
 
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
 
-                        <input class="form-control " type="text" placeholder="First Name">
+                <input class="form-control " type="text" placeholder="First Name">
 
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
-
-                        <input class="form-control " type="text" placeholder="Middle Name">
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4  col-12">
-                    <div class="form-group">
-
-                        <input class="form-control " type="text" placeholder="Last Name">
-
-                    </div>
-                </div>
-
-            </div>
-
-            <hr>
-
-            <div class="row mt-4 custom-box">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                        <label>Relationship with Child
-                        </label>
-                        <input class="form-control " type="text" placeholder="Choose Relationship">
-
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                        <label>
-                            Mobile Number
-                        </label>
-                        <input class="form-control " type="number" placeholder="Mobile">
-                    </div>
-                </div>
-
-
-            </div>
-
-            <hr>
-
-            <div class="row mt-4 custom-box">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                        <label>Telephone Number
-                        </label>
-                        <input class="form-control " type="number">
-
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                        <label>
-                            Email ID
-                        </label>
-                        <input class="form-control " type="text">
-                    </div>
-                </div>
-            </div>
-
-            <hr style="height:12px;">
-
-            <h6>Address of Guardian</h6>
-            <!--div class="news-title">You have questions, let's have a conversation </div-->
-            <div class="row mt-4 custom-box">
-
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
-
-                        <input class="form-control " type="text" placeholder="Street Address1">
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
-
-                        <input class="form-control " type="text" placeholder="Street Address2">
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4  col-12">
-                    <div class="form-group">
-                        <input class="form-control " type="text" placeholder="City">
-
-
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row mt-4 custom-box">
-
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
-
-                        <input class="form-control " type="text" placeholder="Region Or State">
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-12">
-                    <div class="form-group">
-
-                        <input class="form-control " type="text" placeholder="Pin Code">
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4  col-12">
-                    <div class="form-group">
-
-                        <input class="form-control l-icon" type="text" placeholder="Choose Country" name="Choose Country" id="pac-input2" value="" required>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="float-right">
-                <button type="submit" class="client-btn">Submit And Finish </button>
             </div>
         </div>
-    
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Middle Name">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Last Name">
+
+            </div>
+        </div>
+
+    </div>
+
+  
+
+    <div class="row mt-4 custom-box">
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>
+                    Sponsor Status
+                </label>
+                <select class="form-control " name="status">
+                    <option value="Working">Working</option>
+                    <option value="Retired">Retired</option>
+                    <option value="Business">Business</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>Relationship with Child
+                </label>
+                <select class="form-control " name="status">
+                    <option value="Working">Mother</option>
+                    <option value="Retired">Father</option>
+                    <option value="Business">Brother</option>
+                    <option value="Working">Uncle</option>
+                    <option value="Retired">Grand parent</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>
+                    Mobile Number
+                </label>
+                <input class="form-control " type="number" placeholder="Mobile">
+            </div>
+        </div>
+
+
+    </div>
+
+ 
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Street Address1">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Street Address2">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
+                <input class="form-control " type="text" placeholder="City">
+
+
+
+            </div>
+        </div>
+
+    </div>
+   
+    <div class="row mt-4 custom-box">
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="form-group">
+                <label>Telephone Number
+                </label>
+                <input class="form-control " type="number">
+
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="form-group">
+                <label>
+                    Email ID
+                </label>
+                <input class="form-control " type="text">
+            </div>
+        </div>
+    </div>
+
+    <hr style="height:12px;">
+
+    <h6>Address of Guardian</h6>
+    <!--div class="news-title">You have questions, let's have a conversation </div-->
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>Relationship with Child
+                </label>
+                <select class="form-control " name="status">
+                    <option value="Working">Mother</option>
+                    <option value="Retired">Father</option>
+                    <option value="Business">Brother</option>
+                    <option value="Working">Uncle</option>
+                    <option value="Retired">Grand parent</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>
+                    Mobile Number
+                </label>
+                <input class="form-control " type="number" placeholder="Mobile">
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>
+                    Email
+                </label>
+                <input class="form-control " type="number" placeholder="Mobile">
+            </div>
+        </div>
+
+    </div>
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Street Address1">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Street Address2">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
+                <input class="form-control " type="text" placeholder="City">
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Region Or State">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Pin Code">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
+
+                <input class="form-control l-icon" type="text" placeholder="Choose Country" name="Choose Country" id="pac-input2" value="" required>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="float-right">
+        <button type="submit" class="client-btn">Submit And Finish </button>
+    </div>
+</div>
+
 
 
 <div id="map" style=" height: 500px; width:100%"> </div>
