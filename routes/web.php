@@ -39,9 +39,7 @@ Route::get('/register/candidate/acadamic', function () {
 // Route::post('register', 'Register@register')->name('register');
 
 
-Route::get('register/institude', function () {
- return view('register.institude');
-})->name('register.institude');
+
 
 Route::get('/register/institude', [App\Http\Controllers\InstitutionController::class, 'index'])->name('register.institude');
 Route::post('/register/institude', [App\Http\Controllers\InstitutionController::class, 'store'])->name('add.institution');
@@ -49,6 +47,7 @@ Route::post('/register/institude', [App\Http\Controllers\InstitutionController::
 Route::get('/register/consultant', [App\Http\Controllers\ConsultantController::class, 'index'])->name('register.consultant');
 Route::post('/register/consultant', [App\Http\Controllers\ConsultantController::class, 'store'])->name('add.consultant');
 
+Route::get('/register/business', [App\Http\Controllers\ConsultantController::class, 'business'])->name('register.business');
 
 
 Route::get('register/consultant', function () {

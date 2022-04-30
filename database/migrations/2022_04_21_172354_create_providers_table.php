@@ -47,9 +47,9 @@ class CreateProvidersTable extends Migration
 
             $table->string('establishment_year');
             $table->string('offering_year');
-            $table->string('total_cases_taken');
-            $table->string('communication_mode_success');
-            $table->string('communication_mode');
+            $table->string('total_cases_taken')->nullable();
+            $table->string('communication_mode_success')->nullable();
+            $table->json('communication_mode');
             //$table->string('offer_course');
             
             $table->string('initial_chargeable_type')->nullable();
@@ -58,19 +58,19 @@ class CreateProvidersTable extends Migration
             $table->string('is_Policies')->nullable();
             $table->string('privacy_policy_document')->nullable();
             $table->text('privacy_policy_detail')->nullable();
-            $table->text('team_info')->nullable();
+            // $table->text('team_info')->nullable();
             $table->text('brief_introduction');
             $table->text('history');
             $table->text('achievement');
             $table->text('Award');
             $table->text('Comment');
-            $table->text('event_new_weblink');
-            $table->string('fb_link');
-            $table->string('Youtube_link');
-            $table->string('twitter_link');
-            $table->string('insta_link');
-            $table->string('Linkedin_link');
-            $table->string('google_review_link');
+            $table->text('event_new_weblink')->nullable();
+            $table->string('fb_link')->nullable();
+            $table->string('youtube_link')->nullable();
+            $table->string('twitter_link')->nullable();
+            $table->string('insta_link')->nullable();
+            $table->string('Linkedin_link')->nullable();
+            $table->string('google_review_link')->nullable();
             $table->timestamps();
         });
     }
