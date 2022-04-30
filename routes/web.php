@@ -50,14 +50,6 @@ Route::post('/register/consultant', [App\Http\Controllers\ConsultantController::
 Route::get('/register/business', [App\Http\Controllers\ConsultantController::class, 'business'])->name('register.business');
 
 
-Route::get('register/consultant', function () {
-    return view('register.consultant');
-});
-
-Route::get('register/business', function () {
-    return view('register.business');
-});
-
 Route::get('register/candidate/workexperience', function () {
     return view('register.workexperience');
 })->name('candidate_workexperience');
@@ -65,7 +57,6 @@ Route::get('register/candidate/workexperience', function () {
 Route::get('register/candidate/sponsor', function () {
     return view('register.sponsor');
 })->name('candidate_sponsor');
-
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
