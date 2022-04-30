@@ -18,10 +18,10 @@ class CreateTeamsTable extends Migration
             $table->bigInteger('provider_id')->unsigned();
             $table->foreign('provider_id')->references('id')->on('providers')->onDelete('cascade');        
             $table->string('member');
-            $table->string('Designation');
-            $table->string('expertise_area');
-            $table->string('experience_year');
-            $table->string('no_success');
+            $table->string('Designation')->nullable();
+            $table->string('expertise_area')->nullable();
+            $table->string('experience_year')->nullable();
+            $table->string('no_success')->nullable();
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->string('country');
             $table->string('country_of_citizenship');
-            $table->jeson('service');
+            $table->json('service');
             $table->string('service_type');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

@@ -47,8 +47,8 @@ class CreateProvidersTable extends Migration
 
             $table->string('establishment_year');
             $table->string('offering_year');
-            $table->string('total_cases_taken');
-            $table->string('communication_mode_success');
+            $table->string('total_cases_taken')->nullable();
+            $table->string('communication_mode_success')->nullable();
             $table->json('communication_mode');
             //$table->string('offer_course');
             
@@ -64,7 +64,7 @@ class CreateProvidersTable extends Migration
             $table->text('achievement');
             $table->text('Award');
             $table->text('Comment');
-            $table->text('event_new_weblink');
+            $table->text('event_new_weblink')->nullable();
             $table->string('fb_link')->nullable();
             $table->string('youtube_link')->nullable();
             $table->string('twitter_link')->nullable();

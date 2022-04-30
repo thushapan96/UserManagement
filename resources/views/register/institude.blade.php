@@ -675,7 +675,7 @@
                     </div>
                 </div>
                 <hr>
-              
+
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
@@ -689,74 +689,76 @@
                 </div>
                 <hr>
 
-                <div class="row mb-1">
+                <div class="socialAppend" id="socialAppend">
+                    <div class="row mb-1 social">
 
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>Social Media Profile
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label>Social Media Profile
 
-                            </label>
-                            <div class="row">
-                                <a class="facebook" href="##">
-                                    <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
-                                    </div>
-                                    <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
-                                        <div class="form-group">
-                                            <label> </label>
-                                            <input class="form-control " type="text" placeholder="Facebook link " name="fb_link" value="{{old('fb_link')}}">
+                                </label>
+                                <div class="row">
+                                    <a class="facebook" href="##">
+                                        <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
                                         </div>
-                                    </div>
-                                </a>
-                                <a class="twitter" href="##">
-                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
-                                    </div>
-                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
-                                        <div class="form-group">
-                                            <label> </label>
-                                            <input class="form-control " type="text" placeholder="Twitter link " name="twitter_link" value="{{old('twitter_link')}}">
+                                        <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
+                                            <div class="form-group">
+                                                <label> </label>
+                                                <input class="form-control socialLink " type="text" placeholder="Facebook link " name="fb_link" value="{{old('fb_link')}}">
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a class="instagram" href="##">
-                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
-                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
-                                        <div class="form-group">
-                                            <label> </label>
-                                            <input class="form-control " type="text" placeholder="Instagram link " name="insta_link" value="{{old('insta_link')}}">
+                                    </a>
+                                    <a class="twitter" href="##">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
                                         </div>
-                                    </div>
-                                </a>
-                                <a class="linkedin" href="##">
-                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
-                                    </div>
-                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
-                                        <div class="form-group">
-                                            <label> </label>
-                                            <input class="form-control " type="text" placeholder="Linkedin Profile " name="Linkedin_link" value="{{old('Linkedin_link')}}">
+                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
+                                            <div class="form-group">
+                                                <label> </label>
+                                                <input class="form-control socialLink" type="text" placeholder="Twitter link " name="twitter_link" value="{{old('twitter_link')}}">
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a class="youtube" href="##">
-                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
-                                    </div>
-                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="youtube">
-                                        <div class="form-group">
-                                            <label> </label>
-                                            <input class="form-control " type="text" placeholder="youtube link " name="youtube_link" value="{{old('youtube_link')}}">
+                                    </a>
+                                    <a class="instagram" href="##">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
+                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
+                                            <div class="form-group">
+                                                <label> </label>
+                                                <input class="form-control socialLink" type="text" placeholder="Instagram link " name="insta_link" value="{{old('insta_link')}}">
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a class="google" href="##">
-                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
-                                    </div>
-                                    <div class="col-lg-11 col-md-11 col-11 d-none " id="google">
-                                        <div class="form-group">
-                                            <label> </label>
-                                            <input class="form-control " type="text" placeholder="google review link " name="google_review_link" value="{{old('google_review_link')}}">
+                                    </a>
+                                    <a class="linkedin" href="##">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
                                         </div>
-                                    </div>
-                                </a>
+                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
+                                            <div class="form-group">
+                                                <label> </label>
+                                                <input class="form-control socialLink" type="text" placeholder="Linkedin Profile " name="Linkedin_link" value="{{old('Linkedin_link')}}">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="youtube" href="##">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
+                                        </div>
+                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="youtube">
+                                            <div class="form-group">
+                                                <label> </label>
+                                                <input class="form-control socialLink" type="text" placeholder="youtube link " name="youtube_link" value="{{old('youtube_link')}}">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="google" href="##">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
+                                        </div>
+                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="google">
+                                            <div class="form-group">
+                                                <label> </label>
+                                                <input class="form-control socialLink" type="text" placeholder="google review link " name="google_review_link" value="{{old('google_review_link')}}">
+                                            </div>
+                                        </div>
+                                    </a>
 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -792,7 +794,7 @@
             // }else{
             //     console.log('illa')
             // }
-       
+
             $('[name="same_Correspondence_address"]').change(function() {
                 if ($(this).is(':checked')) {
                     // Do something...
@@ -801,24 +803,39 @@
                     $('#sameaddress').removeClass('d-none');
                 };
             });
+            if (sessionStorage.getItem("socialAppend")) {
+                $('#socialAppend').html(sessionStorage.getItem("socialAppend"))
+            }
             $('.facebook').on("click", function() {
                 $('#facebook').removeClass('d-none');
+
             });
             $('.linkedin').on("click", function() {
                 $('#linkedin').removeClass('d-none');
+
             });
             $('.instagram').on("click", function() {
                 $('#instagram').removeClass('d-none');
+
             });
             $('.twitter').on("click", function() {
                 $('#twitter').removeClass('d-none');
+
             })
             $('.youtube').on("click", function() {
                 $('#youtube').removeClass('d-none');
+
             })
             $('.google').on("click", function() {
                 $('#google').removeClass('d-none');
+
             })
+            $('.socialLink').keyup(function() {
+              
+                $(this).attr("value", $(this).val());
+                sessionStorage.setItem('socialAppend', $('#socialAppend').html())
+                
+            });
 
             $("#addRow").click(function() {
 
