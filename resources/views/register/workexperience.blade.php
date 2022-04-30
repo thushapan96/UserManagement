@@ -3,7 +3,7 @@
 <div class="whiteBox clearfix">
 
     <div id="newRow">
-        <h6>Place of Work </h6>
+        <h6>Place of Work 1 </h6>
         <!--div class="news-title">You have questions, let's have a conversation </div-->
         <div class="row mt-4 custom-box">
 
@@ -28,8 +28,6 @@
 
         </div>
 
-        <hr>
-
         <div class="row mt-4 custom-box">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="form-group">
@@ -52,7 +50,7 @@
 
         </div>
 
-        <hr>
+      
         <div class="row mt-4 custom-box">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="form-group">
@@ -72,7 +70,7 @@
             </div>
 
         </div>
-        <hr>
+        
 
         <div class="row mt-4 custom-box">
             <div class="col-lg-12 col-md-12 col-12">
@@ -84,11 +82,12 @@
             </div>
         </div>
 
-        <hr style="height:12px;">
+        <hr>
 
     </div>
 
-    <button id="addRow" type="button" class="btn crew-btn">Add WorkPlace </button>
+    <button id="addRow" type="button" class="add-btn"><i class="fa-solid fa-plus"></i>Add WorkPlace </button>
+    <br>
     <div class="float-right">
 
         <a href="{{route('candidate_sponsor')}}"> <button type="submit" class="client-btn">Submit And Next
@@ -104,17 +103,16 @@
 //.......................current location......................
 
 $(document).ready(function() {
+    var count = 1;
     $("#addRow").click(function() {
-
+              count = count + 1;
         html = `
                 <div id="inputFormRow">
     <div class="row">
         <div class="col-lg-10 col-md-10 col-12">
-            <h6>Place of Work </h6>
+            <h6>Place of Work  ${count} </h6>
         </div>
-        <div class="col-lg-2 col-md-2 col-12">
-            <button id="removeRow" type="button" class="btn btn-danger">Remove</button>
-        </div>
+       
     </div>
     <!--div class="news-title">You have questions, let's have a conversation </div-->
     <div class="row mt-4 custom-box">
@@ -139,7 +137,7 @@ $(document).ready(function() {
 
     </div>
 
-    <hr>
+
 
     <div class="row mt-4 custom-box">
         <div class="col-lg-6 col-md-6 col-12">
@@ -163,7 +161,7 @@ $(document).ready(function() {
 
     </div>
 
-    <hr>
+   
     <div class="row mt-4 custom-box">
         <div class="col-lg-6 col-md-6 col-12">
             <div class="form-group">
@@ -183,7 +181,7 @@ $(document).ready(function() {
         </div>
 
     </div>
-    <hr>
+  
 
     <div class="row mt-4 custom-box">
         <div class="col-lg-12 col-md-12 col-12">
@@ -194,12 +192,15 @@ $(document).ready(function() {
             </div>
         </div>
     </div>
-    
-    <hr style="height:12px;">
-    
+ 
+        <button  class=" closebtn client-btn" id="removeRow"><a style="color:white"><i class="fa-solid fa-minus"></i> Remove</a></button>
+        <br><br>
+        <hr style="height:12px;">
      </div>
+    
+  
+    
 
-       <br>
                 `
 
         $('#newRow').append(html);
@@ -207,6 +208,7 @@ $(document).ready(function() {
 
     // remove row
     $(document).on('click', '#removeRow', function() {
+        count = count - 1;
         $(this).closest('#inputFormRow').remove();
     });
 

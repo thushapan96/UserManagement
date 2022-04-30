@@ -15,7 +15,8 @@ class QualificationsTable extends Migration
     {
         Schema::create('qualifications', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-
+            $table->bigInteger('candidate_academic_id')->unsigned();
+            $table->foreign('candidate_academic_id')->references('id')->on('candidate_academics')->onDelete('cascade');  
             $table->string('type')->nullable();
             $table->string('name')->nullable();
             $table->string('Address')->nullable();
