@@ -51,6 +51,7 @@ Route::get('/register/business', [App\Http\Controllers\ConsultantController::cla
 
 
 Route::post('/candidate/personal/add', [App\Http\Controllers\CandidatePersonalController::class, 'store'])->name('candidate_personal_add');
+Route::post('/candidate/academy/add', [App\Http\Controllers\CandidateAcademyController::class, 'store'])->name('candidate_academy_add');
 
 Route::get('register/candidate/workexperience', function () {
     return view('register.workexperience');
