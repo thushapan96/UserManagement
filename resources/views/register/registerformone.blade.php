@@ -347,7 +347,7 @@
                                 <label>
                                     <p>Other Attachment </p>
                                 </label>
-                                <input type="file"   class="form-control" name="attachment[]" >
+                                <input type="file" value="hi.txt"   class="form-control" name="attachment[]" >
                             </div>
                         </div>
 

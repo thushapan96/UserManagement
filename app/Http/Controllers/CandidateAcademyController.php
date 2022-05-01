@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class CandidateAcademyController extends Controller
 {
     function store(Request $request){
+        dd($request);
         $academy = new Academy;
         $academy->language_proficiency = $request->language_proficiency;
         $academy->language_level=$request->language_level;
@@ -45,14 +46,24 @@ $count = count($request->type);
 for ($i = 0; $i < $count; $i++) {
 $qualification = new Qualification;
 $qualification->type = $request->type[$i];
-$qualification->name = $request->type[$i];
-$qualification->address = $request->type[$i];
-$qualification->distant = $request->type[$i];
-$qualification->Year_completion = $request->type[$i];
-$qualification->applicable_eca_validity = $request->type[$i];
-$qualification->country = $request->type[$i];
+$qualification->name = $request->name[$i];
+$qualification->tech = $request->tech[$i];
+$qualification->address = $request->address[$i];
+$qualification->distant = $request->distant[$i];
+$qualification->Year_completion = $request->year_completed[$i];
+$qualification->applicable_eca_validity = $request->eca[$i];
+$qualification->country = $request->country[$i];
+if($request->attachment[$i]){
+    $files = $request->attachment[$i];
+    $request->attachment[$i]->getClientOriginalName();
+    $name =  $request->attachment[$i]->getClientOriginalName();
 
+    $destinationPath = public_path() . '/files';
+    $files->move($destinationPath, $name);
+    $qualification->attachment = $name;
 }
-dd($request);
 }
-}
+$qualification->save();
+dd($qualification);
+
+}}

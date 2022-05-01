@@ -25,6 +25,7 @@ class QualificationsTable extends Migration
             $table->string('applicable_eca_validity')->nullable();
             $table->string('country')->nullable();
             $table->string('attachment')->nullable();
+            $table->string('tech')->nullable();
 
             $table->timestamps();
         });
