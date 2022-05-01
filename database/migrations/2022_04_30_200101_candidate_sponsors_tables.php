@@ -51,6 +51,6 @@ class CandidateSponsorsTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candidate_sponsors_places');
+        Schema::dropIfExists('candidate_sponsors');
     }
 }

@@ -2,15 +2,12 @@
 
 @section('content')
 
-
 <!-- Subscribe & Stay Connected. Start -->
-
 <section class="StayConnected clearfix">
-
     <div class="container ">
-    <div class="progress">
-            <div class="progress-bar progress-bar-success progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-               Complete
+        <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                Complete
             </div>
         </div>
         <br>
@@ -558,22 +555,31 @@
 
     <script>
         $(document).ready(function() {
-           
+
+            $(".progress-bar").css("width", "0%");
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
             $("#personal_form").submit(function(e) {
 
                 e.preventDefault(); // avoid to execute the actual submit of the form.
 
-                var form = $(this);
-                var actionUrl = form.attr('action');
-                $(".progress-bar").css("width", "50%");
+                var actionUrl = $(this).attr('action');
+                var form = new FormData(this);
+
                 $.ajax({
                     type: "POST",
                     url: actionUrl,
-                    data: form.serialize(), // serializes the form's elements.
-
+                    cache: false,
+                    data: form,
+                    contentType: false,
+                    processData: false, // serializes the form's elements.
                     success: function(data) {
-
-                        $(".progress-bar").css("width", "50%");
+                        console.log(data);
+                        $(".progress-bar").css("width", "25%");
                         $('.tab-pane').fadeOut();
                         $("#menu1").fadeIn();
                         $(".nav-link").removeClass('active')
