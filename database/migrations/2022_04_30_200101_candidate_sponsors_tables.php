@@ -13,7 +13,7 @@ class CandidateSponsorsTables extends Migration
      */
     public function up()
     {
-        Schema::create('candidate_sponsors_places', function (Blueprint $table) {
+        Schema::create('candidate_sponsors', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
