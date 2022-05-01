@@ -1,8 +1,7 @@
 <h1>Candidate Registation - Work Experience</h1>
-<form id="work_form" action="{{route('candidate_work_add')}}" method="POST">
+<form id="work_form" action="{{route('candidate_work_add')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="whiteBox clearfix">
-
         <div id="newRow">
             <h6>Place of Work 1 </h6>
             <!--div class="news-title">You have questions, let's have a conversation </div-->
@@ -44,7 +43,7 @@
                         <label>
                             Attach Experience Certificate
                         </label>
-                        <input class="form-control" type="file" id="upload-images" name="attach_experience_certificate[]">
+                        <input class="form-control" type="file" name="attach_experience_certificate[]">
                     </div>
                 </div>
 
@@ -57,7 +56,7 @@
                     <div class="form-group">
                         <label>Attach Salary Slip
                         </label>
-                        <input class="form-control " type="file" id="upload-images" name="attach_salary_slip[]">
+                        <input class="form-control " type="file" name="attach_salary_slip[]">
                     </div>
                 </div>
 
@@ -86,30 +85,27 @@
             <hr>
 
         </div>
-
         <button id="addRow" type="button" class="add-btn"><i class="fa-solid fa-plus"></i>Add WorkPlace </button>
         <br>
         <div class="float-right">
-
-            <a href="{{route('candidate_sponsor')}}"> <button type="submit" class="client-btn">Submit And Next
-                </button></a>
+            <a> <button type="submit" class="client-btn">Submit And Next </button></a>
         </div>
     </div>
 </form>
-        <!-- ......................script for google map view.................... -->
+<!-- ......................script for google map view.................... -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <script>
-            //.......................current location......................
+<script>
+    //.......................current location......................
 
-            $(document).ready(function() {
-                var count = 1;
-                $("#addRow").click(function() {
-                    count = count + 1;
-                    html = `
+    $(document).ready(function() {
+        var count = 1;
+        $("#addRow").click(function() {
+            count = count + 1;
+            html = `
                 <div id="inputFormRow">
-    <div class="row">
+                   <div class="row">
         <div class="col-lg-10 col-md-10 col-12">
             <h6>Place of Work  ${count} </h6>
         </div>
@@ -168,7 +164,7 @@
             <div class="form-group">
                 <label>Attach Salary Slip
                 </label>
-                <input class="form-control " type="file" id="" name="attach_salary_slip[]">
+                <input class="form-control " type="file" id="" name="attach_salary_slip[]" value="">
             </div>
         </div>
 
@@ -197,23 +193,51 @@
         <button  class=" closebtn client-btn" id="removeRow"><a style="color:white"><i class="fa-solid fa-minus"></i> Remove</a></button>
         <br><br>
         <hr style="height:12px;">
-     </div>
-    
-  
-    
+     </div> `
 
-                `
+            $('#newRow').append(html);
+        });
 
-                    $('#newRow').append(html);
-                });
+        // remove row
+        $(document).on('click', '#removeRow', function() {
+            count = count - 1;
+            $(this).closest('#inputFormRow').remove();
+        });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $("#work_form").submit(function(e) {
 
-                // remove row
-                $(document).on('click', '#removeRow', function() {
-                    count = count - 1;
-                    $(this).closest('#inputFormRow').remove();
-                });
+            e.preventDefault(); // avoid to execute the actual submit of the form.
 
+            // var form = $(this);
+            var actionUrl = $(this).attr('action');
+            var form = new FormData(this);
+            console.log('form'+typeof(form))
 
+            $.ajax({
+                type: "POST",
+                url: actionUrl,
+                data: form,
+                cache: false,
+                contentType: false,
+                processData: false, // serializes the form's elements.
+
+                success: function(data) {
+                    console.log(data);
+                    // $('.tab-pane').fadeOut();
+                    // $("#menu3").fadeIn();
+                    // $(".nav-link").removeClass('active')
+                    // $('#amenu3').addClass('active')
+
+                }
             });
-        </script>
-        <!-- ...................end...script for google map view.................... -->
+
+        });
+
+
+    });
+</script>
+<!-- ...................end...script for google map view.................... -->
