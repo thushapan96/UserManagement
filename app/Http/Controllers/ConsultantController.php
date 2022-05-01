@@ -41,7 +41,7 @@ class ConsultantController extends Controller
 
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $name);
-            $request->privacy_policy_document =  $name;
+            $request['privacy_policy_document'] =  $name;
         }
 
         $Consultant =   Consultant::create($request->all());

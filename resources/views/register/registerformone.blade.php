@@ -4,7 +4,7 @@
 <h1>Candidate Registation - Academic</h1>
 
 <div class="whiteBox clearfix">
-    <form id="academy_form" action="{{route('candidate_academy_add')}}" method="POST">
+    <form id="academy_form" action="{{route('candidate_academy_add')}}" method="POST" enctype="multipart/form-data">
         @csrf
     <!--div class="news-title">You have questions, let's have a conversation </div-->
     <div class="row mt-4 custom-box">
@@ -62,7 +62,7 @@
             <div class="form-group">
                 <label>Applicant Test Scores</label>
                 <select class="form-control" id="" name="applicant_test_name[]">
-                    <option>Select</option>
+                    <option value="">Select</option>
                     <option value="IELTS">IELTS</option>
                     <option value="TOFEL">TOFEL</option>
                     <option value="CELPIP">CELPIP</option>
@@ -318,6 +318,22 @@
                             </div>
                         </div>
 
+
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group">
+                                <label>Distant
+
+                                </label>
+                                <select name="distant[]" class="form-control">
+                                    <option value="">Select Option</option>
+                                    <option>distant</option>
+                                    <option>regular</option>
+                                    <option>online</option>
+
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Country</label>
@@ -395,6 +411,20 @@
                                     <option value="">Select Option</option>
                                     <option>Yes</option>
                                     <option>No</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group">
+                                <label>Distant
+
+                                </label>
+                                <select name="distant[]" class="form-control">
+                                    <option value="">Select Option</option>
+                                    <option>distant</option>
+                                    <option>regular</option>
+                                    <option>online</option>
 
                                 </select>
                             </div>
@@ -478,7 +508,20 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group">
+                                <label>Distant
 
+                                </label>
+                                <select name="distant[]" class="form-control">
+                                    <option value="">Select Option</option>
+                                    <option>distant</option>
+                                    <option>regular</option>
+                                    <option>online</option>
+
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Country</label>
@@ -566,7 +609,20 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-lg-3 col-md-3 col-12">
+                            <div class="form-group">
+                                <label>Distant
 
+                                </label>
+                                <select name="distant[]" class="form-control">
+                                    <option value="">Select Option</option>
+                                    <option>distant</option>
+                                    <option>regular</option>
+                                    <option>online</option>
+
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-lg-3 col-md-3 col-12 ">
                             <div class="form-group">
                                 <label>Country</label>

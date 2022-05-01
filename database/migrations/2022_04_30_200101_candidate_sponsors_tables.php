@@ -13,7 +13,7 @@ class CandidateSponsorsTables extends Migration
      */
     public function up()
     {
-        Schema::create('candidate_work_places', function (Blueprint $table) {
+        Schema::create('candidate_sponsors', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
