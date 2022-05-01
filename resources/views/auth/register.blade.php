@@ -3,12 +3,14 @@
 @section('content')
 
 <!-- Subscribe & Stay Connected. Start -->
+
 <section class="StayConnected clearfix">
+
     <div class="container">
         <h1>Register as a {{request()->query('role')}}</h1>
         @if($errors->any())
-    {{ implode('', $errors->all(':message')) }}
-@endif
+        {{ implode('', $errors->all(':message')) }}
+        @endif
         <div class="whiteBox regas clearfix">
             <!--div class="news-title">
    Join our mailing list to get the latest news, <br>special offers and invitations to exclusive events.
@@ -27,7 +29,7 @@
     
     
    </div> -->
-            <form action="{{route('register')}}" method="POST"  >
+            <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div class="row">
 
@@ -39,7 +41,7 @@
 
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="form-group">
-                            <select name="country"  class="form-control" placeholder="">
+                            <select name="country" class="form-control" placeholder="">
                                 <option>Canada</option>
                             </select>
                         </div>
@@ -48,8 +50,7 @@
 
 
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="form-group"><input class="form-control" name="country_of_citizenship" value="{{old('country_of_citizenship')}}" type="text"
-                                placeholder="Country of Citizenship"></div>
+                        <div class="form-group"><input class="form-control" name="country_of_citizenship" value="{{old('country_of_citizenship')}}" type="text" placeholder="Country of Citizenship"></div>
                     </div>
                     @endif
                     @if(request()->query('role') == "candidate")
@@ -64,7 +65,7 @@
 
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="form-group">
-                            <select name="service_type" class="form-control" id="service" placeholder="" >
+                            <select name="service_type" class="form-control" id="service" placeholder="">
                                 <option>Select Service Type</option>
                                 <option value="Consultation">Consultation</option>
                                 <option value="Institution">Institution</option>
@@ -98,17 +99,14 @@
                                 <option data-name="/register/institude?service=College" value="College">College</option>
                                 <option data-name="/register/institude?service=University" value="University">University
                                 </option>
-                                <option data-name="/register/consultant?service=RCIC Consultant"
-                                    value="RCIC Consultant">RCIC Consultant</option>
+                                <option data-name="/register/consultant?service=RCIC Consultant" value="RCIC Consultant">RCIC Consultant</option>
 
 
 
-                                <option data-name="/register/consultant?service=Immigration Lawyer/Attorney"
-                                    value="Immigration Lawyer/Attorney">Immigration Lawyer/Attorney
+                                <option data-name="/register/consultant?service=Immigration Lawyer/Attorney" value="Immigration Lawyer/Attorney">Immigration Lawyer/Attorney
 
                                 </option>
-                                <option data-name="/register/business?service=Chartered Accountant"
-                                    value="Chartered Accountant">Chartered Accountant
+                                <option data-name="/register/business?service=Chartered Accountant" value="Chartered Accountant">Chartered Accountant
                                 </option>
 
 
@@ -222,44 +220,38 @@
 
                     <div class="col-lg-2 col-md-2 col-2">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="services[]"
-                                value="study">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="services[]" value="study">
                             <label class="custom-control-label" for="customCheck">Study </label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                name="service[]" value="migration">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="service[]" value="migration">
                             <label class="custom-control-label" for="customCheck1">Migration </label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-checkbox ">
-                            <input type="checkbox" class="custom-control-input " id="customCheck2"
-                                name="service[]" value="work">
+                            <input type="checkbox" class="custom-control-input " id="customCheck2" name="service[]" value="work">
                             <label class="custom-control-label" for="customCheck2">Work</label>
                         </div>
                     </div>
 
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-checkbox ">
-                            <input type="checkbox" class="custom-control-input " id="customCheck3"
-                                name="service[]" value="business">
+                            <input type="checkbox" class="custom-control-input " id="customCheck3" name="service[]" value="business">
                             <label class="custom-control-label" for="customCheck3">Business</label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-checkbox ">
-                            <input type="checkbox" class="custom-control-input " id="customCheck4"
-                                name="service[]" value="visa">
+                            <input type="checkbox" class="custom-control-input " id="customCheck4" name="service[]" value="visa">
                             <label class="custom-control-label" for="customCheck4">Visa</label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-checkbox ">
-                            <input type="checkbox" class="custom-control-input " id="customCheck5"
-                                name="service[]" value="others">
+                            <input type="checkbox" class="custom-control-input " id="customCheck5" name="service[]" value="others">
                             <label class="custom-control-label" for="customCheck5">Others</label>
                         </div>
                     </div>
@@ -269,22 +261,19 @@
 
                     <div class="col-lg-4 col-md-4 col-4">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="service_multi_rcic"
-                                value="1">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="service_multi_rcic" value="1">
                             <label class="custom-control-label" for="customCheck">RCIC Consultant </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-4">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                name="is_flexible_date" value="service_multi_immigration_lawyer">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="is_flexible_date" value="service_multi_immigration_lawyer">
                             <label class="custom-control-label" for="customCheck1">Immigration Lawyer </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-4 mb-3">
                         <div class="custom-control custom-checkbox ">
-                            <input type="checkbox" class="custom-control-input " id="customCheck2"
-                                name="is_flexible_date" value="service_multi_attorney">
+                            <input type="checkbox" class="custom-control-input " id="customCheck2" name="is_flexible_date" value="service_multi_attorney">
                             <label class="custom-control-label" for="customCheck2">Attorney</label>
                         </div>
                     </div>
@@ -296,22 +285,19 @@
 
                     <div class="col-lg-4 col-md-4 col-4">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="service_multi_school"
-                                value="1">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="service_multi_school" value="1">
                             <label class="custom-control-label" for="customCheck">School </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-4">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                name="is_flexible_date" value="service_multi_college">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="is_flexible_date" value="service_multi_college">
                             <label class="custom-control-label" for="customCheck1">College </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-4 mb-3">
                         <div class="custom-control custom-checkbox ">
-                            <input type="checkbox" class="custom-control-input " id="customCheck2"
-                                name="is_flexible_date" value="service_multi_university">
+                            <input type="checkbox" class="custom-control-input " id="customCheck2" name="is_flexible_date" value="service_multi_university">
                             <label class="custom-control-label" for="customCheck2">University</label>
                         </div>
                     </div>
@@ -323,8 +309,7 @@
 
                     <div class="col-lg-6 col-md-6 col-6">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="is_flexible_date"
-                                value="1">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="is_flexible_date" value="1">
                             <label class="custom-control-label" for="customCheck">Chartered Accountant </label>
                         </div>
                     </div>
@@ -340,14 +325,12 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="form-group"><input class="form-control" name="password_confirmation" type="password"
-                                placeholder="Confirm Password">
+                        <div class="form-group"><input class="form-control" name="password_confirmation" type="password" placeholder="Confirm Password">
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-6">
-                        <button type="submit" class="reg-btn"><a href="{{route('login')}}"
-                                style="color:white">Login</a></button>
+                        <button type="submit" class="reg-btn"><a href="{{route('login')}}" style="color:white">Login</a></button>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-6">
@@ -376,76 +359,76 @@
 
 
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
 
 
-    var type;
-    var service;
-    $(document).on('change', '#type', function() {
-        type = $('#type option:selected').val();
+        var type;
+        var service;
+        $(document).on('change', '#type', function() {
+            type = $('#type option:selected').val();
 
-        if (type == 'Join As') {
-            $("#service").prop('disabled', 'disabled');
-        } else {
-            $("#service").removeAttr("disabled");
-        }
+            if (type == 'Join As') {
+                $("#service").prop('disabled', 'disabled');
+            } else {
+                $("#service").removeAttr("disabled");
+            }
 
-        myFun();
+            myFun();
+
+        });
+
+        $(document).on('change', '#service', function() {
+            service = $('#service option:selected').val();
+
+            if (service == 'Select Service') {
+                $('.singleCandidate').addClass('d-none');
+                $('.multipleCandidate').addClass('d-none');
+
+            }
+            if (service == 'single') {
+                $('.singleCandidate').removeClass('d-none');
+                $('.multipleCandidate').addClass('d-none');
+
+
+            }
+            if (service == 'multiple') {
+                $('.singleCandidate').addClass('d-none');
+                $('.multipleCandidate').removeClass('d-none');
+
+            }
+            // myFun();
+
+        });
+
+        function myFun() {
+
+            console.log(type);
+            console.log(service);
+
+            var cls = service + type;
+            console.log(cls);
+            $('.sd').addClass('d-none');
+            $('.' + cls).removeClass('d-none');
+
+
+
+
+
+        };
+
+        $(document).on('change', '#typeservice', function() {
+
+            var url = $('#typeservice option:selected').data('name');
+
+
+            console.log(url);
+            $("#servicesubmit").attr("href", url)
+
+
+        });
+
+
 
     });
-
-    $(document).on('change', '#service', function() {
-        service = $('#service option:selected').val();
-
-        if (service == 'Select Service') {
-            $('.singleCandidate').addClass('d-none');
-            $('.multipleCandidate').addClass('d-none');
-
-        }
-        if (service == 'single') {
-            $('.singleCandidate').removeClass('d-none');
-            $('.multipleCandidate').addClass('d-none');
-
-
-        }
-        if (service == 'multiple') {
-            $('.singleCandidate').addClass('d-none');
-            $('.multipleCandidate').removeClass('d-none');
-
-        }
-        // myFun();
-
-    });
-
-    function myFun() {
-
-        console.log(type);
-        console.log(service);
-
-        var cls = service + type;
-        console.log(cls);
-        $('.sd').addClass('d-none');
-        $('.' + cls).removeClass('d-none');
-
-
-
-
-
-    };
-
-    $(document).on('change', '#typeservice', function() {
-
-        var url = $('#typeservice option:selected').data('name');
-
-
-        console.log(url);
-        $("#servicesubmit").attr("href", url)
-
-
-    });
-
-
-
-});
 </script>
 @endsection
