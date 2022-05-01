@@ -16,6 +16,8 @@ class CreateInstitutionsTable extends Migration
         Schema::create('institutions', function (Blueprint $table) {
 
             $table->bigIncrements('id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
             $table->string('name');
             $table->string('type');
             $table->string('registration_number')->unique();

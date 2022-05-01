@@ -15,7 +15,8 @@ class CandidateAcademicsTable extends Migration
     {
         Schema::create('candidate_academics', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
             $table->string('language_proficiency');
             $table->string('language_level')->nullable();
             $table->string('language_certified_by')->nullable();

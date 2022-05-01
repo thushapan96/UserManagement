@@ -13,8 +13,10 @@ class CandidateSponsorsTables extends Migration
      */
     public function up()
     {
-        Schema::create('candidate_work_places', function (Blueprint $table) {
+        Schema::create('candidate_sponsor_places', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
             $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
@@ -49,6 +51,6 @@ class CandidateSponsorsTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candidate_work_places');
+        Schema::dropIfExists('candidate_sponsor_places');
     }
 }
