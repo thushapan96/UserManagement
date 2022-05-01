@@ -2,10 +2,10 @@
 
 @section('content')
 
-
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix">
     <div class="container ">
+    
         <div class="whiteBoxtab ">
 
             <div class="cardf">
@@ -593,21 +593,28 @@
 
     <script>
     $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
         $("#personal_form").submit(function(e) {
 
             e.preventDefault(); // avoid to execute the actual submit of the form.
 
-            var form = $(this);
-            var actionUrl = form.attr('action');
+            var actionUrl = $(this).attr('action');
+            var form = new FormData(this);
 
             $.ajax({
                 type: "POST",
                 url: actionUrl,
-                data: form.serialize(), // serializes the form's elements.
-
+                cache: false,
+                data:form,
+                contentType: false,
+                processData: false, // serializes the form's elements.
                 success: function(data) {
-
+console.log(data);
                     $('.tab-pane').fadeOut();
                     $("#menu1").fadeIn();
                     $(".nav-link").removeClass('active')

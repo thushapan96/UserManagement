@@ -6,102 +6,102 @@
 <div class="whiteBox clearfix">
     <form id="academy_form" action="{{route('candidate_academy_add')}}" method="POST" enctype="multipart/form-data">
         @csrf
-    <!--div class="news-title">You have questions, let's have a conversation </div-->
-    <div class="row mt-4 custom-box">
+        <!--div class="news-title">You have questions, let's have a conversation </div-->
+        <div class="row mt-4 custom-box">
 
-        <div class="col-lg-6 col-md-6 col-12">
-            <div class="form-group">
-                <label>Language Proficiency
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="form-group">
+                    <label>Language Proficiency
 
-                </label>
-                <select name="language_proficiency" class="form-control">
-                    <option>English</option>
-                    <option>Tamil</option>
-                </select>
+                    </label>
+                    <select name="language_proficiency" class="form-control">
+                        <option>English</option>
+                        <option>Tamil</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="form-group">
+                    <label>Level
+
+                    </label>
+                    <select name="language_level" class="form-control">
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Competent</option>
+                        <option>Expert</option>
+
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-4 custom-box">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="upload-images">
+                    <label>
+                        <p>Certified By </p>
+                    </label>
+                    <input type="text" class="form-control" name="language_certified_by">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="upload-images">
+                    <label>
+                        <p>Attachment </p>
+                    </label>
+                    <input type="file" class="form-control" name="language_attachment">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-4 custom-box">
+            <div class="col-lg-3 col-md-3 col-12">
+                <div class="form-group">
+                    <label>Applicant Test Scores</label>
+                    <select class="form-control" id="" name="applicant_test_name[]">
+                        <option value="">Select</option>
+                        <option value="IELTS">IELTS</option>
+                        <option value="TOFEL">TOFEL</option>
+                        <option value="CELPIP">CELPIP</option>
+                        <option value="GRE">GRE</option>
+                        <option value="PTE">PTE</option>
+                        <option value="SAT">SAT</option>
+                        <option value="GMAT">GMAT</option>
+                        <option value="HSEiT">HSEiT</option>
+                        <option value="LSAT">LSAT</option>
+
+
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-12">
+                <div class="form-group">
+                    <label>If Other Applicant</label>
+                    <input class="form-control " type="text" name="applicant_test_name[]">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-12 ">
+                <div class="form-group">
+                    <label> Valid Upto
+                    </label>
+                    <input class="form-control " name="test_valid_upto" type="text" placeholder="Valid Upto">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-12 ">
+                <div class="form-group">
+                    <label>Attachment
+                    </label>
+                    <input type="file" class="form-control" name="test_attachment">
+                </div>
             </div>
         </div>
 
-        <div class="col-lg-6 col-md-6 col-12">
-            <div class="form-group">
-                <label>Level
-
-                </label>
-                <select name="language_level" class="form-control">
-                    <option>Beginner</option>
-                    <option>Intermediate</option>
-                    <option>Competent</option>
-                    <option>Expert</option>
-
-                </select>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="row mt-4 custom-box">
-        <div class="col-lg-6 col-md-6 col-12">
-            <div class="upload-images">
-                <label>
-                    <p>Certified By </p>
-                </label>
-                <input type="text" class="form-control" name="language_certified_by">
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-12">
-            <div class="upload-images">
-                <label>
-                    <p>Attachment </p>
-                </label>
-                <input type="file" class="form-control" name="language_attachment">
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row mt-4 custom-box">
-        <div class="col-lg-3 col-md-3 col-12">
-            <div class="form-group">
-                <label>Applicant Test Scores</label>
-                <select class="form-control" id="" name="applicant_test_name[]">
-                    <option value="">Select</option>
-                    <option value="IELTS">IELTS</option>
-                    <option value="TOFEL">TOFEL</option>
-                    <option value="CELPIP">CELPIP</option>
-                    <option value="GRE">GRE</option>
-                    <option value="PTE">PTE</option>
-                    <option value="SAT">SAT</option>
-                    <option value="GMAT">GMAT</option>
-                    <option value="HSEiT">HSEiT</option>
-                    <option value="LSAT">LSAT</option>
-
-
-                </select>
-
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-12">
-            <div class="form-group">
-                <label>If Other Applicant</label>
-                <input class="form-control " type="text" name="applicant_test_name[]">
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-12 ">
-            <div class="form-group">
-                <label> Valid Upto
-                </label>
-                <input class="form-control " name="test_valid_upto" type="text" placeholder="Valid Upto">
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-12 ">
-            <div class="form-group">
-                <label>Attachment
-                </label>
-                <input type="file" class="form-control" name="test_attachment">
-            </div>
-        </div>
-    </div>
-
-    <hr>
-<!--     
+        <hr>
+        <!--     
     <div class="row mt-4 mb-4">
         <div class="col-lg-3 col-md-3 col-12 ">
             <div class="form-group">
@@ -151,40 +151,44 @@
 
     </div>
     <hr> -->
-    <div id="addschoolrow">
+        <div id="addschoolrow">
 
-    </div>
-    <div class="col-lg-12 col-md-12 mt-2 col-12">
-        <button type="button" class="add-btn " id="addschoolbtn"><i class="fa-solid fa-plus"></i> Add School</button>
+        </div>
+        <div class="col-lg-12 col-md-12 mt-2 col-12">
+            <button type="button" class="add-btn " id="addschoolbtn"><i class="fa-solid fa-plus"></i> Add
+                School</button>
 
-    </div>
-    <div id="addcollegerow">
+        </div>
+        <div id="addcollegerow">
 
-    </div>
-    <div class="col-lg-12 col-md-12  mt-2 col-12">
-        <button type="button" class="add-btn  " id="collegebtn"><i class="fa-solid fa-plus"></i> Add College</button>
-    </div>
-    <div id="addpgrow">
+        </div>
+        <div class="col-lg-12 col-md-12  mt-2 col-12">
+            <button type="button" class="add-btn  " id="collegebtn"><i class="fa-solid fa-plus"></i> Add
+                College</button>
+        </div>
+        <div id="addpgrow">
 
-    </div>
-    <div class="col-lg-12 col-md-12 mt-2 col-12">
-        <button type="button" class="add-btn " id="pgbtn"><i class="fa-solid fa-plus"></i> Add PostGraduation</button>
-    </div>
-    <div id="addotherrow">
-    </div>
-    <div class="col-lg-12 col-md-12 mt-2 col-12">
-        <button type="button" class="add-btn " id="otherbtn"><i class="fa-solid fa-plus"></i> Add OtherQualification</button>
-    </div>
-
-  
-
-
-
+        </div>
+        <div class="col-lg-12 col-md-12 mt-2 col-12">
+            <button type="button" class="add-btn " id="pgbtn"><i class="fa-solid fa-plus"></i> Add
+                PostGraduation</button>
+        </div>
+        <div id="addotherrow">
+        </div>
+        <div class="col-lg-12 col-md-12 mt-2 col-12">
+            <button type="button" class="add-btn " id="otherbtn"><i class="fa-solid fa-plus"></i> Add
+                OtherQualification</button>
+        </div>
 
 
-    <div class="col-lg-12 col-md-12 col-12">
-        <button type="submit" class="client-btn">Submit AndNext</button> 
-    </div>
+
+
+
+
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <button type="submit" class="client-btn">Submit AndNext</button>
+        </div>
     </form>
 
 </div>
@@ -201,80 +205,82 @@
 
 <!-- ......................script for google map view.................... -->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly"
+    defer></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-    //.......................current location......................
+//.......................current location......................
 
-    $(document).ready(function() {
+$(document).ready(function() {
 
-        "use strict";
-        $('#map').hide();
+    "use strict";
+    $('#map').hide();
 
-        initMap();
+    initMap();
 
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById("map"), {
-                center: {
-                    lat: -33.8688,
-                    lng: 151.2195,
-                },
-                zoom: 13,
-            });
-            const card = document.getElementById("pac-card");
-            console.log(card);
-            const input1 = $('#pac-input1')[0];
-            const input2 = $('#pac-input2')[0];
-
-
-            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-            const autocomplete1 = new google.maps.places.Autocomplete(
-                input1); // Bind the map's bounds (viewport) property to the autocomplete object,
-            const autocomplete2 = new google.maps.places.Autocomplete(input2);
-
-            autocomplete1.bindTo("bounds", map); // Set the data fields to return when the user selects a place.
-            autocomplete2.bindTo("bounds", map);
-
-            autocomplete1.setFields([
-                "address_components",
-                "geometry",
-                "icon",
-                "name",
-            ]);
-            autocomplete2.setFields([
-                "address_components",
-                "geometry",
-                "icon",
-                "name",
-            ]);
-            const infowindow = new google.maps.InfoWindow();
-            const infowindowContent = document.getElementById("infowindow-content");
-            infowindow.setContent(infowindowContent);
-            const marker = new google.maps.Marker({
-                map,
-                anchorPoint: new google.maps.Point(0, -29),
-            });
-
-        }
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center: {
+                lat: -33.8688,
+                lng: 151.2195,
+            },
+            zoom: 13,
+        });
+        const card = document.getElementById("pac-card");
+        console.log(card);
+        const input1 = $('#pac-input1')[0];
+        const input2 = $('#pac-input2')[0];
 
 
-    });
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+        const autocomplete1 = new google.maps.places.Autocomplete(
+            input1); // Bind the map's bounds (viewport) property to the autocomplete object,
+        const autocomplete2 = new google.maps.places.Autocomplete(input2);
+
+        autocomplete1.bindTo("bounds", map); // Set the data fields to return when the user selects a place.
+        autocomplete2.bindTo("bounds", map);
+
+        autocomplete1.setFields([
+            "address_components",
+            "geometry",
+            "icon",
+            "name",
+        ]);
+        autocomplete2.setFields([
+            "address_components",
+            "geometry",
+            "icon",
+            "name",
+        ]);
+        const infowindow = new google.maps.InfoWindow();
+        const infowindowContent = document.getElementById("infowindow-content");
+        infowindow.setContent(infowindowContent);
+        const marker = new google.maps.Marker({
+            map,
+            anchorPoint: new google.maps.Point(0, -29),
+        });
+
+    }
+
+
+});
 </script>
 
 
 <!-- ...................end...script for google map view.................... -->
 
 <script>
-    $(document).ready(function() {
+$(document).ready(function() {
 
-        // for school
-        $("#addschoolbtn").click(function() {
+    // for school
+    $("#addschoolbtn").click(function() {
 
-            var html = '';
+        var html = '';
 
-            html = `<div  id="addschoolform"> 
+        html = `<div  id="addschoolform"> 
 <div class="col-lg-12 col-md-12 col-12 container addschool mt-4" >
                 <div class="whiteBox clearfix">
                     <div class="row custom-box">
@@ -347,7 +353,7 @@
                                 <label>
                                     <p>Other Attachment </p>
                                 </label>
-                                <input type="file" value="hi.txt"   class="form-control" name="attachment[]" >
+                                <input type="file"   class="form-control" name="attachment[]" >
                             </div>
                         </div>
 
@@ -359,21 +365,21 @@
        <br>
         `
 
-            $('#addschoolrow').append(html);
-        });
+        $('#addschoolrow').append(html);
+    });
 
-        // remove row
-        $(document).on('click', '#removeschool', function() {
-            $(this).closest('#addschoolform').remove();
-        });
+    // remove row
+    $(document).on('click', '#removeschool', function() {
+        $(this).closest('#addschoolform').remove();
+    });
 
-        // college
+    // college
 
-        $("#collegebtn").click(function() {
+    $("#collegebtn").click(function() {
 
-            var html = '';
+        var html = '';
 
-            html = `<div  id="addschoolform">
+        html = `<div  id="addschoolform">
             <div class="container addcollege mt-4">
                 <div class="whiteBox clearfix">
                     <div class="row custom-box">
@@ -454,21 +460,21 @@
             </div></div>
         `
 
-            $('#addcollegerow').append(html);
-        });
+        $('#addcollegerow').append(html);
+    });
 
-        // remove row
-        $(document).on('click', '#removecollege', function() {
-            $(this).closest('#addschoolform').remove();
-        });
+    // remove row
+    $(document).on('click', '#removecollege', function() {
+        $(this).closest('#addschoolform').remove();
+    });
 
-        // Pg
+    // Pg
 
-        $("#pgbtn").click(function() {
+    $("#pgbtn").click(function() {
 
-            var html = '';
+        var html = '';
 
-            html = `<div  id="addpgform">  <div class="container addpg mt-4">
+        html = `<div  id="addpgform">  <div class="container addpg mt-4">
 <div class="whiteBox clearfix">
                     <div class="row custom-box">
 
@@ -546,22 +552,22 @@
             </div></div>
 `
 
-            $('#addpgrow').append(html);
-        });
+        $('#addpgrow').append(html);
+    });
 
-        // remove row
-        $(document).on('click', '#removepg', function() {
-            $(this).closest('#addpgform').remove();
-        });
+    // remove row
+    $(document).on('click', '#removepg', function() {
+        $(this).closest('#addpgform').remove();
+    });
 
-        // other
+    // other
 
 
-        $("#otherbtn").click(function() {
+    $("#otherbtn").click(function() {
 
-            var html = '';
+        var html = '';
 
-            html = `
+        html = `
         <div  id="addpgform">
             <div class="container addother mt-4">
                 <div class="whiteBox clearfix">
@@ -571,7 +577,7 @@
                             <div class="form-group">
                                 <label>Technical Qualifications</label>
                                 <input class="form-control " name="tech[]" type="text" >
-                                <input class="form-control " hidden name="type[]" value="college" type="text" >
+                                <input class="form-control " hidden name="type[]" value="other" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
@@ -648,13 +654,49 @@
             </div></div>
 `
 
-            $('#addotherrow').append(html);
-        });
+        $('#addotherrow').append(html);
+    });
 
-        // remove row
-        $(document).on('click', '#removeother', function() {
-            $(this).closest('#addpgform').remove();
+    // remove row
+    $(document).on('click', '#removeother', function() {
+        $(this).closest('#addpgform').remove();
+    });
+
+});
+</script>
+<script>
+$(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $("#academy_form").submit(function(e) {
+
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+
+        var actionUrl = $(this).attr('action');
+        var form = new FormData(this);
+
+        $.ajax({
+            type: "POST",
+            url: actionUrl,
+            cache: false,
+            data: form,
+            contentType: false,
+            processData: false, // serializes the form's elements.
+            success: function(data) {
+                console.log(data);
+                $('.tab-pane').fadeOut();
+                $("#menu2").fadeIn();
+                $(".nav-link").removeClass('active')
+                $('#amenu2').addClass('active')
+
+            }
         });
 
     });
+
+});
 </script>

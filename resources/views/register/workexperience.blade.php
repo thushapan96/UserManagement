@@ -226,11 +226,10 @@
                 processData: false, // serializes the form's elements.
 
                 success: function(data) {
-                    console.log(data);
-                    // $('.tab-pane').fadeOut();
-                    // $("#menu3").fadeIn();
-                    // $(".nav-link").removeClass('active')
-                    // $('#amenu3').addClass('active')
+                    $('.tab-pane').fadeOut();
+                    $("#menu3").fadeIn();
+                    $(".nav-link").removeClass('active')
+                    $('#amenu3').addClass('active')
 
                 }
             });

@@ -37,6 +37,7 @@ class CandidateWorkController extends Controller
                 $Work->designation =  $request->designation[$i];
                 $Work->country =  $request->country[$i];
                 $Work->Year_completion =  $request->Year_completion[$i];
+                
                 if ($request->attach_experience_certificate) {
                     if ($request->attach_experience_certificate[$i] != "") {
                         $files = $request->attach_experience_certificate[$i];

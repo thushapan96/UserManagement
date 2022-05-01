@@ -10,6 +10,6 @@ class Qualification extends Model
     use HasFactory;
     protected $table = 'qualifications';
     protected $fillable = [
-'type','name','address','distant','Year_completion','applicable_eca_validity','country','attachment','tech'
+'type','name','candidate_academic_id','address','distant','Year_completion','applicable_eca_validity','country','attachment','tech'
     ];
 }
