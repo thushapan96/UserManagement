@@ -12,7 +12,6 @@
                         <label>Designation
                         </label>
                         <input class="form-control " type="text" placeholder="Enter Designation" name="designation[]">
-
                     </div>
                 </div>
 
@@ -43,7 +42,7 @@
                         <label>
                             Attach Experience Certificate
                         </label>
-                        <input class="form-control" type="file" name="attach_experience_certificate[]">
+                        <a href="{{route('candidate_work_add')}}">  <input class="form-control" type="file" value="" name="attach_experience_certificate[]"></a>
                     </div>
                 </div>
 
@@ -215,6 +214,7 @@
             // var form = $(this);
             var actionUrl = $(this).attr('action');
             var form = new FormData(this);
+
             console.log('form'+typeof(form))
 
             $.ajax({

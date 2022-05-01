@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class CandidateAcademyController extends Controller
 {
+    
     function store(Request $request){
         $academy = new Academy;
         $academy->language_proficiency = $request->language_proficiency;
