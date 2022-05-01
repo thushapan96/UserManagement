@@ -15,7 +15,8 @@ class CandidatePersonalsTable extends Migration
     {
         Schema::create('candidate_personals', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();  
-
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
@@ -32,7 +33,6 @@ class CandidatePersonalsTable extends Migration
             $table->string('corosponding_region')->nullable();
             $table->string('corosponding_pincode')->nullable();
             $table->string('corosponding_country')->nullable();
-
 
             $table->string('mobile')->nullable();
             $table->string('phone')->nullable();

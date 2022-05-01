@@ -15,7 +15,8 @@ class CandidateWorkPlacesTable extends Migration
     {
         Schema::create('candidate_work_places', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-           
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
             $table->string('designation')->nullable();
             $table->string('country')->nullable();
             $table->string('Year_completion')->nullable();
