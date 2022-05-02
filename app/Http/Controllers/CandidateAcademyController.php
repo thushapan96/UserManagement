@@ -43,38 +43,39 @@ class CandidateAcademyController extends Controller
         $academy->language_attachment = $request->language_attachment;
 
         $academy->save();
+        if ($request->type) {
+            $count = count($request->type);
 
-        $count = count($request->type);
-
-        $newcount = $count - 1;
-        if ($request->attachment) {
-            $newKeys_experience = array_fill_keys(range(0,   $newcount), "");
-            $request->attachment += $newKeys_experience;
-        }
-        for ($i = 0; $i < $count; $i++) {
-            $qualification = new Qualification;
-            $qualification->candidate_academic_id = $academy->id;
-            $qualification->type = $request->type[$i];
-            $qualification->name = $request->name[$i];
-            $qualification->tech = $request->tech[$i];
-            $qualification->address = $request->address[$i];
-            $qualification->distant = $request->distant[$i];
-            $qualification->Year_completion = $request->year_completed[$i];
-            $qualification->applicable_eca_validity = $request->eca[$i];
-            $qualification->country = $request->country[$i];
+            $newcount = $count - 1;
             if ($request->attachment) {
-
-                if ($request->attachment[$i]) {
-                    $files = $request->attachment[$i];
-                    $request->attachment[$i]->getClientOriginalName();
-                    $name =  $request->attachment[$i]->getClientOriginalName();
-
-                    $destinationPath = public_path() . '/files';
-                    $files->move($destinationPath, $name);
-                    $qualification->attachment = $name;
-                }
+                $newKeys_experience = array_fill_keys(range(0,   $newcount), "");
+                $request->attachment += $newKeys_experience;
             }
-            $qualification->save();
+            for ($i = 0; $i < $count; $i++) {
+                $qualification = new Qualification;
+                $qualification->candidate_academic_id = $academy->id;
+                $qualification->type = $request->type[$i];
+                $qualification->name = $request->name[$i];
+                $qualification->tech = $request->tech[$i];
+                $qualification->address = $request->address[$i];
+                $qualification->distant = $request->distant[$i];
+                $qualification->Year_completion = $request->year_completed[$i];
+                $qualification->applicable_eca_validity = $request->eca[$i];
+                $qualification->country = $request->country[$i];
+                if ($request->attachment) {
+
+                    if ($request->attachment[$i]) {
+                        $files = $request->attachment[$i];
+                        $request->attachment[$i]->getClientOriginalName();
+                        $name =  $request->attachment[$i]->getClientOriginalName();
+
+                        $destinationPath = public_path() . '/files';
+                        $files->move($destinationPath, $name);
+                        $qualification->attachment = $name;
+                    }
+                }
+                $qualification->save();
+            }
         }
         return "success";
     }

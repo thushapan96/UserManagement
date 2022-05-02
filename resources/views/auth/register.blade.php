@@ -121,38 +121,38 @@
 
                     <div class="col-lg-2 col-md-2 col-2">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customradio" name="service_single" value="study">
+                            <input type="radio" class="custom-control-input" id="customradio" name="service" value="study">
                             <label class="custom-control-label" for="customradio">Study </label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customradio1" name="service_single" value="migration">
+                            <input type="radio" class="custom-control-input" id="customradio1" name="service" value="migration">
                             <label class="custom-control-label" for="customradio1">Migration </label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-radio ">
-                            <input type="radio" class="custom-control-input " id="customradio2" name="service_single" value="work">
+                            <input type="radio" class="custom-control-input " id="customradio2" name="service" value="work">
                             <label class="custom-control-label" for="customradio2">Work</label>
                         </div>
                     </div>
 
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-radio ">
-                            <input type="radio" class="custom-control-input " id="customradio3" name="service_single" value="business">
+                            <input type="radio" class="custom-control-input " id="customradio3" name="service" value="business">
                             <label class="custom-control-label" for="customradio3">Business</label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-radio ">
-                            <input type="radio" class="custom-control-input " id="customradio4" name="service_single" value="visa">
+                            <input type="radio" class="custom-control-input " id="customradio4" name="service" value="visa">
                             <label class="custom-control-label" for="customradio4">Visa</label>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-2 col-2 mb-3">
                         <div class="custom-control custom-radio ">
-                            <input type="radio" class="custom-control-input " id="customradio5" name="service_single" value="others">
+                            <input type="radio" class="custom-control-input " id="customradio5" name="service" value="others">
                             <label class="custom-control-label" for="customradio5">Others</label>
                         </div>
                     </div>
@@ -162,19 +162,19 @@
 
                     <div class="col-lg-4 col-md-4 col-4">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customradio" name="service_multi" value="rcic_consultant">
+                            <input type="radio" class="custom-control-input" id="customradio" name="service" value="rcic_consultant">
                             <label class="custom-control-label" for="customradio">RCIC Consultant </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-4">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customradio1" name="service_multi" value="immigration_lawyer">
+                            <input type="radio" class="custom-control-input" id="customradio1" name="service" value="immigration_lawyer">
                             <label class="custom-control-label" for="customradio1">Immigration Lawyer </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-4 mb-3">
                         <div class="custom-control custom-radio ">
-                            <input type="radio" class="custom-control-input " id="customradio2" name="service_multi" value="attorney">
+                            <input type="radio" class="custom-control-input " id="customradio2" name="service" value="attorney">
                             <label class="custom-control-label" for="customradio2">Attorney</label>
                         </div>
                     </div>
@@ -185,19 +185,19 @@
 
                     <div class="col-lg-4 col-md-4 col-4">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customradio" name="service_multi" value="school">
+                            <input type="radio" class="custom-control-input" id="customradio" name="service" value="school">
                             <label class="custom-control-label" for="customradio">School </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-4">
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customradio1" name="service_multi" value="college">
+                            <input type="radio" class="custom-control-input" id="customradio1" name="service" value="college">
                             <label class="custom-control-label" for="customradio1">College </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-4 mb-3">
                         <div class="custom-control custom-radio ">
-                            <input type="radio" class="custom-control-input " id="customradio2" name="service_multi" value="university">
+                            <input type="radio" class="custom-control-input " id="customradio2" name="service" value="university">
                             <label class="custom-control-label" for="customradio2">University</label>
                         </div>
                     </div>

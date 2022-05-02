@@ -11,7 +11,7 @@
                     <div class="form-group">
                         <label>Designation
                         </label>
-                        <input class="form-control " type="text" placeholder="Enter Designation" name="designation[]">
+                        <input class="form-control " type="text" placeholder="Enter Designation" name="designation[]" required>
                     </div>
                 </div>
 
@@ -117,7 +117,7 @@
             <div class="form-group">
                 <label>Designation
                 </label>
-                <input class="form-control " type="text" placeholder="Enter Designation" name="designation[]">
+                <input class="form-control " type="text" placeholder="Enter Designation" name="designation[]" required>
 
             </div>
         </div>
@@ -226,6 +226,7 @@
                 processData: false, // serializes the form's elements.
 
                 success: function(data) {
+                    console.log(data)
                     $(".progress-bar").css("width", "75%");
                     $('.tab-pane').fadeOut();
                     $("#menu3").fadeIn();

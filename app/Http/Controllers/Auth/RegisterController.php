@@ -79,7 +79,7 @@ class RegisterController extends Controller
     {
 
         if($data['service_type'] == 'single'){
-            $service = $data['service_single'];
+            $service = $data['service'];
         }else{
             $service = $data['service'];
         }
