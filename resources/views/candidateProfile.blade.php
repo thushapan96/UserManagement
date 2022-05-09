@@ -7,12 +7,12 @@
             <div class="col-md-4 border-left" style=" left: 150px;">
                 <div class="d-flex flex-column align-items-left text-left p-3 py-5">
                     <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
-                    <span class="font-weight-bold  align-items-center  ">Edogaru</span><br>
-                    <span class="font-weight-bold  text-left">edogaru@mail.com.my</span><br>
-                    <span class="font-weight-bold text-left">Facebook Link </span><br>
-                    <span class="font-weight-bold">LinkedIn Link </span><br>
-                    <span class="font-weight-bold">Twitter Link </span><br>
-                    <span class="font-weight-bold">Instagram Link </span><br>
+                    <span class="font-weight-bold  align-items-center  ">{{$personal->first_name}}</span><br>
+                    <span class="font-weight-bold  text-left">{{$personal->email}}</span><br>
+                    <span class="font-weight-bold text-left">{{$personal->fb_link}}</span><br>
+                    <span class="font-weight-bold">{{$personal->Linkedin_link}}</span><br>
+                    <span class="font-weight-bold">{{$personal->insta_link}}</span><br>
+                    <span class="font-weight-bold">{{$personal->twitter_link}} </span><br>
                 </div>
             </div>
             <div class="col-md-8 ">
@@ -29,21 +29,22 @@
                     </div>
                     <br>
                     <br>
+                    @if($personal)
                     <div id='menu' class='tab-pane'>
                         <!-- <div class="float-center">
                             <h4 class="float-center">Personal Information</h4>
                         </div> -->
                         <br>
                         <div class="col-md-8 card">
-                            <br>
+                            <br><br>
                             <div class="row ">
                                 <div class="col-md-4">
                                     <strong class="labels"> Name : </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">Ramesh</label>
-                                    <label class="labels">kajan</label>
-                                    <label class="labels">Roopan</label>
+                                    <label class="labels">{{$personal->first_name}}</label>
+                                    <label class="labels">{{$personal->middle_name}}</label>
+                                    <label class="labels">{{$personal->last_name}}</label>
                                 </div>
                             </div>
                             <br>
@@ -52,12 +53,24 @@
                                     <strong class="labels"> Present Residential Address : </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">residential_street</label><br>
-                                    <label class="labels">residential_street2</label><br>
-                                    <label class="labels">residential_city</label><br>
-                                    <label class="labels">residential_region</label><br>
-                                    <label class="labels">residential_pincode</label><br>
-                                    <label class="labels">residential_country</label><br>
+                                    @if($personal->residential_street)
+                                    <label class="labels">{{$personal->residential_street}}</label><br>
+                                    @endif
+                                    @if($personal->residential_street2)
+                                    <label class="labels">{{$personal->residential_street2}}</label><br>
+                                    @endif
+                                    @if($personal->residential_city)
+                                    <label class="labels">{{$personal->residential_city}}</label><br>
+                                    @endif
+                                    @if($personal->residential_region)
+                                    <label class="labels">{{$personal->residential_region}}</label><br>
+                                    @endif
+                                    @if($personal->residential_pincode)
+                                    <label class="labels">{{$personal->residential_pincode}}</label><br>
+                                    @endif
+                                    @if($personal->residential_country)
+                                    <label class="labels">{{$personal->residential_country}}</label><br>
+                                    @endif
                                 </div>
                             </div>
                             <br>
@@ -66,12 +79,25 @@
                                     <strong class="labels"> Present corosponding Address : </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">corosponding_street</label><br>
-                                    <label class="labels">corosponding_street2</label><br>
-                                    <label class="labels">corosponding_city</label><br>
-                                    <label class="labels">corosponding_region</label><br>
-                                    <label class="labels">corosponding_pincode</label><br>
-                                    <label class="labels">corosponding_country</label><br>
+                                    @if($personal->corosponding_street)
+                                    <label class="labels">{{$personal->corosponding_street}}</label><br>
+                                    @endif
+                                    @if($personal->corosponding_street2)
+                                    <label class="labels">{{$personal->corosponding_street2}}</label><br>
+                                    @endif
+                                    @if($personal->corosponding_city)
+                                    <label class="labels">{{$personal->corosponding_city}}</label><br>
+                                    @endif
+                                    @if($personal->corosponding_region)
+                                    <label class="labels">{{$personal->corosponding_region}}</label><br>
+                                    @endif
+                                    @if($personal->corosponding_pincode)
+                                    <label class="labels">{{$personal->corosponding_pincode}}</label><br>
+                                    @endif
+                                    @if($personal->corosponding_pincode)
+                                    <label class="labels">{{$personal->corosponding_pincode}}</label><br>
+                                    @endif
+
                                 </div>
                             </div>
                             <br>
@@ -80,8 +106,8 @@
                                     <strong class="labels"> mobile: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">0767064754</label><br>
-                                    <label class="labels">02367064754</label><br>
+                                    <label class="labels">{{$personal->mobile}}</label><br>
+                                    <label class="labels">{{$personal->phone}}</label><br>
                                 </div>
                             </div>
                             <br>
@@ -90,7 +116,7 @@
                                     <strong class="labels"> email: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">rameshkajan@gmail.com</label><br>
+                                    <label class="labels">{{$personal->email}}</label><br>
                                 </div>
                             </div>
                             <br>
@@ -99,7 +125,7 @@
                                     <strong class="labels"> birth_date: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">02/03/1996</label><br>
+                                    <label class="labels">{{$personal->birth_date}}</label><br>
                                 </div>
                             </div>
                             <br>
@@ -110,7 +136,7 @@
                                     <strong class="labels"> gender: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">male</label><br>
+                                    <label class="labels">{{$personal->gender}}</label><br>
                                 </div>
                             </div>
                             <br>
@@ -119,7 +145,7 @@
                                     <strong class="labels"> is_already_apply: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">yes</label><br>
+                                    <label class="labels">{{$personal->is_already_apply}}</label><br>
                                 </div>
                             </div>
                             <br>
@@ -128,7 +154,7 @@
                                     <strong class="labels"> possible_start_date: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">02/25/2022</label><br>
+                                    <label class="labels">{{$personal->possible_start_date}}</label><br>
                                 </div>
                             </div>
                             <br>
@@ -137,7 +163,7 @@
                                     <strong class="labels"> immigration_purpose: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">study</label><br>
+                                    <label class="labels">{{$personal->immigration_purpose}}</label><br>
                                 </div>
                             </div>
                             <br>
@@ -146,18 +172,21 @@
                                     <strong class="labels"> is_vaccinate: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">yes</label><br>
+                                    <label class="labels">{{$personal->is_vaccinate}}</label><br>
                                 </div>
                             </div>
+                            <br><br>
                         </div>
                         <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Personal Profile </button></div>
                     </div>
-
+                    @endif
+                    @if($Academy)
                     <div id='menu1' class='tab-pane'>
                         <!-- <div class="float-center">
                             <h4 class="float-center">Personal Information</h4>
                         </div> -->
                         <br>
+
                         <div class="col-md-8 card">
                             <br>
                             <div class="row ">
@@ -165,7 +194,7 @@
                                     <strong class="labels"> Language Proficiency : </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">english</label>
+                                    <label class="labels">{{$Academy->language_proficiency}}</label>
                                 </div>
                             </div>
                             <br>
@@ -174,7 +203,7 @@
                                     <strong class="labels"> Language Level : </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">Beginer</label>
+                                    <label class="labels">{{$Academy->language_level}}</label>
                                 </div>
                             </div>
                             <br>
@@ -183,7 +212,7 @@
                                     <strong class="labels"> Certified By: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">institution</label><br>
+                                    <label class="labels">{{$Academy->language_certified_by}}</label><br>
                                 </div>
                             </div>
                             <br>
@@ -192,7 +221,7 @@
                                     <strong class="labels"> Applicant Test Scores : </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">Applicant Test Scores</label><br>
+                                    <label class="labels">{{$Academy->applicant_test_name}}</label><br>
 
                                 </div>
                             </div>
@@ -203,22 +232,23 @@
                                     <strong class="labels"> Valid Upto: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">02/08/2022</label><br>
+                                    <label class="labels">{{$Academy->test_valid_upto}}</label><br>
                                 </div>
                             </div>
                             <br>
                         </div>
-
                         <br>
+
+                        @foreach($qualification as $row)
                         <div class="col-md-8 card">
                             <br>
-                            <strong class="labels">School</strong><br>
+                            <strong class="labels">{{$row->type}}</strong><br>
                             <div class="row ">
                                 <div class="col-md-4">
                                     <strong class="labels">Name: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">GTMS/school</label><br>
+                                    <label class="labels">{{$row->name}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -226,7 +256,7 @@
                                     <strong class="labels">Address: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">sdsdgdsg,dsdgsdg,dsgsdgg,</label><br>
+                                    <label class="labels">{{$row->Address}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -234,7 +264,7 @@
                                     <strong class="labels">Year Completion: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">02/05/2021</label><br>
+                                    <label class="labels">{{$row->Year_completion}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -242,107 +272,34 @@
                                     <strong class="labels">Distant: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">online</label><br>
+                                    <label class="labels">{{$row->Distant}}</label><br>
                                 </div>
                             </div><br>
 
                         </div>
                         <br>
-                        <div class="col-md-8 card">
-                            <br>
-                            <strong class="labels">College</strong><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Name: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">GTMS/school</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Address: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">sdsdgdsg,dsdgsdg,dsgsdgg,</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Year Completion: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">02/05/2021</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Distant: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">online</label><br>
-                                </div>
-                            </div><br>
-
-                        </div>
-                        <br>
-                        <div class="col-md-8 card">
-                            <br>
-                            <strong class="labels">College</strong><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Name: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">GTMS/school</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Address: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">sdsdgdsg,dsdgsdg,dsgsdgg,</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Year Completion: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">02/05/2021</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Distant: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">online</label><br>
-                                </div>
-                            </div><br>
-
-                        </div>
-                        <br>
+                        @endforeach
 
                         <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit academic Profile </button></div>
                     </div>
-
+                    @endif
+                    @if($Work)
                     <div id='menu2' class='tab-pane'>
                         <!-- <div class="float-center">
                             <h4 class="float-center">Personal Information</h4>
                         </div> -->
                         <br>
+                        @foreach($Work as $key =>$row)
                         <div class="col-md-8 card">
                             <br>
 
-                            <strong class="labels">Place work 1</strong><br>
+                            <strong class="labels">Place work {{$key + 1 }}</strong><br>
                             <div class="row ">
                                 <div class="col-md-4">
                                     <strong class="labels">Designation: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels"> GTMS/school</label><br>
+                                    <label class="labels"> {{$row->designation}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -350,7 +307,7 @@
                                     <strong class="labels">No. of Years Worked: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">sdsdgdsg,dsdgsdg,dsgsdgg,</label><br>
+                                    <label class="labels">{{$row->Year_completion}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -358,7 +315,7 @@
                                     <strong class="labels">Country: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">canada</label><br>
+                                    <label class="labels">{{$row->country}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -366,88 +323,19 @@
                                     <strong class="labels">Work Profile: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">software engineer</label><br>
+                                    <label class="labels">{{$row->work_profile_letter}}</label><br>
                                 </div>
                             </div><br>
 
                         </div>
                         <br>
-                        <div class="col-md-8 card">
-                            <br>
-                            <strong class="labels">Place work 2</strong><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Designation: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels"> GTMS/school</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">No. of Years Worked: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">sdsdgdsg,dsdgsdg,dsgsdgg,</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Country: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">canada</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Work Profile: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">software engineer</label><br>
-                                </div>
-                            </div><br>
-                        </div>
-                        <br>
-                        <div class="col-md-8 card">
-                            <br>
-                            <strong class="labels">Place work 3</strong><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Designation: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels"> GTMS/school</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">No. of Years Worked: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">sdsdgdsg,dsdgsdg,dsgsdgg,</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Country: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">canada</label><br>
-                                </div>
-                            </div><br>
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels">Work Profile: </strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="labels">software engineer</label><br>
-                                </div>
-                            </div><br>
-                        </div>
+                        @endforeach
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Work Profile </button></div>
+
                         <br>
                     </div>
-
+                    @endif
+                    @if($Sponsor)
                     <div id='menu3' class='tab-pane'>
                         <!-- <div class="float-center">
                             <h4 class="float-center">Personal Information</h4>
@@ -461,7 +349,7 @@
                                     <strong class="labels">Name: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">kopi thusa kalai</label><br>
+                                    <label class="labels">{{$Sponsor->fisrt_name}}&nbsp;&nbsp;{{$Sponsor->middle_name}}&nbsp;&nbsp;{{$Sponsor->last_name}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -469,7 +357,7 @@
                                     <strong class="labels">Sponsor Status: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">sdsdgdsg</label><br>
+                                    <label class="labels">{{$Sponsor->sponsor_status}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -477,7 +365,7 @@
                                     <strong class="labels">Relationship with Child : </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">kopi thusa kalai</label><br>
+                                    <label class="labels">{{$Sponsor->sponsor_relation}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -485,7 +373,7 @@
                                     <strong class="labels">Mobile Number: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">kopi thusa kalai</label><br>
+                                    <label class="labels">{{$Sponsor->sponsor_mobile}}</label><br>
                                 </div>
                             </div><br>
 
@@ -494,7 +382,7 @@
                                     <strong class="labels">Email: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">kajan@gmail.com</label><br>
+                                    <label class="labels">{{$Sponsor->sponsor_email}}</label><br>
                                 </div>
                             </div><br>
 
@@ -503,7 +391,24 @@
                                     <strong class="labels">Address: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">sdsdg sgsdg sdgsd</label><br>
+                                    @if($Sponsor->sponsor_street)
+                                    <label class="labels">{{$Sponsor->sponsor_street}}</label><br>
+                                    @endif
+                                    @if($Sponsor->sponsor_street2)
+                                    <label class="labels">{{$Sponsor->sponsor_street2}}</label><br>
+                                    @endif
+                                    @if($Sponsor->sponsor_city)
+                                    <label class="labels">{{$Sponsor->sponsor_city}}</label><br>
+                                    @endif
+                                    @if($Sponsor->sponsor_region)
+                                    <label class="labels">{{$Sponsor->sponsor_region}}</label><br>
+                                    @endif
+                                    @if($Sponsor->sponsor_pincode)
+                                    <label class="labels">{{$Sponsor->sponsor_pincode}}</label><br>
+                                    @endif
+                                    @if($Sponsor->sponsor_country)
+                                    <label class="labels">{{$Sponsor->sponsor_country}}</label><br>
+                                    @endif
                                 </div>
                             </div><br>
 
@@ -517,7 +422,7 @@
                                     <strong class="labels">Relationship with Child: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels"> GTMS/school</label><br>
+                                    <label class="labels">{{$Sponsor->guardian_relation}}</label><br>
                                 </div>
                             </div><br>
 
@@ -526,7 +431,7 @@
                                     <strong class="labels">Mobile Number: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">0789876875</label><br>
+                                    <label class="labels">{{$Sponsor->guardian_mobile}}</label><br>
                                 </div>
                             </div><br>
 
@@ -535,7 +440,7 @@
                                     <strong class="labels">Email: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">chool@gmail.com</label><br>
+                                    <label class="labels">{{$Sponsor->guardian_email }}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
@@ -543,15 +448,34 @@
                                     <strong class="labels">Address: </strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="labels">seetha ayothi first</label><br>
+                                    @if($Sponsor->guardian_street)
+                                    <label class="labels">{{$Sponsor->guardian_street}}</label><br>
+                                    @endif
+                                    @if($Sponsor->guardian_street2)
+                                    <label class="labels">{{$Sponsor->guardian_street2}}</label><br>
+                                    @endif
+                                    @if($Sponsor->guardian_city)
+                                    <label class="labels">{{$Sponsor->guardian_city}}</label><br>
+                                    @endif
+                                    @if($Sponsor->guardian_region)
+                                    <label class="labels">{{$Sponsor->guardian_region}}</label><br>
+                                    @endif
+                                    @if($Sponsor->guardian_pincode)
+                                    <label class="labels">{{$Sponsor->guardian_pincode}}</label><br>
+                                    @endif
+                                    @if($Sponsor->guardian_country)
+                                    <label class="labels">{{$Sponsor->guardian_country}}</label><br>
+                                    @endif
                                 </div>
                             </div><br>
 
 
                         </div>
                         <br>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Sponsor Profile </button></div>
 
                     </div>
+                    @endif
                     <br>
                 </div>
             </div>

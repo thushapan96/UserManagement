@@ -10,7 +10,7 @@ class Academy extends Model
     use HasFactory;
     protected $table = 'candidate_academics';
     protected $fillable = [
-        'language_proficiency','language_level','language_certified_by','language_attachment','applicant_test_name','test_valid_upto','test_attachment'
+        'user_id','language_proficiency','language_level','language_certified_by','language_attachment','applicant_test_name','test_valid_upto','test_attachment'
     ];
 
 }

@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Work;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Auth;
 
 class CandidateWorkController extends Controller
 {
     public function store(Request $request)
     {
+        $id = Auth::user()->id;
         $count =  count($request->designation);
         $newcount = $count - 1;
 
@@ -33,6 +35,7 @@ class CandidateWorkController extends Controller
             if ($request->designation[$i] != "") {
 
                 $Work = new Work;
+                $Work->user_id = $id;
                 $Work->designation =  $request->designation[$i];
                 $Work->country =  $request->country[$i];
                 $Work->Year_completion =  $request->Year_completion[$i];

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Academy;
 use App\Models\Qualification;
+use Illuminate\Support\Facades\Auth;
 
 
 use Illuminate\Http\Request;
@@ -13,7 +14,10 @@ class CandidateAcademyController extends Controller
 
     function store(Request $request)
     {
+        $id = Auth::user()->id;
+
         $academy = new Academy;
+        $academy->user_id = $id;
         $academy->language_proficiency = $request->language_proficiency;
         $academy->language_level = $request->language_level;
         $academy->language_certified_by = $request->language_certified_by;

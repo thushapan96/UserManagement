@@ -16,13 +16,12 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
+ 
     return view('index');
 });
 
 
-Route::get('/profile', function () {
-    return view('candidateProfile');
-});
+Route::get('/profile','App\Http\Controllers\ProfileController@index')->name('personalProfile');
 
 Route::get('/canadainspair', function () {
     return view('canadainspair');
@@ -33,6 +32,7 @@ Route::get('/whycanada', function () {
 })->name('whycanada');
 
 Route::get('/register/candidate/personal', function () {
+    
     return view('register/register');
 })->name('candidate_personal');
 
