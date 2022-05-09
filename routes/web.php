@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+Route::get('/profile', function () {
+    return view('candidateProfile');
+});
+
 Route::get('/canadainspair', function () {
     return view('canadainspair');
 })->name('canadainspair');
