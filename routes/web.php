@@ -40,7 +40,7 @@ Route::get('/register/candidate/acadamic', function () {
     return view('register/registerformone');
 })->name('candidate_acadamic');
 
-// Route::get('register', 'UserController@register')->name('register');
+Route::get('dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 // Route::post('register', 'Register@register')->name('register');
 
 
