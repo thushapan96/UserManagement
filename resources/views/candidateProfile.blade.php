@@ -69,7 +69,7 @@
                                     <label class="labels">{{$personal->residential_pincode}}</label><br>
                                     @endif
                                     @if($personal->residential_country)
-                                    <label class="labels">{{$personal->residential_country}}</label><br>
+                                    <label class="labels">{{$personal->residential_country}}</label>
                                     @endif
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                                     <label class="labels">{{$personal->corosponding_pincode}}</label><br>
                                     @endif
                                     @if($personal->corosponding_pincode)
-                                    <label class="labels">{{$personal->corosponding_pincode}}</label><br>
+                                    <label class="labels">{{$personal->corosponding_country}}</label>
                                     @endif
 
                                 </div>
@@ -107,7 +107,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$personal->mobile}}</label><br>
-                                    <label class="labels">{{$personal->phone}}</label><br>
+                                    <label class="labels">{{$personal->phone}}</label>
                                 </div>
                             </div>
                             <br>
@@ -116,7 +116,7 @@
                                     <strong class="labels"> email: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">{{$personal->email}}</label><br>
+                                    <label class="labels">{{$personal->email}}</label>
                                 </div>
                             </div>
                             <br>
@@ -125,18 +125,17 @@
                                     <strong class="labels"> birth_date: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">{{$personal->birth_date}}</label><br>
+                                    <label class="labels">{{$personal->birth_date}}</label>
                                 </div>
                             </div>
                             <br>
 
-                            <br>
                             <div class="row ">
                                 <div class="col-md-4">
                                     <strong class="labels"> gender: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">{{$personal->gender}}</label><br>
+                                    <label class="labels">{{$personal->gender}}</label>
                                 </div>
                             </div>
                             <br>
@@ -145,7 +144,7 @@
                                     <strong class="labels"> is_already_apply: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">{{$personal->is_already_apply}}</label><br>
+                                    <label class="labels">{{$personal->is_already_apply}}</label>
                                 </div>
                             </div>
                             <br>
@@ -154,7 +153,7 @@
                                     <strong class="labels"> possible_start_date: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">{{$personal->possible_start_date}}</label><br>
+                                    <label class="labels">{{$personal->possible_start_date}}</label>
                                 </div>
                             </div>
                             <br>
@@ -163,7 +162,7 @@
                                     <strong class="labels"> immigration_purpose: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">{{$personal->immigration_purpose}}</label><br>
+                                    <label class="labels">{{$personal->immigration_purpose}}</label>
                                 </div>
                             </div>
                             <br>
@@ -172,12 +171,12 @@
                                     <strong class="labels"> is_vaccinate: </strong>
                                 </div>
                                 <div class="col-md-7">
-                                    <label class="labels">{{$personal->is_vaccinate}}</label><br>
+                                    <label class="labels">{{$personal->is_vaccinate}}</label>
                                 </div>
                             </div>
                             <br><br>
                         </div>
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Personal Profile </button></div>
+                        <div class="mt-5 text-center"><a href="{{route('personalEdit', ['id' => $personal->user_id])}}"><button class="btn btn-primary profile-button" type="button">Edit Personal Profile </button></a></div>
                     </div>
                     @endif
                     @if($Academy)
@@ -280,7 +279,7 @@
                         <br>
                         @endforeach
 
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit academic Profile </button></div>
+                        <div class="mt-5 text-center"><a href="{{route('academyEdit', ['id' => $Academy->user_id])}}"><button class="btn btn-primary profile-button" type="button">Edit academic Profile </button></a></div>
                     </div>
                     @endif
                     @if($Work)
@@ -330,7 +329,7 @@
                         </div>
                         <br>
                         @endforeach
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Work Profile </button></div>
+                        <div class="mt-5 text-center"><a href="{{route('workEdit', ['id' => $userId])}}"><button class="btn btn-primary profile-button" type="button">Edit Work Profile </button></a></div>
 
                         <br>
                     </div>

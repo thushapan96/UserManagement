@@ -31,6 +31,15 @@ Route::get('/whycanada', function () {
     return view('whycanada');
 })->name('whycanada');
 
+Route::get('/personalEdit/{id}', 'App\Http\Controllers\ProfileController@profileEdit')->name('personalEdit');
+Route::post('/profilePersonalupdate/{id}', 'App\Http\Controllers\ProfileController@profileUpdate')->name('profilePersonalupdate');
+
+Route::get('/academyEdit/{id}', 'App\Http\Controllers\ProfileController@academyEdit')->name('academyEdit');
+Route::post('/profileAcademyupdate/{id}', 'App\Http\Controllers\ProfileController@academyUpdate')->name('profileAcademyupdate');
+
+Route::get('/workEdit/{id}', 'App\Http\Controllers\ProfileController@workEdit')->name('workEdit');
+Route::post('/profileWorkupdate/{id}', 'App\Http\Controllers\ProfileController@workUpdate')->name('profileWorkupdate');
+
 Route::get('/register/candidate/personal', function () {
     
     return view('register/register');

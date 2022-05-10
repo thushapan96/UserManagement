@@ -15,8 +15,8 @@
 
                     </label>
                     <select name="language_proficiency" class="form-control">
-                        <option>English</option>
-                        <option>Tamil</option>
+                        <option value="English">English</option>
+                        <option value="Tamil">Tamil</option>
                     </select>
                 </div>
             </div>
@@ -27,11 +27,10 @@
 
                     </label>
                     <select name="language_level" class="form-control">
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Competent</option>
-                        <option>Expert</option>
-
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Competent">Competent</option>
+                        <option value="Expert">Expert</option>
                     </select>
                 </div>
             </div>
@@ -205,82 +204,80 @@
 
 <!-- ......................script for google map view.................... -->
 
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly"
-    defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-//.......................current location......................
+    //.......................current location......................
 
-$(document).ready(function() {
+    $(document).ready(function() {
 
-    "use strict";
-    $('#map').hide();
+        "use strict";
+        $('#map').hide();
 
-    initMap();
+        initMap();
 
-    function initMap() {
-        const map = new google.maps.Map(document.getElementById("map"), {
-            center: {
-                lat: -33.8688,
-                lng: 151.2195,
-            },
-            zoom: 13,
-        });
-        const card = document.getElementById("pac-card");
-        console.log(card);
-        const input1 = $('#pac-input1')[0];
-        const input2 = $('#pac-input2')[0];
-
-
-        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-        const autocomplete1 = new google.maps.places.Autocomplete(
-            input1); // Bind the map's bounds (viewport) property to the autocomplete object,
-        const autocomplete2 = new google.maps.places.Autocomplete(input2);
-
-        autocomplete1.bindTo("bounds", map); // Set the data fields to return when the user selects a place.
-        autocomplete2.bindTo("bounds", map);
-
-        autocomplete1.setFields([
-            "address_components",
-            "geometry",
-            "icon",
-            "name",
-        ]);
-        autocomplete2.setFields([
-            "address_components",
-            "geometry",
-            "icon",
-            "name",
-        ]);
-        const infowindow = new google.maps.InfoWindow();
-        const infowindowContent = document.getElementById("infowindow-content");
-        infowindow.setContent(infowindowContent);
-        const marker = new google.maps.Marker({
-            map,
-            anchorPoint: new google.maps.Point(0, -29),
-        });
-
-    }
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: -33.8688,
+                    lng: 151.2195,
+                },
+                zoom: 13,
+            });
+            const card = document.getElementById("pac-card");
+            console.log(card);
+            const input1 = $('#pac-input1')[0];
+            const input2 = $('#pac-input2')[0];
 
 
-});
+            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+            const autocomplete1 = new google.maps.places.Autocomplete(
+                input1); // Bind the map's bounds (viewport) property to the autocomplete object,
+            const autocomplete2 = new google.maps.places.Autocomplete(input2);
+
+            autocomplete1.bindTo("bounds", map); // Set the data fields to return when the user selects a place.
+            autocomplete2.bindTo("bounds", map);
+
+            autocomplete1.setFields([
+                "address_components",
+                "geometry",
+                "icon",
+                "name",
+            ]);
+            autocomplete2.setFields([
+                "address_components",
+                "geometry",
+                "icon",
+                "name",
+            ]);
+            const infowindow = new google.maps.InfoWindow();
+            const infowindowContent = document.getElementById("infowindow-content");
+            infowindow.setContent(infowindowContent);
+            const marker = new google.maps.Marker({
+                map,
+                anchorPoint: new google.maps.Point(0, -29),
+            });
+
+        }
+
+
+    });
 </script>
 
 
 <!-- ...................end...script for google map view.................... -->
 
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
 
-    // for school
-    $("#addschoolbtn").click(function() {
+        // for school
+        $("#addschoolbtn").click(function() {
 
-        var html = '';
+            var html = '';
 
-        html = `<div  id="addschoolform"> 
+            html = `<div  id="addschoolform"> 
 <div class="col-lg-12 col-md-12 col-12 container addschool mt-4" >
                 <div class="whiteBox clearfix">
                     <div class="row custom-box">
@@ -317,8 +314,8 @@ $(document).ready(function() {
                                 </label>
                                 <select name="eca[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
 
                                 </select>
                             </div>
@@ -332,9 +329,9 @@ $(document).ready(function() {
                                 </label>
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>distant</option>
-                                    <option>regular</option>
-                                    <option>online</option>
+                                    <option value="distant">distant</option>
+                                    <option value="regular">regular</option>
+                                    <option value="online">online</option>
 
                                 </select>
                             </div>
@@ -365,21 +362,21 @@ $(document).ready(function() {
        <br>
         `
 
-        $('#addschoolrow').append(html);
-    });
+            $('#addschoolrow').append(html);
+        });
 
-    // remove row
-    $(document).on('click', '#removeschool', function() {
-        $(this).closest('#addschoolform').remove();
-    });
+        // remove row
+        $(document).on('click', '#removeschool', function() {
+            $(this).closest('#addschoolform').remove();
+        });
 
-    // college
+        // college
 
-    $("#collegebtn").click(function() {
+        $("#collegebtn").click(function() {
 
-        var html = '';
+            var html = '';
 
-        html = `<div  id="addschoolform">
+            html = `<div  id="addschoolform">
             <div class="container addcollege mt-4">
                 <div class="whiteBox clearfix">
                     <div class="row custom-box">
@@ -415,8 +412,8 @@ $(document).ready(function() {
                                 </label>
                                 <select name="eca[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
 
                                 </select>
                             </div>
@@ -428,9 +425,9 @@ $(document).ready(function() {
                                 </label>
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>distant</option>
-                                    <option>regular</option>
-                                    <option>online</option>
+                                    <option value="distant">distant</option>
+                                    <option value="regular">regular</option>
+                                    <option value="online">online</option>
 
                                 </select>
                             </div>
@@ -460,21 +457,21 @@ $(document).ready(function() {
             </div></div>
         `
 
-        $('#addcollegerow').append(html);
-    });
+            $('#addcollegerow').append(html);
+        });
 
-    // remove row
-    $(document).on('click', '#removecollege', function() {
-        $(this).closest('#addschoolform').remove();
-    });
+        // remove row
+        $(document).on('click', '#removecollege', function() {
+            $(this).closest('#addschoolform').remove();
+        });
 
-    // Pg
+        // Pg
 
-    $("#pgbtn").click(function() {
+        $("#pgbtn").click(function() {
 
-        var html = '';
+            var html = '';
 
-        html = `<div  id="addpgform">  <div class="container addpg mt-4">
+            html = `<div  id="addpgform">  <div class="container addpg mt-4">
 <div class="whiteBox clearfix">
                     <div class="row custom-box">
 
@@ -508,8 +505,8 @@ $(document).ready(function() {
                                 </label>
                                 <select name="eca[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
 
                                 </select>
                             </div>
@@ -521,9 +518,9 @@ $(document).ready(function() {
                                 </label>
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>distant</option>
-                                    <option>regular</option>
-                                    <option>online</option>
+                                    <option value="distant">distant</option>
+                                    <option value="regular">regular</option>
+                                    <option value="online">online</option>
 
                                 </select>
                             </div>
@@ -552,22 +549,22 @@ $(document).ready(function() {
             </div></div>
 `
 
-        $('#addpgrow').append(html);
-    });
+            $('#addpgrow').append(html);
+        });
 
-    // remove row
-    $(document).on('click', '#removepg', function() {
-        $(this).closest('#addpgform').remove();
-    });
+        // remove row
+        $(document).on('click', '#removepg', function() {
+            $(this).closest('#addpgform').remove();
+        });
 
-    // other
+        // other
 
 
-    $("#otherbtn").click(function() {
+        $("#otherbtn").click(function() {
 
-        var html = '';
+            var html = '';
 
-        html = `
+            html = `
         <div  id="addpgform">
             <div class="container addother mt-4">
                 <div class="whiteBox clearfix">
@@ -609,8 +606,8 @@ $(document).ready(function() {
                                 </label>
                                 <select name="eca[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
 
                                 </select>
                             </div>
@@ -622,9 +619,9 @@ $(document).ready(function() {
                                 </label>
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>distant</option>
-                                    <option>regular</option>
-                                    <option>online</option>
+                                    <option value="distant">distant</option>
+                                    <option value="regular">regular</option>
+                                    <option value="online">online</option>
 
                                 </select>
                             </div>
@@ -654,50 +651,50 @@ $(document).ready(function() {
             </div></div>
 `
 
-        $('#addotherrow').append(html);
-    });
+            $('#addotherrow').append(html);
+        });
 
-    // remove row
-    $(document).on('click', '#removeother', function() {
-        $(this).closest('#addpgform').remove();
-    });
-
-});
-</script>
-<script>
-$(document).ready(function() {
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-    $("#academy_form").submit(function(e) {
-
-        e.preventDefault(); // avoid to execute the actual submit of the form.
-
-        var actionUrl = $(this).attr('action');
-        var form = new FormData(this);
-
-        $.ajax({
-            type: "POST",
-            url: actionUrl,
-            cache: false,
-            data: form,
-            contentType: false,
-            processData: false, // serializes the form's elements.
-            success: function(data) {
-                console.log(data);
-                $(".progress-bar").css("width", "50%");
-                $('.tab-pane').fadeOut();
-                $("#menu2").fadeIn();
-                $(".nav-link").removeClass('active')
-                $('#amenu2').addClass('active')
-
-            }
+        // remove row
+        $(document).on('click', '#removeother', function() {
+            $(this).closest('#addpgform').remove();
         });
 
     });
+</script>
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
-});
+        $("#academy_form").submit(function(e) {
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+
+            var actionUrl = $(this).attr('action');
+            var form = new FormData(this);
+
+            $.ajax({
+                type: "POST",
+                url: actionUrl,
+                cache: false,
+                data: form,
+                contentType: false,
+                processData: false, // serializes the form's elements.
+                success: function(data) {
+                    console.log(data);
+                    $(".progress-bar").css("width", "50%");
+                    $('.tab-pane').fadeOut();
+                    $("#menu2").fadeIn();
+                    $(".nav-link").removeClass('active')
+                    $('#amenu2').addClass('active')
+
+                }
+            });
+
+        });
+
+    });
 </script>
