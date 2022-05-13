@@ -4,16 +4,37 @@
 
 
 <!-- Subscribe & Stay Connected. Start -->
-<section class="StayConnected clearfix">
-    <h1>Chartered Accountant Enrollment</h1>
-    <div class="container">
+<section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
+    <div class="whiteBoxtab " style="width: 1400px !important;max-width: 1500px !important; left:0  !important">
 
+        <div class="cardf">
+            <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
+                <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;" aria-current="page" id="amenu">Main Content</a>
+                <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu1">Team Members</a>
+                <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu2">About Company </a>
+                <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu3"> Award & Certification</a>
+                <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu4">News and Events</a>
+                <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu5">Canada Inspire</a>
+                <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu6">Feedback for Canada Inspire</a>
+
+            </nav>
+        </div>
+
+        <div class="progress mt-2">
+            <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%" style="cursor:pointer;padding: .15rem 0.5rem !important;">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Chartered Accountant Enrollment</h1>
         <h6>Chartered Accountant to provide correct information. This will allow us to incorporate on our Portal databank for the International companies to access, explore and know more about the Consulting services and specialization.</h6>
         <h6></h6>
         <br>
         <form id="form" action="{{route('add.consultant')}}" method="post" enctype="multipart/form-data">
             @csrf
-            <div class="whiteBox clearfix" style="max-width: none;">
+            <div class="whiteBox clearfix tab-pane  " style="max-width: none;" id="menu">
                 <!--div class="news-title">You have questions, let's have a conversation </div-->
                 <div class="row custom-box">
 
@@ -45,7 +66,6 @@
 
                 </div>
                 <hr>
-
                 <div class="row custom-box">
 
                     <div class="col-lg-4 col-md-4 col-12">
@@ -135,7 +155,6 @@
 
 
                 </div>
-
                 <hr>
                 <div class="row custom-box">
 
@@ -180,7 +199,6 @@
 
                 </div>
                 <hr>
-
                 <div class="row custom-box">
 
                     <div class="col-lg-3 col-md-3 col-12">
@@ -255,7 +273,6 @@
                     </div>
 
                 </div>
-
                 <hr>
                 <div class="row custom-box">
 
@@ -310,30 +327,89 @@
 
                 </div>
                 <hr>
+                <div class="float-right">
+                    <button type="button" class="client-btn bmenu">Next </button>
+                </div>
 
+            </div>
 
+            <div class="whiteBox clearfix tab-pane  " style="max-width: none;" id="menu1">
                 <div class="row custom-box">
 
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
 
-                            <label>Provide Team info along with their Specialization
-                            </label><br>
-
-
+                            <label>Your Team of Expert</label>
+                            <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization"></textarea>
                         </div>
-                        <label>Your Team of Expert</label>
-                        <div id="newRow">
+                        <div class="form-group">
+                            <div id="newRow">
 
+                            </div>
                         </div>
-
                         <button id="addRow" type="button" class="btn btn-info">Add Your Team</button>
                     </div>
 
                 </div>
+                <div class="float-right">
+                    <button type="button" class="client-btn bmenu1">Next </button>
+                </div>
 
+            </div>
+
+            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu2">
+                <div class="row custom-box">
+
+                    <div class="col-lg-2 col-md-2 col-12">
+                        <div class="form-group">
+                            <label>Do you have any Privacy Policies?
+                            </label>
+                            <div class="col-lg-2 col-md-2 col-2 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Policies" name="is_Policies" value="yes" {{ old('is_Policies') == "yes"  ? ' checked' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Policies">Yes</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-2 col-3 ">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input " id="Policiesno" name="is_Policies" value="no" {{ old('is_Policies') == "no"  ? ' checked' : '' }}>
+                                    <label class="custom-control-label mt-1" for="Policiesno">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <div class="form-group">
+                            <label>If Yes, Enclose the Document
+                            </label>
+                            <br>
+                            <br>
+                            <input class="form-control " type="file" name="privacy_policy_document" value="{{old('privacy_policy_document')}}">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 col-md-7 col-12">
+                        <div class="form-group">
+                            <label>Terms if Any
+                            </label>
+                            <textarea style="width:100%;" rows="6" name="privacy_policy_detail" value="{{old('privacy_policy_detail')}}"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
                 <hr>
-
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>About History
+                            </label>
+                            <br>
+                            <textarea style="width:100%;" rows="9" name="history" value="{{old('history')}}"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr>
 
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
@@ -346,19 +422,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="float-right">
+                    <button type="button" class="client-btn bmenu2">Next </button>
+                </div>
                 <hr>
+            </div>
+
+            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu3">
                 <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
+                    <div class="col-lg-6 col-md-6 col-12">
                         <div class="form-group">
-                            <label>About History
+                            <label>Awards and Certifications
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="history" value="{{old('history')}}"></textarea>
+                            <input type="file" class="form-control" name="Award" value="{{old('Award')}}">
                         </div>
                     </div>
                 </div>
-                <hr>
+
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
@@ -370,32 +452,24 @@
                         </div>
                     </div>
                 </div>
-                <hr>
 
+                <div class="float-right">
+                    <button type="button" class="client-btn bmenu3">Next </button>
+                </div>
+
+
+            </div>
+
+            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu4">
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
-                            <label>Awards and Certifications
+                            <label>Your Introductory Video URL Link display on Canada Inspire Portal
                             </label>
-                            <br>
-
-                            <textarea style="width:100%;" rows="9" name="Award" value="{{old('Award')}}"></textarea>
+                            <input class="form-control " type="text" name="first_name" value="{{old('vedio_url')}}">
                         </div>
                     </div>
                 </div>
-                <hr>
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>We are looking forward to have your valuable Comments/Remarks to add or modify on the above given information to make it more informative.
-                            </label>
-                            <br>
-
-                            <textarea style="width:100%;" rows="9" name="Comment" value="{{old('Comment')}}"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <hr>
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
@@ -407,20 +481,7 @@
                         </div>
                     </div>
                 </div>
-                <hr>
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>Canada Inspire provides Additional Services :-
-                            </label>
-                            <br>
 
-                            <textarea style="width:100%;" rows="9"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
                 <div class="socialAppend" id="socialAppend">
                     <div class="row mb-1 social">
 
@@ -495,12 +556,52 @@
                         </div>
                     </div>
                 </div>
-                <hr>
                 <div class="float-right">
-                    <button type="submit" class="client-btn">Submit </button>
+                    <button type="button" class="client-btn bmenu4">Next </button>
                 </div>
 
             </div>
+
+            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu5">
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Canada Inspire provides Additional Services :-
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
+1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
+2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
+3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
+5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="float-right">
+                    <button type="button" class="client-btn bmenu5">Next </button>
+                </div>
+            </div>
+
+            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu6">
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>We are looking forward to have your valuable Comments/Remarks to add or modify on the above given information to make it more informative.
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;" rows="9" name="Comment" value="{{old('Comment')}}"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="float-right">
+                    <button type="submit" class="client-btn">Submit </button>
+                </div>
+            </div>
+
+
         </form>
     </div>
 
@@ -514,6 +615,87 @@
     </div>
     <script>
         $(document).ready(function() {
+            $('.tab-pane').fadeOut();
+            $("#menu").fadeIn();
+            $(".amenu").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu").fadeIn();
+                $(".nav-link").removeClass('active')
+                $(this).addClass('active')
+            });
+            $(".amenu1").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu1").fadeIn();
+                $(".nav-link").removeClass('active')
+                $(this).addClass('active')
+            });
+            $(".amenu2").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu2").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $(this).addClass('active')
+            });
+            $(".amenu3").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu3").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $(this).addClass('active')
+            });
+            $(".amenu4").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu4").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $(this).addClass('active')
+            });
+            $(".amenu5").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu5").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $(this).addClass('active')
+            });
+            $(".amenu6").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu6").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $(this).addClass('active')
+            });
+
+            $(".bmenu").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu1").fadeIn();
+                $(".nav-link").removeClass('active')
+                $("#amenu1").addClass('active')
+            });
+            $(".bmenu1").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu2").fadeIn();
+                $(".nav-link").removeClass('active')
+                $("#amenu2").addClass('active')
+            });
+            $(".bmenu2").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu3").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $("#amenu3").addClass('active')
+            });
+            $(".bmenu3").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu4").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $("#amenu4").addClass('active')
+            });
+            $(".bmenu4").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu5").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $("#amenu5").addClass('active')
+            });
+            $(".bmenu5").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu6").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $("#amenu6").addClass('active')
+            });
             if (sessionStorage.getItem("appendhtml")) {
                 $('#newRow').html(sessionStorage.getItem("appendhtml"))
             }
@@ -563,39 +745,48 @@
 
                 var html = '';
 
-                html = `<div class="row" id="inputFormRow">
-            <div class="col-lg-3 col-md-3 col-12">
-                <label>Team Member</label>
-                <br><br>
-                <input class="form-control team addinput" id="team_name" type="text" name="team_name[]"  >
-            </div>
-            <div class="col-lg-2 col-md-2 col-12">
-                <label>Designation</label>
-                <br><br>
-                <input class="form-control team addinput" type="text" id="team_designation" name="team_designation[]">
-            </div>
-            <div class="col-lg-2 col-md-2 col-12">
-                <label>Area of Expertise</label>
-                <br><br>
-                <input class="form-control team addinput" type="text" id="team_area_expertise" name="team_area_expertise[]">
-            </div>
-            <div class="col-lg-2 col-md-2 col-12">
-                <label>Year of Experience</label>
-                <br><br>
-                <input class="form-control team addinput" type="text" id="team_experience_year" name="team_experience_year[]">
-            </div>
-            <div class="col-lg-2 col-md-2 col-12">
-                <label>Number of Successful Cases</label>
-                <input class="form-control team addinput" type="text" id="team_number_success_cases" name="team_number_success_cases[]">
-            </div>
-            
-            <div class="">
-            <br><br><br>
-            <button id="removeRow" style="padding:10px 13px" type="button" class="btn btn-danger btn-sm">Remove</button>
-            </div>
-        </div>
-       <br>
-        `
+                html = `<div  id="inputFormRow">
+                      <div class="row">
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <label>Team Member</label>
+                                
+                                <input class="form-control team addinput" id="team_name" type="text" name="team_name[]"  >
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <label>Image</label>
+                                <input type="file" class="form-control team addinput" name="team_img[]">
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <label>Designation</label>
+                               
+                                <input class="form-control team addinput" type="text" id="team_designation" name="team_designation[]">
+                            </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <label>Area of Expertise</label>
+    
+                                <input class="form-control team addinput" type="text" id="team_area_expertise" name="team_area_expertise[]">
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-12">
+                                <label>Year of Experience</label>
+                                
+                                <input class="form-control team addinput" type="text" id="team_experience_year" name="team_experience_year[]">
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-12">
+                                <label>Number of Successful Cases</label>
+                               
+                                <input class="form-control team addinput" type="text" id="team_number_success_cases" name="team_number_success_cases[]">
+                            </div>
+                            
+                            <div class="col-lg-2 col-md-2 col-12">
+                               <br><br>
+                               <button id="removeRow" style="padding:10px 13px" type="button" class="btn btn-danger btn-sm">Remove</button>
+                            </div>
+                         </div>
+                              <br><br><hr>
+                    </div>`
 
                 $('#newRow').append(html);
 

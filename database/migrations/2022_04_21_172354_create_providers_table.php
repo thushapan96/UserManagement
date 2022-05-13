@@ -60,7 +60,7 @@ class CreateProvidersTable extends Migration
             $table->string('is_Policies')->nullable();
             $table->string('privacy_policy_document')->nullable();
             $table->text('privacy_policy_detail')->nullable();
-            // $table->text('team_info')->nullable();
+            $table->text('team_info')->nullable();
             $table->text('brief_introduction');
             $table->text('history');
             $table->text('achievement');

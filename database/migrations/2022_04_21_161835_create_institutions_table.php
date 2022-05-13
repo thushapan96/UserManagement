@@ -45,6 +45,7 @@ class CreateInstitutionsTable extends Migration
             $table->string('response_time')->nullable();
             $table->json('communication_mode')->nullable();
             $table->json('offer_course')->nullable();
+            $table->string('offer_course_info')->nullable();
             $table->string('no_student')->nullable();
             $table->string('no_success_student')->nullable();
             $table->string('is_financial')->nullable();

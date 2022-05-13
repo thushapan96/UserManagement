@@ -16,7 +16,7 @@ class Team extends Model
         return $this->belongsTo(Consultant::class,'id','provider_id');
     }
     protected $fillable = [
-     "provider_id","member","Designation","expertise_area","experience_year","no_success"
+     "provider_id","member","Designation","expertise_area","experience_year","no_success","team_img"
     ];
 
 }

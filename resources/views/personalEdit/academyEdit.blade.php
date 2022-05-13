@@ -66,7 +66,8 @@
                             <label>
                                 <p>Attachment </p>
                             </label>
-                            <input type="file" class="form-control" name="language_attachment" value="{{$Academy->language_attachment}}">
+                            <a href="{{url('files/'.$Academy->language_attachment)}}" target="_blank">Language Attachment</a>
+                            <input type="file" title="change file" class="form-control" name="language_attachment" value="{{$Academy->language_attachment}}">
                         </div>
                     </div>
                 </div>
@@ -107,6 +108,7 @@
                         <div class="form-group">
                             <label>Attachment
                             </label>
+                            <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank">Test Attachment</a>
                             <input type="file" class="form-control" name="test_attachment" value="{{$Academy->test_attachment}}">
                         </div>
                     </div>
