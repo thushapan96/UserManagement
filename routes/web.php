@@ -40,6 +40,9 @@ Route::post('/profileAcademyupdate/{id}', 'App\Http\Controllers\ProfileControlle
 Route::get('/workEdit/{id}', 'App\Http\Controllers\ProfileController@workEdit')->name('workEdit');
 Route::post('/profileWorkupdate/{id}', 'App\Http\Controllers\ProfileController@workUpdate')->name('profileWorkupdate');
 
+Route::get('/sponsorEdit/{id}', 'App\Http\Controllers\ProfileController@sponsoredit')->name('sponsorEdit');
+Route::post('/profileSponsorupdate/{id}', 'App\Http\Controllers\ProfileController@sponsorUpdate')->name('profileSponsorupdate');
+
 Route::get('/register/candidate/personal', function () {
     
     return view('register/register');

@@ -1,0 +1,3 @@
+farm chat  = https://www.ictworks.org/farmer-chatbot-india/#.YmNesNpBxPY
+farmerbot = https://medium.com/@blogsupport/farmer-bot-an-interactive-bot-for-farmers-6960b97ce029
+    Frame based chatbot                   = https://www.coursehero.com/file/98644427/Frame-based-chatbot-a-development-tool-in-Sinhala-for-agriculture-field18-final-2-CCdocx/?schoolSelection=gmt

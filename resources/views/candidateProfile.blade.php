@@ -471,7 +471,7 @@
 
                         </div>
                         <br>
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Sponsor Profile </button></div>
+                        <div class="mt-5 text-center"><a href="{{route('sponsorEdit', ['id' => $userId])}}"><button class="btn btn-primary profile-button" type="button">Edit Sponsor Profile </button></a></div>
 
                     </div>
                     @endif

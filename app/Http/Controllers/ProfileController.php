@@ -85,6 +85,17 @@ class ProfileController extends Controller
             ->with('userId', Auth::user()->id);
     }
 
+    public function sponsorEdit($id)
+    {
+
+        $sponsor =  Sponsor::where('user_id', $id)->first();
+
+
+        return view('personalEdit.sponsorEdit')
+            ->with('sponsor', $sponsor)
+            ->with('userId', Auth::user()->id);
+    }
+
     public function profileUpdate(Request $request, $id)
     {
         $personal =  Personal::where('user_id', $id)->first();
@@ -125,6 +136,8 @@ class ProfileController extends Controller
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $name);
             $request['test_attachment'] =  $name;
+            $academy->test_attachment =  $name;
+            
         }
         if ($request->language_attachment) {
             $files = $request->language_attachment;
@@ -134,9 +147,10 @@ class ProfileController extends Controller
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $name);
             $request['language_attachment'] =  $name;
+            $academy->language_attachment = $name;
+         
         }
-        $academy->test_attachment = $request->test_attachment;
-        $academy->language_attachment = $request->language_attachment;
+       
 
         $academy->save();
 
@@ -317,6 +331,14 @@ class ProfileController extends Controller
                 }
             }
         }
+
+        return redirect(route('personalProfile'));
+    }
+
+    public function sponsorUpdate(Request $request, $id)
+    {
+        $sponsor = Sponsor::where('user_id', $id)->first();
+        $sponsor->update($request->all());
 
         return redirect(route('personalProfile'));
     }

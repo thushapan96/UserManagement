@@ -19,10 +19,10 @@
        
             <div class="cardf">
                 <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                    <a class="nav-link active" style="cursor:pointer;padding: 1.15rem 5rem;" aria-current="page" id="amenu">personal</a>
-                    <a class="nav-link " style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu1">academy</a>
-                    <a class="nav-link" style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu2">work</a>
-                    <a class="nav-link " style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu3">sponsor</a>
+                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 5rem;" aria-current="page" id="amenu">personal</a>
+                    <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu1">academy</a>
+                    <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu2">work</a>
+                    <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu3">sponsor</a>
                 </nav>
             </div>
             <div class="progress mt-2">
@@ -474,7 +474,6 @@
                 $(".nav-link.active").removeClass('active')
                 $(this).addClass('active')
             });
-
             $('[name="same_Correspondence_address"]').change(function() {
                 if ($(this).is(':checked')) {
                     // Do something...

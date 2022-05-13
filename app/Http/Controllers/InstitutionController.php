@@ -23,7 +23,7 @@ class InstitutionController extends Controller
      * @param  \Illuminate\Http\InstitutionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(InstitutionRequest $request)
+    public function store(Request $request)
     {
 
         if ($request->privacy_policy_document) {
@@ -33,10 +33,17 @@ class InstitutionController extends Controller
 
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $name);
-            $request['privacy_policy_document'] =  $name;
+            $request->privacy_policy_document =  $name;
+            $request->merge([
+                'privacy_policy_document' => $name,
+            ]);
+           
         }
+       
+        $request->replace($request->except(['privacy_policy_document']));
 
-        Institution::create($request->all());
+        
+        Institution::create($request->all()+['privacy_policy_document' =>  $name]);
 
         return redirect('/');
     }
