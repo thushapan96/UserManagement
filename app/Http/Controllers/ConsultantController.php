@@ -26,7 +26,7 @@ class ConsultantController extends Controller
      */
     public function store(Request $request)
     {
-       
+
 
         $team_name = $request->team_name;
         $team_area_expertise = $request->team_area_expertise;
@@ -34,15 +34,6 @@ class ConsultantController extends Controller
         $team_designation = $request->team_designation;
         $team_number_success_cases = $request->team_number_success_cases;
 
-        $count =  count($team_name);
-        $newcount =  $count - 1;
-        
-        if ($request->team_img) {
-
-            $newKeys_offer = array_fill_keys(range(0, $newcount), "");
-            $request->team_img += $newKeys_offer;
-            
-        }
 
         if ($request->privacy_policy_document) {
             $files = $request->privacy_policy_document;
@@ -65,35 +56,44 @@ class ConsultantController extends Controller
 
         $Consultant =   Consultant::create($request->all());
 
+        if ($team_name) {
+            $count =  count($team_name);
+            $newcount =  $count - 1;
+        }
+        if ($request->team_img) {
 
-        for ($i = 0; $i < $count; $i++) {
-            if ($team_name[$i] != "") {
-                $team = new Team;
-                $team->provider_id = 1;
-                $team->member =  $team_name[$i];
-                if ($request->team_img) {
-                    if ($request->team_img[$i] != '') {
-                      
-                        $files = $request->team_img[$i];
-                        $files->getClientOriginalName();
-                        $name =  $files->getClientOriginalName();
-
-                        $destinationPath = public_path() . '/files';
-                        $files->move($destinationPath, $name);
-                        $team->team_img = $name;
-                        
-                    }
-                }
-                $team->Designation =  $team_designation[$i];
-                $team->expertise_area =  $team_area_expertise[$i];
-                $team->experience_year =  $team_experience_year[$i];
-                $team->no_success =  $team_number_success_cases[$i];
-               
-                $team->save();
-              
-            }
+            $newKeys_offer = array_fill_keys(range(0, $newcount), "");
+            $request->team_img += $newKeys_offer;
         }
 
+        if ($team_name) {
+            for ($i = 0; $i < $count; $i++) {
+                if ($team_name[$i] != "") {
+                    $team = new Team;
+                    $team->provider_id = 1;
+                    $team->member =  $team_name[$i];
+                    if ($request->team_img) {
+                        if ($request->team_img[$i] != '') {
+
+                            $files = $request->team_img[$i];
+                            $files->getClientOriginalName();
+                            $name =  $files->getClientOriginalName();
+
+                            $destinationPath = public_path() . '/files';
+                            $files->move($destinationPath, $name);
+                            $team->team_img = $name;
+                        }
+                    }
+                    $team->Designation =  $team_designation[$i];
+                    $team->expertise_area =  $team_area_expertise[$i];
+                    $team->experience_year =  $team_experience_year[$i];
+                    $team->no_success =  $team_number_success_cases[$i];
+
+                    $team->save();
+                }
+            }
+        }
+        
         return redirect('/');
     }
 }
