@@ -5,6 +5,24 @@
 
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
+    @if (session()->has('success'))
+    <script>
+        Swal.fire(
+            'Success!',
+            'Successfully submitted ',
+            'success'
+        )
+    </script>
+    @endif
+    @if($message = Session::get('registermessage'))
+    <script>
+        Swal.fire(
+            'Success',
+            'Successfully Registered!',
+            'success'
+        )
+    </script>
+    @endif
     <div class="whiteBoxtab " style="width: 1400px !important;max-width: 1500px !important; left:0  !important">
 
         <div class="cardf">

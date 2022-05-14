@@ -24,10 +24,9 @@ class ConsultantController extends Controller
      * @param  \Illuminate\Http\InstitutionRequest  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
-
-
         $team_name = $request->team_name;
         $team_area_expertise = $request->team_area_expertise;
         $team_experience_year = $request->team_experience_year;
@@ -37,24 +36,25 @@ class ConsultantController extends Controller
 
         if ($request->privacy_policy_document) {
             $files = $request->privacy_policy_document;
-            $request->privacy_policy_document->getClientOriginalName();
-            $name =  $request->privacy_policy_document->getClientOriginalName();
+            $nameprivacy_policy_document = $files->getClientOriginalName();
 
             $destinationPath = public_path() . '/files';
-            $files->move($destinationPath, $name);
-            $request['privacy_policy_document'] =  $name;
+            $files->move($destinationPath, $nameprivacy_policy_document);
+          
         }
-
         if ($request->Award) {
             $files = $request->Award;
-            $name =  $files->getClientOriginalName();
-            $destinationPath = public_path() . '/files';
+            $nameAward =  $files->getClientOriginalName();
 
-            $files->move($destinationPath, $name);
-            $request['Award'] =  $name;
+            $destinationPath = public_path() . '/files';
+            $files->move($destinationPath, $nameAward);
+            
         }
 
         $Consultant =   Consultant::create($request->all());
+        $Consultant->privacy_policy_document = $nameprivacy_policy_document;
+        $Consultant->Award = $nameAward;
+        $Consultant->save();
 
         if ($team_name) {
             $count =  count($team_name);
@@ -93,7 +93,7 @@ class ConsultantController extends Controller
                 }
             }
         }
-        
+
         return redirect('/');
     }
 }

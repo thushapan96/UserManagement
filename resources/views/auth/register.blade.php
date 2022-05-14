@@ -65,8 +65,8 @@
 
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="form-group">
-                            <select name="service_type" class="form-control" id="service" placeholder="">
-                                <option>Select Service Type</option>
+                            <select name="service_type" class="form-control" id="service_type" placeholder="">
+                                <option value="">Select Service Type</option>
                                 <option value="Consultation">Consultation</option>
                                 <option value="Institution">Institution</option>
                                 <option value="Business">Business</option>
@@ -95,18 +95,12 @@
                         <div class="form-group">
                             <select class="form-control" id="typeservice" name="service" placeholder="">
                                 <option>Join As</option>
-                                <option data-name="/register/institude?service=School" value="School">School</option>
-                                <option data-name="/register/institude?service=College" value="College">College</option>
-                                <option data-name="/register/institude?service=University" value="University">University
-                                </option>
-                                <option data-name="/register/consultant?service=RCIC Consultant" value="RCIC Consultant">RCIC Consultant</option>
-
-
-
-                                <option data-name="/register/consultant?service=Immigration Lawyer/Attorney" value="Immigration Lawyer/Attorney">Immigration Lawyer/Attorney
-
-                                </option>
-                                <option data-name="/register/business?service=Chartered Accountant" value="Chartered Accountant">Chartered Accountant
+                                <option data-name="/register/institude?service=School" value="School" data-opt="institude">School</option>
+                                <option data-name="/register/institude?service=College" value="College" data-opt="institude">College</option>
+                                <option data-name="/register/institude?service=University" value="University" data-opt="institude">University </option>
+                                <option data-name="/register/consultant?service=RCIC Consultant" value="RCIC Consultant" data-opt="consultant">RCIC Consultant</option>
+                                <option data-name="/register/consultant?service=Immigration Lawyer/Attorney" value="Immigration Lawyer/Attorney" data-opt="consultant">Immigration Lawyer/Attorney</option>
+                                <option data-name="/register/business?service=Chartered Accountant" value="Chartered Accountant" data-opt="business">Chartered Accountant
                                 </option>
 
 
@@ -361,9 +355,35 @@
 <script>
     $(document).ready(function() {
 
-
         var type;
         var service;
+
+        $(document).on('change', '#service_type', function() {
+            console.log('fi')
+            var value = $(this).val();
+            console.log(value)
+            if (value == 'Consultation') {
+                $('#typeservice option[value != ""]').hide();
+                $("#typeservice option[data-opt = 'consultant']").show();
+
+            }
+            if (value == 'Institution') {
+                $('#typeservice option[value != ""]').hide();
+                $("#typeservice option[data-opt = 'institude']").show();
+
+            }
+            if (value == 'Business') {
+                $('#typeservice option[value != ""]').hide();
+                $("#typeservice option[data-opt = 'business']").show();
+
+            }
+            if (value == '') {
+                $('#typeservice option[value != ""]').show();
+
+            }
+
+        });
+
         $(document).on('change', '#type', function() {
             type = $('#type option:selected').val();
 
@@ -372,9 +392,7 @@
             } else {
                 $("#service").removeAttr("disabled");
             }
-
             myFun();
-
         });
 
         $(document).on('change', '#service', function() {

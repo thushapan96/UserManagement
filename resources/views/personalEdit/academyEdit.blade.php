@@ -858,9 +858,8 @@
                     </div>
                     <button type="submit" class=" closebtn client-btn" id="removepg"><a  style="color:white">
                             <i class="fa-solid fa-minus"></i> Remove</a></button>
-                </div>
-            </div></div>
-`
+                   </div>
+                  </div></div>`
 
                     $('#addpgrow').append(html);
                 });

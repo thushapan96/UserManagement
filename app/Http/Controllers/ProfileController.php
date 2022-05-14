@@ -25,7 +25,7 @@ class ProfileController extends Controller
             ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
             ->where('candidate_academics.user_id', $id)
             ->get();
-
+            
 
         return view('candidateProfile')
             ->with('personal', $personal)

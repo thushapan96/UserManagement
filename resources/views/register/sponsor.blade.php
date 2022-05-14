@@ -1,8 +1,8 @@
 <h1> Candidate Registation - Sponsor</h1>
+
 <form  action="{{route('candidate_sponsor_add')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="whiteBox clearfix">
-
 
         <h6>Sponsor Details</h6>
         <!--div class="news-title">You have questions, let's have a conversation </div-->
@@ -33,8 +33,6 @@
             </div>
 
         </div>
-
-
 
         <div class="row mt-4 custom-box">
             <div class="col-lg-4 col-md-4 col-12">
@@ -76,7 +74,6 @@
 
 
         </div>
-
 
         <div class="row mt-4 custom-box">
 
