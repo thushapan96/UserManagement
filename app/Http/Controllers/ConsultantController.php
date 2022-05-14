@@ -26,8 +26,8 @@ class ConsultantController extends Controller
      */
     public function store(Request $request)
     {
-       
-
+        dd($request->team_name);
+        
         $team_name = $request->team_name;
         $team_area_expertise = $request->team_area_expertise;
         $team_experience_year = $request->team_experience_year;
