@@ -26,6 +26,7 @@ class ConsultantController extends Controller
      */
     
     public function store(Request $request)
+    
     {
         $team_name = $request->team_name;
         $team_area_expertise = $request->team_area_expertise;
