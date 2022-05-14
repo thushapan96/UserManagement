@@ -1,7 +1,17 @@
 @extends('layouts.layout')
 
 @section('content')
+
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
+    @if (session()->has('success'))
+    <script>
+        Swal.fire(
+            'Success!',
+            'Successfully submitted ',
+            'success'
+        )
+    </script>
+    @endif
     <div class="" style=" left: 0px;">
         <div class="row">
             <div class="col-md-4 border-left" style=" left: 150px;">

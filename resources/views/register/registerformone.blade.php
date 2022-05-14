@@ -685,6 +685,11 @@
                 processData: false, // serializes the form's elements.
                 success: function(data) {
                     console.log(data);
+                    Swal.fire(
+                        'Success!',
+                        'Successfully submitted academy details!',
+                        'success'
+                    )
                     $(".progress-bar").css("width", "50%");
                     $('.tab-pane').fadeOut();
                     $("#menu2").fadeIn();

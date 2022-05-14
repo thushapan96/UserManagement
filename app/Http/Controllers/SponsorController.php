@@ -12,6 +12,6 @@ class SponsorController extends Controller
     {
         Sponsor::create($request->all()+ ['user_id' => Auth::user()->id]);
 
-        return redirect('/');
+        return redirect('/profile')->with('message', 'Successfully  Submitted !');
     }
 }

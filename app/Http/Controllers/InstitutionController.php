@@ -28,23 +28,25 @@ class InstitutionController extends Controller
 
         if ($request->privacy_policy_document) {
             $files = $request->privacy_policy_document;
-            $request->privacy_policy_document->getClientOriginalName();
-            $name =  $request->privacy_policy_document->getClientOriginalName();
+            $nameprivacy_policy_document = $files->getClientOriginalName();
 
             $destinationPath = public_path() . '/files';
-            $files->move($destinationPath, $name);
-            $request->privacy_policy_document =  $name;
-            $request->merge([
-                'privacy_policy_document' => $name,
-            ]);
-           
+            $files->move($destinationPath, $nameprivacy_policy_document);
+          
         }
-       
-        $request->replace($request->except(['privacy_policy_document']));
+        if ($request->Award) {
+            $files = $request->Award;
+            $nameAward =  $files->getClientOriginalName();
 
-        
-        Institution::create($request->all()+['privacy_policy_document' =>  $name]);
+            $destinationPath = public_path() . '/files';
+            $files->move($destinationPath, $nameAward);
+            
+        }
 
+        $Institution = Institution::create($request->all());
+        $Institution->privacy_policy_document = $nameprivacy_policy_document;
+        $Institution->Award = $nameAward;
+        $Institution->save();
         return redirect('/');
     }
 }

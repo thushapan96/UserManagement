@@ -21,11 +21,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
        
         if((Auth::user()->role)=='candidate'){
-            return redirect(route('candidate_personal'));
+            return redirect(route('candidate_personal'))->with('registermessage', 'Successfully  Submitted !');
 
         }
         else{
@@ -33,15 +34,15 @@ class HomeController extends Controller
             $service = Auth::user()->service ;
 
             if(Auth::user()->service_type == 'Institution'){
-                return redirect(route('register.institude',['service'=>$service]));
+                return redirect(route('register.institude',['service'=>$service]))->with('registermessage', 'Successfully  Submitted !');
 
             }
             elseif(Auth::user()->service_type == 'Consultation'){
-                return redirect(route('register.consultant',['service'=>$service]));
+                return redirect(route('register.consultant',['service'=>$service]))->with('registermessage', 'Successfully  Submitted !');
 
             }
             elseif(Auth::user()->service_type == 'Business'){
-                return redirect(route('register.business',['service'=>$service]));
+                return redirect(route('register.business',['service'=>$service]))->with('registermessage', 'Successfully  Submitted !');
 
             }
 

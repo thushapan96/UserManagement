@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index(){
         $consultants = Consultant::all();
-dd($consultants);
+     dd($consultants);
         return view('dashboard');
     }
 }

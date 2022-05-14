@@ -25,6 +25,7 @@ class CandidateAcademyController extends Controller
         $academy->applicant_test_name = $request->applicant_test_name[0] ?? $request->applicant_test_name[1];
         $academy->test_valid_upto = $request->test_valid_upto;
 
+   
         if ($request->test_attachment) {
             $files = $request->test_attachment;
             $request->test_attachment->getClientOriginalName();
@@ -32,7 +33,9 @@ class CandidateAcademyController extends Controller
 
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $name);
-            $request['test_attachment'] =  $name;
+            $academy->test_attachment = $name;
+          
+           
         }
         if ($request->language_attachment) {
             $files = $request->language_attachment;
@@ -41,12 +44,12 @@ class CandidateAcademyController extends Controller
 
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $name);
-            $request['language_attachment'] =  $name;
+            $academy->language_attachment =  $name;
         }
-        $academy->test_attachment = $request->test_attachment;
-        $academy->language_attachment = $request->language_attachment;
-
+       
         $academy->save();
+       
+
         if ($request->type) {
             $count = count($request->type);
 

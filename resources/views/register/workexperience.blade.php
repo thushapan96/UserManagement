@@ -227,6 +227,11 @@
 
                 success: function(data) {
                     console.log(data)
+                    Swal.fire(
+                            'Success!',
+                            'Successfully submitted personal details!',
+                            'success'
+                        )
                     $(".progress-bar").css("width", "75%");
                     $('.tab-pane').fadeOut();
                     $("#menu3").fadeIn();
