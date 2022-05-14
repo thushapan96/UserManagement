@@ -56,7 +56,7 @@ Route::get('dashboard', 'App\Http\Controllers\DashboardController@index')->name(
 // Route::post('register', 'Register@register')->name('register');
 
 
-
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/register/institude', [App\Http\Controllers\InstitutionController::class, 'index'])->name('register.institude');
 Route::post('/register/institude', [App\Http\Controllers\InstitutionController::class, 'store'])->name('add.institution');
