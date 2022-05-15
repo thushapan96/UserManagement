@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index(){
         $consultants = Consultant::all();
-     dd($consultants);
-        return view('dashboard');
+
+        return view('dashboard')->with('consultants',$consultants);
     }
 }
