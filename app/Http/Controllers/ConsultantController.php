@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Consultant;
 use App\Models\Team;
+use Illuminate\Support\Facades\Auth;
 
 class ConsultantController extends Controller
 {
@@ -24,9 +25,9 @@ class ConsultantController extends Controller
      * @param  \Illuminate\Http\InstitutionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    
+
     public function store(Request $request)
-    
+
     {
         $team_name = $request->team_name;
         $team_area_expertise = $request->team_area_expertise;
@@ -35,26 +36,26 @@ class ConsultantController extends Controller
         $team_number_success_cases = $request->team_number_success_cases;
 
 
-        if ($request->privacy_policy_document) {
-            $files = $request->privacy_policy_document;
-            $nameprivacy_policy_document = $files->getClientOriginalName();
-
-            $destinationPath = public_path() . '/files';
-            $files->move($destinationPath, $nameprivacy_policy_document);
-          
-        }
+        $Consultant =   Consultant::create($request->all());
+        $Consultant->id = Auth::user()->id;
+        
         if ($request->Award) {
             $files = $request->Award;
             $nameAward =  $files->getClientOriginalName();
 
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $nameAward);
-            
+            $Consultant->Award = $nameAward;
+        }
+        if ($request->privacy_policy_document) {
+            $files = $request->privacy_policy_document;
+            $nameprivacy_policy_document = $files->getClientOriginalName();
+
+            $destinationPath = public_path() . '/files';
+            $files->move($destinationPath, $nameprivacy_policy_document);
+            $Consultant->privacy_policy_document = $nameprivacy_policy_document;
         }
 
-        $Consultant =   Consultant::create($request->all());
-        $Consultant->privacy_policy_document = $nameprivacy_policy_document;
-        $Consultant->Award = $nameAward;
         $Consultant->save();
 
         if ($team_name) {

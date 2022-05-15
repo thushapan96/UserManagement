@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Institution;
 use App\Http\Requests\InstitutionRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -26,13 +27,17 @@ class InstitutionController extends Controller
     public function store(Request $request)
     {
 
+
+        $Institution = Institution::create($request->all());
+        $Institution->id = Auth::user()->id;
+
         if ($request->privacy_policy_document) {
             $files = $request->privacy_policy_document;
             $nameprivacy_policy_document = $files->getClientOriginalName();
 
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $nameprivacy_policy_document);
-          
+            $Institution->privacy_policy_document = $nameprivacy_policy_document;
         }
         if ($request->Award) {
             $files = $request->Award;
@@ -40,12 +45,9 @@ class InstitutionController extends Controller
 
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $nameAward);
-            
+            $Institution->Award = $nameAward;
         }
 
-        $Institution = Institution::create($request->all());
-        $Institution->privacy_policy_document = $nameprivacy_policy_document;
-        $Institution->Award = $nameAward;
         $Institution->save();
         return redirect('/');
     }
