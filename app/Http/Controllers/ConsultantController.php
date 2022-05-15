@@ -37,8 +37,8 @@ class ConsultantController extends Controller
 
 
         $Consultant =   Consultant::create($request->all());
-        $Consultant->id = Auth::user()->id;
-        
+        $Consultant->user_id = Auth::user()->id;
+
         if ($request->Award) {
             $files = $request->Award;
             $nameAward =  $files->getClientOriginalName();

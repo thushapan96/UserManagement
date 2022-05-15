@@ -29,7 +29,7 @@ class InstitutionController extends Controller
 
 
         $Institution = Institution::create($request->all());
-        $Institution->id = Auth::user()->id;
+        $Institution->user_id = Auth::user()->id;
 
         if ($request->privacy_policy_document) {
             $files = $request->privacy_policy_document;
