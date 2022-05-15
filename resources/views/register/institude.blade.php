@@ -159,7 +159,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="phone" value="{{old('phone')}}">
+                            <input class="form-control " type="number" name="phone" value="{{old('phone')}}">
                         </div>
                     </div>
 
@@ -213,7 +213,7 @@
                         <div class="form-group">
                             <label>Dean Contact Number *
                             </label>
-                            <input class="form-control " type="text" name="dean_phone" value="{{old('dean_phone')}}">
+                            <input class="form-control " type="number" name="dean_phone" value="{{old('dean_phone')}}">
                         </div>
                     </div>
                 </div>
@@ -275,7 +275,12 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="admission_type" value="{{old('admission_type')}}">
+                            <select class="form-control "  name="admission_type">
+                                <option value="Domestic" {{ old('admission_type') == 'Domestic'? 'selected':'' }}>Domestic</option>
+                                <option value="International" {{ old('admission_type') == 'International'? 'selected':'' }}>International</option>
+                            </select>
+                           
+                            <!-- <input class="form-control " type="text" name="admission_type" value="{{old('admission_type')}}"> -->
                         </div>
                     </div>
 
@@ -288,7 +293,6 @@
                             <input class="form-control " type="text" name="college_ranking" value="{{old('college_ranking')}}">
                         </div>
                     </div>
-
 
                 </div>
                 <hr>
@@ -366,7 +370,7 @@
                         <div class="form-group">
                             <label>Courses Offered
                             </label>
-                            <input class="form-control " type="text" id="offer_course_info" name="offer_course_info" value="" onkeyup='sessionStorage.setItem("offer_course",this.value)'>
+                            <input class="form-control " type="text" id="offer_course_info" name="offer_course_info" placeholder="Courses Information" value="" onkeyup='sessionStorage.setItem("offer_course",this.value)'>
 
                         </div>
                         <div id="newRow"></div>
@@ -381,7 +385,7 @@
                         <div class="form-group">
                             <label>Total Number of Students Enrolled
                             </label>
-                            <input class="form-control " type="text" name="no_student" value="{{old('no_student')}}">
+                            <input class="form-control " type="number" name="no_student" value="{{old('no_student')}}">
 
                         </div>
                     </div>
@@ -389,7 +393,7 @@
                         <div class="form-group">
                             <label>Total Number of Successful Students
                             </label>
-                            <input class="form-control " type="text" name="no_success_student" value="{{old('no_success_student')}}">
+                            <input class="form-control " type="number" name="no_success_student" value="{{old('no_success_student')}}">
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-12">

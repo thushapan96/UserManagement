@@ -18,7 +18,6 @@ class Consultant extends Model
         return $this->hasMany(Team::class,'providers_id');
     }
 
-
      protected $fillable = [
         'first_name','last_name','type','registration_number','registrar_office_area','company_name','status','language_known','country','region','city',
         'streat','postal_code','email','website_address','phone','specialization','express_entry_success','pnp_success','lmia_success','other_success','offering_service',
