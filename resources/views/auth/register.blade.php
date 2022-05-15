@@ -8,9 +8,7 @@
 
     <div class="container">
         <h1>Register as a {{request()->query('role')}}</h1>
-        @if($errors->any())
-        {{ implode('', $errors->all(':message')) }}
-        @endif
+
         <div class="whiteBox regas clearfix">
             <!--div class="news-title">
    Join our mailing list to get the latest news, <br>special offers and invitations to exclusive events.
@@ -36,7 +34,10 @@
 
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="form-group"><input class="form-control" name="email" value="{{old('email') ?? ''}}" type="email" placeholder="Email Address">
+                            <p style="color:Tomato"> @error('email'){{$message}} @enderror</p>
+
                         </div>
+
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-12">
@@ -44,21 +45,25 @@
                             <select name="country" class="form-control" placeholder="">
                                 <option>Canada</option>
                             </select>
+                            <p style="color:Tomato"> @error('country'){{$message}} @enderror</p>
+
                         </div>
                     </div>
                     @if(request()->query('role') == "candidate")
-
-
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="form-group"><input class="form-control" name="country_of_citizenship" value="{{old('country_of_citizenship')}}" type="text" placeholder="Country of Citizenship"></div>
+                        <div class="form-group"><input class="form-control" name="country_of_citizenship" value="{{old('country_of_citizenship')}}" type="text" placeholder="Country of Citizenship">
+                            <p style="color:Tomato"> @error('country_of_citizenship'){{$message}} @enderror</p>
+                        </div>
+
                     </div>
                     @endif
                     @if(request()->query('role') == "candidate")
                     <input class="form-control" name="role" value="candidate" hidden type="text">
+                    <p style="color:Tomato"> @error('role'){{$message}} @enderror</p>
                     @endif
                     @if(request()->query('role') == "Service Provider")
                     <input class="form-control" name="role" value="provider" hidden type="text">
-
+                    <p style="color:Tomato"> @error('role'){{$message}} @enderror</p>
                     @endif
 
                     @if(request()->query('role') == "Service Provider")
@@ -72,6 +77,8 @@
                                 <option value="Business">Business</option>
 
                             </select>
+                            <p style="color:Tomato"> @error('service_type'){{$message}} @enderror</p>
+
                         </div>
                     </div>
 
@@ -85,6 +92,8 @@
                                 <option value="single">Single</option>
                                 <option value="multiple">Multiple</option>
                             </select>
+                            <p style="color:Tomato"> @error('service_type'){{$message}} @enderror</p>
+
                         </div>
                     </div>
                     @endif
@@ -105,6 +114,8 @@
 
 
                             </select>
+                            <p style="color:Tomato"> @error('typeservice'){{$message}} @enderror</p>
+
                         </div>
                     </div>
                     @endif
@@ -316,11 +327,17 @@
                 <dic class="row">
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="form-group"><input class="form-control" name="password" type="password" placeholder="New Password">
+                            <p style="color:Tomato"> @error('password'){{$message}} @enderror</p>
+
                         </div>
+
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="form-group"><input class="form-control" name="password_confirmation" type="password" placeholder="Confirm Password">
+                            <p style="color:Tomato"> @error('password_confirmation'){{$message}} @enderror</p>
+
                         </div>
+
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-6">

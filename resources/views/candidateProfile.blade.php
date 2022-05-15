@@ -3,15 +3,8 @@
 @section('content')
 
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
-    @if (session()->has('success'))
-    <script>
-        Swal.fire(
-            'Success!',
-            'Successfully submitted ',
-            'success'
-        )
-    </script>
-    @endif
+
+
     <div class="" style=" left: 0px;">
         <div class="row">
             <div class="col-md-4 border-left" style=" left: 150px;">
@@ -490,6 +483,7 @@
             </div>
         </div>
     </div>
+
 </section>
 
 <script>
@@ -522,5 +516,65 @@
         });
     });
 </script>
+@if($message = Session::get('personalUpdate'))
+<script>
+    Swal.fire(
+        'Success',
+        'Successfully Updated Personal Details!',
+        'success'
+    )
+</script>
+@endif
+@if($message = Session::get('academyUpdate'))
+<script>
+    Swal.fire(
+        'Success',
+        'Successfully Updated!',
+        'success'
+    )
+</script>
 
+<script>
+    setTimeout(function() {
+        $('.tab-pane').fadeOut();
+        $("#menu1").fadeIn();
+        $(".nav-link.active").removeClass('active')
+        $("#amenu1").addClass('active')
+    }, 1000);
+</script>
+@endif
+@if($message = Session::get('workUpdate'))
+<script>
+    Swal.fire(
+        'Success',
+        'Successfully Updated!',
+        'success'
+    )
+</script>
+<script>
+    setTimeout(function() {
+        $('.tab-pane').fadeOut();
+        $("#menu2").fadeIn();
+        $(".nav-link.active").removeClass('active')
+        $("#amenu2").addClass('active')
+    }, 1000);
+</script>
+@endif
+@if($message = Session::get('sponsorUpdate'))
+<script>
+    Swal.fire(
+        'Success',
+        'Successfully Updated!',
+        'success'
+    )
+</script>
+<script>
+    setTimeout(function() {
+        $('.tab-pane').fadeOut();
+        $("#menu3").fadeIn();
+        $(".nav-link.active").removeClass('active')
+        $("#amenu3").addClass('active')
+    }, 1000);
+</script>
+@endif
 @endsection

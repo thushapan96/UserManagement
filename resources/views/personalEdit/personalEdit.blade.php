@@ -11,7 +11,7 @@
     }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
-<section class="StayConnected clearfix">
+<section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
     <div class="container ">
 
         <!-- <br>
@@ -188,6 +188,7 @@
                                 <div class="form-group">
                                     <label></label>
                                     <input name="email" class="form-control " type="text" placeholder="Email" value="{{$personal->email}}">
+                                    <p style="color:Tomato"> @error('email'){{$message}} @enderror</p>
                                 </div>
                             </div>
 

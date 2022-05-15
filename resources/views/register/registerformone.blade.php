@@ -87,7 +87,7 @@
                 <div class="form-group">
                     <label> Valid Upto
                     </label>
-                    <input class="form-control " name="test_valid_upto" type="text" placeholder="Valid Upto">
+                    <input class="form-control " name="test_valid_upto" type="date" placeholder="Valid Upto">
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-12 ">
@@ -100,93 +100,9 @@
         </div>
 
         <hr>
-        <!--     
-    <div class="row mt-4 mb-4">
-        <div class="col-lg-3 col-md-3 col-12 ">
-            <div class="form-group">
-                <label> add Score Breakup
-                </label>
-                <input class="form-control " type="text" placeholder="Score Breakup">
-            </div>
-        </div>
-        <div class="col-lg-9 col-md-9 col-12">
-            <label>Select Paper
-
-
-            </label>
-            <div class="row">
-        <div class="col-lg-2 col-md-2 col-12 ">
-            <div class="custom-control custom-radio ">
-                <input type="radio" class="custom-control-input " id="customradio6" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio6">Paper 1</label>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-2 col-12 ">
-            <div class="custom-control custom-radio ">
-                <input type="radio" class="custom-control-input " id="customradio7" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio7">Paper 2</label>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-2 col-12 ">
-            <div class="custom-control custom-radio ">
-                <input type="radio" class="custom-control-input " id="customradio8" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio8">Paper 3</label>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-2 col-12 ">
-            <div class="custom-control custom-radio ">
-                <input type="radio" class="custom-control-input " id="customradio9" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio9">Paper 4</label>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-2 col-12 ">
-            <div class="custom-control custom-radio ">
-                <input type="radio" class="custom-control-input " id="customradio10" name="a" value="1">
-                <label class="custom-control-label mt-1" for="customradio10">Paper 5</label>
-            </div>
-        </div>
-        </div>
-        </div>
-
-    </div>
-    <hr> -->
-        <div id="addschoolrow">
-
-        </div>
-        <div class="col-lg-12 col-md-12 mt-2 col-12">
-            <button type="button" class="add-btn " id="addschoolbtn"><i class="fa-solid fa-plus"></i> Add
-                School</button>
-
-        </div>
-        <div id="addcollegerow">
-
-        </div>
-        <div class="col-lg-12 col-md-12  mt-2 col-12">
-            <button type="button" class="add-btn  " id="collegebtn"><i class="fa-solid fa-plus"></i> Add
-                College</button>
-        </div>
-        <div id="addpgrow">
-
-        </div>
-        <div class="col-lg-12 col-md-12 mt-2 col-12">
-            <button type="button" class="add-btn " id="pgbtn"><i class="fa-solid fa-plus"></i> Add
-                PostGraduation</button>
-        </div>
-        <div id="addotherrow">
-        </div>
-        <div class="col-lg-12 col-md-12 mt-2 col-12">
-            <button type="button" class="add-btn " id="otherbtn"><i class="fa-solid fa-plus"></i> Add
-                OtherQualification</button>
-        </div>
-
-
-
-
-
-
 
         <div class="col-lg-12 col-md-12 col-12">
-            <button type="submit" class="client-btn">Submit AndNext</button>
+            <button type="submit" class="client-btn">Submit And Next</button>
         </div>
     </form>
 
@@ -300,7 +216,7 @@
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Year Completed </label>
-                                <input class="form-control " name="year_completed[]" type="text" >
+                                <input class="form-control " name="year_completed[]" type="date" >
                             </div>
                         </div>
 
@@ -398,7 +314,7 @@
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>PG/PHD Year Completed </label>
-                                <input class="form-control " name="year_completed[]" type="text" >
+                                <input class="form-control " name="year_completed[]" type="date" >
                             </div>
                         </div>
 
@@ -492,7 +408,7 @@
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
                                 <label>Year Completed </label>
-                                <input class="form-control " name="year_completed[]" type="text" >
+                                <input class="form-control " name="year_completed[]" type="date" >
                             </div>
                         </div>
 
@@ -596,7 +512,7 @@
                     <div class="col-lg-3 col-md-3 col-12 ">
                             <div class="form-group">
                                 <label>Year Completed </label>
-                                <input class="form-control " name="year_completed[]" type="text" >
+                                <input class="form-control " name="year_completed[]" type="date" >
                             </div>
                         </div>
                     <div class="col-lg-3 col-md-3 col-12">
@@ -685,16 +601,31 @@
                 processData: false, // serializes the form's elements.
                 success: function(data) {
                     console.log(data);
-                    Swal.fire(
-                        'Success!',
-                        'Successfully submitted academy details!',
-                        'success'
-                    )
-                    $(".progress-bar").css("width", "50%");
-                    $('.tab-pane').fadeOut();
-                    $("#menu2").fadeIn();
-                    $(".nav-link").removeClass('active')
-                    $('#amenu2').addClass('active')
+                    if (data.errors) {
+                        console.log("hiiiiii");
+                        $('.alert-danger').html('');
+                        jQuery.each(data.errors, function(key, value) {
+                            console.log(value);
+                            jQuery('.alert-danger').show();
+                            jQuery('.alert-danger').append('<p>' + value + '</p>');
+                            window.scrollTo(0, 0);
+
+                        });
+                    }
+                    if (data.success) {
+                        $('.alert-danger').html('');
+                        jQuery('.alert-danger').hide();
+                        Swal.fire(
+                            'Success!',
+                            'Successfully submitted academy details!',
+                            'success'
+                        )
+                        $(".progress-bar").css("width", "50%");
+                        $('.tab-pane').fadeOut();
+                        $("#menu2").fadeIn();
+                        $(".nav-link").removeClass('active')
+                        $('#amenu2').addClass('active')
+                    }
 
                 }
             });

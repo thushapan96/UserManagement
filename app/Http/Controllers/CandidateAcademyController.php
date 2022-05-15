@@ -84,6 +84,6 @@ class CandidateAcademyController extends Controller
                 $qualification->save();
             }
         }
-        return "success";
+        return response()->json(['success' => 'Record is successfully added']);
     }
 }
