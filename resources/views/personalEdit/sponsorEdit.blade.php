@@ -11,7 +11,7 @@
     }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
-<section class="StayConnected clearfix">
+<section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
     <div class="container ">
 
         <h1> Candidate Registation - Sponsor</h1>
@@ -269,7 +269,7 @@
                 </div>
 
                 <div class="float-right">
-                    <button type="submit" class="client-btn">Submit And Finish </button>
+                    <button type="submit" class="client-btn">Update</button>
                 </div>
             </div>
 

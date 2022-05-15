@@ -1,6 +1,6 @@
 <h1> Candidate Registation - Sponsor</h1>
 
-<form  action="{{route('candidate_sponsor_add')}}" method="POST" enctype="multipart/form-data">
+<form  action="{{route('candidate_sponsor_add')}}" method="POST" id="sponsor_form" enctype="multipart/form-data">
     @csrf
     <div class="whiteBox clearfix">
 
@@ -148,6 +148,7 @@
                         Email ID
                     </label>
                     <input class="form-control " type="text" name="sponsor_email">
+                    <p style="color:Tomato"> @error('sponsor_email'){{$message}} @enderror</p>
                 </div>
             </div>
         </div>
@@ -187,11 +188,14 @@
                     <label>
                         Email
                     </label>
-                    <input class="form-control " type="text" placeholder="Email" name="guardian_mobile">
+                    <input class="form-control " type="text" placeholder="Email" name="guardian_email">
+                    <p style="color:Tomato"> @error('guardian_mobile'){{$message}} @enderror</p>
+
                 </div>
             </div>
 
         </div>
+
         <div class="row mt-4 custom-box">
 
             <div class="col-lg-4 col-md-4 col-12">
@@ -315,6 +319,62 @@
 
         }
 
+
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $("#sponsor_form").submit(function(e) {
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+
+            var actionUrl = $(this).attr('action');
+            var form = new FormData(this);
+           
+            $.ajax({
+                type: "POST",
+                url: actionUrl,
+                cache: false,
+                data: form,
+                contentType: false,
+                processData: false, // serializes the form's elements.
+                success: function(data) {
+                    console.log(data);
+                    if (data.errors) {
+                        console.log("hiiiiii");
+                        $('.alert-danger').html('');
+                        jQuery.each(data.errors, function(key, value) {
+                            console.log(value);
+                            jQuery('.alert-danger').show();
+                            jQuery('.alert-danger').append('<p>' + value + '</p>');
+                            window.scrollTo(0, 0);
+
+                        });
+                    }
+                    if (data.success) {
+                        $('.alert-danger').html('');
+                        jQuery('.alert-danger').hide();
+                        $(".progress-bar").css("width", "100%");
+                        Swal.fire(
+                            'Success!',
+                            'Successfully submitted sponsor details!',
+                            'success'
+                        )
+                        location.assign("/profile");
+                       
+                    }
+
+                }
+            });
+
+        });
 
     });
 </script>

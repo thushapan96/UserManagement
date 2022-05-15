@@ -51,10 +51,8 @@ class CandidateWorkController extends Controller
                 }
                 if ($request->attach_salary_slip) {
                     if ($request->attach_salary_slip[$i] != "") {
-
                         $files = $request->attach_salary_slip[$i];
                         $name =   $files->getClientOriginalName();
-
                         $destinationPath = public_path() . '/files';
                         $files->move($destinationPath, $name);
                         $Work->attach_salary_slip =  $name;
@@ -64,7 +62,6 @@ class CandidateWorkController extends Controller
                     if ($request->attach_offer_letter[$i] != "") {
                         $files = $request->attach_offer_letter[$i];
                         $name =   $files->getClientOriginalName();
-
                         $destinationPath = public_path() . '/files';
                         $files->move($destinationPath, $name);
                         $Work->attach_offer_letter =  $name;
@@ -75,5 +72,7 @@ class CandidateWorkController extends Controller
                 $Work->save();
             }
         }
+
+        return 'success';
     }
 }

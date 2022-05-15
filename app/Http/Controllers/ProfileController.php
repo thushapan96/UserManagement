@@ -25,7 +25,7 @@ class ProfileController extends Controller
             ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
             ->where('candidate_academics.user_id', $id)
             ->get();
-            
+
 
         return view('candidateProfile')
             ->with('personal', $personal)
@@ -98,7 +98,14 @@ class ProfileController extends Controller
 
     public function profileUpdate(Request $request, $id)
     {
+
+        $validated = $request->validate([
+            'first_name' => 'required',
+            'email' => 'required',
+        ]);
+
         $personal =  Personal::where('user_id', $id)->first();
+
 
         if ($request->same_Correspondence_address == '1') {
 
@@ -109,10 +116,10 @@ class ProfileController extends Controller
             $request['corosponding_pincode'] = $request->residential_pincode;
             $request['corosponding_country'] = $request->residential_country;
         }
-
+    
         $personal->update($request->all());
 
-        return redirect(route('personalProfile'));
+        return redirect(route('personalProfile'))->with('personalUpdate', 'Saved !');
     }
 
     public function academyUpdate(Request $request, $id)
@@ -124,7 +131,6 @@ class ProfileController extends Controller
         $academy->language_proficiency = $request->language_proficiency;
         $academy->language_level = $request->language_level;
         $academy->language_certified_by = $request->language_certified_by;
-        $academy->language_attachment = $request->language_attachment;
         $academy->applicant_test_name = $request->applicant_test_name[0] ?? $request->applicant_test_name[1];
         $academy->test_valid_upto = $request->test_valid_upto;
 
@@ -135,9 +141,7 @@ class ProfileController extends Controller
 
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $name);
-            $request['test_attachment'] =  $name;
             $academy->test_attachment =  $name;
-            
         }
         if ($request->language_attachment) {
             $files = $request->language_attachment;
@@ -146,11 +150,9 @@ class ProfileController extends Controller
 
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $name);
-            $request['language_attachment'] =  $name;
             $academy->language_attachment = $name;
-         
         }
-       
+
 
         $academy->save();
 
@@ -220,7 +222,7 @@ class ProfileController extends Controller
         }
 
 
-        return redirect(route('personalProfile'));
+        return redirect(route('personalProfile'))->with('academyUpdate', 'Saved !');
     }
 
     public function workUpdate(Request $request, $id)
@@ -331,15 +333,15 @@ class ProfileController extends Controller
                 }
             }
         }
-
-        return redirect(route('personalProfile'));
+      
+        return redirect(route('personalProfile'))->with('workUpdate', 'Saved !');
     }
 
     public function sponsorUpdate(Request $request, $id)
     {
         $sponsor = Sponsor::where('user_id', $id)->first();
         $sponsor->update($request->all());
-
-        return redirect(route('personalProfile'));
+   
+        return redirect(route('personalProfile')) ->with('sponsorUpdate', 'Saved !');
     }
 }

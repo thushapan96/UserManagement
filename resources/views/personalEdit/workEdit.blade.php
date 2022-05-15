@@ -12,7 +12,7 @@
     }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
-<section class="StayConnected clearfix">
+<section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
     <div class="container ">
 
         <h1>Candidate Registation - Work Experience</h1>
@@ -62,7 +62,8 @@
                                     <label>
                                         Attach Experience Certificate
                                     </label>
-                                    <a href="{{route('candidate_work_add')}}"> <input class="form-control" type="file" value="" name="attach_experience_certificate[]" value="{{$row->attach_experience_certificate}}"></a>
+                                    <a href="{{url('files/'.$row->attach_experience_certificate)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
+                                    <input class="form-control" type="file" value="" name="attach_experience_certificate[]" value="{{$row->attach_experience_certificate}}">
                                 </div>
                             </div>
 
@@ -75,6 +76,7 @@
                                 <div class="form-group">
                                     <label>Attach Salary Slip
                                     </label>
+                                    <a href="{{url('files/'.$row->attach_salary_slip)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
                                     <input class="form-control " type="file" name="attach_salary_slip[]" value="{{$row->attach_salary_slip}}">
                                 </div>
                             </div>
@@ -82,8 +84,9 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>
-                                        Attach Offer Letter/Recommendation Letter
+                                        Attach Offer/Recommendation Letter
                                     </label>
+                                    <a href="{{url('files/'.$row->attach_offer_letter)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
                                     <input class="form-control " type="file" name="attach_offer_letter[]" value="{{$row->attach_offer_letter}}">
                                 </div>
                             </div>

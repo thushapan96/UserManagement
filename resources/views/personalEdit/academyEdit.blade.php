@@ -12,7 +12,7 @@
     }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
-<section class="StayConnected clearfix">
+<section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
     <div class="container ">
 
         <h1>Candidate Registation - Academic</h1>
@@ -66,7 +66,7 @@
                             <label>
                                 <p>Attachment </p>
                             </label>
-                            <a href="{{url('files/'.$Academy->language_attachment)}}" target="_blank">Language Attachment</a>
+                            <a href="{{url('files/'.$Academy->language_attachment)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
                             <input type="file" title="change file" class="form-control" name="language_attachment" value="{{$Academy->language_attachment}}">
                         </div>
                     </div>
@@ -97,19 +97,20 @@
                             <input id="applicant_test_other" class="form-control " type="text" name="applicant_test_name[]" value="{{$Academy->applicant_test_name}}">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-12 ">
+                    <div class="col-lg-2 col-md-2 col-12 ">
                         <div class="form-group">
                             <label> Valid Upto
                             </label>
-                            <input class="form-control " name="test_valid_upto" type="text" placeholder="Valid Upto" value="{{$Academy->test_valid_upto}}">
+                            <input class="form-control " name="test_valid_upto" type="date" placeholder="Valid Upto" value="{{$Academy->test_valid_upto}}">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-12 ">
+                    <div class="col-lg-4 col-md-4 col-12 ">
                         <div class="form-group">
                             <label>Attachment
                             </label>
-                            <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank">Test Attachment</a>
-                            <input type="file" class="form-control" name="test_attachment" value="{{$Academy->test_attachment}}">
+
+
+                            <span> <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a> <input type="file" class="form-control" name="test_attachment" value="{{$Academy->test_attachment}}"></span>
                         </div>
                     </div>
                 </div>
@@ -192,6 +193,7 @@
                                             <label>
                                                 <p>Other Attachment </p>
                                             </label>
+                                            <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
                                             <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
                                         </div>
                                     </div>
@@ -286,6 +288,7 @@
                                             <label>
                                                 <p>Other Attachment </p>
                                             </label>
+                                            <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
                                             <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
                                         </div>
                                     </div>
@@ -378,6 +381,7 @@
                                         <label>
                                             <p>Other Attachment </p>
                                         </label>
+                                        <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
                                         <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
                                     </div>
                                 </div>
@@ -472,6 +476,7 @@
                                             <label>
                                                 <p>Other Attachment </p>
                                             </label>
+                                            <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
                                             <input type="file" class="form-control" name="attachment[]">
                                         </div>
                                     </div>

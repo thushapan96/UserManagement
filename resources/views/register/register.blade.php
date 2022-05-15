@@ -22,7 +22,7 @@
     </script>
     @endif
     <div class="container ">
-
+        <div class="alert alert-danger" style="display:none"></div>
         <br>
         <div class="whiteBoxtab ">
 
@@ -54,19 +54,19 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input name="first_name" class="form-control " type="text" placeholder="First Name">
+                                    <input name="first_name" class="form-control " type="text" placeholder="First Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="middle_name" class="form-control " type="text" placeholder="Middle Name">
+                                    <input name="middle_name" class="form-control " type="text" placeholder="Middle Name" >
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="last_name" class="form-control " type="text" placeholder="Last Name">
+                                    <input name="last_name" class="form-control " type="text" placeholder="Last Name" >
                                 </div>
                             </div>
 
@@ -79,7 +79,7 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Present Residential Address</label>
-                                    <input name="residential_street" class="form-control " type="text" placeholder="Street Address">
+                                    <input name="residential_street" class="form-control " type="text" placeholder="Street Address" >
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
@@ -91,19 +91,19 @@
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="residential_city" class="form-control " type="text" placeholder="City">
+                                    <input name="residential_city" class="form-control " type="text" placeholder="City" >
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label></label>
-                                    <input name="residential_region" class="form-control " type="text" placeholder="Region or State">
+                                    <input name="residential_region" class="form-control " type="text" placeholder="Region or State" >
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 ">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="residential_pincode" class="form-control " type="text" placeholder="Pin Code ">
+                                    <input name="residential_pincode" class="form-control " type="text" placeholder="Pin Code " >
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
@@ -184,19 +184,20 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Contact Info</label>
-                                    <input name="mobile" class="form-control " type="text" placeholder="Mobile">
+                                    <input name="mobile" class="form-control " type="number" placeholder="Mobile">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label></label>
-                                    <input name="phone" class="form-control " type="text" placeholder="Phone">
+                                    <input name="phone" class="form-control " type="number" placeholder="Phone">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label></label>
                                     <input name="email" class="form-control " type="text" placeholder="Email">
+
                                 </div>
                             </div>
 
@@ -444,67 +445,13 @@
 
     <div id="map" style=" height: 500px; width:100%"> </div>
 
-
-
-    <script>
-        $(document).ready(function() {
-            console.log("hi")
-            $('.tab-pane').fadeOut();
-            $("#menu").fadeIn();
-            $("#amenu").click(function() {
-                $('.tab-pane').fadeOut();
-                $("#menu").fadeIn();
-                $(".nav-link").removeClass('active')
-                $(this).addClass('active')
-            });
-            $("#amenu1").click(function() {
-                $('.tab-pane').fadeOut();
-                $("#menu1").fadeIn();
-                $(".nav-link").removeClass('active')
-                $(this).addClass('active')
-            });
-            $("#amenu2").click(function() {
-                $('.tab-pane').fadeOut();
-                $("#menu2").fadeIn();
-                $(".nav-link.active").removeClass('active')
-                $(this).addClass('active')
-            });
-            $("#amenu3").click(function() {
-                $('.tab-pane').fadeOut();
-                $("#menu3").fadeIn();
-                $(".nav-link.active").removeClass('active')
-                $(this).addClass('active')
-            });
-            $('[name="same_Correspondence_address"]').change(function() {
-                if ($(this).is(':checked')) {
-                    // Do something...
-                    $('#sameaddress').addClass('d-none');
-                } else {
-                    $('#sameaddress').removeClass('d-none');
-                };
-            });
-            $('.facebook').on("click", function() {
-                $('#facebook').removeClass('d-none');
-            });
-            $('.linkedin').on("click", function() {
-                $('#linkedin').removeClass('d-none');
-            });
-            $('.instagram').on("click", function() {
-                $('#instagram').removeClass('d-none');
-            });
-            $('.twitter').on("click", function() {
-                $('#twitter').removeClass('d-none');
-            })
-        });
-    </script>
-
     <!-- ......................script for google map view.................... -->
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script>
+    <!-- <script>
         //.......................current location......................
 
         $(document).ready(function() {
@@ -560,6 +507,58 @@
 
 
         });
+    </script> -->
+
+    <script>
+        $(document).ready(function() {
+            console.log("hi")
+            $('.tab-pane').fadeOut();
+            $("#menu").fadeIn();
+            $("#amenu").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu").fadeIn();
+                $(".nav-link").removeClass('active')
+                $(this).addClass('active')
+            });
+            $("#amenu1").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu1").fadeIn();
+                $(".nav-link").removeClass('active')
+                $(this).addClass('active')
+            });
+            $("#amenu2").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu2").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $(this).addClass('active')
+            });
+            $("#amenu3").click(function() {
+                $('.tab-pane').fadeOut();
+                $("#menu3").fadeIn();
+                $(".nav-link.active").removeClass('active')
+                $(this).addClass('active')
+            });
+            $('[name="same_Correspondence_address"]').change(function() {
+                if ($(this).is(':checked')) {
+                    // Do something...
+                    $('#sameaddress').addClass('d-none');
+                } else {
+                    $('#sameaddress').removeClass('d-none');
+                };
+            });
+            $('.facebook').on("click", function() {
+                $('#facebook').removeClass('d-none');
+            });
+            $('.linkedin').on("click", function() {
+                $('#linkedin').removeClass('d-none');
+            });
+            $('.instagram').on("click", function() {
+                $('#instagram').removeClass('d-none');
+            });
+            $('.twitter').on("click", function() {
+                $('#twitter').removeClass('d-none');
+            })
+        });
     </script>
 
     <script>
@@ -588,16 +587,33 @@
                     processData: false, // serializes the form's elements.
                     success: function(data) {
                         console.log(data);
-                        Swal.fire(
-                            'Success!',
-                            'Successfully submitted personal details!',
-                            'success'
-                        )
-                        $(".progress-bar").css("width", "25%");
-                        $('.tab-pane').fadeOut();
-                        $("#menu1").fadeIn();
-                        $(".nav-link").removeClass('active')
-                        $('#amenu1').addClass('active')
+                        if (data.errors) {
+                            console.log("hiiiiii");
+                            $('.alert-danger').html('');
+                            jQuery.each(data.errors, function(key, value) {
+                                console.log(value);
+                                jQuery('.alert-danger').show();
+                                jQuery('.alert-danger').append('<p>' + value + '</p>');
+                                window.scrollTo(0, 0);
+
+                            });
+                        }
+                        if (data.success) { 
+                            console.log("byeeeeeeeeee");
+                            $('.alert-danger').html('');
+                            jQuery('.alert-danger').hide();
+                            Swal.fire(
+                                'Success!',
+                                'Successfully submitted personal details!',
+                                'success'
+                            )
+
+                            $(".progress-bar").css("width", "25%");
+                            $('.tab-pane').fadeOut();
+                            $("#menu1").fadeIn();
+                            $(".nav-link").removeClass('active')
+                            $('#amenu1').addClass('active')
+                        }
 
                     }
                 });
