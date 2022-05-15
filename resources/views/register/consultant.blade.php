@@ -478,7 +478,7 @@
                         <div class="form-group">
 
                             <label>Your Team of Expert</label>
-                            <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization"></textarea>
+                            <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization" name="team_info"></textarea>
                         </div>
                         <div class="form-group">
                             <div id="newRow">
@@ -708,11 +708,11 @@
                             <br>
 
                             <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
-2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
-3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
-5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
+                             1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
+                             2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
+                             3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+                             4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
+                             5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
                         </div>
                     </div>
                 </div>
@@ -737,9 +737,6 @@
                     <button type="submit" class="client-btn">Submit </button>
                 </div>
             </div>
-
-
-
 
         </form>
     </div>

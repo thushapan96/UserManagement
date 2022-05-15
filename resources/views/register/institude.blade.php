@@ -471,19 +471,19 @@
                             </label>
                             <br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox16" name="course_duration[]" value="6 Months" {{ (is_array(old('6 Months')) and in_array("Diploma", old('course_duration'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox16" name="course_duration[]" value="6 Months" {{ (is_array(old('course_duration')) and in_array("6 Months", old('course_duration'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox16"> 6 Months</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox17" name="course_duration[]" value="12 Months" {{ (is_array(old('12 Months')) and in_array("Diploma", old('course_duration'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox17" name="course_duration[]" value="12 Months" {{ (is_array(old('course_duration')) and in_array("12 Months", old('course_duration'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox17">12 Months</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox18" name="course_duration[]" value="18 Months" {{ (is_array(old('18 Months')) and in_array("Diploma", old('course_duration'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox18" name="course_duration[]" value="18 Months" {{ (is_array(old('course_duration')) and in_array("18 Months", old('course_duration'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox18">18 Months</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="checkbox19" name="course_duration[]" value="Duration" {{ (is_array(old('Duration')) and in_array("Diploma", old('course_duration'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="checkbox19" name="course_duration[]" value="Others" {{ (is_array(old('course_duration')) and in_array("Others", old('course_duration'))) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="checkbox19">Others</label>
                             </div>
                         </div>
@@ -719,7 +719,7 @@
                         <div class="form-group">
                             <label>Your Introductory Video URL Link display on Canada Inspire Portal
                             </label>
-                            <input class="form-control " type="text" name="first_name" value="{{old('vedio_url')}}">
+                            <input class="form-control " type="text" name="vedio_url" value="{{old('vedio_url')}}">
                         </div>
                     </div>
                 </div>

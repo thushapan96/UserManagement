@@ -21,7 +21,17 @@ Route::get('/', function () {
 });
 
 
+Route::get('/providerProfile', function () {
+    return view('providerProfile.institudeProfile');
+});
+
+
 Route::get('/profile','App\Http\Controllers\ProfileController@index')->name('personalProfile');
+Route::get('institude/profile','App\Http\Controllers\ProviderProfileController@index')->name('institudeProfile');
+Route::get('consultant/profile','App\Http\Controllers\ProviderProfileController@consultantIndex')->name('consultantProfile');
+Route::get('business/profile','App\Http\Controllers\ProviderProfileController@businessIndex')->name('businessProfile');
+
+
 
 Route::get('/canadainspair', function () {
     return view('canadainspair');
