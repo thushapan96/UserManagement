@@ -9,8 +9,8 @@
 
         <h3 class='text-center mb-3'>Consultant Services</h3>
         <div class="row">
-            @if($consultants)
-            @foreach($consultants as $consultant)
+            @if($consaltans)
+            @foreach($consaltans as $consultant)
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
@@ -36,16 +36,16 @@
 
         <h3 class='text-center mb-3'>Instituion Services</h3>
         <div class="row">
-            @if($consultants)
+            @if($institutions)
 
-            @foreach($consultants as $consultant)
+            @foreach($institutions as $institution)
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">{{$consultant->first_name}}</h5>
-                        <p class="card-text small ">{{$consultant->type}}</p>
+                        <h5 class="card-title">{{$institution->name}}</h5>
+                        <p class="card-text small ">{{$institution->type}}</p>
 
-                        <p class="card-text ">{{$consultant->brief_introduction}}</p>
+                        <p class="card-text ">{{$institution->brief_introduction}}</p>
                         <a href="#" class="btn btn-primary mt-3">View More</a>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
         <div class="row">
         @if($bussiness)
 
-            @foreach($consultants as $consultant)
+            @foreach($bussiness as $consultant)
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
