@@ -10,7 +10,7 @@
             <div class="col-md-3 border-left" style=" left: 100px;">
                 <div class="d-flex flex-column align-items-left text-left p-3 py-5">
                     <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
-                    <span class="font-weight-bold  align-items-center  ">{{$consultants->name}}</span><br>
+                    <span class="font-weight-bold  align-items-center  ">{{$consultants->first_name}}</span><br>
                     <span class="font-weight-bold  text-left">{{$consultants->email}}</span><br>
                     <span class="font-weight-bold text-left">{{$consultants->fb_link}}</span><br>
                     <span class="font-weight-bold">{{$consultants->Linkedin_link}}</span><br>

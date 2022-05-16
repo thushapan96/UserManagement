@@ -15,6 +15,7 @@
                 </button>
 
                 <!-- Navbar links -->
+
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -40,11 +41,25 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
-                       
+                        @if(Auth::user())
+                        @if(auth()->user()->service_type == 'Consultation')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('consultantProfile')}}">profile</a>
+                        </li>
+                        @elseif(auth()->user()->service_type == 'Institution')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('institudeProfile')}}">profile</a>
+                        </li>
+                        @elseif(auth()->user()->service_type == 'Business')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('businessProfile')}}">profile</a>
+                        </li>
+                        @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('personalProfile')}}">profile</a>
                         </li>
-                        <!-- @endif -->
+                        @endif
+                        @endif
 
                         @if(Auth::user())
                         <li>

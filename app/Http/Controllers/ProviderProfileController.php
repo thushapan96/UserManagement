@@ -16,7 +16,11 @@ class ProviderProfileController extends Controller
         $id = Auth::user()->id;
         $institutions =  Institution::where('user_id', $id)->first();
 
-        return view('providerProfile.institudeProfile')->with('institutions', $institutions);
+        if ($institutions) {
+            return view('providerProfile.institudeProfile')->with('institutions', $institutions);
+        } else {
+            return redirect(route('register.institude'));
+        }
     }
 
     public function consultantIndex()
@@ -24,9 +28,14 @@ class ProviderProfileController extends Controller
         $id = Auth::user()->id;
         $consultants =  Consultant::where('user_id', $id)->first();
 
+
         $teams = Team::where('provider_id', $id)->get();
 
-        return view('providerProfile.consultantProfile')->with('consultants', $consultants)->with('teams', $teams);
+        if ($consultants) {
+            return view('providerProfile.consultantProfile')->with('consultants', $consultants)->with('teams', $teams);
+        } else {
+            return redirect(route('register.consultant'));
+        }
     }
 
     public function businessIndex()
@@ -36,6 +45,10 @@ class ProviderProfileController extends Controller
 
         $teams = Team::where('provider_id', $id)->get();
 
-        return view('providerProfile.business')->with('consultants', $consultants)->with('teams', $teams);
+        if ($consultants) {
+            return view('providerProfile.business')->with('consultants', $consultants)->with('teams', $teams);
+        } else {
+            return redirect(route('register.business'));
+        }
     }
 }
