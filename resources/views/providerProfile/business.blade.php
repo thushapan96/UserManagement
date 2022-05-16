@@ -17,7 +17,7 @@
                     <span class="font-weight-bold">{{$consultants->insta_link}}</span><br>
                     <span class="font-weight-bold">{{$consultants->twitter_link}} </span><br>
                     <div class="col-md-7">
-                        <button type="button" class="client-btn ">Edit Profile</button>
+                        <a href="{{route('edit.business')}}"><button type="button" class="client-btn ">Edit Profile</button></a>
                     </div>
                 </div>
             </div>

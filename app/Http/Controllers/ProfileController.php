@@ -116,7 +116,7 @@ class ProfileController extends Controller
             $request['corosponding_pincode'] = $request->residential_pincode;
             $request['corosponding_country'] = $request->residential_country;
         }
-    
+
         $personal->update($request->all());
 
         return redirect(route('personalProfile'))->with('personalUpdate', 'Saved !');
@@ -247,6 +247,9 @@ class ProfileController extends Controller
         }
 
 
+        $dbid = Work::where('user_id', Auth::user()->id)->pluck('id');
+        $bladeid = $request->workId;
+
         for ($i = 0; $i < $count; $i++) {
             if ($request->designation[$i] != "") {
                 if ($request->workId[$i] != '') {
@@ -333,7 +336,15 @@ class ProfileController extends Controller
                 }
             }
         }
-      
+
+        foreach ($dbid as $row) {
+            if (in_array($row, $bladeid)) {
+            } else {
+                $team =  Work::find($row);
+                $team->delete();
+            }
+        }
+
         return redirect(route('personalProfile'))->with('workUpdate', 'Saved !');
     }
 
@@ -341,7 +352,7 @@ class ProfileController extends Controller
     {
         $sponsor = Sponsor::where('user_id', $id)->first();
         $sponsor->update($request->all());
-   
-        return redirect(route('personalProfile')) ->with('sponsorUpdate', 'Saved !');
+
+        return redirect(route('personalProfile'))->with('sponsorUpdate', 'Saved !');
     }
 }

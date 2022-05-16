@@ -28,12 +28,12 @@
     </div>
     <div class="container">
 
-        <h1>{{request()->query('service')}} Enrollment</h1>
+        <h1>{{$consultants->team_info}} Enrollment</h1>
 
-        <h6>{{request()->query('service')}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access, explore and know more about the Consultants services and specialization.</h6>
+        <h6>{{$consultants->team_info}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access, explore and know more about the Consultants services and specialization.</h6>
         <h6></h6>
         <br>
-        <form id="form" action="{{route('add.consultant')}}" method="post" enctype="multipart/form-data">
+        <form id="form" action="{{route('update.consultant' ,['id'=>$consultants->id])}}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="whiteBox clearfix tab-pane  " style="max-width: none;" id="menu">
@@ -44,8 +44,9 @@
                         <div class="form-group">
                             <label>First Name *
                             </label>
-                            <input class="form-control " type="text" name="first_name" value="{{old('first_name')}}">
-                            <input class="form-control " type="text" name="type" value="{{request()->query('service')}}" hidden>
+                            <input class="form-control " type="text" name="first_name" value="{{$consultants->first_name}}">
+                            <input class="form-control " type="text" name="type" value="{{$consultants->type}}" hidden>
+
                         </div>
                     </div>
 
@@ -53,7 +54,7 @@
                         <div class="form-group">
                             <label>Last Name *
                             </label>
-                            <input class="form-control " type="text" name="last_name" value="{{old('last_name')}}">
+                            <input class="form-control " type="text" name="last_name" value="{{$consultants->last_name}}">
                         </div>
                     </div>
 
@@ -61,10 +62,9 @@
                         <div class="form-group">
                             <label>Registration Number *
                             </label>
-                            <input class="form-control " type="text" name="registration_number" value="{{old('registration_number')}}">
+                            <input class="form-control " type="text" name="registration_number" value="{{$consultants->registration_number}}">
                         </div>
                     </div>
-
 
                 </div>
                 <hr>
@@ -75,7 +75,7 @@
                         <div class="form-group">
                             <label>Company Name *
                             </label>
-                            <input class="form-control " type="text" name="company_name" value="{{old('company_name')}}">
+                            <input class="form-control " type="text" name="company_name" value="{{$consultants->company_name}}">
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
                         <div class="form-group">
                             <label>Registered Office - Location *
                             </label>
-                            <input class="form-control " type="text" placeholder="Area" name="registrar_office_area" value="{{old('registrar_office_area')}}">
+                            <input class="form-control " type="text" placeholder="Area" name="registrar_office_area" value="{{$consultants->registrar_office_area}}">
                         </div>
                     </div>
 
@@ -92,8 +92,8 @@
                             <label>Status *
                             </label>
                             <select class="form-control" name="status">
-                                <option value="Active" {{old('status') == "Active" ? "checked":""}}>Active</option>
-                                <option value="In Active" {{ old('status') == "In Active" ? "checked":""}}>In Active</option>
+                                <option value="Active" {{$consultants->status == "Active" ? "checked":""}}>Active</option>
+                                <option value="In Active" {{ $consultants->status == "In Active" ? "checked":""}}>In Active</option>
                             </select>
                         </div>
                     </div>
@@ -103,15 +103,15 @@
                             <label>Languages Known *
                             </label>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Languages1" name="language_known[]" value="English" {{ (is_array(old('language_known')) and in_array("English", old('language_known'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Languages1" name="language_known[]" value="English" {{ (is_array($consultants->language_known) and in_array("English", $consultants->language_known)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Languages1"> English</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Languages2" name="language_known[]" value="French" {{ (is_array(old('language_known')) and in_array("French", old('language_known'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Languages2" name="language_known[]" value="French" {{ (is_array($consultants->language_known) and in_array("French", $consultants->language_known)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Languages2"> French</label>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Languages3" name="language_known[]" value="Others" {{ (is_array(old('language_known')) and in_array("Others", old('language_known'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Languages3" name="language_known[]" value="Others" {{ (is_array($consultants->language_known) and in_array("Others", $consultants->language_known)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Languages3"> Others</label>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                             <label>Country *
 
                             </label>
-                            <input class="form-control " type="text" name="country" value="{{old('country')}}">
+                            <input class="form-control " type="text" name="country" value="{{$consultants->country}}">
                         </div>
                     </div>
 
@@ -135,7 +135,7 @@
                             <label>Province/Region *
 
                             </label>
-                            <input class="form-control " type="text" name="region" value="{{old('region')}}">
+                            <input class="form-control " type="text" name="region" value="{{$consultants->region}}">
                         </div>
                     </div>
 
@@ -144,7 +144,7 @@
                             <label>City *
 
                             </label>
-                            <input class="form-control " type="text" name="city" value="{{old('city')}}">
+                            <input class="form-control " type="text" name="city" value="{{$consultants->city}}">
                         </div>
                     </div>
 
@@ -152,7 +152,7 @@
                         <div class="form-group">
                             <label>Street *
                             </label>
-                            <input class="form-control " type="text" name="streat" value="{{old('streat')}}">
+                            <input class="form-control " type="text" name="streat" value="{{$consultants->streat}}">
                         </div>
                     </div>
 
@@ -168,7 +168,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="postal_code" value="{{old('postal_code')}}">
+                            <input class="form-control " type="text" name="postal_code" value="{{$consultants->postal_code}}">
                         </div>
                     </div>
 
@@ -176,7 +176,7 @@
                         <div class="form-group">
                             <label>Email address for correspondence *
                             </label>
-                            <input class="form-control " type="text" name="email" value="{{old('email')}}">
+                            <input class="form-control " type="text" name="email" value="{{$consultants->email}}">
                         </div>
                     </div>
 
@@ -186,7 +186,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="website_address" value="{{old('website_address')}}">
+                            <input class="form-control " type="text" name="website_address" value="{{$consultants->website_address}}">
                         </div>
                     </div>
 
@@ -196,7 +196,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="phone" value="{{old('phone')}}">
+                            <input class="form-control " type="text" name="phone" value="{{$consultants->phone}}">
                         </div>
                     </div>
 
@@ -211,19 +211,19 @@
                             <label>Specialization *
                             </label>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Specialization1" name="specialization[]" value="Express Entry" {{ (is_array(old('specialization')) and in_array("Express Entry", old('specialization'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Specialization1" name="specialization[]" value="Express Entry" {{ (is_array($consultants->specialization) and in_array("Express Entry", $consultants->specialization)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Specialization1"> Express Entry </label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Specialization2" name="specialization[]" value="PNP" {{ (is_array(old('specialization')) and in_array("PNP", old('specialization'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Specialization2" name="specialization[]" value="PNP" {{ (is_array($consultants->specialization) and in_array("PNP", $consultants->specialization)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Specialization2"> PNP</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Specialization3" name="specialization[]" value="LMIA" {{ (is_array(old('specialization')) and in_array("LMIA", old('specialization'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Specialization3" name="specialization[]" value="LMIA" {{ (is_array($consultants->specialization) and in_array("LMIA", $consultants->specialization)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Specialization3"> LMIA</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Specialization4" name="specialization[]" value="Others" {{ (is_array(old('specialization')) and in_array("Others", old('specialization'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Specialization4" name="specialization[]" value="Others" {{ (is_array($consultants->specialization) and in_array("Others", $consultants->specialization)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Specialization4"> Others</label>
                             </div>
                         </div>
@@ -233,7 +233,7 @@
                         <div class="form-group">
                             <label>Express Entry - Success
                             </label>
-                            <input class="form-control " type="text" placeholder="10/10" name="express_entry_success" value="{{old('express_entry_success')}}">
+                            <input class="form-control " type="text" placeholder="10/10" name="express_entry_success" value="{{$consultants->express_entry_success}}">
                             <small>No. of Enrolment/Success</small>
                         </div>
                     </div>
@@ -242,7 +242,7 @@
                         <div class="form-group">
                             <label>PNP Success
                             </label>
-                            <input class="form-control " type="text" name="pnp_success" value="{{old('pnp_success')}}">
+                            <input class="form-control " type="text" name="pnp_success" value="{{$consultants->pnp_success}}">
                             <small>No. of Enrolment/Success</small>
                         </div>
                     </div>
@@ -251,7 +251,7 @@
                         <div class="form-group">
                             <label>LMIA Success
                             </label>
-                            <input class="form-control " type="text" name="lmia_success" value="{{old('lmia_success')}}">
+                            <input class="form-control " type="text" name="lmia_success" value="{{$consultants->lmia_success}}">
                             <small>No. of Enrolment/Success</small>
                         </div>
                     </div>
@@ -260,7 +260,7 @@
                         <div class="form-group">
                             <label>Others Success
                             </label>
-                            <input class="form-control " type="text" name="other_success" value="{{old('other_success')}}">
+                            <input class="form-control " type="text" name="other_success" value="{{$consultants->other_success}}">
                             <small>No. of Enrolment/Success</small>
                         </div>
                     </div>
@@ -273,19 +273,19 @@
                             <label>Service Offered *</label>
 
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Student Visa" {{ (is_array(old('offering_service')) and in_array("Student Visa", old('offering_service'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Student Visa" {{ (is_array($consultants->offering_service) and in_array("Student Visa", $consultants->offering_service)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Service1">Student Visa</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Service2" name="offering_service[]" value="Tourist Visa" {{ (is_array(old('offering_service')) and in_array("Tourist Visa Visa", old('offering_service'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Service2" name="offering_service[]" value="Tourist Visa" {{ (is_array($consultants->offering_service) and in_array("Tourist Visa Visa", $consultants->offering_service)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Service2"> Tourist Visa</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Service3" name="offering_service[]" value="Family Visa" {{ (is_array(old('offering_service')) and in_array("Family Visa", old('offering_service'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Service3" name="offering_service[]" value="Family Visa" {{ (is_array($consultants->offering_service) and in_array("Family Visa", $consultants->offering_service)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Service3"> Family Visa</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Service4" name="offering_service[]" value="Other Visa" {{ (is_array(old('offering_service')) and in_array("Other Visa", old('offering_service'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="Service4" name="offering_service[]" value="Other Visa" {{ (is_array($consultants->offering_service) and in_array("Other Visa", $consultants->offering_service)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="Service4"> Other Visa</label>
                             </div>
                         </div>
@@ -297,15 +297,15 @@
                             </label>
                             <br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="OtherServices1" name="other_service[]" value="Innovator Visa" {{ (is_array(old('other_service')) and in_array("Innovator Visa", old('other_service'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="OtherServices1" name="other_service[]" value="Innovator Visa" {{ (is_array($consultants->other_service) and in_array("Innovator Visa", $consultants->other_service)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="OtherServices1"> Innovator Visa</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="OtherServices2" name="other_service[]" value="Franchisee" {{ (is_array(old('other_service')) and in_array("Franchisee", old('other_service'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="OtherServices2" name="other_service[]" value="Franchisee" {{ (is_array($consultants->other_service) and in_array("Franchisee", $consultants->other_service)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="OtherServices2">Franchisee</label><br>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="OtherServices3" name="other_service[]" value="Intra Company Transfer" {{ (is_array(old('other_service')) and in_array("Intra Company Transfer", old('other_service'))) ? ' checked' : '' }}>
+                                <input class="custom-control-input" type="checkbox" id="OtherServices3" name="other_service[]" value="Intra Company Transfer" {{ (is_array($consultants->other_service) and in_array("Intra Company Transfer", $consultants->other_service)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="OtherServices3"> Intra Company Transfer</label><br>
                             </div>
 
@@ -317,7 +317,7 @@
                             <label>Student Visa - Success
                             </label>
 
-                            <input class="form-control " type="text" placeholder="10/10" name="student_visa_success" value="{{old('student_visa_success')}}">
+                            <input class="form-control " type="text" placeholder="10/10" name="student_visa_success" value="{{$consultants->student_visa_success}}">
                             <small>No. of Enrolment/Success</small>
                         </div>
                     </div>
@@ -326,7 +326,7 @@
                         <div class="form-group">
                             <label>Tourist Visa Success
                             </label>
-                            <input class="form-control " type="text" name="tourist_visa_success" value="{{old('tourist_visa_success')}}">
+                            <input class="form-control " type="text" name="tourist_visa_success" value="{{$consultants->tourist_visa_success}}">
                             <small>No. of Enrolment/Success</small>
                         </div>
                     </div>
@@ -335,7 +335,7 @@
                         <div class="form-group">
                             <label>Family Visa Success
                             </label>
-                            <input class="form-control " type="text" name="family_visa_success" value="{{old('family_visa_success')}}">
+                            <input class="form-control " type="text" name="family_visa_success" value="{{$consultants->family_visa_success}}">
                             <small>No. of Enrolment/Success</small>
                         </div>
                     </div>
@@ -346,7 +346,7 @@
                             </label>
                             <br>
                             <br>
-                            <input class="form-control " type="text" name="other_visa_success" value="{{old('other_visa_success')}}">
+                            <input class="form-control " type="text" name="other_visa_success" value="{{$consultants->other_visa_success}}">
                             <small>No. of Enrolment/Success</small>
                         </div>
                     </div>
@@ -358,7 +358,7 @@
                         <div class="form-group">
                             <label>Year of Establishment
                             </label>
-                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{old('establishment_year')}}">
+                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{$consultants->establishment_year}}">
                             <small>Year of Registration</small>
                         </div>
                     </div>
@@ -366,7 +366,7 @@
                         <div class="form-group">
                             <label>Offering Services Since
                             </label>
-                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{old('offering_year')}}">
+                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{$consultants->offering_year}}">
                             <small>Number of Years</small>
                         </div>
                     </div>
@@ -374,7 +374,7 @@
                         <div class="form-group">
                             <label>Total Cases Taken
                             </label>
-                            <input class="form-control " type="text" placeholder="24 or 48 or 72 Hours" name="total_cases_taken" value="{{old('total_cases_taken')}}">
+                            <input class="form-control " type="text" placeholder="24 or 48 or 72 Hours" name="total_cases_taken" value="{{$consultants->total_cases_taken}}">
                             <small>Number of Cases Enrolled till Date</small>
                         </div>
                     </div>
@@ -383,14 +383,13 @@
                             <label>Mode of Communication
                             </label>
 
-                            <input class="form-control " type="text" name="communication_mode_success" value="{{old('communication_mode_success')}}">
+                            <input class="form-control " type="text" name="communication_mode_success" value="{{$consultants->communication_mode_success}}">
                             <small>Successful Cases in %</small>
                         </div>
                     </div>
 
                 </div>
                 <hr>
-
                 <div class="row custom-box">
 
                     <div class="col-lg-4 col-md-4 col-12">
@@ -399,19 +398,19 @@
                             </label>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-checkbox ">
-                                    <input type="checkbox" class="custom-control-input" id="preferemail" name="communication_mode[]" value="email" {{ (is_array(old('communication_mode')) and in_array("email", old('communication_mode'))) ? ' checked' : '' }}>
+                                    <input type="checkbox" class="custom-control-input" id="preferemail" name="communication_mode[]" value="email" {{ (is_array($consultants->communication_mode) and in_array("email", $consultants->communication_mode)) ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="preferemail">email</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-checkbox ">
-                                    <input type="checkbox" class="custom-control-input " id="preferPhone" name="communication_mode[]" value="phone" {{ (is_array(old('communication_mode')) and in_array("phone", old('communication_mode'))) ? ' checked' : '' }}>
+                                    <input type="checkbox" class="custom-control-input " id="preferPhone" name="communication_mode[]" value="phone" {{ (is_array($consultants->communication_mode) and in_array("phone", $consultants->communication_mode)) ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="preferPhone">phone</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-checkbox ">
-                                    <input type="checkbox" class="custom-control-input " id="preferMessaging" name="communication_mode[]" value="Messaging" {{ (is_array(old('communication_mode')) and in_array("Messaging", old('communication_mode'))) ? ' checked' : '' }}>
+                                    <input type="checkbox" class="custom-control-input " id="preferMessaging" name="communication_mode[]" value="Messaging" {{ (is_array($consultants->communication_mode) and in_array("Messaging", $consultants->communication_mode)) ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="preferMessaging">Messaging</label>
                                 </div>
                             </div>
@@ -421,7 +420,7 @@
                         <div class="form-group">
                             <label>Response Time
                             </label>
-                            <input type="text" class="form-control" name="response_time" value="{{old('response_time')}}">
+                            <input type="text" class="form-control" name="response_time" value="{{$consultants->response_time}}">
                             <small>24 or 48 or 72 Hours</small>
                         </div>
                     </div>
@@ -431,13 +430,13 @@
                             </label>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input" id="Consultationchargeable" name="initial_chargeable_type" value="free" {{ old('initial_chargeable_type') == "free"  ? ' checked' : '' }}>
+                                    <input type="radio" class="custom-control-input" id="Consultationchargeable" name="initial_chargeable_type" value="free" {{ $consultants->initial_chargeable_type == "free"  ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="Consultationchargeable">free</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Consultationchargeable2" name="initial_chargeable_type" value="paid" {{ old('initial_chargeable_type') == "paid"  ? ' checked' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Consultationchargeable2" name="initial_chargeable_type" value="paid" {{ $consultants->initial_chargeable_type == "paid"  ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="Consultationchargeable2">paid</label>
                                 </div>
                             </div>
@@ -446,7 +445,6 @@
 
                 </div>
                 <hr>
-
                 <div class="float-right">
                     <button type="button" class="client-btn bmenu">Next </button>
                 </div>
@@ -460,11 +458,60 @@
                         <div class="form-group">
 
                             <label>Your Team of Expert</label>
-                            <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization" name="team_info"></textarea>
+                            <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization">{{$consultants->team_info}}</textarea>
                         </div>
                         <div class="form-group">
                             <div id="newRow">
+                                <div class="form-group">
+                                    @foreach($teams as $row )
+                                    <div  id="inputFormRow">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <label>Team Member</label>
 
+                                                <input class="form-control team addinput" id="team_name" type="text" name="team_name[]" value="{{$row->member}}">
+                                                <input type="text" name="teamId[]" value="{{$row->id}}" hidden>
+
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <label>Image</label>
+                                                <a href="{{url('files/'.$row->team_img)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
+                                                <input type="file" class="form-control team addinput" name="team_img[]">
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <label>Designation</label>
+
+                                                <input class="form-control team addinput" type="text" id="team_designation" name="team_designation[]" value="{{$row->Designation}}">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <label>Area of Expertise</label>
+
+                                                <input class="form-control team addinput" type="text" id="team_area_expertise" name="team_area_expertise[]" value="{{$row->expertise_area}}">
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-12">
+                                                <label>Year of Experience</label>
+
+                                                <input class="form-control team addinput" type="text" id="team_experience_year" name="team_experience_year[]" value="{{$row->experience_year}}">
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-12">
+                                                <label>Number of Successful Cases</label>
+
+                                                <input class="form-control team addinput" type="text" id="team_number_success_cases" name="team_number_success_cases[]" value="{{$row->no_success}}">
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-12">
+                                                <br><br>
+                                                <button id="removeRow" style="padding:10px 13px" type="button" class="btn btn-danger btn-sm">Remove</button>
+                                            </div>
+
+                                        </div>
+                                        <br><br>
+                                        <hr>
+                                    </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                         <button id="addRow" type="button" class="btn btn-info">Add Your Team</button>
@@ -485,13 +532,13 @@
                             </label>
                             <div class="col-lg-2 col-md-2 col-2 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Policies" name="is_Policies" value="yes" {{ old('is_Policies') == "yes"  ? ' checked' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Policies" name="is_Policies" value="yes" {{ $consultants->is_Policies == "yes"  ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="Policies">Yes</label>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-2 col-3 ">
                                 <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Policiesno" name="is_Policies" value="no" {{ old('is_Policies') == "no"  ? ' checked' : '' }}>
+                                    <input type="radio" class="custom-control-input " id="Policiesno" name="is_Policies" value="no" {{ $consultants->is_Policies == "no"  ? ' checked' : '' }}>
                                     <label class="custom-control-label mt-1" for="Policiesno">No</label>
                                 </div>
                             </div>
@@ -503,18 +550,18 @@
                             </label>
                             <br>
                             <br>
+                            <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
                             <input class="form-control " type="file" name="privacy_policy_document" value="{{old('privacy_policy_document')}}">
+
                         </div>
                     </div>
-
                     <div class="col-lg-7 col-md-7 col-12">
                         <div class="form-group">
                             <label>Terms if Any
                             </label>
-                            <textarea style="width:100%;" rows="6" name="privacy_policy_detail" value="{{old('privacy_policy_detail')}}"></textarea>
+                            <textarea style="width:100%;" rows="6" name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}">{{$consultants->privacy_policy_detail}}</textarea>
                         </div>
                     </div>
-
 
                 </div>
                 <hr>
@@ -524,12 +571,11 @@
                             <label>About History
                             </label>
                             <br>
-                            <textarea style="width:100%;" rows="9" name="history" value="{{old('history')}}"></textarea>
+                            <textarea style="width:100%;" rows="9" name="history" value="{{$consultants->history}}">{{$consultants->history}}</textarea>
                         </div>
                     </div>
                 </div>
                 <hr>
-
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
@@ -537,7 +583,7 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{old('brief_introduction')}}"></textarea>
+                            <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{$consultants->brief_introduction}}">{{$consultants->brief_introduction}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -554,7 +600,7 @@
                             <label>Awards and Certifications
                             </label>
                             <br>
-
+                            <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
                             <input type="file" class="form-control" name="Award" value="{{old('Award')}}">
                         </div>
                     </div>
@@ -567,7 +613,7 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="achievement" value="{{old('achievement')}}"></textarea>
+                            <textarea style="width:100%;" rows="9" name="achievement" value="{{$consultants->achievement}}">{{$consultants->achievement}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -585,7 +631,7 @@
                         <div class="form-group">
                             <label>Your Introductory Video URL Link display on Canada Inspire Portal
                             </label>
-                            <input class="form-control " type="text" name="first_name" value="{{old('vedio_url')}}">
+                            <input class="form-control " type="text" name="vedio_url" value="{{$consultants->vedio_url}}">
                         </div>
                     </div>
                 </div>
@@ -596,7 +642,7 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="event_new_weblink" value="{{old('event_new_weblink')}}"></textarea>
+                            <textarea style="width:100%;" rows="9" name="event_new_weblink" value="{{$consultants->event_new_weblink}}">{{$consultants->event_new_weblink}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -616,7 +662,7 @@
                                         <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
                                             <div class="form-group">
                                                 <label> </label>
-                                                <input class="form-control socialLink " type="text" placeholder="Facebook link " name="fb_link" value="{{old('fb_link')}}">
+                                                <input class="form-control socialLink " type="text" placeholder="Facebook link " name="fb_link" value="{{$consultants->fb_link}}">
                                             </div>
                                         </div>
                                     </a>
@@ -626,7 +672,7 @@
                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
                                             <div class="form-group">
                                                 <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="Twitter link " name="twitter_link" value="{{old('twitter_link')}}">
+                                                <input class="form-control socialLink" type="text" placeholder="Twitter link " name="twitter_link" value="{{$consultants->twitter_link}}">
                                             </div>
                                         </div>
                                     </a>
@@ -635,7 +681,7 @@
                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
                                             <div class="form-group">
                                                 <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="Instagram link " name="insta_link" value="{{old('insta_link')}}">
+                                                <input class="form-control socialLink" type="text" placeholder="Instagram link " name="insta_link" value="{{$consultants->insta_link}}">
                                             </div>
                                         </div>
                                     </a>
@@ -645,7 +691,7 @@
                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
                                             <div class="form-group">
                                                 <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="Linkedin Profile " name="Linkedin_link" value="{{old('Linkedin_link')}}">
+                                                <input class="form-control socialLink" type="text" placeholder="Linkedin Profile " name="Linkedin_link" value="{{$consultants->Linkedin_link}}">
                                             </div>
                                         </div>
                                     </a>
@@ -655,7 +701,7 @@
                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="youtube">
                                             <div class="form-group">
                                                 <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="youtube link " name="youtube_link" value="{{old('youtube_link')}}">
+                                                <input class="form-control socialLink" type="text" placeholder="youtube link " name="youtube_link" value="{{$consultants->youtube_link}}">
                                             </div>
                                         </div>
                                     </a>
@@ -665,7 +711,7 @@
                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="google">
                                             <div class="form-group">
                                                 <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="google review link " name="google_review_link" value="{{old('google_review_link')}}">
+                                                <input class="form-control socialLink" type="text" placeholder="google review link " name="google_review_link" value="{{$consultants->google_review_link}}">
                                             </div>
                                         </div>
                                     </a>
@@ -690,11 +736,11 @@
                             <br>
 
                             <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                             1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
-                             2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
-                             3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                             4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
-                             5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
+                                1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
+                                2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
+                                3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+                                4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
+                                5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
                         </div>
                     </div>
                 </div>
@@ -711,7 +757,7 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="9" name="Comment" value="{{old('Comment')}}"></textarea>
+                            <textarea style="width:100%;" rows="9" name="Comment" value="{{$consultants->Comment}}">{{$consultants->Comment}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -866,6 +912,7 @@
                                 <label>Team Member</label>
                                 
                                 <input class="form-control team addinput" id="team_name" type="text" name="team_name[]"  required>
+                                <input type="text" name="teamId[]" value="" hidden>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <label>Image</label>

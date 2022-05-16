@@ -17,7 +17,7 @@
                     <span class="font-weight-bold">{{$institutions->insta_link}}</span><br>
                     <span class="font-weight-bold">{{$institutions->twitter_link}} </span><br>
                     <div class="col-md-7">
-                        <button type="button" class="client-btn ">Edit Profile</button>
+                        <a href="{{route('edit.institution')}}"> <button type="button" class="client-btn ">Edit Profile</button></a>
                     </div>
                 </div>
             </div>
@@ -364,10 +364,13 @@
                             <div class="form-group">
                                 <label>Courses
                                 </label>
-                                @foreach($institutions->offer_course as $key => $row)
-                                <input type="text" name="offer_course[]" class="form-control m-input addinput" value="{{$row}}" disabled />
-                                <br>
-                                @endforeach
+                                <div id="newRow">
+
+                                    @foreach($institutions->offer_course as $key => $row)
+                                    <input type="text" name="offer_course[]" class="form-control m-input addinput" value="{{$row}}" disabled />
+                                    <br>
+                                    @endforeach
+                                </div>
                             </div>
 
                         </div>

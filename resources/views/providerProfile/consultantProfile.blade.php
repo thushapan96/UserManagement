@@ -17,7 +17,7 @@
                     <span class="font-weight-bold">{{$consultants->insta_link}}</span><br>
                     <span class="font-weight-bold">{{$consultants->twitter_link}} </span><br>
                     <div class="col-md-7">
-                        <button type="button" class="client-btn ">Edit Profile</button>
+                       <a href="{{route('edit.consultant')}}"> <button type="button" class="client-btn ">Edit Profile</button></a>
                     </div>
                 </div>
             </div>
@@ -575,7 +575,6 @@
                         </div>
                     </div>
                     <hr>
-
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
