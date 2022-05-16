@@ -42,19 +42,20 @@
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         @if(Auth::user())
-                        @if(auth()->user()->service_type == 'Consultation')
+                      
+                        @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('consultantProfile')}}">profile</a>
                         </li>
-                        @elseif(auth()->user()->service_type == 'Institution')
+                        @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('institudeProfile')}}">profile</a>
                         </li>
-                        @elseif(auth()->user()->service_type == 'Business')
+                        @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('businessProfile')}}">profile</a>
                         </li>
-                        @else
+                        @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('personalProfile')}}">profile</a>
                         </li>

@@ -29,7 +29,7 @@ class ProviderProfileController extends Controller
         $consultants =  Consultant::where('user_id', $id)->first();
 
 
-        $teams = Team::where('provider_id', $id)->get();
+        $teams = Team::where('provider_id', $consultants->id)->get();
 
         if ($consultants) {
             return view('providerProfile.consultantProfile')->with('consultants', $consultants)->with('teams', $teams);

@@ -466,16 +466,16 @@
                             <div class="form-group">
 
                                 <label>Your Team of Expert</label>
-                                <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization">{{$consultants->team_info}}</textarea>
+                                <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization" disabled>{{$consultants->team_info}}</textarea>
                             </div>
                             <div class="form-group">
                                 @foreach($teams as $row )
-                                <div id="inputFormRow">
+                                <div >
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <label>Team Member</label>
 
-                                            <input class="form-control team addinput" id="team_name" type="text" name="team_name[]" value="{{$row->team_name}}" disabled>
+                                            <input class="form-control team addinput" id="team_name" type="text" name="team_name[]" value="{{$row->member}}" disabled>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <label>Image</label>
@@ -484,7 +484,7 @@
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <label>Designation</label>
 
-                                            <input class="form-control team addinput" type="text" id="team_designation" value="{{$row->team_designation}}" disabled>
+                                            <input class="form-control team addinput" type="text" id="team_designation" value="{{$row->Designation}}" disabled>
                                         </div>
                                     </div>
                                     <br>
@@ -492,23 +492,20 @@
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <label>Area of Expertise</label>
 
-                                            <input class="form-control team addinput" type="text" id="team_area_expertise" value="{{$row->team_area_expertise}}" disabled>
+                                            <input class="form-control team addinput" type="text" id="team_area_expertise" value="{{$row->expertise_area}}" disabled>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-4 col-md-3 col-12">
                                             <label>Year of Experience</label>
 
-                                            <input class="form-control team addinput" type="text" id="team_experience_year" value="{{$row->team_area_expertise}}" disabled>
+                                            <input class="form-control team addinput" type="text" id="team_experience_year" value="{{$row->experience_year}}" disabled>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-4 col-md-3 col-12">
                                             <label>Number of Successful Cases</label>
 
-                                            <input class="form-control team addinput" type="text" id="team_number_success_cases" value="{{$row->team_number_success_cases}}" disabled>
+                                            <input class="form-control team addinput" type="text" id="team_number_success_cases" value="{{$row->no_success}}" disabled>
                                         </div>
 
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <br><br>
-                                            <button id="removeRow" style="padding:10px 13px" type="button" class="btn btn-danger btn-sm">Remove</button>
-                                        </div>
+                                       
                                     </div>
                                     <br><br>
                                     <hr>
@@ -603,7 +600,7 @@
                                 <label>Awards and Certifications
                                 </label>
                                 <br>
-                                <a href="{{url('files/'.$constants->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
+                                <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
 
                             </div>
                         </div>
@@ -616,7 +613,7 @@
                                 </label>
                                 <br>
 
-                                <textarea style="width:100%;" rows="9" name="achievement" value="{{$constants->achievement}}" disabled>{{$constants->achievement}}</textarea>
+                                <textarea style="width:100%;" rows="9" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
                             </div>
                         </div>
                     </div>

@@ -38,11 +38,23 @@ class HomeController extends Controller
             $service = Auth::user()->service;
 
             if (Auth::user()->service_type == 'Institution') {
-                return redirect(route('register.institude', ['service' => $service]))->with('registermessage', 'Successfully  Submitted !');
+                if (DB::table('institutions')->where('user_id', '=', Auth::user()->id)->exists()) {
+                    return redirect(route('institudeProfile'));
+                } else {
+                    return redirect(route('register.institude', ['service' => $service]))->with('registermessage', 'Successfully  Submitted !');
+                }
             } elseif (Auth::user()->service_type == 'Consultation') {
-                return redirect(route('register.consultant', ['service' => $service]))->with('registermessage', 'Successfully  Submitted !');
+                if (DB::table('providers')->where('user_id', '=', Auth::user()->id)->exists()) {
+                    return redirect(route('consultantProfile'));
+                } else {
+                    return redirect(route('register.consultant', ['service' => $service]))->with('registermessage', 'Successfully  Submitted !');
+                }
             } elseif (Auth::user()->service_type == 'Business') {
-                return redirect(route('register.business', ['service' => $service]))->with('registermessage', 'Successfully  Submitted !');
+                if (DB::table('providers')->where('user_id', '=', Auth::user()->id)->exists()) {
+                    return redirect(route('businessProfile'));
+                } else {
+                    return redirect(route('register.business', ['service' => $service]))->with('registermessage', 'Successfully  Submitted !');
+                }
             }
         }
     }
