@@ -144,7 +144,7 @@
                     <div class="col-lg-4 col-md-4  col-12">
                         <div class="form-group">
 
-                            <input class="form-control l-icon" type="text" placeholder="Choose Country" name="sponsor_country" id="pac-input2" value="" required value="{{$sponsor->sponsor_country}}">
+                            <input class="form-control l-icon" type="text" placeholder="Enter Country" name="sponsor_country"   value="{{$sponsor->sponsor_country}}" required>
 
                         </div>
                     </div>
@@ -261,7 +261,7 @@
                     <div class="col-lg-4 col-md-4  col-12">
                         <div class="form-group">
 
-                            <input class="form-control l-icon" type="text" placeholder="Choose Country" name="guardian_country" id="pac-input2" value="{{$sponsor->guardian_country}}" required>
+                            <input class="form-control l-icon" type="text" placeholder="Enter Country" name="guardian_country"  value="{{$sponsor->guardian_country}}" required>
 
                         </div>
                     </div>

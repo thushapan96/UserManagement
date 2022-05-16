@@ -62,9 +62,7 @@
                             </div>
 
                         </div>
-
                         <hr>
-
                         <div class="row custom-box">
 
                             <div class="col-lg-4 col-md-4 col-12">
@@ -100,7 +98,7 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label></label>
-                                    <input class="form-control l-icon" type="text" placeholder="Choose Country" name="residential_country" id="pac-input2" value="{{$personal->residential_country}}" required>
+                                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="residential_country"  value="{{$personal->residential_country}}" required>
 
                                 </div>
                             </div>
@@ -162,7 +160,7 @@
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                         <label></label>
-                                        <input class="form-control l-icon" type="text" placeholder="Choose Country" name="corosponding_country" id="pac-input1" value="{{$personal->corosponding_country}}">
+                                        <input class="form-control l-icon" type="text" placeholder="Enter Country" name="corosponding_country"  value="{{$personal->corosponding_country}}">
 
                                     </div>
                                 </div>
@@ -194,9 +192,7 @@
 
                         </div>
 
-
                         <hr>
-
                         <div class="row mb-4">
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">

@@ -17,7 +17,7 @@ class CandidatePersonalsTable extends Migration
             $table->bigIncrements('id')->unsigned();  
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
-            $table->string('first_name');
+            $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('residential_street')->nullable();

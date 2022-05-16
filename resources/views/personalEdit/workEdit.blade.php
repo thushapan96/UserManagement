@@ -41,7 +41,7 @@
                                 <div class="form-group">
                                     <label>Country
                                     </label>
-                                    <input class="form-control " type="text" placeholder="Choose Country" name="country[]" value="{{$row->country}}">
+                                    <input class="form-control " type="text" placeholder="enter Country" name="country[]" value="{{$row->country}}">
 
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
             <div class="form-group">
                 <label>Country
                 </label>
-                <input class="form-control " type="text" placeholder="Choose Country" name="country[]">
+                <input class="form-control " type="text" placeholder="Enter Country" name="country[]">
 
             </div>
         </div>

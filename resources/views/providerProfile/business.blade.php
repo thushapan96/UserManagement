@@ -3,11 +3,29 @@
 @section('content')
 
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
+    @if($message = Session::get('formSuccess'))
+    <script>
+        Swal.fire(
+            'Success',
+            'Successfully Submitted!',
+            'success'
+        )
+    </script>
 
+    @endif
+    @if($message = Session::get('editformSuccess'))
+    <script>
+        Swal.fire(
+            'Success',
+            'Successfully Updated!',
+            'success'
+        )
+    </script>
+    @endif
 
     <div class="" style=" left: 0px;">
         <div class="row">
-            <div class="col-md-3 border-left" style=" left: 100px;">
+            <div class="col-md-3 border-left" style="  left: 50px;">
                 <div class="d-flex flex-column align-items-left text-left p-3 py-5">
                     <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
                     <span class="font-weight-bold  align-items-center  ">{{$consultants->first_name}}</span><br>
@@ -27,7 +45,7 @@
                     <div class="cardf">
                         <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important">
                             <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" aria-current="page" id="amenu">Main Content</a>
-                            <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu1">Team Members</a>
+                            <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu1">Team </a>
                             <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu2">About Company </a>
                             <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu3"> Award & Certification</a>
                             <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu4">News and Events</a>

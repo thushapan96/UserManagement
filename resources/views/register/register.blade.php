@@ -3,10 +3,11 @@
 @section('content')
 <style>
     .progress {
-        background-color: white !important;
+        background-color: #FF6347 !important;
         margin-left: 40px !important;
         margin-right: 40px !important;
-        max-height: 4px;
+        max-height: 12px;
+        text-align: center;
 
     }
 </style>
@@ -34,8 +35,9 @@
                     <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 5rem;" id="amenu3">sponsor</a>
                 </nav>
             </div>
+
             <div class="progress mt-2">
-                <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%" style="cursor:pointer;padding: .15rem 0.5rem;">
+                <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:green !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
 
                 </div>
             </div>
@@ -60,13 +62,13 @@
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="middle_name" class="form-control " type="text" placeholder="Middle Name" >
+                                    <input name="middle_name" class="form-control " type="text" placeholder="Middle Name">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="last_name" class="form-control " type="text" placeholder="Last Name" >
+                                    <input name="last_name" class="form-control " type="text" placeholder="Last Name">
                                 </div>
                             </div>
 
@@ -79,7 +81,7 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Present Residential Address</label>
-                                    <input name="residential_street" class="form-control " type="text" placeholder="Street Address" >
+                                    <input name="residential_street" class="form-control " type="text" placeholder="Street Address">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
@@ -91,25 +93,25 @@
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="residential_city" class="form-control " type="text" placeholder="City" >
+                                    <input name="residential_city" class="form-control " type="text" placeholder="City">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label></label>
-                                    <input name="residential_region" class="form-control " type="text" placeholder="Region or State" >
+                                    <input name="residential_region" class="form-control " type="text" placeholder="Region or State">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 ">
                                 <div class="form-group">
                                     <label> </label>
-                                    <input name="residential_pincode" class="form-control " type="text" placeholder="Pin Code " >
+                                    <input name="residential_pincode" class="form-control " type="text" placeholder="Pin Code ">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label></label>
-                                    <input class="form-control l-icon" type="text" placeholder="Choose Country" name="residential_country" id="pac-input2" value="" required>
+                                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="residential_country"  value="" required>
 
                                 </div>
                             </div>
@@ -171,7 +173,7 @@
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                         <label></label>
-                                        <input class="form-control l-icon" type="text" placeholder="Choose Country" name="corosponding_country" id="pac-input1" value="">
+                                        <input class="form-control l-icon" type="text" placeholder="Enter Country" name="corosponding_country"  value="">
 
                                     </div>
                                 </div>
@@ -564,7 +566,9 @@
     <script>
         $(document).ready(function() {
 
-            $(".progress-bar").css("width", "0%");
+
+
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -598,7 +602,7 @@
 
                             });
                         }
-                        if (data.success) { 
+                        if (data.success) {
                             console.log("byeeeeeeeeee");
                             $('.alert-danger').html('');
                             jQuery('.alert-danger').hide();
@@ -609,6 +613,8 @@
                             )
 
                             $(".progress-bar").css("width", "25%");
+                            $(".progress-bar").html("25%");
+
                             $('.tab-pane').fadeOut();
                             $("#menu1").fadeIn();
                             $(".nav-link").removeClass('active')

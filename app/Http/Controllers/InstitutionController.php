@@ -49,6 +49,6 @@ class InstitutionController extends Controller
         }
 
         $Institution->save();
-        return redirect('/');
+        return redirect(route('institudeProfile'))->with('formSuccess', 'Saved!');
     }
 }

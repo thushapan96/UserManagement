@@ -2,7 +2,26 @@
 
 @section('content')
 
+@if($message = Session::get('registermessage'))
+<script>
+    Swal.fire(
+        'Success',
+        'Successfully Registered!',
+        'success'
+    )
+</script>
+@endif
 <!-- Subscribe & Stay Connected. Start -->
+<style>
+    .progress {
+        background-color: #FF6347 !important;
+        margin-left: 40px !important;
+        margin-right: 40px !important;
+        max-height: 12px;
+        text-align: center;
+
+    }
+</style>
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
 
     <div class="whiteBoxtab " style="width: 1400px !important;max-width: 1500px !important; left:0  !important">
@@ -21,7 +40,7 @@
         </div>
 
         <div class="progress mt-2">
-            <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%" style="cursor:pointer;padding: .15rem 0.5rem !important;">
+            <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:green !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
 
             </div>
         </div>
@@ -690,11 +709,11 @@
                             <br>
 
                             <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                             1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
-                             2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
-                             3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                             4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
-                             5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
+1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
+2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
+3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
+5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
                         </div>
                     </div>
                 </div>
@@ -776,30 +795,41 @@
         });
 
         $(".bmenu").click(function() {
+            $(".progress-bar").css("width", "30%");
+            $(".progress-bar").html("30%");
             $('.tab-pane').fadeOut();
             $("#menu1").fadeIn();
-            $(".nav-link").removeClass('active')
-            $("#amenu1").addClass('active')
+            $(".nav-link").removeClass('active');
+            $("#amenu1").addClass('active');
+
         });
         $(".bmenu1").click(function() {
+            $(".progress-bar").css("width", "40%");
+            $(".progress-bar").html("40%");
             $('.tab-pane').fadeOut();
             $("#menu2").fadeIn();
             $(".nav-link").removeClass('active')
             $("#amenu2").addClass('active')
         });
         $(".bmenu2").click(function() {
+            $(".progress-bar").css("width", "50%");
+            $(".progress-bar").html("50%");
             $('.tab-pane').fadeOut();
             $("#menu3").fadeIn();
             $(".nav-link.active").removeClass('active')
             $("#amenu3").addClass('active')
         });
         $(".bmenu3").click(function() {
+            $(".progress-bar").css("width", "80%");
+            $(".progress-bar").html("80%");
             $('.tab-pane').fadeOut();
             $("#menu4").fadeIn();
             $(".nav-link.active").removeClass('active')
             $("#amenu4").addClass('active')
         });
         $(".bmenu4").click(function() {
+            $(".progress-bar").css("width", "90%");
+            $(".progress-bar").html("90%");
             $('.tab-pane').fadeOut();
             $("#menu5").fadeIn();
             $(".nav-link.active").removeClass('active')

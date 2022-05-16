@@ -42,7 +42,7 @@
                         <label>
                             Attach Experience Certificate
                         </label>
-                        <a href="{{route('candidate_work_add')}}">  <input class="form-control" type="file" value="" name="attach_experience_certificate[]"></a>
+                        <a href="{{route('candidate_work_add')}}"> <input class="form-control" type="file" value="" name="attach_experience_certificate[]"></a>
                     </div>
                 </div>
 
@@ -215,7 +215,7 @@
             var actionUrl = $(this).attr('action');
             var form = new FormData(this);
 
-            console.log('form'+typeof(form))
+            console.log('form' + typeof(form))
 
             $.ajax({
                 type: "POST",
@@ -228,11 +228,12 @@
                 success: function(data) {
                     console.log(data)
                     Swal.fire(
-                            'Success!',
-                            'Successfully submitted personal details!',
-                            'success'
-                        )
+                        'Success!',
+                        'Successfully submitted personal details!',
+                        'success'
+                    )
                     $(".progress-bar").css("width", "75%");
+                    $(".progress-bar").html("75%");
                     $('.tab-pane').fadeOut();
                     $("#menu3").fadeIn();
                     $(".nav-link").removeClass('active')

@@ -1,7 +1,16 @@
 @extends('layouts.layout')
 
 @section('content')
+<style>
+    .progress {
+        background-color: #FF6347 !important;
+        margin-left: 40px !important;
+        margin-right: 40px !important;
+        max-height: 12px;
+        text-align: center;
 
+    }
+</style>
 
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
@@ -39,7 +48,7 @@
         </div>
 
         <div class="progress mt-2">
-            <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%" style="cursor:pointer;padding: .15rem 0.5rem !important;">
+            <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:green !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
 
             </div>
         </div>
@@ -241,7 +250,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-3 col-md-3 col-12">
                         <div class="form-group">
                             <label>Service Offered *</label>
@@ -680,30 +689,41 @@
             });
 
             $(".bmenu").click(function() {
+                $(".progress-bar").css("width", "30%");
+                $(".progress-bar").html("30%");
                 $('.tab-pane').fadeOut();
                 $("#menu1").fadeIn();
-                $(".nav-link").removeClass('active')
-                $("#amenu1").addClass('active')
+                $(".nav-link").removeClass('active');
+                $("#amenu1").addClass('active');
+
             });
             $(".bmenu1").click(function() {
+                $(".progress-bar").css("width", "40%");
+                $(".progress-bar").html("40%");
                 $('.tab-pane').fadeOut();
                 $("#menu2").fadeIn();
                 $(".nav-link").removeClass('active')
                 $("#amenu2").addClass('active')
             });
             $(".bmenu2").click(function() {
+                $(".progress-bar").css("width", "50%");
+                $(".progress-bar").html("50%");
                 $('.tab-pane').fadeOut();
                 $("#menu3").fadeIn();
                 $(".nav-link.active").removeClass('active')
                 $("#amenu3").addClass('active')
             });
             $(".bmenu3").click(function() {
+                $(".progress-bar").css("width", "80%");
+                $(".progress-bar").html("80%");
                 $('.tab-pane').fadeOut();
                 $("#menu4").fadeIn();
                 $(".nav-link.active").removeClass('active')
                 $("#amenu4").addClass('active')
             });
             $(".bmenu4").click(function() {
+                $(".progress-bar").css("width", "90%");
+                $(".progress-bar").html("90%");
                 $('.tab-pane').fadeOut();
                 $("#menu5").fadeIn();
                 $(".nav-link.active").removeClass('active')

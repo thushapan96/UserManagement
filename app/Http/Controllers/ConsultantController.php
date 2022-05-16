@@ -96,9 +96,9 @@ class ConsultantController extends Controller
             }
         }
         if ($Consultant->type == 'Chartered Accountant') {
-            return redirect(route('businessProfile'));
+            return redirect(route('businessProfile'))->with('formSuccess', 'Saved!');
         } else {
-            return redirect(route('consultantProfile'));
+            return redirect(route('consultantProfile'))->with('formSuccess', 'Saved!');
         }
     }
 }

@@ -83,7 +83,7 @@ class ProviderProfileController extends Controller
         }
 
         $Institution->save();
-        return redirect(route('institudeProfile'));
+        return redirect(route('institudeProfile'))->with('editformSuccess', 'Saved!');
     }
 
     public function editConsultant()
@@ -204,9 +204,9 @@ class ProviderProfileController extends Controller
         }
 
         if ($Consultant->type == 'Chartered Accountant') {
-            return redirect(route('businessProfile'));
+            return redirect(route('businessProfile'))->with('editformSuccess', 'Saved!');
         } else {
-            return redirect(route('consultantProfile'));
+            return redirect(route('consultantProfile'))->with('editformSuccess', 'Saved!');
         }
     }
 

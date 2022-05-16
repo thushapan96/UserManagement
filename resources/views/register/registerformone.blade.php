@@ -621,6 +621,8 @@
                             'success'
                         )
                         $(".progress-bar").css("width", "50%");
+                        $(".progress-bar").html("50%");
+                        
                         $('.tab-pane').fadeOut();
                         $("#menu2").fadeIn();
                         $(".nav-link").removeClass('active')

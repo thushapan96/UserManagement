@@ -319,21 +319,19 @@
                         </div>
                     </div>
 
-
-
                 </div>
 
 
-                <dic class="row">
+                <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="form-group"><input class="form-control" name="password" type="password" placeholder="New Password">
+                        <div class="form-group"><input class="form-control" name="password" type="password" placeholder="New Password" minlength="8">
                             <p style="color:Tomato"> @error('password'){{$message}} @enderror</p>
 
                         </div>
 
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="form-group"><input class="form-control" name="password_confirmation" type="password" placeholder="Confirm Password">
+                        <div class="form-group"><input class="form-control" name="password_confirmation" type="password" placeholder="Confirm Password" minlength="8">
                             <p style="color:Tomato"> @error('password_confirmation'){{$message}} @enderror</p>
 
                         </div>
@@ -347,6 +345,7 @@
                     <div class="col-lg-6 col-md-6 col-6">
                         <button type="submit" class="client-btn">Submit</button>
                     </div>
+                </div>
 
             </form>
 
