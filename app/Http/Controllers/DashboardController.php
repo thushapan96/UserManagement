@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Consultant;
+use App\Models\Provider;
 use App\Models\Institution;
 
 
@@ -12,11 +12,10 @@ use PHPUnit\TextUI\XmlConfiguration\Constant;
 class DashboardController extends Controller
 {
     public function index(){
-        $consultants = Consultant::all();
+        $consaltans = Provider::where('type','Immigration Lawyer/Attorney')->get();
+        $bussiness = Provider::where('type','Chartered Accountant')->get();
+        
         $institutions = Institution::all();
-        $bussinesses = Institution::all();
-
-dd($consultants);
-        return view('dashboard')->with('consultants',$consultants)->with('institutions',$institutions);
+        return view('dashboard')->with('consaltans',$consaltans)->with('institutions',$institutions)->with('bussiness',$bussiness);
     }
 }

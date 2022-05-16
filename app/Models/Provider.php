@@ -14,5 +14,10 @@ class Provider extends Model
     {
         return $this->hasMany(Team::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+
+    }
     
 }
