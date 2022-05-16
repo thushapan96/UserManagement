@@ -40,11 +40,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
-                        @if(Auth::user())
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('personalProfile')}}">profile</a>
                         </li>
-                        @endif
+                        <!-- @endif -->
+
                         @if(Auth::user())
                         <li>
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

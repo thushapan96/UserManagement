@@ -99,7 +99,7 @@
                                 <div class="form-group">
                                     <label>Work Profile
                                     </label>
-                                    <textarea style="width:100%;" rows="5" name="work_profile_letter[]" value="{{$row->work_profile_letter}}"></textarea>
+                                    <textarea style="width:100%;" rows="5" name="work_profile_letter[]" value="{{$row->work_profile_letter}}">{{$row->work_profile_letter}}</textarea>
                                 </div>
                             </div>
                         </div>

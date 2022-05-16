@@ -72,7 +72,7 @@ class ConsultantController extends Controller
             for ($i = 0; $i < $count; $i++) {
                 if ($team_name[$i] != "") {
                     $team = new Team;
-                    $team->provider_id = 1;
+                    $team->provider_id = $Consultant->user_id;
                     $team->member =  $team_name[$i];
                     if ($request->team_img) {
                         if ($request->team_img[$i] != '') {
@@ -95,7 +95,10 @@ class ConsultantController extends Controller
                 }
             }
         }
-
-        return redirect('/');
+        if ($Consultant->type == 'Chartered Accountant') {
+            return redirect(route('businessProfile'));
+        } else {
+            return redirect(route('consultantProfile'));
+        }
     }
 }
