@@ -81,7 +81,8 @@
         <div class="great-title">Still Don't Register ?</div>
 
         <div class="clearfix mb-2 text-center col-lg-12 col-md-12 col-12">
-              <a href="{{route('register')}}" class="btn" style="background-color:#3BA6F6; color:aliceblue" type="submit"> Register Now</a>
+              <a href="{{route('register', ['role' => 'candidate'])}}" class="btn" style="background-color:#3BA6F6; color:aliceblue" type="submit">Candidate Register </a>
+              <a href="{{route('register',  ['role' => 'Service Provider'])}}" class="btn" style="background-color:#3BA6F6; color:aliceblue" type="submit">Service Provider Register </a>
             </div>
 
 

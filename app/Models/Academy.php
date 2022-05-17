@@ -14,3 +14,4 @@ class Academy extends Model
     ];
 
 }
+

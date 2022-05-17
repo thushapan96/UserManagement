@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -39,6 +40,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        
     }
 
     /**
@@ -49,6 +51,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {        
+        
         if($data['role'] == 'provider'){
             return Validator::make($data, [
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],

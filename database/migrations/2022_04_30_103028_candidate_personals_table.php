@@ -62,5 +62,8 @@ class CandidatePersonalsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('candidate_personals');
+
+        
+
     }
 }

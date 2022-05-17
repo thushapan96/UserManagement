@@ -20,7 +20,7 @@ class CreateProvidersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('type')->nullable();
-            $table->string('registration_number')->unique();
+            $table->string('registration_number')->unique()->nullable();
             $table->string('registrar_office_area')->nullable();
             $table->string('status')->nullable();
             $table->string('company_name')->nullable();
