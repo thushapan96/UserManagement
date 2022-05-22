@@ -1,4 +1,4 @@
-<h1> Candidate Registation - Sponsor</h1>
+<h1> Candidate Registration - Sponsor</h1>
 
 <form  action="{{route('candidate_sponsor_add')}}" method="POST" id="sponsor_form" enctype="multipart/form-data">
     @csrf

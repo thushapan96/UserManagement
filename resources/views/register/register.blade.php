@@ -46,7 +46,7 @@
 
         <div class="">
             <div id="menu" class="tab-pane  ">
-                <h1>Candidate Registation - Personal Info</h1>
+                <h1>Candidate Registration - Personal Info</h1>
                 <form id="personal_form" action="{{route('candidate_personal_add')}}" method="POST">
                     @csrf
                     <div class="whiteBox clearfix">

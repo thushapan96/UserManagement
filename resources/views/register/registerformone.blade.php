@@ -1,7 +1,7 @@
 <!-- Subscribe & Stay Connected. Start -->
 
 
-<h1>Candidate Registation - Academic</h1>
+<h1>Candidate Registration - Academic</h1>
 
 <div class="whiteBox clearfix">
     <form id="academy_form" action="{{route('candidate_academy_add')}}" method="POST" enctype="multipart/form-data">
@@ -99,6 +99,34 @@
             </div>
         </div>
 
+        <div id="addschoolrow">
+
+        </div>
+        <div class="col-lg-12 col-md-12 mt-2 col-12">
+            <button type="button" class="add-btn " id="addschoolbtn"><i class="fa-solid fa-plus"></i> Add
+                School</button>
+
+        </div>
+        <div id="addcollegerow">
+
+        </div>
+        <div class="col-lg-12 col-md-12  mt-2 col-12">
+            <button type="button" class="add-btn  " id="collegebtn"><i class="fa-solid fa-plus"></i> Add
+                College</button>
+        </div>
+        <div id="addpgrow">
+
+        </div>
+        <div class="col-lg-12 col-md-12 mt-2 col-12">
+            <button type="button" class="add-btn " id="pgbtn"><i class="fa-solid fa-plus"></i> Add
+                PostGraduation</button>
+        </div>
+        <div id="addotherrow">
+        </div>
+        <div class="col-lg-12 col-md-12 mt-2 col-12">
+            <button type="button" class="add-btn " id="otherbtn"><i class="fa-solid fa-plus"></i> Add
+                OtherQualification</button>
+        </div>
         <hr>
 
         <div class="col-lg-12 col-md-12 col-12">
@@ -622,7 +650,7 @@
                         )
                         $(".progress-bar").css("width", "50%");
                         $(".progress-bar").html("50%");
-                        
+
                         $('.tab-pane').fadeOut();
                         $("#menu2").fadeIn();
                         $(".nav-link").removeClass('active')

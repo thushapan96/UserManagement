@@ -1,4 +1,4 @@
-<h1>Candidate Registation - Work Experience</h1>
+<h1>Candidate Registration - Work Experience</h1>
 <form id="work_form" action="{{route('candidate_work_add')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="whiteBox clearfix">
