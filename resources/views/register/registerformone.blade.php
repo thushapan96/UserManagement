@@ -130,7 +130,7 @@
         <hr>
 
         <div class="col-lg-12 col-md-12 col-12">
-            <button type="submit" class="client-btn">Submit And Next</button>
+            <button type="submit" id="submit2" class="client-btn">Submit And Next</button>
         </div>
     </form>
 
@@ -655,6 +655,7 @@
                         $("#menu2").fadeIn();
                         $(".nav-link").removeClass('active')
                         $('#amenu2').addClass('active')
+                        $('#submit2').hide();
                     }
 
                 }

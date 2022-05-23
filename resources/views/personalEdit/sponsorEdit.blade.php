@@ -166,7 +166,7 @@
                             <label>
                                 Email ID
                             </label>
-                            <input class="form-control " type="text" name="sponsor_email" value="{{$sponsor->sponsor_email}}">
+                            <input class="form-control " type="email" name="sponsor_email" value="{{$sponsor->sponsor_email}}">
                         </div>
                     </div>
                 </div>
@@ -206,7 +206,7 @@
                             <label>
                                 Email
                             </label>
-                            <input class="form-control " type="text" placeholder="Email" name="guardian_email" value="{{$sponsor->guardian_email}}">
+                            <input class="form-control " type="email" placeholder="Email" name="guardian_email" value="{{$sponsor->guardian_email}}">
                         </div>
                     </div>
 

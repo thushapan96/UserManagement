@@ -198,7 +198,7 @@
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label></label>
-                                    <input name="email" class="form-control " type="text" placeholder="Email">
+                                    <input name="email" type="email" class="form-control "  placeholder="Email">
 
                                 </div>
                             </div>
@@ -422,7 +422,7 @@
 
 
                             <div class="col-lg-12 col-md-12 col-12">
-                                <a href="{{route('candidate_personal_add')}}"> <button type="submit" class="client-btn ld-ext-right" onclick="this.classList.toggle('running')">Submit
+                                <a href="{{route('candidate_personal_add')}}"> <button type="submit" id="submit1" class="client-btn ld-ext-right" onclick="this.classList.toggle('running')">Submit
                                         And
                                         Next <div class="ld ld-ring ld-spin"></div>
                                     </button> </a>
@@ -619,6 +619,7 @@
                             $("#menu1").fadeIn();
                             $(".nav-link").removeClass('active')
                             $('#amenu1').addClass('active')
+                            $('#submit1').hide();
                         }
 
                     }

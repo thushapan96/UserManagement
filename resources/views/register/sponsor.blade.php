@@ -147,7 +147,7 @@
                     <label>
                         Email ID
                     </label>
-                    <input class="form-control " type="text" name="sponsor_email">
+                    <input class="form-control " type="email" name="sponsor_email" >
                     <p style="color:Tomato"> @error('sponsor_email'){{$message}} @enderror</p>
                 </div>
             </div>
@@ -188,7 +188,7 @@
                     <label>
                         Email
                     </label>
-                    <input class="form-control " type="text" placeholder="Email" name="guardian_email">
+                    <input class="form-control " type="email" placeholder="Email" name="guardian_email">
                     <p style="color:Tomato"> @error('guardian_mobile'){{$message}} @enderror</p>
 
                 </div>
@@ -254,7 +254,7 @@
         </div>
 
         <div class="float-right">
-            <button type="submit" class="client-btn">Submit And Finish </button>
+            <button type="submit" class="client-btn" id="submit4" >Submit And Finish </button>
         </div>
     </div>
 

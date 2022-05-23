@@ -185,7 +185,7 @@
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label></label>
-                                    <input name="email" class="form-control " type="text" placeholder="Email" value="{{$personal->email}}">
+                                    <input name="email" class="form-control " type="email" placeholder="Email" value="{{$personal->email}}">
                                     <p style="color:Tomato"> @error('email'){{$message}} @enderror</p>
                                 </div>
                             </div>

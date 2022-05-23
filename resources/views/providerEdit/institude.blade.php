@@ -120,7 +120,7 @@
                         <div class="form-group">
                             <label>Email address for correspondence *
                             </label>
-                            <input class="form-control" type="text" name="email" value="{{$institutions->email}}">
+                            <input class="form-control" type="email" name="email" value="{{$institutions->email}}">
                         </div>
                     </div>
 
@@ -163,7 +163,7 @@
                             <label>Email address of Admission Cell *
 
                             </label>
-                            <input class="form-control " type="text" name="admission_email" value="{{$institutions->admission_email}}">
+                            <input class="form-control " type="email" name="admission_email" value="{{$institutions->admission_email}}">
                         </div>
                     </div>
 
@@ -186,7 +186,7 @@
                             <label>Dean Email ID *
                             </label>
 
-                            <input class="form-control " type="text" name="dean_email" value="{{$institutions->dean_email}}">
+                            <input class="form-control " type="email" name="dean_email" value="{{$institutions->dean_email}}">
                         </div>
                     </div>
 

@@ -87,7 +87,7 @@
         <button id="addRow" type="button" class="add-btn"><i class="fa-solid fa-plus"></i>Add WorkPlace </button>
         <br>
         <div class="float-right">
-            <a> <button type="submit" class="client-btn">Submit And Next </button></a>
+            <a> <button type="submit" class="client-btn" id="submit3" >Submit And Next </button></a>
         </div>
     </div>
 </form>
@@ -238,7 +238,7 @@
                     $("#menu3").fadeIn();
                     $(".nav-link").removeClass('active')
                     $('#amenu3').addClass('active')
-
+                    $('#submit3').hide();
                 }
             });
 
