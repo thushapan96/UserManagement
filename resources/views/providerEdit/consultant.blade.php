@@ -28,9 +28,9 @@
     </div>
     <div class="container">
 
-        <h1>{{$consultants->team_info}} Enrollment</h1>
+        <h1>{{$consultants->first_name}} </h1>
 
-        <h6>{{$consultants->team_info}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access, explore and know more about the Consultants services and specialization.</h6>
+        <h6>{{$consultants->first_name}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access, explore and know more about the Consultants services and specialization.</h6>
         <h6></h6>
         <br>
         <form id="form" action="{{route('update.consultant' ,['id'=>$consultants->id])}}" method="post" enctype="multipart/form-data">
@@ -470,7 +470,7 @@
                                                 <label>Team Member</label>
 
                                                 <input class="form-control team addinput" id="team_name" type="text" name="team_name[]" value="{{$row->member}}">
-                                                <input type="text" name="teamId[]" value="{{$row->id}}" hidden>
+                                                <input type="text" name="teamId[]" value="{{$row->id}}" >
 
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-12">
@@ -857,9 +857,9 @@
             $(".nav-link.active").removeClass('active')
             $("#amenu6").addClass('active')
         });
-        if (sessionStorage.getItem("appendhtml")) {
-            $('#newRow').html(sessionStorage.getItem("appendhtml"))
-        }
+        // if (sessionStorage.getItem("appendhtml")) {
+        //     $('#newRow').html(sessionStorage.getItem("appendhtml"))
+        // }
 
         $('[name="same_Correspondence_address"]').change(function() {
             if ($(this).is(':checked')) {

@@ -30,8 +30,8 @@
     </div>
 
     <div class="container">
-        <h1> {{$institutions->type}} Enrollment</h1>
-        <h6>{{$institutions->type}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access , explore and know more about the Courses and other Services.</h6>
+        <h1> {{$institutions->name}} </h1>
+        <h6>{{$institutions->name}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access , explore and know more about the Courses and other Services.</h6>
         <h6></h6>
         <br>
         <form id="form" action="{{route('update.institution' ,['id'=>$institutions->id])}}" method="post" enctype="multipart/form-data">

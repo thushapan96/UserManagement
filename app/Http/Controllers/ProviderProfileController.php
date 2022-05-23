@@ -141,6 +141,7 @@ class ProviderProfileController extends Controller
             $request->team_img += $newKeys_offer;
         }
 
+      
         if ($team_name) {
             for ($i = 0; $i < $count; $i++) {
                 if ($team_name[$i] != "") {
