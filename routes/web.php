@@ -20,6 +20,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/test', function () {
+ 
+    return view('test');
+});
+Auth::routes();
 
 Route::get('/providerProfile', function () {
     return view('providerProfile.institudeProfile');
@@ -62,7 +67,11 @@ Route::get('/register/candidate/acadamic', function () {
     return view('register/registerformone');
 })->name('candidate_acadamic');
 
-Route::get('dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+Route::get('dashboard/consultant', 'App\Http\Controllers\DashboardController@consultantIndex')->name('dashboard.consultant');
+Route::get('dashboard/institution', 'App\Http\Controllers\DashboardController@institudeIndex')->name('dashboard.institution');
+Route::get('dashboard/business', 'App\Http\Controllers\DashboardController@businessIndex')->name('dashboard.business');
+
+
 // Route::post('register', 'Register@register')->name('register');
 
 
@@ -98,4 +107,4 @@ Route::get('register/candidate/sponsor', function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
+

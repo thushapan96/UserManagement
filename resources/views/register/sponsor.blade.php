@@ -363,7 +363,6 @@
                             window.scrollTo(0, 0);
                             $("#loading4").html('');
                             $("#loading4").html('Submit And Next');
-
                         });
                     }
                     if (data.success) {

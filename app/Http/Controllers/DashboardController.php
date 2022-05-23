@@ -11,11 +11,22 @@ use PHPUnit\TextUI\XmlConfiguration\Constant;
 
 class DashboardController extends Controller
 {
-    public function index(){
-        $consaltans = Provider::where('type','Immigration Lawyer/Attorney')->get();
-        $bussiness = Provider::where('type','Chartered Accountant')->get();
+    public function institudeIndex(){
         
         $institutions = Institution::all();
-        return view('dashboard')->with('consaltans',$consaltans)->with('institutions',$institutions)->with('bussiness',$bussiness);
+       
+        return view('dashboard.institution')->with('institutions',$institutions);
+    }
+    public function consultantIndex(){
+
+        $consaltans = Provider::where('type','RCIC Consultant')->get();
+       
+        return view('dashboard.consultant')->with('consaltans',$consaltans);
+    }
+    public function businessIndex(){
+        
+        $bussiness = Provider::where('type','Chartered Accountant')->get(); 
+       
+        return view('dashboard.business')->with('bussiness',$bussiness);
     }
 }

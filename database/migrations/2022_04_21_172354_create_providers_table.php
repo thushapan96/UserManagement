@@ -40,7 +40,7 @@ class CreateProvidersTable extends Migration
             $table->string('pnp_success')->nullable();
             $table->string('lmia_success')->nullable();
             $table->string('other_success')->nullable();
-            $table->json('offering_service');
+            $table->json('offering_service')->nullable();
             $table->json('other_service')->nullable();
             $table->string('student_visa_success')->nullable();
             $table->string('tourist_visa_success')->nullable();

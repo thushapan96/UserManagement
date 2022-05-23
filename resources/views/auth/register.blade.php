@@ -70,7 +70,7 @@
 
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="form-group">
-                            <select name="service_type" class="form-control" id="service_type" placeholder="">
+                            <select name="service_type" class="form-control" id="service_type" placeholder="" required>
                                 <option value="">Select Service Type</option>
                                 <option value="Consultation">Consultation</option>
                                 <option value="Institution">Institution</option>
@@ -102,8 +102,8 @@
 
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="form-group">
-                            <select class="form-control" id="typeservice" name="service" placeholder="">
-                                <option>Join As</option>
+                            <select class="form-control" id="typeservice" name="service" placeholder="" required>
+                                <option value="">Join As</option>
                                 <option data-name="/register/institude?service=School" value="School" data-opt="institude">School</option>
                                 <option data-name="/register/institude?service=College" value="College" data-opt="institude">College</option>
                                 <option data-name="/register/institude?service=University" value="University" data-opt="institude">University </option>

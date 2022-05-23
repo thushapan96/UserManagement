@@ -140,7 +140,7 @@
 
                                     <div class="card-read-more">
                                         <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
-                                            Read More
+                                            View More
                                         </a>
                                     </div>
                                 </div>
