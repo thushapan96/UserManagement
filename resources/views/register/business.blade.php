@@ -689,21 +689,41 @@
             });
 
             $(".bmenu").click(function() {
-                $(".progress-bar").css("width", "30%");
-                $(".progress-bar").html("30%");
-                $('.tab-pane').fadeOut();
-                $("#menu1").fadeIn();
-                $(".nav-link").removeClass('active');
-                $("#amenu1").addClass('active');
+                if ($('#first_name').val() == '') {
+                    $('.error-first_name').html('first name is required')
+                    $("#first_name").focus();
+                } else {
+                    $('.error-first_name').html('');
+                    $(".progress-bar").css("width", "30%");
+                    $(".progress-bar").html("30%");
+                    $('.tab-pane').fadeOut();
+                    $("#menu1").fadeIn();
+                    $(".nav-link").removeClass('active');
+                    $("#amenu1").addClass('active');
+                }
 
             });
             $(".bmenu1").click(function() {
-                $(".progress-bar").css("width", "40%");
-                $(".progress-bar").html("40%");
-                $('.tab-pane').fadeOut();
-                $("#menu2").fadeIn();
-                $(".nav-link").removeClass('active')
-                $("#amenu2").addClass('active')
+                var nonemty = 0;
+                $(".team_name").each(function(index) {
+                    if ($(this).val() == '') {
+                        var cnt = $(this).attr('data-id');
+                        console.log('ggggggggggggggggg' + cnt)
+                        $('.error-team_name-' + cnt).html('team name is required')
+                        nonemty = nonemty + 1;
+                        $('#team_name-' + cnt).focus();
+                    }
+                });
+
+                if (nonemty == 0) {
+                    $('.error-team_name').html('')
+                    $(".progress-bar").css("width", "40%");
+                    $(".progress-bar").html("40%");
+                    $('.tab-pane').fadeOut();
+                    $("#menu2").fadeIn();
+                    $(".nav-link").removeClass('active')
+                    $("#amenu2").addClass('active')
+                }
             });
             $(".bmenu2").click(function() {
                 $(".progress-bar").css("width", "50%");
@@ -780,6 +800,7 @@
                 sessionStorage.setItem('socialAppend', $('#socialAppend').html())
 
             });
+            var cnt = 0;
             $("#addRow").click(function() {
 
                 var html = '';
@@ -787,9 +808,10 @@
                 html = `<div  id="inputFormRow">
                       <div class="row">
                             <div class="col-lg-4 col-md-4 col-12">
-                                <label>Team Member</label>
+                            <label>Team Member-${cnt}</label>
                                 
-                                <input class="form-control team addinput" id="team_name" type="text" name="team_name[]"  required >
+                                <input class="form-control team addinput team_name" id="team_name-${cnt}" data-id="${cnt}" type="text" name="team_name[]"  required>
+                                <div class="error-team_name-${cnt} error-team_name" style="color:#FF6347"></div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <label>Image</label>
