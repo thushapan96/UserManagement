@@ -87,7 +87,12 @@
         <button id="addRow" type="button" class="add-btn"><i class="fa-solid fa-plus"></i>Add WorkPlace </button>
         <br>
         <div class="float-right">
-            <a> <button type="submit" class="client-btn" id="submit3" >Submit And Next </button></a>
+            <a> <button type="submit" class="client-btn" id="submit3">
+                    <div id="loading3">Submit
+                        And
+                        Next
+                    </div>
+                </button></a>
         </div>
     </div>
 </form>
@@ -214,7 +219,7 @@
             // var form = $(this);
             var actionUrl = $(this).attr('action');
             var form = new FormData(this);
-
+            $("#loading3").append(' <i class="fa fa-refresh fa-spin"></i>');
             console.log('form' + typeof(form))
 
             $.ajax({
@@ -229,7 +234,7 @@
                     console.log(data)
                     Swal.fire(
                         'Success!',
-                        'Successfully submitted personal details!',
+                        'Successfully submitted Work details!',
                         'success'
                     )
                     $(".progress-bar").css("width", "75%");
@@ -239,6 +244,7 @@
                     $(".nav-link").removeClass('active')
                     $('#amenu3').addClass('active')
                     $('#submit3').hide();
+                    
                 }
             });
 

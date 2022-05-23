@@ -130,7 +130,12 @@
         <hr>
 
         <div class="col-lg-12 col-md-12 col-12">
-            <button type="submit" id="submit2" class="client-btn">Submit And Next</button>
+            <button type="submit" id="submit2" class="client-btn">
+                <div id="loading2">Submit
+                    And
+                    Next
+                </div>
+            </button>
         </div>
     </form>
 
@@ -619,6 +624,7 @@
 
             var actionUrl = $(this).attr('action');
             var form = new FormData(this);
+            $("#loading2").append(' <i class="fa fa-refresh fa-spin"></i>');
 
             $.ajax({
                 type: "POST",
@@ -637,6 +643,8 @@
                             jQuery('.alert-danger').show();
                             jQuery('.alert-danger').append('<p>' + value + '</p>');
                             window.scrollTo(0, 0);
+                            $("#loading2").html('');
+                            $("#loading2").html('Submit And Next');
 
                         });
                     }

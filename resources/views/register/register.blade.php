@@ -10,13 +10,21 @@
         text-align: center;
 
     }
-    label{
+
+    label {
         text-transform: capitalize;
     }
-    a{
+
+    a {
         text-transform: capitalize;
     }
 </style>
+
+<link rel="stylesheet" href="css/countrySelect.css">
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/loadingio/ldbutton@v1.0.1/dist/ldbtn.min.css" />
+
+
+
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
     @if($message = Session::get('registermessage'))
@@ -117,7 +125,7 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label></label>
-                                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="residential_country"  value="" required>
+                                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="residential_country" value="" required>
 
                                 </div>
                             </div>
@@ -179,7 +187,7 @@
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                         <label></label>
-                                        <input class="form-control l-icon" type="text" placeholder="Enter Country" name="corosponding_country"  value="">
+                                        <input class="form-control l-icon" type="text" placeholder="Enter Country" name="corosponding_country" value="">
 
                                     </div>
                                 </div>
@@ -204,7 +212,7 @@
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label></label>
-                                    <input name="email" type="email" class="form-control "  placeholder="Email">
+                                    <input name="email" type="email" class="form-control " placeholder="Email">
 
                                 </div>
                             </div>
@@ -428,9 +436,12 @@
 
 
                             <div class="col-lg-12 col-md-12 col-12">
-                                <a href="{{route('candidate_personal_add')}}"> <button type="submit" id="submit1" class="client-btn ld-ext-right" onclick="this.classList.toggle('running')">Submit
-                                        And
-                                        Next <div class="ld ld-ring ld-spin"></div>
+                                <a href="{{route('candidate_personal_add')}}"> <button type="submit" id="submit1" class="client-btn " onclick="this.classList.toggle('running')">
+                                        <div id="loading1">Submit
+                                            And
+                                            Next
+                                        </div>
+                                        <div class="ld ld-ring ld-spin"></div>
                                     </button> </a>
                             </div>
                         </div>
@@ -568,12 +579,9 @@
             })
         });
     </script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
         $(document).ready(function() {
-
-
-
 
             $.ajaxSetup({
                 headers: {
@@ -584,6 +592,7 @@
             $("#personal_form").submit(function(e) {
 
                 e.preventDefault(); // avoid to execute the actual submit of the form.
+                $("#loading1").append(' <i class="fa fa-refresh fa-spin"></i>');
 
                 var actionUrl = $(this).attr('action');
                 var form = new FormData(this);
@@ -605,6 +614,8 @@
                                 jQuery('.alert-danger').show();
                                 jQuery('.alert-danger').append('<p>' + value + '</p>');
                                 window.scrollTo(0, 0);
+                                $("#loading1").html('');
+                                $("#loading1").html('Submit And Next');
 
                             });
                         }

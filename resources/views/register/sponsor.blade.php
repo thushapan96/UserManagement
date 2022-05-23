@@ -1,6 +1,6 @@
 <h1> Candidate Registration - Sponsor</h1>
 
-<form  action="{{route('candidate_sponsor_add')}}" method="POST" id="sponsor_form" enctype="multipart/form-data">
+<form action="{{route('candidate_sponsor_add')}}" method="POST" id="sponsor_form" enctype="multipart/form-data">
     @csrf
     <div class="whiteBox clearfix">
 
@@ -40,7 +40,7 @@
                     <label>
                         Sponsor Status
                     </label>
-                    <select class="form-control " name="sponsor_status" >
+                    <select class="form-control " name="sponsor_status">
                         <option value="Working">Working</option>
                         <option value="Retired">Retired</option>
                         <option value="Business">Business</option>
@@ -125,7 +125,7 @@
             <div class="col-lg-4 col-md-4  col-12">
                 <div class="form-group">
 
-                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="sponsor_country"  value="" required>
+                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="sponsor_country" value="" required>
 
                 </div>
             </div>
@@ -147,7 +147,7 @@
                     <label>
                         Email ID
                     </label>
-                    <input class="form-control " type="email" name="sponsor_email" >
+                    <input class="form-control " type="email" name="sponsor_email">
                     <p style="color:Tomato"> @error('sponsor_email'){{$message}} @enderror</p>
                 </div>
             </div>
@@ -246,7 +246,7 @@
             <div class="col-lg-4 col-md-4  col-12">
                 <div class="form-group">
 
-                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="guardian_country"  value="" required>
+                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="guardian_country" value="" required>
 
                 </div>
             </div>
@@ -254,7 +254,12 @@
         </div>
 
         <div class="float-right">
-            <button type="submit" class="client-btn" id="submit4" >Submit And Finish </button>
+            <button type="submit" class="client-btn" id="submit4">
+                <div id="loading4">Submit
+                    And
+                    Next
+                </div>
+            </button>
         </div>
     </div>
 
@@ -337,7 +342,8 @@
 
             var actionUrl = $(this).attr('action');
             var form = new FormData(this);
-           
+            $("#loading4").append(' <i class="fa fa-refresh fa-spin"></i>');
+
             $.ajax({
                 type: "POST",
                 url: actionUrl,
@@ -355,6 +361,8 @@
                             jQuery('.alert-danger').show();
                             jQuery('.alert-danger').append('<p>' + value + '</p>');
                             window.scrollTo(0, 0);
+                            $("#loading4").html('');
+                            $("#loading4").html('Submit And Next');
 
                         });
                     }
@@ -368,7 +376,7 @@
                             'success'
                         )
                         location.assign("/profile");
-                       
+
                     }
 
                 }
