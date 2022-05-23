@@ -10,6 +10,12 @@
         text-align: center;
 
     }
+    label{
+        text-transform: capitalize;
+    }
+    a{
+        text-transform: capitalize;
+    }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix" style=" padding: 100px 0 100px;">

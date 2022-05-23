@@ -21,11 +21,26 @@
 
 
 </head>
+<style>
+    label {
+        text-transform: capitalize;
+    }
+
+    a {
+        text-transform: capitalize;
+    }
+    span{
+        text-transform: capitalize;
+    }
+    strong{
+        text-transform: capitalize;
+    }
+
+</style>
 
 <body>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>

@@ -42,7 +42,10 @@
                             <br><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> Name : </strong>
+                                    <strong class="labels"> Name  </strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$personal->first_name}}</label>
@@ -53,7 +56,10 @@
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> Present Residential Address : </strong>
+                                    <strong class="labels">  Residential Address  </strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     @if($personal->residential_street)
@@ -79,7 +85,10 @@
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> Present corosponding Address : </strong>
+                                    <strong class="labels">  corosponding Address </strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     @if($personal->corosponding_street)
@@ -106,7 +115,10 @@
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> mobile: </strong>
+                                    <strong class="labels"> mobile</strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$personal->mobile}}</label><br>
@@ -116,7 +128,10 @@
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> email: </strong>
+                                    <strong class="labels"> email</strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$personal->email}}</label>
@@ -125,7 +140,10 @@
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> birth_date: </strong>
+                                    <strong class="labels"> birth_date</strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$personal->birth_date}}</label>
@@ -135,25 +153,31 @@
 
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> gender: </strong>
+                                    <strong class="labels"> gender</strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$personal->gender}}</label>
                                 </div>
                             </div>
                             <br>
-                            <div class="row ">
+                            <!-- <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> is_already_apply: </strong>
+                                    <strong class="labels"> is already apply </strong>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-7">:
                                     <label class="labels">{{$personal->is_already_apply}}</label>
                                 </div>
-                            </div>
+                            </div> -->
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> possible_start_date: </strong>
+                                    <strong class="labels"> possible start date</strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$personal->possible_start_date}}</label>
@@ -162,7 +186,10 @@
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> immigration_purpose: </strong>
+                                    <strong class="labels"> immigration purpose </strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$personal->immigration_purpose}}</label>
@@ -171,7 +198,10 @@
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> is_vaccinate: </strong>
+                                    <strong class="labels"> is vaccinate</strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$personal->is_vaccinate}}</label>
@@ -192,8 +222,11 @@
                         <div class="col-md-8 card">
                             <br>
                             <div class="row ">
-                                <div class="col-md-5">
-                                    <strong class="labels"> Language Proficiency : </strong>
+                                <div class="col-md-4">
+                                    <strong class="labels"> Language Proficiency </strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$Academy->language_proficiency}}</label>
@@ -201,8 +234,11 @@
                             </div>
                             <br>
                             <div class="row ">
-                                <div class="col-md-5">
-                                    <strong class="labels"> Language Level : </strong>
+                                <div class="col-md-4">
+                                    <strong class="labels"> Language Level </strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$Academy->language_level}}</label>
@@ -210,8 +246,11 @@
                             </div>
                             <br>
                             <div class="row ">
-                                <div class="col-md-5">
-                                    <strong class="labels"> Certified By: </strong>
+                                <div class="col-md-4">
+                                    <strong class="labels"> Certified By</strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$Academy->language_certified_by}}</label><br>
@@ -219,8 +258,11 @@
                             </div>
                             <br>
                             <div class="row ">
-                                <div class="col-md-5">
-                                    <strong class="labels"> Applicant Test Scores : </strong>
+                                <div class="col-md-4">
+                                    <strong class="labels"> Applicant Test Scores </strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$Academy->applicant_test_name}}</label><br>
@@ -230,8 +272,11 @@
 
                             <br>
                             <div class="row ">
-                                <div class="col-md-5">
-                                    <strong class="labels"> Valid Upto: </strong>
+                                <div class="col-md-4">
+                                    <strong class="labels"> Valid Upto</strong>
+                                </div>
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <label class="labels">{{$Academy->test_valid_upto}}</label><br>
@@ -244,36 +289,48 @@
                         @foreach($qualification as $row)
                         <div class="col-md-8 card">
                             <br>
-                            <strong class="labels">{{$row->type}}</strong><br>
+                            <strong class="labels" style="text-decoration: underline;">{{$row->type}}</strong><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Name: </strong>
+                                    <strong class="labels">Name </strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$row->name}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Address: </strong>
+                                    <strong class="labels">Address</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$row->Address}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Year Completion: </strong>
+                                    <strong class="labels">Year Completion</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$row->Year_completion}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Distant: </strong>
+                                    <strong class="labels">Distant</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$row->Distant}}</label><br>
                                 </div>
                             </div><br>
@@ -295,36 +352,48 @@
                         <div class="col-md-8 card">
                             <br>
 
-                            <strong class="labels">Place work {{$key + 1 }}</strong><br>
+                            <strong class="labels" style="text-decoration: underline;">Place work {{$key + 1 }}</strong><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Designation: </strong>
+                                    <strong class="labels">Designation</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels"> {{$row->designation}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">No. of Years Worked: </strong>
+                                    <strong class="labels">No. of Years Worked</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$row->Year_completion}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Country: </strong>
+                                    <strong class="labels">Country</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$row->country}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Work Profile: </strong>
+                                    <strong class="labels">Work Profile</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$row->work_profile_letter}}</label><br>
                                 </div>
                             </div><br>
@@ -345,54 +414,73 @@
                         <br>
                         <div class="col-md-8 card">
                             <br>
-                            <strong class="labels">Sponsor Details</strong><br>
+                            <strong class="labels" style="text-decoration: underline;">Sponsor Details</strong><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Name: </strong>
+                                    <strong class="labels">Name </strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                
+                                <div class="col-md-7">
                                     <label class="labels">{{$Sponsor->fisrt_name}}&nbsp;&nbsp;{{$Sponsor->middle_name}}&nbsp;&nbsp;{{$Sponsor->last_name}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Sponsor Status: </strong>
+                                    <strong class="labels">Sponsor Status</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$Sponsor->sponsor_status}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Relationship with Child : </strong>
+                                    <strong class="labels">Relationship with Child  </strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$Sponsor->sponsor_relation}}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Mobile Number: </strong>
+                                    <strong class="labels">Mobile Number </strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$Sponsor->sponsor_mobile}}</label><br>
                                 </div>
                             </div><br>
 
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Email: </strong>
+                                    <strong class="labels">Email </strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$Sponsor->sponsor_email}}</label><br>
                                 </div>
                             </div><br>
 
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Address: </strong>
+                                    <strong class="labels">Address</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     @if($Sponsor->sponsor_street)
                                     <label class="labels">{{$Sponsor->sponsor_street}}</label><br>
                                     @endif
@@ -418,38 +506,50 @@
                         <br>
                         <div class="col-md-8 card">
                             <br>
-                            <strong class="labels">Guadian Details</strong><br>
+                            <strong class="labels" style="text-decoration: underline;">Guadian Details</strong><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Relationship with Child: </strong>
+                                    <strong class="labels">Relationship with Child</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$Sponsor->guardian_relation}}</label><br>
                                 </div>
                             </div><br>
 
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Mobile Number: </strong>
+                                    <strong class="labels">Mobile Number </strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$Sponsor->guardian_mobile}}</label><br>
                                 </div>
                             </div><br>
 
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Email: </strong>
+                                    <strong class="labels">Email</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     <label class="labels">{{$Sponsor->guardian_email }}</label><br>
                                 </div>
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Address: </strong>
+                                    <strong class="labels">Address</strong>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-1">
+                                    <strong class="labels"> :</strong>
+                                </div>
+                                <div class="col-md-7">
                                     @if($Sponsor->guardian_street)
                                     <label class="labels">{{$Sponsor->guardian_street}}</label><br>
                                     @endif
