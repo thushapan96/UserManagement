@@ -33,7 +33,7 @@ class CreateInstitutionsTable extends Migration
             $table->string('admission_phone')->nullable();
             $table->string('admission_email')->unique()->nullable();
             $table->string('dean_name')->nullable();
-            $table->string('dean_email')->unique();
+            $table->string('dean_email')->unique()->nullable();
             $table->string('dean_phone')->nullable();
             $table->json('course_type')->nullable();
             $table->json('intake')->nullable();

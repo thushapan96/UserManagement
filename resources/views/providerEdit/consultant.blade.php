@@ -470,7 +470,7 @@
                                                 <label>Team Member</label>
 
                                                 <input class="form-control team addinput" id="team_name" type="text" name="team_name[]" value="{{$row->member}}">
-                                                <input type="text" name="teamId[]" value="{{$row->id}}" >
+                                                <input type="text" name="teamId[]" value="{{$row->id}}" hidden>
 
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-12">
