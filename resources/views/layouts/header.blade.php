@@ -32,8 +32,8 @@
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Services</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{route('dashboard.consultant')}}">Consultant</a>
-                                <a class="dropdown-item" href="{{route('dashboard.institution')}}">Business</a>
-                                <a class="dropdown-item" href="{{route('dashboard.business')}}">Institution</a>
+                                <a class="dropdown-item" href="{{route('dashboard.business')}}">Business</a>
+                                <a class="dropdown-item" href="{{route('dashboard.institution')}}">Institution</a>
                               
                             </div>
                         </li>

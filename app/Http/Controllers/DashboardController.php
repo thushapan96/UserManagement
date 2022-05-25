@@ -19,15 +19,15 @@ class DashboardController extends Controller
     }
     public function consultantIndex(){
 
-        $consaltans = Consultant::where('type','RCIC Consultant')->get();
+        $consultants = Consultant::where('type','RCIC Consultant')->get();
        
-        return view('dashboard.consultant')->with('consaltans',$consaltans);
+        return view('dashboard.consultant')->with('consultants',$consultants);
     }
     public function businessIndex(){
         
-        $bussiness = Consultant::where('type','Chartered Accountant')->get(); 
+        $consultants = Consultant::where('type','Chartered Accountant')->get(); 
        
-        return view('dashboard.business')->with('bussiness',$bussiness);
+        return view('dashboard.business')->with('consultants',$consultants);
     }
     public function consultantView($id){
         

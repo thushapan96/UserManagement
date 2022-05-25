@@ -65,8 +65,8 @@
         width: 300px;
         margin-bottom: 20px;
         line-height: 1.42857143;
-        background-color: #fff;
-        border-radius: 2px;
+        border-radius: 5px;
+        background-color:#f2b7b7;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
         transition: box-shadow .25s;
     }
@@ -136,8 +136,8 @@
 
 
 
-                        @if($consaltans)
-                        @foreach($consaltans as $row)
+                        @if($consultants)
+                        @foreach($consultants as $row)
 
                         <div class="col-xs-12 col-sm-4">
                             <div class="card">
