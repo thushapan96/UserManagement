@@ -10,6 +10,8 @@ use App\Models\Work;
 use App\Models\Sponsor;
 use App\Models\Qualification;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
+
 
 class ProfileController extends Controller
 {
@@ -25,7 +27,6 @@ class ProfileController extends Controller
             ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
             ->where('candidate_academics.user_id', $id)
             ->get();
-
 
         return view('candidateProfile')
             ->with('personal', $personal)
@@ -354,5 +355,23 @@ class ProfileController extends Controller
         $sponsor->update($request->all());
 
         return redirect(route('personalProfile'))->with('sponsorUpdate', 'Saved !');
+    }
+    public function addImage(Request $request)
+    {
+        
+        $files = $request->profile_img;
+        $name =   $files->getClientOriginalName();
+
+        $destinationPath = public_path() . '/files';
+        $files->move($destinationPath, $name);
+
+
+        User::where('id', Auth::user()->id)
+            ->update([
+                'img' => $name,
+            ]);
+
+            return $name;
+
     }
 }

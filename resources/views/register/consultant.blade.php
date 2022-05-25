@@ -197,7 +197,7 @@
                         <div class="form-group">
                             <label>Email address for correspondence *
                             </label>
-                            <input class="form-control " type="email" name="email" value="{{old('email')}}">
+                            <input class="form-control " type="text" name="email" value="{{old('email')}}">
                         </div>
                     </div>
 

@@ -68,6 +68,8 @@ Route::get('/register/candidate/acadamic', function () {
     return view('register/registerformone');
 })->name('candidate_acadamic');
 
+Route::post('/img/upload/', 'App\Http\Controllers\ProfileController@addImage')->name('ajaxupload.action');
+
 Route::get('dashboard/consultant', 'App\Http\Controllers\DashboardController@consultantIndex')->name('dashboard.consultant');
 Route::get('dashboard/consultant/{id}', 'App\Http\Controllers\DashboardController@consultantView')->name('dashboard.consultant.view');
 

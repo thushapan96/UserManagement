@@ -15,10 +15,24 @@
 
     .nav-pills .nav-link.active,
     .nav-pills .show>.nav-link {
-      
-        background-color:#f2b7b7 !important;
+
+        background-color: #f2b7b7 !important;
 
         border-radius: 25px;
+    }
+
+    .input--file {
+        position: relative;
+        color: #7f7f7f;
+        cursor: pointer;
+    }
+
+    .input--file input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
     }
 </style>
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
@@ -44,9 +58,30 @@
 
     <div class="" style=" left: 0px;">
         <div class="row">
-            <div class="col-md-3 border-left" style=" left: 50px;">
+            <div class="col-md-3 border-left" style=" left: 80px;">
                 <div class="d-flex flex-column align-items-left text-left p-3 py-5">
-                    <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
+                    <div class="uploadimg">
+                        @if($img)
+                        <img class="rounded-circle mt-2 img" width="180px" src="{{url('files/'.$img)}}">
+                        @else
+                        <img class="rounded-circle mt-5 img" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
+                        @endif
+                    </div>
+                    <form method="post" id="upload_form" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="input--file ">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3.2" />
+                                    <path d="M9 2l-1.83 2h-3.17c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2h-3.17l-1.83-2h-6zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />
+                                    <path d="M0 0h24v24h-24z" fill="none" />
+                                </svg>
+                            </span>
+                            <input id="profile_img" name="profile_img" type="file" />
+                        </div>
+                    </form>
+
+                    <br>
                     <span class="font-weight-bold  align-items-center  ">{{$consultants->first_name}}</span><br>
                     <span class="font-weight-bold  text-left">{{$consultants->email}}</span><br>
                     <span class="font-weight-bold text-left">{{$consultants->fb_link}}</span><br>
@@ -532,8 +567,6 @@
 
                         </div>
 
-
-
                         @endforeach
 
                     </div>
@@ -541,7 +574,7 @@
                 </div>
                 <br>
 
-                <div class="card tab-pane  col-md-8" id="menu2" style="width:80% !important;">
+                <div class="card tab-pane  col-md-10" id="menu2" style="width:80% !important;">
                     <div class="">
                         <br><br>
                         @if($consultants->privacy_policy_document)
@@ -601,7 +634,7 @@
                     <br> <br>
                 </div>
 
-                <div class="card tab-pane  col-md-8" id="menu3" style="width:80% !important;">
+                <div class="card tab-pane  col-md-10" id="menu3" style="width:80% !important;">
                     <br><br>
                     @if($consultants->Award)
                     <div class="row custom-box">
@@ -632,7 +665,7 @@
 
                 </div>
 
-                <div class="card tab-pane  col-md-8" id="menu4" style="width:80% !important;">
+                <div class="card tab-pane  col-md-10" id="menu4" style="width:80% !important;">
                     <br><br>
                     @if($consultants->vedio_url)
                     <div class="row custom-box">
@@ -677,22 +710,22 @@
                                         </a>
                                         <a class="instagram" href="{{$consultants->insta_link}}">
                                             <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
-                                           
+
                                         </a>
                                         <a class="linkedin" href="{{$consultants->Linkedin_link}}">
                                             <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
                                             </div>
-                                            
+
                                         </a>
                                         <a class="youtube" href="{{$consultants->youtube_link}}">
                                             <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
                                             </div>
-                                           
+
                                         </a>
                                         <a class="google" href="{{$consultants->google_review_link}}">
                                             <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
                                             </div>
-                                            
+
                                         </a>
 
                                     </div>
@@ -700,7 +733,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <br>
                 </div>
 
@@ -746,7 +779,7 @@
         </div>
     </div>
 
-<br>
+    <br>
 </section>
 
 <script>
@@ -844,8 +877,38 @@
                 $('#sameaddress').removeClass('d-none');
             };
         });
-       
-       
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('#profile_img').change(function() {
+
+
+            console.log('first')
+            var formData = new FormData($('#upload_form')[0]);
+            console.log("second")
+
+            event.preventDefault();
+            $.ajax({
+                url: "{{ route('ajaxupload.action') }}",
+                method: "POST",
+                data: formData,
+
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data) {
+                    console.log(data);
+                    location.reload()
+
+                },
+
+            });
+
+
+
+        });
 
     });
 </script>

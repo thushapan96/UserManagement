@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Institution;
 use App\Models\Consultant;
 use App\Models\Team;
+use App\Models\User;
 
 class ProviderProfileController extends Controller
 {
@@ -15,9 +16,10 @@ class ProviderProfileController extends Controller
     {
         $id = Auth::user()->id;
         $institutions =  Institution::where('user_id', $id)->first();
-
+        $view = "";
+        $img = Auth::user()->img;
         if ($institutions) {
-            return view('providerProfile.institudeProfile')->with('institutions', $institutions);
+            return view('providerProfile.institudeProfile')->with('institutions', $institutions)->with('view', $view)->with('img', $img);
         } else {
             return redirect(route('register.institude'));
         }
@@ -27,12 +29,13 @@ class ProviderProfileController extends Controller
     {
         $id = Auth::user()->id;
         $consultants =  Consultant::where('user_id', $id)->first();
+        $view = "";
 
-
+        $img = Auth::user()->img;
         $teams = Team::where('provider_id', $consultants->id)->get();
 
         if ($consultants) {
-            return view('providerProfile.consultantProfile')->with('consultants', $consultants)->with('teams', $teams);
+            return view('providerProfile.consultantProfile')->with('consultants', $consultants)->with('teams', $teams)->with('view', $view)->with('img', $img);
         } else {
             return redirect(route('register.consultant'));
         }
@@ -44,10 +47,10 @@ class ProviderProfileController extends Controller
         $consultants =  Consultant::where('user_id', $id)->first();
 
         $teams = Team::where('provider_id', $consultants->id)->get();
-
-
+        $view = "";
+        $img = Auth::user()->img;
         if ($consultants) {
-            return view('providerProfile.business')->with('consultants', $consultants)->with('teams', $teams);
+            return view('providerProfile.business')->with('consultants', $consultants)->with('teams', $teams)->with('view', $view)->with('img', $img);
         } else {
             return redirect(route('register.business'));
         }
@@ -141,7 +144,7 @@ class ProviderProfileController extends Controller
             $request->team_img += $newKeys_offer;
         }
 
-      
+
         if ($team_name) {
             for ($i = 0; $i < $count; $i++) {
                 if ($team_name[$i] != "") {
