@@ -62,10 +62,11 @@
 
     .card {
         display: block;
+        width: 300px;
         margin-bottom: 20px;
         line-height: 1.42857143;
-        background-color: #fff;
-        border-radius: 2px;
+        border-radius: 25px;
+        background-color:#f2b7b7;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
         transition: box-shadow .25s;
     }
@@ -93,17 +94,25 @@
     .card-content {
         padding: 15px;
         text-align: left;
+
     }
 
     .card-title {
         margin-top: 0px;
         font-weight: 700;
         font-size: 1.65em;
+        text-align: center;
+    }
+
+    .card-text {
+
+        text-align: center;
     }
 
     .card-title a {
         color: #000;
         text-decoration: none !important;
+        text-align: center;
     }
 
     .card-read-more {
@@ -125,87 +134,37 @@
                 <div class="container">
                     <div class="row">
 
-                        
-                       
-                            @if($consaltans)
-                            @foreach($consaltans as $consultant)
-                            <div class="col-xs-12 col-sm-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{$consultant->first_name}}</h5>
-                                        <p class="card-text small ">{{$consultant->type}}</p>
 
-                                        <p class="card-text ">{{$consultant->brief_introduction}}</p>
-                                    </div>
 
-                                    <div class="card-read-more">
-                                        <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
-                                            View More
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        @if($consaltans)
+                        @foreach($consaltans as $row)
 
-                            @endforeach
-                            @endif
-                       
                         <div class="col-xs-12 col-sm-4">
                             <div class="card">
 
                                 <div class="card-content">
                                     <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html"> Material Design Responsive Menu
+                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html">{{$row->type}}
                                         </a>
                                     </h4>
-                                    <p class="">
-                                        Material Design is a visual programming language made by Google. Language programming...
-                                    </p>
-                                </div>
-                                <div class="card-read-more">
-                                    <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="card">
 
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">5 Button Hover Animation Effects
-                                        </a>
-                                    </h4>
-                                    <p class="">
-                                        tutorials button hover animation, although very much a hover button is very beauti...
-                                    </p>
-                                </div>
-                                <div class="card-read-more">
-                                    <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html" class="btn btn-link btn-block">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="card">
+                                    <p class="card-text ">{{$row->first_name}}</p>
 
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">5 Button Hover Animation Effects
-                                        </a>
-                                    </h4>
-                                    <p class="">
-                                        tutorials button hover animation, although very much a hover button is very beauti...
-                                    </p>
+                                    <p class="card-text ">{{$row->brief_introduction}}</p>
                                 </div>
                                 <div class="card-read-more">
-                                    <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html" class="btn btn-link btn-block">
-                                        Read More
+                                    <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
+                                        <p> View More</p>
                                     </a>
                                 </div>
                             </div>
                         </div>
+
+                        @endforeach
+                        @endif
+
+
+
                     </div>
 
                 </div>

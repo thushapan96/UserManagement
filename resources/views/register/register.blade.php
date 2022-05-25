@@ -18,6 +18,10 @@
     a {
         text-transform: capitalize;
     }
+    .whiteBox:hover {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 25px;
+    }
 </style>
 
 <link rel="stylesheet" href="css/countrySelect.css">
@@ -61,9 +65,9 @@
         <div class="">
             <div id="menu" class="tab-pane  ">
                 <h1>Candidate Registration - Personal Info</h1>
-                <form id="personal_form" action="{{route('candidate_personal_add')}}" method="POST">
+                <form id="personal_form" action="{{route('candidate_personal_add')}}" method="POST" >
                     @csrf
-                    <div class="whiteBox clearfix">
+                    <div class="whiteBox clearfix" style="background-color:D80621;">
                         <!--div class="news-title">You have questions, let's have a conversation </div-->
                         <div class="row custom-box">
 

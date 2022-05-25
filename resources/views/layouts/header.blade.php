@@ -29,12 +29,12 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Pathways</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Services</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Study</a>
-                                <a class="dropdown-item" href="#">Migration</a>
-                                <a class="dropdown-item" href="#">Business</a>
-                                <a class="dropdown-item" href="#">Visa</a>
+                                <a class="dropdown-item" href="{{route('dashboard.consultant')}}">Consultant</a>
+                                <a class="dropdown-item" href="{{route('dashboard.institution')}}">Business</a>
+                                <a class="dropdown-item" href="{{route('dashboard.business')}}">Institution</a>
+                              
                             </div>
                         </li>
 

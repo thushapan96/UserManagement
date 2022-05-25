@@ -11,6 +11,10 @@
         text-align: center;
 
     }
+    .whiteBox:hover {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 25px;
+    }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
@@ -28,7 +32,7 @@
     <script>
         Swal.fire(
             'Success',
-            'Successfully Registered!',
+            'Welcome !',
             'success'
         )
     </script>
@@ -148,7 +152,8 @@
                         <div class="form-group">
                             <label>Email address for correspondence *
                             </label>
-                            <input class="form-control" type="email" name="email" value="{{old('email')}}">
+                            <input class="form-control" type="email" id="email" name="email" value="{{old('email')}}">
+                            <div id="append_email" class="mail" style="color:#f30404"></div>
                         </div>
                     </div>
 
@@ -191,7 +196,9 @@
                             <label>Email address of Admission Cell *
 
                             </label>
-                            <input class="form-control " type="email" name="admission_email" value="{{old('admission_email')}}">
+                            <input class="form-control " type="email" id="admission_email" name="admission_email" value="{{old('admission_email')}}">
+                            <div id="append_admission_email" class="mail" style="color:tomato"></div>
+
                         </div>
                     </div>
 
@@ -214,7 +221,9 @@
                             <label>Dean Email ID *
                             </label>
 
-                            <input class="form-control " type="email" name="dean_email" value="{{old('dean_email')}}">
+                            <input class="form-control " id="dean_email" type="email" name="dean_email" value="{{old('dean_email')}}">
+                            <div id="append_dean_email" class="mail" style="color:tomato"></div>
+
                         </div>
                     </div>
 
@@ -921,12 +930,44 @@
                 $(this).addClass('active')
             });
             $(".bmenu").click(function() {
-                $(".progress-bar").css("width", "30%");
-                $(".progress-bar").html("30%");
-                $('.tab-pane').fadeOut();
-                $("#menu1").fadeIn();
-                $(".nav-link").removeClass('active');
-                $("#amenu1").addClass('active');
+                function validateEmail($email) {
+                    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                    return emailReg.test($email);
+                }
+                var email = $('#email').val();
+                var admission_email = $('#admission_email').val();
+                var dean_email = $('#dean_email').val();
+
+                if (!validateEmail(email)) {
+                    $(".mail").each(function() {
+                        $(this).html('')
+                    });
+                    $('#append_email').html('please enter valid email')
+                    $('#email').focus()
+                } else if (!validateEmail(admission_email)) {
+                    $(".mail").each(function() {
+                        $(this).html('')
+                    });
+                    $('#append_admission_email').html('please enter valid email')
+                    $('#admission_email').focus()
+                } else if (!validateEmail(dean_email)) {
+                    $(".mail").each(function() {
+                        $(this).html('')
+                    });
+                    $('#append_dean_email').html('please enter valid email')
+                    $('#dean_email').focus()
+                } else {
+                    $(".mail").each(function() {
+                        $(this).html('')
+                    });
+
+                    $(".progress-bar").css("width", "30%");
+                    $(".progress-bar").html("30%");
+                    $('.tab-pane').fadeOut();
+                    $("#menu1").fadeIn();
+                    $(".nav-link").removeClass('active')
+                    $("#amenu1").addClass('active')
+                }
 
             });
             $(".bmenu1").click(function() {

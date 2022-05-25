@@ -39,17 +39,17 @@
 
         <div class="row mt-4 custom-box">
             <div class="col-lg-6 col-md-6 col-12">
-                <div class="upload-images">
+                <div class="">
                     <label>
-                        <p>Certified By </p>
+                        Certified By 
                     </label>
                     <input type="text" class="form-control" name="language_certified_by">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
-                <div class="upload-images">
+                <div class="">
                     <label>
-                        <p>Attachment </p>
+                       Attachment
                     </label>
                     <input type="file" class="form-control" name="language_attachment">
                 </div>

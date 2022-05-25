@@ -33,6 +33,36 @@
     strong {
         text-transform: capitalize;
     }
+
+    .card:hover {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card {
+        border-radius: 25px;
+        background-color:#f2b7b7;
+
+
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        color: #fff;
+        background-color: #007bff !important;
+        border-radius: 25px;
+    }
+
+    .whiteBox:hover {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       
+    }
+    .whiteBox{
+        border-radius: 18px;
+        /* background-image: url('/canadaFlag/can2.png'); */
+        /* background-color:#f29191; */
+        background-color:#f2b7b7;
+        border-color: red;
+    }
 </style>
 
 <body>

@@ -6,7 +6,7 @@
 <script>
     Swal.fire(
         'Success',
-        'Successfully Registered!',
+        'Welcome !',
         'success'
     )
 </script>

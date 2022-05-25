@@ -1,7 +1,26 @@
 @extends('layouts.layout')
 
 @section('content')
+<style>
+    .card:hover {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 
+    .card {
+        border-radius: 25px;
+        height: 100%;
+        width: 300px;
+
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+
+        background-color: #f2b7b7 !important;
+
+        border-radius: 25px;
+    }
+</style>
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
     @if($message = Session::get('formSuccess'))
     <script>
@@ -34,9 +53,15 @@
                     <span class="font-weight-bold">{{$consultants->Linkedin_link}}</span><br>
                     <span class="font-weight-bold">{{$consultants->insta_link}}</span><br>
                     <span class="font-weight-bold">{{$consultants->twitter_link}} </span><br>
-                    <div class="col-md-7">
-                        <a href="{{route('edit.business')}}"><button type="button" class="client-btn ">Edit Profile</button></a>
+                    @if($view)
+                    <div class="col-md-7 float-left">
+                        <a href="{{route('dashboard.business')}}"> <button type="button" class="client-btn ">GO to dashboard</button></a>
                     </div>
+                    @else
+                    <div class="col-md-7 float-left">
+                        <a href="{{route('edit.business')}}"> <button type="button" class="client-btn ">Edit Profile</button></a>
+                    </div>
+                    @endif
                 </div>
             </div>
             <div class="col-md-9 ">
@@ -44,13 +69,13 @@
                 <div class="">
                     <div class="cardf">
                         <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important">
-                            <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" aria-current="page" id="amenu">Main Content</a>
-                            <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu1">Team </a>
-                            <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu2">About Company </a>
-                            <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu3"> Award & Certification</a>
-                            <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu4">News and Events</a>
-                            <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu5">Canada Inspire</a>
-                            <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu6">Feedback </a>
+                            <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1.5rem;color:blue !important" aria-current="page" id="amenu">Main Content</a>
+                            <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1.5rem;color:blue !important" id="amenu1">Team </a>
+                            <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1.5rem;color:blue !important" id="amenu2">About Company </a>
+                            <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1.5rem;color:blue !important" id="amenu3"> Award & Certification</a>
+                            <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1.5rem;color:blue !important" id="amenu4">News and Events</a>
+                            <!-- <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu5">Canada Inspire</a>
+                            <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu6">Feedback </a> -->
 
                         </nav>
                     </div>
@@ -59,427 +84,384 @@
                 <br>
                 <br>
 
-                <div class="card tab-pane  col-md-11" id="menu">
+                <div class=" tab-pane  col-md-11" id="menu">
+                    <div class="card col-5">
+                        <br><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Full Name</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels"> {{$consultants->first_name}} {{$consultants->last_name}} {{$consultants->registration_number}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Company Name</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->company_name}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Registered Office - Location</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->registrar_office_area}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Status</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->status}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Languages Known</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+                                    @if($consultants->language_known)
+                                    @foreach($consultants->language_known as $row)
+                                    {{$row}}
+                                    @endforeach
+                                    @endif
+                                </label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Country</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->country}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Province/Region</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->region}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">City</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->city}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Street</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->streat}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Postal Code</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->postal_code}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Correspondence Email</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->email}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">URL - Website Address *</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->website_address}}</label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Contact Number</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">{{$consultants->phone}}</label><br>
+                            </div>
+                        </div><br>
+
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="card col-6">
+                        <br><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Specialization</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+                                    @if($consultants->specialization)
+                                    @foreach($consultants->specialization as $row)
+                                    {{$row}}
+                                    @endforeach
+                                    @endif
+                                </label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Service Offered</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+                                    @if($consultants->offering_service)
+                                    @foreach($consultants->offering_service as $row)
+                                    {{$row}}
+                                    @endforeach
+                                    @endif
+                                </label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Initial chargeable type</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+                                    {{$consultants->initial_chargeable_type}}
+
+                                </label><br>
+                            </div>
+                        </div><br>
+
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Year of Establishment</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+
+                                    {{$consultants->establishment_year}}
+
+                                </label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Offering Services Since</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+
+                                    {{$consultants->offering_year}}
+
+                                </label><br>
+                            </div>
+                        </div><br>
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Response Time</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+
+                                    {{$consultants->response_time}}
+
+                                </label><br>
+                            </div>
+                        </div><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Communication Success</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+
+                                    {{$consultants->communication_mode_success}}
+
+                                </label><br>
+                            </div>
+                        </div><br>
+
+                    </div>
+
+                </div>
+                <br>
+            </div>
+
+            <div class=" tab-pane  col-md-11" id="menu1">
+
+                <div class="form-group">
+                    <strong class="labels">Team details</strong>
                     <br><br>
-                    <!--div class="news-title">You have questions, let's have a conversation </div-->
-                    <div class="row custom-box" id="">
+                    <label class="labels">
 
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>First Name *
-                                </label>
-                                <input class="form-control " type="text" name="first_name" value="{{$consultants->first_name}}" disabled>
-                            </div>
-                        </div>
+                        {{$consultants->team_info}}
 
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>Last Name *
-                                </label>
-                                <input class="form-control " type="text" name="last_name" value="{{$consultants->last_name}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>Registration Number *
-                                </label>
-                                <input class="form-control " type="text" name="registration_number" value="{{$consultants->registration_number}}" disabled>
-                            </div>
-                        </div>
-
-                    </div>
-                    <hr>
-
-                    <div class="row custom-box">
-
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>Company Name *
-                                </label>
-                                <input class="form-control " type="text" name="company_name" value="{{$consultants->company_name}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Registered Office - Location *
-                                </label>
-                                <input class="form-control " type="text" placeholder="Area" name="registrar_office_area" value="{{$consultants->registrar_office_area}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="form-group">
-                                <label>Status *
-                                </label>
-                                <select class="form-control" name="status" disabled>
-                                    <option value="Active" {{$consultants->status == "Active" ? "checked":""}}>Active</option>
-                                    <option value="In Active" {{ $consultants->status == "In Active" ? "checked":""}}>In Active</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Languages Known *
-                                </label>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Languages1" name="language_known[]" value="English" {{ (is_array($consultants->language_known) and in_array("English", $consultants->language_known)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Languages1"> English</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Languages2" name="language_known[]" value="French" {{ (is_array($consultants->language_known) and in_array("French", $consultants->language_known)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Languages2"> French</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Languages3" name="language_known[]" value="Others" {{ (is_array($consultants->language_known) and in_array("Others", $consultants->language_known)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Languages3"> Others</label>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <hr>
-                    <div class="row custom-box">
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Country *
-
-                                </label>
-                                <input class="form-control " type="text" name="country" value="{{$consultants->country}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Province/Region *
-
-                                </label>
-                                <input class="form-control " type="text" name="region" value="{{$consultants->region}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>City *
-
-                                </label>
-                                <input class="form-control " type="text" name="city" value="{{$consultants->city}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Street *
-                                </label>
-                                <input class="form-control " type="text" name="streat" value="{{$consultants->streat}}" disabled>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <hr>
-                    <div class="row custom-box">
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Postal Code *
-                                </label>
-                                <br>
-                                <br>
-                                <input class="form-control " type="text" name="postal_code" value="{{$consultants->postal_code}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Email address for correspondence *
-                                </label>
-                                <input class="form-control " type="text" name="email" value="{{$consultants->email}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>URL - Website Address *
-                                </label>
-                                <br>
-                                <br>
-                                <input class="form-control " type="text" name="website_address" value="{{$consultants->website_address}}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Contact Number *
-                                </label>
-                                <br>
-                                <br>
-                                <input class="form-control " type="text" name="phone" value="{{$consultants->phone}}" disabled>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <hr>
-
-                    <div class="row custom-box">
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Specialization *
-                                </label>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Specialization1" name="specialization[]" value="Accounting & Auditing" {{ (is_array($consultants->specialization) and in_array("Accounting & Auditing", $consultants->specialization)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Specialization1"> Accounting & Auditing </label><br>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Specialization2" name="specialization[]" value="Corporate & Personal Taxation" {{ (is_array($consultants->specialization) and in_array("Corporate & Personal Taxation", $consultants->specialization)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Specialization2"> Corporate & Personal Taxation</label><br>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Specialization3" name="specialization[]" value="Payroll" {{ (is_array($consultants->specialization) and in_array("Payroll", $consultants->specialization)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Specialization3"> Payroll</label><br>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Specialization4" name="specialization[]" value="Insurance" {{ (is_array($consultants->specialization) and in_array("Insurance", $consultants->specialization)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Specialization4"> Insurance</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Service Offered *</label>
-
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Business Incorporation" {{ (is_array($consultants->offering_service) and in_array("Business Incorporation", $consultants->offering_service)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Service1">Business Incorporation</label><br>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Service2" name="offering_service[]" value="Business Consulting" {{ (is_array($consultants->offering_service) and in_array("Business Consulting", $consultants->offering_service)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Service2">Business Consulting</label><br>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Service3" name="offering_service[]" value="Family Visa" {{ (is_array($consultants->offering_service) and in_array("Financial Services", $consultants->offering_service)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Service3">Financial Services</label><br>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Service4" name="offering_service[]" value="Others" {{ (is_array($consultants->offering_service) and in_array("Others", $consultants->offering_service)) ? ' checked' : '' }} disabled>
-                                    <label class="custom-control-label" for="Service4"> Others</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Is your Initial Consultation chargeable?
-                                </label>
-                                <div class="col-lg-2 col-md-2 col-2 ">
-                                    <div class="custom-control custom-radio ">
-                                        <input type="radio" class="custom-control-input" id="Consultationchargeable" name="initial_chargeable_type" value="free" {{ $consultants->initial_chargeable_type == "free"  ? ' checked' : '' }} disabled>
-                                        <label class="custom-control-label mt-1" for="Consultationchargeable">free</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-2 ">
-                                    <div class="custom-control custom-radio ">
-                                        <input type="radio" class="custom-control-input " id="Consultationchargeable2" name="initial_chargeable_type" value="paid" {{ $consultants->initial_chargeable_type == "paid"  ? ' checked' : '' }} disabled>
-                                        <label class="custom-control-label mt-1" for="Consultationchargeable2">paid</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Remarks/Comments if any
-                                </label>
-                                <input class="form-control " type="text" name="initial_chargeable_comment" value="{{$consultants->initial_chargeable_comment}}" disabled>
-                            </div>
-                        </div>
-
-                    </div>
-                    <hr>
-                    <div class="row custom-box">
-
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Year of Establishment
-                                </label>
-                                <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{$consultants->establishment_year}}" disabled>
-                                <small>Year of Registration</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Offering Services Since
-                                </label>
-                                <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{$consultants->offering_year}}" disabled>
-                                <small>Number of Years</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>Response Time
-                                </label>
-                                <input type="text" class="form-control" name="response_time" value="{{$consultants->response_time}}" disabled>
-                                <small>24 or 48 or 72 Hours</small>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>What type of Correspondence you prefer?
-                                </label>
-                                <div class="col-lg-2 col-md-2 col-2 ">
-                                    <div class="custom-control custom-checkbox ">
-                                        <input type="checkbox" class="custom-control-input" id="preferemail" name="communication_mode[]" value="email" {{ (is_array($consultants->communication_mode) and in_array("email", $consultants->communication_mode)) ? ' checked' : '' }} disabled>
-                                        <label class="custom-control-label mt-1" for="preferemail">email</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-2 ">
-                                    <div class="custom-control custom-checkbox ">
-                                        <input type="checkbox" class="custom-control-input " id="preferPhone" name="communication_mode[]" value="phone" {{ (is_array($consultants->communication_mode) and in_array("phone", $consultants->communication_mode)) ? ' checked' : '' }} disabled>
-                                        <label class="custom-control-label mt-1" for="preferPhone">phone</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-2 ">
-                                    <div class="custom-control custom-checkbox ">
-                                        <input type="checkbox" class="custom-control-input " id="preferMessaging" name="communication_mode[]" value="Messaging" {{ (is_array($consultants->communication_mode) and in_array("Messaging", $consultants->communication_mode)) ? ' checked' : '' }} disabled>
-                                        <label class="custom-control-label mt-1" for="preferMessaging">Messaging</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <hr>
-                    <div class="float-right">
-                        <button type="button" class="client-btn bmenu">Next </button>
-                    </div>
-
-                    <br>
+                    </label><br>
                 </div>
 
-                <div class="card tab-pane  col-md-11" id="menu1">
-                    <br><br>
-                    <div class="row custom-box">
+                <div class="row ">
 
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
+                    @foreach($teams as $key=>$row )
 
-                                <label>Your Team of Expert</label>
-                                <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization" disabled>{{$consultants->team_info}}</textarea>
+                    <div class="card col-xs-12 col-sm-6" style="  height: 300px">
+                        <br><br>
+
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Team Member </strong>
                             </div>
-                            <div class="form-group">
-                                @foreach($teams as $row )
-                                <div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-12">
-                                            <label>Team Member</label>
 
-                                            <input class="form-control team addinput" id="team_name" type="text" name="team_name[]" value="{{$row->member}}" disabled>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-12">
-                                            <label>Image</label>
-                                            <img src="{{url('files/'.$row->team_img)}}" class="img_thumbnail" width="75">
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-12">
-                                            <label>Designation</label>
+                            <div class="col-md-7">
+                                <label class="labels">
 
-                                            <input class="form-control team addinput" type="text" id="team_designation" value="{{$row->Designation}}" disabled>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-12">
-                                            <label>Area of Expertise</label>
+                                    {{$row->member}}
 
-                                            <input class="form-control team addinput" type="text" id="team_area_expertise" value="{{$row->expertise_area}}" disabled>
-                                        </div>
-                                        <div class="col-lg-4 col-md-3 col-12">
-                                            <label>Year of Experience</label>
-
-                                            <input class="form-control team addinput" type="text" id="team_experience_year" value="{{$row->experience_year}}" disabled>
-                                        </div>
-                                        <div class="col-lg-4 col-md-3 col-12">
-                                            <label>Number of Successful Cases</label>
-
-                                            <input class="form-control team addinput" type="text" id="team_number_success_cases" value="{{$row->no_success}}" disabled>
-                                        </div>
-
-
-                                    </div>
-                                    <br><br>
-                                    <hr>
-                                </div>
-                                @endforeach
+                                </label><br>
                             </div>
-                        </div>
+                        </div><br><br>
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Area of Expertise</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+
+                                    {{$row->expertise_area}}
+
+                                </label><br>
+                            </div>
+                        </div><br><br>
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">Year of Experience</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+
+                                    {{$row->experience_year}}
+
+                                </label><br>
+                            </div>
+                        </div><br><br>
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="labels">No of Successful Cases</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <label class="labels">
+
+                                    {{$row->team_number_success_cases}}
+
+                                </label><br>
+                            </div>
+                        </div><br>
 
                     </div>
-                    <div class="float-right">
-                        <button type="button" class="client-btn bmenu1">Next </button>
-                    </div>
-                    <br>
+
+
+
+                    @endforeach
+
                 </div>
 
-                <div class="card tab-pane  col-md-11" id="menu2">
-                    <br><br>
-                    <div class="row custom-box">
+            </div>
+            <br>
 
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="form-group">
-                                <label>Do you have any Privacy Policies?
-                                </label>
-                                <div class="col-lg-2 col-md-2 col-2 ">
-                                    <div class="custom-control custom-radio ">
-                                        <input type="radio" class="custom-control-input " id="Policies" name="is_Policies" value="yes" {{ $consultants->is_Policies == "yes"  ? ' checked' : '' }} disabled>
-                                        <label class="custom-control-label mt-1" for="Policies">Yes</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-3 ">
-                                    <div class="custom-control custom-radio ">
-                                        <input type="radio" class="custom-control-input " id="Policiesno" name="is_Policies" value="no" {{ $consultants->is_Policies == "no"  ? ' checked' : '' }} disabled>
-                                        <label class="custom-control-label mt-1" for="Policiesno">No</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="card tab-pane  col-md-11" id="menu2" style="width:100% !important;">
+                <div class="">
+                    <br><br>
+                    @if($consultants->privacy_policy_document)
+                    <div class="row custom-box">
                         <div class="col-lg-3 col-md-3 col-12">
                             <div class="form-group">
-                                <label>If Yes, Enclose the Document
+                                <label>Privacy document
                                 </label>
                                 <br>
                                 <br>
                                 <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">view Attachment</a>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-lg-7 col-md-7 col-12">
+                    @endif
+                    @if($consultants->privacy_policy_detail)
+                    <div class="row custom-box">
+                        <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
-                                <label>Terms if Any
+                                <label>Terms of Privacy
                                 </label>
-                                <textarea style="width:100%;" rows="6" name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}" disabled>{{$consultants->privacy_policy_detail}}</textarea>
+                                <textarea rows="9" name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
                             </div>
                         </div>
-
-
                     </div>
-                    <hr>
+
+                    @endif
+                    @if($consultants->history)
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label>About History
                                 </label>
                                 <br>
-                                <textarea style="width:100%;" rows="9" name="history" value="{{$consultants->history}}" disabled>{{$consultants->history}}</textarea>
+                                <textarea style="width:100%;background-color:white !important;" rows="9" name="history" value="{{$consultants->history}}" disabled>{{$consultants->history}}</textarea>
                             </div>
                         </div>
                     </div>
-                    <hr>
 
+                    @endif
+                    @if($consultants->brief_introduction)
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
@@ -487,152 +469,120 @@
                                 </label>
                                 <br>
 
-                                <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                <textarea style="width:100%;background-color:white !important;" rows="9" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
                             </div>
                         </div>
                     </div>
-                    <div class="float-right">
-                        <button type="button" class="client-btn bmenu2">Next </button>
-                    </div>
-                    <br>
-                </div>
-                <div class="card tab-pane  col-md-11" id="menu3">
-                    <br><br>
-                    <div class="row custom-box">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>Awards and Certifications
-                                </label>
-                                <br>
-                                <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Company Achievements
-                                </label>
-                                <br>
-
-                                <textarea style="width:100%;" rows="9" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="float-right">
-                        <button type="button" class="client-btn bmenu3">Next </button>
-                    </div>
-                    <br>
+                    @endif
 
                 </div>
+                <br> <br>
+            </div>
 
-                <div class="card tab-pane  col-md-11" id="menu4">
-                    <br><br>
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Your Introductory Video URL Link display on Canada Inspire Portal
-                                </label>
-                                <input class="form-control " type="text" name="vedio_url" value="{{$consultants->vedio_url}}" disabled>
-                            </div>
+            <div class="card tab-pane  col-md-11" id="menu3" style="width:100% !important;">
+                <br><br>
+                @if($consultants->Award)
+                <div class="row custom-box">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="form-group">
+                            <label>Awards and Certifications
+                            </label>
+                            <br>
+                            <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
+
                         </div>
                     </div>
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Kindly provide Weblinks for News and Events, Immigration Updates and much more to help Candidates to have more information
-                                </label>
-                                <br>
+                </div>
+                @endif
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Company Achievements
+                            </label>
+                            <br>
 
-                                <textarea style="width:100%;" rows="9" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
-                            </div>
+                            <textarea style="width:100%;background-color:white !important;" rows="25" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
                         </div>
                     </div>
+                </div>
 
-                    <div class="socialAppend" id="socialAppend">
-                        <div class="row mb-1 social">
+                <br>
 
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <label>Social Media Profile
+            </div>
 
-                                    </label>
-                                    <div class="row">
-                                        <a class="facebook" href="##">
-                                            <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
-                                            </div>
-                                            <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
-                                                <div class="form-group">
-                                                    <label> </label>
-                                                    <input class="form-control socialLink " type="text" placeholder="Facebook link " name="fb_link" value="{{$consultants->fb_link}}" disabled>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="twitter" href="##">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
-                                                <div class="form-group">
-                                                    <label> </label>
-                                                    <input class="form-control socialLink" type="text" placeholder="Twitter link " name="twitter_link" value="{{$consultants->twitter_link}}" disabled>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="instagram" href="##">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
-                                            <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
-                                                <div class="form-group">
-                                                    <label> </label>
-                                                    <input class="form-control socialLink" type="text" placeholder="Instagram link " name="insta_link" value="{{$consultants->insta_link}}" disabled>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="linkedin" href="##">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
-                                                <div class="form-group">
-                                                    <label> </label>
-                                                    <input class="form-control socialLink" type="text" placeholder="Linkedin Profile " name="Linkedin_link" value="{{$consultants->Linkedin_link}}" disabled>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="youtube" href="##">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-11 d-none " id="youtube">
-                                                <div class="form-group">
-                                                    <label> </label>
-                                                    <input class="form-control socialLink" type="text" placeholder="youtube link " name="youtube_link" value="{{$consultants->youtube_link}}" disabled>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="google" href="##">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-11 d-none " id="google">
-                                                <div class="form-group">
-                                                    <label> </label>
-                                                    <input class="form-control socialLink" type="text" placeholder="google review link " name="google_review_link" value="{{$consultants->google_review_link}}" disabled>
-                                                </div>
-                                            </div>
-                                        </a>
+            <div class="card tab-pane  col-md-11" id="menu4" style="width:100% !important;">
+                <br><br>
+                @if($consultants->vedio_url)
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Video URL Link
+                            </label>
+                            <input class="form-control " type="text" name="vedio_url" value="{{$consultants->vedio_url}}" style="background-color:white !important;" disabled>
+                        </div>
+                    </div>
+                </div>
+                @endif
+                @if($consultants->event_new_weblink)
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Weblinks for News and Events
+                            </label>
+                            <br>
 
-                                    </div>
+                            <textarea style="width:100%;background-color:white !important;" rows="9" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
+                        </div>
+                    </div>
+                </div>
+                @endif
+                <div class="socialAppend" id="socialAppend">
+                    <div class="row mb-1 social">
+
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label>Social Media Profile
+
+                                </label>
+                                <div class="row">
+                                    <a class="facebook" href="{{$consultants->fb_link}}">
+                                        <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
+                                        </div>
+                                    </a>
+                                    <a class="twitter" href="{{$consultants->twitter_link}}">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
+                                        </div>
+                                    </a>
+                                    <a class="instagram" href="{{$consultants->insta_link}}">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
+
+                                    </a>
+                                    <a class="linkedin" href="{{$consultants->Linkedin_link}}">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
+                                        </div>
+
+                                    </a>
+                                    <a class="youtube" href="{{$consultants->youtube_link}}">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
+                                        </div>
+
+                                    </a>
+                                    <a class="google" href="{{$consultants->google_review_link}}">
+                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
+                                        </div>
+
+                                    </a>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="float-right">
-                        <button type="button" class="client-btn bmenu4">Next </button>
-                    </div>
-                    <br>
                 </div>
 
-                <div class="card tab-pane  col-md-11" id="menu5">
+                <br>
+            </div>
+
+            <!-- <div class="card tab-pane  col-md-11" id="menu5" style="width:100% !important;">
                     <br><br>
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
@@ -650,13 +600,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="float-right">
-                        <button type="button" class="client-btn bmenu5">Next </button>
-                    </div>
+                   
                     <br>
-                </div>
+                </div> -->
 
-                <div class="card tab-pane  col-md-11" id="menu6">
+            <!-- <div class="card tab-pane  col-md-11" id="menu6">
                     <br><br>
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
@@ -670,10 +618,10 @@
                         </div>
                     </div>
                     <br>
-                </div>
+                </div> -->
 
-            </div>
         </div>
+    </div>
     </div>
 
 

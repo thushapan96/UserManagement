@@ -17,7 +17,7 @@
                     <div class="col-lg-6 col-md-6 col-12">
 
                         <div class="or-pasword">
-                            <span>Email</span>
+                          Email
                         </div>
 
                         <div class="form-group">
@@ -31,7 +31,7 @@
                                     </span>
                         @enderror
                         <div class="or-pasword">
-                            <span>Password</span>
+                           Password
                         </div>
 
                         <div class="form-group">

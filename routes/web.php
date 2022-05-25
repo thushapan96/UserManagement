@@ -38,6 +38,7 @@ Route::get('business/profile','App\Http\Controllers\ProviderProfileController@bu
 
 
 
+
 Route::get('/canadainspair', function () {
     return view('canadainspair');
 })->name('canadainspair');
@@ -68,8 +69,14 @@ Route::get('/register/candidate/acadamic', function () {
 })->name('candidate_acadamic');
 
 Route::get('dashboard/consultant', 'App\Http\Controllers\DashboardController@consultantIndex')->name('dashboard.consultant');
+Route::get('dashboard/consultant/{id}', 'App\Http\Controllers\DashboardController@consultantView')->name('dashboard.consultant.view');
+
 Route::get('dashboard/institution', 'App\Http\Controllers\DashboardController@institudeIndex')->name('dashboard.institution');
+Route::get('dashboard/institution/{id}', 'App\Http\Controllers\DashboardController@institutionView')->name('dashboard.institution.view');
+
 Route::get('dashboard/business', 'App\Http\Controllers\DashboardController@businessIndex')->name('dashboard.business');
+Route::get('dashboard/business/{id}', 'App\Http\Controllers\DashboardController@businessView')->name('dashboard.business.view');
+
 
 
 // Route::post('register', 'Register@register')->name('register');
