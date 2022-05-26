@@ -110,7 +110,7 @@
                 <br>
                 <br>
 
-                <div class=" tab-pane  col-md-11" id="menu">
+                <div class="row tab-pane  " id="menu">
                     <div class="card col-5">
                         <br><br>
 
@@ -359,256 +359,254 @@
                     </div>
 
                 </div>
-                <br>
-            </div>
+                
+                <div class=" tab-pane  col-md-11" id="menu1">
 
-            <div class=" tab-pane  col-md-11" id="menu1">
-
-                <div class="form-group">
-                    <strong class="labels">Team details</strong>
-                    <br><br>
-                    <label class="labels">
-
-                        {{$consultants->team_info}}
-
-                    </label><br>
-                </div>
-
-                <div class="row ">
-
-                    @foreach($teams as $key=>$row )
-
-                    <div class="card col-xs-12 col-sm-6" style="  height: 300px">
+                    <div class="form-group">
+                        <strong class="labels">Team details</strong>
                         <br><br>
+                        <label class="labels">
 
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Team Member </strong>
-                            </div>
+                            {{$consultants->team_info}}
 
-                            <div class="col-md-7">
-                                <label class="labels">
+                        </label><br>
+                    </div>
 
-                                    {{$row->member}}
+                    <div class="row ">
 
-                                </label><br>
-                            </div>
-                        </div><br><br>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Area of Expertise</strong>
-                            </div>
+                        @foreach($teams as $key=>$row )
 
-                            <div class="col-md-7">
-                                <label class="labels">
+                        <div class="card col-xs-12 col-sm-6" style="  height: 300px">
+                            <br><br>
 
-                                    {{$row->expertise_area}}
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="labels">Team Member </strong>
+                                </div>
 
-                                </label><br>
-                            </div>
-                        </div><br><br>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Year of Experience</strong>
-                            </div>
+                                <div class="col-md-7">
+                                    <label class="labels">
 
-                            <div class="col-md-7">
-                                <label class="labels">
+                                        {{$row->member}}
 
-                                    {{$row->experience_year}}
+                                    </label><br>
+                                </div>
+                            </div><br><br>
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="labels">Area of Expertise</strong>
+                                </div>
 
-                                </label><br>
-                            </div>
-                        </div><br><br>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">No of Successful Cases</strong>
-                            </div>
+                                <div class="col-md-7">
+                                    <label class="labels">
 
-                            <div class="col-md-7">
-                                <label class="labels">
+                                        {{$row->expertise_area}}
 
-                                    {{$row->team_number_success_cases}}
+                                    </label><br>
+                                </div>
+                            </div><br><br>
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="labels">Year of Experience</strong>
+                                </div>
 
-                                </label><br>
-                            </div>
-                        </div><br>
+                                <div class="col-md-7">
+                                    <label class="labels">
+
+                                        {{$row->experience_year}}
+
+                                    </label><br>
+                                </div>
+                            </div><br><br>
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="labels">No of Successful Cases</strong>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <label class="labels">
+
+                                        {{$row->team_number_success_cases}}
+
+                                    </label><br>
+                                </div>
+                            </div><br>
+
+                        </div>
+
+
+
+                        @endforeach
 
                     </div>
 
+                </div>
+              
 
+                <div class="card tab-pane  col-md-10" id="menu2" style="width:100% !important;">
+                    <div class="">
+                        <br><br>
+                        @if($consultants->privacy_policy_document)
+                        <div class="row custom-box">
+                            <div class="col-lg-3 col-md-3 col-12">
+                                <div class="form-group">
+                                    <label>Privacy document
+                                    </label>
+                                    <br>
+                                    <br>
+                                    <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">view Attachment</a>
+                                </div>
+                            </div>
+                        </div>
 
-                    @endforeach
+                        @endif
+                        @if($consultants->privacy_policy_detail)
+                        <div class="row custom-box">
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+                                    <label>Terms of Privacy
+                                    </label>
+                                    <textarea rows="9" name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
+                                </div>
+                            </div>
+                        </div>
 
+                        @endif
+                        @if($consultants->history)
+                        <div class="row custom-box">
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+                                    <label>About History
+                                    </label>
+                                    <br>
+                                    <textarea style="width:100%;background-color:white !important;" rows="9" name="history" value="{{$consultants->history}}" disabled>{{$consultants->history}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        @endif
+                        @if($consultants->brief_introduction)
+                        <div class="row custom-box">
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+                                    <label> Brief Introduction
+                                    </label>
+                                    <br>
+
+                                    <textarea style="width:100%;background-color:white !important;" rows="9" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+
+                    </div>
+                    <br> <br>
                 </div>
 
-            </div>
-            <br>
-
-            <div class="card tab-pane  col-md-10" id="menu2" style="width:100% !important;">
-                <div class="">
+                <div class="card tab-pane  col-md-10" id="menu3" style="width:100% !important;">
                     <br><br>
-                    @if($consultants->privacy_policy_document)
+                    @if($consultants->Award)
                     <div class="row custom-box">
-                        <div class="col-lg-3 col-md-3 col-12">
+                        <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">
-                                <label>Privacy document
+                                <label>Awards and Certifications
                                 </label>
                                 <br>
-                                <br>
-                                <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">view Attachment</a>
-                            </div>
-                        </div>
-                    </div>
+                                <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
 
-                    @endif
-                    @if($consultants->privacy_policy_detail)
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Terms of Privacy
-                                </label>
-                                <textarea rows="9" name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    @endif
-                    @if($consultants->history)
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>About History
-                                </label>
-                                <br>
-                                <textarea style="width:100%;background-color:white !important;" rows="9" name="history" value="{{$consultants->history}}" disabled>{{$consultants->history}}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    @endif
-                    @if($consultants->brief_introduction)
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label> Brief Introduction
-                                </label>
-                                <br>
-
-                                <textarea style="width:100%;background-color:white !important;" rows="9" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
                             </div>
                         </div>
                     </div>
                     @endif
-
-                </div>
-                <br> <br>
-            </div>
-
-            <div class="card tab-pane  col-md-10" id="menu3" style="width:100% !important;">
-                <br><br>
-                @if($consultants->Award)
-                <div class="row custom-box">
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="form-group">
-                            <label>Awards and Certifications
-                            </label>
-                            <br>
-                            <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
-
-                        </div>
-                    </div>
-                </div>
-                @endif
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>Company Achievements
-                            </label>
-                            <br>
-
-                            <textarea style="width:100%;background-color:white !important;" rows="25" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-
-            </div>
-
-            <div class="card tab-pane  col-md-10" id="menu4" style="width:100% !important;">
-                <br><br>
-                @if($consultants->vedio_url)
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>Video URL Link
-                            </label>
-                            <input class="form-control " type="text" name="vedio_url" value="{{$consultants->vedio_url}}" style="background-color:white !important;" disabled>
-                        </div>
-                    </div>
-                </div>
-                @endif
-                @if($consultants->event_new_weblink)
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>Weblinks for News and Events
-                            </label>
-                            <br>
-
-                            <textarea style="width:100%;background-color:white !important;" rows="9" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
-                        </div>
-                    </div>
-                </div>
-                @endif
-                <div class="socialAppend" id="socialAppend">
-                    <div class="row mb-1 social">
-
+                    <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
-                                <label>Social Media Profile
-
+                                <label>Company Achievements
                                 </label>
-                                <div class="row">
-                                    <a class="facebook" href="{{$consultants->fb_link}}">
-                                        <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
-                                        </div>
-                                    </a>
-                                    <a class="twitter" href="{{$consultants->twitter_link}}">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
-                                        </div>
-                                    </a>
-                                    <a class="instagram" href="{{$consultants->insta_link}}">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
+                                <br>
 
-                                    </a>
-                                    <a class="linkedin" href="{{$consultants->Linkedin_link}}">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
-                                        </div>
+                                <textarea style="width:100%;background-color:white !important;" rows="25" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
+                            </div>
+                        </div>
+                    </div>
 
-                                    </a>
-                                    <a class="youtube" href="{{$consultants->youtube_link}}">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
-                                        </div>
+                    <br>
 
-                                    </a>
-                                    <a class="google" href="{{$consultants->google_review_link}}">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
-                                        </div>
+                </div>
 
-                                    </a>
+                <div class="card tab-pane  col-md-10" id="menu4" style="width:100% !important;">
+                    <br><br>
+                    @if($consultants->vedio_url)
+                    <div class="row custom-box">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label>Video URL Link
+                                </label>
+                                <input class="form-control " type="text" name="vedio_url" value="{{$consultants->vedio_url}}" style="background-color:white !important;" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @if($consultants->event_new_weblink)
+                    <div class="row custom-box">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label>Weblinks for News and Events
+                                </label>
+                                <br>
 
+                                <textarea style="width:100%;background-color:white !important;" rows="9" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    <div class="socialAppend" id="socialAppend">
+                        <div class="row mb-1 social">
+
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+                                    <label>Social Media Profile
+
+                                    </label>
+                                    <div class="row">
+                                        <a class="facebook" href="{{$consultants->fb_link}}">
+                                            <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
+                                            </div>
+                                        </a>
+                                        <a class="twitter" href="{{$consultants->twitter_link}}">
+                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
+                                            </div>
+                                        </a>
+                                        <a class="instagram" href="{{$consultants->insta_link}}">
+                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
+
+                                        </a>
+                                        <a class="linkedin" href="{{$consultants->Linkedin_link}}">
+                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
+                                            </div>
+
+                                        </a>
+                                        <a class="youtube" href="{{$consultants->youtube_link}}">
+                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
+                                            </div>
+
+                                        </a>
+                                        <a class="google" href="{{$consultants->google_review_link}}">
+                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
+                                            </div>
+
+                                        </a>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <br>
                 </div>
 
-                <br>
-            </div>
-
-            <!-- <div class="card tab-pane  col-md-11" id="menu5" style="width:100% !important;">
+                <!-- <div class="card tab-pane  col-md-11" id="menu5" style="width:100% !important;">
                     <br><br>
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
@@ -630,7 +628,7 @@
                     <br>
                 </div> -->
 
-            <!-- <div class="card tab-pane  col-md-11" id="menu6">
+                <!-- <div class="card tab-pane  col-md-11" id="menu6">
                     <br><br>
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
@@ -646,8 +644,8 @@
                     <br>
                 </div> -->
 
+            </div>
         </div>
-    </div>
     </div>
 
 

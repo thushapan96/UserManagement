@@ -17,7 +17,7 @@
 </style>
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
 
-    <div class="whiteBoxtab " style="width: 100% !important;max-width: 1500px !important; left:0  !important">
+    <div class="whiteBoxtab " style="width:75% !important;max-width: 1500px !important; left:0  !important">
 
         <div class="cardf">
             <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">

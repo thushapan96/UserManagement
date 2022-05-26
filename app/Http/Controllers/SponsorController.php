@@ -10,8 +10,8 @@ class SponsorController extends Controller
 {
     public function store(Request $request)
     {
-        $checkPersonal  =  Sponsor::where('user_id', '=', Auth::user()->id)->exists();
-        if (!$checkPersonal) {
+        $checkSponsor  =  Sponsor::where('user_id', '=', Auth::user()->id)->exists();
+        if (!$checkSponsor) {
             $validator = \Validator::make($request->all(), [
                 'sponsor_email' => 'required|unique:candidate_sponsors',
                 'guardian_email' => 'required|unique:candidate_sponsors',
@@ -27,7 +27,7 @@ class SponsorController extends Controller
                     return response()->json(['success' => 'Record is successfully added']);
                 }
             }
-            
+
         }
     }
 }

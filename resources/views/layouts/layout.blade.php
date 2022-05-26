@@ -49,6 +49,7 @@
 
     .card {
         border-radius: 25px;
+        background: white !important;
         /* background-color: #f2b7b7; */
         /* background-color: #f7b42c;
         background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%); */

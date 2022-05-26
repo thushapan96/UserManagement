@@ -564,7 +564,7 @@
                     </div>
 
                 </div>
-                <br>
+              
 
                 <div class="card tab-pane  col-md-10" id="menu2" style="width:80% !important;">
                     <div class="">

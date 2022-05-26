@@ -5,7 +5,7 @@
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
 
-    <div class="whiteBoxtab " style="width: 1400px !important;max-width: 1500px !important; left:0  !important">
+    <div class="whiteBoxtab " style="width:75% !important;max-width: 1500px !important; left:0  !important">
 
         <div class="cardf">
             <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
@@ -15,7 +15,7 @@
                 <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
                 <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu4">News and Events</a>
                 <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu5">Canada Inspire</a>
-                <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu6">Feedback for Canada Inspire</a>
+                <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu6">Feedback </a>
 
             </nav>
         </div>
@@ -26,6 +26,7 @@
             </div>
         </div> -->
     </div>
+    <br>
     <div class="container">
 
         <!-- <h1>{{$consultants->first_name}} </h1> -->
