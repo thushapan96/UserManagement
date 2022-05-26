@@ -51,7 +51,7 @@
 
     <div class="" style=" left: 0px;">
         <div class="row">
-            <div class="col-md-3 border-left" style="  left: 50px;">
+            <div class="col-md-3 border-left" style="  left: 80px;">
                 <div class="d-flex flex-column align-items-left text-left p-3 py-5">
                     <div class="uploadimg">
                         @if($img)

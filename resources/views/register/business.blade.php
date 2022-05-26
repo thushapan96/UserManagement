@@ -844,7 +844,7 @@
                     </div>`
 
                 $('#newRow').append(html);
-
+                cnt = cnt + 1;
                 $(".addinput").keyup(function() {
                     $(this).attr("value", $(this).val());
                     console.log("attrr" + $(this).attr('value'));
