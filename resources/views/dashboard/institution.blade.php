@@ -66,7 +66,7 @@
         margin-bottom: 20px;
         line-height: 1.42857143;
         border-radius: 5px;
-        background-color:#f2b7b7;
+       
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
         transition: box-shadow .25s;
     }
