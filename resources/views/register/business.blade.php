@@ -41,13 +41,13 @@
                 </nav>
             </div>
 
-            <div class="progress mt-1">
-                <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#004e75 !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
 
-                </div>
+        </div>
+        <div class="progress mt-1">
+            <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#004e75 !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
+
             </div>
         </div>
-
 
         <h1>Chartered Accountant Enrollment</h1>
         <h6>Chartered Accountant to provide correct information. This will allow us to incorporate on our Portal databank for the International companies to access, explore and know more about the Consulting services and specialization.</h6>
@@ -794,7 +794,7 @@
                 sessionStorage.setItem('socialAppend', $('#socialAppend').html())
 
             });
-            var cnt = 0;
+            var cnt = 1;
             $("#addRow").click(function() {
 
                 var html = '';

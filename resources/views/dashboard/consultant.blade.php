@@ -66,7 +66,7 @@
         margin-bottom: 20px;
         line-height: 1.42857143;
         border-radius: 5px;
-       
+
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
         transition: box-shadow .25s;
     }
@@ -128,18 +128,12 @@
 </style>
 <section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
     <div class="container ">
-        <div class="container-fostrap">
-
-            <div class="content">
-                <div class="container">
+      
                     <div class="row">
-
-
-
                         @if($consultants)
-                        @foreach($consultants as $row)
-
+                        @foreach($consultants->chunk(3) as $consultant)
                         <div class="col-xs-12 col-sm-4">
+                            @foreach($consultant as $row)
                             <div class="card">
 
                                 <div class="card-content">
@@ -158,18 +152,12 @@
                                     </a>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-
                         @endforeach
                         @endif
-
-
-
                     </div>
 
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
