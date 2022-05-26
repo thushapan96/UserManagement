@@ -10,13 +10,13 @@
 
         <div class="cardf">
             <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;" aria-current="page" id="amenu">Main Content</a>
-                <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu1">Team Members</a>
-                <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu2">About Company </a>
-                <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu3"> Award & Certification</a>
-                <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu4">News and Events</a>
-                <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu5">Canada Inspire</a>
-                <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu6">Feedback for Canada Inspire</a>
+                <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:red !important" aria-current="page" id="amenu">Main Content</a>
+                <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:red !important" id="amenu1">Team Members</a>
+                <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:red !important" id="amenu2">About Company </a>
+                <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:red !important" id="amenu3"> Award & Certification</a>
+                <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:red !important" id="amenu4">News and Events</a>
+                <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:red !important" id="amenu5">Canada Inspire</a>
+                <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:red !important" id="amenu6">Feedback for Canada Inspire</a>
 
             </nav>
         </div>
@@ -30,7 +30,7 @@
     </div>
     <div class="container">
 
-        <h1>{{$consultants->first_name}} </h1>
+        <!-- <h1>{{$consultants->first_name}} </h1> -->
 
         <h6>{{$consultants->first_name}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access, explore and know more about the Consultants services and specialization.</h6>
         <h6></h6>

@@ -40,28 +40,46 @@
 
     .card {
         border-radius: 25px;
-        background-color:#f2b7b7;
+        /* background-color: #f2b7b7; */
+        /* background-color: #f7b42c;
+        background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%); */
 
-
+        border-color: red !important;
+        border-bottom: 5px solid red !important;
     }
 
     .nav-pills .nav-link.active,
     .nav-pills .show>.nav-link {
-        color: #fff;
-        background-color: #007bff !important;
+      
+        /* background-color: #007bff !important; */
+        /* background-color: #f7b42c !important;
+        background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
         border-radius: 25px;
+        border-color: red !important;
+        border-bottom: 5px solid red !important;
+        color :red !important;
     }
 
     .whiteBox:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-       
+        
+
     }
-    .whiteBox{
+
+    .whiteBox {
         border-radius: 18px;
         /* background-image: url('/canadaFlag/can2.png'); */
         /* background-color:#f29191; */
-        background-color:#f2b7b7;
-        border-color: red;
+        /* background-color: #f7b42c !important;
+        background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
+        
+        border-color: red !important;
+        border-bottom: 5px solid red !important;
+    }
+    .whiteBoxtab{
+        background:white !important;
+        border-color: red !important;
+        border-bottom: 5px solid red !important;
     }
 </style>
 

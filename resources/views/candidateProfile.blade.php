@@ -23,10 +23,10 @@
                     <div class="">
                         <div class="cardf">
                             <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important">
-                                <a class="nav-link active" style="cursor:pointer;padding: 1.15rem 3rem;color:blue !important" aria-current="page" id="amenu">personal</a>
-                                <a class="nav-link " style="cursor:pointer;padding: 1.15rem 3rem;color:blue !important" id="amenu1">academy</a>
-                                <a class="nav-link" style="cursor:pointer;padding: 1.15rem 3rem;;color:blue !important" id="amenu2">work</a>
-                                <a class="nav-link " style="cursor:pointer;padding: 1.15rem 3rem;;color:blue !important" id="amenu3">sponsor</a>
+                                <a class="nav-link active" style="cursor:pointer;padding: 1.15rem 3rem;color:red !important" aria-current="page" id="amenu">personal</a>
+                                <a class="nav-link " style="cursor:pointer;padding: 1.15rem 3rem;color:red !important" id="amenu1">academy</a>
+                                <a class="nav-link" style="cursor:pointer;padding: 1.15rem 3rem;;color:red !important" id="amenu2">work</a>
+                                <a class="nav-link " style="cursor:pointer;padding: 1.15rem 3rem;;color:red !important" id="amenu3">sponsor</a>
                             </nav>
                         </div>
                     </div>
