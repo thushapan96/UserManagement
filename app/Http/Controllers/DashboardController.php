@@ -21,7 +21,7 @@ class DashboardController extends Controller
     public function consultantIndex()
     {
 
-        $consultants = Consultant::where('type', 'RCIC Consultant')->get();
+        $consultants = Consultant::where('type', 'RCIC Consultant')->orwhere('type', 'Immigration Lawyer/Attorney')->get();
 
         return view('dashboard.consultant')->with('consultants', $consultants);
     }
