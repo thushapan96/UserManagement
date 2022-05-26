@@ -2,14 +2,7 @@
 
 @section('content')
 <style>
-    .progress {
-        background-color: #FF6347 !important;
-        margin-left: 40px !important;
-        margin-right: 40px !important;
-        max-height: 12px;
-        text-align: center;
-
-    }
+    
 
     label {
         text-transform: capitalize;
@@ -47,10 +40,10 @@
 
             <div class="cardf">
                 <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 5rem;color:red !important" aria-current="page" id="amenu">personal</a>
-                    <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 5rem;color:red !important" id="amenu1">academy</a>
-                    <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 5rem;color:red !important" id="amenu2">work</a>
-                    <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 5rem;color:red !important" id="amenu3">sponsor</a>
+                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 5rem;color:#bf0010 !important" aria-current="page" id="amenu">personal</a>
+                    <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 5rem;color:#bf0010  !important" id="amenu1">academy</a>
+                    <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 5rem;color:#bf0010  !important" id="amenu2">work</a>
+                    <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 5rem;color:#bf0010  !important" id="amenu3">sponsor</a>
                 </nav>
             </div>
 

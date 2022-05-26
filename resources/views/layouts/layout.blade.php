@@ -18,6 +18,15 @@
 
 </head>
 <style>
+    .progress {
+        background-color: #bf0010 !important;
+        margin-left: 40px !important;
+        margin-right: 40px !important;
+        max-height: 12px;
+        text-align: center;
+
+    }
+
     label {
         text-transform: capitalize;
     }
@@ -44,25 +53,31 @@
         /* background-color: #f7b42c;
         background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%); */
 
-        border-color: red !important;
-        border-bottom: 5px solid red !important;
+        border-color: #bf0010 !important;
+        border-bottom: 5px solid #bf0010 !important;
     }
 
     .nav-pills .nav-link.active,
     .nav-pills .show>.nav-link {
-      
+
         /* background-color: #007bff !important; */
         /* background-color: #f7b42c !important;
         background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
         border-radius: 25px;
-        border-color: red !important;
-        border-bottom: 5px solid red !important;
-        color :red !important;
+     ;
+        border-bottom: 5px solid #bf0010 !important;
+        color: #bf0010 !important;
     }
+
+    .nav-link {
+        color: #bf0010 !important;
+
+    }
+
+
 
     .whiteBox:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        
 
     }
 
@@ -72,14 +87,34 @@
         /* background-color:#f29191; */
         /* background-color: #f7b42c !important;
         background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
-        
-        border-color: red !important;
-        border-bottom: 5px solid red !important;
+
+        border-left: 1px solid #bf0010 !important;
+        border-right: 1px solid #bf0010 !important;
+        border-top: 1px solid #bf0010 !important;
+        border-bottom: 5px solid #bf0010 !important;
     }
-    .whiteBoxtab{
-        background:white !important;
-        border-color: red !important;
-        border-bottom: 5px solid red !important;
+
+    .whiteBoxtab {
+        background: white !important;
+        border-left: 1px solid #bf0010 !important;
+        border-right: 1px solid #bf0010 !important;
+        border-top: 1px solid #bf0010 !important;
+        border-bottom: 5px solid #bf0010 !important;
+        border-radius: 50px;
+    }
+
+    button {
+        background-color: #004e75 !important;
+        /* background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #004e75 !important;
     }
 </style>
 

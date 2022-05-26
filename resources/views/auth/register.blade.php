@@ -4,7 +4,7 @@
 
 <!-- Subscribe & Stay Connected. Start -->
 
-<section class="StayConnected clearfix">
+<section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
 
     <div class="container">
         <h1>Register as a {{request()->query('role')}}</h1>

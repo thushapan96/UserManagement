@@ -13,14 +13,7 @@
 @endif
 <!-- Subscribe & Stay Connected. Start -->
 <style>
-    .progress {
-        background-color: #FF6347 !important;
-        margin-left: 40px !important;
-        margin-right: 40px !important;
-        max-height: 12px;
-        text-align: center;
-
-    }
+   
 </style>
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
 
@@ -28,13 +21,13 @@
 
         <div class="cardf">
             <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;" aria-current="page" id="amenu">Main Content</a>
-                <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu1">Team Members</a>
-                <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu2">About Company </a>
-                <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu3"> Award & Certification</a>
-                <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu4">News and Events</a>
-                <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu5">Canada Inspire</a>
-                <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;" id="amenu6">Feedback for Canada Inspire</a>
+                <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " aria-current="page" id="amenu">Main Content</a>
+                <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu1">Team Members</a>
+                <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu2">About Company </a>
+                <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu3"> Award & Certification</a>
+                <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu4">News and Events</a>
+                <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu5">Canada Inspire</a>
+                <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu6">Feedback for Canada Inspire</a>
 
             </nav>
         </div>
