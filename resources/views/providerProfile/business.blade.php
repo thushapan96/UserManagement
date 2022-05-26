@@ -445,7 +445,7 @@
                 </div>
               
 
-                <div class="card tab-pane  col-md-10" id="menu2" style="width:100% !important;">
+                <div class="card tab-pane  col-md-10" id="menu2" style="width:80% !important;">
                     <div class="">
                         <br><br>
                         @if($consultants->privacy_policy_document)
@@ -505,7 +505,7 @@
                     <br> <br>
                 </div>
 
-                <div class="card tab-pane  col-md-10" id="menu3" style="width:100% !important;">
+                <div class="card tab-pane  col-md-10" id="menu3" style="width:80% !important;">
                     <br><br>
                     @if($consultants->Award)
                     <div class="row custom-box">
@@ -536,7 +536,7 @@
 
                 </div>
 
-                <div class="card tab-pane  col-md-10" id="menu4" style="width:100% !important;">
+                <div class="card tab-pane  col-md-10" id="menu4" style="width:80% !important;">
                     <br><br>
                     @if($consultants->vedio_url)
                     <div class="row custom-box">
