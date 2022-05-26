@@ -30,11 +30,11 @@
     </script>
     @endif
     <div class="container">
-        <div class="whiteBoxtab " style="width: 75% !important;max-width: 1500px !important; left:0  !important">
+        <div class="whiteBoxtab " style="width: 100% !important;max-width: 1500px !important; left:0  !important">
 
             <div class="cardf">
                 <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " aria-current="page" id="amenu">Main Content</a>
+                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " aria-current="page" id="amenu">Main </a>
                     <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu1">Courses</a>
                     <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu2">About Company </a>
                     <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu3"> Award & Certification</a>
@@ -50,6 +50,7 @@
 
                 </div>
             </div>
+
         </div>
 
 

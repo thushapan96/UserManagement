@@ -24,30 +24,31 @@
             'success'
         )
     </script>
-    @endif
-    <div class="whiteBoxtab " style="width: 75% !important;max-width: 1500px !important; left:0  !important">
+    @endif'
+    <div class="container">
+        <div class="whiteBoxtab " style="width: 100% !important;max-width: 1500px !important; left:0  !important">
 
-        <div class="cardf">
-            <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " aria-current="page" id="amenu">Main Content</a>
-                <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu1">Team Members</a>
-                <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu2">About Company </a>
-                <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu3"> Award & Certification</a>
-                <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu4">News and Events</a>
-                <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu5">Canada Inspire</a>
-                <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu6">Feedback </a>
+            <div class="cardf">
+                <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
+                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " aria-current="page" id="amenu">Main </a>
+                    <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu1">Team Members</a>
+                    <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu2">About Company </a>
+                    <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu3"> Award & Certification</a>
+                    <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu4">News and Events</a>
+                    <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu5">Canada Inspire</a>
+                    <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu6">Feedback </a>
 
-            </nav>
-        </div>
+                </nav>
+            </div>
 
-        <div class="progress mt-1">
-            <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#004e75 !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
+            <div class="progress mt-1">
+                <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#004e75 !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
 
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
+
         <h1>Chartered Accountant Enrollment</h1>
         <h6>Chartered Accountant to provide correct information. This will allow us to incorporate on our Portal databank for the International companies to access, explore and know more about the Consulting services and specialization.</h6>
         <h6></h6>
