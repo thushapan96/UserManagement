@@ -61,6 +61,7 @@
                         <img class="rounded-circle mt-5 img" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
                         @endif
                     </div>
+                    @if(!$view)
                     <form method="post" id="upload_form" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="input--file ">
@@ -74,7 +75,7 @@
                             <input id="profile_img" name="profile_img" type="file" />
                         </div>
                     </form>
-
+                    @endif
                     <br>
                     <span class="font-weight-bold  align-items-center  ">{{$consultants->first_name}}</span><br>
                     <span class="font-weight-bold  text-left">{{$consultants->email}}</span><br>

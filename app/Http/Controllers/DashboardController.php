@@ -38,6 +38,7 @@ class DashboardController extends Controller
         $consultants = Consultant::find($id);
         $user_id =  $consultants->user_id;
         $img = User::where('id', $user_id)->value('img');
+       
         $teams = Team::where('provider_id', $consultants->id)->get();
 
         return view('providerProfile.consultantProfile')->with('consultants', $consultants)->with('teams', $teams)->with('view', 'view')->with('img', $img);
