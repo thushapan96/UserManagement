@@ -12,9 +12,6 @@
         width: 300px;
 
     }
-
-
-
     .input--file {
         position: relative;
         color: #7f7f7f;
