@@ -64,13 +64,12 @@
         /* background-color: #f7b42c !important;
         background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
         border-radius: 25px;
-     ;
-        border-bottom: 5px solid #bf0010 !important;
-        color: #bf0010 !important;
+        border-bottom: 5px solid #004e75 !important;
+        color: #004e75 !important;
     }
 
     .nav-link {
-        color: #bf0010 !important;
+        color: #004e75  !important;
 
     }
 
@@ -101,6 +100,7 @@
         border-top: 1px solid #bf0010 !important;
         border-bottom: 5px solid #bf0010 !important;
         border-radius: 50px;
+        padding: 1px !important;
     }
 
     button {

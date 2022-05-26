@@ -3,7 +3,6 @@
 @section('content')
 
 <style>
-
     .whiteBox:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         border-radius: 25px;
@@ -30,30 +29,30 @@
         )
     </script>
     @endif
+    <div class="container">
+        <div class="whiteBoxtab " style="width: 100% !important;max-width: 1500px !important; left:0  !important">
 
-    <div class="whiteBoxtab " style="width: 1400px !important;max-width: 1500px !important; left:0  !important">
+            <div class="cardf">
+                <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
+                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " aria-current="page" id="amenu">Main Content</a>
+                    <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu1">Courses</a>
+                    <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu2">About Company </a>
+                    <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu3"> Award & Certification</a>
+                    <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu4">News and Events</a>
+                    <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu5">Canada Inspire</a>
+                    <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 " id="amenu6">Feedback</a>
 
-        <div class="cardf">
-            <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " aria-current="page" id="amenu">Main Content</a>
-                <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu1">Courses</a>
-                <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu2">About Company </a>
-                <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu3"> Award & Certification</a>
-                <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu4">News and Events</a>
-                <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu5">Canada Inspire</a>
-                <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:#bf0010 " id="amenu6">Feedback for Canada Inspire</a>
+                </nav>
+            </div>
 
-            </nav>
-        </div>
+            <div class="progress mt-1">
+                <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#004e75 !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
 
-        <div class="progress mt-2">
-            <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:green !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
-
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
+
         <h1> {{request()->query('service')}} Enrollment</h1>
         <h6>{{request()->query('service')}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access , explore and know more about the Courses and other Services.</h6>
         <h6></h6>

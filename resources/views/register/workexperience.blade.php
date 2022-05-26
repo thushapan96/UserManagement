@@ -232,19 +232,21 @@
 
                 success: function(data) {
                     console.log(data)
-                    Swal.fire(
-                        'Success!',
-                        'Successfully submitted Work details!',
-                        'success'
-                    )
-                    $(".progress-bar").css("width", "75%");
-                    $(".progress-bar").html("75%");
-                    $('.tab-pane').fadeOut();
-                    $("#menu3").fadeIn();
-                    $(".nav-link").removeClass('active')
-                    $('#amenu3').addClass('active')
-                    $('#submit3').hide();
-                    
+                    if (data.success) {
+                        Swal.fire(
+                            'Success!',
+                            'Successfully submitted Work details!',
+                            'success'
+                        )
+                        $(".progress-bar").css("width", "75%");
+                        $(".progress-bar").html("75%");
+                        $('.tab-pane').fadeOut();
+                        $("#menu3").fadeIn();
+                        $(".nav-link").removeClass('active')
+                        $('#amenu3').addClass('active')
+                        $('#submit3').hide();
+
+                    }
                 }
             });
 

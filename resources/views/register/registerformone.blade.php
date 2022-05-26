@@ -41,7 +41,7 @@
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="">
                     <label>
-                        Certified By 
+                        Certified By
                     </label>
                     <input type="text" class="form-control" name="language_certified_by">
                 </div>
@@ -49,7 +49,7 @@
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="">
                     <label>
-                       Attachment
+                        Attachment
                     </label>
                     <input type="file" class="form-control" name="language_attachment">
                 </div>
@@ -143,7 +143,6 @@
 
 
 
-<div id="map" style=" height: 500px; width:100%"> </div>
 
 
 
@@ -157,66 +156,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
-    //.......................current location......................
 
-    $(document).ready(function() {
-
-        "use strict";
-        $('#map').hide();
-
-        initMap();
-
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById("map"), {
-                center: {
-                    lat: -33.8688,
-                    lng: 151.2195,
-                },
-                zoom: 13,
-            });
-            const card = document.getElementById("pac-card");
-            console.log(card);
-            const input1 = $('#pac-input1')[0];
-            const input2 = $('#pac-input2')[0];
-
-
-            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-            const autocomplete1 = new google.maps.places.Autocomplete(
-                input1); // Bind the map's bounds (viewport) property to the autocomplete object,
-            const autocomplete2 = new google.maps.places.Autocomplete(input2);
-
-            autocomplete1.bindTo("bounds", map); // Set the data fields to return when the user selects a place.
-            autocomplete2.bindTo("bounds", map);
-
-            autocomplete1.setFields([
-                "address_components",
-                "geometry",
-                "icon",
-                "name",
-            ]);
-            autocomplete2.setFields([
-                "address_components",
-                "geometry",
-                "icon",
-                "name",
-            ]);
-            const infowindow = new google.maps.InfoWindow();
-            const infowindowContent = document.getElementById("infowindow-content");
-            infowindow.setContent(infowindowContent);
-            const marker = new google.maps.Marker({
-                map,
-                anchorPoint: new google.maps.Point(0, -29),
-            });
-
-        }
-
-
-    });
-</script>
-
-
-<!-- ...................end...script for google map view.................... -->
 
 <script>
     $(document).ready(function() {
@@ -227,7 +167,7 @@
             var html = '';
 
             html = `<div  id="addschoolform"> 
-<div class="col-lg-12 col-md-12 col-12 container addschool mt-4" >
+                <div class="col-lg-12 col-md-12 col-12 container addschool mt-4" >
                 <div class="whiteBox clearfix">
                     <div class="row custom-box">
 
@@ -421,7 +361,7 @@
             var html = '';
 
             html = `<div  id="addpgform">  <div class="container addpg mt-4">
-<div class="whiteBox clearfix">
+           <div class="whiteBox clearfix">
                     <div class="row custom-box">
 
                         <div class="col-lg-4 col-md-4 col-12">
@@ -514,7 +454,7 @@
             var html = '';
 
             html = `
-        <div  id="addpgform">
+            <div  id="addpgform">
             <div class="container addother mt-4">
                 <div class="whiteBox clearfix">
                     <div class="row custom-box">
@@ -637,7 +577,9 @@
                     console.log(data);
                     if (data.errors) {
                         console.log("hiiiiii");
+                        $('.alert-danger').show();
                         $('.alert-danger').html('');
+
                         jQuery.each(data.errors, function(key, value) {
                             console.log(value);
                             jQuery('.alert-danger').show();
@@ -650,6 +592,7 @@
                     }
                     if (data.success) {
                         $('.alert-danger').html('');
+                        $('.alert-danger').hide();
                         jQuery('.alert-danger').hide();
                         Swal.fire(
                             'Success!',

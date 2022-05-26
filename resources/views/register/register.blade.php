@@ -2,8 +2,6 @@
 
 @section('content')
 <style>
-    
-
     label {
         text-transform: capitalize;
     }
@@ -11,6 +9,7 @@
     a {
         text-transform: capitalize;
     }
+
     .whiteBox:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         border-radius: 25px;
@@ -40,15 +39,15 @@
 
             <div class="cardf">
                 <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 5rem;color:#bf0010 !important" aria-current="page" id="amenu">personal</a>
-                    <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 5rem;color:#bf0010  !important" id="amenu1">academy</a>
-                    <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 5rem;color:#bf0010  !important" id="amenu2">work</a>
-                    <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 5rem;color:#bf0010  !important" id="amenu3">sponsor</a>
+                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 5rem;color:#004e75  !important" aria-current="page" id="amenu">personal</a>
+                    <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 5rem;color:#004e75  !important" id="amenu1">academy</a>
+                    <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 5rem;color:#004e75  !important" id="amenu2">work</a>
+                    <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 5rem;color:#004e75  !important" id="amenu3">sponsor</a>
                 </nav>
             </div>
 
-            <div class="progress mt-2">
-                <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:green !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
+            <div class="progress mt-1">
+                <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#004e75 !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
 
                 </div>
             </div>
@@ -58,7 +57,7 @@
         <div class="">
             <div id="menu" class="tab-pane  ">
                 <h1>Candidate Registration - Personal Info</h1>
-                <form id="personal_form" action="{{route('candidate_personal_add')}}" method="POST" >
+                <form id="personal_form" action="{{route('candidate_personal_add')}}" method="POST">
                     @csrf
                     <div class="whiteBox clearfix" style="background-color:D80621;">
                         <!--div class="news-title">You have questions, let's have a conversation </div-->
@@ -605,7 +604,7 @@
                         console.log(data);
                         if (data.errors) {
                             console.log("hiiiiii");
-                            $('.alert-danger').html('');
+                            jQuery('.alert-danger').html('');
                             jQuery.each(data.errors, function(key, value) {
                                 console.log(value);
                                 jQuery('.alert-danger').show();
@@ -618,7 +617,7 @@
                         }
                         if (data.success) {
                             console.log("byeeeeeeeeee");
-                            $('.alert-danger').html('');
+                            jQuery('.alert-danger').html('');
                             jQuery('.alert-danger').hide();
                             Swal.fire(
                                 'Success!',

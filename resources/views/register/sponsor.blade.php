@@ -355,6 +355,7 @@
                     console.log(data);
                     if (data.errors) {
                         console.log("hiiiiii");
+                        $('.alert-danger').show();
                         $('.alert-danger').html('');
                         jQuery.each(data.errors, function(key, value) {
                             console.log(value);
@@ -367,6 +368,7 @@
                     }
                     if (data.success) {
                         $('.alert-danger').html('');
+                        $('.alert-danger').hide();
                         jQuery('.alert-danger').hide();
                         $(".progress-bar").css("width", "100%");
                         Swal.fire(

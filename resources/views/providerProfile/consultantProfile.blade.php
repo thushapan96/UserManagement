@@ -96,11 +96,11 @@
                 <div class="">
                     <div class="cardf">
                         <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important ">
-                            <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1.5rem;color:red !important" aria-current="page" id="amenu">Main Content</a>
-                            <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1.5rem;color:red !important" id="amenu1">Team list</a>
-                            <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1.5rem;color:red !important" id="amenu2">About Company </a>
-                            <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1.5rem;color:red !important" id="amenu3"> Award & Certification</a>
-                            <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1.5rem;color:red !important" id="amenu4">News and Events</a>
+                            <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important" aria-current="page" id="amenu">Main Content</a>
+                            <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important" id="amenu1">Team list</a>
+                            <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important" id="amenu2">About Company </a>
+                            <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
+                            <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important" id="amenu4">News and Events</a>
 
                         </nav>
                     </div>
