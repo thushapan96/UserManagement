@@ -344,7 +344,7 @@
                         <div class="form-group">
 
                             <label>Your Team of Expert</label>
-                            <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization">{{$consultants->team_info}}</textarea>
+                            <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization" name="team_info">{{$consultants->team_info}}</textarea>
                         </div>
                         <div class="form-group">
                             <div id="newRow">

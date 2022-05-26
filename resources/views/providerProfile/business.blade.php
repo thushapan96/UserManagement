@@ -74,7 +74,7 @@
                         </div>
                     </form><br>
                     <span class="font-weight-bold  align-items-center  ">{{$consultants->first_name}}</span><br>
-                    <span class="font-weight-bold  text-left">{{$consultants->email}}</span><br>
+                    <span class="font-weight-bold  text-left" >{{$consultants->email}}</span><br>
                     <span class="font-weight-bold text-left">{{$consultants->fb_link}}</span><br>
                     <span class="font-weight-bold">{{$consultants->Linkedin_link}}</span><br>
                     <span class="font-weight-bold">{{$consultants->insta_link}}</span><br>
@@ -252,7 +252,7 @@
 
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <div class="card col-6">
+                    <div class="card col-5">
                         <br><br>
 
                         <div class="row custom-box">
@@ -360,7 +360,7 @@
 
                 </div>
                 
-                <div class=" tab-pane  col-md-11" id="menu1">
+                <div class=" tab-pane  col-md-10" id="menu1">
 
                     <div class="form-group">
                         <strong class="labels">Team details</strong>

@@ -56,6 +56,9 @@
 
         border-color: #bf0010 !important;
         border-bottom: 5px solid #bf0010 !important;
+        overflow: auto;
+
+
     }
 
     .nav-pills .nav-link.active,
@@ -70,11 +73,17 @@
     }
 
     .nav-link {
-        color: #004e75  !important;
+        color: #004e75 !important;
 
     }
 
 
+    .card::-webkit-scrollbar {
+        display: none;
+    }
+    .whiteBox::-webkit-scrollbar {
+        display: none;
+    }
 
     .whiteBox:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -92,6 +101,8 @@
         border-right: 1px solid #bf0010 !important;
         border-top: 1px solid #bf0010 !important;
         border-bottom: 5px solid #bf0010 !important;
+        overflow: auto;
+
     }
 
     .whiteBoxtab {

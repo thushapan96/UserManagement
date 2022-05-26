@@ -252,7 +252,7 @@
 
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <div class="card col-6">
+                    <div class="card col-5">
                         <br><br>
                         <div class="row custom-box">
                             <div class="col-md-5">
@@ -485,7 +485,7 @@
 
                 </div>
 
-                <div class=" tab-pane  col-md-11" id="menu1">
+                <div class=" tab-pane  col-md-10" id="menu1">
 
                     <div class="form-group">
                         <strong class="labels">Team details</strong>
