@@ -236,7 +236,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <label class="labels">{{$consultants->website_address}}</label><br>
+                                <label class="labels" style="overflow:auto;">{{$consultants->website_address}}</label><br>
                             </div>
                         </div><br>
 
