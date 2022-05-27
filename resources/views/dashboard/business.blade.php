@@ -63,10 +63,11 @@
     .card {
         display: block;
         width: 300px;
+        height: 200px;
         margin-bottom: 20px;
         line-height: 1.42857143;
         border-radius: 5px;
-      
+
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
         transition: box-shadow .25s;
     }
@@ -94,7 +95,7 @@
     .card-content {
         padding: 15px;
         text-align: left;
-
+        height: 150px;
     }
 
     .card-title {
@@ -116,7 +117,7 @@
     }
 
     .card-read-more {
-        border-top: 1px solid #D4D4D4;
+        border-top: 2px solid #D4D4D4;
     }
 
     .card-read-more a {
@@ -132,15 +133,13 @@
 
             <div class="content">
                 <div class="container">
+                    @if($consultants)
+                    @if($consultants->count() >= 3 )
                     <div class="row">
-
-
-
-                        @if($consultants)
                         @foreach($consultants as $row)
 
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="card">
+                        <div class="col-sm-4">
+                            <div class="card" style="overflow:hidden">
 
                                 <div class="card-content">
                                     <h4 class="card-title">
@@ -148,24 +147,60 @@
                                         </a>
                                     </h4>
 
-                                    <p class="card-text ">{{$row->first_name}}</p>
+                                    <p class="card-text ">{{$row->company_name}}</p>
 
-                                    <p class="card-text ">{{$row->brief_introduction}}</p>
+
+                                    <p class="card-text ">
+                                        @foreach($row->offering_service as $service)
+                                        {{$service}},
+                                        @endforeach
+                                    </p>
                                 </div>
                                 <div class="card-read-more">
-                                    <a href="{{route('dashboard.business.view',['id' => $row->id])}}" class="btn btn-link btn-block">
-                                        <p> view More</p>
+                                    <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
+                                        <p> View More</p>
                                     </a>
                                 </div>
                             </div>
                         </div>
 
                         @endforeach
-                        @endif
-
-
-
                     </div>
+                    @else
+                    <div class="row">
+                        @foreach($consultants as $row)
+
+                        <div class="col-6">
+                            <div class="card" style="overflow:hidden">
+
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html">{{$row->type}}
+                                        </a>
+                                    </h4>
+
+                                    <p class="card-text ">{{$row->company_name}}</p>
+
+                                    <p class="card-text ">
+                                        @if($row->offering_service)
+                                        @foreach($row->offering_service as $service)
+                                        {{$service}},
+                                        @endforeach
+                                        @endif
+                                    </p>
+                                </div>
+                                <div class="card-read-more">
+                                    <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
+                                        <p> View More</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        @endforeach
+                    </div>
+                    @endif
+                    @endif
 
                 </div>
             </div>

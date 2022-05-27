@@ -13,14 +13,26 @@
 
     }
 
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 2px 2px;
+        cursor: pointer;
+    }
+    .custom-file-upload input[type="file"] {
+        display: none;
+    }
 
     .input--file {
+        display: inline-block;
         position: relative;
         color: #7f7f7f;
         cursor: pointer;
     }
 
+  
     .input--file input[type="file"] {
+
         position: absolute;
         top: 0;
         left: 0;
@@ -53,6 +65,7 @@
         <div class="row">
             <div class="col-md-3 border-left" style="  left: 80px;">
                 <div class="d-flex flex-column align-items-left text-left p-3 py-5">
+
                     <div class="uploadimg">
                         @if($img)
                         <img class="rounded-circle mt-2 img" width="180px" src="{{url('files/'.$img)}}">
@@ -61,22 +74,21 @@
                         @endif
                     </div>
                     @if(!$view)
+
                     <form method="post" id="upload_form" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <div class="input--file ">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="3.2" />
-                                    <path d="M9 2l-1.83 2h-3.17c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2h-3.17l-1.83-2h-6zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />
-                                    <path d="M0 0h24v24h-24z" fill="none" />
-                                </svg>
-                            </span>
-                            <input id="profile_img" name="profile_img" type="file" />
-                        </div>
+                     
+
+                            <label class="custom-file-upload">
+                                <input id="profile_img" name="profile_img" type="file" />
+                                <i class="fa fa-camera" style="font-size:36px;color:#004e75"> </i>
+                            </label>
+
+                      
                     </form><br>
                     @endif
                     <span class="font-weight-bold  align-items-center  ">{{$consultants->first_name}}</span><br>
-                    <span class="font-weight-bold  text-left" >{{$consultants->email}}</span><br>
+                    <span class="font-weight-bold  text-left">{{$consultants->email}}</span><br>
                     <span class="font-weight-bold text-left">{{$consultants->fb_link}}</span><br>
                     <span class="font-weight-bold">{{$consultants->Linkedin_link}}</span><br>
                     <span class="font-weight-bold">{{$consultants->insta_link}}</span><br>
@@ -238,7 +250,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <label class="labels" >{{$consultants->website_address}}</label><br>
+                                <label class="labels">{{$consultants->website_address}}</label><br>
                             </div>
                         </div><br>
 
@@ -361,7 +373,7 @@
                     </div>
 
                 </div>
-                
+
                 <div class=" tab-pane  col-md-10" id="menu1">
 
                     <div class="form-group">
@@ -443,7 +455,7 @@
                     </div>
 
                 </div>
-              
+
 
                 <div class="card tab-pane  col-md-10" id="menu2" style="width:80% !important;">
                     <div class="">

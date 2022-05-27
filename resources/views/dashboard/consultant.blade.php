@@ -63,6 +63,7 @@
     .card {
         display: block;
         width: 300px;
+        height: 200px;
         margin-bottom: 20px;
         line-height: 1.42857143;
         border-radius: 5px;
@@ -94,7 +95,7 @@
     .card-content {
         padding: 15px;
         text-align: left;
-
+        height: 150px;
     }
 
     .card-title {
@@ -116,7 +117,7 @@
     }
 
     .card-read-more {
-        border-top: 1px solid #D4D4D4;
+        border-top: 2px solid #D4D4D4;
     }
 
     .card-read-more a {
@@ -138,7 +139,7 @@
                         @foreach($consultants as $row)
 
                         <div class="col-sm-4">
-                            <div class="card">
+                            <div class="card" style="overflow:hidden">
 
                                 <div class="card-content">
                                     <h4 class="card-title">
@@ -146,9 +147,14 @@
                                         </a>
                                     </h4>
 
-                                    <p class="card-text ">{{$row->first_name}}</p>
+                                    <p class="card-text ">{{$row->company_name}}</p>
 
-                                    <p class="card-text ">{{$row->brief_introduction}}</p>
+
+                                    <p class="card-text ">
+                                        @foreach($row->offering_service as $service)
+                                        {{$service}},
+                                        @endforeach
+                                    </p>
                                 </div>
                                 <div class="card-read-more">
                                     <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
@@ -165,7 +171,7 @@
                         @foreach($consultants as $row)
 
                         <div class="col-6">
-                            <div class="card">
+                            <div class="card" style="overflow:hidden">
 
                                 <div class="card-content">
                                     <h4 class="card-title">
@@ -173,9 +179,15 @@
                                         </a>
                                     </h4>
 
-                                    <p class="card-text ">{{$row->first_name}}</p>
+                                    <p class="card-text ">{{$row->company_name}}</p>
 
-                                    <p class="card-text ">{{$row->brief_introduction}}</p>
+                                    <p class="card-text ">
+                                        @if($row->offering_service)
+                                        @foreach($row->offering_service as $service)
+                                        {{$service}},
+                                        @endforeach
+                                        @endif
+                                    </p>
                                 </div>
                                 <div class="card-read-more">
                                     <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">

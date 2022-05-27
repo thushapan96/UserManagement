@@ -12,6 +12,7 @@
         width: 300px;
 
     }
+
     .input--file {
         position: relative;
         color: #7f7f7f;
@@ -24,6 +25,17 @@
         left: 0;
         opacity: 0;
         cursor: pointer;
+    }
+
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 2px 2px;
+        cursor: pointer;
+    }
+
+    .custom-file-upload input[type="file"] {
+        display: none;
     }
 </style>
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
@@ -61,16 +73,10 @@
                     @if(!$view)
                     <form method="post" id="upload_form" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <div class="input--file ">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="3.2" />
-                                    <path d="M9 2l-1.83 2h-3.17c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2h-3.17l-1.83-2h-6zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />
-                                    <path d="M0 0h24v24h-24z" fill="none" />
-                                </svg>
-                            </span>
+                        <label class="custom-file-upload">
                             <input id="profile_img" name="profile_img" type="file" />
-                        </div>
+                            <i class="fa fa-camera" style="font-size:36px;color:#004e75"> </i>
+                        </label>
                     </form>
                     @endif
                     <br>
@@ -236,7 +242,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <label class="labels" >{{$consultants->website_address}}</label><br>
+                                <label class="labels">{{$consultants->website_address}}</label><br>
                             </div>
                         </div><br>
 
@@ -564,7 +570,7 @@
                     </div>
 
                 </div>
-              
+
 
                 <div class="card tab-pane  col-md-10" id="menu2" style="width:80% !important;">
                     <div class="">
