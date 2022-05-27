@@ -22,7 +22,7 @@ class ProfileController extends Controller
         $Academy =  Academy::where('user_id', $id)->first();
         $Sponsor =  Sponsor::where('user_id', $id)->first();
         $Work =  Work::where('user_id', $id)->get();
-
+        $image = Auth::user()->img;
         $qualification = DB::table('candidate_academics')
             ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
             ->where('candidate_academics.user_id', $id)
@@ -33,6 +33,7 @@ class ProfileController extends Controller
             ->with('Academy', $Academy)
             ->with('Sponsor', $Sponsor)
             ->with('Work', $Work)
+            ->with('image', $image)
             ->with('userId', $id)
             ->with('qualification', $qualification);
     }

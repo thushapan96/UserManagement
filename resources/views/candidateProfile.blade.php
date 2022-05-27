@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-4 border-left" style=" left: 150px;">
                 <div class="d-flex flex-column align-items-left text-left p-3 py-5">
-                    @if($img)
+                    @if($image)
                     <img class="rounded-circle mt-2 img" width="180px" src="{{url('files/'.$img)}}">
                     @else
                     <img class="rounded-circle mt-5 img" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
