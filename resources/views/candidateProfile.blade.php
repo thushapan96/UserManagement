@@ -13,6 +13,7 @@
         display: none;
     }
 </style>
+
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
 
 
@@ -25,6 +26,7 @@
                     @else
                     <img class="rounded-circle mt-5 img" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
                     @endif
+                    <div class="spinner-border"></div>
                     <form method="post" id="upload_form" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
@@ -49,10 +51,10 @@
                     <div class="">
                         <div class="cardf">
                             <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important">
-                                <a class="nav-link active" style="cursor:pointer;padding: 1.15rem 3rem;color:#004e75 !important" aria-current="page" id="amenu">personal</a>
-                                <a class="nav-link " style="cursor:pointer;padding: 1.15rem 3rem;color:#004e75 !important" id="amenu1">academy</a>
-                                <a class="nav-link" style="cursor:pointer;padding: 1.15rem 3rem;;color:#004e75 !important" id="amenu2">work</a>
-                                <a class="nav-link " style="cursor:pointer;padding: 1.15rem 3rem;;color:#004e75 !important" id="amenu3">sponsor</a>
+                                <a class="nav-link active" style="cursor:pointer;padding: .5rem 3rem;color:#004e75 !important" aria-current="page" id="amenu">personal</a>
+                                <a class="nav-link " style="cursor:pointer;padding: .5rem 3rem;color:#004e75 !important" id="amenu1">academy</a>
+                                <a class="nav-link" style="cursor:pointer;padding: .5rem 3rem;;color:#004e75 !important" id="amenu2">work</a>
+                                <a class="nav-link " style="cursor:pointer;padding: .5rem 3rem;;color:#004e75 !important" id="amenu3">sponsor</a>
                             </nav>
                         </div>
                     </div>
@@ -614,6 +616,7 @@
 
 <script>
     $(document).ready(function() {
+
         $('.tab-pane').fadeOut();
         $("#menu").fadeIn();
         $("#amenu").click(function() {

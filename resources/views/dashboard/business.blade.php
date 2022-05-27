@@ -159,7 +159,7 @@
                                     </p>
                                 </div>
                                 <div class="card-read-more">
-                                    <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
+                                    <a href="{{route('dashboard.business.view',['id' => $row->id])}}" class="btn btn-link btn-block">
                                         <p> View More</p>
                                     </a>
                                 </div>
@@ -192,7 +192,7 @@
                                     </p>
                                 </div>
                                 <div class="card-read-more">
-                                    <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
+                                    <a href="{{route('dashboard.business.view',['id' => $row->id])}}" class="btn btn-link btn-block">
                                         <p> View More</p>
                                     </a>
                                 </div>

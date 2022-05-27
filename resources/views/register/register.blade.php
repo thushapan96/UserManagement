@@ -12,7 +12,7 @@
 
     .whiteBox:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 25px;
+       
     }
 </style>
 
@@ -35,14 +35,14 @@
     <div class="container ">
         <div class="alert alert-danger" style="display:none"></div>
         <br>
-        <div class="whiteBoxtab ">
+        <div class=" ">
 
             <div class="cardf">
                 <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 5rem;color:#004e75  !important" aria-current="page" id="amenu">personal</a>
-                    <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 5rem;color:#004e75  !important" id="amenu1">academy</a>
-                    <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 5rem;color:#004e75  !important" id="amenu2">work</a>
-                    <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 5rem;color:#004e75  !important" id="amenu3">sponsor</a>
+                    <a class="nav-link active amenu" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" aria-current="page" id="amenu">personal</a>
+                    <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" id="amenu1">academy</a>
+                    <a class="nav-link amenu3" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" id="amenu2">work</a>
+                    <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" id="amenu3">sponsor</a>
                 </nav>
             </div>
 

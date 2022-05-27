@@ -5,17 +5,17 @@
 <!-- Subscribe & Stay Connected. Start -->
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
     <div class="container">
-        <div class="whiteBoxtab " style="width:100% !important;max-width: 1500px !important; left:0  !important">
+        <div class=" " style="width:100% !important;max-width: 1500px !important; left:0  !important">
 
             <div class="cardf">
                 <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                    <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" aria-current="page" id="amenu">Main </a>
-                    <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu1">Team Members</a>
-                    <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu2">About Company </a>
-                    <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
-                    <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu4">News and Events</a>
-                    <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu5">Canada Inspire</a>
-                    <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:#004e75 !important" id="amenu6">Feedback </a>
+                    <a class="nav-link active amenu" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" aria-current="page" id="amenu">Main </a>
+                    <a class="nav-link amenu1" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu1">Team Members</a>
+                    <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu2">About Company </a>
+                    <a class="nav-link amenu3" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
+                    <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu4">News and Events</a>
+                    <a class="nav-link amenu5" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu5">Canada Inspire</a>
+                    <a class="nav-link amenu6" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu6">Feedback </a>
 
                 </nav>
             </div>

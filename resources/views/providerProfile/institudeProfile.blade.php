@@ -89,13 +89,13 @@
                 <div class="">
                     <div class="cardf">
                         <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important">
-                            <a class="nav-link active amenu" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important;" aria-current="page" id="amenu">Main Content</a>
-                            <a class="nav-link amenu1" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important" id="amenu1">Courses</a>
-                            <a class="nav-link amenu2" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important" id="amenu2">About Company </a>
-                            <a class="nav-link amenu3" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
-                            <a class="nav-link amenu4" style="cursor:pointer;padding: 1.15rem 1.5rem;color:#004e75 !important" id="amenu4">News and Events</a>
-                            <!-- <a class="nav-link amenu5" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu5">Canada Inspire</a>
-                            <a class="nav-link amenu6" style="cursor:pointer;padding: 1.15rem 1rem;color:blue !important" id="amenu6">Feedback </a> -->
+                            <a class="nav-link active amenu" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important;" aria-current="page" id="amenu">Main Content</a>
+                            <a class="nav-link amenu1" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important" id="amenu1">Courses</a>
+                            <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important" id="amenu2">About Company </a>
+                            <a class="nav-link amenu3" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
+                            <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important" id="amenu4">News and Events</a>
+                            <!-- <a class="nav-link amenu5" style="cursor:pointer;padding: 0.5rem 1rem;color:blue !important" id="amenu5">Canada Inspire</a>
+                            <a class="nav-link amenu6" style="cursor:pointer;padding: 0.5rem 1rem;color:blue !important" id="amenu6">Feedback </a> -->
 
                         </nav>
                     </div>
