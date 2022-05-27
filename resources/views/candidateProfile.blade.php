@@ -1,7 +1,18 @@
 @extends('layouts.layout')
 
 @section('content')
+<style>
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 2px 2px;
+        cursor: pointer;
+    }
 
+    .custom-file-upload input[type="file"] {
+        display: none;
+    }
+</style>
 <section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
 
 
@@ -9,7 +20,22 @@
         <div class="row">
             <div class="col-md-4 border-left" style=" left: 150px;">
                 <div class="d-flex flex-column align-items-left text-left p-3 py-5">
-                    <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
+                    @if($img)
+                    <img class="rounded-circle mt-2 img" width="180px" src="{{url('files/'.$img)}}">
+                    @else
+                    <img class="rounded-circle mt-5 img" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
+                    @endif
+                    <form method="post" id="upload_form" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+
+
+                        <label class="custom-file-upload">
+                            <input id="profile_img" name="profile_img" type="file" />
+                            <i class="fa fa-camera" style="font-size:36px;color:#004e75"> </i>
+                        </label>
+
+
+                    </form><br>
                     <span class="font-weight-bold  align-items-center  ">{{$personal->first_name}}</span><br>
                     <span class="font-weight-bold  text-left">{{$personal->email}}</span><br>
                     <span class="font-weight-bold text-left">{{$personal->fb_link}}</span><br>
@@ -42,7 +68,7 @@
                             <br><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels"> Name  </strong>
+                                    <strong class="labels"> Name </strong>
                                 </div>
                                 <div class="col-md-1">
                                     <strong class="labels"> :</strong>
@@ -56,7 +82,7 @@
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">  Residential Address  </strong>
+                                    <strong class="labels"> Residential Address </strong>
                                 </div>
                                 <div class="col-md-1">
                                     <strong class="labels"> :</strong>
@@ -85,7 +111,7 @@
                             <br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">  corosponding Address </strong>
+                                    <strong class="labels"> corosponding Address </strong>
                                 </div>
                                 <div class="col-md-1">
                                     <strong class="labels"> :</strong>
@@ -422,7 +448,7 @@
                                 <div class="col-md-1">
                                     <strong class="labels"> :</strong>
                                 </div>
-                                
+
                                 <div class="col-md-7">
                                     <label class="labels">{{$Sponsor->fisrt_name}}&nbsp;&nbsp;{{$Sponsor->middle_name}}&nbsp;&nbsp;{{$Sponsor->last_name}}</label><br>
                                 </div>
@@ -440,7 +466,7 @@
                             </div><br>
                             <div class="row ">
                                 <div class="col-md-4">
-                                    <strong class="labels">Relationship with Child  </strong>
+                                    <strong class="labels">Relationship with Child </strong>
                                 </div>
                                 <div class="col-md-1">
                                     <strong class="labels"> :</strong>
@@ -613,6 +639,36 @@
             $("#menu3").fadeIn();
             $(".nav-link.active").removeClass('active')
             $(this).addClass('active')
+        });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('#profile_img').change(function() {
+
+
+            console.log('first')
+            var formData = new FormData($('#upload_form')[0]);
+            console.log("second")
+
+            event.preventDefault();
+            $.ajax({
+                url: "{{ route('ajaxupload.action') }}",
+                method: "POST",
+                data: formData,
+
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data) {
+                    console.log(data);
+                    location.reload()
+
+                },
+
+            });
+
         });
     });
 </script>
