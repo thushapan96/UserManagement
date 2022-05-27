@@ -12,8 +12,16 @@
 
     .whiteBox:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-       
+
     }
+    .progress {
+    background-color: #bf0010 !important;
+    margin-left: 5% !important;
+    margin-right: 40px !important;
+    max-height: 12px;
+    text-align: center;
+    width: 90%;
+}
 </style>
 
 <link rel="stylesheet" href="css/countrySelect.css">
@@ -35,7 +43,8 @@
     <div class="container ">
         <div class="alert alert-danger" style="display:none"></div>
         <br>
-        <div class=" ">
+        <div class=" " style="width: 100% !important;max-width: 1500px !important; left:0  !important">
+
 
             <div class="cardf">
                 <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
@@ -45,21 +54,26 @@
                     <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" id="amenu3">sponsor</a>
                 </nav>
             </div>
+        </div>
 
+
+
+
+        <div class="">
             <div class="progress mt-1">
                 <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#004e75 !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
 
                 </div>
             </div>
-        </div>
-        <br> <br>
-
-        <div class="">
+            <br>
+            
             <div id="menu" class="tab-pane  ">
-                <h1>Candidate Registration - Personal Info</h1>
                 <form id="personal_form" action="{{route('candidate_personal_add')}}" method="POST">
                     @csrf
+                    <h1>Candidate Registration - Personal Info</h1>
+
                     <div class="whiteBox clearfix" style="background-color:D80621;">
+
                         <!--div class="news-title">You have questions, let's have a conversation </div-->
                         <div class="row custom-box">
 

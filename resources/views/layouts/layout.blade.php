@@ -20,11 +20,16 @@
 <style>
     .progress {
         background-color: #bf0010 !important;
-        margin-left: 40px !important;
+        margin-left: 0px !important;
         margin-right: 40px !important;
         max-height: 12px;
         text-align: center;
+        width: 100%;
 
+    }
+
+    .StayConnected h1 {
+        margin-bottom: 20px;
     }
 
     label {
@@ -57,7 +62,7 @@
         border-bottom: 5px solid #bf0010 !important;
         overflow: auto;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        
+
 
 
     }
@@ -68,7 +73,7 @@
         /* background-color: #007bff !important; */
         /* background-color: #f7b42c !important;
         background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
-       
+
         border-bottom: 5px solid #004e75 !important;
         color: #004e75 !important;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -84,6 +89,7 @@
     .card::-webkit-scrollbar {
         display: none;
     }
+
     .whiteBox::-webkit-scrollbar {
         display: none;
     }

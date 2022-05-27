@@ -56,7 +56,7 @@
         <br>
         <h1> {{request()->query('service')}} Enrollment</h1>
         <h6>{{request()->query('service')}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access , explore and know more about the Courses and other Services.</h6>
-        <h6></h6>
+       
         <br>
         <form id="form" action="{{route('add.institution')}}" method="post" enctype="multipart/form-data">
             @csrf
