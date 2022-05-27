@@ -151,9 +151,11 @@
 
 
                                     <p class="card-text ">
+                                        @if($row->offering_service)
                                         @foreach($row->offering_service as $service)
                                         {{$service}},
                                         @endforeach
+                                        @endif
                                     </p>
                                 </div>
                                 <div class="card-read-more">
