@@ -464,6 +464,7 @@
                         <div class="form-group">
                             <div id="newRow">
                                 <div class="form-group">
+                                    @if($teams)
                                     @foreach($teams as $row )
                                     <div id="inputFormRow">
                                         <div class="row">
@@ -512,6 +513,7 @@
                                         <hr>
                                     </div>
                                     @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>

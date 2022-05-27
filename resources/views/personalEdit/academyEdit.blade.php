@@ -117,6 +117,7 @@
 
                 <hr>
                 <div id="addschoolrow">
+                    @if($qualification)
                     @foreach($qualification as $key => $row)
                     @if($row->type == 'school')
                     <div id="addschoolform">
@@ -205,6 +206,7 @@
                     </div>
                     @endif
                     @endforeach
+                    @endif
                 </div>
                 <div class="col-lg-12 col-md-12 mt-2 col-12">
                     <button type="button" class="add-btn " id="addschoolbtn"><i class="fa-solid fa-plus"></i> Add

@@ -355,7 +355,7 @@
 
                         </div>
                         <div id="newRow">
-
+                            @if($institutions->offer_course)
                             @foreach($institutions->offer_course as $key => $row)
                             <div id="inputFormRow">
                                 <div class="input-group mb-3">
@@ -367,6 +367,7 @@
                             </div>
                             <br>
                             @endforeach
+                            @endif
                         </div>
 
                         <button id="addRow" type="button" class="btn crew-btn" name="">Add Course</button>

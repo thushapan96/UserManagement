@@ -21,6 +21,7 @@
             <div class="whiteBox clearfix">
 
                 <div id="newRow">
+                    @if($work)
                     @foreach($work as $key => $row)
                     <div id="inputFormRow">
 
@@ -111,6 +112,7 @@
 
                     </div>
                     @endforeach
+                    @endif
                 </div>
 
                 <button id="addRow" type="button" class="add-btn"><i class="fa-solid fa-plus"></i>Add WorkPlace </button>
