@@ -168,7 +168,7 @@
                         <label>Postal Code *
                         </label>
                         <br>
-                        <br>
+                       
                         <input class="form-control " type="text" name="postal_code" value="{{$consultants->postal_code}}">
                     </div>
                 </div>
@@ -177,6 +177,7 @@
                     <div class="form-group">
                         <label>Email address for correspondence *
                         </label>
+                        <br>
                         <input class="form-control " type="email" name="email" value="{{$consultants->email}}">
                     </div>
                 </div>
@@ -195,7 +196,7 @@
                         <label>Contact Number *
                         </label>
                         <br>
-                        <br>
+                       
                         <input class="form-control " type="text" name="phone" value="{{$consultants->phone}}">
                     </div>
                 </div>

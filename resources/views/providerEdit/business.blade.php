@@ -159,7 +159,7 @@
                         <label>Postal Code *
                         </label>
                         <br>
-                        <br>
+                       
                         <input class="form-control " type="text" name="postal_code" value="{{$consultants->postal_code}}">
                     </div>
                 </div>
@@ -168,6 +168,7 @@
                     <div class="form-group">
                         <label>Email address for correspondence *
                         </label>
+                        <br>
                         <input class="form-control " type="email" name="email" value="{{$consultants->email}}">
                     </div>
                 </div>
@@ -177,7 +178,7 @@
                         <label>URL - Website Address *
                         </label>
                         <br>
-                        <br>
+                       
                         <input class="form-control " type="text" name="website_address" value="{{$consultants->website_address}}">
                     </div>
                 </div>
@@ -187,7 +188,7 @@
                         <label>Contact Number *
                         </label>
                         <br>
-                        <br>
+                        
                         <input class="form-control " type="text" name="phone" value="{{$consultants->phone}}">
                     </div>
                 </div>
@@ -325,7 +326,7 @@
             </div>
             <hr>
             <div class="float-right">
-                <button type="button" class="client-btn bmenu">Next </button>
+                <button type="button" class="client-btn bmenu btn-primary">Next </button>
             </div>
 
         </div>
@@ -385,7 +386,7 @@
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-12">
                                             <br>
-                                            <button id="removeRow" style="padding:10px 13px;background:#bf0010" type="button" class="btn btn-danger btn-sm">Remove</button>
+                                            <button id="removeRow" style="padding:10px 13px;background:#bf0010 !important" type="button" class="btn btn-danger btn-sm">Remove</button>
                                         </div>
 
                                     </div>

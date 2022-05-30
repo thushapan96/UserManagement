@@ -27,7 +27,7 @@
             </div>
         </div> -->
         </div>
-        <br>
+       
 
         <!-- <h1> {{$institutions->name}} </h1> -->
         <br>
@@ -111,7 +111,7 @@
                             <label>Postal Code *
                             </label>
                             <br>
-                            <br>
+                           
                             <input class="form-control " type="text" name="postal_code" value="{{$institutions->postal_code}}">
                         </div>
                     </div>
@@ -120,6 +120,7 @@
                         <div class="form-group">
                             <label>Email address for correspondence *
                             </label>
+                            <br>
                             <input class="form-control" type="email" name="email" value="{{$institutions->email}}">
                         </div>
                     </div>
@@ -129,7 +130,7 @@
                             <label>URL - Website Address *
                             </label>
                             <br>
-                            <br>
+                          
                             <input class="form-control " type="text" name="website_address" value="{{$institutions->website_address}}">
                         </div>
                     </div>
@@ -138,7 +139,7 @@
                         <div class="form-group">
                             <label>Contact Number *
                             </label>
-                            <br>
+                           
                             <br>
                             <input class="form-control " type="number" name="phone" value="{{$institutions->phone}}">
                         </div>
@@ -340,7 +341,7 @@
 
                 </div>
                 <div class="float-right">
-                    <button type="button" class="client-btn bmenu btn bt-primary">Next </button>
+                    <button type="button" class="client-btn bmenu btn btn-primary">Next </button>
                 </div>
             </div>
 
@@ -360,7 +361,7 @@
                                 <div class="input-group mb-3">
                                     <input type="text" name="offer_course[]" class="form-control m-input addinput" placeholder="Enter courses" autocomplete="off" value="{{$row}}" />
                                     <div class="input-group-append">
-                                        <button id="removeRow" type="button" style="background:#bf0010" class="btn btn-danger btn">Remove</button>
+                                        <button id="removeRow" type="button" style="background:#bf0010 !important" class="btn btn-danger btn">Remove</button>
                                     </div>
                                 </div>
                             </div>
@@ -995,7 +996,7 @@
                 html += '<div class="input-group mb-3">';
                 html += '<input type="text" name="offer_course[]" class="form-control m-input addinput" placeholder="Enter courses" autocomplete="off" value="" />';
                 html += '<div class="input-group-append">';
-                html += '<button id="removeRow" type="button" style="background:#bf0010" class="btn btn-danger">Remove</button>';
+                html += '<button id="removeRow" type="button" style="background:#bf0010 !important" class="btn btn-danger">Remove</button>';
                 html += '</div>';
                 html += '</div>';
 

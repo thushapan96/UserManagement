@@ -201,7 +201,12 @@
         color: #004e75 !important;
     }
 
-   
+    .main-header {
+        border-bottom: 1px solid #dee2e6;
+        z-index: 1034;
+        font-size: 18px;
+        font-weight: 500;
+    }
 </style>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -221,11 +226,11 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-            <ul class="navbar-nav" >
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-               
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('whycanada')}}">Why Canada</a>
                 </li>
