@@ -11,7 +11,6 @@
     }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
-<section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
     <div class="container ">
 
         <h1> Candidate Registation - Sponsor</h1>
@@ -269,13 +268,12 @@
                 </div>
 
                 <div class="float-right">
-                    <button type="submit" class="client-btn">Update</button>
+                    <button type="submit" class="client-btn btn btn-primary">Update</button>
                 </div>
             </div>
 
         </form>
     </div>
-</section>
 <div id="map" style=" height: 500px; width:100%"> </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>

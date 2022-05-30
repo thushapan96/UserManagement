@@ -1,11 +1,88 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<div class="card col-5">
+  <br>
+  <div class="row custom-box">
+    <div class="col-md-6">
+      <strong class="ps">Type of Courses</strong>
+    </div>
 
-    
-      f
-      <body>
-        <div class="jumbotron text-center bg-success">
-          <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-          
-       
+    <div class="col-md-6">
+      <p class="ps">
+        @if($institutions->course_type)
+        @foreach($institutions->course_type as $row)
+        {{$row}},
+        @endforeach
+        @endif
+      </p>
+    </div>
+  </div>
+
+  <div class="row custom-box">
+    <div class="col-md-6">
+      <strong class="ps">Intake</strong>
+    </div>
+
+    <div class="col-md-6">
+      <p class="ps">
+        @if($institutions->intake)
+        @foreach($institutions->intake as $row)
+        {{$row}},
+        @endforeach
+        @endif
+      </p>
+    </div>
+  </div>
+
+  <div class="row custom-box">
+    <div class="col-md-6">
+      <strong class="ps">Admission Type </strong>
+    </div>
+
+    <div class="col-md-6">
+      <p class="ps">{{$institutions->admission_type}}</p>
+    </div>
+  </div>
+
+  <div class="row custom-box">
+    <div class="col-md-6">
+      <strong class="ps">Year of Establishment</strong>
+    </div>
+
+    <div class="col-md-6">
+      <p class="ps">{{$institutions->establishment_year}}</p>
+    </div>
+  </div>
+
+  <div class="row custom-box">
+    <div class="col-md-6">
+      <strong class="ps">Offering Services Since</strong>
+    </div>
+
+    <div class="col-md-6">
+      <p class="ps">{{$institutions->offering_year}}</p>
+    </div>
+  </div>
+  <div class="row custom-box">
+    <div class="col-md-6">
+      <strong class="ps">Response Time</strong>
+    </div>
+
+    <div class="col-md-6">
+      <p class="ps">{{$institutions->response_time}}</p>
+    </div>
+  </div>
+  <div class="row custom-box">
+    <div class="col-md-6">
+      <strong class="ps">Mode of Communication</strong>
+    </div>
+
+    <div class="col-md-6">
+      <p class="ps">
+        @if($institutions->communication_mode)
+        @foreach($institutions->communication_mode as $row)
+        {{$row}},
+        @endforeach
+        @endif
+      </p>
+    </div>
+  </div>
+</div>

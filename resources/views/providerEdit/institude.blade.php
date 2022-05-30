@@ -4,7 +4,6 @@
 
 
 <!-- Subscribe & Stay Connected. Start -->
-<section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
     <div class="container">
 
         <div class=" " style="width:100% !important;max-width: 1500px !important; left:0  !important">
@@ -341,7 +340,7 @@
 
                 </div>
                 <div class="float-right">
-                    <button type="button" class="client-btn bmenu">Next </button>
+                    <button type="button" class="client-btn bmenu btn bt-primary">Next </button>
                 </div>
             </div>
 
@@ -361,7 +360,7 @@
                                 <div class="input-group mb-3">
                                     <input type="text" name="offer_course[]" class="form-control m-input addinput" placeholder="Enter courses" autocomplete="off" value="{{$row}}" />
                                     <div class="input-group-append">
-                                        <button id="removeRow" type="button" class="btn btn-danger">Remove</button>
+                                        <button id="removeRow" type="button" style="background:#bf0010" class="btn btn-danger btn">Remove</button>
                                     </div>
                                 </div>
                             </div>
@@ -370,7 +369,7 @@
                             @endif
                         </div>
 
-                        <button id="addRow" type="button" class="btn crew-btn" name="">Add Course</button>
+                        <button id="addRow" type="button" class="btn crew-btn btn btn-primary" name="">Add Course</button>
                     </div>
 
                 </div>
@@ -602,266 +601,255 @@
                     </div>
                 </div>
                 <div class="float-right">
-                    <button type="button" class="client-btn bmenu1">Next </button>
+                    <button type="button" class="client-btn bmenu1 btn btn-primary">Next </button>
                 </div>
             </div>
 
-            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu2">
-                <div class="row custom-box">
+           
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu2">
+            <div class="row custom-box">
 
-                    <div class="col-lg-2 col-md-2 col-12">
-                        <div class="form-group">
-                            <label>Do you have any Privacy Policies?
-                            </label>
-                            <div class="col-lg-2 col-md-2 col-2 ">
-                                <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Policies" name="is_Policies" value="yes" {{ $institutions->is_Policies == "yes"  ? ' checked' : '' }}>
-                                    <label class="custom-control-label mt-1" for="Policies">Yes</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-2 col-3 ">
-                                <div class="custom-control custom-radio ">
-                                    <input type="radio" class="custom-control-input " id="Policiesno" name="is_Policies" value="no" {{ $institutions->is_Policies == "no"  ? ' checked' : '' }}>
-                                    <label class="custom-control-label mt-1" for="Policiesno">No</label>
-                                </div>
+                <div class="col-lg-2 col-md-2 col-12">
+                    <div class="form-group">
+                        <label>Do you have any Privacy Policies?
+                        </label>
+                        <div class="col-lg-2 col-md-2 col-2 ">
+                            <div class="custom-control custom-radio ">
+                                <input type="radio" class="custom-control-input " id="Policies" name="is_Policies" value="yes" {{ $institutions->is_Policies == "yes"  ? ' checked' : '' }}>
+                                <label class="custom-control-label mt-1" for="Policies">Yes</label>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-12">
-                        <div class="form-group">
-                            <label>If Yes, Enclose the Document
-                            </label>
-                            <br>
-                            <br>
-                            <a href="{{url('files/'.$institutions->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">Old Attachment</a>
-                            <input class="form-control " type="file" name="privacy_policy_document" value="{{old('privacy_policy_document')}}">
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-7 col-md-7 col-12">
-                        <div class="form-group">
-                            <label>Terms if Any
-                            </label>
-                            <textarea style="width:100%;" rows="6" name="privacy_policy_detail" value="{{$institutions->privacy_policy_detail}}">{{$institutions->privacy_policy_detail}}</textarea>
-                        </div>
-                    </div>
-
-
-                </div>
-                <hr>
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>About History
-                            </label>
-                            <br>
-                            <textarea style="width:100%;" rows="9" name="history" value="{{$institutions->history}}">{{$institutions->history}}</textarea>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label> Brief Introduction
-                            </label>
-                            <br>
-
-                            <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{$institutions->brief_introduction}}">{{$institutions->brief_introduction}}</textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="float-right">
-                    <button type="button" class="client-btn bmenu2">Next </button>
-                </div>
-                <hr>
-            </div>
-
-            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu3">
-                <div class="row custom-box">
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="form-group">
-                            <label>Awards and Certifications
-                            </label>
-                            <br>
-                            <a href="{{url('files/'.$institutions->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
-                            <input type="file" class="form-control" name="Award" value="{{old('Award')}}">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>Company Achievements
-                            </label>
-                            <br>
-
-                            <textarea style="width:100%;" rows="9" name="achievement" value="{{$institutions->achievement}}">{{$institutions->achievement}}</textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="float-right">
-                    <button type="button" class="client-btn bmenu3">Next </button>
-                </div>
-
-
-            </div>
-
-            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu4">
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>Your Introductory Video URL Link display on Canada Inspire Portal
-                            </label>
-                            <input class="form-control " type="text" name="vedio_url" value="{{$institutions->vedio_url}}">
-                        </div>
-                    </div>
-                </div>
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>Kindly provide Weblinks for News and Events, Immigration Updates and much more to help Candidates to have more information
-                            </label>
-                            <br>
-
-                            <textarea style="width:100%;" rows="9" name="event_new_weblink" value="{{$institutions->event_new_weblink}}">{{$institutions->event_new_weblink}}</textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="socialAppend" id="socialAppend">
-                    <div class="row mb-1 social">
-
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Social Media Profile
-
-                                </label>
-                                <div class="row">
-                                    <a class="facebook" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
-                                        </div>
-                                        <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control socialLink " type="text" placeholder="Facebook link " name="fb_link" value="{{$institutions->fb_link}}">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="twitter" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
-                                        </div>
-                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="Twitter link " name="twitter_link" value="{{$institutions->twitter_link}}">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="instagram" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
-                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="Instagram link " name="insta_link" value="{{$institutions->insta_link}}">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="linkedin" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
-                                        </div>
-                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="Linkedin Profile " name="Linkedin_link" value="{{$institutions->Linkedin_link}}">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="youtube" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
-                                        </div>
-                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="youtube">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="youtube link " name="youtube_link" value="{{$institutions->youtube_link}}">
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="google" href="##">
-                                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
-                                        </div>
-                                        <div class="col-lg-11 col-md-11 col-11 d-none " id="google">
-                                            <div class="form-group">
-                                                <label> </label>
-                                                <input class="form-control socialLink" type="text" placeholder="google review link " name="google_review_link" value="{{$institutions->google_review_link}}">
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                </div>
+                        <div class="col-lg-3 col-md-2 col-3 ">
+                            <div class="custom-control custom-radio ">
+                                <input type="radio" class="custom-control-input " id="Policiesno" name="is_Policies" value="no" {{ $institutions->is_Policies == "no"  ? ' checked' : '' }}>
+                                <label class="custom-control-label mt-1" for="Policiesno">No</label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="float-right">
-                    <button type="button" class="client-btn bmenu4">Next </button>
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="form-group">
+                        <label>If Yes, Enclose the Document
+                        </label>
+                        <br>
+                        <br>
+                        <a href="{{url('files/'.$institutions->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">{{$institutions->privacy_policy_document}}</a>
+                        <input class="form-control " type="file" name="privacy_policy_document" value="{{old('privacy_policy_document')}}">
+
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="form-group">
+                        <label>Terms if Any
+                        </label>
+                        <textarea style="width:100%;" rows="6" name="privacy_policy_detail" value="{{$institutions->privacy_policy_detail}}">{{$institutions->privacy_policy_detail}}</textarea>
+                    </div>
                 </div>
 
             </div>
+            <hr>
+            <div class="row custom-box">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="form-group">
+                        <label>About History
+                        </label>
+                        <br>
+                        <textarea style="width:100%;" rows="9" name="history" value="{{$institutions->history}}">{{$institutions->history}}</textarea>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row custom-box">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="form-group">
+                        <label> Brief Introduction
+                        </label>
+                        <br>
 
-            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu5">
-                <div class="row custom-box">
+                        <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{$institutions->brief_introduction}}">{{$institutions->brief_introduction}}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="float-right">
+                <button type="button" class="client-btn bmenu2 btn btn-primary">Next </button>
+            </div>
+            <hr>
+        </div>
+
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu3">
+            <div class="row custom-box">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="form-group">
+                        <label>Awards and Certifications
+                        </label>
+                        <br>
+                        <a href="{{url('files/'.$institutions->Award)}}" target="_blank" style=" text-decoration: underline;">{{$institutions->Award}}</a>
+                        <input type="file" class="form-control" name="Award" value="{{old('Award')}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row custom-box">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="form-group">
+                        <label>Company Achievements
+                        </label>
+                        <br>
+
+                        <textarea style="width:100%;" rows="9" name="achievement" value="{{$institutions->achievement}}">{{$institutions->achievement}}</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="float-right">
+                <button type="button" class="client-btn bmenu3 btn btn-primary">Next </button>
+            </div>
+
+
+        </div>
+
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu4">
+            <div class="row custom-box">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="form-group">
+                        <label>Your Introductory Video URL Link display on Canada Inspire Portal
+                        </label>
+                        <input class="form-control " type="text" name="vedio_url" value="{{$institutions->vedio_url}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row custom-box">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="form-group">
+                        <label>Kindly provide Weblinks for News and Events, Immigration Updates and much more to help Candidates to have more information
+                        </label>
+                        <br>
+
+                        <textarea style="width:100%;" rows="9" name="event_new_weblink" value="{{$institutions->event_new_weblink}}">{{$institutions->event_new_weblink}}</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="socialAppend" id="socialAppend">
+                <div class="row mb-1 social">
+
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
-                            <label>Canada Inspire provides Additional Services :-
-                            </label>
-                            <br>
+                            <label>Social Media Profile
 
-                            <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                                1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
-                                2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
-                                3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                                4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
-                                5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
+                            </label>
+                            <div class="row">
+                                <a class="facebook" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-1 fa-2xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625
+                                            h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                        </svg>
+                                    </div>
+                                    <div id="facebook" class="col-lg-11 col-md-11 col-11  ">
+                                        <div class="form-group">
+                                            <label> </label>
+
+                                            <input id="fb_link" name="fb_link" class="form-control " type="text" placeholder="Facebook Profile " value="{{$institutions->fb_link}}">
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="twitter" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-lg-11 col-md-11 col-11  " id="twitter">
+                                        <div class="form-group">
+                                            <label> </label>
+                                            <input id="twitter_link" name="twitter_link" class="form-control " type="text" placeholder="Twitter Profile " value="{{$institutions->twitter_link}}">
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="instagram" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-lg-11 col-md-11 col-11  " id="instagram">
+                                        <div class="form-group">
+                                            <label> </label>
+                                            <input id="insta_link" name="insta_link" class="form-control " type="text" placeholder="Instagram Profile " value="{{$institutions->insta_link}}">
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="linkedin" href="##">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-lg-11 col-md-11 col-11  " id="linkedin">
+                                        <div class="form-group">
+                                            <label> </label>
+                                            <input id="Linkedin_link" name="Linkedin_link" class="form-control " type="text" placeholder="Linkedin Profile " value="{{$institutions->Linkedin_link}}">
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="float-right">
-                    <button type="button" class="client-btn bmenu5">Next </button>
-                </div>
+            </div>
+            <div class="float-right">
+                <button type="button" class="client-btn bmenu4 btn btn-primary">Next </button>
             </div>
 
-            <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu6">
-                <div class="row custom-box">
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="form-group">
-                            <label>We are looking forward to have your valuable Comments/Remarks to add or modify on the above given information to make it more informative.
-                            </label>
-                            <br>
+        </div>
 
-                            <textarea style="width:100%;" rows="9" name="Comment" value="{{$institutions->Comment}}">{{$institutions->Comment}}</textarea>
-                        </div>
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu5">
+            <div class="row custom-box">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="form-group">
+                        <label>Canada Inspire provides Additional Services :-
+                        </label>
+                        <br>
+
+                        <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
+    We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
+            1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
+            2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
+            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+            4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
+            5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, 
+            follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
                     </div>
                 </div>
-                <div class="float-right">
-                    <button type="submit" class="client-btn">Submit </button>
+            </div>
+            <div class="float-right">
+                <button type="button" class="client-btn bmenu5 btn btn-primary">Next </button>
+            </div>
+        </div>
+
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu6">
+            <div class="row custom-box">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="form-group">
+                        <label>We are looking forward to have your valuable Comments/Remarks to add or modify on the above given information to make it more informative.
+                        </label>
+                        <br>
+
+                        <textarea style="width:100%;" rows="9" name="Comment" value="{{$institutions->Comment}}">{{$institutions->Comment}}</textarea>
+                    </div>
                 </div>
             </div>
+            <div class="float-right">
+                <button type="submit" class="client-btn btn btn-primary">Submit </button>
+            </div>
+        </div>
 
         </form>
     </div>
 
 
-
-
-    </div>
-
-
-    </div>
     <script>
         $(document).ready(function() {
             $('.tab-pane').fadeOut();
@@ -1007,7 +995,7 @@
                 html += '<div class="input-group mb-3">';
                 html += '<input type="text" name="offer_course[]" class="form-control m-input addinput" placeholder="Enter courses" autocomplete="off" value="" />';
                 html += '<div class="input-group-append">';
-                html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';
+                html += '<button id="removeRow" type="button" style="background:#bf0010" class="btn btn-danger">Remove</button>';
                 html += '</div>';
                 html += '</div>';
 
@@ -1047,8 +1035,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-    <!-- ...................end...script for google map view.................... -->
-</section>
 
 
 @endsection

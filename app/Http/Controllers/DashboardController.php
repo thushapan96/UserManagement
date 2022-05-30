@@ -36,9 +36,10 @@ class DashboardController extends Controller
     {
 
         $consultants = Consultant::find($id);
+        return  $consultants;
         $user_id =  $consultants->user_id;
         $img = User::where('id', $user_id)->value('img');
-       
+
         $teams = Team::where('provider_id', $consultants->id)->get();
 
         return view('providerProfile.consultantProfile')->with('consultants', $consultants)->with('teams', $teams)->with('view', 'view')->with('img', $img);
@@ -61,5 +62,35 @@ class DashboardController extends Controller
         $img = User::where('id', $user_id)->value('img');
 
         return view('providerProfile.institudeProfile')->with('institutions', $institutions)->with('view', 'view')->with('img', $img);
+    }
+    public function schoolIndex()
+    {
+        $institutions = Institution::where('type','School')->get();
+
+        return view('dashboard.institution')->with('institutions', $institutions);
+    }
+    public function collegeIndex()
+    {
+        $institutions = Institution::where('type','College')->get();
+
+        return view('dashboard.institution')->with('institutions', $institutions);
+    }
+    public function universityIndex()
+    {
+        $institutions = Institution::where('type','University')->get();
+
+        return view('dashboard.institution')->with('institutions', $institutions);
+    }
+    public function rcicConsultantIndex()
+    {
+        $consultants = Consultant::where('type', 'RCIC Consultant')->get();
+
+        return view('dashboard.consultant')->with('consultants', $consultants);
+    }
+    public function immigrationIndex()
+    {
+        $consultants = Consultant::where('type', 'Immigration Lawyer/Attorney')->get();
+
+        return view('dashboard.consultant')->with('consultants', $consultants);
     }
 }

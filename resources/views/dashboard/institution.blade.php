@@ -4,6 +4,8 @@
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
 
+
+
     html,
     body {
         -moz-box-sizing: border-box;
@@ -63,12 +65,12 @@
     .card {
         display: block;
         width: 300px;
-        height: 200px;
+        height: 300px;
         margin-bottom: 20px;
         line-height: 1.42857143;
         border-radius: 5px;
-
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        overflow: auto;
+        box-shadow: 0 7px 9px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
         transition: box-shadow .25s;
     }
 
@@ -95,18 +97,20 @@
     .card-content {
         padding: 15px;
         text-align: left;
-        height: 150px;
+        height: 200px;
+        overflow: auto;
     }
 
     .card-title {
         margin-top: 0px;
+        float: none !important;
         font-weight: 700;
         font-size: 1.65em;
         text-align: center;
     }
 
     .card-text {
-
+        margin-top: 10%;
         text-align: center;
     }
 
@@ -124,91 +128,67 @@
         text-decoration: none !important;
         padding: 10px;
         font-weight: 600;
-        text-transform: uppercase
+        text-transform: uppercase;
+        height: 20px;
+        line-height: 10px;
+    }
+
+    .example::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .example {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
     }
 </style>
-<section class="StayConnected clearfix" style=" padding: 100px 0 100px;">
-    <div class="container ">
-        <div class="container-fostrap">
 
-            <div class="content">
-                <div class="container">
-                    @if($institutions)
-                    @if($institutions->count() >= 3 )
-                    <div class="row">
-                        @foreach($institutions as $row)
-
-                        <div class="col-sm-4">
-                            <div class="card" style="overflow:hidden">
-
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html">{{$row->type}}
-                                        </a>
-                                    </h4>
-
-                                    <p class="card-text ">{{$row->name}}</p>
+<div class=" " style="margin-left:10% !important">
+    <div class="row">
+        @if($institutions)
 
 
-                                    <p class="card-text ">
-                                        @if($row->offer_course)
-                                        @foreach($row->offer_course as $service)
-                                        {{$service}},
-                                        @endforeach
-                                        @endif
-                                    </p>
-                                </div>
-                                <div class="card-read-more">
-                                    <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
-                                        <p> View More</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+        @foreach($institutions as $row)
 
+        <div class="col-sm-4">
+            <div class="card" style="overflow:hidden">
+
+                <div class="card-content example" style="text-align:center">
+                    <h4 class="card-title">
+                        {{$row->type}}
+
+                    </h4>
+
+                    <p class="card-text ">{{$row->name}}</p>
+
+
+                    <p class="card-text ">
+                        @if($row->offer_course)
+                        @foreach($row->offer_course as $service)
+                        {{$service}},
                         @endforeach
-                    </div>
-                    @else
-                    <div class="row">
-                        @foreach($institutions as $row)
-
-                        <div class="col-6">
-                            <div class="card" style="overflow:hidden">
-
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html">{{$row->type}}
-                                        </a>
-                                    </h4>
-
-                                    <p class="card-text ">{{$row->name}}</p>
-
-                                    <p class="card-text ">
-                                        @if($row->offer_course)
-                                        @foreach($row->offer_course as $service)
-                                        {{$service}},
-                                        @endforeach
-                                        @endif
-                                    </p>
-                                </div>
-                                <div class="card-read-more">
-                                    <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
-                                        <p> View More</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        @endforeach
-                    </div>
-                    @endif
-                    @endif
-
+                        @endif
+                    </p>
+                </div>
+                <div class="card-read-more">
+                    <a href="{{route('dashboard.institution.view',['id' => $row->id])}}" class="btn btn-link btn-block">
+                        <p> View More</p>
+                    </a>
                 </div>
             </div>
         </div>
+
+        @endforeach
+
+        @endif
     </div>
-</section>
+
+
+</div>
+
 
 
 @endsection

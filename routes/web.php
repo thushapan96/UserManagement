@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/test', function () {
  
-    return view('test');
+    return view('layouts.layout');
 });
 Auth::routes();
 
@@ -78,6 +78,12 @@ Route::get('dashboard/institution/{id}', 'App\Http\Controllers\DashboardControll
 
 Route::get('dashboard/business', 'App\Http\Controllers\DashboardController@businessIndex')->name('dashboard.business');
 Route::get('dashboard/business/{id}', 'App\Http\Controllers\DashboardController@businessView')->name('dashboard.business.view');
+
+Route::get('dashboard/view/school', 'App\Http\Controllers\DashboardController@schoolIndex')->name('dashboard.view.school');
+Route::get('dashboard/view/university', 'App\Http\Controllers\DashboardController@universityIndex')->name('dashboard.view.university');
+Route::get('dashboard/view/college', 'App\Http\Controllers\DashboardController@collegeIndex')->name('dashboard.view.college');
+Route::get('dashboard/view/immigration', 'App\Http\Controllers\DashboardController@immigrationIndex')->name('dashboard.view.immigration');
+Route::get('dashboard/view/consultant', 'App\Http\Controllers\DashboardController@rcicConsultantIndex')->name('dashboard.view.consultant');
 
 
 

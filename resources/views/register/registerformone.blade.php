@@ -41,7 +41,7 @@
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="">
                     <label>
-                        Certified By
+                        Certified By 
                     </label>
                     <input type="text" class="form-control" name="language_certified_by">
                 </div>
@@ -49,7 +49,7 @@
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="">
                     <label>
-                        Attachment
+                        Attachment 
                     </label>
                     <input type="file" class="form-control" name="language_attachment">
                 </div>
@@ -92,7 +92,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-12 ">
                 <div class="form-group">
-                    <label>Attachment
+                    <label>Attachment 
                     </label>
                     <input type="file" class="form-control" name="test_attachment">
                 </div>

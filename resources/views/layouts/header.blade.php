@@ -1,23 +1,17 @@
 <!-- Header -->
 <header class="float-panel" data-top="0" data-scroll="200">
     <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" width="200" alt="Logo"></a>
+
         @if(Auth::user())
         <div class="container" style="max-width: 1300px;">
             @else
             <div class="container" style="max-width: 1200px;">
                 @endif
-                <!-- Brand -->
-                <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" width="200px" alt="Logo"></a>
-
-                <!-- Toggler/collapsibe Button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Navbar links -->
+               
 
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav" style="margin-left:5%;">
                         <li class="nav-item">
                             <a class="nav-link" href="/">Home</a>
                         </li>
@@ -34,7 +28,7 @@
                                 <a class="dropdown-item" href="{{route('dashboard.consultant')}}">Consultant</a>
                                 <a class="dropdown-item" href="{{route('dashboard.business')}}">Business</a>
                                 <a class="dropdown-item" href="{{route('dashboard.institution')}}">Institution</a>
-                              
+
                             </div>
                         </li>
 
@@ -42,7 +36,7 @@
                             <a class="nav-link" href="#">Contact Us</a>
                         </li>
                         @if(Auth::user())
-                      
+
                         @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('consultantProfile')}}">profile</a>
