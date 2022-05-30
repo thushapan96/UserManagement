@@ -30,6 +30,7 @@
 
     .StayConnected h1 {
         margin-bottom: 20px;
+        
     }
 
     label {
@@ -139,6 +140,13 @@
     h6 {
         color: #004e75 !important;
     }
+    .StayConnected {
+    width: 100%;
+    position: relative;
+    padding: 150px 0 80px;
+    background: none !important;
+    }
+
 </style>
 
 <body>
