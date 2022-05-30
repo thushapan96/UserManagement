@@ -14,14 +14,15 @@
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     }
+
     .progress {
-    background-color: #bf0010 !important;
-    margin-left: 5% !important;
-    margin-right: 40px !important;
-    max-height: 12px;
-    text-align: center;
-    width: 90%;
-}
+        background-color: #bf0010 !important;
+        margin-left: 5% !important;
+        margin-right: 40px !important;
+        max-height: 12px;
+        text-align: center;
+        width: 90%;
+    }
 </style>
 
 <link rel="stylesheet" href="css/countrySelect.css">
@@ -49,7 +50,7 @@
             <div class="cardf">
                 <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
                     <a class="nav-link active amenu" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" aria-current="page" id="amenu">personal</a>
-                    <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" id="amenu1">academy</a>
+                    <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" id="amenu1">academic</a>
                     <a class="nav-link amenu3" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" id="amenu2">work</a>
                     <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem 5rem;color:#004e75  !important" id="amenu3">sponsor</a>
                 </nav>
@@ -66,7 +67,7 @@
                 </div>
             </div>
             <br>
-            
+
             <div id="menu" class="tab-pane  ">
                 <form id="personal_form" action="{{route('candidate_personal_add')}}" method="POST">
                     @csrf
@@ -364,7 +365,14 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>upload profile image
+                                    </label>
+                                    <input class="form-control" type="file" name="img" >
 
+                                </div>
+                            </div>
 
                             <div class="col-lg-12 col-md-12 col-12 ">
                                 <label>Have you been Vaccinated against COVID

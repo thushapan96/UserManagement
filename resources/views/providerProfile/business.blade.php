@@ -643,7 +643,7 @@
                             <label>company Awards and Certifications
                             </label>
                             <br>
-                            <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
+                            <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">{{$consultants->Award}}</a>
 
                         </div>
                     </div>
@@ -799,9 +799,7 @@
                 </div>
                 <br>
                 @if($view)
-                <div class="col-md-10 float-left">
-                    <a href="{{route('dashboard.business')}}"> <button type="button" style="width:100%" class="client-btn btn btn-primary">GO to dashboard</button></a>
-                </div>
+               
                 @else
                 <div class="col-md-10 float-left">
                     <a href="{{route('edit.business')}}"> <button type="button" style="width:100%" class="client-btn btn btn-primary">Edit Profile</button></a>

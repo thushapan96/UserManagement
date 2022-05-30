@@ -146,6 +146,11 @@
     padding: 150px 0 80px;
     background: none !important;
     }
+    textarea{
+        padding: 30px;
+        text-align: justify;
+        line-height: 1.6;
+    }
 
 </style>
 

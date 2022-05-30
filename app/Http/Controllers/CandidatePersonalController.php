@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Personal;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,6 +32,20 @@ class CandidatePersonalController extends Controller
                     $request['corosponding_country'] = $request->residential_country;
                 }
                 $data = Personal::create($request->all() + ['user_id' =>    $id]);
+
+
+                if ($request->img) {
+                    $files = $request->img;
+                    $nameimg =  $files->getClientOriginalName();
+
+                    $destinationPath = public_path() . '/files';
+                    $files->move($destinationPath, $nameimg);
+
+                    User::where('id', Auth::user()->id)
+                        ->update([
+                            'img' => $nameimg
+                        ]);
+                }
                 return response()->json(['success' => 'Record is successfully added']);
             }
         }

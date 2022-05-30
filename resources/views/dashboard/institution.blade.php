@@ -64,8 +64,8 @@
 
     .card {
         display: block;
-        width: 300px;
         height: 300px;
+        width: 100%;
         margin-bottom: 20px;
         line-height: 1.42857143;
         border-radius: 5px;
@@ -146,14 +146,24 @@
     }
 </style>
 
-<div class=" " style="margin-left:10% !important">
+<div class=" ">
+    <div class="col-7 input-group float-center">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Search" />
+
+        </div>
+        <button type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <br>
     <div class="row">
         @if($institutions)
 
 
         @foreach($institutions as $row)
 
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="card" style="overflow:hidden">
 
                 <div class="card-content example" style="text-align:center">

@@ -5,7 +5,7 @@
 <style>
     .whiteBox:hover {
         box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-       
+
     }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
@@ -56,7 +56,7 @@
         <br>
         <h1> {{request()->query('service')}} Enrollment</h1>
         <h6>{{request()->query('service')}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access , explore and know more about the Courses and other Services.</h6>
-       
+
         <br>
         <form id="form" action="{{route('add.institution')}}" method="post" enctype="multipart/form-data">
             @csrf
@@ -367,7 +367,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="form-group">
+                            <label>upload profile image
+                            </label>
+                            <input class="form-control" type="file" name="img">
 
+                        </div>
+                    </div>
                 </div>
                 <div class="float-right">
                     <button type="button" class="client-btn bmenu">Next </button>

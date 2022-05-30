@@ -201,11 +201,7 @@
         color: #004e75 !important;
     }
 
-    .main-header .nav-link {
-        height: 2.5rem;
-        position: relative;
-        font-size: 18px;
-    }
+   
 </style>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -219,41 +215,38 @@
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light" style=" box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
 
-                <ul class="navbar-nav" style="margin-left:0%;">
-                    <li class="nav-item">
-                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav" style="margin-left:20%;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('canadainspair')}}">Canada Inspire</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('whycanada')}}">Why Canada</a>
-                    </li>
+            <ul class="navbar-nav" style="margin-left:0%;">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav" >
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('whycanada')}}">Why Canada</a>
+                </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Services</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{route('dashboard.consultant')}}">Consultant</a>
-                            <a class="dropdown-item" href="{{route('dashboard.business')}}">Business</a>
-                            <a class="dropdown-item" href="{{route('dashboard.institution')}}">Institution</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Services</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{route('dashboard.consultant')}}">Consultant</a>
+                        <a class="dropdown-item" href="{{route('dashboard.business')}}">Business</a>
+                        <a class="dropdown-item" href="{{route('dashboard.institution')}}">Institution</a>
 
-                        </div>
-                    </li>
+                    </div>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
 
 
-                </ul>
-            </div>
+            </ul>
+
 
 
         </nav>

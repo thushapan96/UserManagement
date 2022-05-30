@@ -460,6 +460,16 @@
                     </div>
 
                 </div>
+                <div class="row custom-box">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="form-group">
+                            <label>upload profile image
+                            </label>
+                            <input class="form-control" type="file" name="img">
+
+                        </div>
+                    </div>
+                </div>
                 <hr>
 
                 <div class="float-right">

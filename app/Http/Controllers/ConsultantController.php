@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Consultant;
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class ConsultantController extends Controller
@@ -55,6 +56,18 @@ class ConsultantController extends Controller
             $files->move($destinationPath, $nameprivacy_policy_document);
             $Consultant->privacy_policy_document = $nameprivacy_policy_document;
         }
+        if ($request->img) {
+            $files = $request->img;
+            $nameimg =  $files->getClientOriginalName();
+
+            $destinationPath = public_path() . '/files';
+            $files->move($destinationPath, $nameimg);
+
+            User::where('id', Auth::user()->id)
+                ->update([
+                    'img' => $nameimg
+                ]);
+        }
 
         $Consultant->save();
 
@@ -95,8 +108,8 @@ class ConsultantController extends Controller
                 }
             }
         }
-        
-       
+
+
         if ($Consultant->type == 'Chartered Accountant') {
             return redirect(route('businessProfile'))->with('formSuccess', 'Saved!');
         } else {

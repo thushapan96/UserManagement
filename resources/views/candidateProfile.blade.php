@@ -25,7 +25,7 @@
             <div class="cardf">
                 <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important">
                     <a class="nav-link active" style="cursor:pointer;padding: .5rem 3rem;color:#004e75 !important" aria-current="page" id="amenu">personal</a>
-                    <a class="nav-link " style="cursor:pointer;padding: .5rem 3rem;color:#004e75 !important" id="amenu1">academy</a>
+                    <a class="nav-link " style="cursor:pointer;padding: .5rem 3rem;color:#004e75 !important" id="amenu1">academic</a>
                     <a class="nav-link" style="cursor:pointer;padding: .5rem 3rem;;color:#004e75 !important" id="amenu2">work</a>
                     <a class="nav-link " style="cursor:pointer;padding: .5rem 3rem;;color:#004e75 !important" id="amenu3">sponsor</a>
                 </nav>

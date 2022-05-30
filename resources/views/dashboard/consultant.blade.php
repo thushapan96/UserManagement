@@ -63,7 +63,7 @@
 
     .card {
         display: block;
-        width: 300px;
+        width: 100%;
         height: 300px;
         margin-bottom: 20px;
         line-height: 1.42857143;
@@ -146,7 +146,7 @@
 </style>
 
 
-<div class=" " style="margin-left:10% !important">
+<div class=" " >
     <div class="col-7 input-group float-center">
         <div class="form-outline">
             <input type="search" id="form1" class="form-control" placeholder="Search"/>
@@ -164,7 +164,7 @@
 
         @foreach($consultants as $row)
 
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="card" style="overflow:hidden">
 
                 <div class="card-content example">

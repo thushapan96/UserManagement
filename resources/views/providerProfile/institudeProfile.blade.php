@@ -108,7 +108,7 @@
 
             <div class="row tab-pane  " id="menu">
 
-                <div class="card col-6">
+                <div class="card col-md-5">
                     <br>
                     <div class="row custom-box">
                         <div class="col-md-5">
@@ -244,9 +244,8 @@
                     </div>
 
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-
-                <div class="card col-5">
+           &nbsp;
+                <div class="card col-md-6">
                     <br>
                     <div class="row custom-box">
                         <div class="col-md-5">
@@ -697,7 +696,7 @@
                             <label>{{$institutions->type}} Awards and Certifications
                             </label>
                             <br>
-                            <a href="{{url('files/'.$institutions->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
+                            <a href="{{url('files/'.$institutions->Award)}}" target="_blank" style=" text-decoration: underline;">{{$institutions->Award}}</a>
 
                         </div>
                     </div>
@@ -856,9 +855,7 @@
                 </div>
                 <br>
                 @if($view)
-                <div class="col-md-10 float-left">
-                    <a href="{{route('dashboard.institution')}}"> <button type="button" style="width:100%" class="client-btn btn btn-primary">GO to dashboard</button></a>
-                </div>
+               
                 @else
                 <div class="col-md-10 float-left">
                     <a href="{{route('edit.institution')}}"> <button type="button" style="width:100%" class="client-btn btn btn-primary">Edit Profile</button></a>

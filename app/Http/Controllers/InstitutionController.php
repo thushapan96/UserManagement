@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Institution;
+use App\Models\User;
 use App\Http\Requests\InstitutionRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +47,19 @@ class InstitutionController extends Controller
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $nameAward);
             $Institution->Award = $nameAward;
+        }
+
+        if ($request->img) {
+            $files = $request->img;
+            $nameimg =  $files->getClientOriginalName();
+
+            $destinationPath = public_path() . '/files';
+            $files->move($destinationPath, $nameimg);
+
+            User::where('id', Auth::user()->id)
+                ->update([
+                    'img' => $nameimg
+                ]);
         }
 
         $Institution->save();

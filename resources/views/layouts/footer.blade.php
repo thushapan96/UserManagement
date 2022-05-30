@@ -1,14 +1,6 @@
 <!-- Footer Start -->
-<style>
-footer {
-    width: 100%;
-    padding: 60px 0 0;
-    position: relative;
-    background: #a52514;
-    z-index: 98 !important;
-}
-</style>
-<footer style="top:300px !important">
+
+<footer >
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-4 col-12">
