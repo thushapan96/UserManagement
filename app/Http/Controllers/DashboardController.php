@@ -36,7 +36,7 @@ class DashboardController extends Controller
     {
 
         $consultants = Consultant::find($id);
-        return  $consultants;
+       
         $user_id =  $consultants->user_id;
         $img = User::where('id', $user_id)->value('img');
 
