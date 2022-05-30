@@ -116,8 +116,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Full Name</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps"> {{$consultants->first_name}} {{$consultants->last_name}} {{$consultants->registration_number}}</p><br>
                         </div>
                     </div>
@@ -126,8 +128,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Company Name</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->company_name}}</p><br>
                         </div>
                     </div>
@@ -136,8 +140,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Registered Office - Location</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->registrar_office_area}}</p><br>
                         </div>
                     </div>
@@ -146,8 +152,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Status</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->status}}</p><br>
                         </div>
                     </div>
@@ -156,8 +164,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Languages Known</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">
                                 @if($consultants->language_known)
                                 @foreach($consultants->language_known as $row)
@@ -172,8 +182,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Country</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->country}}</p><br>
                         </div>
                     </div>
@@ -182,8 +194,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Province/Region</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->region}}</p><br>
                         </div>
                     </div>
@@ -192,8 +206,10 @@
                         <div class="col-md-5">
                             <strong class="ps">City</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->city}}</p><br>
                         </div>
                     </div>
@@ -202,8 +218,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Street</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->streat}}</p><br>
                         </div>
                     </div>
@@ -212,8 +230,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Postal Code</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->postal_code}}</p><br>
                         </div>
                     </div>
@@ -222,8 +242,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Correspondence Email</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->email}}</p><br>
                         </div>
                     </div>
@@ -232,8 +254,10 @@
                         <div class="col-md-5">
                             <strong class="ps">URL - Website Address *</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->website_address}}</p><br>
                         </div>
                     </div>
@@ -242,8 +266,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Contact Number</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">{{$consultants->phone}}</p><br>
                         </div>
                     </div>
@@ -257,8 +283,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Specialization</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">
                                 @if($consultants->specialization)
                                 @foreach($consultants->specialization as $row)
@@ -273,8 +301,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Service Offered</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">
                                 @if($consultants->offering_service)
                                 @foreach($consultants->offering_service as $row)
@@ -289,8 +319,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Initial chargeable type</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">
                                 {{$consultants->initial_chargeable_type}}
 
@@ -302,8 +334,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Year of Establishment</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">
 
                                 {{$consultants->establishment_year}}
@@ -316,8 +350,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Offering Services Since</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">
 
                                 {{$consultants->offering_year}}
@@ -330,8 +366,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Response Time</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">
 
                                 {{$consultants->response_time}}
@@ -344,8 +382,10 @@
                         <div class="col-md-5">
                             <strong class="ps">Communication Success</strong>
                         </div>
-
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels" style="color:#004e75"> :</strong>
+                        </div>
+                        <div class="col-md-6">
                             <p class="ps">
 
                                 {{$consultants->communication_mode_success}}
@@ -387,7 +427,7 @@
                                     <strong class="ps">Team Member </strong>
                                 </div>
                                 <div class="col-sm-1">
-                                    <strong class="ps">:</strong>
+                                    <strong class="ps" style="color:#004e75">:</strong>
                                 </div>
                                 <div class="col-md-7">
                                     <p class="ps">
@@ -402,9 +442,9 @@
                                     <strong class="ps">Area of Expertise</strong>
                                 </div>
                                 <div class="col-sm-1">
-                                    <strong class="ps">:</strong>
+                                    <strong class="ps" style="color:#004e75">:</strong>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-6">
                                     <p class="ps">
 
                                         {{$row->expertise_area}}
@@ -417,9 +457,9 @@
                                     <strong class="ps">Year of Experience</strong>
                                 </div>
                                 <div class="col-sm-1">
-                                    <strong class="ps">:</strong>
+                                    <strong class="ps" style="color:#004e75">:</strong>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-6">
                                     <p class="ps">
 
                                         {{$row->experience_year}}
@@ -432,9 +472,9 @@
                                     <strong class="ps">No of Successful Cases</strong>
                                 </div>
                                 <div class="col-sm-1">
-                                    <strong class="ps">:</strong>
+                                    <strong class="ps" style="color:#004e75">:</strong>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-6">
                                     <p class="ps">
 
                                         {{$row->team_number_success_cases}}
@@ -464,9 +504,9 @@
                                     <strong class="ps">Team Member </strong>
                                 </div>
                                 <div class="col-sm-1">
-                                    <strong class="ps">:</strong>
+                                    <strong class="ps" style="color:#004e75">:</strong>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-6">
                                     <p class="ps">
 
                                         {{$row->member}}
@@ -479,9 +519,9 @@
                                     <strong class="ps">Area of Expertise</strong>
                                 </div>
                                 <div class="col-sm-1">
-                                    <strong class="ps">:</strong>
+                                    <strong class="ps" style="color:#004e75">:</strong>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-6">
                                     <p class="ps">
 
                                         {{$row->expertise_area}}
@@ -494,9 +534,9 @@
                                     <strong class="ps">Year of Experience</strong>
                                 </div>
                                 <div class="col-sm-1">
-                                    <strong class="ps">:</strong>
+                                    <strong class="ps" style="color:#004e75">:</strong>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-6">
                                     <p class="ps">
 
                                         {{$row->experience_year}}
@@ -509,9 +549,9 @@
                                     <strong class="ps">No of Successful Cases</strong>
                                 </div>
                                 <div class="col-sm-1">
-                                    <strong class="ps">:</strong>
+                                    <strong class="ps" style="color:#004e75">:</strong>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-6">
                                     <p class="ps">
 
                                         {{$row->team_number_success_cases}}

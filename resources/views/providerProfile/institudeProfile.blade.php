@@ -2,6 +2,35 @@
 
 @section('content')
 <style>
+    .card:hover {
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card {
+
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .outset {
+        border-style: outset;
+    }
+
+    textarea {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+    }
+
+
+    .img {
+        border: 1px solid #ddd;
+        /* border-radius: 4px !important; */
+        padding: 5px !important;
+        opacity: 1;
+    }
+
     .input--file {
         position: relative;
         color: #7f7f7f;
@@ -26,691 +55,820 @@
     .custom-file-upload input[type="file"] {
         display: none;
     }
+
+    label {
+        font-weight: bold !important;
+    }
+
+    .personal label {
+        font-weight: 300px !important;
+    }
 </style>
-<section class="StayConnected clearfix" style="  padding: 100px 0 100px;">
-    @if($message = Session::get('formSuccess'))
-    <script>
-        Swal.fire(
-            'Success',
-            'Successfully Submitted!',
-            'success'
-        )
-    </script>
-    @endif
-    @if($message = Session::get('editformSuccess'))
-    <script>
-        Swal.fire(
-            'Success',
-            'Successfully Updated!',
-            'success'
-        )
-    </script>
-    @endif
+@if($message = Session::get('formSuccess'))
+<script>
+    Swal.fire(
+        'Success',
+        'Successfully Submitted!',
+        'success'
+    )
+</script>
+@endif
+@if($message = Session::get('editformSuccess'))
+<script>
+    Swal.fire(
+        'Success',
+        'Successfully Updated!',
+        'success'
+    )
+</script>
+@endif
 
-    <div class="" style=" left: 0px;">
-        <div class="row">
-            <div class="col-md-3 border-left" style="  left: 50px;">
-                <div class="d-flex flex-column align-items-left text-left p-3 py-5">
-                    <div class="uploadimg">
-                        @if($img)
-                        <img class="rounded-circle mt-2 img" width="180px" src="{{url('files/'.$img)}}">
-                        @else
-                        <img class="rounded-circle mt-5 img" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
-                        @endif
-                    </div>
-                    @if(!$view)
-                    <form method="post" id="upload_form" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <label class="custom-file-upload">
-                            <input id="profile_img" name="profile_img" type="file" />
-                            <i class="fa fa-camera" style="font-size:36px;color:#004e75"> </i>
-                        </label>
-                    </form><br>
-                    @endif
-                    <span class="font-weight-bold  align-items-center  ">{{$institutions->name}}</span><br>
-                    <span class="font-weight-bold  text-left">{{$institutions->email}}</span><br>
-                    <span class="font-weight-bold text-left">{{$institutions->fb_link}}</span><br>
-                    <span class="font-weight-bold">{{$institutions->Linkedin_link}}</span><br>
-                    <span class="font-weight-bold">{{$institutions->insta_link}}</span><br>
-                    <span class="font-weight-bold">{{$institutions->twitter_link}} </span><br>
-                    @if($view)
-                    <div class="col-md-7 float-left">
-                        <a href="{{route('dashboard.institution')}}"> <button type="button" class="client-btn ">GO to dashboard</button></a>
-                    </div>
-                    @else
-                    <div class="col-md-7 float-left">
-                        <a href="{{route('edit.institution')}}"> <button type="button" class="client-btn ">Edit Profile</button></a>
-                    </div>
-                    @endif
+<div style="margin-left:5%">
+    <div class="row">
+
+        <div class="col-md-10">
+            <h3 class="float-center" style="text-align:center"><label>{{$institutions->name}} {{$institutions->type}}</label></h3>
+
+            <div class=col-md-11>
+                <div class="cardf">
+                    <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important ">
+                        <a class="nav-link active amenu" style="cursor:pointer;padding: 0.5rem 0.5rem;color:#004e75 !important" aria-current="page" id="amenu">Main Content</a>
+                        <a class="nav-link amenu1" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 !important" id="amenu1">Courses</a>
+                        <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 !important" id="amenu2">About {{$institutions->type}} </a>
+                        <a class="nav-link amenu3" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
+                        <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 !important" id="amenu4">News and Events</a>
+                        <a class="nav-link amenu5" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu5">Canada Inspire</a>
+                        <a class="nav-link amenu6" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu6">Feedback</a>
+                    </nav>
                 </div>
-            </div>
-            <div class="col-md-9 ">
 
+            </div>
+            <br>
+
+
+            <div class="row tab-pane  " id="menu">
+
+                <div class="card col-6">
+                    <br>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps"> Name</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps"> {{$institutions->name}} </p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Registered Office - Location</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->registrar_office_area}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Country</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->country}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Province/Region</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->region}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">City</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->city}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Street</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->streat}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Postal Code</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->postal_code}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Correspondence Email</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->email}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Website-URL</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->website_address}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Contact Number</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->phone}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Admission Cell - Contact Person</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->admission_phone}}</p><br>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Dean Email ID</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">{{$institutions->dean_email}}</p><br>
+                        </div>
+                    </div>
+
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div class="card col-5">
+                    <br>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Type of Courses</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">
+                                @if($institutions->course_type)
+                                @foreach($institutions->course_type as $row)
+                                {{$row}},
+                                @endforeach
+                                @else
+                                <br>
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Intake</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">
+                                @if($institutions->intake)
+                                @foreach($institutions->intake as $row)
+                                {{$row}},
+                                @endforeach
+                                @else
+                                <br>
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Admission Type </strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">
+                                @if($institutions->admission_type){{$institutions->admission_type}}
+                                @else
+                                <br>
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Year of Establishment</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps"> @if($institutions->establishment_year){{$institutions->establishment_year}}
+                                @else
+                                <br>
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Offering Services Since</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps"> @if($institutions->offering_year){{$institutions->offering_year}}
+                                @else
+                                <br>
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Response Time</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">
+                                @if($institutions->response_time){{$institutions->response_time}}
+                                @else
+                                <br>
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-5">
+                            <strong class="ps">Mode of Communication</strong>
+                        </div>
+                        <div class="col-sm-1">
+                            <strong class="ps" style="color:#004e75">:</strong>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="ps">
+                                @if($institutions->communication_mode)
+                                @foreach($institutions->communication_mode as $row)
+                                {{$row}},
+                                @endforeach
+                                @else
+                                <br>
+                                @endif
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+            </div>
+
+            <div class="card tab-pane  col-md-10" id="menu1" style="width:80% !important;left:5%">
+
+                <br>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Courses Information</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps"> @if($institutions->offer_course_info){{$institutions->offer_course_info}}
+                            @else
+                            <br>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Courses</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps">
+                            @if($institutions->offer_course)
+                            @foreach($institutions->offer_course as $row)
+                            {{$row}},
+                            @endforeach
+                            @else
+                            <br>
+                            @endif
+
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Total Number of Students Enrolled</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps"> @if($institutions->no_student){{$institutions->no_student}}
+                            @else
+                            <br>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Total Number of Successful Students</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps"> @if($institutions->no_success_student){{$institutions->no_success_student}}
+                            @else
+                            <br>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Financial Aided Type</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps">{{$institutions->is_financial == 'yes' ? 'Financial':'Un Financial'}}</p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Transfer Credits</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps">{{$institutions->is_credit == 'yes' ? 'Available':'Un Available'}}</p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Offer Certificate type</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps">
+                            @if($institutions->certificate_type)
+                            @foreach($institutions->certificate_type as $row)
+                            {{$row}},
+                            @endforeach
+                            @else
+                            <br>
+
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Course Duration</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps">
+                            @if($institutions->course_duration)
+                            @foreach($institutions->course_duration as $row)
+                            {{$row}},
+                            @endforeach
+                            @else
+                            <br>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">other requirement</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps">
+                            @if($institutions->other_require)
+                            @foreach($institutions->other_require as $row)
+                            {{$row}},
+                            @endforeach
+                            @else
+                            <br>
+
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">prefer language</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps">
+                            @if($institutions->language_test_type)
+                            @foreach($institutions->language_test_type as $row)
+                            {{$row}},
+                            @endforeach
+                            @else
+                            <br>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps"> offer any Scholarships</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps">
+
+                            @if($institutions->is_scholarship_offer){{$institutions->is_scholarship_offer}}
+                            @else
+                            <br>
+                            @endif
+
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps"> conduct any Webinars</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps">
+
+                            @if($institutions->is_conduct_webinar){{$institutions->is_conduct_webinar}}@else
+                            <br>
+                            @endif
+
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Admission Criteria Website</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps"> @if($institutions->admission_criteria_website){{$institutions->admission_criteria_website}}@else
+                            <br>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Fee Structure Website</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps"> @if($institutions->fee_structure_website){{$institutions->fee_structure_website}}@else
+                            <br>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <div class="row custom-box">
+                    <div class="col-md-5">
+                        <strong class="ps">Education Certificate Assessment Organization Name</strong>
+                    </div>
+                    <div class="col-sm-1">
+                        <strong class="ps" style="color:#004e75">:</strong>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="ps"> @if($institutions->eca){{$institutions->eca}}@else
+                            <br>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card tab-pane  col-md-10" id="menu2" style="width:80% !important;left:5%">
                 <div class="">
-                    <div class="cardf">
-                        <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important">
-                            <a class="nav-link active amenu" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important;" aria-current="page" id="amenu">Main Content</a>
-                            <a class="nav-link amenu1" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important" id="amenu1">Courses</a>
-                            <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important" id="amenu2">About Company </a>
-                            <a class="nav-link amenu3" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
-                            <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem 1.5rem;color:#004e75 !important" id="amenu4">News and Events</a>
-                            <!-- <a class="nav-link amenu5" style="cursor:pointer;padding: 0.5rem 1rem;color:blue !important" id="amenu5">Canada Inspire</a>
-                            <a class="nav-link amenu6" style="cursor:pointer;padding: 0.5rem 1rem;color:blue !important" id="amenu6">Feedback </a> -->
-
-                        </nav>
-                    </div>
-
-                </div>
-                <br>
-                <br>
-
-                <div class="row tab-pane  " id="menu">
-
-                    <div class="card col-5">
-                        <br><br>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels"> Name</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels"> {{$institutions->name}} </label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Registered Office - Location</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->registrar_office_area}}</label><br>
-                            </div>
-                        </div><br>
-
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Country</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->country}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Province/Region</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->region}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">City</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->city}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Street</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->streat}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Postal Code</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->postal_code}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Correspondence Email</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->email}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">URL - Website Address *</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->website_address}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Contact Number</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->phone}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Admission Cell - Contact Person</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->admission_phone}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Dean Email ID</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->dean_email}}</label><br>
-                            </div>
-                        </div><br>
-
-
-                    </div> &nbsp;&nbsp;&nbsp;&nbsp;
-
-                    <div class="card col-5">
-                        <br><br>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Type of Courses</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">
-                                    @if($institutions->course_type)
-                                    @foreach($institutions->course_type as $row)
-                                    {{$row}},
-                                    @endforeach
-                                    @endif
-                                </label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Intake</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">
-                                    @if($institutions->intake)
-                                    @foreach($institutions->intake as $row)
-                                    {{$row}},
-                                    @endforeach
-                                    @endif
-                                </label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Admission Type </strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->admission_type}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Year of Establishment</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->establishment_year}}</label><br>
-                            </div>
-                        </div><br>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Offering Services Since</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->offering_year}}</label><br>
-                            </div>
-                        </div><br>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Response Time</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">{{$institutions->response_time}}</label><br>
-                            </div>
-                        </div><br>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="labels">Mode of Communication</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <label class="labels">
-                                    @if($institutions->communication_mode)
-                                    @foreach($institutions->communication_mode as $row)
-                                    {{$row}},
-                                    @endforeach
-                                    @endif
-                                </label><br>
-                            </div>
-                        </div><br>
-                    </div>
-
                     <br>
-                </div>
-
-                <div class="card tab-pane  col-md-10" id="menu1">
-
-                    <br><br>
+                    @if($institutions->privacy_policy_document)
                     <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Courses Information</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">{{$institutions->offer_course_info}}</label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Courses</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">
-                                @if($institutions->offer_course)
-                                @foreach($institutions->offer_course as $row)
-                                {{$row}},
-                                @endforeach
-                                @endif
-                            </label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Total Number of Students Enrolled</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">{{$institutions->no_student}}</label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Total Number of Successful Students</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">{{$institutions->no_success_student}}</label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Financial Aided Type</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">{{$institutions->is_financial == 'yes' ? 'Financial':'Un Financial'}}</label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Transfer Credits</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">{{$institutions->is_credit == 'yes' ? 'Available':'Un Available'}}</label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Offer Certificate type</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">
-                                @if($institutions->certificate_type)
-                                @foreach($institutions->certificate_type as $row)
-                                {{$row}},
-                                @endforeach
-                                @endif
-                            </label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Course Duration</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">
-                                @if($institutions->course_duration)
-                                @foreach($institutions->course_duration as $row)
-                                {{$row}},
-                                @endforeach
-                                @endif
-                            </label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">other requirement</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">
-                                @if($institutions->other_require)
-                                @foreach($institutions->other_require as $row)
-                                {{$row}},
-                                @endforeach
-                                @endif
-                            </label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">prefer language</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">
-                                @if($institutions->language_test_type)
-                                @foreach($institutions->language_test_type as $row)
-                                {{$row}},
-                                @endforeach
-                                @endif
-                            </label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels"> offer any Scholarships</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">
-
-                                {{$institutions->is_scholarship_offer}}
-
-                            </label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels"> conduct any Webinars</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">
-
-                                {{$institutions->is_conduct_webinar}}
-
-                            </label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Admission Criteria Website</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">{{$institutions->admission_criteria_website}}</label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Fee Structure Website</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">{{$institutions->fee_structure_website}}</label><br>
-                        </div>
-                    </div><br>
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="labels">Education Certificate Assessment Organization Name</strong>
-                        </div>
-
-                        <div class="col-md-7">
-                            <label class="labels">{{$institutions->eca}}</label><br>
-                        </div>
-                    </div><br>
-
-                </div>
-
-                <div class="card tab-pane  col-md-10" id="menu2" style="width:80% !important;">
-                    <div class="">
-                        <br><br>
-                        @if($institutions->privacy_policy_document)
-                        <div class="row custom-box">
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>Privacy document
-                                    </label>
-                                    <br>
-                                    <br>
-                                    <a href="{{url('files/'.$institutions->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">view Attachment</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        @endif
-                        @if($institutions->privacy_policy_detail)
-                        <div class="row custom-box">
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <label>Terms of Privacy
-                                    </label>
-                                    <textarea rows="15" name="privacy_policy_detail" value="{{$institutions->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important;" disabled>{{$institutions->privacy_policy_detail}}</textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        @endif
-                        @if($institutions->history)
-                        <div class="row custom-box">
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <label>About History
-                                    </label>
-                                    <br>
-                                    <textarea style="width:100%;background-color:white !important;" rows="15" name="history" value="{{$institutions->history}}" disabled>{{$institutions->history}}</textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        @endif
-                        @if($institutions->brief_introduction)
-                        <div class="row custom-box">
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <label> Brief Introduction
-                                    </label>
-                                    <br>
-
-                                    <textarea style="width:100%;background-color:white !important;" rows="15" name="brief_introduction" value="{{$institutions->brief_introduction}}" disabled>{{$institutions->brief_introduction}}</textarea>
-                                </div>
-                            </div>
-                        </div>
-                        @endif
-
-                    </div>
-                    <br> <br>
-                </div>
-
-                <div class="card tab-pane  col-md-10" id="menu3" style="width:80% !important;">
-                    <br><br>
-                    @if($institutions->Award)
-                    <div class="row custom-box">
-                        <div class="col-lg-6 col-md-6 col-12">
+                        <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
-                                <label>Awards and Certifications
+                                <label>Privacy document of {{$institutions->type}}
                                 </label>
                                 <br>
-                                <a href="{{url('files/'.$institutions->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
 
+                                <a href="{{url('files/'.$institutions->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$institutions->privacy_policy_document}}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    @endif
+                    @if($institutions->privacy_policy_detail)
+                    <div class="row custom-box">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label style="width:400px">Terms of Privacy of {{$institutions->type}}</label>
+
+                                <textarea name="privacy_policy_detail" rows="10" value="{{$institutions->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important;" disabled>{{$institutions->privacy_policy_detail}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    @endif
+                    @if($institutions->history)
+                    <div class="row custom-box">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label>{{$institutions->type}} History
+                                </label>
+                                <br>
+
+                                <textarea class="outset" name="history" rows="15" value="{{$institutions->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important;" disabled> {{$institutions->history}}</textarea>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    @endif
+                    @if($institutions->brief_introduction)
+                    <div class="row custom-box">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label> Brief Introduction of {{$institutions->type}}
+                                </label>
+                                <br>
+
+                                <textarea style="width:100%;background-color:white !important;" rows="15" name="brief_introduction" value="{{$institutions->brief_introduction}}" disabled>{{$institutions->brief_introduction}}</textarea>
                             </div>
                         </div>
                     </div>
                     @endif
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Company Achievements
-                                </label>
-                                <br>
-
-                                <textarea style="width:100%;background-color:white !important;" rows="25" name="achievement" value="{{$institutions->achievement}}" disabled>{{$institutions->achievement}}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <br>
 
                 </div>
-
-                <div class="card tab-pane  col-md-10" id="menu4" style="width:80% !important;">
-                    <br><br>
-                    @if($institutions->vedio_url)
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Video URL Link
-                                </label>
-                                <input class="form-control " type="text" name="vedio_url" value="{{$institutions->vedio_url}}" style=" background-color:white !important;" readonly>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    @if($institutions->event_new_weblink)
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Weblinks for News and Events
-                                </label>
-                                <br>
-
-                                <textarea style="width:100%;" rows="9" name="event_new_weblink" value="{{$institutions->event_new_weblink}}" readonly style=" background-color:white !important;">{{$institutions->event_new_weblink}}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    <div class="socialAppend" id="socialAppend">
-                        <div class="row mb-1 social">
-
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <label>Social Media Profile
-
-                                    </label>
-                                    <div class="row">
-                                        <a class="facebook" href="{{$institutions->fb_link}}">
-                                            <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"><i class="fa-brands fa-facebook"></i>
-                                            </div>
-                                        </a>
-                                        <a class="twitter" href="{{$institutions->twitter_link}}">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-twitter"></i>
-                                            </div>
-                                        </a>
-                                        <a class="instagram" href="{{$institutions->insta_link}}">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-instagram-square"></i></div>
-
-                                        </a>
-                                        <a class="linkedin" href="{{$institutions->Linkedin_link}}">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-linkedin"></i>
-                                            </div>
-
-                                        </a>
-                                        <a class="youtube" href="{{$institutions->youtube_link}}">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-youtube"></i>
-                                            </div>
-
-                                        </a>
-                                        <a class="google" href="{{$institutions->google_review_link}}">
-                                            <div class="icon col-lg-1 col-md-1 col-12 fa-2xl"><i class="fa-brands fa-google"></i>
-                                            </div>
-
-                                        </a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <br>
-                </div>
-
-                <!-- <div class="card tab-pane  col-md-11" id="menu5" style="width:100% !important;">
-                    <br><br>
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Canada Inspire provides Additional Services :-
-                                </label>
-                                <br>
-
-                                <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false" disabled>We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                                1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
-                                2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
-                                3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                                4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
-                                5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <br>
-                </div> -->
-
-                <!-- <div class="card tab-pane  col-md-11" id="menu6">
-                    <br><br>
-                    <div class="row custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>We are looking forward to have your valuable Comments/Remarks to add or modify on the above given information to make it more informative.
-                                </label>
-                                <br>
-
-                                <textarea style="width:100%;" rows="9" name="Comment" value="{{$institutions->Comment}}" disabled>{{$institutions->Comment}}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div> -->
-
 
             </div>
+
+            <div class="card tab-pane  col-md-10" id="menu3" style="width:80% !important; left:5%">
+                <br>
+                @if($institutions->Award)
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>{{$institutions->type}} Awards and Certifications
+                            </label>
+                            <br>
+                            <a href="{{url('files/'.$institutions->Award)}}" target="_blank" style=" text-decoration: underline;">View Attachment</a>
+
+                        </div>
+                    </div>
+                </div>
+                @endif
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>{{$institutions->type}} Achievements
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;background-color:white !important;" rows="25" name="achievement" value="{{$institutions->achievement}}" disabled>{{$institutions->achievement}}</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+            </div>
+
+            <div class="card tab-pane  col-md-10" id="menu4" style="width:80% !important;left:5%">
+                <br>
+                @if($institutions->vedio_url)
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Video URL Link of {{$institutions->type}}
+                            </label>
+                            <input class="form-control " type="text" name="vedio_url" value="{{$institutions->vedio_url}}" style="background-color:white !important;" disabled>
+                        </div>
+                    </div>
+                </div>
+                @endif
+                @if($institutions->event_new_weblink)
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Weblinks for News and Events of {{$institutions->type}}
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;background-color:white !important;" rows="9" name="event_new_weblink" value="{{$institutions->event_new_weblink}}" disabled>{{$institutions->event_new_weblink}}</textarea>
+                        </div>
+                    </div>
+                </div>
+                @endif
+                <br>
+            </div>
+
+            <div class="card tab-pane  col-md-10" id="menu5" style="width:100% !important;left:5%">
+                <br>
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Canada Inspire provides Additional Services :-
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;" rows="12" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
+    We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
+            1. Is your Company looking for Website Design/Re Design or Development to give professional look
+               and exposure for International community?
+            2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
+               on your Website?
+            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+            4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
+               enhance your services?
+            5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
+               your company marketing activities,  follow-up, and efficiency to generate good revenues
+               for your company and always ahead with your competitors?</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+            </div>
+
+            <div class="card tab-pane  col-md-10" id="menu6" style="width:100% !important;left:5%">
+                <br>
+                <div class="row custom-box">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Feedback of Canada Inspire
+                            </label>
+                            <br>
+
+                            <textarea style="width:100%;background-color:white !important;" rows="9" name="Comment" value="{{$institutions->Comment}}" disabled>{{$institutions->Comment}}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+
+
+
+
+        </div>
+
+        <div class="col-md-2">
+            <div class="d-flex flex-column align-items-left text-left p-3 py-5">
+                <div class="uploadimg ">
+                    @if($img)
+                    <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$img)}}">
+                    @else
+                    <img class="rounded-circle mt-5 img float-left" style="width:100px !important;height:100px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
+                    @endif
+
+                </div>
+
+                @if(!$view)
+                <form method="post" id="upload_form" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <label class="custom-file-upload float-center">
+                        <input id="profile_img" name="profile_img" type="file" />
+                        <i class="fa fa-camera" style="font-size:18px;color:#004e75"> </i>
+                    </label>
+                </form>
+                @endif
+
+                <div class="row">
+                    <a class="facebook" href="{{$institutions->fb_link}}" target="_blank">
+                        <div class="icon col-lg-1 col-md-1 col-1 fa-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625
+                                            h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a class="twitter" href="{{$institutions->twitter_link}}" target="_blank">
+                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                            </svg>
+                        </div>
+
+                    </a>
+                    <a class="instagram" href="{{$institutions->insta_link}}" target="_blank">
+                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            </svg>
+                        </div>
+
+                    </a>
+                    <a class="linkedin" href="{{$institutions->Linkedin_link}}" target="_blank">
+                        <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                            </svg>
+                        </div>
+
+                    </a>
+
+                </div>
+                <br>
+                @if($view)
+                <div class="col-md-10 float-left">
+                    <a href="{{route('dashboard.institution')}}"> <button type="button" style="width:100%" class="client-btn btn btn-primary">GO to dashboard</button></a>
+                </div>
+                @else
+                <div class="col-md-10 float-left">
+                    <a href="{{route('edit.institution')}}"> <button type="button" style="width:100%" class="client-btn btn btn-primary">Edit Profile</button></a>
+                </div>
+                @endif
+            </div>
+
         </div>
     </div>
-
-
-</section>
+</div>
 
 <script>
     $(document).ready(function() {
