@@ -65,7 +65,7 @@
     .card {
         display: block;
         height: 300px;
-        width: 100%;
+        width: 90%;
         margin-bottom: 20px;
         line-height: 1.42857143;
         border-radius: 5px;
@@ -146,8 +146,8 @@
     }
 </style>
 
-<div class=" ">
-    <div class="col-7 input-group float-center">
+<div style="margin-left:5%;margin-right:5%">
+    <div class="col-10 input-group float-center">
         <div class="form-outline">
             <input type="search" id="form1" class="form-control" placeholder="Search" />
 
@@ -157,47 +157,76 @@
         </button>
     </div>
     <br>
-    <div class="row">
-        @if($institutions)
+    <div>
+
+        <div class="row">
+            @if($institutions)
 
 
-        @foreach($institutions as $row)
+            @foreach($institutions as $row)
 
-        <div class="col-sm-3">
-            <div class="card" style="overflow:hidden">
+            <div class="col-sm-4">
+                <div class="card" style="">
+                    <div class=" " style="background-color: #f5f5f5!important; box-shadow: none ; border-radius:0%">
+                        <div class="card-content example" style="text-align:center">
 
-                <div class="card-content example" style="text-align:center">
-                    <h4 class="card-title">
-                        {{$row->type}}
+                            <h4 class="card-title">
+                                {{$row->type}}
+                            </h4>
 
-                    </h4>
-
-                    <p class="card-text ">{{$row->name}}</p>
+                            <p class="card-text ">{{$row->name}}</p>
 
 
-                    <p class="card-text ">
-                        @if($row->offer_course)
-                        @foreach($row->offer_course as $service)
-                        {{$service}},
-                        @endforeach
-                        @endif
-                    </p>
-                </div>
-                <div class="card-read-more">
-                    <a href="{{route('dashboard.institution.view',['id' => $row->id])}}" class="btn btn-link btn-block">
-                        <p> View More</p>
-                    </a>
+                            <p class="card-text ">
+                                @if($row->offer_course)
+                                @foreach($row->offer_course as $service)
+                                {{$service}},
+                                @endforeach
+                                @endif
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-read-more" >
+                        <a href="{{route('dashboard.institution.view',['id' => $row->id])}}" class="btn btn-link btn-block">
+                            View More
+                        </a>
+                    </div>
+
                 </div>
             </div>
+
+            @endforeach
+
+            @endif
         </div>
-
-        @endforeach
-
-        @endif
     </div>
 
-
 </div>
+
+
+@if($unique == 'School')
+<script>
+    $(document).ready(function() {
+        $(".dash").removeClass('active')
+        $(".institution1").addClass('active')
+    })
+</script>
+@elseif($unique == 'College')
+<script>
+    $(document).ready(function() {
+        $(".dash").removeClass('active')
+        $(".institution2").addClass('active')
+    })
+</script>
+@else
+<script>
+    $(document).ready(function() {
+        $(".dash").removeClass('active')
+        $(".institution3").addClass('active')
+    })
+</script>
+@endif
+
 
 
 

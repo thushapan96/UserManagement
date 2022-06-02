@@ -65,6 +65,7 @@ class ProviderProfileController extends Controller
 
     public function updateInstitude(Request $request, $id)
     {
+       
         $Institution = Institution::find($id);
         $Institution->update($request->all());
         $Institution->user_id = Auth::user()->id;

@@ -6,40 +6,35 @@
 <div class="container">
     <div class=" " style="width:100% !important;max-width: 1500px !important; left:0  !important">
 
-        <div class="cardf">
+        <div class="cardf col-11">
+        <h5 style="text-align:center"> edit Consultant details</h5><br>
             <nav class="nav nav-pills nav-fill justify-content-center " style="cursor:pointer;padding: .15rem 0.5rem;">
-                <a class="nav-link active amenu" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" aria-current="page" id="amenu">Main </a>
-                <a class="nav-link amenu1" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu1">Team Members</a>
-                <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu2">About Company </a>
-                <a class="nav-link amenu3" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
-                <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu4">News and Events</a>
-                <a class="nav-link amenu5" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu5">Canada Inspire</a>
-                <a class="nav-link amenu6" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 !important" id="amenu6">Feedback </a>
+                <a class="nav-link active amenu" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " aria-current="page" id="amenu">Main </a>
+                <a class="nav-link amenu1" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu1">Team Members</a>
+                <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu2">About Company </a>
+                <a class="nav-link amenu3" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu3"> Award & Certification</a>
+                <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu4">News and Events</a>
+                <a class="nav-link amenu5" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu5">Canada Inspire</a>
+                <a class="nav-link amenu6" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu6">Feedback </a>
 
             </nav>
         </div>
 
-        <!-- <div class="progress mt-2">
-            <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%" style="cursor:pointer;padding: .15rem 0.5rem !important;">
-
-            </div>
-        </div> -->
+     
     </div>
 
 
 
     <!-- <h1>{{$consultants->first_name}} </h1> -->
     <br>
-    <h6>{{$consultants->first_name}} to provide correct information. This will allow us to incorporate your information on our Portal databank for the International aspirant Candidates to access, explore and know more about the Consultants services and specialization.</h6>
-    <h6></h6>
-    <br>
+
     <form id="form" action="{{route('update.consultant' ,['id'=>$consultants->id])}}" method="post" enctype="multipart/form-data">
         @csrf
 
-        <div class="whiteBox clearfix tab-pane  " style="max-width: none;" id="menu">
-            <br>
+        <div class="whiteBox clearfix tab-pane  "  id="menu" style="width:80%;margin-left:5% !important" >
+          
             <!--div class="news-title">You have questions, let's have a conversation </div-->
-            <div class="row custom-box" id="">
+            <div class="row custom-box " id="">
 
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="form-group">
@@ -167,8 +162,8 @@
                     <div class="form-group">
                         <label>Postal Code *
                         </label>
-                        <br>
-                       
+                        <br><br>
+                      
                         <input class="form-control " type="text" name="postal_code" value="{{$consultants->postal_code}}">
                     </div>
                 </div>
@@ -186,7 +181,7 @@
                     <div class="form-group">
                         <label>URL - Website Address *
                         </label>
-                        <br>
+                        <br><br>
                         <input class="form-control " type="text" name="website_address" value="{{$consultants->website_address}}">
                     </div>
                 </div>
@@ -195,7 +190,7 @@
                     <div class="form-group">
                         <label>Contact Number *
                         </label>
-                        <br>
+                        <br><br>
                        
                         <input class="form-control " type="text" name="phone" value="{{$consultants->phone}}">
                     </div>
@@ -452,7 +447,7 @@
 
         </div>
 
-        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu1">
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;width:80%;margin-left:5% !important" id="menu1">
             <div class="row custom-box">
 
                 <div class="col-lg-12 col-md-12 col-12">
@@ -528,7 +523,7 @@
             </div>
         </div>
 
-        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu2">
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;width:80%;margin-left:5% !important" id="menu2">
             <div class="row custom-box">
 
                 <div class="col-lg-2 col-md-2 col-12">
@@ -598,7 +593,7 @@
             <hr>
         </div>
 
-        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu3">
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;width:80%;margin-left:5% !important" id="menu3">
             <div class="row custom-box">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-group">
@@ -630,7 +625,7 @@
 
         </div>
 
-        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu4">
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;width:80%;margin-left:5% !important" id="menu4">
             <div class="row custom-box">
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="form-group">
@@ -727,7 +722,7 @@
 
         </div>
 
-        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu5">
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;width:80%;margin-left:5% !important" id="menu5">
             <div class="row custom-box">
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="form-group">
@@ -736,13 +731,15 @@
                         <br>
 
                         <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
-    We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-            1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
-            2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
-            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-            4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
-            5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, 
-            follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
+We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
+        1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure 
+           for International community?
+        2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
+        3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+        4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
+        5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company 
+           marketing activities, follow-up, and efficiency to generate good revenues for your company and always 
+           ahead with your competitors?</textarea>
                     </div>
                 </div>
             </div>
@@ -751,7 +748,7 @@
             </div>
         </div>
 
-        <div class="whiteBox clearfix tab-pane" style="max-width: none;" id="menu6">
+        <div class="whiteBox clearfix tab-pane" style="max-width: none;width:80%;margin-left:5% !important" id="menu6">
             <div class="row custom-box">
                 <div class="col-lg-12 col-md-12 col-12">
                     <div class="form-group">

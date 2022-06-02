@@ -67,30 +67,30 @@ class DashboardController extends Controller
     {
         $institutions = Institution::where('type','School')->get();
 
-        return view('dashboard.institution')->with('institutions', $institutions);
+        return view('dashboard.institution')->with('institutions', $institutions)->with('unique','School');
     }
     public function collegeIndex()
     {
         $institutions = Institution::where('type','College')->get();
 
-        return view('dashboard.institution')->with('institutions', $institutions);
+        return view('dashboard.institution')->with('institutions', $institutions)->with('unique','College');
     }
     public function universityIndex()
     {
         $institutions = Institution::where('type','University')->get();
 
-        return view('dashboard.institution')->with('institutions', $institutions);
+        return view('dashboard.institution')->with('institutions', $institutions)->with('unique','University');
     }
     public function rcicConsultantIndex()
     {
         $consultants = Consultant::where('type', 'RCIC Consultant')->get();
 
-        return view('dashboard.consultant')->with('consultants', $consultants);
+        return view('dashboard.consultant')->with('consultants', $consultants)->with('unique','RCIC Consultant');
     }
     public function immigrationIndex()
     {
         $consultants = Consultant::where('type', 'Immigration Lawyer/Attorney')->get();
 
-        return view('dashboard.consultant')->with('consultants', $consultants);
+        return view('dashboard.consultant')->with('consultants', $consultants)->with('unique','Immigration Lawyer/Attorney');
     }
 }

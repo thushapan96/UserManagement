@@ -33,11 +33,11 @@
         <br> <br> -->
 
 
-    <div id="menu" class="tab-pane  ">
-        <h1>Candidate Registation - Personal Info</h1>
+    <div id="menu" class="tab-pane  " style="width:80%;margin-left:5% !important">
+        <h5 style="text-align:center">Personal Information edit</h5><br>
         <form action="{{route('profilePersonalupdate',['id' => $personal->user_id])}}" method="POST">
             @csrf
-            <div class="whiteBox clearfix">
+            <div class="whiteBox clearfix" >
                 <!--div class="news-title">You have questions, let's have a conversation </div-->
                 <div class="row custom-box">
 

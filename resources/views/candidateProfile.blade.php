@@ -22,26 +22,22 @@
         <div class="col-md-9">
 
 
-            <div class="cardf">
-                <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important">
-                    <a class="nav-link active" style="cursor:pointer;padding: .5rem 3rem;color:#004e75 !important" aria-current="page" id="amenu">personal</a>
-                    <a class="nav-link " style="cursor:pointer;padding: .5rem 3rem;color:#004e75 !important" id="amenu1">academic</a>
-                    <a class="nav-link" style="cursor:pointer;padding: .5rem 3rem;;color:#004e75 !important" id="amenu2">work</a>
-                    <a class="nav-link " style="cursor:pointer;padding: .5rem 3rem;;color:#004e75 !important" id="amenu3">sponsor</a>
+            <div class="cardf col-md-10">
+                <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; ">
+                    <a class="nav-link nav-linkk active" style="cursor:pointer;padding: .5rem 3rem;color:#004e75 " aria-current="page" id="amenu">personal</a>
+                    <a class="nav-link nav-linkk" style="cursor:pointer;padding: .5rem 3rem;color:#004e75 " id="amenu1">academic</a>
+                    <a class="nav-link nav-linkk" style="cursor:pointer;padding: .5rem 3rem;;color:#004e75 " id="amenu2">work</a>
+                    <a class="nav-link nav-linkk" style="cursor:pointer;padding: .5rem 3rem;;color:#004e75 " id="amenu3">sponsor</a>
                 </nav>
             </div>
-<br>
+            <br>
 
             @if($personal)
-            <div id='menu' class='tab-pane'>
-                <!-- <div class="float-center">
-                            <h4 class="float-center">Personal Information</h4>
-                        </div> -->
-                <br>
-                <div class="col-md-11 card">
-                    <br>
-                    <strong class="labels" style="text-decoration: underline;color:#004e75">Personal Information</strong><br>
+            <div id='menu' class='tab-pane card col-md-10'>
+                <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
 
+                    <h5 class="labels" style="text-decoration: underline;color:#004e75">Personal Information</h5>
+                    <br>
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels"> Name </strong>
@@ -55,66 +51,8 @@
                             <label class="labels">{{$personal->last_name}}</label>
                         </div>
                     </div>
-                    <br>
-                    <div class="row ">
-                        <div class="col-md-4">
-                            <strong class="labels"> Residential Address </strong>
-                        </div>
-                        <div class="col-md-1">
-                            <strong class="labels"> :</strong>
-                        </div>
-                        <div class="col-md-7">
-                            @if($personal->residential_street)
-                            <label class="labels">{{$personal->residential_street}}</label><br>
-                            @endif
-                            @if($personal->residential_street2)
-                            <label class="labels">{{$personal->residential_street2}}</label><br>
-                            @endif
-                            @if($personal->residential_city)
-                            <label class="labels">{{$personal->residential_city}}</label><br>
-                            @endif
-                            @if($personal->residential_region)
-                            <label class="labels">{{$personal->residential_region}}</label><br>
-                            @endif
-                            @if($personal->residential_pincode)
-                            <label class="labels">{{$personal->residential_pincode}}</label><br>
-                            @endif
-                            @if($personal->residential_country)
-                            <label class="labels">{{$personal->residential_country}}</label>
-                            @endif
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row ">
-                        <div class="col-md-4">
-                            <strong class="labels"> corosponding Address </strong>
-                        </div>
-                        <div class="col-md-1">
-                            <strong class="labels"> :</strong>
-                        </div>
-                        <div class="col-md-7">
-                            @if($personal->corosponding_street)
-                            <label class="labels">{{$personal->corosponding_street}}</label><br>
-                            @endif
-                            @if($personal->corosponding_street2)
-                            <label class="labels">{{$personal->corosponding_street2}}</label><br>
-                            @endif
-                            @if($personal->corosponding_city)
-                            <label class="labels">{{$personal->corosponding_city}}</label><br>
-                            @endif
-                            @if($personal->corosponding_region)
-                            <label class="labels">{{$personal->corosponding_region}}</label><br>
-                            @endif
-                            @if($personal->corosponding_pincode)
-                            <label class="labels">{{$personal->corosponding_pincode}}</label><br>
-                            @endif
-                            @if($personal->corosponding_pincode)
-                            <label class="labels">{{$personal->corosponding_country}}</label>
-                            @endif
 
-                        </div>
-                    </div>
-                    <br>
+
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels"> mobile</strong>
@@ -123,11 +61,11 @@
                             <strong class="labels"> :</strong>
                         </div>
                         <div class="col-md-7">
-                            <label class="labels">{{$personal->mobile}}</label><br>
+                            <label class="labels">{{$personal->mobile}}</label>
                             <label class="labels">{{$personal->phone}}</label>
                         </div>
                     </div>
-                    <br>
+
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels"> email</strong>
@@ -139,7 +77,7 @@
                             <label class="labels">{{$personal->email}}</label>
                         </div>
                     </div>
-                    <br>
+
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels"> birth_date</strong>
@@ -151,7 +89,7 @@
                             <label class="labels">{{$personal->birth_date}}</label>
                         </div>
                     </div>
-                    <br>
+
 
                     <div class="row ">
                         <div class="col-md-4">
@@ -164,16 +102,9 @@
                             <label class="labels">{{$personal->gender}}</label>
                         </div>
                     </div>
-                    <br>
-                    <!-- <div class="row ">
-                                <div class="col-md-4">
-                                    <strong class="labels"> is already apply </strong>
-                                </div>
-                                <div class="col-md-7">:
-                                    <label class="labels">{{$personal->is_already_apply}}</label>
-                                </div>
-                            </div> -->
-                    <br>
+
+
+
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels"> possible start date</strong>
@@ -185,7 +116,7 @@
                             <label class="labels">{{$personal->possible_start_date}}</label>
                         </div>
                     </div>
-                    <br>
+
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels"> immigration purpose </strong>
@@ -197,7 +128,7 @@
                             <label class="labels">{{$personal->immigration_purpose}}</label>
                         </div>
                     </div>
-                    <br>
+
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels"> is vaccinate</strong>
@@ -209,120 +140,184 @@
                             <label class="labels">{{$personal->is_vaccinate}}</label>
                         </div>
                     </div>
-                    <br><br>
+
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <strong class="labels"> Residential Address </strong>
+                        </div>
+                        <div class="col-md-1">
+                            <strong class="labels"> :</strong>
+                        </div>
+                        <div class="col-md-7">
+                            @if($personal->residential_street)
+                            <label class="labels">{{$personal->residential_street}}</label>
+                            @endif
+                            @if($personal->residential_street2)
+                            <label class="labels">{{$personal->residential_street2}}</label>
+                            @endif
+                            @if($personal->residential_city)
+                            <label class="labels">{{$personal->residential_city}}</label>
+                            @endif
+                            @if($personal->residential_region)
+                            <label class="labels">{{$personal->residential_region}}</label>
+                            @endif
+                            @if($personal->residential_pincode)
+                            <label class="labels">{{$personal->residential_pincode}}</label>
+                            @endif
+                            @if($personal->residential_country)
+                            <label class="labels">{{$personal->residential_country}}</label>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <strong class="labels"> corosponding Address </strong>
+                        </div>
+                        <div class="col-md-1">
+                            <strong class="labels"> :</strong>
+                        </div>
+                        <div class="col-md-7">
+                            @if($personal->corosponding_street)
+                            <label class="labels">{{$personal->corosponding_street}}</label>
+                            @endif
+                            @if($personal->corosponding_street2)
+                            <label class="labels">{{$personal->corosponding_street2}}</label>
+                            @endif
+                            @if($personal->corosponding_city)
+                            <label class="labels">{{$personal->corosponding_city}}</label>
+                            @endif
+                            @if($personal->corosponding_region)
+                            <label class="labels">{{$personal->corosponding_region}}</label>
+                            @endif
+                            @if($personal->corosponding_pincode)
+                            <label class="labels">{{$personal->corosponding_pincode}}</label>
+                            @endif
+                            @if($personal->corosponding_pincode)
+                            <label class="labels">{{$personal->corosponding_country}}</label>
+                            @endif
+
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
             @endif
             @if($Academy)
-            <div id='menu1' class='tab-pane'>
+            <div id='menu1' class='tab-pane card col-md-10'>
                 <!-- <div class="float-center">
                             <h4 class="float-center">Personal Information</h4>
                         </div> -->
 
-                <div class="col-md-11 card">
-                    <br>
-                    <strong class="labels" style="text-decoration: underline;color:#004e75">Language Qualification</strong><br>
-
+                <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+                    <h5 class="labels" style="text-decoration: underline;color:#004e75">Language Qualification</h5><br>
+                    @if($Academy->language_proficiency)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels"> Language Proficiency </strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label class="labels">{{$Academy->language_proficiency}}</label>
                         </div>
                     </div>
-                    <br>
+                    @endif
+                    @if($Academy->language_level)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels"> Language Level </strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label class="labels">{{$Academy->language_level}}</label>
                         </div>
                     </div>
-                    <br>
+                    @endif
+                    @if($Academy->language_certified_by)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels"> Certified By</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label class="labels">{{$Academy->language_certified_by}}</label><br>
                         </div>
                     </div>
-                    <br>
+                    @endif
+                    @if($Academy->applicant_test_name)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels"> Applicant Test Scores </strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label class="labels">{{$Academy->applicant_test_name}}</label><br>
 
                         </div>
                     </div>
-                    <br>
+                    @endif
+                    @if($Academy->test_valid_upto)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels"> Valid Upto</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label class="labels">{{$Academy->test_valid_upto}}</label><br>
                         </div>
-                    </div><br>
+                    </div>
+                    @endif
                     @if($Academy->language_attachment)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels"> Language Certified Attachment</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
-                        <a href="{{url('files/'.$Academy->language_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->language_attachment}}</a>
+                        <div class="col-md-6">
+                            <a href="{{url('files/'.$Academy->language_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->language_attachment}}</a>
                         </div>
-                    </div><br>
+                    </div>
                     @endif
                     @if($Academy->test_attachment)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels">Applicant Test Scores Attachment</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
-                        <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->test_attachment}}</a>
+                        <div class="col-md-6">
+                            <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->test_attachment}}</a>
                         </div>
-                    </div><br>
+                    </div>
                     @endif
                 </div>
-                <br>
+
 
                 @foreach($qualification as $row)
-                <div class="col-md-11 card">
-                    <br>
+                <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+
                     @if($row->type == 'school')
-                    <strong class="labels" style="text-decoration: underline;color:#004e75">School</strong><br>
+                    <h5 class="labels" style="text-decoration: underline;">School </h5><br>
                     @elseif($row->type == 'college')
-                    <strong class="labels" style="text-decoration: underline;color:#004e75">College</strong><br>
+                    <h5 class="labels" style="text-decoration: underline;">College </h5><br>
                     @elseif($row->type == 'PG')
-                    <strong class="labels" style="text-decoration: underline;color:#004e75">Post Graduation</strong><br>
+                    <h5 class="labels" style="text-decoration: underline;">Post Graduation </h5><br>
                     @else
-                    <strong class="labels" style="text-decoration: underline;color:#004e75">Other Qualification</strong><br>
+                    <h5 class="labels" style="text-decoration: underline;">Other Qualification </h5><br>
                     @endif
                     <div class="row ">
                         <div class="col-md-4">
@@ -334,7 +329,7 @@
                         <div class="col-md-7">
                             <label class="labels">{{$row->name}}</label><br>
                         </div>
-                    </div> <br>
+                    </div>
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels">Address</strong>
@@ -345,7 +340,7 @@
                         <div class="col-md-7">
                             <label class="labels">{{$row->Address}}</label><br>
                         </div>
-                    </div> <br>
+                    </div>
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels">Year Completion</strong>
@@ -356,7 +351,7 @@
                         <div class="col-md-7">
                             <label class="labels">{{$row->Year_completion}}</label><br>
                         </div>
-                    </div> <br>
+                    </div>
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels">Distant</strong>
@@ -367,7 +362,7 @@
                         <div class="col-md-7">
                             <label class="labels">{{$row->Distant}}</label><br>
                         </div>
-                    </div> <br>
+                    </div>
                     @if($row->attachment)
                     <div class="row ">
                         <div class="col-md-4">
@@ -377,127 +372,117 @@
                             <strong class="labels"> :</strong>
                         </div>
                         <div class="col-md-7">
-                        <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
+                            <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
                         </div>
-                    </div><br>
+                    </div>
                     @endif
                 </div>
-                <br>
+
                 @endforeach
 
             </div>
             @endif
             @if($Work)
-            <div id='menu2' class='tab-pane'>
-                <!-- <div class="float-center">
-                            <h4 class="float-center">Personal Information</h4>
-                        </div> -->
-                <br>
-                @foreach($Work as $key =>$row)
-                <div class="col-md-11 card">
-                    <br>
+            <div id='menu2' class='tab-pane card col-md-10'>
 
-                    <strong class="labels" style="text-decoration: underline;color:#004e75">Place work {{$key + 1 }}</strong><br>
+                @foreach($Work as $key =>$row)
+                <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+                    <h5 class="labels" style="text-decoration: underline;color:#004e75">Place work {{$key + 1 }}</h5><br>
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels">Designation</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label class="labels"> {{$row->designation}}</label>
                         </div>
-                    </div><br>
+                    </div>
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels">No. of Years Worked</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label class="labels">{{$row->Year_completion}}</label>
                         </div>
-                    </div><br>
+                    </div>
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels">Country</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label class="labels">{{$row->country}}</label>
                         </div>
-                    </div><br>
+                    </div>
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels">Work Profile</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <label class="labels">{{$row->work_profile_letter}}</label>
                         </div>
-                    </div><br>
+                    </div>
                     @if($row->attach_experience_certificate)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels"> Attach Experience Certificate</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
-                        <a href="{{url('files/'.$row->attach_experience_certificate)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_experience_certificate}}</a>
+                        <div class="col-md-6">
+                            <a href="{{url('files/'.$row->attach_experience_certificate)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_experience_certificate}}</a>
                         </div>
-                    </div><br>
+                    </div>
                     @endif
                     @if($row->attach_salary_slip)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels">Attach Salary Slip</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
-                        <a href="{{url('files/'.$row->attach_salary_slip)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_salary_slip}}</a>
+                        <div class="col-md-6">
+                            <a href="{{url('files/'.$row->attach_salary_slip)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_salary_slip}}</a>
                         </div>
-                    </div><br>
+                    </div>
                     @endif
                     @if($row->attach_offer_letter)
                     <div class="row ">
-                        <div class="col-md-4">
+                        <div class="col-md-5">
                             <strong class="labels"> Attach Offer/Recommendation Letter</strong>
                         </div>
                         <div class="col-md-1">
                             <strong class="labels"> :</strong>
                         </div>
-                        <div class="col-md-7">
-                        <a href="{{url('files/'.$row->attach_offer_letter)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_offer_letter}}</a>
+                        <div class="col-md-6">
+                            <a href="{{url('files/'.$row->attach_offer_letter)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_offer_letter}}</a>
                         </div>
                     </div>
                     @endif
 
                 </div>
-                <br>
-                @endforeach
 
-                <br>
+                @endforeach
             </div>
             @endif
             @if($Sponsor)
-            <div id='menu3' class='tab-pane'>
-                <!-- <div class="float-center">
-                            <h4 class="float-center">Personal Information</h4>
-                        </div> -->
+            <div id='menu3' class='tab-pane card col-md-10'>
 
-                <div class="col-md-11 card">
-                    <br>
-                    <strong class="labels" style="text-decoration: underline;color:#004e75">Sponsor Details</strong><br>
+                <div  class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+                    
+                    <h5 class="labels" style="text-decoration: underline">Sponsor Details</h5><br>
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels">Name </strong>
@@ -543,7 +528,6 @@
                             <label class="labels">{{$Sponsor->sponsor_mobile}}</label>
                         </div>
                     </div>
-
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels">Email </strong>
@@ -555,7 +539,6 @@
                             <label class="labels">{{$Sponsor->sponsor_email}}</label>
                         </div>
                     </div>
-
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels">Address</strong>
@@ -586,10 +569,10 @@
                     </div>
 
                 </div>
-                <br>
-                <div class="col-md-11 card">
-                    <br>
-                    <strong class="labels" style="text-decoration: underline;color:#004e75">Guadian Details</strong><br>
+               
+                <div  class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+                   
+                    <h5 class="labels" style="text-decoration: underline;">Guadian Details</h5><br>
                     <div class="row ">
                         <div class="col-md-4">
                             <strong class="labels">Relationship with Child</strong>
@@ -656,7 +639,7 @@
 
 
                 </div>
-                <br>
+               
 
             </div>
             @endif
@@ -664,7 +647,7 @@
 
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3" >
             <div class="d-flex flex-column align-items-left text-left p-3 py-5">
                 @if($image)
                 <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$image)}}">
@@ -733,11 +716,13 @@
     $(document).ready(function() {
         console.log('hiii')
         $('.tab-pane').fadeOut();
+        $(".dash").removeClass('active')
+        $(".profile").addClass('active')
         $("#menu").fadeIn();
         $("#amenu").click(function() {
             $('.tab-pane').fadeOut();
             $("#menu").fadeIn();
-            $(".nav-link").removeClass('active')
+            $(".nav-linkk").removeClass('active')
             $(this).addClass('active')
             $('.editbtn').html('Edit Personal Details')
             var id = $('.editlink').attr('data-id')
@@ -747,7 +732,7 @@
         $("#amenu1").click(function() {
             $('.tab-pane').fadeOut();
             $("#menu1").fadeIn();
-            $(".nav-link").removeClass('active')
+            $(".nav-linkk").removeClass('active')
             $(this).addClass('active')
             $('.editbtn').html('Edit Academic Details')
             var id = $('.editlink').attr('data-id')
@@ -757,7 +742,7 @@
         $("#amenu2").click(function() {
             $('.tab-pane').fadeOut();
             $("#menu2").fadeIn();
-            $(".nav-link.active").removeClass('active')
+            $(".nav-linkk").removeClass('active')
             $(this).addClass('active')
             $('.editbtn').html('Edit Work Details')
             var id = $('.editlink').attr('data-id')
@@ -767,7 +752,7 @@
         $("#amenu3").click(function() {
             $('.tab-pane').fadeOut();
             $("#menu3").fadeIn();
-            $(".nav-link.active").removeClass('active')
+            $(".nav-linkk").removeClass('active')
             $(this).addClass('active')
             $('.editbtn').html('Edit Sponsor Detail')
             var id = $('.editlink').attr('data-id')
@@ -829,7 +814,7 @@
     setTimeout(function() {
         $('.tab-pane').fadeOut();
         $("#menu1").fadeIn();
-        $(".nav-link.active").removeClass('active')
+        $(".nav-linkk").removeClass('active')
         $("#amenu1").addClass('active')
         $('.editbtn').html('Edit Academic Details')
         var id = $('.editlink').attr('data-id')
@@ -850,7 +835,7 @@
     setTimeout(function() {
         $('.tab-pane').fadeOut();
         $("#menu2").fadeIn();
-        $(".nav-link.active").removeClass('active')
+        $(".nav-linkk").removeClass('active')
         $("#amenu2").addClass('active')
         $('.editbtn').html('Edit Work Details')
         var id = $('.editlink').attr('data-id')
@@ -871,7 +856,7 @@
     setTimeout(function() {
         $('.tab-pane').fadeOut();
         $("#menu3").fadeIn();
-        $(".nav-link.active").removeClass('active')
+        $(".nav-linkk").removeClass('active')
         $("#amenu3").addClass('active')
         $('.editbtn').html('Edit Sponsor Detail')
         var id = $('.editlink').attr('data-id')

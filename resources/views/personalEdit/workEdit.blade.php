@@ -14,114 +14,116 @@
 <!-- Subscribe & Stay Connected. Start -->
 <div class="container ">
 
-    <h1>Candidate Registation - Work Experience</h1>
-    <form id="work_form" action="{{route('profileWorkupdate',['id' => $userId ])}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="whiteBox clearfix">
+    <div class="tab-pane  " style="width:80%;margin-left:5% !important">
+        <h5 style="text-align:center">Work Place Information edit</h5><br>
+        <form id="work_form" action="{{route('profileWorkupdate',['id' => $userId ])}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="whiteBox clearfix">
 
-            <div id="newRow">
-                @if($work)
-                @foreach($work as $key => $row)
-                <div id="inputFormRow">
+                <div id="newRow">
+                    @if($work)
+                    @foreach($work as $key => $row)
+                    <div id="inputFormRow">
+                    <h5 class="labels" style="text-decoration: underline">Place of Work</h5>
 
-                    <h6>Place of Work</h6>
-                    <!--div class="news-title">You have questions, let's have a conversation </div-->
+                        <!--div class="news-title">You have questions, let's have a conversation </div-->
 
-                    <div class="row mt-4 custom-box">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>Designation
-                                </label>
-                                <input class="form-control " type="text" placeholder="Enter Designation" name="designation[]" value="{{$row->designation}}" required>
-                                <input type="text" name="workId[]" value="{{$row->id}}" hidden>
+                        <div class="row mt-4 custom-box">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>Designation
+                                    </label>
+                                    <input class="form-control " type="text" placeholder="Enter Designation" name="designation[]" value="{{$row->designation}}" required>
+                                    <input type="text" name="workId[]" value="{{$row->id}}" hidden>
+                                </div>
                             </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>Country
+                                    </label>
+                                    <input class="form-control " type="text" placeholder="enter Country" name="country[]" value="{{$row->country}}">
+
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>Country
-                                </label>
-                                <input class="form-control " type="text" placeholder="enter Country" name="country[]" value="{{$row->country}}">
+                        <div class="row mt-4 custom-box">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>No. of Years Worked
+                                    </label>
+                                    <input class="form-control " type="text" placeholder="Enter number of years worked in the company" name="Year_completion[]" value="{{$row->Year_completion}}">
+                                </div>
+                            </div>
 
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>
+                                        Attach Experience Certificate
+                                    </label>
+                                    <a href="{{url('files/'.$row->attach_experience_certificate)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_experience_certificate}}</a>
+                                    <input class="form-control" type="file" value="" name="attach_experience_certificate[]" value="{{$row->attach_experience_certificate}}">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="row mt-4 custom-box">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>Attach Salary Slip
+                                    </label>
+                                    <a href="{{url('files/'.$row->attach_salary_slip)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_salary_slip}}</a>
+                                    <input class="form-control " type="file" name="attach_salary_slip[]" value="{{$row->attach_salary_slip}}">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label>
+                                        Attach Offer/Recommendation Letter
+                                    </label>
+                                    <a href="{{url('files/'.$row->attach_offer_letter)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_offer_letter}}</a>
+                                    <input class="form-control " type="file" name="attach_offer_letter[]" value="{{$row->attach_offer_letter}}">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row mt-4 custom-box">
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+                                    <label>Work Profile
+                                    </label>
+                                    <textarea style="width:100%;" rows="5" name="work_profile_letter[]" value="{{$row->work_profile_letter}}">{{$row->work_profile_letter}}</textarea>
+                                </div>
                             </div>
                         </div>
+                        <div class="float-right">
+                            <button type="button" class=" closebtn client-btn btn btn-danger" id="removeRow" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
+                        </div>
+                        <br>
+                        <br>
+                        <hr>
 
                     </div>
-
-                    <div class="row mt-4 custom-box">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>No. of Years Worked
-                                </label>
-                                <input class="form-control " type="text" placeholder="Enter number of years worked in the company" name="Year_completion[]" value="{{$row->Year_completion}}">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>
-                                    Attach Experience Certificate
-                                </label>
-                                <a href="{{url('files/'.$row->attach_experience_certificate)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_experience_certificate}}</a>
-                                <input class="form-control" type="file" value="" name="attach_experience_certificate[]" value="{{$row->attach_experience_certificate}}">
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="row mt-4 custom-box">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>Attach Salary Slip
-                                </label>
-                                <a href="{{url('files/'.$row->attach_salary_slip)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_salary_slip}}</a>
-                                <input class="form-control " type="file" name="attach_salary_slip[]" value="{{$row->attach_salary_slip}}">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <label>
-                                    Attach Offer/Recommendation Letter
-                                </label>
-                                <a href="{{url('files/'.$row->attach_offer_letter)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_offer_letter}}</a>
-                                <input class="form-control " type="file" name="attach_offer_letter[]" value="{{$row->attach_offer_letter}}">
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="row mt-4 custom-box">
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <label>Work Profile
-                                </label>
-                                <textarea style="width:100%;" rows="5" name="work_profile_letter[]" value="{{$row->work_profile_letter}}">{{$row->work_profile_letter}}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="float-right">
-                        <button class=" closebtn client-btn btn btn-danger" id="removeRow" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
-                    </div>
-                    <br>
-                    <br>
-                    <hr>
-
+                    @endforeach
+                    @endif
                 </div>
-                @endforeach
-                @endif
-            </div>
 
-            <button id="addRow" type="button" class="add-btn btn btn-primary"><i class="fa fa-solid fa-plus"></i>Add WorkPlace </button>
-          
-            <div class="float-right">
-                <a> <button type="submit" class="client-btn btn btn-primary">Update</button></a>
+                <button id="addRow" type="button" class="add-btn btn btn-primary"><i class="fa fa-solid fa-plus"></i>Add WorkPlace </button>
+
+                <div class="float-right">
+                    <a> <button type="submit" class="client-btn btn btn-primary">Update</button></a>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 <!-- ......................script for google map view.................... -->
 
@@ -222,7 +224,7 @@
         </div>
     </div>
     <div class="float-right">
-        <button  class=" closebtn client-btn btn btn-danger" id="removeRow" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
+        <button type="button" class="closebtn client-btn btn btn-danger" id="removeRow" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
         </div>
         <br>
         <hr style="height:12px;">

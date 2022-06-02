@@ -92,14 +92,14 @@
 
             <div class="col-md-11">
                 <div class="cardf">
-                    <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; text-decoration: underline !important ">
-                        <a class="nav-link active amenu" style="cursor:pointer;padding: 0.5rem 0.5rem;color:#004e75 !important" aria-current="page" id="amenu">Main Content</a>
-                        <a class="nav-link amenu1" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 !important" id="amenu1">Team list</a>
-                        <a class="nav-link amenu2" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 !important" id="amenu2">About Company </a>
-                        <a class="nav-link amenu3" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 !important" id="amenu3"> Award & Certification</a>
-                        <a class="nav-link amenu4" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 !important" id="amenu4">News and Events</a>
-                        <a class="nav-link amenu5" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu5">Canada Inspire</a>
-                        <a class="nav-link amenu6" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu6">Feedback</a>
+                    <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer;">
+                        <a class="nav-link nav-linkk active amenu" style="cursor:pointer;padding: 0.5rem 0.5rem;color:#004e75" aria-current="page" id="amenu">Main Content</a>
+                        <a class="nav-link nav-linkk amenu1" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 " id="amenu1">Team list</a>
+                        <a class="nav-link nav-linkk amenu2" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 " id="amenu2">About Company </a>
+                        <a class="nav-link nav-linkk amenu3" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 " id="amenu3"> Award & Certification</a>
+                        <a class="nav-link nav-linkk amenu4" style="cursor:pointer;padding: 0.5rem  0.5rem;color:#004e75 " id="amenu4">News and Events</a>
+                        <a class="nav-link nav-linkk amenu5" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu5">Canada Inspire</a>
+                        <a class="nav-link nav-linkk amenu6" style="cursor:pointer;padding: 0.5rem 1rem;color:#004e75 " id="amenu6">Feedback</a>
 
                     </nav>
                 </div>
@@ -108,289 +108,236 @@
             <br>
 
 
-            <div class="row tab-pane  " id="menu">
-                <div class="card col-6">
-                    <br>
+            <div class="card col-md-10 tab-pane  personal" id="menu" style="left:5%">
+                <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+                    <h5 style="text-decoration:underline;">personal Information</h5><br>
 
                     <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Full Name</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps"> {{$consultants->first_name}} {{$consultants->last_name}} {{$consultants->registration_number}}</p><br>
-                        </div>
-                    </div>
 
-                    <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
+                            <p class="ps"> {{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}} </p>
+                        </div>
+
+                        <div class="col-md-3">
                             <strong class="ps">Company Name</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->company_name}}</p><br>
+
+                        <div class="col-md-3">
+                            <p class="ps">
+                                @if($consultants->company_name)
+                                {{$consultants->company_name}}
+                                @else
+                                --
+                                @endif
+                            </p>
                         </div>
                     </div>
-
                     <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="ps">Registered Office - Location</strong>
+                        <div class="col-md-3">
+                            <strong class="ps">Contact Number</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->registrar_office_area}}</p><br>
-                        </div>
-                    </div>
 
-                    <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->phone}}</p>
+                        </div>
+
+                        <div class="col-md-3">
                             <strong class="ps">Status</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->status}}</p><br>
+
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->status}}</p>
                         </div>
                     </div>
-
                     <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Languages Known</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-3">
                             <p class="ps">
                                 @if($consultants->language_known)
                                 @foreach($consultants->language_known as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p><br>
+                            </p>
                         </div>
-                    </div>
-
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="ps">Country</strong>
-                        </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->country}}</p><br>
-                        </div>
-                    </div>
-
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="ps">Province/Region</strong>
-                        </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->region}}</p><br>
-                        </div>
-                    </div>
-
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="ps">City</strong>
-                        </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->city}}</p><br>
-                        </div>
-                    </div>
-
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="ps">Street</strong>
-                        </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->streat}}</p><br>
-                        </div>
-                    </div>
-
-                    <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Postal Code</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->postal_code}}</p><br>
-                        </div>
-                    </div>
 
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->postal_code}}</p>
+                        </div>
+
+                    </div>
                     <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
+                            <strong class="ps">Street</strong>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->streat}}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <strong class="ps">City</strong>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->city}}</p>
+                        </div>
+
+
+
+                    </div>
+                    <div class="row custom-box">
+
+                        <div class="col-md-3">
+                            <strong class="ps">Province</strong>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->region}}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <strong class="ps">Country</strong>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->country}}</p>
+                        </div>
+
+                    </div>
+                    <div class="row custom-box">
+                        <div class="col-md-3">
                             <strong class="ps">Correspondence Email</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
+
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->email}}</p>
                         </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->email}}</p><br>
+
+                        <div class="col-md-3">
+                            <strong class="ps">URL - Website Address </strong>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->website_address}}</p>
                         </div>
                     </div>
-
                     <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="ps">URL - Website Address *</strong>
-                        </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->website_address}}</p><br>
-                        </div>
-                    </div>
 
-                    <div class="row custom-box">
-                        <div class="col-md-5">
-                            <strong class="ps">Contact Number</strong>
+
+                        <div class="col-md-3">
+                            <strong class="ps">Registered Office - Location</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="ps">{{$consultants->phone}}</p><br>
+
+                        <div class="col-md-3">
+                            <p class="ps">{{$consultants->registrar_office_area}}</p>
                         </div>
                     </div>
 
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="card col-5">
-                    <br>
+
+                <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+                    <h5 style="text-decoration:underline;">other Information</h5><br>
 
                     <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Specialization</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-3">
                             <p class="ps">
                                 @if($consultants->specialization)
                                 @foreach($consultants->specialization as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p><br>
+                            </p>
                         </div>
-                    </div>
 
-                    <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Service Offered</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-3">
                             <p class="ps">
                                 @if($consultants->offering_service)
                                 @foreach($consultants->offering_service as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p><br>
+                            </p>
                         </div>
                     </div>
 
                     <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Initial chargeable type</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-3">
                             <p class="ps">
                                 {{$consultants->initial_chargeable_type}}
 
-                            </p><br>
+                            </p>
                         </div>
-                    </div>
 
-                    <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Year of Establishment</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-3">
                             <p class="ps">
 
                                 {{$consultants->establishment_year}}
 
-                            </p><br>
+                            </p>
                         </div>
                     </div>
 
                     <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Offering Services Since</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-3">
                             <p class="ps">
 
                                 {{$consultants->offering_year}}
 
-                            </p><br>
+                            </p>
                         </div>
-                    </div>
 
-                    <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Response Time</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-3">
                             <p class="ps">
 
                                 {{$consultants->response_time}}
 
-                            </p><br>
+                            </p>
                         </div>
                     </div>
 
                     <div class="row custom-box">
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <strong class="ps">Communication Success</strong>
                         </div>
-                        <div class="col-md-1">
-                            <strong class="labels" style="color:#004e75"> :</strong>
-                        </div>
-                        <div class="col-md-6">
+
+                        <div class="col-md-3">
                             <p class="ps">
 
                                 {{$consultants->communication_mode_success}}
 
-                            </p><br>
+                            </p>
                         </div>
                     </div>
 
@@ -398,10 +345,10 @@
 
             </div>
 
-            <div class=" tab-pane  col-md-12" id="menu1">
+            <div class=" tab-pane  col-md-10" id="menu1" style="left:5%">
 
                 <div class="form-group">
-                    <strong class="ps">Company Team details</strong>
+                    <label class="ps">Company Team details</label>
                     <br>
                     @if($consultants->team_info)
                     <p class="ps">
@@ -411,82 +358,49 @@
                     </p>
                     @endif
                 </div>
+
                 @if($teams)
                 @if($teams->count() >= 2 )
                 <div class="row ">
                     @foreach($teams as $key=>$row )
                     <div class="col-md-6">
                         <div class="card teamCard" style="  height: 350px !important">
+                            <div class="card " style="background-color: #f5f5f5!important; box-shadow: none ; height: 300px !important">
+                                <div class="row custom-box " style="margin-left: 25%;">
+                                    <img class=" mt-2 img float-center " style="width:150px !important;height:100px" src="{{url('files/'.$row ->team_img)}}">
+                                </div>
+                                <br>
+                                <table class="table table-hover">
 
-                            <div class="row custom-box " style="margin-left: 25%;">
-                                <img class=" mt-2 img float-center " style="width:150px !important;height:100px" src="{{url('files/'.$row ->team_img)}}">
+                                    @if($row->member)
+                                    <tr>
+                                        <th>Name</th>
+                                        <td> {{$row->member}}</td>
+                                    </tr>
+                                    @endif
+                                    @if($row->expertise_area)
+                                    <tr>
+                                        <th>expert area</th>
+                                        <td> {{$row->expertise_area}}</td>
+                                    </tr>
+                                    @endif
+                                    @if($row->experience_year)
+                                    <tr>
+                                        <th>year of experience</th>
+                                        <td> {{$row->experience_year}}</td>
+                                    </tr>
+                                    @endif
+                                    @if($row->team_number_success_cases)
+                                    <tr>
+                                        <th>no of success cases</th>
+                                        <td> {{$row->team_number_success_cases}}</td>
+                                    </tr>
+                                    @endif
+                                </table>
                             </div>
-                            <br>
-                            <div class="row custom-box">
-                                <div class="col-md-4">
-                                    <strong class="ps">Team Member </strong>
-                                </div>
-                                <div class="col-sm-1">
-                                    <strong class="ps" style="color:#004e75">:</strong>
-                                </div>
-                                <div class="col-md-7">
-                                    <p class="ps">
-
-                                        {{$row->member}}
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row custom-box">
-                                <div class="col-md-4">
-                                    <strong class="ps">Area of Expertise</strong>
-                                </div>
-                                <div class="col-sm-1">
-                                    <strong class="ps" style="color:#004e75">:</strong>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="ps">
-
-                                        {{$row->expertise_area}}
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row custom-box">
-                                <div class="col-md-4">
-                                    <strong class="ps">Year of Experience</strong>
-                                </div>
-                                <div class="col-sm-1">
-                                    <strong class="ps" style="color:#004e75">:</strong>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="ps">
-
-                                        {{$row->experience_year}}
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row custom-box">
-                                <div class="col-md-4">
-                                    <strong class="ps">No of Successful Cases</strong>
-                                </div>
-                                <div class="col-sm-1">
-                                    <strong class="ps" style="color:#004e75">:</strong>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="ps">
-
-                                        {{$row->team_number_success_cases}}
-
-                                    </p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                     @endforeach
-
                 </div>
                 @else
                 <div class="row ">
@@ -494,72 +408,39 @@
 
                     <div class="col-md-6">
                         <div class="card teamCard" style="  height: 350px !important">
+                            <div class="card " style="background-color: #f5f5f5!important; box-shadow: none ; height: 300px !important">
+                                <div class="row custom-box " style="margin-left: 25%;">
+                                    <img class=" mt-2 img float-center " style="width:150px !important;height:100px" src="{{url('files/'.$row ->team_img)}}">
+                                </div>
+                                <br>
+                                <table class="table table-hover">
 
-                            <div class="row custom-box " style="margin-left: 25%;">
-                                <img class=" mt-2 img float-center " style="width:150px !important;height:100px" src="{{url('files/'.$row ->team_img)}}">
+                                    @if($row->member)
+                                    <tr>
+                                        <th>Name</th>
+                                        <td> {{$row->member}}</td>
+                                    </tr>
+                                    @endif
+                                    @if($row->expertise_area)
+                                    <tr>
+                                        <th>expert area</th>
+                                        <td> {{$row->expertise_area}}</td>
+                                    </tr>
+                                    @endif
+                                    @if($row->experience_year)
+                                    <tr>
+                                        <th>year of experience</th>
+                                        <td> {{$row->experience_year}}</td>
+                                    </tr>
+                                    @endif
+                                    @if($row->team_number_success_cases)
+                                    <tr>
+                                        <th>no of success cases</th>
+                                        <td> {{$row->team_number_success_cases}}</td>
+                                    </tr>
+                                    @endif
+                                </table>
                             </div>
-                            <br>
-                            <div class="row custom-box">
-                                <div class="col-md-4">
-                                    <strong class="ps">Team Member </strong>
-                                </div>
-                                <div class="col-sm-1">
-                                    <strong class="ps" style="color:#004e75">:</strong>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="ps">
-
-                                        {{$row->member}}
-
-                                    </p><br>
-                                </div>
-                            </div>
-                            <div class="row custom-box">
-                                <div class="col-md-4">
-                                    <strong class="ps">Area of Expertise</strong>
-                                </div>
-                                <div class="col-sm-1">
-                                    <strong class="ps" style="color:#004e75">:</strong>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="ps">
-
-                                        {{$row->expertise_area}}
-
-                                    </p><br>
-                                </div>
-                            </div>
-                            <div class="row custom-box">
-                                <div class="col-md-4">
-                                    <strong class="ps">Year of Experience</strong>
-                                </div>
-                                <div class="col-sm-1">
-                                    <strong class="ps" style="color:#004e75">:</strong>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="ps">
-
-                                        {{$row->experience_year}}
-
-                                    </p><br>
-                                </div>
-                            </div>
-                            <div class="row custom-box">
-                                <div class="col-md-4">
-                                    <strong class="ps">No of Successful Cases</strong>
-                                </div>
-                                <div class="col-sm-1">
-                                    <strong class="ps" style="color:#004e75">:</strong>
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="ps">
-
-                                        {{$row->team_number_success_cases}}
-
-                                    </p><br>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
 
@@ -567,22 +448,20 @@
                 </div>
                 @endif
                 @endif
-
             </div>
-
 
             <div class="card tab-pane  col-md-10" id="menu2" style="width:80% !important;left:5%">
                 <div class="">
-                    <br>
+
                     @if($consultants->privacy_policy_document)
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
-                                <label>Privacy document of company
+                                <label>Privacy document of {{$consultants->type}}
                                 </label>
                                 <br>
 
-                                <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">{{$consultants->privacy_policy_document}}</a>
+                                <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$consultants->privacy_policy_document}}</a>
                             </div>
                         </div>
                     </div>
@@ -592,9 +471,9 @@
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
-                                <label style="width:400px">Terms of Privacy of company</label>
+                                <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
 
-                                <textarea name="privacy_policy_detail" rows="10" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
+                                <textarea name="privacy_policy_detail" rows="10" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:#f5f5f5 !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
                             </div>
                         </div>
                     </div>
@@ -604,11 +483,11 @@
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
-                                <label>company History
+                                <label>{{$consultants->type}} History
                                 </label>
                                 <br>
 
-                                <textarea class="outset" name="history" rows="15" value="{{$consultants->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important;" disabled> {{$consultants->history}}</textarea>
+                                <textarea class="outset" name="history" rows="12" value="{{$consultants->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:#f5f5f5 !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
 
 
                             </div>
@@ -620,11 +499,11 @@
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
-                                <label> Brief Introduction of company
+                                <label> Brief Introduction of {{$consultants->type}}
                                 </label>
                                 <br>
 
-                                <textarea style="width:100%;background-color:white !important;" rows="15" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                <textarea style="width:100%;background-color:#f5f5f5 !important; box-shadow: none ;" rows="12" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
                             </div>
                         </div>
                     </div>
@@ -635,12 +514,12 @@
             </div>
 
             <div class="card tab-pane  col-md-10" id="menu3" style="width:80% !important; left:5%">
-                <br>
+
                 @if($consultants->Award)
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
-                            <label>company Awards and Certifications
+                            <label>{{$consultants->type}} Awards and Certifications
                             </label>
                             <br>
                             <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">{{$consultants->Award}}</a>
@@ -649,31 +528,30 @@
                     </div>
                 </div>
                 @endif
+                @if($consultants->achievement)
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
-                            <label>Company Achievements
+                            <label>{{$consultants->type}} Achievements
                             </label>
                             <br>
 
-                            <textarea style="width:100%;background-color:white !important;" rows="25" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
+                            <textarea style="width:100%;background-color:#f5f5f5 !important; box-shadow: none ;" rows="12" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
                         </div>
                     </div>
                 </div>
-
-                <br>
-
+                @endif
             </div>
 
             <div class="card tab-pane  col-md-10" id="menu4" style="width:80% !important;left:5%">
-                <br>
+
                 @if($consultants->vedio_url)
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
-                            <label>Video URL Link of company
-                            </label>
-                            <input class="form-control " type="text" name="vedio_url" value="{{$consultants->vedio_url}}" style="background-color:white !important;" disabled>
+                            <label>Video URL Link of {{$consultants->type}}
+                            </label><br>
+                            <a href="{{$consultants->vedio_url}}" style="text-decoration: underline;">{{$consultants->vedio_url}}<a>
                         </div>
                     </div>
                 </div>
@@ -682,20 +560,20 @@
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
-                            <label>Weblinks for News and Events of company
+                            <label>Weblinks for News and Events of {{$consultants->type}}
                             </label>
                             <br>
 
-                            <textarea style="width:100%;background-color:white !important;" rows="9" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
+                            <textarea style="width:100%;background-color:#f5f5f5 !important; box-shadow: none ;" rows="9" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
                         </div>
                     </div>
                 </div>
                 @endif
-                <br>
+
             </div>
 
-            <div class="card tab-pane  col-md-10" id="menu5" style="width:100% !important;left:5%">
-                <br>
+            <div class="card tab-pane  col-md-10" id="menu5" style="width:80% !important;left:5%">
+
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
@@ -703,8 +581,8 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;" rows="12" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
-    We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
+                            <textarea style="width:100%;background:#f5f5f5 !important; box-shadow: none ;" rows="12" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
+We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
             1. Is your Company looking for Website Design/Re Design or Development to give professional look
                and exposure for International community?
             2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
@@ -719,11 +597,11 @@
                     </div>
                 </div>
 
-                <br>
+
             </div>
 
-            <div class="card tab-pane  col-md-10" id="menu6" style="width:100% !important;left:5%">
-                <br>
+            <div class="card tab-pane  col-md-10" id="menu6" style="width:80% !important;left:5%">
+
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
@@ -731,11 +609,11 @@
                             </label>
                             <br>
 
-                            <textarea style="width:100%;background-color:white !important;" rows="9" name="Comment" value="{{$consultants->Comment}}" disabled>{{$consultants->Comment}}</textarea>
+                            <textarea style="width:100%;background-color:#f5f5f5 !important; box-shadow: none ;" rows="9" name="Comment" value="{{$consultants->Comment}}" disabled>{{$consultants->Comment}}</textarea>
                         </div>
                     </div>
                 </div>
-                <br>
+
             </div>
 
 
@@ -799,7 +677,7 @@
                 </div>
                 <br>
                 @if($view)
-               
+
                 @else
                 <div class="col-md-10 float-left">
                     <a href="{{route('edit.business')}}"> <button type="button" style="width:100%" class="client-btn btn btn-primary">Edit Profile</button></a>
@@ -814,85 +692,87 @@
 
     <script>
         $(document).ready(function() {
+            $(".dash").removeClass('active')
+            $(".profile").addClass('active')
             $('.tab-pane').fadeOut();
             $("#menu").fadeIn();
             $(".amenu").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu").fadeIn();
-                $(".nav-link").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $(this).addClass('active')
             });
             $(".amenu1").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu1").fadeIn();
-                $(".nav-link").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $(this).addClass('active')
             });
             $(".amenu2").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu2").fadeIn();
-                $(".nav-link.active").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $(this).addClass('active')
             });
             $(".amenu3").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu3").fadeIn();
-                $(".nav-link.active").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $(this).addClass('active')
             });
             $(".amenu4").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu4").fadeIn();
-                $(".nav-link.active").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $(this).addClass('active')
             });
             $(".amenu5").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu5").fadeIn();
-                $(".nav-link.active").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $(this).addClass('active')
             });
             $(".amenu6").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu6").fadeIn();
-                $(".nav-link.active").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $(this).addClass('active')
             });
 
             $(".bmenu").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu1").fadeIn();
-                $(".nav-link").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $("#amenu1").addClass('active')
             });
             $(".bmenu1").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu2").fadeIn();
-                $(".nav-link").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $("#amenu2").addClass('active')
             });
             $(".bmenu2").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu3").fadeIn();
-                $(".nav-link.active").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $("#amenu3").addClass('active')
             });
             $(".bmenu3").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu4").fadeIn();
-                $(".nav-link.active").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $("#amenu4").addClass('active')
             });
             $(".bmenu4").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu5").fadeIn();
-                $(".nav-link.active").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $("#amenu5").addClass('active')
             });
             $(".bmenu5").click(function() {
                 $('.tab-pane').fadeOut();
                 $("#menu6").fadeIn();
-                $(".nav-link.active").removeClass('active')
+                $(".nav-linkk").removeClass('active')
                 $("#amenu6").addClass('active')
             });
             if (sessionStorage.getItem("appendhtml")) {

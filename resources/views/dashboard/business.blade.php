@@ -9,7 +9,7 @@
     body {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        height: 100%;
+        height: 90%;
         width: 100%;
         background: #FFF;
         font-family: 'Roboto', sans-serif;
@@ -145,8 +145,8 @@
     }
 </style>
 
-<div class=" ">
-    <div class="col-7 input-group float-center">
+<div style="margin-left:5%;margin-right:5%">
+    <div class="col-10 input-group float-center">
         <div class="form-outline">
             <input type="search" id="form1" class="form-control" placeholder="Search" />
 
@@ -162,27 +162,27 @@
 
         @foreach($consultants as $row)
 
-        <div class="col-sm-3">
-            <div class="card" style="overflow:hidden">
+        <div class="col-sm-4">
+            <div class="card" >
+                <div class=" col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+                    <div class="card-content example">
+                        <h4 class="card-title">
+                            {{$row->type}}
 
-                <div class="card-content example">
-                    <h4 class="card-title">
-                        {{$row->type}}
+                        </h4>
 
-                    </h4>
-
-                    <p class="card-text ">{{$row->company_name}}</p>
+                        <p class="card-text ">{{$row->company_name}}</p>
 
 
-                    <p class="card-text ">
-                        @if($row->offering_service)
-                        @foreach($row->offering_service as $service)
-                        {{$service}},
-                        @endforeach
-                        @endif
-                    </p>
+                        <p class="card-text ">
+                            @if($row->offering_service)
+                            @foreach($row->offering_service as $service)
+                            {{$service}},
+                            @endforeach
+                            @endif
+                        </p>
+                    </div>
                 </div>
-
                 <div class="card-read-more">
                     <a href="{{route('dashboard.business.view',['id' => $row->id])}}" class="btn btn-link btn-block">
                         <p> View More</p>
@@ -199,5 +199,10 @@
 </div>
 
 
-
+<script>
+    $(document).ready(function() {
+        $(".dash").removeClass('active')
+        $(".business").addClass('active')
+    })
+</script>
 @endsection

@@ -11,15 +11,16 @@
     }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
-    <div class="container ">
+<div class="container ">
 
-        <h1> Candidate Registation - Sponsor</h1>
+    <div  class="tab-pane  " style="width:80%;margin-left:5% !important">
+        <h5 style="text-align:center">Sponsor Information edit</h5><br>
         <form action="{{route('profileSponsorupdate',['id' =>$userId])}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="whiteBox clearfix">
 
 
-                <h6>Sponsor Details</h6>
+                <h6  style="text-decoration: underline">Sponsor Details</h6>
                 <!--div class="news-title">You have questions, let's have a conversation </div-->
                 <div class="row mt-4 custom-box">
 
@@ -143,7 +144,7 @@
                     <div class="col-lg-4 col-md-4  col-12">
                         <div class="form-group">
 
-                            <input class="form-control l-icon" type="text" placeholder="Enter Country" name="sponsor_country"   value="{{$sponsor->sponsor_country}}" required>
+                            <input class="form-control l-icon" type="text" placeholder="Enter Country" name="sponsor_country" value="{{$sponsor->sponsor_country}}" required>
 
                         </div>
                     </div>
@@ -172,7 +173,7 @@
 
                 <hr style="height:12px;">
 
-                <h6>Address of Guardian</h6>
+                <h6  style="text-decoration: underline">Address of Guardian</h6>
                 <!--div class="news-title">You have questions, let's have a conversation </div-->
                 <div class="row mt-4 custom-box">
 
@@ -260,7 +261,7 @@
                     <div class="col-lg-4 col-md-4  col-12">
                         <div class="form-group">
 
-                            <input class="form-control l-icon" type="text" placeholder="Enter Country" name="guardian_country"  value="{{$sponsor->guardian_country}}" required>
+                            <input class="form-control l-icon" type="text" placeholder="Enter Country" name="guardian_country" value="{{$sponsor->guardian_country}}" required>
 
                         </div>
                     </div>
@@ -274,6 +275,7 @@
 
         </form>
     </div>
+</div>
 <div id="map" style=" height: 500px; width:100%"> </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>

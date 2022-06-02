@@ -63,7 +63,7 @@
 
     .card {
         display: block;
-        width: 100%;
+        width: 90%;
         height: 300px;
         margin-bottom: 20px;
         line-height: 1.42857143;
@@ -146,11 +146,11 @@
 </style>
 
 
-<div class=" " >
-    <div class="col-7 input-group float-center">
+<div style="margin-left:5%;margin-right:5%">
+    <div class="col-10 input-group float-center">
         <div class="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Search"/>
-          
+            <input type="search" id="form1" class="form-control" placeholder="Search" />
+
         </div>
         <button type="button" class="btn btn-primary">
             <i class="fas fa-search"></i>
@@ -164,27 +164,27 @@
 
         @foreach($consultants as $row)
 
-        <div class="col-sm-3">
-            <div class="card" style="overflow:hidden">
+        <div class="col-sm-4">
+            <div class="card" >
+                <div class=" col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+                    <div class="card-content example">
+                        <h4 class="card-title">
+                            {{$row->type}}
 
-                <div class="card-content example">
-                    <h4 class="card-title">
-                        {{$row->type}}
+                        </h4>
 
-                    </h4>
-
-                    <p class="card-text ">{{$row->company_name}}</p>
+                        <p class="card-text ">{{$row->company_name}}</p>
 
 
-                    <p class="card-text ">
-                        @if($row->offering_service)
-                        @foreach($row->offering_service as $service)
-                        {{$service}},
-                        @endforeach
-                        @endif
-                    </p>
+                        <p class="card-text ">
+                            @if($row->offering_service)
+                            @foreach($row->offering_service as $service)
+                            {{$service}},
+                            @endforeach
+                            @endif
+                        </p>
+                    </div>
                 </div>
-
                 <div class="card-read-more">
                     <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
                         <p> View More</p>
@@ -201,7 +201,19 @@
     </div>
 
 </div>
-
-
-
+@if($unique == 'RCIC Consultant')
+<script>
+    $(document).ready(function() {
+        $(".dash").removeClass('active')
+        $(".consultant1").addClass('active')
+    })
+</script>
+@else
+<script>
+    $(document).ready(function() {
+        $(".dash").removeClass('active')
+        $(".consultant2").addClass('active')
+    })
+</script>
+@endif
 @endsection
