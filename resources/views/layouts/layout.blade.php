@@ -279,11 +279,11 @@
                 @endphp
                 @if($profile_img)
 
-                <img class="rounded-circle mt-2 img float-left" style="width:40px !important;height:40px; border: none !important;" src="{{url('files/'.$profile_img)}}">
+                <img class="rounded-circle mt-1 img float-left" style="width:40px !important;height:40px; border: none !important;" src="{{url('files/'.$profile_img)}}">
 
                 @else
 
-                <img class="rounded-circle mt-5 img float-left" style="width:40px !important;height:40px; border: none !important;"  src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                <img class="rounded-circle mt-1 img float-left" style="width:40px !important;height:40px; border: none !important;"  src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
 
                 @endif
             </div>
