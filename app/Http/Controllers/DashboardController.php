@@ -16,21 +16,21 @@ class DashboardController extends Controller
 
         $institutions = Institution::all();
 
-        return view('dashboard.institution')->with('institutions', $institutions);
+        return view('dashboard.institution')->with('institutions', $institutions)->with('unique','');
     }
     public function consultantIndex()
     {
 
         $consultants = Consultant::where('type', 'RCIC Consultant')->orwhere('type', 'Immigration Lawyer/Attorney')->get();
 
-        return view('dashboard.consultant')->with('consultants', $consultants);
+        return view('dashboard.consultant')->with('consultants', $consultants)->with('unique','');
     }
     public function businessIndex()
     {
 
         $consultants = Consultant::where('type', 'Chartered Accountant')->get();
 
-        return view('dashboard.business')->with('consultants', $consultants);
+        return view('dashboard.business')->with('consultants', $consultants)->with('unique','');
     }
     public function consultantView($id)
     {
