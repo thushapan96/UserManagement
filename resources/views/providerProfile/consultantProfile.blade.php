@@ -543,7 +543,7 @@ We have a Team of professionals who are having expert in Application Development
                     @if($img)
                     <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$img)}}">
                     @else
-                    <img class="rounded-circle mt-5 img float-left" style="width:100px !important;height:100px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
+                    <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
                     @endif
 
                 </div>
