@@ -16,6 +16,9 @@
         text-transform: capitalize;
         color: #00000078 !important;
     }
+    .py-5 {
+        padding-top: 7rem !important;
+    }
 </style>
 
 
@@ -652,7 +655,7 @@
         </div>
 
         <div class="col-md-2" >
-            <div class="d-flex flex-column align-items-left text-left ">
+            <div class="d-flex flex-column align-items-left text-left py-5">
                 @if($image)
                 <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$image)}}">
                 @else
