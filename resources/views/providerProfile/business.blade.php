@@ -22,6 +22,10 @@
 
 
     }
+    th{
+        text-transform: capitalize;
+        color: #00000078 !important;
+    }
 
 
     .img {
@@ -112,234 +116,110 @@
                 <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
                     <h5 style="text-decoration:underline;">personal Information</h5><br>
 
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Full Name</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps"> {{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}} </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Company Name</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->company_name)
-                                {{$consultants->company_name}}
-                                @else
-                                --
-                                @endif
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Contact Number</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->phone}}</p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Status</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->status}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Languages Known</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->language_known)
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Full Name</th>
+                            <td>{{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}}</td>
+                            <th>Company Name</th>
+                            <td> {{$consultants->company_name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Contact Number</th>
+                            <td>{{$consultants->phone}}</td>
+                            <th>Status</th>
+                            <td> {{$consultants->status}}</td>
+                        </tr>
+                        <tr>
+                            <th>Languages Known</th>
+                            <td> @if($consultants->language_known)
                                 @foreach($consultants->language_known as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">Postal Code</strong>
-                        </div>
+                            </td>
+                            <th>Postal Code</th>
+                            <td> {{$consultants->postal_code}}</td>
+                        </tr>
+                        <tr>
+                            <th>Street</th>
+                            <td>{{$consultants->streat}}
+                            </td>
+                            <th>City</th>
+                            <td> {{$consultants->city}}</td>
+                        </tr>
+                        <tr>
+                            <th>Province</th>
+                            <td>{{$consultants->region}}
+                            </td>
+                            <th>Country</th>
+                            <td> {{$consultants->country}}</td>
+                        </tr>
+                        <tr>
+                            <th>Correspondence Email</th>
+                            <td>{{$consultants->email}}
+                            </td>
+                            <th>URL Website Address</th>
+                            <td> {{$consultants->website_address}}</td>
+                        </tr>
+                        <tr>
+                            <th>Registered Office - Location</th>
+                            <td>{{$consultants->registrar_office_area}}
+                            </td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                    </table>
 
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->postal_code}}</p>
-                        </div>
-
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Street</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->streat}}</p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">City</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->city}}</p>
-                        </div>
-
-
-
-                    </div>
-                    <div class="row custom-box">
-
-                        <div class="col-md-3">
-                            <strong class="ps">Province</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->region}}</p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">Country</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->country}}</p>
-                        </div>
-
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Correspondence Email</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->email}}</p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">URL - Website Address </strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->website_address}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-
-
-                        <div class="col-md-3">
-                            <strong class="ps">Registered Office - Location</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->registrar_office_area}}</p>
-                        </div>
-                    </div>
 
                 </div>
 
                 <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
                     <h5 style="text-decoration:underline;">other Information</h5><br>
 
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Specialization</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->specialization)
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Specialization</th>
+                            <td> @if($consultants->specialization)
                                 @foreach($consultants->specialization as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p>
-                        </div>
 
-                        <div class="col-md-3">
-                            <strong class="ps">Service Offered</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->offering_service)
+                            </td>
+                            <th>Service Offered</th>
+                            <td> @if($consultants->offering_service)
                                 @foreach($consultants->offering_service as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p>
-                        </div>
-                    </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Initial chargeable type</th>
+                            <td> {{$consultants->initial_chargeable_type}}
+                            </td>
+                            <th>Year of Establishment</th>
+                            <td> {{$consultants->establishment_year}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Offering Services Since</th>
+                            <td> {{$consultants->offering_year}}
+                            </td>
+                            <th>Response Time</th>
+                            <td> {{$consultants->response_time}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Communication Success</th>
+                            <td> {{$consultants->communication_mode_success}}
+                            </td>
+                            <th>Response Time</th>
+                            <td> {{$consultants->response_time}}
+                            </td>
+                        </tr>
+                    </table>
 
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Initial chargeable type</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                {{$consultants->initial_chargeable_type}}
-
-                            </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Year of Establishment</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->establishment_year}}
-
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Offering Services Since</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->offering_year}}
-
-                            </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Response Time</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->response_time}}
-
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Communication Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->communication_mode_success}}
-
-                            </p>
-                        </div>
-                    </div>
 
                 </div>
 

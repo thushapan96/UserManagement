@@ -12,6 +12,10 @@
     .custom-file-upload input[type="file"] {
         display: none;
     }
+    th{
+        text-transform: capitalize;
+        color: #00000078 !important;
+    }
 </style>
 
 
@@ -19,7 +23,7 @@
 
     <div class="row">
 
-        <div class="col-md-9">
+        <div class="col-md-10">
 
 
             <div class="cardf col-md-10">
@@ -647,7 +651,7 @@
 
         </div>
 
-        <div class="col-md-3" >
+        <div class="col-md-2" >
             <div class="d-flex flex-column align-items-left text-left p-3 py-5">
                 @if($image)
                 <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$image)}}">

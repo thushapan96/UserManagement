@@ -23,7 +23,10 @@
 
     }
 
-
+    th{
+        text-transform: capitalize;
+        color: #00000078 !important;
+    }
     .img {
         border: 1px solid #ddd;
         /* border-radius: 4px !important; */
@@ -116,7 +119,7 @@
                 <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
                     <h5 style="text-decoration:underline;">personal Information</h5><br>
 
-                    <!-- <table class="table table-hover">
+                    <table class="table table-hover">
                         <tr>
                             <th>Full Name</th>
                             <td>{{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}}</td>
@@ -124,346 +127,136 @@
                             <td> {{$consultants->company_name}}</td>
                         </tr>
                         <tr>
-                            <th>Full Name</th>
-                            <td>{{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}}</td>
-                            <th>Company Name</th>
-                            <td> {{$consultants->company_name}}</td>
+                            <th>Contact Number</th>
+                            <td>{{$consultants->phone}}</td>
+                            <th>Status</th>
+                            <td> {{$consultants->status}}</td>
                         </tr>
-                    </table> -->
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Full Name</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps"> {{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}} </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Company Name</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->company_name)
-                                {{$consultants->company_name}}
-                                @else
-                                --
-                                @endif
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Contact Number</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->phone}}</p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Status</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->status}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Languages Known</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->language_known)
+                        <tr>
+                            <th>Languages Known</th>
+                            <td> @if($consultants->language_known)
                                 @foreach($consultants->language_known as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">Postal Code</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->postal_code}}</p>
-                        </div>
-
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Street</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->streat}}</p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">City</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->city}}</p>
-                        </div>
-
-
-
-                    </div>
-                    <div class="row custom-box">
-
-                        <div class="col-md-3">
-                            <strong class="ps">Province</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->region}}</p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">Country</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->country}}</p>
-                        </div>
-
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Correspondence Email</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->email}}</p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">URL - Website Address </strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->website_address}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-
-
-                        <div class="col-md-3">
-                            <strong class="ps">Registered Office - Location</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->registrar_office_area}}</p>
-                        </div>
-                    </div>
+                            </td>
+                            <th>Postal Code</th>
+                            <td> {{$consultants->postal_code}}</td>
+                        </tr>
+                        <tr>
+                            <th>Street</th>
+                            <td>{{$consultants->streat}}
+                            </td>
+                            <th>City</th>
+                            <td> {{$consultants->city}}</td>
+                        </tr>
+                        <tr>
+                            <th>Province</th>
+                            <td>{{$consultants->region}}
+                            </td>
+                            <th>Country</th>
+                            <td> {{$consultants->country}}</td>
+                        </tr>
+                        <tr>
+                            <th>Correspondence Email</th>
+                            <td>{{$consultants->email}}
+                            </td>
+                            <th>URL Website Address</th>
+                            <td> {{$consultants->website_address}}</td>
+                        </tr>
+                        <tr>
+                            <th>Registered Office - Location</th>
+                            <td>{{$consultants->registrar_office_area}}
+                            </td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                    </table>
 
                 </div>
                 <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
                     <h5 style="text-decoration:underline;">other Information</h5><br>
-
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Specialization</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->specialization)
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Specialization</th>
+                            <td>@if($consultants->specialization)
                                 @foreach($consultants->specialization as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Express Entry - Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->express_entry_success}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">PNP Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->pnp_success}}</p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">LMIA Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->lmia_success}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Others Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->other_success}}</p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Others Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$consultants->other_success}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Service Offered</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->offering_service)
+                            </td>
+                            <th>Express Entry Success</th>
+                            <td> {{$consultants->express_entry_success}}</td>
+                        </tr>
+                        <tr>
+                            <th>PNP Success</th>
+                            <td>{{$consultants->pnp_success}}</td>
+                            <th>LMIA Success</th>
+                            <td> {{$consultants->lmia_success}}</td>
+                        </tr>
+                        <tr>
+                            <th>Others Success</th>
+                            <td>{{$consultants->other_success}}</td>
+                            <th>Service Offered</th>
+                            <td> @if($consultants->offering_service)
                                 @foreach($consultants->offering_service as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Other Services</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->other_service)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Other Services</th>
+                            <td> @if($consultants->other_service)
                                 @foreach($consultants->other_service as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Student Visa - Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->student_visa_success}}
-
-                            </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Tourist Visa Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->tourist_visa_success}}
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Family Visa Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->family_visa_success}}
-
-                            </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Other Visa Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->other_visa_success}}
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Year of Establishment</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->establishment_year}}
-
-                            </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Offering Services Since</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->offering_year}}
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Total Cases Taken</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->total_cases_taken}}
-
-                            </p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Communication Success</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-
-                                {{$consultants->communication_mode_success}}
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Prefer Correspondence Type</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">
-                                @if($consultants->communication_mode)
+                            </td>
+                            <th>Student Visa Success</th>
+                            <td> {{$consultants->student_visa_success}}</td>
+                        </tr>
+                        <tr>
+                            <th>Tourist Visa Success</th>
+                            <td> {{$consultants->tourist_visa_success}}
+                            </td>
+                            <th>Family Visa Success</th>
+                            <td> {{$consultants->family_visa_success}}</td>
+                        </tr>
+                        <tr>
+                            <th>Tourist Visa Success</th>
+                            <td> {{$consultants->tourist_visa_success}}
+                            </td>
+                            <th>Other Visa Success</th>
+                            <td> {{$consultants->other_visa_success}}</td>
+                        </tr>
+                        <tr>
+                            <th>Year of Establishment</th>
+                            <td> {{$consultants->establishment_year}}
+                            </td>
+                            <th>Offering Services Since</th>
+                            <td> {{$consultants->offering_year}}</td>
+                        </tr>
+                        <tr>
+                            <th>Total Cases Taken</th>
+                            <td> {{$consultants->total_cases_taken}}
+                            </td>
+                            <th>Communication Success</th>
+                            <td> {{$consultants->communication_mode_success}}</td>
+                        </tr>
+                        <tr>
+                            <th>Communication prefer mode</th>
+                            <td> @if($consultants->communication_mode)
                                 @foreach($consultants->communication_mode as $row)
                                 {{$row}}
                                 @endforeach
                                 @endif
-                            </p>
-                        </div>
-                    </div>
+                            </td>
+                            <th></th>
+                            <td></td>
+                        </tr>
+                    </table>
+
 
                 </div>
             </div>

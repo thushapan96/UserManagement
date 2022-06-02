@@ -12,7 +12,10 @@
         width: 100%;
 
     }
-
+    th{
+        text-transform: capitalize;
+        color: #00000078 !important;
+    }
     .outset {
         border-style: outset;
     }
@@ -63,6 +66,7 @@
     .personal label {
         font-weight: 300px !important;
     }
+   
 </style>
 @if($message = Session::get('formSuccess'))
 <script>
@@ -109,110 +113,60 @@
             <div class=" card row tab-pane  col-md-10" id="menu" style="left:5%">
 
                 <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
-                     <h5 style="text-decoration:underline;">personal Information</h5>
-                     <br>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps"> Name</strong>
-                        </div>
+                    <h5 style="text-decoration:underline;">personal Information</h5><br>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Name</th>
+                            <td>{{$institutions->name}}</td>
+                            <th>Street</th>
+                            <td>{{$institutions->streat}}
+                        </tr>
+                        <tr>
+                            <th>City</th>
+                            <td> {{$institutions->city}}</td>
+                            <th>Province</th>
+                            <td>{{$institutions->region}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Country</th>
+                            <td> {{$institutions->country}}</td>
+                            <th>Postal Code</th>
+                            <td> {{$institutions->postal_code}}</td>
+                        </tr>
+                        <tr>
+                            <th>Contact Number</th>
+                            <td>{{$institutions->phone}}</td>
+                            <th>Languages Known</th>
+                            <td> @if($institutions->language_known)
+                                @foreach($institutions->language_known as $row)
+                                {{$row}}
+                                @endforeach
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Dean Email ID</th>
+                            <td>{{$institutions->dean_email}}
+                            </td>
+                            <th>Correspondence Email</th>
+                            <td>{{$institutions->email}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>URL Website Address</th>
+                            <td> {{$institutions->website_address}}</td>
+                            <th>Admission Cell - Contact Person</th>
+                            <td>{{$institutions->admission_phone}}</td>
+                        </tr>
+                        <tr>
+                            <th>Registered Office - Location</th>
+                            <td>{{$institutions->registrar_office_area}}
+                            </td>
+                        </tr>
+                    </table>
 
-                        <div class="col-md-3">
-                            <p class="ps"> {{$institutions->name}} </p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">Street</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->streat}}</p>
-                        </div>
-
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">City</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->city}}</p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Province</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->region}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Country</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->country}}</p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">Postal Code</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->postal_code}}</p>
-                        </div>
-
-                    </div>
-                    <div class="row custom-box">
-
-                        <div class="col-md-3">
-                            <strong class="ps">Dean Email ID</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->dean_email}}</p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">Correspond Email</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->email}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Website-URL</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->website_address}}</p>
-                        </div>
-
-                        <div class="col-md-3">
-                            <strong class="ps">Contact Number</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->phone}}</p>
-                        </div>
-                    </div>
-                    <div class="row custom-box">
-                        <div class="col-md-3">
-                            <strong class="ps">Admission Cell - Contact Person</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->admission_phone}}</p>
-                        </div>
-                        <div class="col-md-3">
-                            <strong class="ps">Registered Office - Location</strong>
-                        </div>
-
-                        <div class="col-md-3">
-                            <p class="ps">{{$institutions->registrar_office_area}}</p>
-                        </div>
-
-                    </div>
+              
 
                 </div>
 
@@ -550,7 +504,7 @@
 
             <div class="card tab-pane  col-md-10" id="menu2" style="width:80% !important;left:5%">
                 <div class="">
-                    
+
                     @if($institutions->privacy_policy_document)
                     <div class="row custom-box">
                         <div class="col-lg-12 col-md-12 col-12">
@@ -612,7 +566,7 @@
             </div>
 
             <div class="card tab-pane  col-md-10" id="menu3" style="width:80% !important; left:5%">
-               
+
                 @if($institutions->Award)
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
@@ -642,7 +596,7 @@
             </div>
 
             <div class="card tab-pane  col-md-10" id="menu4" style="width:80% !important;left:5%">
-               
+
                 @if($institutions->vedio_url)
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
@@ -671,7 +625,7 @@
             </div>
 
             <div class="card tab-pane  col-md-10" id="menu5" style="width:80% !important;left:5%">
-                
+
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
@@ -699,7 +653,7 @@ We have a Team of professionals who are having expert in Application Development
             </div>
 
             <div class="card tab-pane  col-md-10" id="menu6" style="width:80% !important;left:5%">
-             
+
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
