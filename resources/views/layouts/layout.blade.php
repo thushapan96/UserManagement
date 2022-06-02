@@ -173,7 +173,8 @@
         color: white !important;
 
     }
-/* remove scroll bar */
+
+    /* remove scroll bar */
     .card::-webkit-scrollbar {
         display: none;
     }
@@ -238,40 +239,54 @@
         </div>
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light" style=" box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background: #00838f;">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light" style=" box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background: #00838f;height:54px">
+          
+                <ul class="navbar-nav col-md-2" style="margin-left:0%;">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav col-md-9">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
 
-            <ul class="navbar-nav" style="margin-left:0%;">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('whycanada')}}">Why Canada</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('whycanada')}}">Why Canada</a>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Services</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{route('dashboard.consultant')}}">Consultant</a>
+                            <a class="dropdown-item" href="{{route('dashboard.business')}}">Business</a>
+                            <a class="dropdown-item" href="{{route('dashboard.institution')}}">Institution</a>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Services</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{route('dashboard.consultant')}}">Consultant</a>
-                        <a class="dropdown-item" href="{{route('dashboard.business')}}">Business</a>
-                        <a class="dropdown-item" href="{{route('dashboard.institution')}}">Institution</a>
+                        </div>
+                    </li>
 
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
-                </li>
-
-
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
 
 
+
+                </ul>
+          
+            <div class="col-md-1">
+                @php
+                $profile_img= \App\Models\User::where('id', Auth::user()->id )->value('img')
+                @endphp
+                @if($profile_img)
+
+                <img class="rounded-circle mt-2 img float-left" style="width:40px !important;height:40px; border: none !important;" src="{{url('files/'.$profile_img)}}">
+
+                @else
+
+                <img class="rounded-circle mt-5 img float-left" style="width:40px !important;height:40px; border: none !important;"  src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+
+                @endif
+            </div>
         </nav>
         <!-- /.navbar -->
 
@@ -494,7 +509,7 @@
         $('.consultant').click(function() {
             $('.consultant_treeview').addClass('nav-treeview')
         })
-       
+
     })
 </script>
 

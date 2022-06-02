@@ -84,7 +84,7 @@
 </script>
 @endif
 
-<div style="margin-left:5%">
+<div style="margin-left:5%;margin-right:5%">
     <div class="row">
 
         <div class="col-md-10">

@@ -15,7 +15,7 @@
 </style>
 
 
-<section style="margin-left:10%">
+<section style="margin-left:10%;margin-right:5%">
 
     <div class="row">
 

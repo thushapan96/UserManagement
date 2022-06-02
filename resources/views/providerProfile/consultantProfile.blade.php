@@ -88,7 +88,7 @@
 </script>
 @endif
 
-<div style="margin-left:5%">
+<div style="margin-left:5%;margin-right:5%">
     <div class="row">
 
         <div class="col-md-10">
@@ -111,7 +111,7 @@
             </div>
             <br>
 
-            <div class="card col-md-10 tab-pane  personal" id="menu" style="left:5%">
+            <div class="card col-md-10 tab-pane  personal" id="menu" style="left:5%;">
 
                 <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
                     <h5 style="text-decoration:underline;">personal Information</h5><br>
