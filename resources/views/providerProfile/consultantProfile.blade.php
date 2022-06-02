@@ -470,7 +470,7 @@
                         <div class="form-group">
                             <label>Video URL Link of {{$consultants->type}}
                             </label><br>
-                            <a href="/{{$consultants->vedio_url}}" style="text-decoration: underline;" target="_blank">{{$consultants->vedio_url}}<a>
+                            <a href="{{url($consultants->vedio_url)}}" style="text-decoration: underline;" target="_blank">{{$consultants->vedio_url}}<a>
                         </div>
                     </div>
                 </div>
