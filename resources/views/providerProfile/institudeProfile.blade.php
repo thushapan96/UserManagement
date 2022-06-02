@@ -94,7 +94,7 @@
     <div class="row">
 
         <div class="col-md-10">
-            <h3 class="float-center" style="text-align:center"><label>{{$institutions->name}} {{$institutions->type}}</label></h3>
+            <h3 class="float-center" style="text-align:center">{{$institutions->name}} {{$institutions->type}}</h3>
 
             <div class=col-md-11>
                 <div class="cardf">
@@ -627,7 +627,7 @@
 
             </div>
 
-            <div class="card tab-pane  col-md-10" id="menu5" style="width:80% !important;left:5%">
+            <div class="card tab-pane  col-md-10" id="menu5" style="width:100% !important;left:5%">
 
                 <div class="row custom-box">
                     <div class="col-lg-12 col-md-12 col-12">

@@ -212,7 +212,8 @@
     h5,
     h6 {
         color: black !important;
-        text-transform: capitalize;
+        text-transform: uppercase !important;
+        
 
     }
 
@@ -227,6 +228,7 @@
         color: black !important;
 
     }
+    
 </style>
 
 <body class="hold-transition sidebar-mini layout-fixed">
