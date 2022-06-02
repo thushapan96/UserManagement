@@ -36,22 +36,9 @@
         opacity: 1;
     }
 
-    .input--file {
-        position: relative;
-        color: #7f7f7f;
-        cursor: pointer;
-    }
 
-    .input--file input[type="file"] {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        cursor: pointer;
-    }
 
     .custom-file-upload {
-        border: 1px solid #ccc;
         display: inline-block;
         padding: 2px 2px;
         cursor: pointer;
@@ -219,8 +206,13 @@
                             <th>Communication Success</th>
                             <td> {{$consultants->communication_mode_success}}
                             </td>
-                            <th>Response Time</th>
-                            <td> {{$consultants->response_time}}
+                            <th>Communication prefer Success</th>
+                            <td>
+                                @if($consultants->communication_mode)
+                                @foreach($consultants->communication_mode as $row)
+                                {{$row}}
+                                @endforeach
+                                @endif
                             </td>
                         </tr>
                     </table>
@@ -504,17 +496,17 @@ We have a Team of professionals who are having expert in Application Development
 
         </div>
 
-        <div class="col-md-2">
-            <div class="d-flex flex-column align-items-left text-left py-5">
-                <div class="uploadimg ">
+        <div class="col-md-2 card" style="margin-top:9%;height:300px !important; box-shadow:none !important">
+            <div class="d-flex flex-column align-items-left text-left py-1">
+                <div class="row">
                     @if($img)
-                    <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$img)}}">
+                    <img class="rounded-circle  img " style="width:100px !important;height:100px;margin-left:10%" src="{{url('files/'.$img)}}">
                     @else
-                    <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
+                    <img class="rounded-circle  img " style="width:100px !important;height:100px;margin-left:10%" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                     @endif
-
                 </div>
                 <div class="spinner"></div>
+
                 @if(!$view)
                 <form method="post" id="upload_form" enctype="multipart/form-data">
                     {{ csrf_field() }}
@@ -523,7 +515,10 @@ We have a Team of professionals who are having expert in Application Development
                         <i class="fa fa-camera" style="font-size:18px;color:#004e75"> </i>
                     </label>
                 </form>
+                @else
+                <br>
                 @endif
+
 
                 <div class="row">
                     <a class="facebook" href="{{$consultants->fb_link}}" target="_blank">
@@ -564,7 +559,7 @@ We have a Team of professionals who are having expert in Application Development
                 @if($view)
 
                 @else
-                <div class="col-md-10 float-left">
+                <div class="col-md-12 float-left">
                     <a href="{{route('edit.business')}}"> <button type="button" style="width:100%" class="client-btn btn btn-primary">Edit Profile</button></a>
                 </div>
                 @endif

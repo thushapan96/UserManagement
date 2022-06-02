@@ -24,7 +24,7 @@ class Consultant extends Model
         'other_service','student_visa_success','tourist_visa_success','family_visa_success','other_visa_success','establishment_year','offering_year','total_cases_taken',
         'communication_mode_success','communication_mode','initial_chargeable_type','vedio_url','is_Policies','privacy_policy_document','history',
         'privacy_policy_detail','brief_introduction','achievement','event_new_weblink','Award','Comment','fb_link','youtube_link','twitter_link','insta_link','Linkedin_link',
-        'google_review_link','initial_chargeable_comment','team_info'
+        'google_review_link','initial_chargeable_comment','team_info',"response_time"
     ];
 
     protected $casts = [

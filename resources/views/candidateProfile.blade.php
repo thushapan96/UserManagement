@@ -3,7 +3,6 @@
 @section('content')
 <style>
     .custom-file-upload {
-        border: 1px solid #ccc;
         display: inline-block;
         padding: 2px 2px;
         cursor: pointer;
@@ -12,10 +11,12 @@
     .custom-file-upload input[type="file"] {
         display: none;
     }
-    th{
+
+    th {
         text-transform: capitalize;
         color: #00000078 !important;
     }
+
     .py-5 {
         padding-top: 7rem !important;
     }
@@ -30,7 +31,7 @@
 
 
             <div class="cardf col-md-10">
-            <h3 class="float-center" style="text-align:center">Profile</h3>
+                <h3 class="float-center" style="text-align:center">Profile</h3>
 
                 <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; ">
                     <a class="nav-link nav-linkk active" style="cursor:pointer;padding: .5rem 3rem;color:#004e75 " aria-current="page" id="amenu">personal</a>
@@ -489,8 +490,8 @@
             @if($Sponsor)
             <div id='menu3' class='tab-pane card col-md-10'>
 
-                <div  class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
-                    
+                <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+
                     <h5 class="labels" style="text-decoration: underline">Sponsor Details</h5><br>
                     <div class="row ">
                         <div class="col-md-4">
@@ -578,9 +579,9 @@
                     </div>
 
                 </div>
-               
-                <div  class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
-                   
+
+                <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
+
                     <h5 class="labels" style="text-decoration: underline;">Guadian Details</h5><br>
                     <div class="row ">
                         <div class="col-md-4">
@@ -648,7 +649,7 @@
 
 
                 </div>
-               
+
 
             </div>
             @endif
@@ -656,13 +657,15 @@
 
         </div>
 
-        <div class="col-md-2" >
-            <div class="d-flex flex-column align-items-left text-left py-5">
-                @if($image)
-                <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$image)}}">
-                @else
-                <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><br>
-                @endif
+        <div class="col-md-2 card" style="margin-top:10%;height:300px !important; box-shadow:none !important">
+            <div class="d-flex flex-column align-items-left text-left py-1" >
+                <div class="row">
+                    @if($image)
+                    <img class="rounded-circle  img " style="width:100px !important;height:100px;margin-left:10%" src="{{url('files/'.$image)}}">
+                    @else
+                    <img class="rounded-circle  img " style="width:100px !important;height:100px;margin-left:10%" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                    @endif
+                </div>
                 <div class="spinner"></div>
 
                 <form method="post" id="upload_form" enctype="multipart/form-data">
@@ -676,6 +679,7 @@
 
 
                 </form>
+                <br>
                 <div class="row">
                     <a class="facebook" href="{{$personal->fb_link}}" target="_blank">
                         <div class="icon col-lg-1 col-md-1 col-1 fa-2xl">
@@ -712,9 +716,12 @@
 
                 </div>
                 <br>
-                <a class="editlink" data-id="{{$personal->user_id}}" href="{{route('personalEdit', ['id' => $personal->user_id])}}"><button class="btn btn-primary profile-button editbtn" type="button">Edit Personal Details </button></a>
+
+
+                <a class="editlink" data-id="{{$personal->user_id}}" href="{{route('personalEdit', ['id' => $personal->user_id])}}"><button class="btn btn-primary profile-button editbtn" type="button" style="width:120px;font-size:small">Edit Personal </button></a>
 
             </div>
+
         </div>
     </div>
 
@@ -733,7 +740,7 @@
             $("#menu").fadeIn();
             $(".nav-linkk").removeClass('active')
             $(this).addClass('active')
-            $('.editbtn').html('Edit Personal Details')
+            $('.editbtn').html('Edit Personal ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('personalEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
@@ -743,7 +750,7 @@
             $("#menu1").fadeIn();
             $(".nav-linkk").removeClass('active')
             $(this).addClass('active')
-            $('.editbtn').html('Edit Academic Details')
+            $('.editbtn').html('Edit Academic ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('academyEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
@@ -753,7 +760,7 @@
             $("#menu2").fadeIn();
             $(".nav-linkk").removeClass('active')
             $(this).addClass('active')
-            $('.editbtn').html('Edit Work Details')
+            $('.editbtn').html('Edit Work ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('workEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
@@ -763,7 +770,7 @@
             $("#menu3").fadeIn();
             $(".nav-linkk").removeClass('active')
             $(this).addClass('active')
-            $('.editbtn').html('Edit Sponsor Detail')
+            $('.editbtn').html('Edit Sponsor ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('sponsorEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
