@@ -652,7 +652,7 @@
         </div>
 
         <div class="col-md-2" >
-            <div class="d-flex flex-column align-items-left text-left p-3 py-5">
+            <div class="d-flex flex-column align-items-left text-left ">
                 @if($image)
                 <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$image)}}">
                 @else
@@ -707,7 +707,7 @@
 
                 </div>
                 <br>
-                <a class="editlink" data-id="{{$personal->user_id}}" href="{{route('personalEdit', ['id' => $personal->user_id])}}"><button class="btn btn-primary profile-button editbtn" type="button">Edit Personal Profile </button></a>
+                <a class="editlink" data-id="{{$personal->user_id}}" href="{{route('personalEdit', ['id' => $personal->user_id])}}"><button class="btn btn-primary profile-button editbtn" type="button">Edit Personal Details </button></a>
 
             </div>
         </div>

@@ -70,6 +70,9 @@
     th {
         color: #00000078 !important;
     }
+    .py-5 {
+        padding-top: 7rem !important;
+    }
 </style>
 @if($message = Session::get('formSuccess'))
 <script>
@@ -535,7 +538,7 @@ We have a Team of professionals who are having expert in Application Development
         </div>
 
         <div class="col-md-2">
-            <div class="d-flex flex-column align-items-left text-left p-3 py-5">
+            <div class="d-flex flex-column align-items-left text-left py-5">
                 <div class="uploadimg ">
                     @if($img)
                     <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$img)}}">
@@ -553,8 +556,11 @@ We have a Team of professionals who are having expert in Application Development
                         <i class="fa fa-camera" style="font-size:18px;color:#004e75"> </i>
                     </label>
                 </form>
+            
                 @endif
                 <br>
+                <div class="spinner"></div>
+                
                 <div class="row">
                     <a class="facebook" href="{{$consultants->fb_link}}" target="_blank">
                         <div class="icon col-lg-1 col-md-1 col-1 fa-2xl">
@@ -717,7 +723,7 @@ We have a Team of professionals who are having expert in Application Development
             console.log('first')
             var formData = new FormData($('#upload_form')[0]);
             console.log("second")
-
+            $(".spinner").addClass("spinner-border ");
             event.preventDefault();
             $.ajax({
                 url: "{{ route('ajaxupload.action') }}",
@@ -729,6 +735,7 @@ We have a Team of professionals who are having expert in Application Development
                 processData: false,
                 success: function(data) {
                     console.log(data);
+                    $(".spinner").removeClass("spinner-border");
                     location.reload()
 
                 },

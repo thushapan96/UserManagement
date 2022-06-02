@@ -223,7 +223,7 @@
         font-weight: 500;
     }
 
-    .main-sidebar i {
+    .main-sidebar  i{
         color: black !important;
 
     }

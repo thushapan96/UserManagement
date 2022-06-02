@@ -22,7 +22,8 @@
 
 
     }
-    th{
+
+    th {
         text-transform: capitalize;
         color: #00000078 !important;
     }
@@ -66,6 +67,10 @@
 
     .personal label {
         font-weight: 300px !important;
+    }
+
+    .py-5 {
+        padding-top: 7rem !important;
     }
 </style>
 @if($message = Session::get('formSuccess'))
@@ -500,7 +505,7 @@ We have a Team of professionals who are having expert in Application Development
         </div>
 
         <div class="col-md-2">
-            <div class="d-flex flex-column align-items-left text-left p-3 py-5">
+            <div class="d-flex flex-column align-items-left text-left py-5">
                 <div class="uploadimg ">
                     @if($img)
                     <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$img)}}">
@@ -509,7 +514,7 @@ We have a Team of professionals who are having expert in Application Development
                     @endif
 
                 </div>
-
+                <div class="spinner"></div>
                 @if(!$view)
                 <form method="post" id="upload_form" enctype="multipart/form-data">
                     {{ csrf_field() }}
@@ -707,7 +712,7 @@ We have a Team of professionals who are having expert in Application Development
             });
             $('#profile_img').change(function() {
 
-
+                $(".spinner").addClass("spinner-border ");
                 console.log('first')
                 var formData = new FormData($('#upload_form')[0]);
                 console.log("second")
@@ -723,6 +728,7 @@ We have a Team of professionals who are having expert in Application Development
                     processData: false,
                     success: function(data) {
                         console.log(data);
+                        $(".spinner").removeClass("spinner-border");
                         location.reload()
 
                     },

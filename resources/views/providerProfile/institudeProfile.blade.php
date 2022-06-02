@@ -66,6 +66,9 @@
     .personal label {
         font-weight: 300px !important;
     }
+    .py-5 {
+        padding-top: 7rem !important;
+    }
    
 </style>
 @if($message = Session::get('formSuccess'))
@@ -671,7 +674,7 @@ We have a Team of professionals who are having expert in Application Development
         </div>
 
         <div class="col-md-2">
-            <div class="d-flex flex-column align-items-left text-left p-3 py-5">
+            <div class="d-flex flex-column align-items-left text-left py-5">
                 <div class="uploadimg ">
                     @if($img)
                     <img class="rounded-circle mt-2 img float-left" style="width:100px !important;height:100px" src="{{url('files/'.$img)}}">
@@ -690,7 +693,8 @@ We have a Team of professionals who are having expert in Application Development
                     </label>
                 </form>
                 @endif
-
+                <div class="spinner"></div>
+                
                 <div class="row">
                     <a class="facebook" href="{{$institutions->fb_link}}" target="_blank">
                         <div class="icon col-lg-1 col-md-1 col-1 fa-2xl">
@@ -849,7 +853,7 @@ We have a Team of professionals who are having expert in Application Development
             console.log('first')
             var formData = new FormData($('#upload_form')[0]);
             console.log("second")
-
+            $(".spinner").addClass("spinner-border ");
             event.preventDefault();
             $.ajax({
                 url: "{{ route('ajaxupload.action') }}",
@@ -861,6 +865,7 @@ We have a Team of professionals who are having expert in Application Development
                 processData: false,
                 success: function(data) {
                     console.log(data);
+                    $(".spinner").removeClass("spinner-border");
                     location.reload()
 
                 },
