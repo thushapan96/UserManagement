@@ -30,6 +30,8 @@
 
 
             <div class="cardf col-md-10">
+            <h3 class="float-center" style="text-align:center"><label>Profile</label></h3>
+
                 <nav class="nav nav-pills nav-fill justify-content-left " style="cursor:pointer; ">
                     <a class="nav-link nav-linkk active" style="cursor:pointer;padding: .5rem 3rem;color:#004e75 " aria-current="page" id="amenu">personal</a>
                     <a class="nav-link nav-linkk" style="cursor:pointer;padding: .5rem 3rem;color:#004e75 " id="amenu1">academic</a>
