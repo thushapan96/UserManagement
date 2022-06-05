@@ -88,14 +88,14 @@
 
         <div class="col-md-10">
             <h3 class="float-center" style="text-align:center">{{$institutions->company_name}} Company</h3>
-            <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:2% !important;">
-                <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 0.5rem;" aria-current="page">Main </a></li>
-                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  0.5rem;">Courses</a></li>
-                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  0.5rem;">About Company </a></li>
-                <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  0.5rem;"> Award & Certification</a></li>
-                <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  0.5rem;">News and Events</a></li>
-                <li class="" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 0.5rem;">Canada Inspire</a></li>
-                <li class="" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 0.5rem;">Feedback</a></li>
+            <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+                <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
+                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">Courses</a></li>
+                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">About Company </a></li>
+                <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1rem;"> Award & Certification</a></li>
+                <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1rem;">News and Events</a></li>
+                <!-- <li class="" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1rem;">Canada Inspire</a></li>
+                <li class="" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1rem;">Feedback</a></li> -->
 
             </u1>
             <u1 class="uk-switcher">

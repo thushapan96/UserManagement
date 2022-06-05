@@ -41,6 +41,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('consultant/profile', 'App\Http\Controllers\ProviderProfileController@consultantIndex')->name('consultantProfile');
     Route::get('business/profile', 'App\Http\Controllers\ProviderProfileController@businessIndex')->name('businessProfile');
 
+    Route::get('canadaInspire', function () {
+        return view('other.canadaInspire');
+    })->name('canadaInspire');
+    Route::get('feedback', 'App\Http\Controllers\OtherController@feedback')->name('feedback');
+
+
 
 
 

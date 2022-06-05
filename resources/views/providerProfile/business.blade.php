@@ -60,14 +60,14 @@
 
         <div class="col-md-10">
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} Company</h3>
-            <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:2% !important;">
-                <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 0.5rem;" aria-current="page">Main </a></li>
-                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  0.5rem;">Team list</a></li>
-                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  0.5rem;">About Company </a></li>
-                <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  0.5rem;"> Award & Certification</a></li>
-                <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  0.5rem;">News and Events</a></li>
-                <li class="" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1rem;">Canada Inspire</a></li>
-                <li class="" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1rem;">Feedback</a></li>
+            <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+                <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
+                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">Team list</a></li>
+                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">About Company </a></li>
+                <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1rem;"> Award & Certification</a></li>
+                <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1rem;">News and Events</a></li>
+                <!-- <li class="" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1rem;">Canada Inspire</a></li>
+                <li class="" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1rem;">Feedback</a></li> -->
 
             </u1>
             <u1 class="uk-switcher">
@@ -186,106 +186,70 @@
                     </div>
                 </li>
                 <li id='menu1' class='tab-pane '>
-                    <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
-                        <div class="uk-card-body sc-padding-medium">
-                            <div class="form-group">
-                                <h6 class="ps" style="text-decoration:underline">Company Team details</h6>
+                    <div class=' col-md-10 ' style="margin-left:5% !important;">
+                        <div class="">
+                            <div class="form-group col-md-10">
 
                                 @if($consultants->team_info)
-                                <p class="ps">
+                                <p class="ps" style="margin-left:10%">
                                     {{$consultants->team_info}}
                                 </p>
                                 @endif
                             </div>
                             @if($teams)
-                            @if($teams->count() >= 2 )
-                            <div class="row ">
-                                @foreach($teams as $key=>$row )
-                                <div class="col-md-6">
-                                    <div class="card teamCard" style="height: 350px !important;background-color: #f5f5f5!important; box-shadow: none ;">
 
-                                        <div class="row custom-box " style="margin-left: 25%;">
-                                            <img class=" mt-2 img float-center " style="width:150px !important;height:100px" src="{{url('files/'.$row ->team_img)}}">
+
+                            @foreach($teams as $key=>$row )
+
+                            <div class="col-md-10" style="margin-left: auto;margin-right:auto;">
+                                <div class="uk-card uk-card-hover" style="height:250px">
+                                    <div class="uk-card-body sc-padding-remove">
+                                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative">
+                                                <img class=" mt-1 img float-center " style="width:100%;height:250px " src="{{url('files/'.$row ->team_img)}}">
+
+                                            </div>
+                                            <div class="uk-width-2-3@l">
+                                                <div class="sc-padding-medium">
+                                                    <ul class="uk-list uk-list-divider">
+                                                        <li class="sc-list-group">
+                                                            <strong class="sc-list-addon" style="width:130px">Name</strong>
+                                                            <div class="sc-list-body">
+                                                                <p class="uk-margin-remove uk-text-wrap">{{$row->member}}</p>
+                                                            </div>
+                                                        </li>
+                                                        <li class="sc-list-group">
+                                                            <strong class="sc-list-addon" style="width:130px">expert area</strong>
+                                                            <div class="sc-list-body">
+                                                                <p class="uk-margin-remove ">{{$row->expertise_area}}</p>
+                                                            </div>
+                                                        </li>
+                                                        <li class="sc-list-group">
+                                                            <strong class="sc-list-addon" style="width:130px">year of experience</strong>
+                                                            <div class="sc-list-body">
+                                                                <p class="uk-margin-remove "> {{$row->experience_year}}</p>
+                                                            </div>
+                                                        </li>
+                                                        <li class="sc-list-group">
+                                                            <strong class="sc-list-addon" style="width:130px">no of success cases</strong>
+                                                            <div class="sc-list-body">
+                                                                <p class="uk-margin-remove uk-text-wrap"> {{$row->team_number_success_cases}}</p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <br>
-                                        <table class="table table-hover">
-
-                                            @if($row->member)
-                                            <tr>
-                                                <th>Name</th>
-                                                <td> {{$row->member}}</td>
-                                            </tr>
-                                            @endif
-                                            @if($row->expertise_area)
-                                            <tr>
-                                                <th>expert area</th>
-                                                <td> {{$row->expertise_area}}</td>
-                                            </tr>
-                                            @endif
-                                            @if($row->experience_year)
-                                            <tr>
-                                                <th>year of experience</th>
-                                                <td> {{$row->experience_year}}</td>
-                                            </tr>
-                                            @endif
-                                            @if($row->team_number_success_cases)
-                                            <tr>
-                                                <th>no of success cases</th>
-                                                <td> {{$row->team_number_success_cases}}</td>
-                                            </tr>
-                                            @endif
-                                        </table>
-
                                     </div>
                                 </div>
-                                @endforeach
                             </div>
-                            @else
-                            <div class="row ">
-                                @foreach($teams as $key=>$row )
-
-                                <div class="col-md-6">
-                                    <div class="card teamCard" style="  height: 350px !important;background-color: #f5f5f5!important; box-shadow: none ;">
-                                        <div class="row custom-box " style="margin-left: 25%;">
-                                            <img class=" mt-2 img float-center " style="width:150px !important;height:100px" src="{{url('files/'.$row ->team_img)}}">
-                                        </div>
-                                        <br>
-                                        <table class="table table-hover">
-
-                                            @if($row->member)
-                                            <tr>
-                                                <th>Name</th>
-                                                <td> {{$row->member}}</td>
-                                            </tr>
-                                            @endif
-                                            @if($row->expertise_area)
-                                            <tr>
-                                                <th>expert area</th>
-                                                <td> {{$row->expertise_area}}</td>
-                                            </tr>
-                                            @endif
-                                            @if($row->experience_year)
-                                            <tr>
-                                                <th>year of experience</th>
-                                                <td> {{$row->experience_year}}</td>
-                                            </tr>
-                                            @endif
-                                            @if($row->team_number_success_cases)
-                                            <tr>
-                                                <th>no of success cases</th>
-                                                <td> {{$row->team_number_success_cases}}</td>
-                                            </tr>
-                                            @endif
-                                        </table>
-                                    </div>
-                                </div>
-
-                                @endforeach
-                            </div>
-                            @endif
-                            @endif
+                            <br>
+                            @endforeach
                         </div>
+
+                        @endif
                     </div>
+
                 </li>
                 <li id='menu2' class='tab-pane '>
                     <div class="uk-card col-md-10" style="margin-left:5% !important;">
@@ -412,7 +376,7 @@
                             </fieldset>
                         </div>
                     </div>
-                </li> 
+                </li>
                 <li class='tab-pane ' id="menu5">
                     <div class="uk-card col-md-10" style="margin-left:5% !important;">
                         <div class="uk-card-body sc-padding-medium">
@@ -425,17 +389,17 @@
                                             <br>
 
                                             <textarea style="width:100%;background:white !important; box-shadow: none ;" rows="12" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
-We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-            1. Is your Company looking for Website Design/Re Design or Development to give professional look
-               and exposure for International community?
-            2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
-               on your Website?
-            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-            4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
-               enhance your services?
-            5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
-               your company marketing activities,  follow-up, and efficiency to generate good revenues
-               for your company and always ahead with your competitors?</textarea>
+                                                       We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
+                                            1. Is your Company looking for Website Design/Re Design or Development to give professional look
+                                               and exposure for International community?
+                                            2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
+                                               on your Website?
+                                            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+                                              4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
+                                               enhance your services?
+                                            5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
+                                               your company marketing activities,  follow-up, and efficiency to generate good revenues
+                                               for your company and always ahead with your competitors?</textarea>
                                         </div>
                                     </div>
                                 </div>

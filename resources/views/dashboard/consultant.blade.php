@@ -146,59 +146,76 @@
 </style>
 
 
-<div style="margin-left:5%;margin-right:5%">
-    <div class="col-10 input-group float-center">
-        <div class="form-outline">
-            <input type="search" id="form1" class="form-control" placeholder="Search" />
-
-        </div>
-        <button type="button" class="btn btn-primary">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
+<div >
+    
     <br>
-    <div class="row">
+    <ul id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
 
         @if($consultants)
 
 
         @foreach($consultants as $row)
 
-        <div class="col-sm-4">
-            <div class="card" >
-                <div class=" col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
-                    <div class="card-content example">
-                        <h4 class="card-title">
-                            {{$row->type}}
-
-                        </h4>
-
-                        <p class="card-text ">{{$row->company_name}}</p>
-
-
-                        <p class="card-text ">
-                            @if($row->offering_service)
-                            @foreach($row->offering_service as $service)
-                            {{$service}},
-                            @endforeach
-                            @endif
-                        </p>
+        <li>
+            <div class="uk-card uk-card-hover " >
+                <div class="uk-card-body sc-padding-remove">
+                    <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                        <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
+                            
+                            <div class="sc-padding-medium uk-text-center">
+                                <img src="{{url('files/'.$row->img)}}" class="sc-avatar sc-border" alt="xerdman" />
+                                <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                    {{$row->company_name}}
+                                </p>
+                                <p class="uk-margin-remove sc-color-secondary uk-text-medium"><a class="sc-button sc-button-primary sc-js-button-wave-light waves-effect waves-button waves-light sc-button sc-button-outline sc-button-outline-danger sc-button-mini" href="{{route('dashboard.consultant.view',['id' => $row->id])}}">view more</a></p>
+                            </div>
+                        </div>
+                        <div class="uk-width-2-3@l ">
+                            <div class="sc-padding-medium">
+                                <ul class="uk-list uk-list-divider">
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove sc-text-semibold">{{$row->phone}}</p>
+                                        </div>
+                                    </li>
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove">{{$row->email}}</p>
+                                        </div>
+                                    </li>
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove uk-text-wrap">{{$row->streat}},{{$row->city}},{{$row->region}},{{$row->country}}</p>
+                                        </div>
+                                    </li>
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove uk-text-wrap">
+                                                @if($row->offering_service)
+                                                @foreach($row->offering_service as $service)
+                                                {{$service}},
+                                                @endforeach
+                                                @endif
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card-read-more">
-                    <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}" class="btn btn-link btn-block">
-                        <p> View More</p>
-                    </a>
-                </div>
             </div>
-        </div>
-
+        </li>
         @endforeach
 
 
         @endif
 
-    </div>
+        </u1>
 
 </div>
 @if($unique == 'RCIC Consultant')

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Scutum Admin Template</title>
+    <title>Canada Inspire</title>
     <meta name="description" content="Scutum Admin Template" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/fav/apple-touch-icon.png')}}">
@@ -29,6 +29,8 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
     label {
         text-transform: capitalize;
     }
@@ -84,6 +86,11 @@
     .uk-card::-webkit-scrollbar {
         display: none;
     }
+
+    textarea {
+        padding: 20px
+    }
+    
 </style>
 
 <body>
@@ -103,7 +110,7 @@
             <div class="uk-navbar-left nav-overlay-small uk-margin-right uk-navbar-aside">
                 <a href="#" id="sc-sidebar-main-toggle"><i class="mdi mdi-backburger sc-menu-close"></i><i class="mdi mdi-menu sc-menu-open"></i></a>
                 <div class="sc-brand uk-visible@s">
-                    <a href="dashboard-v1.html"><img src="{{asset('assets/img/logo.png')}}" alt=""></a>
+                    <a href="dashboard-v1.html"><img src="{{asset('images/logo.png')}}" width="150px" alt=""></a>
                 </div>
             </div>
             <div class="uk-navbar-left nav-overlay uk-margin-right uk-visible@m">
@@ -322,51 +329,6 @@
             <div class="sc-sidebar-main-scrollable" data-sc-scrollbar="visible-y">
                 <ul class="sc-sidebar-menu uk-nav">
 
-
-                    <li class="sc-sidebar-menu-heading"><span>Applications</span></li>
-
-
-                    <li title="Chat">
-                        <a href="pages-chat.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-message-outline"></i>
-
-                            </span><span class="uk-nav-title">Chat</span>
-                        </a>
-                    </li>
-
-                    <li title="Invoices">
-                        <a href="pages-invoices.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-receipt"></i>
-
-                            </span><span class="uk-nav-title">Invoices</span>
-                        </a>
-                    </li>
-
-                    <li title="Mailbox">
-                        <a href="pages-mailbox.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-email-outline"></i>
-
-                            </span><span class="uk-nav-title">Mailbox</span>
-                        </a>
-                    </li>
-
-                    <li title="Task Board">
-                        <a href="pages-task_board.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-calendar-text"></i>
-
-                            </span><span class="uk-nav-title">Task Board</span>
-                        </a>
-                    </li>
-
-                    <li title="Notes">
-                        <a href="pages-notes.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-note-outline"></i>
-
-                            </span><span class="uk-nav-title">Notes</span>
-                        </a>
-                    </li>
-
-
                     <li class="sc-sidebar-menu-heading"><span>Menu</span></li>
 
 
@@ -374,7 +336,7 @@
                         <a href="{{route('indexx')}}">
                             <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
-                            </span><span class="uk-nav-title">Dashboards</span>
+                            </span><span class="uk-nav-title" >Dashboards</span>
                         </a>
 
                     </li>
@@ -480,7 +442,30 @@
 
 
                     </li>
+                    @if(Auth::user())
+                    @if((auth()->user()->service_type == 'Business' || auth()->user()->service_type == 'Institution' || auth()->user()->service_type == 'Consultation'))
+                    <li title="other">
+                        <a href="#">
+                            <span class="uk-nav-icon"> <i class="mdi mdi-information"></i>
+                            </span><span class="uk-nav-title">others</span>
+                        </a>
 
+                        <ul class="sc-sidebar-menu-sub">
+                            <li>
+
+                                <a href="{{route('feedback')}}">Feedback</a>
+
+                            </li>
+                            <li>
+
+                                <a href="{{route('canadaInspire')}}">Canada inspire</a>
+
+                            </li>
+
+                        </ul>
+                    </li>
+                    @endif
+                    @endif
                     @if(Auth::user())
                     <li title="logout">
                         <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -501,6 +486,49 @@
                     </li>
                     @endif
 
+
+                    <li class="sc-sidebar-menu-heading"><span>Applications</span></li>
+
+
+                    <li title="Chat">
+                        <a href="pages-chat.html">
+                            <span class="uk-nav-icon"><i class="mdi mdi-message-outline"></i>
+
+                            </span><span class="uk-nav-title">Chat</span>
+                        </a>
+                    </li>
+
+                    <li title="Invoices">
+                        <a href="pages-invoices.html">
+                            <span class="uk-nav-icon"><i class="mdi mdi-receipt"></i>
+
+                            </span><span class="uk-nav-title">Invoices</span>
+                        </a>
+                    </li>
+
+                    <li title="Mailbox">
+                        <a href="pages-mailbox.html">
+                            <span class="uk-nav-icon"><i class="mdi mdi-email-outline"></i>
+
+                            </span><span class="uk-nav-title">Mailbox</span>
+                        </a>
+                    </li>
+
+                    <li title="Task Board">
+                        <a href="pages-task_board.html">
+                            <span class="uk-nav-icon"><i class="mdi mdi-calendar-text"></i>
+
+                            </span><span class="uk-nav-title">Task Board</span>
+                        </a>
+                    </li>
+
+                    <li title="Notes">
+                        <a href="pages-notes.html">
+                            <span class="uk-nav-icon"><i class="mdi mdi-note-outline"></i>
+
+                            </span><span class="uk-nav-title">Notes</span>
+                        </a>
+                    </li>
                 </ul>
 
             </div>
@@ -548,7 +576,13 @@
             // scutum common functions/helpers
             loadjs("{{asset('assets/js/scutum_common.min.js')}}", function() {
                 scutum.init();
-                loadjs("{{asset('assets/js/views/dashboard/dashboard_v1.min.js')}}", { success: function() { $(function(){scutum.dashboard.init()}); } })
+                loadjs("{{asset('assets/js/views/dashboard/dashboard_v1.min.js')}}", {
+                    success: function() {
+                        $(function() {
+                            scutum.dashboard.init()
+                        });
+                    }
+                })
 
                 // show page
                 setTimeout(function() {
