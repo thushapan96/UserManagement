@@ -438,8 +438,8 @@
 
                     <div class="d-flex flex-column align-items-center text-center py-1">
                         <div class="row">
-                            @if($row->team_img)
-                            <img class=" mt-1 img float-center " style="width:100%;height:250px " src="{{url('files/'.$row ->team_img)}}">
+                            @if($img)
+                            <img class=" mt-1 img float-center " style="width:100%;height:250px " src="{{url('files/'.$img)}}">
                             @else
                             <img class=" mt-1 img float-center " style="width:100%;height:250px " src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                             @endif
