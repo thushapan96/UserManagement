@@ -237,8 +237,11 @@
                                     <div class="uk-card-body sc-padding-remove">
                                         <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
                                             <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative">
-                                                <img class=" mt-1 img float-center " style="width:100%;height:250px " src="{{url('files/'.$row ->team_img)}}">
-
+                                                @if($row->team_img)
+                                                <img class=" mt-1 img float-center " style="width:100%;height:250px "src="{{url('files/'.$row ->team_img)}}">
+                                                @else
+                                                <img class=" mt-1 img float-center " style="width:100%;height:250px "src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                                @endif
                                             </div>
                                             <div class="uk-width-2-3@l">
                                                 <div class="sc-padding-medium">
