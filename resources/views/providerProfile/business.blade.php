@@ -439,9 +439,9 @@
                     <div class="d-flex flex-column align-items-center text-center py-1">
                         <div class="row">
                             @if($img)
-                            <img class=" mt-1 img float-center " style="width:100%;height:250px " src="{{url('files/'.$img)}}">
+                            <img class="rounded-circle  img " style="width:100px !important;height:100px; margin: 0 auto;" src="{{url('files/'.$img)}}">
                             @else
-                            <img class=" mt-1 img float-center " style="width:100%;height:250px " src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                            <img class="rounded-circle  img " style="width:100px !important;height:100px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                             @endif
                         </div>
                         <div class="spinner"></div>
