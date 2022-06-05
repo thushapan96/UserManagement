@@ -90,7 +90,6 @@
     textarea {
         padding: 20px
     }
-    
 </style>
 
 <body>
@@ -336,7 +335,7 @@
                         <a href="{{route('indexx')}}">
                             <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
-                            </span><span class="uk-nav-title" >Dashboards</span>
+                            </span><span class="uk-nav-title">Dashboards</span>
                         </a>
 
                     </li>
@@ -466,25 +465,7 @@
                     </li>
                     @endif
                     @endif
-                    @if(Auth::user())
-                    <li title="logout">
-                        <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            <span class="uk-nav-icon"><i class="nav-icon fa fa-sign-out-alt"></i></span>
-                            <span class="uk-nav-title">logout</span>
-                        </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
-                    @else
-                    <li title="login">
-                        <a href="{{route('login')}}">
-                            <span class="uk-nav-icon"><i class="nav-icon fas fa-sign-in-alt"></i></span>
-                            <span class="uk-nav-title">Login</span>
-                        </a>
-                    </li>
-                    @endif
 
 
                     <li class="sc-sidebar-menu-heading"><span>Applications</span></li>
@@ -529,6 +510,25 @@
                             </span><span class="uk-nav-title">Notes</span>
                         </a>
                     </li>
+                    @if(Auth::user())
+                    <li title="logout">
+                        <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <span class="uk-nav-icon"><i class="nav-icon fa fa-sign-out-alt"></i></span>
+                            <span class="uk-nav-title">logout</span>
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                    @else
+                    <li title="login">
+                        <a href="{{route('login')}}">
+                            <span class="uk-nav-icon"><i class="nav-icon fas fa-sign-in-alt"></i></span>
+                            <span class="uk-nav-title">Login</span>
+                        </a>
+                    </li>
+                    @endif
                 </ul>
 
             </div>
