@@ -26,7 +26,6 @@
         </div>
        
 
-        <!-- <h1> {{$institutions->name}} </h1> -->
         <br>
       
         
