@@ -145,7 +145,7 @@
                                         <td>{{$institutions->registrar_office_area}}
                                         </td>
                                     </tr>
-                                    
+
                                 </table>
                             </fieldset>
                         </div>
@@ -714,13 +714,11 @@
 
                         </div>
                         <br>
-                        <!-- @if($view)
-
-                        @else -->
 
                         <a href="{{route('edit.institution')}}"> <button type="button" style="width: 140px;font-size:12px" class="client-btn uk-button uk-button-primary">Edit Profile</button></a>
-
-                        <!-- @endif -->
+                        <!-- @if($view)
+                        @else
+                        @endif -->
                     </div>
                 </fieldset>
             </div>
