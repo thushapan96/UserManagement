@@ -61,9 +61,11 @@ class ProfileController extends Controller
 
     public function academyEdit($id)
     {
-
-        $Academy =  Academy::where('user_id', $id)->first();
-
+        if(Academy::where('user_id', $id)->first()) {
+            $Academy =  Academy::where('user_id', $id)->first();
+        }else{
+            $Academy =  new Academy;
+        }
 
         $qualification = DB::table('candidate_academics')
             ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
@@ -359,7 +361,7 @@ class ProfileController extends Controller
     }
     public function addImage(Request $request)
     {
-        
+
         $files = $request->profile_img;
         $name =   $files->getClientOriginalName();
 
@@ -372,7 +374,6 @@ class ProfileController extends Controller
                 'img' => $name,
             ]);
 
-            return $name;
-
+        return $name;
     }
 }
