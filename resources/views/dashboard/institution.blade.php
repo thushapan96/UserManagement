@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutss')
 @section('content')
 
 <style>
@@ -64,7 +64,7 @@
 
     .card {
         display: block;
-        height: 300px;
+        height: 240px;
         width: 90%;
         margin-bottom: 20px;
         line-height: 1.42857143;

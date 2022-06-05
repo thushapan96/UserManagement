@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutss')
 @section('content')
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
@@ -64,7 +64,7 @@
     .card {
         display: block;
         width: 90%;
-        height: 300px;
+        height: 240px;
         margin-bottom: 20px;
         line-height: 1.42857143;
         border-radius: 5px;

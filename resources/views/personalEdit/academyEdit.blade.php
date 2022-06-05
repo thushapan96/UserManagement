@@ -1,5 +1,5 @@
 <!-- Subscribe & Stay Connected. Start -->
-@extends('layouts.layout')
+@extends('layouts.layoutss')
 
 @section('content')
 <style>
@@ -16,506 +16,547 @@
 <div class="container ">
 
     <div class="tab-pane  " style="width:80%;margin-left:5% !important">
-        <h5 style="text-align:center">Academic Information edit</h5><br>
+        <h5 style="text-align:center">edit Academic Information </h5><br>
 
-        <div class="whiteBox clearfix">
-            <form id="academy_form" action="{{route('profileAcademyupdate',['id' => $Academy->user_id])}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <!--div class="news-title">You have questions, let's have a conversation </div-->
-                <div class="row mt-4 custom-box">
+        <div class="uk-card ">
+            <div class="uk-card-body sc-padding-medium">
+                <form id="academy_form" action="{{route('profileAcademyupdate',['id' => $Academy->user_id])}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <!--div class="news-title">You have questions, let's have a conversation </div-->
+                    <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                        <div class="row mt-4 custom-box">
 
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="form-group">
-                            <label>Language Proficiency
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label class="uk-form-label">Language Proficiency
 
-                            </label>
-                            <select name="language_proficiency" class="form-control">
-                                <option value="English" {{$Academy->language_proficiency == 'English' ? 'selected':''}}>English</option>
-                                <option value="Tamil" {{$Academy->Tamil == 'English' ? 'selected':''}}>Tamil</option>
-                            </select>
-                        </div>
-                    </div>
+                                    </label>
+                                    <select name="language_proficiency" class="form-control">
+                                        <option value="English" {{$Academy->language_proficiency == 'English' ? 'selected':''}}>English</option>
+                                        <option value="Tamil" {{$Academy->Tamil == 'English' ? 'selected':''}}>Tamil</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="form-group">
-                            <label>Level
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <label class="uk-form-label">Level
 
-                            </label>
-                            <select name="language_level" class="form-control">
-                                <option value="Beginner" {{$Academy->language_level == 'Beginner' ? 'selected':''}}>Beginner</option>
-                                <option value="Intermediate" {{$Academy->language_level == 'Intermediate' ? 'selected':''}}>Intermediate</option>
-                                <option value="Competent" {{$Academy->language_level == 'Competent' ? 'selected':''}}>Competent</option>
-                                <option value="Expert" {{$Academy->language_level == 'Expert' ? 'selected':''}}>Expert</option>
+                                    </label>
+                                    <select name="language_level" class="form-control">
+                                        <option value="Beginner" {{$Academy->language_level == 'Beginner' ? 'selected':''}}>Beginner</option>
+                                        <option value="Intermediate" {{$Academy->language_level == 'Intermediate' ? 'selected':''}}>Intermediate</option>
+                                        <option value="Competent" {{$Academy->language_level == 'Competent' ? 'selected':''}}>Competent</option>
+                                        <option value="Expert" {{$Academy->language_level == 'Expert' ? 'selected':''}}>Expert</option>
 
-                            </select>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row mt-4 custom-box">
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="upload-images">
-                            <label>
-                                <p>Certified By </p>
-                            </label>
-                            <input type="text" class="form-control" name="language_certified_by" value="{{$Academy->language_certified_by}}">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="upload-images">
-                            <label>
-                                <p>Language Certified Attachment </p>
-
-                            </label>
-                            <a href="{{url('files/'.$Academy->language_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->language_attachment}}</a>
-                            <input type="file" title="change file" class="form-control" name="language_attachment" value="{{$Academy->language_attachment}}">
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row mt-4 custom-box">
-                    <div class="col-lg-3 col-md-3 col-12">
-                        <div class="form-group">
-                            <label>Applicant Test Scores</label>
-                            <select class="form-control" id="applicant_test" name="applicant_test_name[]">
-                                <option value="" {{$Academy->applicant_test_name == '' ? 'selected':''}}>Select</option>
-                                <option value="IELTS" {{$Academy->applicant_test_name == 'IELTS' ? 'selected':''}}>IELTS</option>
-                                <option value="TOFEL" {{$Academy->applicant_test_name == 'TOFEL' ? 'selected':''}}>TOFEL</option>
-                                <option value="CELPIP" {{$Academy->applicant_test_name == 'CELPIP' ? 'selected':''}}>CELPIP</option>
-                                <option value="GRE" {{$Academy->applicant_test_name == 'GRE' ? 'selected':''}}>GRE</option>
-                                <option value="PTE" {{$Academy->applicant_test_name == 'PTE' ? 'selected':''}}>PTE</option>
-                                <option value="SAT" {{$Academy->applicant_test_name == 'SAT' ? 'selected':''}}>SAT</option>
-                                <option value="GMAT" {{$Academy->applicant_test_name == 'GMAT' ? 'selected':''}}>GMAT</option>
-                                <option value="HSEiT" {{$Academy->applicant_test_name == 'HSEiT' ? 'selected':''}}>HSEiT</option>
-                                <option value="LSAT" {{$Academy->applicant_test_name == 'LSAT' ? 'selected':''}}>LSAT</option>
-                            </select>
+                                    </select>
+                                </div>
+                            </div>
 
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-12">
-                        <div class="form-group">
-                            <label>If Other Applicant</label>
-                            <input id="applicant_test_other" class="form-control " type="text" name="applicant_test_name[]" value="{{$Academy->applicant_test_name}}">
+
+                        <div class="row mt-4 custom-box">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="upload-images">
+                                    <label class="uk-form-label">
+                                        <p>Certified By </p>
+                                    </label>
+                                    <input type="text" class="form-control" name="language_certified_by" value="{{$Academy->language_certified_by}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="upload-images">
+                                    <label class="uk-form-label">
+                                        <p>Language Certified Attachment </p>
+
+                                    </label>
+                                    <a href="{{url('files/'.$Academy->language_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->language_attachment}}</a>
+                                    <input type="file" title="change file" class="form-control" name="language_attachment" value="{{$Academy->language_attachment}}">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-12 ">
-                        <div class="form-group">
-                            <label> Valid Upto
-                            </label>
-                            <input class="form-control " name="test_valid_upto" type="date" placeholder="Valid Upto" value="{{$Academy->test_valid_upto}}">
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12 ">
-                        <div class="form-group">
-                            <label>Applicant Test Scores Attachment
-                            </label>
 
-
-
-                            <span> <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->test_attachment}}</a> <input type="file" class="form-control" name="test_attachment" value="{{$Academy->test_attachment}}"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-                <div id="addschoolrow">
-                    @if($qualification)
-                    @foreach($qualification as $key => $row)
-                    @if($row->type == 'school')
-                    <div id="addschoolform">
-                        <div class="col-lg-12 col-md-12 col-12 container addschool mt-4">
-                            <div class="whiteBox clearfix">
-                                <div class="row custom-box">
-
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="form-group">
-                                            <label>School Name</label>
-                                            <input class="form-control " name="name[]" type="text" value="{{$row->name}}">
-                                            <input class="form-control " hidden name="qualificationId[]" value="{{$row->id}}" type="text">
-                                            <input class="form-control " hidden name="type[]" value="school" type="text">
-                                            <input class="form-control " hidden name="tech[]" value="NA" type="text">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-12 ">
-                                        <div class="form-group">
-                                            <label>School Address </label>
-                                            <input class="form-control" name="address[]" type="text" value="{{$row->Address}}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-12 ">
-                                        <div class="form-group">
-                                            <label>Year Completed </label>
-                                            <input class="form-control " name="year_completed[]" type="text" value="{{$row->Year_completion}}">
-                                        </div>
-                                    </div>
+                        <div class="row mt-4 custom-box">
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="form-group">
+                                    <label class="uk-form-label">Applicant Test Scores</label>
+                                    <select class="form-control" id="applicant_test" name="applicant_test_name[]">
+                                        <option value="" {{$Academy->applicant_test_name == '' ? 'selected':''}}>Select</option>
+                                        <option value="IELTS" {{$Academy->applicant_test_name == 'IELTS' ? 'selected':''}}>IELTS</option>
+                                        <option value="TOFEL" {{$Academy->applicant_test_name == 'TOFEL' ? 'selected':''}}>TOFEL</option>
+                                        <option value="CELPIP" {{$Academy->applicant_test_name == 'CELPIP' ? 'selected':''}}>CELPIP</option>
+                                        <option value="GRE" {{$Academy->applicant_test_name == 'GRE' ? 'selected':''}}>GRE</option>
+                                        <option value="PTE" {{$Academy->applicant_test_name == 'PTE' ? 'selected':''}}>PTE</option>
+                                        <option value="SAT" {{$Academy->applicant_test_name == 'SAT' ? 'selected':''}}>SAT</option>
+                                        <option value="GMAT" {{$Academy->applicant_test_name == 'GMAT' ? 'selected':''}}>GMAT</option>
+                                        <option value="HSEiT" {{$Academy->applicant_test_name == 'HSEiT' ? 'selected':''}}>HSEiT</option>
+                                        <option value="LSAT" {{$Academy->applicant_test_name == 'LSAT' ? 'selected':''}}>LSAT</option>
+                                    </select>
 
                                 </div>
-                                <div class="row custom-box">
-
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="form-group">
-                                            <label>Applicable ECA Validity
-
-                                            </label>
-                                            <select name="eca[]" class="form-control">
-                                                <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
-                                                <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
-                                                <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="form-group">
-                                            <label>Distant
-
-                                            </label>
-                                            <select name="distant[]" class="form-control">
-                                                <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
-                                                <option {{$row->Distant == 'regular' ? 'selected':''}}>regular</option>
-                                                <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-12 ">
-                                        <div class="form-group">
-                                            <label>Country</label>
-                                            <input name="country[]" class="form-control " type="text" value="{{$row->country}}">
-                                        </div>
-                                    </div>
-
-
-
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="form-group">
+                                    <label class="uk-form-label">If Other Applicant</label>
+                                    <input id="applicant_test_other" class="form-control " type="text" name="applicant_test_name[]" value="{{$Academy->applicant_test_name}}">
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-12">
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12 ">
+                                <div class="form-group">
+                                    <label class="uk-form-label"> Valid Upto
+                                    </label>
+                                    <input class="form-control " name="test_valid_upto" type="date" placeholder="Valid Upto" value="{{$Academy->test_valid_upto}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-12 ">
+                                <div class="form-group">
+                                    <label class="uk-form-label">Applicant Test Scores Attachment
+                                    </label>
 
+
+
+                                    <span> <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->test_attachment}}</a> <input type="file" class="form-control" name="test_attachment" value="{{$Academy->test_attachment}}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <br>
+                    <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                        <div id="addschoolrow">
+                            @if($qualification)
+                            @foreach($qualification as $key => $row)
+                            @if($row->type == 'school')
+
+                            <div id="addschoolform">
+                                <div class="col-lg-12 col-md-12 col-12 container addschool mt-4">
                                     <div class="">
-                                        <label>
-                                            <p>Other Attachment </p>
-                                        </label>
-                                        <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
-                                        <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                        <div class="row custom-box">
+
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">School Name</label>
+                                                    <input class="form-control " name="name[]" type="text" value="{{$row->name}}">
+                                                    <input class="form-control " hidden name="qualificationId[]" value="{{$row->id}}" type="text">
+                                                    <input class="form-control " hidden name="type[]" value="school" type="text">
+                                                    <input class="form-control " hidden name="tech[]" value="NA" type="text">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">School Address </label>
+                                                    <input class="form-control" name="address[]" type="text" value="{{$row->Address}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Year Completed </label>
+                                                    <input class="form-control " name="year_completed[]" type="text" value="{{$row->Year_completion}}">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row custom-box">
+
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Applicable ECA Validity
+
+                                                    </label>
+                                                    <select name="eca[]" class="form-control">
+                                                        <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
+                                                        <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
+                                                        <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Distant
+
+                                                    </label>
+                                                    <select name="distant[]" class="form-control">
+                                                        <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
+                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
+                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}>regular</option>
+                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-md-4 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Country</label>
+                                                    <input name="country[]" class="form-control " type="text" value="{{$row->country}}">
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="row custom-box">
+                                            <div class="col-lg-8 col-md-8 col-12">
+
+                                                <div class="">
+                                                    <label class="uk-form-label">
+                                                        <p>Other Attachment </p>
+                                                    </label>
+                                                    <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
+                                                    <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                                </div>
+                                            </div>
+                                            <div class="float-right" style="margin-left:10% !important">
+                                                <br><br>
+                                                <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removeschool" style="background:#bf0010 !important"><a style="color:white;"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="float-right">
-                                    <button type="button" class=" closebtn client-btn btn btn-danger" id="removeschool" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
                                 </div>
                             </div>
+                            <hr>
+                            @endif
+                            @endforeach
+                            @endif
                         </div>
-                    </div>
-                    @endif
-                    @endforeach
-                    @endif
-                </div>
-                <div class="col-lg-12 col-md-12 mt-2 col-12">
-                    <button type="button" class="add-btn btn btn-primary profile-button" id="addschoolbtn"><i class="fa fa-solid fa-plus"></i> Add
-                        School</button>
 
-                </div>
-                <div id="addcollegerow">
-                    @foreach($qualification as $key => $row)
-                    @if($row->type == 'college')
-                    <div id="addcollegeform">
-                        <div class="container addcollege mt-4">
-                            <div class="whiteBox clearfix">
-                                <div class="row custom-box">
+                        <div class="col-lg-12 col-md-12 mt-2 col-12">
+                            <button type="button" class="add-btn uk-button uk-button-primary profile-button" id="addschoolbtn"><i class="fa fa-solid fa-plus"></i> Add
+                                School</button>
 
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="form-group">
-                                            <label>College Name</label>
-                                            <input class="form-control " name="name[]" type="text" value="{{$row->name}}">
-                                            <input class="form-control " hidden name="type[]" value="college" type="text">
-                                            <input class="form-control " hidden name="tech[]" value="NA" type="text">
-                                            <input class="form-control " hidden name="qualificationId[]" value="{{$row->id}}" type="text">
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                        <div id="addcollegerow">
+                            @if($qualification)
+                            @foreach($qualification as $key => $row)
+                            @if($row->type == 'college')
 
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-12 ">
-                                        <div class="form-group">
-                                            <label>College Address </label>
-                                            <input class="form-control" name="address[]" type="text" value="{{$row->Address}}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-12 ">
-                                        <div class="form-group">
-                                            <label>PG/PHD Year Completed </label>
-                                            <input class="form-control " name="year_completed[]" type="text" value="{{$row->Year_completion}}">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="row custom-box">
-
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="form-group">
-                                            <label>Applicable ECA Validity
-
-                                            </label>
-                                            <select name="eca[]" class="form-control">
-                                                <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
-                                                <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
-                                                <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="form-group">
-                                            <label>Distant
-
-                                            </label>
-                                            <select name="distant[]" class="form-control">
-                                                <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
-                                                <option {{$row->Distant == 'regular' ? 'selected':''}}>regular</option>
-                                                <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-12 ">
-                                        <div class="form-group">
-                                            <label>Country</label>
-                                            <input name="country[]" class="form-control " type="text" value="{{$row->country}}">
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12 ">
-
+                            <div id="addcollegeform">
+                                <div class="container addcollege mt-4">
                                     <div class="">
-                                        <label>
-                                            <p>Other Attachment </p>
-                                        </label>
-                                        <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
-                                        <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                        <div class="row custom-box">
+
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">College Name</label>
+                                                    <input class="form-control " name="name[]" type="text" value="{{$row->name}}">
+                                                    <input class="form-control " hidden name="type[]" value="college" type="text">
+                                                    <input class="form-control " hidden name="tech[]" value="NA" type="text">
+                                                    <input class="form-control " hidden name="qualificationId[]" value="{{$row->id}}" type="text">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">College Address </label>
+                                                    <input class="form-control" name="address[]" type="text" value="{{$row->Address}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">PG/PHD Year Completed </label>
+                                                    <input class="form-control " name="year_completed[]" type="text" value="{{$row->Year_completion}}">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row custom-box">
+
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Applicable ECA Validity
+
+                                                    </label>
+                                                    <select name="eca[]" class="form-control">
+                                                        <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
+                                                        <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
+                                                        <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Distant
+
+                                                    </label>
+                                                    <select name="distant[]" class="form-control">
+                                                        <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
+                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
+                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}>regular</option>
+                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-md-4 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Country</label>
+                                                    <input name="country[]" class="form-control " type="text" value="{{$row->country}}">
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="row custom-box">
+                                            <div class="col-lg-8 col-md-8 col-12 ">
+
+                                                <div class="">
+                                                    <label class="uk-form-label">
+                                                        <p>Other Attachment </p>
+                                                    </label>
+                                                    <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
+                                                    <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                                </div>
+                                            </div>
+
+                                            <div class="float-right" style="margin-left:10% !important">
+                                                <br><br>
+                                                <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removecollege" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="float-right">
-                                    <button type="button" class=" closebtn client-btn btn btn-danger" id="removecollege" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
-                                </div>
                             </div>
+                            <hr>
+                            @endif
+                            @endforeach
+                            @endif
                         </div>
-                    </div>
-                    @endif
-                    @endforeach
-                </div>
-                <div class="col-lg-12 col-md-12  mt-2 col-12">
-                    <button type="button" class="add-btn btn btn-primary profile-button" id="collegebtn"><i class="fa fa-solid fa-plus"></i> Add
-                        College</button>
-                </div>
-                <div id="addpgrow">
-                    @foreach($qualification as $key => $row)
-                    @if($row->type == 'PG')
-                    <div id="addpgform">
-                        <div class="whiteBox clearfix">
-                            <div class="row custom-box">
 
-                                <div class="col-lg-4 col-md-4 col-12">
-                                    <div class="form-group">
-                                        <label>PG Name</label>
-                                        <input class="form-control " name="name[]" type="text" value="{{$row->name}}">
-                                        <input class="form-control " hidden name="qualificationId[]" value="{{$row->id}}" type="text">
-                                        <input class="form-control " hidden name="type[]" value="PG" type="text">
-                                        <input class="form-control " hidden name="tech[]" value="NA" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-12 ">
-                                    <div class="form-group">
-                                        <label>PG Address </label>
-                                        <input class="form-control" name="address[]" type="text" value="{{$row->Address}}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-12 ">
-                                    <div class="form-group">
-                                        <label>Year Completed </label>
-                                        <input class="form-control " name="year_completed[]" type="text" value="{{$row->Year_completion}}">
-                                    </div>
-                                </div>
+                        <div class="col-lg-12 col-md-12  mt-2 col-12">
+                            <button type="button" class="add-btn uk-button uk-button-primary profile-button" id="collegebtn"><i class="fa fa-solid fa-plus"></i> Add
+                                College</button>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                        <div id="addpgrow">
+                            @foreach($qualification as $key => $row)
+                            @if($row->type == 'PG')
 
+                            <div id="addpgform">
+                                <div class="">
+                                    <div class="row custom-box">
+
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="form-group">
+                                                <label class="uk-form-label">PG Name</label>
+                                                <input class="form-control " name="name[]" type="text" value="{{$row->name}}">
+                                                <input class="form-control " hidden name="qualificationId[]" value="{{$row->id}}" type="text">
+                                                <input class="form-control " hidden name="type[]" value="PG" type="text">
+                                                <input class="form-control " hidden name="tech[]" value="NA" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12 ">
+                                            <div class="form-group">
+                                                <label class="uk-form-label">PG Address </label>
+                                                <input class="form-control" name="address[]" type="text" value="{{$row->Address}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12 ">
+                                            <div class="form-group">
+                                                <label class="uk-form-label">Year Completed </label>
+                                                <input class="form-control " name="year_completed[]" type="text" value="{{$row->Year_completion}}">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row custom-box">
+
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="form-group">
+                                                <label class="uk-form-label">Applicable ECA Validity
+
+                                                </label>
+                                                <select name="eca[]" class="form-control">
+                                                    <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
+                                                    <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
+                                                    <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="form-group">
+                                                <label class="uk-form-label">Distant
+
+                                                </label>
+                                                <select name="distant[]" class="form-control">
+                                                    <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
+                                                    <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
+                                                    <option {{$row->Distant == 'regular' ? 'selected':''}}>regular</option>
+                                                    <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-12 ">
+                                            <div class="form-group">
+                                                <label class="uk-form-label">Country</label>
+                                                <input name="country[]" class="form-control " type="text" value="{{$row->country}}">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-lg-8 col-md-8 col-12">
+
+                                            <div class="">
+                                                <label class="uk-form-label">
+                                                    <p>Other Attachment </p>
+                                                </label>
+                                                <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
+                                                <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                            </div>
+                                        </div>
+                                        <div class="float-right" style="margin-left:10% !important">
+                                            <br><br>
+                                            <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removepg" style="background:#bf0010 !important">
+                                                <a style="color:white">
+                                                    <i class="fa fa-solid fa-minus"></i> Remove
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="row custom-box">
+                            <hr>
+                            @endif
+                            @endforeach
+                        </div>
 
-                                <div class="col-lg-4 col-md-4 col-12">
-                                    <div class="form-group">
-                                        <label>Applicable ECA Validity
+                        <div class="col-lg-12 col-md-12 mt-2 col-12">
+                            <button type="button" class="add-btn uk-button uk-button-primary profile-button" id="pgbtn"><i class="fa fa-solid fa-plus"></i> Add
+                                PostGraduation</button>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                        <div id="addotherrow">
+                            @foreach($qualification as $key => $row)
+                            @if($row->type == 'other')
 
-                                        </label>
-                                        <select name="eca[]" class="form-control">
-                                            <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
-                                            <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
-                                            <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-4 col-md-4 col-12">
-                                    <div class="form-group">
-                                        <label>Distant
-
-                                        </label>
-                                        <select name="distant[]" class="form-control">
-                                            <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                            <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
-                                            <option {{$row->Distant == 'regular' ? 'selected':''}}>regular</option>
-                                            <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-4 col-12 ">
-                                    <div class="form-group">
-                                        <label>Country</label>
-                                        <input name="country[]" class="form-control " type="text" value="{{$row->country}}">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6 col-12">
-
+                            <div id="addotherform">
+                                <div class="container addother mt-4">
                                     <div class="">
-                                        <label>
-                                            <p>Other Attachment </p>
-                                        </label>
-                                        <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
-                                        <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                        <div class="row custom-box">
+
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Technical Qualifications</label>
+                                                    <input class="form-control " name="tech[]" type="text" value="{{$row->tech}}">
+                                                    <input class="form-control " hidden name="type[]" value="other" type="text">
+                                                    <input class="form-control " hidden name="qualificationId[]" value="{{$row->id}}" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Name of Institute </label>
+                                                    <input class="form-control " name="name[]" type="text" value="{{$row->name}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Institute Address </label>
+                                                    <input class="form-control " name="address[]" type="text" value="{{$row->Address}}">
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row custom-box">
+                                            <div class="col-lg-3 col-md-3 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Year Completed </label>
+                                                    <input class="form-control " name="year_completed[]" type="text" value="{{$row->Year_completion}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-12">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Applicable ECA Validity
+
+                                                    </label>
+                                                    <select name="eca[]" class="form-control">
+                                                        <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
+                                                        <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
+                                                        <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-12">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Distant
+
+                                                    </label>
+                                                    <select name="distant[]" class="form-control">
+                                                        <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
+                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
+                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}> regular</option>
+                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-12 ">
+                                                <div class="form-group">
+                                                    <label class="uk-form-label">Country</label>
+                                                    <input class="form-control " name="country[]" type="text" value="{{$row->country}}">
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-8 col-md-8 col-12">
+                                                <label class="uk-form-label">
+                                                    <p>Other Attachment </p>
+                                                </label>
+                                                <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
+                                                <input type="file" class="form-control" name="attachment[]">
+
+                                            </div>
+                                            <div class="float-right" style="margin-left:10% !important">
+                                                <br><br>
+                                                <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removeother" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                </div>
-                                <div class="float-right">
-                                    <button type="button" class=" closebtn client-btn btn btn-danger" id="removepg" style="background:#bf0010 !important">
-                                        <a style="color:white">
-                                            <i class="fa fa-solid fa-minus"></i> Remove
-                                        </a>
-                                    </button>
                                 </div>
                             </div>
+                            <hr>
+                            @endif
+                            @endforeach
                         </div>
-                    </div>
-                    @endif
-                    @endforeach
-                </div>
-                <div class="col-lg-12 col-md-12 mt-2 col-12">
-                    <button type="button" class="add-btn btn btn-primary profile-button" id="pgbtn"><i class="fa fa-solid fa-plus"></i> Add
-                        PostGraduation</button>
-                </div>
-                <div id="addotherrow">
-                    @foreach($qualification as $key => $row)
-                    @if($row->type == 'other')
-                    <div id="addotherform">
-                        <div class="container addother mt-4">
-                            <div class="whiteBox clearfix">
-                                <div class="row custom-box">
 
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="form-group">
-                                            <label>Technical Qualifications</label>
-                                            <input class="form-control " name="tech[]" type="text" value="{{$row->tech}}">
-                                            <input class="form-control " hidden name="type[]" value="other" type="text">
-                                            <input class="form-control " hidden name="qualificationId[]" value="{{$row->id}}" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-12 ">
-                                        <div class="form-group">
-                                            <label>Name of Institute </label>
-                                            <input class="form-control " name="name[]" type="text" value="{{$row->name}}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-12 ">
-                                        <div class="form-group">
-                                            <label>Institute Address </label>
-                                            <input class="form-control " name="address[]" type="text" value="{{$row->Address}}">
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="row custom-box">
-                                    <div class="col-lg-3 col-md-3 col-12 ">
-                                        <div class="form-group">
-                                            <label>Year Completed </label>
-                                            <input class="form-control " name="year_completed[]" type="text" value="{{$row->Year_completion}}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Applicable ECA Validity
-
-                                            </label>
-                                            <select name="eca[]" class="form-control">
-                                                <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
-                                                <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
-                                                <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Distant
-
-                                            </label>
-                                            <select name="distant[]" class="form-control">
-                                                <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
-                                                <option {{$row->Distant == 'regular' ? 'selected':''}}> regular</option>
-                                                <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12 ">
-                                        <div class="form-group">
-                                            <label>Country</label>
-                                            <input class="form-control " name="country[]" type="text" value="{{$row->country}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-
-                                        <div class="">
-                                            <label>
-                                                <p>Other Attachment </p>
-                                            </label>
-                                            <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
-                                            <input type="file" class="form-control" name="attachment[]">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="float-right">
-                                    <button type="button" class=" closebtn client-btn btn btn-danger" id="removeother" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
-                                </div>
-
-                            </div>
+                        <div class="col-lg-12 col-md-12 mt-2 col-12">
+                            <button type="button" class="add-btn uk-button uk-button-primary profile-button" id="otherbtn"><i class="fa fa-solid fa-plus"></i> Add
+                                OtherQualification</button>
                         </div>
+                    </fieldset>
+                    <br>
+                    <div class="float-right">
+                        <a class="sc-button sc-button-custom md-bg-grey-600 sc-js-button-wave-light waves-effect waves-button waves-light" href="{{route('personalProfile')}}">Cancel</a>
+                        &nbsp;&nbsp;
+                        <button type="submit" class="client-btn btn btn-primary profile-button">Update</button>
                     </div>
-                    @endif
-                    @endforeach
-                </div>
-                <div class="col-lg-12 col-md-12 mt-2 col-12">
-                    <button type="button" class="add-btn btn btn-primary profile-button" id="otherbtn"><i class="fa fa-solid fa-plus"></i> Add
-                        OtherQualification</button>
-                </div>
-
-                <div class="float-right">
-                    <button type="submit" class="client-btn btn btn-primary profile-button">Update</button>
-                </div>
-            </form>
-
+                </form>
+            </div>
         </div>
 
     </div>
@@ -607,12 +648,12 @@
 
             html = `<div  id="addschoolform"> 
                      <div class="col-lg-12 col-md-12 col-12 container addschool mt-4" >
-                     <div class="whiteBox clearfix">
+                     <div class="">
                      <div class="row custom-box">
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>School Name</label>
+                                <label class="uk-form-label" >School Name</label >
                                 <input class="form-control " name="name[]" type="text" >
                                 <input class="form-control " hidden name="type[]" value="school" type="text" >
                                 <input class="form-control " hidden name="tech[]" value="NA" type="text" >
@@ -623,13 +664,13 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>School Address </label>
+                                <label class="uk-form-label" >School Address </label >
                                 <input class="form-control" name="address[]"  type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>Year Completed </label>
+                                <label class="uk-form-label" >Year Completed </label >
                                 <input class="form-control " name="year_completed[]" type="text" >
                             </div>
                         </div>
@@ -639,9 +680,9 @@
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Applicable ECA Validity
+                                <label class="uk-form-label" >Applicable ECA Validity
 
-                                </label>
+                                </label >
                                 <select name="eca[]" class="form-control">
                                     <option value="">Select Option</option>
                                     <option value="Yes">Yes</option>
@@ -654,9 +695,9 @@
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Distant
+                                <label class="uk-form-label" >Distant
 
-                                </label>
+                                </label >
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
                                     <option value="distant">distant</option>
@@ -669,29 +710,30 @@
 
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>Country</label>
+                                <label class="uk-form-label" >Country</label >
                                 <input name="country[]" class="form-control " type="text" >
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-12">
-
-                            <div class="">
-                                <label>
-                                    <p>Other Attachment </p>
-                                </label>
-                                <input type="file"   class="form-control" name="attachment[]" >
-                            </div>
-                        </div>
+                       
 
                     </div>
-                    <div class="float-right">
-                    <button  type="button" class=" closebtn  btn btn-danger" id="removeschool" style="background:#bf0010 !important"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
+                    <div class="row custom-box" >
+                              <div class="col-lg-8 col-md-8 col-12">
+                                <label class="uk-form-label" >
+                                <p>Other Attachment </p>
+                                </label>
+                                <input type="file"   class="form-control" name="attachment[]" >
+                              </div>
+                              <div class="float-right" style="margin-left:10% !important">
+                                <br><br>
+                                <button  type="button" class=" closebtn  uk-button uk-button-danger" id="removeschool" style="background:#bf0010 !important;"><a style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
+                              </div>
                     </div>
                 </div>
             </div>
               </div>
-           <br>`
+           <hr>`
 
             $('#addschoolrow').append(html);
         });
@@ -709,12 +751,12 @@
 
             html = `<div  id="addcollegeform">
                 <div class="container addcollege mt-4">
-                <div class="whiteBox clearfix">
+                  <div class="">
                     <div class="row custom-box">
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>College Name</label>
+                                <label class="uk-form-label" >College Name</label >
                                 <input class="form-control " name="name[]" type="text" >
                                 <input class="form-control " hidden name="type[]" value="college" type="text" >
                                 <input class="form-control " hidden name="tech[]" value="NA" type="text" >
@@ -724,13 +766,13 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>College Address </label>
+                                <label class="uk-form-label" >College Address </label >
                                 <input class="form-control " name="address[]" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>PG/PHD Year Completed </label>
+                                <label class="uk-form-label" >PG/PHD Year Completed </label >
                                 <input class="form-control " name="year_completed[]" type="text" >
                             </div>
                         </div>
@@ -740,9 +782,9 @@
 
                     <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Applicable ECA Validity
+                                <label class="uk-form-label" >Applicable ECA Validity
 
-                                </label>
+                                </label >
                                 <select name="eca[]" class="form-control">
                                     <option value="">Select Option</option>
                                     <option>Yes</option>
@@ -753,9 +795,9 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Distant
+                                <label class="uk-form-label" >Distant
 
-                                </label>
+                                </label >
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
                                     <option>distant</option>
@@ -768,28 +810,32 @@
 
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>Country</label>
+                                <label class="uk-form-label" >Country</label >
                                 <input name="country[]" class="form-control " type="text" >
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-12">
-
-                            <div class="">
-                                <label>
-                                    <p>Other Attachment </p>
-                                </label>
-                                <input type="file"  class="form-control" name="attachment[]" >
-                            </div>
-                        </div>
+                        
 
                     </div>
-                    <div class="float-right">
-                    <button type="button" class=" closebtn client-btn btn btn-danger" id="removecollege" style="background:#bf0010 !important"><a 
+                    <div class="row">
+                          <div class="col-lg-8 col-md-8 col-12">
+                               <label class="uk-form-label" >
+                               <p>Other Attachment </p>
+                               </label >
+                               <input type="file"  class="form-control" name="attachment[]" >
+                            
+                          </div>
+                          <div class="float-right" style="margin-left:10% !important">
+                          <br><br>
+                                <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removecollege" style="background:#bf0010 !important"><a 
                             style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
-                            </div>
+                           </div>
+                    </div>
                 </div>
-                </div></div> `
+                </div>
+                </div>
+                <hr>`
 
             $('#addcollegerow').append(html);
         });
@@ -806,12 +852,12 @@
             var html = '';
 
             html = `<div  id="addpgform">  <div class="container addpg mt-4">
-                        <div class="whiteBox clearfix">
+                        <div class="">
                     <div class="row custom-box">
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>PG Name</label>
+                                <label class="uk-form-label" >PG Name</label >
                                 <input class="form-control " name="name[]" type="text" >
                                 <input class="form-control " hidden name="type[]" value="PG" type="text" >
                                 <input class="form-control " hidden name="tech[]" value="NA" type="text" >
@@ -821,13 +867,13 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>PG Address </label>
+                                <label class="uk-form-label" >PG Address </label >
                                 <input class="form-control " name="address[]" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>Year Completed </label>
+                                <label class="uk-form-label" >Year Completed </label >
                                 <input class="form-control " name="year_completed[]" type="text" >
                             </div>
                         </div>
@@ -836,9 +882,9 @@
                     <div class="row custom-box">
                     <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Applicable ECA Validity
+                                <label class="uk-form-label" >Applicable ECA Validity
 
-                                </label>
+                                </label >
                                 <select name="eca[]" class="form-control">
                                     <option value="">Select Option</option>
                                     <option>Yes</option>
@@ -849,9 +895,9 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Distant
+                                <label class="uk-form-label" >Distant
 
-                                </label>
+                                </label >
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
                                     <option>distant</option>
@@ -863,28 +909,28 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>Country</label>
+                                <label class="uk-form-label" >Country</label >
                                 <input name="country[]" class="form-control " type="text" >
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-12">
-
-                            <div class="">
-                                <label>
-                                    <p>Other Attachment </p>
-                                </label>
-                                <input type="file"  class="form-control" name="attachment[]" >
-                            </div>
-                        </div>
+                       
 
                     </div>
-                    <div class="float-right">
-                    <button type="button" class=" closebtn client-btn btn btn-danger" id="removepg" style="background:#bf0010 !important"><a  style="color:white">
-                            <i class="fa fa-solid fa-minus"></i> Remove</a></button>
+                        <div class="row">
+                              <div class="col-lg-8 col-md-8 col-12">
+                                <label class="uk-form-label" >
+                                    <p>Other Attachment </p>
+                                </label >
+                                <input type="file"  class="form-control" name="attachment[]" >
+                              </div>
+                             <div class="float-right" style="margin-left:10% !important"><br><br>
+                               <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removepg" style="background:#bf0010 !important"><a  style="color:white">
+                                <i class="fa fa-solid fa-minus"></i> Remove</a></button>
                             </div>
+                        </div>
                    </div>
-                  </div></div>`
+                  </div></div><hr>`
 
             $('#addpgrow').append(html);
         });
@@ -904,12 +950,12 @@
             html = `
            <div  id="addotherform">
             <div class="container addother mt-4">
-                <div class="whiteBox clearfix">
+                <div class="">
                     <div class="row custom-box">
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Technical Qualifications</label>
+                                <label class="uk-form-label" >Technical Qualifications</label >
                                 <input class="form-control " name="tech[]" type="text" >
                                 <input class="form-control " hidden name="type[]" value="other" type="text" >
                                 <input class="form-control " hidden name="qualificationId[]" value="" type="text">
@@ -918,13 +964,13 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>Name of Institute </label>
+                                <label class="uk-form-label" >Name of Institute </label >
                                 <input class="form-control " name="name[]" type="text" >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>Institute Address </label>
+                                <label class="uk-form-label" >Institute Address </label >
                                 <input class="form-control " name="address[]" type="text" >
                             </div>
                         </div>
@@ -934,15 +980,15 @@
                     <div class="row custom-box">
                     <div class="col-lg-3 col-md-3 col-12 ">
                             <div class="form-group">
-                                <label>Year Completed </label>
+                                <label class="uk-form-label" >Year Completed </label >
                                 <input class="form-control " name="year_completed[]" type="text" >
                             </div>
                         </div>
                     <div class="col-lg-3 col-md-3 col-12">
                             <div class="form-group">
-                                <label>Applicable ECA Validity
+                                <label class="uk-form-label" >Applicable ECA Validity
 
-                                </label>
+                                </label >
                                 <select name="eca[]" class="form-control">
                                     <option value="">Select Option</option>
                                     <option>Yes</option>
@@ -953,9 +999,9 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-12">
                             <div class="form-group">
-                                <label>Distant
+                                <label class="uk-form-label" >Distant
 
-                                </label>
+                                </label >
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
                                     <option>distant</option>
@@ -967,28 +1013,31 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-12 ">
                             <div class="form-group">
-                                <label>Country</label>
+                                <label class="uk-form-label" >Country</label >
                                 <input class="form-control " name="country[]" type="text" >
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-3 col-12">
+                      
+                    </div>
 
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-12">
                             <div class="">
-                                <label>
+                                <label class="uk-form-label" >
                                     <p>Other Attachment </p>
-                                </label>
+                                </label >
                                 <input type="file"  class="form-control" name="attachment[]" >
                             </div>
                         </div>
-                    </div>
-                    <div class="float-right">
-                    <button type="button" class=" closebtn client-btn btn btn-danger" id="removeother" style="background:#bf0010 !important"><a 
+                         <div class="float-right" style="margin-left:10% !important"><br><br>
+                            <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removeother" style="background:#bf0010 !important"><a 
                             style="color:white"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
-                            </div>
+                          </div>
+                    </div>
 
                     </div>
-                 </div></div>`
+                 </div></div><hr>`
 
             $('#addotherrow').append(html);
         });

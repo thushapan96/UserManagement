@@ -14,15 +14,19 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
 Route::get('/', function () {
 
     return view('index');
 });
+Route::get('/indexx', function () {
 
+    return view('indexx');
+})->name('indexx');
 Route::get('/test', function () {
 
-    return view('layouts.layout');
+    return view('test');
 });
 
 Route::group(['middleware' => ['auth']], function () {
