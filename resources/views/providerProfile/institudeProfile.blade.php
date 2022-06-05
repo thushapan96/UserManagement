@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    
     th {
         text-transform: capitalize;
         color: #00000078 !important;
@@ -127,33 +126,26 @@
                                     <tr>
                                         <th>Contact Number</th>
                                         <td>{{$institutions->phone}}</td>
-                                        <th>Languages Known</th>
-                                        <td> @if($institutions->language_known)
-                                            @foreach($institutions->language_known as $row)
-                                            {{$row}}
-                                            @endforeach
-                                            @endif
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <th>Dean Email ID</th>
                                         <td>{{$institutions->dean_email}}
-                                        </td>
-                                        <th>Correspondence Email</th>
-                                        <td>{{$institutions->email}}
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>URL Website Address</th>
                                         <td> {{$institutions->website_address}}</td>
-                                        <th>Admission Cell - Contact Person</th>
-                                        <td>{{$institutions->admission_phone}}</td>
+                                        <th>Correspondence Email</th>
+                                        <td>{{$institutions->email}}
+                                        </td>
                                     </tr>
                                     <tr>
+
+                                        <th>Admission Cell - Contact Person</th>
+                                        <td>{{$institutions->admission_phone}}</td>
                                         <th>Registered Office - Location</th>
                                         <td>{{$institutions->registrar_office_area}}
                                         </td>
                                     </tr>
+                                    
                                 </table>
                             </fieldset>
                         </div>
