@@ -118,7 +118,7 @@
                             <div class="col-lg-9 col-md-9 col-12">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="customCheckaddress" name="same_Correspondence_address" value="1">
-                                    class="uk-form-label" class="custom-control-label " for="customCheckaddress"> Check the Box if
+                                    <label class="custom-control-label" class="custom-control-label " for="customCheckaddress"> Check the Box if
                                     Correspondence
                                     Address
                                     is same as Present Residential Address. </label>
@@ -212,25 +212,25 @@
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" class="custom-control-input" id="customradio" name="gender" value="male" {{$personal->gender == 'male' ? 'checked':''}}>
-                                            class="uk-form-label" class="custom-control-label mt-1" for="customradio">Male</label>
+                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio">Male</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" class="custom-control-input" id="customradio1" name="gender" value="female" {{$personal->gender == 'female' ? 'checked':''}}>
-                                            class="uk-form-label" class="custom-control-label mt-1" for="customradio1">Female</label>
+                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio1">Female</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" class="custom-control-input" id="customradio2" name="gender" value="other" {{$personal->gender == 'other' ? 'checked':''}}>
-                                            class="uk-form-label" class="custom-control-label mt-1" for="customradio2">Other</label>
+                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio2">Other</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-4 ">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" class="custom-control-input " id="customradio3" name="gender" value="Prefer Not to say" {{$personal->gender == 'Prefer Not to say' ? 'checked':''}}>
-                                            class="uk-form-label" class="custom-control-label mt-1" for="customradio3">Prefer Not to say
+                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio3">Prefer Not to say
                                             </label>
                                         </div>
                                     </div>
@@ -248,13 +248,13 @@
                                     <div class="col-lg-4 col-md-4 col-2 ">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes" {{$personal->is_already_apply == 'yes' ? 'checked':''}}>
-                                            class="uk-form-label" class="custom-control-label mt-1" for="customradio4">Yes</label>
+                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio4">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-2 ">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no" {{$personal->is_already_apply == 'no' ? 'checked':''}}>
-                                            class="uk-form-label" class="custom-control-label mt-1" for="customradio5">No</label>
+                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio5">No</label>
                                         </div>
                                     </div>
                                 </div>
@@ -278,37 +278,37 @@
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
                                     <input type="radio" class="custom-control-input " id="customradio6" name="immigration_purpose" value="Student" {{$personal->immigration_purpose == 'Student' ? 'checked':''}}>
-                                    class="uk-form-label" class="custom-control-label mt-1" for="customradio6">Student</label>
+                                    <label class="custom-control-label" class="custom-control-label mt-1" for="customradio6">Student</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
                                     <input type="radio" class="custom-control-input " id="customradio7" name="immigration_purpose" value="Employed" {{$personal->immigration_purpose == 'Employed' ? 'checked':''}}>
-                                    class="uk-form-label" class="custom-control-label mt-1" for="customradio7">Employed</label>
+                                    <label class="custom-control-label" class="custom-control-label mt-1" for="customradio7">Employed</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
                                     <input type="radio" class="custom-control-input " id="customradio8" name="immigration_purpose" value="Self Employed" {{$personal->immigration_purpose == 'Self Employed' ? 'checked':''}}>
-                                    class="uk-form-label" class="custom-control-label mt-1" for="customradio8">SelfEmployed</label>
+                                    <label class="custom-control-label" class="custom-control-label mt-1" for="customradio8">SelfEmployed</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
                                     <input type="radio" class="custom-control-input " id="customradio9" name="immigration_purpose" value="Retired" {{$personal->immigration_purpose == 'Retired' ? 'checked':''}}>
-                                    class="uk-form-label" class="custom-control-label mt-1" for="customradio9">Retired</label>
+                                    <label class="custom-control-label" class="custom-control-label mt-1" for="customradio9">Retired</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
                                     <input type="radio" class="custom-control-input " id="customradio10" name="immigration_purpose" value="Business" {{$personal->immigration_purpose == 'Business' ? 'checked':''}}>
-                                    class="uk-form-label" class="custom-control-label mt-1" for="customradio10">Business</label>
+                                    <label class="custom-control-label" class="custom-control-label mt-1" for="customradio10">Business</label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="custom-control custom-radio ">
                                     <input type="radio" class="custom-control-input " id="customradio11" name="immigration_purpose" value="Unemployed" {{$personal->immigration_purpose == 'Unemployed' ? 'checked':''}}>
-                                    class="uk-form-label" class="custom-control-label mt-1" for="customradio11">Unemployed</label>
+                                    <label class="custom-control-label" class="custom-control-label mt-1" for="customradio11">Unemployed</label>
                                 </div>
                             </div>
                         </div>
@@ -339,13 +339,13 @@
                                     <div class="col-lg-4 col-md-4 col-12 ml-3 ">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" class="custom-control-input " id="customradio12" name="is_vaccinate" value="Yes" {{$personal->is_vaccinate == 'Yes' ? 'checked':''}}>
-                                            class="uk-form-label" class="custom-control-label mt-1" for="customradio12">Yes</label>
+                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio12">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-12 ">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" class="custom-control-input " id="customradio13" name="is_vaccinate" value="No" {{$personal->is_vaccinate == 'No' ? 'checked':''}}>
-                                            class="uk-form-label" class="custom-control-label mt-1" for="customradio13">No</label>
+                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio13">No</label>
                                         </div>
                                     </div>
                                 </div>
