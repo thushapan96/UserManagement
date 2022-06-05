@@ -490,7 +490,7 @@
 
                         @else
 
-                        <a href="{{route('edit.consultant')}}"> <button type="button" style="width: 140px;font-size:12px" class="client-btn uk-button uk-button-primary">Edit Profile</button></a>
+                        <a href="{{route('edit.business')}}"> <button type="button" style="width: 140px;font-size:12px" class="client-btn uk-button uk-button-primary">Edit Profile</button></a>
 
                         @endif
                     </div>
