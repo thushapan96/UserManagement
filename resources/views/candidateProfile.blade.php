@@ -636,7 +636,7 @@
             </u1>
         </div>
 
-        <div class="col-md-2 uk-card" style="margin-top:9%;height:300px !important;">
+        <div class="col-md-2 uk-card" style="margin-top:9%;height:100% !important;">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                     <div class="d-flex flex-column align-items-center text-center py-1">

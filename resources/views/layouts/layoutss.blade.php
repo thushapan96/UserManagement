@@ -612,7 +612,7 @@
         });
     </script>
 
-    <div id="sc-style-switcher">
+    <!-- <div id="sc-style-switcher">
         <a href="#" class="sc-sSw-toggle"><i class="mdi mdi-tune"></i></a>
         <p class="sc-text-semibold uk-margin-top-remove uk-margin-bottom">Themes</p>
         <ul class="sc-sSw-theme-switcher">
@@ -684,7 +684,7 @@
         <div class="uk-flex uk-flex-middle">
             <input type="checkbox" id="sc-menu-accordion-mode" data-sc-icheck><label for="sc-menu-accordion-mode">Accordion mode</label>
         </div>
-    </div>
+    </div> -->
 
 </body>
 
