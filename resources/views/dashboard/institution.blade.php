@@ -157,6 +157,7 @@
         @foreach($institutions as $row)
 
         <li>
+        <a href="{{route('dashboard.institution.view',['id' => $row->id])}}">
             <div class="uk-card uk-card-hover ">
                 <div class="uk-card-body sc-padding-remove">
                     <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
@@ -171,7 +172,6 @@
                                 <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
                                     {{$row->name}}
                                 </p>
-                                <p class="uk-margin-remove sc-color-secondary uk-text-medium"><a class="sc-button sc-button-primary sc-js-button-wave-light waves-effect waves-button waves-light sc-button sc-button-outline sc-button-outline-danger sc-button-mini" href="{{route('dashboard.institution.view',['id' => $row->id])}}">view more</a></p>
                             </div>
                         </div>
                         <div class="uk-width-2-3@l ">
@@ -213,6 +213,7 @@
                     </div>
                 </div>
             </div>
+        </a>
         </li>
         @endforeach
 

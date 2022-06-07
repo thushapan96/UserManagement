@@ -4,13 +4,20 @@
 <style>
     textarea {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
+        padding: 20px
     }
 
     th {
         text-transform: capitalize;
-        color: #00000078 !important;
+        background: #dee2e6a8 !important;
+        width: 300px !important;
+
+    }
+
+    td {
+        /* width: 100% !important; */
+        width: 300px !important;
+
     }
 
     .img {
@@ -30,8 +37,11 @@
         display: none;
     }
 
-    th {
-        color: #00000078 !important;
+    td,
+    .table th {
+        padding: 0.rem;
+        vertical-align: top;
+        border-top: 0.1px solid #dee2e6 !important;
     }
 </style>
 @if($message = Session::get('formSuccess'))
@@ -75,112 +85,234 @@
                     <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <h6 style="text-decoration:underline;">consultants Information</h6>
-                                <table class="table table-hover">
-                                    <tr>
-                                        <th>Full Name</th>
-                                        <td>{{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}}</td>
-                                        <th>Company Name</th>
-                                        <td> {{$consultants->company_name}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Contact Number</th>
-                                        <td>{{$consultants->phone}}</td>
-                                        <th>Status</th>
-                                        <td> {{$consultants->status}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Languages Known</th>
-                                        <td> @if($consultants->language_known)
-                                            @foreach($consultants->language_known as $row)
-                                            {{$row}}
-                                            @endforeach
-                                            @endif
-                                        </td>
-                                        <th>Postal Code</th>
-                                        <td> {{$consultants->postal_code}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Street</th>
-                                        <td>{{$consultants->streat}}
-                                        </td>
-                                        <th>City</th>
-                                        <td> {{$consultants->city}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Province</th>
-                                        <td>{{$consultants->region}}
-                                        </td>
-                                        <th>Country</th>
-                                        <td> {{$consultants->country}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Correspondence Email</th>
-                                        <td>{{$consultants->email}}
-                                        </td>
-                                        <th>URL Website Address</th>
-                                        <td> {{$consultants->website_address}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Registered Office - Location</th>
-                                        <td>{{$consultants->registrar_office_area}}
-                                        </td>
-                                        <th></th>
-                                        <td></td>
-                                    </tr>
-                                </table>
-                            </fieldset>
-                            <br>
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <h6 style="text-decoration:underline;">other Information</h6>
-                                <table class="table table-hover">
-                                    <tr>
-                                        <th>Specialization</th>
-                                        <td> @if($consultants->specialization)
-                                            @foreach($consultants->specialization as $row)
-                                            {{$row}}
-                                            @endforeach
-                                            @endif
+                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                    <h6 style="text-decoration:underline;">Personal Information</h6>
 
-                                        </td>
-                                        <th>Service Offered</th>
-                                        <td> @if($consultants->offering_service)
-                                            @foreach($consultants->offering_service as $row)
-                                            {{$row}}
-                                            @endforeach
-                                            @endif
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Initial chargeable type</th>
-                                        <td> {{$consultants->initial_chargeable_type}}
-                                        </td>
-                                        <th>Year of Establishment</th>
-                                        <td> {{$consultants->establishment_year}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Offering Services Since</th>
-                                        <td> {{$consultants->offering_year}}
-                                        </td>
-                                        <th>Response Time</th>
-                                        <td> {{$consultants->response_time}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Communication Success</th>
-                                        <td> {{$consultants->communication_mode_success}}
-                                        </td>
-                                        <th>Communication prefer Success</th>
-                                        <td>
-                                            @if($consultants->communication_mode)
-                                            @foreach($consultants->communication_mode as $row)
-                                            {{$row}}
-                                            @endforeach
-                                            @endif
-                                        </td>
-                                    </tr>
-                                </table>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Full Name</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Company Name</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$consultants->company_name}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Languages Known </strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                @if($consultants->language_known)
+                                                @foreach($consultants->language_known as $row)
+                                                {{$row}}
+                                                @endforeach
+                                                @endif
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Contact Number</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps"> {{$consultants->phone}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Correspondence Email</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps"> {{$consultants->email}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">URL Website Address</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->website_address}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </fieldset><br>
+                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                    <h6 style="text-decoration:underline;">Address</h6>
+
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">postal Code</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$consultants->postal_code}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Street</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$consultants->streat}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">City</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->city}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">province</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$consultants->region}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Country</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->country}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Registered Office - Locations</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->registrar_office_area}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <br>
+                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                    <h6 style="text-decoration:underline;">other Information</h6>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Specialization</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                @if($consultants->specialization)
+                                                @foreach($consultants->specialization as $row)
+                                                {{$row}}
+                                                @endforeach
+                                                @endif
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Service Offered</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                @if($consultants->offering_service)
+                                                @foreach($consultants->offering_service as $row)
+                                                {{$row}}
+                                                @endforeach
+                                                @endif
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Year of Establishment</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->establishment_year}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Offering Services Since</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$consultants->offering_year}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Communication prefer mode</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                @if($consultants->communication_mode)
+                                                @foreach($consultants->communication_mode as $row)
+                                                {{$row}}
+                                                @endforeach
+                                                @endif
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Response Time</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->response_time}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Initial chargeable type</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->initial_chargeable_type}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </fieldset>
                         </div>
                     </div>
@@ -205,11 +337,11 @@
                                 <div class="uk-card uk-card-hover" style="height:250px">
                                     <div class="uk-card-body sc-padding-remove">
                                         <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative">
+                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative" style="height:248px;overflow:none">
                                                 @if($row->team_img)
-                                                <img class=" mt-1 img float-center " style="width:100%;height:250px " src="{{url('files/'.$row ->team_img)}}">
+                                                <img class="mt-1  img float-center " style="width:100%;height:250px;" src="{{url('files/'.$row->team_img)}}">
                                                 @else
-                                                <img class=" mt-1 img float-center " style="width:100%;height:250px " src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                                <img class="mt-1  img float-center " style="width:100%;height:250px " src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                                                 @endif
                                             </div>
                                             <div class="uk-width-2-3@l">
@@ -380,7 +512,7 @@
                         </div>
                     </div>
                 </li>
-                <li class='tab-pane ' id="menu5">
+                <!-- <li class='tab-pane ' id="menu5">
                     <div class="uk-card col-md-10" style="margin-left:5% !important;">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
@@ -392,17 +524,17 @@
                                             <br>
 
                                             <textarea style="width:100%;background:white !important; box-shadow: none ;" rows="12" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
-                                                       We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                                            1. Is your Company looking for Website Design/Re Design or Development to give professional look
-                                               and exposure for International community?
-                                            2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
-                                               on your Website?
-                                            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                                              4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
-                                               enhance your services?
-                                            5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
-                                               your company marketing activities,  follow-up, and efficiency to generate good revenues
-                                               for your company and always ahead with your competitors?</textarea>
+                             have a Team of professionals who are having expert in Application Development, Solutions and Services. 
+                             1. Is your Company looking for Website Design/Re Design or Development to give professional look
+                               and exposure for International community?
+                               2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
+                               on your Website?
+                            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+                             4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
+                               enhance your services?
+                              5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
+                                your company marketing activities,  follow-up, and efficiency to generate good revenues
+                                 for your company and always ahead with your competitors?</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -427,7 +559,7 @@
                             </fieldset>
                         </div>
                     </div>
-                </li>
+                </li> -->
             </u1>
 
         </div>

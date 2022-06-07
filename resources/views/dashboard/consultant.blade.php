@@ -146,8 +146,8 @@
 </style>
 
 
-<div >
-    
+<div>
+
     <br>
     <ul id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
 
@@ -157,62 +157,63 @@
         @foreach($consultants as $row)
 
         <li>
-            <div class="uk-card uk-card-hover " >
-                <div class="uk-card-body sc-padding-remove">
-                    <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                        <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
-                            
-                            <div class="sc-padding-medium uk-text-center">
-                                @if($row->img)
-                                <img src="{{url('files/'.$row->img)}}" class="sc-avatar sc-border" alt="xerdman" />
-                                @else
-                                <img class="rounded-circle  img " class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                @endif
-                                <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                    {{$row->company_name}}
-                                </p>
-                                <p class="uk-margin-remove sc-color-secondary uk-text-medium"><a class="sc-button sc-button-primary sc-js-button-wave-light waves-effect waves-button waves-light sc-button sc-button-outline sc-button-outline-danger sc-button-mini" href="{{route('dashboard.consultant.view',['id' => $row->id])}}">view more</a></p>
+            <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}">
+                <div class="uk-card uk-card-hover ">
+                    <div class="uk-card-body sc-padding-remove">
+                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
+
+                                <div class="sc-padding-medium uk-text-center">
+                                    @if($row->img)
+                                    <img src="{{url('files/'.$row->img)}}" class="sc-avatar sc-border" alt="xerdman" />
+                                    @else
+                                    <img class="rounded-circle  img " class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                    @endif
+                                    <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                        {{$row->company_name}}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="uk-width-2-3@l ">
-                            <div class="sc-padding-medium">
-                                <ul class="uk-list uk-list-divider">
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove sc-text-semibold">{{$row->phone}}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove">{{$row->email}}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">{{$row->streat}} {{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">
-                                                @if($row->offering_service)
-                                                @foreach($row->offering_service as $service)
-                                                {{$service}},
-                                                @endforeach
-                                                @endif
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <div class="uk-width-2-3@l ">
+                                <div class="sc-padding-medium">
+                                    <ul class="uk-list uk-list-divider">
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove sc-text-semibold">{{$row->phone}}</p>
+                                            </div>
+                                        </li>
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove">{{$row->email}}</p>
+                                            </div>
+                                        </li>
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove uk-text-wrap">{{$row->streat}} {{$row->city}} {{$row->region}} {{$row->country}}</p>
+                                            </div>
+                                        </li>
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove uk-text-wrap">
+                                                    @if($row->offering_service)
+                                                    @foreach($row->offering_service as $service)
+                                                    {{$service}},
+                                                    @endforeach
+                                                    @endif
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </li>
         @endforeach
 

@@ -40,38 +40,35 @@ class ProfileController extends Controller
 
     public function profileEdit($id)
     {
-        $personal =  Personal::where('user_id', $id)->first();
-        // $Academy =  Academy::where('user_id', $id)->first();
-        // $Sponsor =  Sponsor::where('user_id', $id)->first();
-        // $Work =  Work::where('user_id', $id)->get();
-
-        // $qualification = DB::table('candidate_academics')
-        //     ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
-        //     ->where('candidate_academics.user_id', $id)
-        //     ->get();
-
+        if (Personal::where('user_id', $id)->first()) {
+            $personal =  Personal::where('user_id', $id)->first();
+        } else {
+            $personal = new Personal;
+            $personal->user_id = Auth::user()->id;
+            $personal->save();
+            $personal = personal::where('user_id', $id)->first();
+        }
 
         return view('personalEdit.personalEdit')
             ->with('personal', $personal);
-        // ->with('Academy', $Academy)
-        // ->with('Sponsor', $Sponsor)
-        // ->with('Work', $Work)
-        // ->with('qualification', $qualification);
     }
 
     public function academyEdit($id)
     {
-        if(Academy::where('user_id', $id)->first()) {
+        if (Academy::where('user_id', $id)->first()) {
             $Academy =  Academy::where('user_id', $id)->first();
-        }else{
+
+            $qualification = DB::table('candidate_academics')
+                ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
+                ->where('candidate_academics.user_id', $id)
+                ->get();
+        } else {
             $Academy =  new Academy;
+            $Academy->user_id = Auth::user()->id;
+            $Academy->save();
+            $Academy = Academy::where('user_id', $id)->first();
+            $qualification = "";
         }
-
-        $qualification = DB::table('candidate_academics')
-            ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
-            ->where('candidate_academics.user_id', $id)
-            ->get();
-
 
         return view('personalEdit.academyEdit')
             ->with('Academy', $Academy)
@@ -80,9 +77,15 @@ class ProfileController extends Controller
 
     public function workEdit($id)
     {
+        if (Work::where('user_id', $id)->get()) {
+            $work =  Work::where('user_id', $id)->get();
+        } else {
+            $work =  new Work;
+            $work->user_id = Auth::user()->id;
+            $work->save();
 
-        $work =  Work::where('user_id', $id)->get();
-
+            $work = Work::where('user_id', $id)->first();
+        }
 
         return view('personalEdit.workEdit')
             ->with('work', $work)
@@ -91,9 +94,15 @@ class ProfileController extends Controller
 
     public function sponsorEdit($id)
     {
+        if (Sponsor::where('user_id', $id)->first()) {
+            $sponsor =  Sponsor::where('user_id', $id)->first();
+        } else {
+            $sponsor =  new Sponsor;
+            $sponsor->user_id = Auth::user()->id;
+            $sponsor->save();
 
-        $sponsor =  Sponsor::where('user_id', $id)->first();
-
+            $sponsor = Sponsor::where('user_id', $id)->first();
+        }
 
         return view('personalEdit.sponsorEdit')
             ->with('sponsor', $sponsor)

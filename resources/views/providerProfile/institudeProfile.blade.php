@@ -86,7 +86,7 @@
     <div class="row">
 
         <div class="col-md-10">
-            <h3 class="float-center" style="text-align:center">{{$institutions->company_name}} Company</h3>
+            <h3 class="float-center" style="text-align:center">{{$institutions->name}} Company</h3>
             <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                 <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
                 <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">Courses</a></li>
@@ -102,51 +102,140 @@
                     <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <h6 style="text-decoration:underline;">personal Information</h6>
-                                <table class="table table-hover">
-                                    <tr>
-                                        <th>Name</th>
-                                        <td>{{$institutions->name}}</td>
-                                        <th>Street</th>
-                                        <td>{{$institutions->streat}}
-                                    </tr>
-                                    <tr>
-                                        <th>City</th>
-                                        <td> {{$institutions->city}}</td>
-                                        <th>Province</th>
-                                        <td>{{$institutions->region}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Country</th>
-                                        <td> {{$institutions->country}}</td>
-                                        <th>Postal Code</th>
-                                        <td> {{$institutions->postal_code}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Contact Number</th>
-                                        <td>{{$institutions->phone}}</td>
-                                        <th>Dean Email ID</th>
-                                        <td>{{$institutions->dean_email}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>URL Website Address</th>
-                                        <td> {{$institutions->website_address}}</td>
-                                        <th>Correspondence Email</th>
-                                        <td>{{$institutions->email}}
-                                        </td>
-                                    </tr>
-                                    <tr>
+                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                    <h6 style="text-decoration:underline;">Personal Information</h6>
 
-                                        <th>Admission Cell - Contact Person</th>
-                                        <td>{{$institutions->admission_phone}}</td>
-                                        <th>Registered Office - Location</th>
-                                        <td>{{$institutions->registrar_office_area}}
-                                        </td>
-                                    </tr>
-                                    
-                                </table>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Name</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$institutions->name}}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Contact Number</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps"> {{$institutions->phone}}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Admission Cell - Contact Person</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps"> {{$institutions->admission_phone}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Correspondence Email</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps"> {{$institutions->email}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Dean Email ID</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps"> {{$institutions->dean_email}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">URL Website Address</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$institutions->website_address}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </fieldset><br>
+                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                    <h6 style="text-decoration:underline;">Address</h6>
+
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">postal Code</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$institutions->postal_code}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Street</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$institutions->streat}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">City</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$institutions->city}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">province</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$institutions->region}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Country</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$institutions->country}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Registered Office - Locations</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$institutions->registrar_office_area}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </fieldset>
                         </div>
                     </div>
@@ -608,7 +697,7 @@
                         </div>
                     </div>
                 </li>
-                <li class='tab-pane '>
+                <!-- <li class='tab-pane '>
                     <div class="uk-card col-md-10" style="margin-left:5% !important;">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
@@ -620,17 +709,17 @@
                                             <br>
 
                                             <textarea style="width:100%;background:white !important; box-shadow: none ;" rows="12" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
-   We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-            1. Is your Company looking for Website Design/Re Design or Development to give professional look
-               and exposure for International community?
-            2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
-               on your Website?
-            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-            4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
-               enhance your services?
-            5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
-               your company marketing activities,  follow-up, and efficiency to generate good revenues
-               for your company and always ahead with your competitors?</textarea>
+                                         We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
+                                         1. Is your Company looking for Website Design/Re Design or Development to give professional look
+                                         and exposure for International community?
+                                         2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
+                                        on your Website?
+                                          3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
+                                            4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
+                                       enhance your services?
+                                       5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
+                                       your company marketing activities,  follow-up, and efficiency to generate good revenues
+                                       for your company and always ahead with your competitors?</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -655,7 +744,7 @@
                             </fieldset>
                         </div>
                     </div>
-                </li>
+                </li> -->
             </u1>
 
         </div>

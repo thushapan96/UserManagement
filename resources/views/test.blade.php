@@ -1,67 +1,134 @@
-<ul id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-    <li>
-        <div class="uk-card uk-card-hover">
-            <div class="uk-card-body sc-padding-remove">
-                <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                    <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative">
-                        <div class="uk-position-absolute uk-position-top-left uk-margin-small-left uk-margin-small-top ">
-                            <input type="checkbox" id="square-checkbox-1" data-sc-icheck>
-                        </div>
-                        <div class="uk-position-absolute uk-position-top-right uk-margin-small-right uk-margin-mini-top">
-                            <div class="sc-actions">
-                                <div class="sc-dropdown sc-dropdown-ico">
-                                    <a href="#" class="sc-actions-icon mdi mdi-dots-vertical"></a>
-                                    <div class="uk-dropdown-small" data-uk-dropdown="mode:click">
-                                        <ul class="uk-nav uk-dropdown-nav">
-                                            <li class="uk-active"><a href="#">Action 1</a></li>
-                                            <li><a href="#">Action 2</a></li>
-                                            <li><a href="#">Action 3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sc-padding-medium uk-text-center">
-                            <img src="{{url('files/'.$row->img)}}" class="sc-avatar sc-border" alt="xerdman" />
-                            <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                {{$row->company_name}}
-                            </p>
-                            <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$row->company_name}}</p>
-                        </div>
-                    </div>
-                    <div class="uk-width-2-3@l">
-                        <div class="sc-padding-medium">
-                            <ul class="uk-list uk-list-divider">
-                                <li class="sc-list-group">
-                                    <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                    <div class="sc-list-body">
-                                        <p class="uk-margin-remove sc-text-semibold">{{$row->phone}}</p>
-                                    </div>
-                                </li>
-                                <li class="sc-list-group">
-                                    <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                    <div class="sc-list-body">
-                                        <p class="uk-margin-remove">{{$row->email}}</p>
-                                    </div>
-                                </li>
-                                <li class="sc-list-group">
-                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                    <div class="sc-list-body">
-                                        <p class="uk-margin-remove uk-text-wrap">{{$row->streat}},{{$row->city}},{{$row->region}},{{$row->country}}</p>
-                                    </div>
-                                </li>
-                                <li class="sc-list-group">
-                                    <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                    <div class="sc-list-body">
-                                        <p class="uk-margin-remove uk-text-wrap">{{$row->offering_service}}</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
+<fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+    <h6 style="text-decoration:underline;">Personal Information</h6>
 
-</ul>
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">Name</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps">
+                {{$institutions->name}}
+            </p>
+        </div>
+    </div>
+
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">Contact Number</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps"> {{$institutions->phone}}
+            </p>
+        </div>
+    </div>
+
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">Admission Cell - Contact Person</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps"> {{$institutions->admission_phone}}
+            </p>
+        </div>
+    </div>
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">Correspondence Email</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps"> {{$institutions->email}}
+            </p>
+        </div>
+    </div>
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">Dean Email ID</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps"> {{$institutions->dean_email}}
+            </p>
+        </div>
+    </div>
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">URL Website Address</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps">{{$institutions->website_address}}
+            </p>
+        </div>
+    </div>
+</fieldset><br>
+<fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+    <h6 style="text-decoration:underline;">Address</h6>
+
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">postal Code</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps">
+                {{$institutions->postal_code}}
+            </p>
+        </div>
+    </div>
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">Street</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps">
+                {{$institutions->streat}}
+            </p>
+        </div>
+    </div>
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">City</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps">{{$institutions->city}}
+            </p>
+        </div>
+    </div>
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">province</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps">
+                {{$institutions->region}}
+            </p>
+        </div>
+    </div>
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">Country</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps">{{$institutions->country}}
+            </p>
+        </div>
+    </div>
+    <div class="row custom-box">
+        <div class="col-md-5">
+            <strong class="ps">Registered Office - Locations</strong>
+        </div>
+
+        <div class="col-md-7">
+            <p class="ps">{{$institutions->registrar_office_area}}
+            </p>
+        </div>
+    </div>
+</fieldset><br>
