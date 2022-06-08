@@ -294,7 +294,7 @@
                         <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
 
                             <div class="sc-padding-medium uk-text-center">
-                                <img src="${baseUrlAsset}/${row.img}" class="sc-avatar sc-border" alt="xerdman" />
+                                <img id="services-${index}" src="" class="sc-avatar sc-border" alt="xerdman" />
                                 
                                 <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
                                    ${row.company_name}
@@ -353,7 +353,11 @@
                             $('#services-' + first_index).append(service);
 
                         });
-
+                        if(row.img){
+                            $('#img-' + first_index).attr('src',baseUrlAsset+'/'+row.img);
+                        }else{
+                            $('#img-' + first_index).attr('src','https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
+                        }
 
 
                        
