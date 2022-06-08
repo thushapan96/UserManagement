@@ -293,7 +293,7 @@
                         order_row = `<li>
         <input id="type" value="${row.type}" hidden>
         <a href="/dashboard/business/${row.id}">
-            <div class="uk-card uk-card-hover " style="height:100%">
+            <div class="uk-card uk-card-hover " style="height:280px">
                 <div class="uk-card-body sc-padding-remove">
                     <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
                         <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
