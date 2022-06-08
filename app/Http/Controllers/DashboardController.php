@@ -29,10 +29,9 @@ class DashboardController extends Controller
     public function businessIndex()
     {
 
-        $consultants = Consultant::join('users','users.id','providers.user_id')->where('type','Chartered Accountant')->select('providers.*','users.img as img')->get();
-
-        return view('dashboard.business')->with('consultants', $consultants)->with('unique', '');
-
+        $consultants = Consultant::join('users', 'users.id', 'providers.user_id')->where('type', 'Chartered Accountant')->select('providers.*', 'users.img as img')->get();
+        $type = "Chartered Accountant";
+        return view('dashboard.business')->with('consultants', $consultants)->with('type', $type)->with('unique', '');
     }
     public function consultantView($id)
     {
@@ -69,32 +68,33 @@ class DashboardController extends Controller
     {
 
         $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'School')->select('institutions.*', 'users.img as img')->get();
-
-        return view('dashboard.institution')->with('institutions', $institutions)->with('unique', 'School');
+        $type = "School";
+        return view('dashboard.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'School');
     }
     public function collegeIndex()
     {
 
         $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'College')->select('institutions.*', 'users.img as img')->get();
+        $type = "College";
 
-
-        return view('dashboard.institution')->with('institutions', $institutions)->with('unique', 'College');
+        return view('dashboard.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'College');
     }
     public function universityIndex()
     {
         $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'University')->select('institutions.*', 'users.img as img')->get();
-
-        return view('dashboard.institution')->with('institutions', $institutions)->with('unique', 'University');
+        $type = "University";
+        return view('dashboard.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'University');
     }
     public function rcicConsultantIndex()
     {
         $consultants = Consultant::join('users', 'users.id', 'providers.user_id')->where('type', 'RCIC Consultant')->select('providers.*', 'users.img as img')->get();
-
-        return view('dashboard.consultant')->with('consultants', $consultants)->with('unique', 'RCIC Consultant');
+        $type = "RCIC Consultant";
+        return view('dashboard.consultant')->with('consultants', $consultants)->with('type', $type)->with('unique', 'RCIC Consultant');
     }
     public function immigrationIndex()
     {
+        $type = "Immigration Lawyer/Attorney";
         $consultants = Consultant::join('users', 'users.id', 'providers.user_id')->where('type', 'Immigration Lawyer/Attorney')->select('providers.*', 'users.img as img')->get();
-        return view('dashboard.consultant')->with('consultants', $consultants)->with('unique', 'Immigration Lawyer/Attorney');
+        return view('dashboard.consultant')->with('consultants', $consultants)->with('type', $type)->with('unique', 'Immigration Lawyer/Attorney');
     }
 }

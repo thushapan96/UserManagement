@@ -159,6 +159,7 @@
                     </li>
                 </ul>
             </div>
+
             <div class="nav-overlay nav-overlay-small uk-navbar-right uk-flex-1" hidden>
                 <a class="uk-navbar-toggle uk-visible@m" data-uk-toggle="target: .nav-overlay; animation: uk-animation-slide-top" href="#">
                     <i class="mdi mdi-close sc-icon-24"></i>
@@ -167,15 +168,14 @@
                     <i class="mdi mdi-close sc-icon-24"></i>
                 </a>
                 <div class="uk-navbar-item uk-width-expand uk-padding-remove-right">
-                    <form class="uk-search uk-search-navbar uk-width-1-1 uk-flex">
                         <div class="uk-flex-1 uk-position-relative">
-                            <a class="uk-form-icon uk-form-icon-flip" href="javascript:void(0)" data-uk-icon="icon: close" data-sc-clear-input></a>
-                            <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
+                            <input class="uk-search-input" type="search" placeholder="Search..." >
                         </div>
                         <button class="sc-button sc-button-default sc-button-small sc-button-icon sc-button-flat uk-margin-small-left" type="button"><i class="mdi mdi-magnify sc-icon-24 md-color-white"></i></button>
-                    </form>
+                    
                 </div>
             </div>
+
             <div class="nav-overlay nav-overlay-small uk-navbar-right">
                 <ul class="uk-navbar-nav">
                     <li>

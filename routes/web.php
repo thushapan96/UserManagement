@@ -46,6 +46,8 @@ Route::group(['middleware' => ['auth']], function () {
     })->name('canadaInspire');
     Route::get('feedback', 'App\Http\Controllers\OtherController@feedback')->name('feedback');
 
+    Route::post('provider/search', 'App\Http\Controllers\OtherController@providerSearch')->name('providerSearch');
+    Route::post('institude/search', 'App\Http\Controllers\OtherController@institudeSearch')->name('institudeSearch');
 
 
 

@@ -144,34 +144,165 @@
         /* Firefox */
     }
 </style>
-
+<div class="row">
+    <div class="col-md-3">Search By
+        <select class="custom-select filter">
+            <option value="RCIC Number">RCIC Number</option>
+            <option value="Owner Name">Owner Name</option>
+            <option value="Company Name ">Company Name </option>
+            <option value="Country">Country </option>
+            <option value="Province">Province </option>
+            <option value="City">City </option>
+            <option value="Specialization">Specialization </option>
+            <option value="Service Type">Service Type </option>
+        </select>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-8">
+        <br>
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm ">
+            <div class="input-group" style="height: 30px">
+                <input type="search" id="searchbar" placeholder="searching " aria-describedby="button-addon1" class="form-control border-0 bg-light" style="height:28px">
+                <div class="input-group-append">
+                    <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<input id="type" value="{{$type}}" hidden>
 
 <div>
 
     <br>
     <ul id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-
+        <input id="type" value="{{$type}}" hidden>
         @if($institutions)
 
 
         @foreach($institutions as $row)
 
         <li>
-        <a href="{{route('dashboard.institution.view',['id' => $row->id])}}">
-            <div class="uk-card uk-card-hover ">
+            <a href="{{route('dashboard.institution.view',['id' => $row->id])}}">
+                <div class="uk-card uk-card-hover ">
+                    <div class="uk-card-body sc-padding-remove">
+                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
+
+                                <div class="sc-padding-medium uk-text-center">
+                                    @if($row->img)
+                                    <img src="{{url('files/'.$row->img)}}" class="sc-avatar sc-border" alt="xerdman" />
+                                    @else
+                                    <img class="rounded-circle  img " class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                    @endif
+                                    <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                        {{$row->name}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="uk-width-2-3@l ">
+                                <div class="sc-padding-medium">
+                                    <ul class="uk-list uk-list-divider">
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove sc-text-semibold">{{$row->phone}}</p>
+                                            </div>
+                                        </li>
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove">{{$row->email}}</p>
+                                            </div>
+                                        </li>
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove uk-text-wrap">{{$row->streat}} {{$row->city}} {{$row->region}} {{$row->country}}</p>
+                                            </div>
+                                        </li>
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove uk-text-wrap">
+                                                    @if($row->offer_course)
+                                                    @foreach($row->offer_course as $service)
+                                                    {{$service}},
+                                                    @endforeach
+                                                    @endif
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        @endforeach
+
+
+        @endif
+
+        </u1>
+
+</div>
+
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+
+    $(document).ready(function() {
+        const baseUrlAsset = "{{url('files/')}}";
+
+        $('#searchbar').on('keyup', function() {
+            var searchValue = $('#searchbar').val();
+            var searchType = $('.filter').val();
+            var type = $('#type').val();
+            console.log("type", type);
+
+            $.ajax({
+
+                method: "post",
+                url: "/institude/search",
+                dataType: 'json',
+
+                data: {
+                    '_token': '{{csrf_token()}}',
+                    search: searchValue,
+                    searchType: searchType,
+                    type: type,
+                },
+                success: function(result) {
+                    console.log(result)
+                    var order_row = '';
+                    $('#sc-contact-list').html('');
+
+                    $.each(result, function(index, row) {
+
+                        var first_index = index;
+                        order_row = `<li>
+        <input id="type" value="${row.type}" hidden>
+        <a href="/dashboard/consultant/${row.id}">
+            <div class="uk-card uk-card-hover " style="height:100%">
                 <div class="uk-card-body sc-padding-remove">
                     <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
                         <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
 
                             <div class="sc-padding-medium uk-text-center">
-                                @if($row->img)
-                                <img src="{{url('files/'.$row->img)}}" class="sc-avatar sc-border" alt="xerdman" />
-                                @else
-                                <img class="rounded-circle  img " class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                @endif
+                                <img src="${baseUrlAsset}/${row.img}" class="sc-avatar sc-border" alt="xerdman" />
+                                
                                 <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                    {{$row->name}}
+                                   ${row.company_name}
                                 </p>
+                                <p class="uk-margin-remove sc-color-secondary uk-text-medium">${row.registration_number}</p>
                             </div>
                         </div>
                         <div class="uk-width-2-3@l ">
@@ -180,30 +311,33 @@
                                     <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
                                         <div class="sc-list-body">
-                                            <p class="uk-margin-remove sc-text-semibold">{{$row->phone}}</p>
+                                            <p class="uk-margin-remove sc-text-semibold">${row.phone}</p>
                                         </div>
                                     </li>
                                     <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
                                         <div class="sc-list-body">
-                                            <p class="uk-margin-remove">{{$row->email}}</p>
+                                            <p class="uk-margin-remove">${row.email}</p>
+                                        </div>
+                                    </li>
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove uk-text-wrap">${row.website_address}</p>
                                         </div>
                                     </li>
                                     <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
                                         <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">{{$row->streat}} {{$row->city}} {{$row->region}} {{$row->country}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">${row.city} ${row.region} ${row.country}</p>
                                         </div>
-                                    </li>
+                                    </li> 
+
                                     <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                         <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">
-                                                @if($row->offer_course)
-                                                @foreach($row->offer_course as $service)
-                                                {{$service}},
-                                                @endforeach
-                                                @endif
+                                            <p class="uk-margin-remove uk-text-wrap" id="services-${index}">
+                        
                                             </p>
                                         </div>
                                     </li>
@@ -214,28 +348,28 @@
                 </div>
             </div>
         </a>
-        </li>
-        @endforeach
+       </li>`;
 
 
-        @endif
+                        $('#sc-contact-list').append(order_row);
+                        $.each(row.offering_service, function(index, service) {
+                            $('#services-' + first_index).append(service);
 
-        </u1>
+                        });
 
-</div>
-@if($unique == 'RCIC Consultant')
-<script>
-    $(document).ready(function() {
-        $(".dash").removeClass('active')
-        $(".consultant1").addClass('active')
-    })
+
+
+
+                    });
+
+
+                }
+
+            });
+
+        });
+
+    });
 </script>
-@else
-<script>
-    $(document).ready(function() {
-        $(".dash").removeClass('active')
-        $(".consultant2").addClass('active')
-    })
-</script>
-@endif
+
 @endsection
