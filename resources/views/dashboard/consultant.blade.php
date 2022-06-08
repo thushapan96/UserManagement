@@ -294,7 +294,7 @@
                         <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
 
                             <div class="sc-padding-medium uk-text-center">
-                                <img id="services-${index}" src="" class="sc-avatar sc-border" alt="xerdman" />
+                                <img id="img-${index}" src="" class="sc-avatar sc-border" alt="xerdman" />
                                 
                                 <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
                                    ${row.company_name}
