@@ -144,7 +144,7 @@
         /* Firefox */
     }
 </style>
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-3">Search By
         <select class="custom-select filter">
             <option value="RCIC Number">RCIC Number</option>
@@ -171,7 +171,7 @@
     </div>
 </div>
 <br><br>
-<input id="type" value="{{$type}}" hidden>
+<input id="type" value="{{$type}}" hidden> -->
 
 <div>
 
