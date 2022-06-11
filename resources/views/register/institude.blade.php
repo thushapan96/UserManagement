@@ -33,7 +33,7 @@
         @csrf
         <div class="col-md-10" style="margin-left:auto !important;margin-right:auto !important">
             <h4 style="text-align:center">{{request()->query('service')}} Enrollment</h4>
-            
+
             <u1 class="" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">
                 <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">Main </a></li>
                 <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Courses </a></li>
@@ -799,7 +799,7 @@
                                         <div class="form-group">
                                             <label>Your Introductory Video URL Link display on Canada Inspire Portal
                                             </label>
-                                            <input class="form-control " type="text" name="first_name" value="{{old('vedio_url')}}">
+                                            <input class="form-control " type="text" name="vedio_url" value="{{old('vedio_url')}}">
                                         </div>
                                     </div>
                                 </div>

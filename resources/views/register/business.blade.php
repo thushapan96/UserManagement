@@ -531,7 +531,7 @@
                                         <div class="form-group">
                                             <label>Your Introductory Video URL Link display on Canada Inspire Portal
                                             </label>
-                                            <input class="form-control " type="text" name="first_name" value="{{old('vedio_url')}}">
+                                            <input class="form-control " type="text" name="vedio_url" value="{{old('vedio_url')}}">
                                         </div>
                                     </div>
                                 </div>

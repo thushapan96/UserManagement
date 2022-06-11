@@ -20,6 +20,10 @@
     .py-5 {
         padding-top: 7rem !important;
     }
+
+    /* img {
+        border: 2px solid #555 !important;
+    } */
 </style>
 
 
@@ -180,7 +184,7 @@
                 </li>
                 <li id='menu1' class='tab-pane'>
                     @if($Academy)
-                    <div class='uk-card col-md-10' >
+                    <div class='uk-card col-md-10'>
                         <div class="uk-card-body sc-padding-medium">
 
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
