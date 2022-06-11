@@ -9,10 +9,8 @@
             </div>
             <div class="uk-flex-1">
                 <div class="uk-card-body">
-                    <h3 class="uk-card-title">RAM usage</h3>
-                    <div class="sc-progress uk-margin-small-top sc-js-ram-usage">
-                        <div class="sc-progress-bar md-bg-red-400" style="width: 82%"></div>
-                    </div>
+                    <h3 class="uk-card-title">New Enquiries</h3>
+                    <p class="uk-text-meta">1 45</p>
                 </div>
             </div>
         </div>
@@ -24,7 +22,7 @@
             </div>
             <div class="uk-flex-1">
                 <div class="uk-card-body">
-                    <h3 class="uk-card-title">New Customers</h3>
+                    <h3 class="uk-card-title"> Express Entry</h3>
                     <p class="uk-text-meta">1 453</p>
                 </div>
             </div>
@@ -37,10 +35,8 @@
             </div>
             <div class="uk-flex-1">
                 <div class="uk-card-body">
-                    <h3 class="uk-card-title">Free spaces</h3>
-                    <div class="sc-progress uk-margin-small-top">
-                        <div class="sc-progress-bar md-bg-light-green-400" style="width: 58%"></div>
-                    </div>
+                    <h3 class="uk-card-title">PNP</h3>
+                    <p class="uk-text-meta">1 453</p>
                 </div>
             </div>
         </div>
@@ -53,7 +49,7 @@
             <div class="uk-flex-1">
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">1.135873</h3>
-                    <p class="uk-text-meta">EUR to USD</p>
+                    <p class="uk-text-meta">AIP</p>
                 </div>
             </div>
         </div>
@@ -65,8 +61,8 @@
             </div>
             <div class="uk-flex-1">
                 <div class="uk-card-body">
-                    <h3 class="uk-card-title">99.95%</h3>
-                    <p class="uk-text-meta">Server Uptime</p>
+                    <h3 class="uk-card-title">99.95 </h3>
+                    <p class="uk-text-meta">Visas</p>
                 </div>
             </div>
         </div>
@@ -78,7 +74,7 @@
             <div class="sc-widget-content">
                 <div class="uk-flex uk-flex-middle">
                     <div class="uk-flex-1">
-                        <h3 class="uk-card-title">New Customers</h3>
+                        <h3 class="uk-card-title"> New Enrolments</h3>
                         <p class="uk-text-meta">Jan - Jun 2018</p>
                     </div>
                     <div>
@@ -94,7 +90,7 @@
             <div class="sc-widget-content">
                 <div class="uk-flex uk-flex-middle">
                     <div class="uk-flex-1">
-                        <h3 class="uk-card-title">Comments</h3>
+                        <h3 class="uk-card-title">Follow-Ups</h3>
                         <p class="uk-text-meta">Last 7 days</p>
                     </div>
                     <div>
@@ -110,7 +106,7 @@
             <div class="sc-widget-content">
                 <div class="uk-flex uk-flex-middle">
                     <div class="uk-flex-1">
-                        <h3 class="uk-card-title">Sale</h3>
+                        <h3 class="uk-card-title">Registered Candidates</h3>
                         <p class="uk-text-meta">02.2018 - 07.2018</p>
                     </div>
                     <div>
@@ -126,7 +122,7 @@
             <div class="sc-widget-content">
                 <div class="uk-flex uk-flex-middle">
                     <div class="uk-flex-1">
-                        <h3 class="uk-card-title">Orders</h3>
+                        <h3 class="uk-card-title">Expected Revenues</h3>
                         <p class="uk-text-meta">02.2018 - 07.2018</p>
                     </div>
                     <div>
@@ -146,7 +142,7 @@
                     <div class="uk-card-header">
                         <div class="uk-flex uk-flex-middle">
                             <div class="uk-flex-1">
-                                <h3 class="uk-card-title">Traffic sources</h3>
+                                <h3 class="uk-card-title">Enquiry Type</h3>
                             </div>
                             <div class="sc-actions">
                                 <a href="#" class="sc-actions-icon mdi mdi-close sc-js-card-close"></a>
@@ -182,7 +178,7 @@
             <div class="uk-card-header">
                 <div class="uk-flex uk-flex-middle">
                     <div class="uk-flex-1">
-                        <h3 class="uk-card-title uk-margin-remove-bottom">Unique visits</h3>
+                        <h3 class="uk-card-title uk-margin-remove-bottom"> Candidate Visits</h3>
                         <p class="uk-text-meta"><time datetime="2018-01-01">Jan 01, 2018</time> - <time datetime="2018-06-30">Jun 30, 2018</time></p>
                     </div>
                     <div class="sc-actions">
@@ -274,8 +270,8 @@
             <div class="uk-card-header">
                 <div class="uk-flex uk-flex-middle">
                     <div class="uk-flex-1">
-                        <h3 class="uk-card-title">To Do</h3>
-                        <p class="uk-text-meta">4/12 tasks</p>
+                        <h3 class="uk-card-title"> To Do Task Board</h3>
+                        <p class="uk-text-meta"></p>
                     </div>
                     <div class="sc-actions">
                         <a href="#" class="sc-actions-icon mdi mdi-window-minimize sc-js-card-toggle"></a>
@@ -374,12 +370,12 @@
         <div class="uk-card">
             <div class="uk-card-header">
                 <div class="uk-flex uk-flex-middle">
-                    <h3 class="uk-card-title">Email Marketing</h3>
+                    <h3 class="uk-card-title">Enquiries</h3>
                 </div>
             </div>
             <div class="uk-card-body">
                 <div>
-                    <h5 class="uk-margin-bottom">Delivered</h5>
+                    <h5 class="uk-margin-bottom">Received</h5>
                     <div class="sc-progress uk-margin-medium-top sc-progress-small">
                         <span class="sc-progress-label uk-text-center">100%</span>
                         <div class="sc-progress-bar md-bg-light-green-800" style="width: 100%"></div>
@@ -387,7 +383,7 @@
                 </div>
                 <hr>
                 <div>
-                    <h5 class="uk-margin-bottom">Opened</h5>
+                    <h5 class="uk-margin-bottom">Replied</h5>
                     <div class="sc-progress uk-margin-medium-top sc-progress-small">
                         <span class="sc-progress-label"><span class="uk-text-center uk-display-inline-block" style="width: 64%">64%</span></span>
                         <div class="sc-progress-bar md-bg-amber-800" style="width: 64%"></div>
@@ -395,7 +391,7 @@
                 </div>
                 <hr>
                 <div>
-                    <h5 class="uk-margin-bottom">Clicked</h5>
+                    <h5 class="uk-margin-bottom">Not Responded</h5>
                     <div class="sc-progress uk-margin-medium-top sc-progress-small">
                         <span class="sc-progress-label"><span class="uk-text-center uk-display-inline-block" style="width: 37%">37%</span></span>
                         <div class="sc-progress-bar md-bg-red-800" style="width: 37%"></div>
@@ -409,7 +405,7 @@
             <div class="uk-card-header">
                 <div class="uk-flex uk-flex-middle">
                     <div class="uk-flex-1">
-                        <h3 class="uk-card-title">Shop Orders</h3>
+                        <h3 class="uk-card-title">Sign-Up</h3>
                     </div>
                     <div class="sc-actions">
                         <div class="sc-dropdown">
@@ -430,23 +426,27 @@
                 </div>
             </div>
             <div class="uk-card-body">
-                <div class="uk-child-width-1-3@s uk-grid-divider uk-grid-small" data-uk-grid>
+                <div class="uk-child-width-1-4@s uk-grid-divider uk-grid-small" data-uk-grid>
                     <div class="uk-text-center">
-                        <span class="uk-text-medium md-color-blue-600">Today</span>
+                        <span class="uk-text-medium md-color-blue-600">Jan-Mar</span>
                         <h4 class="uk-margin-mini-top">62</h4>
                     </div>
                     <div class="uk-text-center">
-                        <span class="sc-color-secondary uk-text-medium">Last Week</span>
+                        <span class="sc-color-secondary uk-text-medium"> Apr-June </span>
                         <h4 class="uk-margin-mini-top">482</h4>
                     </div>
                     <div class="uk-text-center">
-                        <span class="sc-color-secondary uk-text-medium">Last Month</span>
+                        <span class="sc-color-secondary uk-text-medium">jul-sep</span>
+                        <h4 class="uk-margin-mini-top">1709</h4>
+                    </div>
+                    <div class="uk-text-center">
+                        <span class="sc-color-secondary uk-text-medium"> Oct-Dec</span>
                         <h4 class="uk-margin-mini-top">1709</h4>
                     </div>
                 </div>
                 <hr>
                 <div>
-                    <span class="sc-color-secondary uk-text-medium">Orders Summary</span>
+                    <span class="sc-color-secondary uk-text-medium">Summary</span>
                     <div class="sc-progress sc-progress-group uk-margin-medium-top">
                         <div class="sc-progress-bar md-bg-light-green-600 uk-text-center" style="width:65%">Completed</div>
                         <div class="sc-progress-bar md-bg-grey-600 uk-text-center" style="width:20%">Pending</div>
@@ -462,4 +462,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection

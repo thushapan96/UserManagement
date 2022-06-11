@@ -68,6 +68,32 @@ class ConsultantController extends Controller
                     'img' => $nameimg
                 ]);
         }
+        if($request->hasFile('mutiImg_about_company'))
+        {
+            $names = [];
+            foreach($request->file('mutiImg_about_company') as $image)
+            {
+                $destinationPath = public_path() . '/files';
+                $filename = $image->getClientOriginalName();
+                $image->move($destinationPath, $filename);
+                array_push($names, $filename);          
+        
+            }
+            $Consultant->mutiImg_about_company = $names;
+        }
+        if($request->hasFile('mutiImg_about_award'))
+        {
+            $names = [];
+            foreach($request->file('mutiImg_about_award') as $image)
+            {
+                $destinationPath = public_path() . '/files';
+                $filename = $image->getClientOriginalName();
+                $image->move($destinationPath, $filename);
+                array_push($names, $filename);          
+        
+            }
+            $Consultant->mutiImg_about_award = $names;
+        }
 
         $Consultant->save();
 

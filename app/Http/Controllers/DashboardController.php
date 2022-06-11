@@ -64,25 +64,42 @@ class DashboardController extends Controller
 
         return view('providerProfile.institudeProfile')->with('institutions', $institutions)->with('view', 'view')->with('img', $img);
     }
-    public function schoolIndex()
+    public function schoolIndex(Request $request)
     {
 
-        $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'School')->select('institutions.*', 'users.img as img')->get();
+        $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'School')->select('institutions.*', 'users.img as img');
+        if ($request->financial != '') {
+            $institutions = $institutions->where('is_financial', $request->financial);
+        }
+        if ($request->medium != '') {
+            $institutions = $institutions->where('medium', $request->medium);
+        }
+        $institutions = $institutions->get();
         $type = "School";
         return view('dashboard.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'School');
     }
-    public function collegeIndex()
+    public function collegeIndex(Request $request)
     {
-
-        $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'College')->select('institutions.*', 'users.img as img')->get();
+        $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'College')->select('institutions.*', 'users.img as img');
         $type = "College";
+        if ($request->financial != '') {
+            $institutions = $institutions->where('is_financial', $request->financial);
+        }
+        $institutions = $institutions->get();
 
         return view('dashboard.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'College');
     }
-    public function universityIndex()
+    public function universityIndex(Request $request)
     {
-        $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'University')->select('institutions.*', 'users.img as img')->get();
+        $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'University')->select('institutions.*', 'users.img as img');
+        if ($request->financial != '') {
+            $institutions = $institutions->where('is_financial', $request->financial);
+        }
+        $institutions = $institutions->get();
+
+
         $type = "University";
+
         return view('dashboard.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'University');
     }
     public function rcicConsultantIndex()

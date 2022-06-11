@@ -68,7 +68,7 @@
 
     <div class="row">
 
-        <div class="col-md-10">
+        <div class="col-md-9">
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} Company</h3>
             <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                 <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
@@ -82,7 +82,7 @@
             </u1>
             <u1 class="uk-switcher">
                 <li id='menu' class='tab-pane '>
-                    <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
+                    <div class='uk-card col-md-11 ' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
@@ -112,6 +112,17 @@
                                     </div>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
+                                            <strong class="ps">Register number </strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">
+                                                {{$consultants->registration_number}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
                                             <strong class="ps">Languages Known </strong>
                                         </div>
 
@@ -119,7 +130,7 @@
                                             <p class="ps">
                                                 @if($consultants->language_known)
                                                 @foreach($consultants->language_known as $row)
-                                                {{$row}}
+                                                {{$row}}<br>
                                                 @endforeach
                                                 @endif
                                             </p>
@@ -235,7 +246,7 @@
                                             <p class="ps">
                                                 @if($consultants->specialization)
                                                 @foreach($consultants->specialization as $row)
-                                                {{$row}}
+                                                {{$row}}<br>
                                                 @endforeach
                                                 @endif
                                             </p>
@@ -250,7 +261,7 @@
                                             <p class="ps">
                                                 @if($consultants->offering_service)
                                                 @foreach($consultants->offering_service as $row)
-                                                {{$row}}
+                                                {{$row}}<br>
                                                 @endforeach
                                                 @endif
                                             </p>
@@ -286,7 +297,7 @@
                                             <p class="ps">
                                                 @if($consultants->communication_mode)
                                                 @foreach($consultants->communication_mode as $row)
-                                                {{$row}}
+                                                {{$row}}<br>
                                                 @endforeach
                                                 @endif
                                             </p>
@@ -318,7 +329,7 @@
                     </div>
                 </li>
                 <li id='menu1' class='tab-pane '>
-                    <div class=' col-md-10 ' style="margin-left:5% !important;">
+                    <div class=' col-md-11 ' style="margin-left:auto !important;margin-right:auto">
                         <div class="">
                             <div class="form-group col-md-10">
 
@@ -339,9 +350,9 @@
                                         <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
                                             <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative" style="height:248px;overflow:none">
                                                 @if($row->team_img)
-                                                <img class="mt-1  img float-center " style="width:100%;height:250px;" src="{{url('files/'.$row->team_img)}}">
+                                                <img class="rounded-circle  img " style="width:200px !important;height:200px; margin: 0 auto;" src="{{url('files/'.$row->team_img)}}">
                                                 @else
-                                                <img class="mt-1  img float-center " style="width:100%;height:250px " src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                                <img class="rounded-circle  img " style="width:200px !important;height:200px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                                                 @endif
                                             </div>
                                             <div class="uk-width-2-3@l">
@@ -387,7 +398,7 @@
 
                 </li>
                 <li id='menu2' class='tab-pane '>
-                    <div class="uk-card col-md-10" style="margin-left:5% !important;">
+                    <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 @if($consultants->privacy_policy_document)
@@ -442,12 +453,23 @@
                                     </div>
                                 </div>
                                 @endif
+                                @if($consultants->mutiImg_about_company)
+                                @foreach($consultants->mutiImg_about_company as $row )
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="col-lg-8 col-md-8 " style="margin-left:auto;margin-right:auto;">
+                                            <img class=" mt-2 img "  src="{{url('files/'.$row)}}" style="width:100%;height:300px">
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                                @endif
                             </fieldset>
                         </div>
                     </div>
                 </li>
                 <li id='menu3' class='tab-pane '>
-                    <div class="uk-card col-md-10" style="margin-left:5% !important;">
+                    <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 @if($consultants->Award)
@@ -476,12 +498,23 @@
                                     </div>
                                 </div>
                                 @endif
+                                @if($consultants->mutiImg_about_award)
+                                @foreach($consultants->mutiImg_about_award as $row )
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="col-lg-8 col-md-8 " style="margin-left:auto;margin-right:auto;">
+                                            <img class=" mt-2 img "  src="{{url('files/'.$row)}}" style="width:100%;height:300px">
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                                @endif
                             </fieldset>
                         </div>
                     </div>
                 </li>
                 <li id='menu4' class='tab-pane'>
-                    <div class="uk-card col-md-10" style="margin-left:5% !important;">
+                    <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 @if($consultants->vedio_url)
@@ -564,16 +597,16 @@
 
         </div>
 
-        <div class="col-md-2 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important">
+        <div class="col-md-2 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;margin-left:3%">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
                     <div class="d-flex flex-column align-items-center text-center py-1">
                         <div class="row">
                             @if($img)
-                            <img class="rounded-circle  img " style="width:100px !important;height:100px; margin: 0 auto;" src="{{url('files/'.$img)}}">
+                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="{{url('files/'.$img)}}">
                             @else
-                            <img class="rounded-circle  img " style="width:100px !important;height:100px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                             @endif
                         </div>
                         <div class="spinner"></div>

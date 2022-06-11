@@ -1,7 +1,6 @@
-<h1>Candidate Registration - Work Experience</h1>
+<h6>Candidate Registration - Work Experience</h6>
 <form id="work_form" action="{{route('candidate_work_add')}}" method="POST" enctype="multipart/form-data">
     @csrf
-    <div class="whiteBox clearfix">
         <div id="newRow">
             <h6>Place of Work 1 </h6>
             <!--div class="news-title">You have questions, let's have a conversation </div-->
@@ -84,17 +83,17 @@
             <hr>
 
         </div>
-        <button id="addRow" type="button" class="add-btn"><i class="fa-solid fa-plus"></i>Add WorkPlace </button>
+        <button id="addRow" type="button" class="add-btn uk-button uk-button-primary">+ Add WorkPlace </button>
         <br>
         <div class="float-right">
-            <a> <button type="submit" class="client-btn" id="submit3">
+            <a> <button type="submit" class="client-btn uk-button uk-button-primary" id="submit3">
                     <div id="loading3">Submit
                         And
                         Next
                     </div>
                 </button></a>
         </div>
-    </div>
+   
 </form>
 <!-- ......................script for google map view.................... -->
 
@@ -194,7 +193,7 @@
         </div>
     </div>
  
-        <button  class=" closebtn client-btn" id="removeRow"><a style="color:white"><i class="fa-solid fa-minus"></i> Remove</a></button>
+        <button  class=" closebtn client-btn uk-button uk-button-danger" id="removeRow"><a style="color:white">- Remove</a></button>
         <br><br>
         <hr style="height:12px;">
      </div> `

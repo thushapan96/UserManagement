@@ -1,8 +1,7 @@
-<h1> Candidate Registration - Sponsor</h1>
+<h6> Candidate Registration - Sponsor</h6>
 
 <form action="{{route('candidate_sponsor_add')}}" method="POST" id="sponsor_form" enctype="multipart/form-data">
     @csrf
-    <div class="whiteBox clearfix">
 
         <h6>Sponsor Details</h6>
         <!--div class="news-title">You have questions, let's have a conversation </div-->
@@ -254,14 +253,14 @@
         </div>
 
         <div class="float-right">
-            <button type="submit" class="client-btn" id="submit4">
+            <button type="submit" class="client-btn uk-button uk-button-primary" id="submit4">
                 <div id="loading4">Submit
                     And
                     Next
                 </div>
             </button>
         </div>
-    </div>
+   
 
 </form>
 

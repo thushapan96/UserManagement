@@ -1,9 +1,9 @@
 <!-- Subscribe & Stay Connected. Start -->
 
 
-<h1>Candidate Registration - Academic</h1>
+<h6>Candidate Registration - Academic</h6>
 
-<div class="whiteBox clearfix">
+
     <form id="academy_form" action="{{route('candidate_academy_add')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <!--div class="news-title">You have questions, let's have a conversation </div-->
@@ -98,12 +98,12 @@
                 </div>
             </div>
         </div>
-
+<hr>
         <div id="addschoolrow">
 
         </div>
         <div class="col-lg-12 col-md-12 mt-2 col-12">
-            <button type="button" class="add-btn " id="addschoolbtn"><i class="fa-solid fa-plus"></i> Add
+            <button type="button" class="add-btn uk-button uk-button-primary" id="addschoolbtn"> + Add
                 School</button>
 
         </div>
@@ -111,26 +111,26 @@
 
         </div>
         <div class="col-lg-12 col-md-12  mt-2 col-12">
-            <button type="button" class="add-btn  " id="collegebtn"><i class="fa-solid fa-plus"></i> Add
+            <button type="button" class="add-btn  uk-button uk-button-primary" id="collegebtn"> + Add
                 College</button>
         </div>
         <div id="addpgrow">
 
         </div>
         <div class="col-lg-12 col-md-12 mt-2 col-12">
-            <button type="button" class="add-btn " id="pgbtn"><i class="fa-solid fa-plus"></i> Add
+            <button type="button" class="add-btn uk-button uk-button-primary" id="pgbtn"> + Add
                 PostGraduation</button>
         </div>
         <div id="addotherrow">
         </div>
         <div class="col-lg-12 col-md-12 mt-2 col-12">
-            <button type="button" class="add-btn " id="otherbtn"><i class="fa-solid fa-plus"></i> Add
+            <button type="button" class="add-btn uk-button uk-button-primary" id="otherbtn"> + Add
                 OtherQualification</button>
         </div>
         <hr>
 
         <div class="col-lg-12 col-md-12 col-12">
-            <button type="submit" id="submit2" class="client-btn">
+            <button type="submit" id="submit2" class="client-btn uk-button uk-button-primary">
                 <div id="loading2">Submit
                     And
                     Next
@@ -139,7 +139,7 @@
         </div>
     </form>
 
-</div>
+
 
 
 
@@ -168,7 +168,6 @@
 
             html = `<div  id="addschoolform"> 
                 <div class="col-lg-12 col-md-12 col-12 container addschool mt-4" >
-                <div class="whiteBox clearfix">
                     <div class="row custom-box">
 
                         <div class="col-lg-4 col-md-4 col-12">
@@ -241,15 +240,20 @@
                                 </label>
                                 <input type="file"   class="form-control" name="attachment[]" >
                             </div>
+
+                        </div>
+                          <div class="col-lg-4 col-md-4 col-12">
+                            <br><br>
+                            <button  class=" closebtn client-btn client-btn uk-button uk-button-danger" id="removeschool"><a style="color:white"> - Remove</a></button>
+
                         </div>
 
                     </div>
-                    <button  class=" closebtn client-btn" id="removeschool"><a style="color:white"><i class="fa-solid fa-minus"></i> Remove</a></button>
                 </div>
-            </div>
-        </div>
-       <br>
-        `
+                   <hr>
+                    </div>
+                             <br>
+                                `
 
             $('#addschoolrow').append(html);
         });
@@ -267,7 +271,7 @@
 
             html = `<div  id="addschoolform">
             <div class="container addcollege mt-4">
-                <div class="whiteBox clearfix">
+               
                     <div class="row custom-box">
 
                         <div class="col-lg-4 col-md-4 col-12">
@@ -338,11 +342,15 @@
                                 <input type="file"  class="form-control" name="attachment[]" >
                             </div>
                         </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <br><br>
+                            <button type="submit" class=" closebtn client-btn uk-button uk-button-danger" id="removecollege"><a 
+                            style="color:white"> - Remove</a></button>
+                        </div>
 
                     </div>
-                    <button type="submit" class=" closebtn client-btn" id="removecollege"><a 
-                            style="color:white"><i class="fa-solid fa-minus"></i> Remove</a></button>
-                </div>
+                   
+               <hr>
             </div></div>
         `
 
@@ -360,8 +368,7 @@
 
             var html = '';
 
-            html = `<div  id="addpgform">  <div class="container addpg mt-4">
-           <div class="whiteBox clearfix">
+            html = `<div  id="addpgform">  
                     <div class="row custom-box">
 
                         <div class="col-lg-4 col-md-4 col-12">
@@ -387,7 +394,7 @@
 
                     </div>
                     <div class="row custom-box">
-                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
                                 <label>Applicable ECA Validity
 
@@ -430,13 +437,18 @@
                                 <input type="file"  class="form-control" name="attachment[]" >
                             </div>
                         </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <br><br>
+                            <button type="submit" class=" closebtn client-btn client-btn uk-button uk-button-danger" id="removepg"><a  style="color:white">
+                            - Remove</a></button>
+                         </div>
 
                     </div>
-                    <button type="submit" class=" closebtn client-btn" id="removepg"><a  style="color:white">
-                            <i class="fa-solid fa-minus"></i> Remove</a></button>
-                </div>
-            </div></div>
-`
+
+                   
+                    
+                           <hr>
+                    </div>`
 
             $('#addpgrow').append(html);
         });
@@ -455,8 +467,6 @@
 
             html = `
             <div  id="addpgform">
-            <div class="container addother mt-4">
-                <div class="whiteBox clearfix">
                     <div class="row custom-box">
 
                         <div class="col-lg-4 col-md-4 col-12">
@@ -482,13 +492,13 @@
 
                     </div>
                     <div class="row custom-box">
-                    <div class="col-lg-3 col-md-3 col-12 ">
+                       <div class="col-lg-3 col-md-3 col-12 ">
                             <div class="form-group">
                                 <label>Year Completed </label>
                                 <input class="form-control " name="year_completed[]" type="date" >
                             </div>
                         </div>
-                    <div class="col-lg-3 col-md-3 col-12">
+                           <div class="col-lg-3 col-md-3 col-12">
                             <div class="form-group">
                                 <label>Applicable ECA Validity
 
@@ -500,8 +510,8 @@
 
                                 </select>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-12">
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-12">
                             <div class="form-group">
                                 <label>Distant
 
@@ -514,7 +524,7 @@
 
                                 </select>
                             </div>
-                        </div>
+                           </div>
                         <div class="col-lg-3 col-md-3 col-12 ">
                             <div class="form-group">
                                 <label>Country</label>
@@ -531,14 +541,16 @@
                                 <input type="file"  class="form-control" name="attachment[]" >
                             </div>
                         </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <br><br>
+                            <button type="submit" class=" closebtn client-btn client-btn uk-button uk-button-danger" id="removeother"><a 
+                            style="color:white"> - Remove</a></button>
+                        </div>
                     </div>
 
-                    <button type="submit" class=" closebtn client-btn" id="removeother"><a 
-                            style="color:white"><i class="fa-solid fa-minus"></i> Remove</a></button>
+                    
 
-                </div>
-            </div></div>
-`
+               <hr></div>`
 
             $('#addotherrow').append(html);
         });

@@ -1,91 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canada Inspire</title>
+    <meta name="description" content="Scutum Admin Template" />
 
-    <link src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="{{asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="{{asset('plugins/jqvmap/jqvmap.min.css')}}">
-    <!-- Theme style -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/fav/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/fav/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/img/fav/favicon-16x16.png')}}">
+    <link rel="mask-icon" href="{{asset('assets/img/fav/safari-pinned-tab.svg')}}" color="#5bbad5">
+
+
+    <meta name="theme-color" content="#00838f">
+
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
-    <!-- summernote -->
-    <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+
+    <!-- polyfills -->
+    <script src="{{asset('assets/js/vendor/polyfills.min.js')}}"></script>
+
+    <!-- UIKit js -->
+    <script src="{{asset('assets/js/uikit.min.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
-    <script src="{{asset('plugins/sparklines/sparkline.js')}}"></script>
-    <!-- JQVMap -->
-    <script src="{{asset('plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-    <script src="{{asset('plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="{{asset('plugins/jquery-knob/jquery.knob.min.js')}}"></script>
-    <!-- daterangepicker -->
-    <script src="{{asset('plugins/moment/moment.min.js')}}"></script>
-    <script src="{{asset('plugins/daterangepicker/daterangepicker.js')}}"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="{{asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-    <!-- Summernote -->
-    <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
-    <!-- overlayScrollbars -->
-    <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{asset('dist/js/adminlte.js')}}"></script>
-
 </head>
 <style>
-    .img {
-        border: 1px solid #ddd;
-        opacity: 1;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    }
-
-    textarea {
-        white-space: pre-wrap;
-        text-align: justify;
-        padding: 10px;
-
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
     .progress {
         background-color: #bf0010 !important;
-        margin-left: 0px !important;
-        margin-right: 40px !important;
-        max-height: 12px;
-        text-align: center;
-        width: 100%;
+     
 
-    }
-
-    .StayConnected h1 {
-        margin-bottom: 20px;
     }
 
     label {
         text-transform: capitalize;
-        font-weight: 500 !important;
     }
 
     a {
@@ -101,418 +54,451 @@
         color: #00000078 !important;
     }
 
-    .card:hover {
-        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    .card {
-        height: auto !important;
-        /* background: white !important; */
-        /* background-color: #f2b7b7; */
-        /* background-color: #f7b42c;
-        background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%); */
-
-        /* border-color: #bf0010 !important; */
-        /* border-bottom: 5px solid #004e75 !important; */
-        overflow: auto;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        padding-left: 30.5px !important;
-        padding-right: 30.5px;
-        padding-top: 30.5px;
-        padding-bottom: 10.5px;
-        background-color: white !important;
-
-
-    }
-
-    .whiteBox {
-        /* background-image: url('/canadaFlag/can2.png'); */
-        /* background-color:#f29191; */
-        /* background-color: #f7b42c !important;
-        background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
-
-        /* border-left: 1px solid #bf0010 !important;
-        border-right: 1px solid #bf0010 !important;
-        border-top: 1px solid #bf0010 !important; */
-        height: auto !important;
-        background-color: white !important;
-        /* border-bottom: 5px solid #004e75 !important; */
-        overflow: auto;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 0px !important;
-        padding-left: 30.5px !important;
-        padding-right: 30.5px;
-        padding-top: 30.5px;
-        padding-bottom: 10.5px;
-        /* background: white !important; */
-
-
-    }
-
-
-    .nav-pills .nav-link.active,
-    .nav-pills .show>.nav-link {
-
-        /* background-color: #007bff !important; */
-        /* background-color: #f7b42c !important;
-        background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
-        background-color: #00838f !important;
-        /* border-bottom: 5px solid #004e75 !important; */
-        color: white !important;
-        border-radius: 90px;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    }
-
-    .nav-link {
-        color: #004e75;
-
-    }
-
-    .main-header .nav-link {
-        color: white !important;
-
-    }
-
-    /* remove scroll bar */
-    .card::-webkit-scrollbar {
-        display: none;
-    }
-
-    .whiteBox::-webkit-scrollbar {
-        display: none;
-    }
-
-    .whiteBox:hover {
-        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    }
-
-
-    .whiteBoxtab {
-        /* background: white !important; */
-        background-color: #f5f5f5 !important;
-        /* border-left: 1px solid #bf0010 !important;
-        border-right: 1px solid #bf0010 !important;
-        border-top: 1px solid #bf0010 !important; */
-        border-bottom: 5px solid #bf0010 !important;
-        border-radius: 50px;
-        padding: 1px !important;
-    }
-
-    button {
-        background-color: #004e75 !important;
-        /* background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%) !important; */
-    }
-
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        color: black !important;
+
         text-transform: uppercase !important;
-        
+    }
+
+    label:not(.form-check-label):not(.custom-file-label) {
+        font-weight: 400;
+    }
+
+    fieldset {
+        overflow: auto;
 
     }
 
-    .main-header {
-        border-bottom: 1px solid #dee2e6;
-        z-index: 1034;
-        font-size: 18px;
-        font-weight: 500;
+    .card {
+        overflow: auto;
     }
 
-    .main-sidebar  i{
-        color: black !important;
-
+    .uk-card {
+        overflow: auto;
     }
-    
+
+    .uk-flex-center {
+        overflow: auto;
+    }
+
+    .uk-flex-center::-webkit-scrollbar {
+        display: none;
+    }
+
+    fieldset::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card::-webkit-scrollbar {
+        display: none;
+    }
+
+    .uk-card::-webkit-scrollbar {
+        display: none;
+    }
+
+    textarea {
+        padding: 20px
+    }
+
+   
 </style>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body>
 
-    <div class="wrapper">
+    <script>
+        // prevent FOUC
+        var html = document.getElementsByTagName('html')[0];
+        html.style.backgroundColor = '#f5f5f5';
+        document.body.style.visibility = 'hidden';
+        document.body.style.overflow = 'hidden';
+        document.body.style.apacity = '0';
+        document.body.style.maxHeight = "100%";
+    </script>
 
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <a class="navbar-brand" href="/"><img src="{{asset('images/logo.png')}}" width="200" alt="Logo"></a>
-        </div>
-
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light" style=" box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background: #00838f;height:54px">
-          
-                <ul class="navbar-nav col-md-2" style="margin-left:0%;">
-                    <li class="nav-item">
-                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav col-md-9">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('whycanada')}}">Why Canada</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Services</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{route('dashboard.consultant')}}">Consultant</a>
-                            <a class="dropdown-item" href="{{route('dashboard.business')}}">Business</a>
-                            <a class="dropdown-item" href="{{route('dashboard.institution')}}">Institution</a>
-
+    <header id="sc-header">
+        <nav class="uk-navbar uk-navbar-container" data-uk-navbar="mode: click; duration: 360">
+            <div class="uk-navbar-left nav-overlay-small uk-margin-right uk-navbar-aside">
+                <a href="#" id="sc-sidebar-main-toggle"><i class="mdi mdi-backburger sc-menu-close "></i><i class="mdi mdi-menu sc-menu-open"></i></a>
+                <div class="sc-brand uk-visible@s">
+                    <a href="/"><img src="{{asset('images/logo.png')}}" width="150px" alt=""></a>
+                </div>
+            </div>
+            <div class="uk-navbar-left nav-overlay uk-margin-right uk-visible@m">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a href="javascript:void(0)" class="md-color-white sc-padding-remove-left"><i class="mdi mdi-view-grid"></i></a>
+                        <div class="uk-navbar-dropdown sc-padding-medium">
+                            <div class="uk-child-width-1-2 uk-child-width-1-3@s uk-grid uk-grid-small" data-uk-grid>
+                                <div>
+                                    <a href="pages-mailbox.html" class="uk-flex uk-flex-column uk-flex-middle uk-box-shadow-hover-small sc-round sc-padding-small">
+                                        <i class="mdi mdi-email-outline sc-icon-32 sc-text-lh-1 md-color-green-700"></i>
+                                        <span class="uk-text-medium sc-color-primary">Mailbox</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="pages-poi_listing.html" class="uk-flex uk-flex-column uk-flex-middle uk-box-shadow-hover-small sc-round sc-padding-small">
+                                        <i class="mdi mdi-map-marker sc-icon-32 sc-text-lh-1 md-color-red-700"></i>
+                                        <span class="uk-text-medium sc-color-primary">POI</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="pages-chat.html" class="uk-flex uk-flex-column uk-flex-middle uk-box-shadow-hover-small sc-round sc-padding-small">
+                                        <i class="mdi mdi-message-outline sc-icon-32 sc-text-lh-1 md-color-purple-700"></i>
+                                        <span class="uk-text-medium sc-color-primary">Chat</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="plugins-calendar.html" class="uk-flex uk-flex-column uk-flex-middle uk-box-shadow-hover-small sc-round sc-padding-small">
+                                        <i class="mdi mdi-calendar sc-icon-32 sc-text-lh-1 md-color-light-blue-700"></i>
+                                        <span class="uk-text-medium sc-color-primary">Calendar</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="pages-user_profile.html" class="uk-flex uk-flex-column uk-flex-middle uk-box-shadow-hover-small sc-round sc-padding-small">
+                                        <i class="mdi mdi-account sc-icon-32 sc-text-lh-1 md-color-blue-grey-700"></i>
+                                        <span class="uk-text-medium sc-color-primary">Profile</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="plugins-charts.html" class="uk-flex uk-flex-column uk-flex-middle uk-box-shadow-hover-small sc-round sc-padding-small">
+                                        <i class="mdi mdi-chart-multiline sc-icon-32 sc-text-lh-1 md-color-amber-700"></i>
+                                        <span class="uk-text-medium sc-color-primary">Charts</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-
-
-
                 </ul>
-          
-            <div class="col-md-1">
-                @php
-                $profile_img= \App\Models\User::where('id', Auth::user()->id )->value('img')
-                @endphp
-                @if($profile_img)
+            </div>
 
-                <img class="rounded-circle mt-1 img float-left" style="width:40px !important;height:40px; border: none !important;" src="{{url('files/'.$profile_img)}}">
+            <div class="nav-overlay nav-overlay-small uk-navbar-right uk-flex-1" hidden>
+                <a class="uk-navbar-toggle uk-visible@m" data-uk-toggle="target: .nav-overlay; animation: uk-animation-slide-top" href="#">
+                    <i class="mdi mdi-close sc-icon-24"></i>
+                </a>
+                <a class="uk-navbar-toggle uk-hidden@m uk-padding-remove-left" data-uk-toggle="target: .nav-overlay-small; animation: uk-animation-slide-top" href="#">
+                    <i class="mdi mdi-close sc-icon-24"></i>
+                </a>
+                <div class="uk-navbar-item uk-width-expand uk-padding-remove-right">
+                    <div class="uk-flex-1 uk-position-relative">
+                        <input class="uk-search-input" type="search" placeholder="Search...">
+                    </div>
+                    <button class="sc-button sc-button-default sc-button-small sc-button-icon sc-button-flat uk-margin-small-left" type="button"><i class="mdi mdi-magnify sc-icon-24 md-color-white"></i></button>
 
-                @else
+                </div>
+            </div>
 
-                <img class="rounded-circle mt-1 img float-left" style="width:40px !important;height:40px; border: none !important;"  src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-
-                @endif
+            <div class="nav-overlay nav-overlay-small uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a class="uk-navbar-toggle uk-visible@m" href="#" data-uk-toggle="target: .nav-overlay; animation: uk-animation-slide-top"><i class="mdi mdi-magnify"></i></a>
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#" id="sc-search-main-toggle-mobile" data-uk-toggle="target: .nav-overlay-small; animation: uk-animation-slide-top"><i class="mdi mdi-magnify"></i></a>
+                    </li>
+                    <li class="uk-visible@l">
+                        <a href="#" id="sc-js-fullscreen-toggle"><i class="mdi mdi-fullscreen sc-js-el-hide"></i><i class="mdi mdi-fullscreen-exit sc-js-el-show"></i></a>
+                    </li>
+                    <li class="uk-visible@s">
+                        <a href="#" class="sc-text-semibold">
+                            EN
+                        </a>
+                        <div class="uk-navbar-dropdown uk-dropdown-small">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#">Deutsch</a></li>
+                                <li><a href="#">Español</a></li>
+                                <li><a href="#">Français</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="mdi mdi-email"></span>
+                        </a>
+                        <div class="uk-navbar-dropdown sc-padding-remove">
+                            <div class="uk-panel uk-panel-scrollable uk-height-medium">
+                                <ul class="uk-list uk-list-divider sc-js-edge-fix">
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon">
+                                            <span class="sc-avatar-initials md-color-white md-bg-red-500" title="elvie.jakubowski">MO</span>
+                                        </div>
+                                        <a href="#" class="sc-list-body uk-display-block">
+                                            <span class="uk-text-small uk-text-muted uk-width-expand">05:13 PM</span>
+                                            <span class="uk-display-block uk-text-truncate">Expedita aut voluptatem labore explicabo consequatur dignissimos quia enim consequatur.</span>
+                                        </a>
+                                    </li>
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon">
+                                            <img src="{{asset('assets/img/avatars/avatar_05_sm.png')}}" class="sc-avatar " alt="osbaldo.stracke" />
+                                        </div>
+                                        <a href="#" class="sc-list-body uk-display-block">
+                                            <div class="uk-text-small uk-text-muted uk-width-expand">Feb 8, 2021</div>
+                                            <span class="uk-display-block uk-text-truncate">Est magnam quod et aut amet.</span>
+                                        </a>
+                                    </li>
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon">
+                                            <span class="sc-avatar-initials md-color-white md-bg-light-green-500" title="sgreenholt">KS</span>
+                                        </div>
+                                        <a href="#" class="sc-list-body uk-display-block">
+                                            <span class="uk-text-small uk-text-muted uk-width-expand">03:13 PM</span>
+                                            <span class="uk-display-block uk-text-truncate">Libero natus qui nisi quo est enim recusandae sit et reprehenderit ipsum.</span>
+                                        </a>
+                                    </li>
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon">
+                                            <img src="{{asset('assets/img/avatars/avatar_06_sm.png')}}" class="sc-avatar " alt="wade21" />
+                                        </div>
+                                        <a href="#" class="sc-list-body uk-display-block">
+                                            <span class="uk-text-small uk-text-muted uk-width-expand">Feb 7, 2021</span>
+                                            <span class="uk-display-block uk-text-truncate">Iure aut libero expedita dolorum et rerum molestiae molestiae.</span>
+                                        </a>
+                                    </li>
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon">
+                                            <img src="{{asset('assets/img/avatars/avatar_02_sm.png')}}" class="sc-avatar " alt="loy.vandervort" />
+                                        </div>
+                                        <a href="#" class="sc-list-body uk-display-block">
+                                            <span class="uk-text-small uk-text-muted uk-width-expand">Feb 5, 2021</span>
+                                            <span class="uk-display-block uk-text-truncate">Et in voluptate vero tempora occaecati atque et autem.</span>
+                                        </a>
+                                    </li>
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon">
+                                            <span class="sc-avatar-initials md-color-white md-bg-purple-500" title="arlene.jerde">FA</span>
+                                        </div>
+                                        <a href="#" class="sc-list-body uk-display-block">
+                                            <span class="uk-text-small uk-text-muted uk-width-expand">Feb 3, 2021</span>
+                                            <span class="uk-display-block uk-text-truncate">Ut possimus architecto deleniti eos voluptatibus sed magnam facilis.</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="pages-mailbox.html" class="uk-flex uk-text-small sc-padding-small-ends sc-padding-medium">Show all in mailbox</a>
+                        </div>
+                    </li>
+                    <li class="uk-visible@s">
+                        <a href="#">
+                            <span class="mdi mdi-bell uk-display-inline-block">
+                                <span class="sc-indicator md-bg-color-red-600"></span>
+                            </span>
+                        </a>
+                        <div class="uk-navbar-dropdown md-bg-grey-100">
+                            <div class="sc-padding-medium sc-padding-small-ends">
+                                <div class="uk-text-right uk-margin-medium-bottom">
+                                    <button class="sc-button sc-button-default sc-button-outline sc-button-mini sc-js-clear-alerts">Clear all</button>
+                                </div>
+                                <ul class="uk-list uk-margin-remove" id="sc-header-alerts">
+                                    <li class="sc-border sc-round md-bg-white">
+                                        <div class="uk-margin-right uk-margin-small-left"><i class="mdi mdi-alert-outline md-color-red-600"></i></div>
+                                        <div class="uk-flex-1 uk-text-small">
+                                            Information Page Not Found!
+                                        </div>
+                                    </li>
+                                    <li class="uk-margin-small-top sc-border sc-round md-bg-white">
+                                        <div class="uk-margin-right uk-margin-small-left"><i class="mdi mdi-email-check-outline md-color-blue-600"></i></div>
+                                        <div class="uk-flex-1 uk-text-small">
+                                            A new password has been sent to your e-mail address.
+                                        </div>
+                                    </li>
+                                    <li class="uk-margin-small-top sc-border sc-round md-bg-white">
+                                        <div class="uk-margin-right uk-margin-small-left"><i class="mdi mdi-alert-outline md-color-red-600"></i></div>
+                                        <div class="uk-flex-1 uk-text-small">
+                                            You do not have permission to access the API!
+                                        </div>
+                                    </li>
+                                    <li class="uk-margin-small-top sc-border sc-round md-bg-white">
+                                        <div class="uk-margin-right uk-margin-small-left"><i class="mdi mdi-check-all md-color-light-green-600"></i></div>
+                                        <div class="uk-flex-1 uk-text-small">
+                                            Your enquiry has been successfully sent.
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="uk-text-medium uk-text-center sc-js-empty-message sc-text-semibold sc-padding-ends" style="display: none">No alerts!</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{{asset('assets/img/avatars/avatar_default_sm.png')}}" alt=""></a>
+                        <div class="uk-navbar-dropdown uk-dropdown-small">
+                            <ul class="uk-nav uk-nav-navbar">
+                                <li><a href="pages-user_profile.html">Profile</a></li>
+                                <li><a href="pages-settings.html">Settings</a></li>
+                                <li><a href="login_page.html">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="sc-js-offcanvas-toggle md-color-white uk-margin-left uk-hidden@l">
+                    <i class="mdi mdi-menu sc-offcanvas-open"></i>
+                    <i class="mdi mdi-arrow-right sc-offcanvas-close"></i>
+                </a>
             </div>
         </nav>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-white-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="{{route('canadainspair')}}" class="brand-link">
-                <img src="{{asset('images/logo.png')}}" width="200" alt="Logo">
-
-            </a>
-
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
+    </header>
 
 
 
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                            with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
-                            <a href="#" class="nav-link dash dashboard ">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+    <div id="sc-page-wrapper">
+        <div id="sc-page-content">
+            @yield('content')
 
-                                Dashboard
-                                <i class="right fas fa-angle-left"></i>
-
-                            </a>
-
-                        </li>
-
-
-
-                        @if(Auth::user())
-
-                        @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
-                        <li class="nav-item ">
-                            <a class="nav-link dash profile" href="{{route('consultantProfile')}}"><i class="nav-icon fa fa-user"></i>
-                                profile
-                            </a>
-                        </li>
-                        @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
-                        <li class="nav-item">
-                            <a class="nav-link dash profile" href="{{route('institudeProfile')}}"> <i class="nav-icon fa fa-user"></i>
-                                profile
-                            </a>
-                        </li>
-                        @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
-                        <li class="nav-item">
-                            <a class="nav-link dash profile" href="{{route('businessProfile')}}"><i class="nav-icon fa fa-user"></i>
-                                profile
-                            </a>
-                        </li>
-                        @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
-                        <li class="nav-item">
-                            <a class="nav-link dash profile" href="{{route('personalProfile')}}"><i class="nav-icon fa fa-user"></i>
-                                profile
-                            </a>
-                        </li>
-                        @endif
-                        @endif
-
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link dash   institution ">
-                                <i class="nav-icon fa fa-university"></i>
-
-                                Institution
-                                <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">3</span>
-
-                            </a>
-                            <ul class="nav nav_treeview institution_treeview" style="margin-left: 10%;">
-                                <li class="nav-item " style="width:85%">
-                                    <a href="{{route('dashboard.view.school')}}" class="nav-link dash school  institution1" style="width:100%">
-                                        <i class="fas fa-school nav-icon"></i>
-                                        school
-                                    </a>
-                                </li>
-                                <li class="nav-item" style="width:85%">
-                                    <a href="{{route('dashboard.view.college')}}" class="nav-link dash college institution2" style="width:100%">
-                                        <i class="fas fa-book-open nav-icon"></i>
-                                        College
-                                    </a>
-                                </li>
-                                <li class="nav-item" style="width:85%">
-                                    <a href="{{route('dashboard.view.university')}}" class="nav-link dash university institution3" style="width:100%">
-                                        <i class="fas fa-university nav-icon"></i>
-                                        University
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link dash consultant">
-                                <i class="nav-icon fa fa-building"></i>
-
-                                Consultant
-                                <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">2</span>
-
-                            </a>
-                            <ul class="nav  consultant_treeview" style="margin-left: 10%;">
-                                <li class="nav-item " style="width:85%">
-                                    <a href="{{route('dashboard.view.consultant')}}" class="nav-link dash consultant1" style="width:100%">
-                                        <i class="fas fa-industry nav-icon"></i>
-                                        RCIC Consultant
-                                    </a>
-                                </li>
-                                <li class="nav-item " style="width:85%">
-                                    <a href="{{route('dashboard.view.immigration')}}" class="nav-link dash consultant2" style="width:100%">
-                                        <i class="fa fa-plane nav-icon "></i>
-
-                                        immigration
-                                    </a>
-                                </li>
-                                <!-- <li class="nav-item">
-                                    <a href="pages/layout/boxed.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>University</p>
-                                    </a>
-                                </li> -->
-
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('dashboard.business')}}" class="nav-link dash business">
-                                <i class="nav-icon fas fa-handshake"></i>
-
-                                business
-
-                            </a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link dash enquiries">
-                                <i class="nav-icon fa fa-bell"></i>
-
-                                enquiries
-                            </a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link dash report ">
-                                <i class="nav-icon fa fa-book"></i>
-
-                                report
-
-                            </a>
-
-                        </li>
-
-
-                        @if(Auth::user())
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                <i class="nav-icon fa fa-sign-out-alt"></i>
-                                logout
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </li>
-                        @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('login')}}">
-                                <i class="nav-icon fas fa-sign-in-alt"></i>
-                                Login
-                            </a>
-                        </li>
-                        @endif
-
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
-        </aside>
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" style="max-height:2500px">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-
-            </div>
-            <!-- /.content-header -->
-
-            <!-- Main content -->
-            <section class="content">
-
-                @yield('content')
-
-
-            </section>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-
-
-
     </div>
 
+    <!-- async assets-->
+    <script src="{{asset('assets/js/vendor/loadjs.min.js')}}"></script>
+
+    <script>
+        var html = document.getElementsByTagName('html')[0];
+        // ----------- CSS
+        // md icons
+        loadjs("{{asset('assets/css/materialdesignicons.min.css')}}", {
+            preload: true
+        });
+        // UIkit
+        loadjs("{{asset('node_modules/uikit/dist/css/uikit.min.css')}}", {
+            preload: true
+        });
+        // themes
+        loadjs("{{asset('assets/css/themes/themes_combined.min.css')}}", {
+            preload: true
+        });
+        // mdi icons (base64) & google fonts (base64)
+        loadjs([
+            "{{asset('assets/css/fonts/mdi_fonts.css')}}",
+            "{{asset('assets/css/fonts/roboto_base64.css')}}",
+            "{{asset('assets/css/fonts/sourceCodePro_base64.css')}}"
+        ], {
+            preload: true
+        });
+        // main stylesheet
+        loadjs("{{asset('assets/css/main.min.css')}}", function() {});
+        // vendor
+        loadjs("{{asset('assets/js/vendor.min.js')}}", function() {
+            // scutum common functions/helpers
+            loadjs("{{asset('assets/js/scutum_common.min.js')}}", function() {
+                scutum.init();
+                loadjs("{{asset('assets/js/views/dashboard/dashboard_v1.js')}}", {
+                    success: function() {
+                        $(function() {
+                            scutum.dashboard.init()
+                        });
+                    }
+                })
+
+                // show page
+                setTimeout(function() {
+                    // clear styles (FOUC)
+                    $(html).css({
+                        'backgroundColor': '',
+                    });
+                    $('body').css({
+                        'visibility': '',
+                        'overflow': '',
+                        'apacity': '',
+                        'maxHeight': ''
+                    });
+                }, 100);
+                // style switcher
+                loadjs([
+                    "{{asset('assets/js/style_switcher.min.js')}}",
+                    "{{asset('assets/css/plugins/style_switcher.min.css')}}"
+                ], {
+                    success: function() {
+                        $(function() {
+                            scutum.styleSwitcher();
+                        });
+                    }
+                });
+            });
+        });
+
+        setTimeout(function() {
+            console.log('time')
+            $('#sc-sidebar-main-toggle').click();
+        }, 700);
+
+    </script>
 
 
-
-
-
-
+    <!-- <div id="sc-style-switcher">
+        <a href="#" class="sc-sSw-toggle"><i class="mdi mdi-tune"></i></a>
+        <p class="sc-text-semibold uk-margin-top-remove uk-margin-bottom">Themes</p>
+        <ul class="sc-sSw-theme-switcher">
+            <li class="active">
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-default" data-theme="">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-a" data-theme="sc-theme-a">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-b" data-theme="sc-theme-b">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-c" data-theme="sc-theme-c">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-d" data-theme="sc-theme-d">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-e" data-theme="sc-theme-e">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-f" data-theme="sc-theme-f">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-g" data-theme="sc-theme-g">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-h" data-theme="sc-theme-h">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-dark" data-theme="sc-theme-dark">
+                    <span class="sc-sSw-theme-switch-color-1"></span>
+                    <span class="sc-sSw-theme-switch-color-2"></span>
+                </a>
+            </li>
+        </ul>
+        <p class="sc-text-semibold uk-margin-large-top uk-margin-bottom">Main Menu</p>
+        <div class="uk-flex uk-flex-middle uk-margin-small-bottom">
+            <input type="checkbox" id="sc-menu-scroll-to-active" data-sc-icheck><label for="sc-menu-scroll-to-active">Scroll to active</label>
+        </div>
+        <div class="uk-flex uk-flex-middle">
+            <input type="checkbox" id="sc-menu-accordion-mode" data-sc-icheck><label for="sc-menu-accordion-mode">Accordion mode</label>
+        </div>
+    </div> -->
 
 </body>
-<script>
-    $(document).ready(function() {
-        $('.institution').click(function() {
-            $('.institution_treeview').addClass('nav-treeview')
-        })
-        $('.consultant').click(function() {
-            $('.consultant_treeview').addClass('nav-treeview')
-        })
 
-    })
-</script>
 
 </html>

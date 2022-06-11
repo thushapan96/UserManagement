@@ -144,21 +144,43 @@
         /* Firefox */
     }
 </style>
-<!-- <div class="row">
-    <div class="col-md-3">Search By
-        <select class="custom-select filter">
-            <option value="RCIC Number">RCIC Number</option>
-            <option value="Owner Name">Owner Name</option>
-            <option value="Company Name ">Company Name </option>
-            <option value="Country">Country </option>
-            <option value="Province">Province </option>
-            <option value="City">City </option>
-            <option value="Specialization">Specialization </option>
-            <option value="Service Type">Service Type </option>
+<input id="type" value="{{$type}}" hidden />
+<div class="row">
+
+    <div class="col-md-2">Filter By Financial
+        <select class="form-control " id="financial">
+            <option value="" {{request()->query('financial') == "" ? 'selected':''}}>Common</option>
+            <option value="yes" {{request()->query('financial') == "yes" ? 'selected':''}}> Aided </option>
+            <option value="no" {{request()->query('financial') == "no" ? 'selected':''}}> Non-Aided </option>
         </select>
     </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-8">
+
+    <div class="col-md-2">
+        @if($type == 'School')Filter By Medium
+        <select class="form-control " id="medium">
+            <option value="" {{request()->query('medium') == "" ? 'selected':''}}>Common</option>
+            <option value="English" {{request()->query('medium') == "English" ? 'selected':''}}> English </option>
+            <option value="French" {{request()->query('medium') == "French" ? 'selected':''}}>French</option>
+        </select>
+        @endif
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-3">Search By
+        <select class="form-control filter">
+            <option value="Name">{{$type}} Name </option>
+            @if($type == 'School')
+            <option value="Neighborhood">Neighborhood</option>
+            @else
+            <option value="Courses"> Courses </option>
+            <option value="Course Type"> Course Type </option>
+            @endif
+            <option value="City">City </option>
+            <option value="Province">Province </option>
+            <option value="Country">Country </option>
+        </select>
+    </div>
+    <div class="col-md-4">
         <br>
         <div class="p-1 bg-light rounded rounded-pill shadow-sm ">
             <div class="input-group" style="height: 30px">
@@ -171,7 +193,7 @@
     </div>
 </div>
 <br><br>
-<input id="type" value="{{$type}}" hidden> -->
+
 
 <div>
 
@@ -185,7 +207,7 @@
 
         <li>
             <a href="{{route('dashboard.institution.view',['id' => $row->id])}}">
-                <div class="uk-card uk-card-hover " style="height:280px">
+                <div class="uk-card uk-card-hover " style="height:275px">
                     <div class="uk-card-body sc-padding-remove">
                         <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
                             <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
@@ -199,6 +221,7 @@
                                     <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
                                         {{$row->name}}
                                     </p>
+                                    <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$row->registration_number}}</p>
                                 </div>
                             </div>
                             <div class="uk-width-2-3@l ">
@@ -214,6 +237,12 @@
                                             <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
                                             <div class="sc-list-body">
                                                 <p class="uk-margin-remove">{{$row->email}}</p>
+                                            </div>
+                                        </li>
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                             </div>
                                         </li>
                                         <li class="sc-list-group">
@@ -263,10 +292,17 @@
         const baseUrlAsset = "{{url('files/')}}";
 
         $('#searchbar').on('keyup', function() {
+            if ($('#medium').length) {
+                var medium = $('#medium').val();
+            } else {
+                var medium = "";
+            }
             var searchValue = $('#searchbar').val();
             var searchType = $('.filter').val();
             var type = $('#type').val();
-            console.log("type", type);
+            var financial = $('#financial').val();
+            console.log("searchType", searchType);
+            console.log("medium", medium);
 
             $.ajax({
 
@@ -279,6 +315,8 @@
                     search: searchValue,
                     searchType: searchType,
                     type: type,
+                    financial: financial,
+                    medium: medium,
                 },
                 success: function(result) {
                     console.log(result)
@@ -289,18 +327,18 @@
 
                         var first_index = index;
                         order_row = `<li>
-        <input id="type" value="${row.type}" hidden>
-        <a href="/dashboard/consultant/${row.id}">
-            <div class="uk-card uk-card-hover " style="height:100%">
-                <div class="uk-card-body sc-padding-remove">
-                    <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                       <input id="type" value="${row.type}" hidden>
+                       <a href="/dashboard/institution/${row.id}">
+                       <div class="uk-card uk-card-hover " style="height:100%">
+                           <div class="uk-card-body sc-padding-remove">
+                               <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
                         <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
 
                             <div class="sc-padding-medium uk-text-center">
-                                <img src="${baseUrlAsset}/${row.img}" class="sc-avatar sc-border" alt="xerdman" />
+                                <img id="img-${index}" src="${baseUrlAsset}/${row.img}" class="sc-avatar sc-border" alt="xerdman" />
                                 
                                 <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                   ${row.company_name}
+                                   ${row.name}
                                 </p>
                                 <p class="uk-margin-remove sc-color-secondary uk-text-medium">${row.registration_number}</p>
                             </div>
@@ -343,20 +381,24 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-       </li>`;
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                     </li>`;
 
 
                         $('#sc-contact-list').append(order_row);
-                        $.each(row.offering_service, function(index, service) {
+                        $.each(row.offer_course, function(index, service) {
                             $('#services-' + first_index).append(service);
 
                         });
-
+                        if (row.img) {
+                            $('#img-' + first_index).attr('src', baseUrlAsset + '/' + row.img);
+                        } else {
+                            $('#img-' + first_index).attr('src', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
+                        }
 
 
 
@@ -366,9 +408,27 @@
                 }
 
             });
-
         });
-
+        $('#financial').on('change', function() {
+            var typeValue = $('#type').val();
+            console.log('hi')
+            var financialValue = $('#financial').val();
+            if ($('#type').val() == 'School') {
+                var mediumValue = $('#medium').val();
+                console.log(mediumValue, ' mediumValue ')
+                window.location.assign('/dashboard/view/school?financial=' + financialValue + '&medium=' + mediumValue);
+            } else if (typeValue == 'College') {
+                window.location.assign('/dashboard/view/college?financial=' + financialValue);
+            } else {
+                window.location.assign('/dashboard/view/university?financial=' + financialValue);
+            }
+        });
+        $('#medium').on('change', function() {
+            console.log('hi')
+            var financialValue = $('#financial').val();
+            var mediumValue = $('#medium').val();
+            window.location.assign('/dashboard/view/school?financial=' + financialValue + '&medium=' + mediumValue);
+        });
     });
 </script>
 

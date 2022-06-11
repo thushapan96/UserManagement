@@ -27,7 +27,7 @@
 
     <div class="row">
 
-        <div class="col-md-8" style="margin-left:10%;margin-right:5%">
+        <div class="col-md-8" style="margin-left:10%;margin-right:0%">
             <h3 class="float-center" style="text-align:center">Profile</h3>
             <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer; ">
                 <li class="nav-linkk" id="amenu"><a style="cursor:pointer;padding: .5rem 3rem;" aria-current="page">personal</a></li>
@@ -180,7 +180,7 @@
                 </li>
                 <li id='menu1' class='tab-pane'>
                     @if($Academy)
-                    <div class='uk-card col-md-10'>
+                    <div class='uk-card col-md-10' >
                         <div class="uk-card-body sc-padding-medium">
 
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
@@ -636,15 +636,15 @@
             </u1>
         </div>
 
-        <div class="col-md-2 uk-card" style="margin-top:9%;height:100% !important;">
+        <div class="col-md-2 uk-card" style="margin-top:9%;height:100% !important;margin-left:0% !important">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                     <div class="d-flex flex-column align-items-center text-center py-1">
                         <div class="row">
                             @if($image)
-                            <img class="rounded-circle  img " style="width:100px !important;height:100px; margin: 0 auto;" src="{{url('files/'.$image)}}">
+                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="{{url('files/'.$image)}}">
                             @else
-                            <img class="rounded-circle  img " style="width:100px !important;height:100px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                             @endif
                         </div>
                         <div class="spinner" style=" margin: 0 auto;"></div>

@@ -24,7 +24,8 @@ class Consultant extends Model
         'other_service','student_visa_success','tourist_visa_success','family_visa_success','other_visa_success','establishment_year','offering_year','total_cases_taken',
         'communication_mode_success','communication_mode','initial_chargeable_type','vedio_url','is_Policies','privacy_policy_document','history',
         'privacy_policy_detail','brief_introduction','achievement','event_new_weblink','Award','Comment','fb_link','youtube_link','twitter_link','insta_link','Linkedin_link',
-        'google_review_link','initial_chargeable_comment','team_info',"response_time"
+        'google_review_link','initial_chargeable_comment','team_info',"response_time",'service_reject_reason','other_visa_reject','family_visa_reject','tourist_visa_reject',
+        'student_visa_reject','specialization_rejected_reason','other_reject','lmia_reject','pnp_reject','express_entry_reject','mutiImg_about_award','mutiImg_about_company'
     ];
 
     protected $casts = [
@@ -32,6 +33,8 @@ class Consultant extends Model
         'communication_mode' => 'array',
         'other_service' => 'array',
         'offering_service' => 'array',
-        'specialization' => 'array'
+        'specialization' => 'array',
+        'mutiImg_about_company' => 'array',
+        'mutiImg_about_award' => 'array'
         ];
 }

@@ -75,6 +75,14 @@
         overflow: auto;
     }
 
+    .uk-flex-center {
+        overflow: auto;
+    }
+
+    .uk-flex-center::-webkit-scrollbar {
+        display: none;
+    }
+
     fieldset::-webkit-scrollbar {
         display: none;
     }
@@ -89,6 +97,12 @@
 
     textarea {
         padding: 20px
+    }
+
+    .sc-padding-medium {
+        padding: 12px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
     }
 </style>
 
@@ -107,7 +121,7 @@
     <header id="sc-header">
         <nav class="uk-navbar uk-navbar-container" data-uk-navbar="mode: click; duration: 360">
             <div class="uk-navbar-left nav-overlay-small uk-margin-right uk-navbar-aside">
-                <a href="#" id="sc-sidebar-main-toggle"><i class="mdi mdi-backburger sc-menu-close"></i><i class="mdi mdi-menu sc-menu-open"></i></a>
+                <a href="#" id="sc-sidebar-main-toggle"><i class="mdi mdi-backburger sc-menu-close hid"></i><i class="mdi mdi-menu sc-menu-open"></i></a>
                 <div class="sc-brand uk-visible@s">
                     <a href="dashboard-v1.html"><img src="{{asset('images/logo.png')}}" width="150px" alt=""></a>
                 </div>
@@ -168,11 +182,11 @@
                     <i class="mdi mdi-close sc-icon-24"></i>
                 </a>
                 <div class="uk-navbar-item uk-width-expand uk-padding-remove-right">
-                        <div class="uk-flex-1 uk-position-relative">
-                            <input class="uk-search-input" type="search" placeholder="Search..." >
-                        </div>
-                        <button class="sc-button sc-button-default sc-button-small sc-button-icon sc-button-flat uk-margin-small-left" type="button"><i class="mdi mdi-magnify sc-icon-24 md-color-white"></i></button>
-                    
+                    <div class="uk-flex-1 uk-position-relative">
+                        <input class="uk-search-input" type="search" placeholder="Search...">
+                    </div>
+                    <button class="sc-button sc-button-default sc-button-small sc-button-icon sc-button-flat uk-margin-small-left" type="button"><i class="mdi mdi-magnify sc-icon-24 md-color-white"></i></button>
+
                 </div>
             </div>
 
@@ -323,7 +337,7 @@
         </nav>
     </header>
 
-    <aside id="sc-sidebar-main" class="sc-sidebar-info-fixed">
+    <aside id="sc-sidebar-main" class="sc-sidebar-info-fixed sideBar">
         <div class="uk-offcanvas-bar">
             <div class="sc-sidebar-main-scrollable" data-sc-scrollbar="visible-y">
                 <ul class="sc-sidebar-menu uk-nav">
@@ -442,7 +456,6 @@
 
                     </li>
                     @if(Auth::user())
-                    @if((auth()->user()->service_type == 'Business' || auth()->user()->service_type == 'Institution' || auth()->user()->service_type == 'Consultation'))
                     <li title="other">
                         <a href="#">
                             <span class="uk-nav-icon"> <i class="mdi mdi-information"></i>
@@ -463,7 +476,6 @@
 
                         </ul>
                     </li>
-                    @endif
                     @endif
 
 
@@ -547,6 +559,7 @@
     <script src="{{asset('assets/js/vendor/loadjs.min.js')}}"></script>
 
     <script>
+
         var html = document.getElementsByTagName('html')[0];
         // ----------- CSS
         // md icons
@@ -576,7 +589,7 @@
             // scutum common functions/helpers
             loadjs("{{asset('assets/js/scutum_common.min.js')}}", function() {
                 scutum.init();
-                loadjs("{{asset('assets/js/views/dashboard/dashboard_v1.min.js')}}", {
+                loadjs("{{asset('assets/js/views/dashboard/dashboard_v1.js')}}", {
                     success: function() {
                         $(function() {
                             scutum.dashboard.init()

@@ -18,6 +18,7 @@ class ProviderProfileController extends Controller
         $institutions =  Institution::where('user_id', $id)->first();
         $view = "";
         $img = Auth::user()->img;
+       
         if ($institutions) {
             return view('providerProfile.institudeProfile')->with('institutions', $institutions)->with('view', $view)->with('img', $img);
         } else {
@@ -30,7 +31,7 @@ class ProviderProfileController extends Controller
         $id = Auth::user()->id;
         $consultants =  Consultant::where('user_id', $id)->first();
         $view = "";
-
+       
         $img = Auth::user()->img;
         $teams = Team::where('provider_id', $consultants->id)->get();
 
@@ -60,12 +61,13 @@ class ProviderProfileController extends Controller
     public function editInstitude()
     {
         $institutions =  Institution::where('user_id', Auth::user()->id)->first();
+
         return view('providerEdit.institude')->with('institutions', $institutions);
     }
 
     public function updateInstitude(Request $request, $id)
     {
-       
+
         $Institution = Institution::find($id);
         $Institution->update($request->all());
         $Institution->user_id = Auth::user()->id;
@@ -84,6 +86,26 @@ class ProviderProfileController extends Controller
             $destinationPath = public_path() . '/files';
             $files->move($destinationPath, $nameAward);
             $Institution->Award = $nameAward;
+        }
+        if ($request->hasFile('mutiImg_about_company')) {
+            $names = [];
+            foreach ($request->file('mutiImg_about_company') as $image) {
+                $destinationPath = public_path() . '/files';
+                $filename = $image->getClientOriginalName();
+                $image->move($destinationPath, $filename);
+                array_push($names, $filename);
+            }
+            $Institution->mutiImg_about_company = $names;
+        }
+        if ($request->hasFile('mutiImg_about_award')) {
+            $names = [];
+            foreach ($request->file('mutiImg_about_award') as $image) {
+                $destinationPath = public_path() . '/files';
+                $filename = $image->getClientOriginalName();
+                $image->move($destinationPath, $filename);
+                array_push($names, $filename);
+            }
+            $Institution->mutiImg_about_award = $names;
         }
 
         $Institution->save();
@@ -132,6 +154,27 @@ class ProviderProfileController extends Controller
             $files->move($destinationPath, $nameprivacy_policy_document);
             $Consultant->privacy_policy_document = $nameprivacy_policy_document;
         }
+        if ($request->hasFile('mutiImg_about_company')) {
+            $names = [];
+            foreach ($request->file('mutiImg_about_company') as $image) {
+                $destinationPath = public_path() . '/files';
+                $filename = $image->getClientOriginalName();
+                $image->move($destinationPath, $filename);
+                array_push($names, $filename);
+            }
+            $Consultant->mutiImg_about_company = $names;
+        }
+        if ($request->hasFile('mutiImg_about_award')) {
+            $names = [];
+            foreach ($request->file('mutiImg_about_award') as $image) {
+                $destinationPath = public_path() . '/files';
+                $filename = $image->getClientOriginalName();
+                $image->move($destinationPath, $filename);
+                array_push($names, $filename);
+            }
+            $Consultant->mutiImg_about_award = $names;
+        }
+
 
         $Consultant->save();
 

@@ -12,14 +12,14 @@
             <h5 style="text-align:center">edit institution details</h5><br>
             <form id="form" action="{{route('update.institution' ,['id'=>$institutions->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
-                <u1 class="col-md-12" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
-                    <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 1.5rem;" aria-current="page">Main </a></li>
-                    <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1.5rem;">Courses</a></li>
-                    <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1.5rem;">About Company </a></li>
-                    <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.5rem;"> Award & Certification</a></li>
-                    <li class="nav-linkk" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1.5rem;">News and Events</a></li>
-                    <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Canada Inspire</a></li>
-                    <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Feedback</a></li>
+                <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:5% !important;">
+                    <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">Main </a></li>
+                    <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">Courses </a></li>
+                    <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">About Company</a></li>
+                    <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  2rem;"> Award & Certification</a></li>
+                    <li class="nav-linkk" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  2rem;">News and Events</a></li>
+                    <!-- <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Canada Inspire</a></li>
+                    <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Feedback</a></li> -->
                 </u1>
                 <u1 class="uk-switcher">
 
@@ -58,36 +58,35 @@
                                     </div>
                                     <hr>
                                     <div class="row custom-box">
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Country *
-                                                </label>
-                                                <input class="form-control " type="text" name="country" value="{{$institutions->country}}">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Province/Region *
-                                                </label>
-                                                <input class="form-control " type="text" name="region" value="{{$institutions->region}}">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>City *
-                                                </label>
-                                                <input class="form-control " type="text" name="city" value="{{$institutions->city}}">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <label>Street *
                                                 </label>
                                                 <input class="form-control " type="text" name="streat" value="{{$institutions->streat}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>City *
+
+                                                </label>
+                                                <input class="form-control " type="text" name="city" value="{{$institutions->city}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Province/Region *
+
+                                                </label>
+                                                <input class="form-control " type="text" name="region" value="{{$institutions->region}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Country *
+
+                                                </label>
+                                                <input class="form-control " type="text" name="country" value="{{$institutions->country}}">
                                             </div>
                                         </div>
 
@@ -95,41 +94,38 @@
                                     <hr>
                                     <div class="row custom-box">
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <label>Postal Code *
                                                 </label>
-                                                <br> <br>
 
                                                 <input class="form-control " type="text" name="postal_code" value="{{$institutions->postal_code}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <label>Email address for correspondence *
                                                 </label>
-                                                <br>
-                                                <input class="form-control" type="email" name="email" value="{{$institutions->email}}">
+                                                <input class="form-control" type="email" id="email" name="email" value="{{$institutions->email}}">
+                                                <div id="append_email" class="mail" style="color:#f30404"></div>
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <label>URL - Website Address *
                                                 </label>
-                                                <br> <br>
 
                                                 <input class="form-control " type="text" name="website_address" value="{{$institutions->website_address}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <label>Contact Number *
                                                 </label>
 
-                                                <br> <br>
                                                 <input class="form-control " type="number" name="phone" value="{{$institutions->phone}}">
                                             </div>
                                         </div>
@@ -153,7 +149,9 @@
                                                 <label>Email address of Admission Cell *
 
                                                 </label>
-                                                <input class="form-control " type="email" name="admission_email" value="{{$institutions->admission_email}}">
+                                                <input class="form-control " type="email" id="admission_email" name="admission_email" value="{{$institutions->admission_email}}">
+                                                <div id="append_admission_email" class="mail" style="color:tomato"></div>
+
                                             </div>
                                         </div>
 
@@ -169,24 +167,38 @@
 
 
                                     </div>
-                                    <hr>
+
                                     <div class="row custom-box">
-                                        <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="col-lg-5 col-md-5 col-12">
                                             <div class="form-group">
                                                 <label>Dean Email ID *
                                                 </label>
 
-                                                <input class="form-control " type="email" name="dean_email" value="{{$institutions->dean_email}}">
+                                                <input class="form-control " id="dean_email" type="email" name="dean_email" value="{{$institutions->dean_email}}">
+                                                <div id="append_dean_email" class="mail" style="color:tomato"></div>
+
                                             </div>
                                         </div>
-
-                                        <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="col-lg-5 col-md-5 col-12">
                                             <div class="form-group">
                                                 <label>Dean Contact Number *
                                                 </label>
                                                 <input class="form-control " type="number" name="dean_phone" value="{{$institutions->dean_phone}}">
                                             </div>
                                         </div>
+                                        @if(request()->query('service') == 'School')
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Medium
+                                                </label>
+
+                                                <select class="form-control " name="medium">
+                                                    <option value="Domestic" {{ $institutions->medium == 'English'? 'selected':'' }}>English</option>
+                                                    <option value="International" {{ $institutions->medium == 'French'? 'selected':'' }}>French</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
                                     <hr>
                                     <div class="row custom-box">
@@ -675,6 +687,32 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <hr>
+                                    <div class="row custom-box">
+                                        <div id="appendImg">
+                                            @if($institutions->mutiImg_about_company)
+                                            @foreach($institutions->mutiImg_about_company as $row )
+                                            <div id="inputImgCover">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2">
+                                                        <img class=" mt-2 img float-center " style="width:50px !important;height:50px !important" src="{{url('files/'.$row)}}">
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8"><input id="inputImgRow" class="form-control" type="file" name="mutiImg_about_company[]" value="{{$row}}"></div>
+                                                    <div class="col-lg-2 col-md-2"> <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removeImgRow" style="background:#bf0010 !important;margin-top:7.5%"><a style="color:white;"><i class="fa fa-solid fa-minus"></i> </a></button> </div>
+                                                </div><br>
+                                            </div>
+                                            @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <button id="addImageRow" type="button" class="uk-button uk-button-primary">Add Images</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="float-right">
                                         <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
 
@@ -712,7 +750,32 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row custom-box">
+                                        <div id="appendImg1">
+                                            @if($institutions->mutiImg_about_award)
+                                            @foreach($institutions->mutiImg_about_award as $row )
+                                            <div id="inputImgCover1">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2">
+                                                        <img class=" mt-2 img float-center " style="width:50px !important;height:50px !important" src="{{url('files/'.$row)}}">
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8"><input id="inputImgRow1" class="form-control" type="file" name="mutiImg_about_award[]" value="{{$row}}"></div>
+                                                    <div class="col-lg-2 col-md-2"> <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removeImgRow1" style="background:#bf0010 !important;margin-top:7.5%"><a style="color:white;"><i class="fa fa-solid fa-minus"></i> </a></button> </div>
+                                                </div><br>
+                                            </div>
+                                            @endforeach
+                                            @endif
+                                        </div>
 
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <button id="addImageRow1" type="button" class="uk-button uk-button-primary">Add Images</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="float-right">
                                         <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
 
@@ -1064,6 +1127,28 @@
             $(this).closest('#inputFormRow').remove();
             sessionStorage.setItem("appendhtml", $('#newRow').html());
 
+        });
+        $("#addImageRow").click(function() {
+            console.log('fi')
+            var html = '';
+            html = `<div id="inputImgCover"><div  class="row"> <div class="col-lg-2 col-md-2"></div><div class="col-lg-8 col-md-8"><input id="inputImgRow" class="form-control" type="file" name="mutiImg_about_company[]"></div><div class="col-lg-2 col-md-2"> <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removeImgRow" style="background:#bf0010 !important;margin-top:7.5%"><a style="color:white;"><i class="fa fa-solid fa-minus"></i> </a></button> </div></div><br></div>`
+            $('#appendImg').append(html);
+
+        });
+        $(document).on('click', '#removeImgRow', function() {
+            console.log('bi')
+            $(this).closest('#inputImgCover').remove();
+        });
+        $("#addImageRow1").click(function() {
+            console.log('fi')
+            var html = '';
+            html = `<div id="inputImgCover1"><div class="row"><div class="col-lg-2 col-md-2"></div><div class="col-lg-8 col-md-8"><input id="inputImgRow1" class="form-control" type="file" name="mutiImg_about_award[]"></div><div class="col-lg-2 col-md-2"> <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removeImgRow1" style="background:#bf0010 !important;margin-top:7.5%"><a style="color:white;"><i class="fa fa-solid fa-minus"></i> </a></button> </div></div><br></div>`
+            $('#appendImg1').append(html);
+
+        });
+        $(document).on('click', '#removeImgRow1', function() {
+            console.log('bi')
+            $(this).closest('#inputImgCover1').remove();
         });
     });
 </script>
