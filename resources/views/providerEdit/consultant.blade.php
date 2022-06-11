@@ -256,258 +256,288 @@
 
 
                                     </div>
+
+
                                     <hr>
+
+                                    <p style="text-decoration:underline">Express Entry Rate</p>
                                     <div class="row custom-box">
-                                        <div class="col-lg-3 col-md-3 col-12">
+
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>Express Entry-Enrolment
+                                                <label>Enrolment
                                                 </label>
-                                                <input class="form-control " type="text" placeholder="enter total count" name="express_entry_enrolment" value="{{$consultants->express_entry_enrolment}}">
+                                                <input class="form-control " type="text" name="express_entry_enrolment" value="{{$consultants->express_entry_enrolment}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>PNP-Enrolment
+                                                <label>Success
                                                 </label>
-                                                <input class="form-control " type="text" placeholder="enter total count" name="pnp_enrolment" value="{{$consultants->pnp_enrolment}}">
+                                                <input class="form-control " type="text" name="express_entry_success" value="{{$consultants->express_entry_success}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label>
+                                                <input class="form-control " type="text" name="express_entry_reject" value="{{$consultants->express_entry_reject}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label>
+                                                <input class="form-control " type="text" name="express_entry_reject_reason" value="{{$consultants->express_entry_reject_reason}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>LMIA-Enrolment
-                                                </label>
-                                                <input class="form-control " placeholder="enter total count" type="text" name="lmia_enrolment" value="{{$consultants->lmia_enrolment}}">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Others-Enrolment
-                                                </label>
-                                                <input class="form-control " placeholder="enter total count" type="text" name="other_enrolment" value="{{$consultants->other_enrolment}}">
-                                            </div>
-                                        </div>
                                     </div>
-                                    <div class="row custom-box">
+                                    <p style="text-decoration:underline">PNP Rate</p>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                    <div class="row custom-box">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>Express Entry-Success
+                                                <label>Enrolment
                                                 </label>
-                                                <input class="form-control " type="text" placeholder="10/10" name="express_entry_success" value="{{$consultants->express_entry_success}}">
-                                                <small>No. of Enrolment/Success</small>
+                                                <input class="form-control " type="text" name="pnp_enrolment" value="{{$consultants->pnp_enrolment}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>PNP Success
+                                                <label>Success
                                                 </label>
                                                 <input class="form-control " type="text" name="pnp_success" value="{{$consultants->pnp_success}}">
-                                                <small>No. of Enrolment/Success</small>
                                             </div>
                                         </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>LMIA Success
-                                                </label>
-                                                <input class="form-control " type="text" name="lmia_success" value="{{$consultants->lmia_success}}">
-                                                <small>No. of Enrolment/Success</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Others Success
-                                                </label>
-                                                <input class="form-control " type="text" name="other_success" value="{{$consultants->other_success}}">
-                                                <small>No. of Enrolment/Success</small>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Express Entry-Rejected
-                                                </label>
-                                                <input class="form-control " type="text" placeholder="10/10" name="express_entry_reject" value="{{$consultants->express_entry_reject}}">
-                                                <small>Rejected/No. of Enrolment</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>PNP-Rejected
+                                                <label>Rejected
                                                 </label>
                                                 <input class="form-control " type="text" name="pnp_reject" value="{{$consultants->pnp_reject}}">
-                                                <small>Rejected/No. of Enrolment</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label>
+                                                <input class="form-control " type="text" name="pnp_reject_reason" value="{{$consultants->pnp_reject_reason}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                    </div>
+                                    <p style="text-decoration:underline">LMIA Rate</p>
+
+                                    <div class="row custom-box">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>LMIA-Rejected
+                                                <label>Enrolment
+                                                </label>
+                                                <input class="form-control " type="text" name="lmia_enrolment" value="{{$consultants->lmia_enrolment}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label>
+                                                <input class="form-control " type="text" name="lmia_success" value="{{$consultants->lmia_success}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
                                                 </label>
                                                 <input class="form-control " type="text" name="lmia_reject" value="{{$consultants->lmia_reject}}">
-                                                <small>Rejected/No. of Enrolment</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label>
+                                                <input class="form-control " type="text" name="lmia_reject_reason" value="{{$consultants->lmia_reject_reason}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                    </div>
+                                    <p style="text-decoration:underline">Other Rate</p>
+
+                                    <div class="row custom-box">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>Others-Rejected
+                                                <label>Enrolment
+                                                </label>
+                                                <input class="form-control " type="text" name="other_enrolment" value="{{$consultants->other_enrolment}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label>
+                                                <input class="form-control " type="text" name="other_success" value="{{$consultants->other_success}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
                                                 </label>
                                                 <input class="form-control " type="text" name="other_reject" value="{{$consultants->other_reject}}">
-                                                <small>Rejected/No. of Enrolment</small>
                                             </div>
                                         </div>
-
-
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>Common reason for Reject specialization
+                                                <label>Reason for rejection
                                                 </label>
-                                                <textarea class="form-control " type="text" name="specialization_rejected_reason" value="{{$consultants->specialization_rejected_reason}}">{{$consultants->specialization_rejected_reason}}</textarea>
-
+                                                <input class="form-control " type="text" name="other_reject_reason" value="{{$consultants->other_reject_reason}}">
                                             </div>
                                         </div>
+
                                     </div>
+
                                     <hr>
+                                    <p style="text-decoration:underline">Student Visa Rate</p>
+
                                     <div class="row custom-box">
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>Student Visa-Enrolment
+                                                <label>Enrolment
                                                 </label>
-
-                                                <input class="form-control " type="text" placeholder="enter the total count" name="student_visa_enrolment" value="{{$consultants->student_visa_enrolment}}">
-
+                                                <input class="form-control " type="text" name="student_visa_enrolment" value="{{$consultants->student_visa_enrolment}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>Tourist Visa-Enrolment
+                                                <label>Success
                                                 </label>
-                                                <input class="form-control " placeholder="enter  total count" type="text" name="tourist_visa_enrolment" value="{{$consultants->tourist_visa_enrolment}}">
+                                                <input class="form-control " type="text" name="student_visa_success" value="{{$consultants->student_visa_success}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label>
+                                                <input class="form-control " type="text" name="student_visa_reject" value="{{$consultants->student_visa_reject}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label>
+                                                <input class="form-control " type="text" name="student_visa_reject_reason" value="{{$consultants->student_visa_reject_reason}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Family Visa-Enrolment
-                                                </label>
-                                                <input class="form-control " placeholder="enter  total count" type="text" name="family_visa_enrolment" value="{{$consultants->family_visa_enrolment}}">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Other Visa-Enrolment
-                                                </label>
-
-                                                <input class="form-control " placeholder="enter  total count" type="text" name="other_visa_enrolment" value="{{$consultants->other_visa_enrolment}}">
-                                            </div>
-                                        </div>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Student Visa - Success
-                                                </label>
+                                    <p style="text-decoration:underline">Tourist Visa Rate</p>
 
-                                                <input class="form-control " type="text" placeholder="10/10" name="student_visa_success" value="{{$consultants->student_visa_success}}">
-                                                <small>No. of Enrolment/Success</small>
+                                    <div class="row custom-box">
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label>
+                                                <input class="form-control " type="text" name="tourist_visa_enrolment" value="{{$consultants->tourist_visa_enrolment}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>Tourist Visa Success
+                                                <label>Success
                                                 </label>
                                                 <input class="form-control " type="text" name="tourist_visa_success" value="{{$consultants->tourist_visa_success}}">
-                                                <small>No. of Enrolment/Success</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label>
+                                                <input class="form-control " type="text" name="tourist_visa_reject" value="{{$consultants->tourist_visa_reject}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label>
+                                                <input class="form-control " type="text" name="tourist_visa_reject_reason" value="{{$consultants->tourist_visa_reject_reason}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                    </div>
+                                    <p style="text-decoration:underline">Family Visa</p>
+
+                                    <div class="row custom-box">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>Family Visa Success
+                                                <label>Enrolment
+                                                </label>
+                                                <input class="form-control " type="text" name="family_visa_enrolment" value="{{$consultants->family_visa_enrolment}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
                                                 </label>
                                                 <input class="form-control " type="text" name="family_visa_success" value="{{$consultants->family_visa_success}}">
-                                                <small>No. of Enrolment/Success</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label>
+                                                <input class="form-control " type="text" name="family_visa_reject" value="{{$consultants->family_visa_reject}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label>
+                                                <input class="form-control " type="text" name="family_visa_reject_reason" value="{{$consultants->family_visa_reject_reason}}">
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Other Visa Success
-                                                </label>
+                                    </div>
+                                    <p style="text-decoration:underline">Other Visa</p>
 
+                                    <div class="row custom-box">
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label>
+                                                <input class="form-control " type="text" name="other_visa_enrolment" value="{{$consultants->other_visa_enrolment}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label>
                                                 <input class="form-control " type="text" name="other_visa_success" value="{{$consultants->other_visa_success}}">
-                                                <small>No. of Enrolment/Success</small>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row custom-box">
-
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
-                                                <label>Student Visa-Reject
+                                                <label>Rejected
                                                 </label>
-
-                                                <input class="form-control " type="text" placeholder="10/10" name="student_visa_reject" value="{{$consultants->express_entry_success}}">
-                                                <small>No. of Enrolment/Success</small>
+                                                <input class="form-control " type="text" name="other_visa_reject" value="{{$consultants->other_visa_reject}}">
                                             </div>
                                         </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>Tourist Visa-Reject
+                                                <label>Reason for rejection
                                                 </label>
-                                                <input class="form-control " type="text" name="tourist_visa_reject" value="{{$consultants->express_entry_success}}">
-                                                <small>No. of Enrolment/Success</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Family Visa-Reject
-                                                </label>
-                                                <input class="form-control " type="text" name="family_visa_reject" value="{{$consultants->express_entry_success}}">
-                                                <small>No. of Enrolment/Success</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Other Visa-Reject
-                                                </label>
-
-                                                <input class="form-control " type="text" name="other_visa_reject" value="{{$consultants->express_entry_success}}">
-                                                <small>No. of Enrolment/Success</small>
+                                                <input class="form-control " type="text" name="other_visa_reject_reason" value="{{$consultants->other_visa_reject_reason}}">
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label>Common reason for Reject services
-                                                </label>
-                                                <textarea class="form-control " type="text" name="service_reject_reason" value="{{$consultants->express_entry_success}}">{{$consultants->express_entry_success}}</textarea>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <hr>
+
+
+
                                     <div class="row custom-box">
 
                                         <div class="col-lg-3 col-md-3 col-12">

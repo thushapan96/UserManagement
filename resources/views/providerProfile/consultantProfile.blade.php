@@ -318,11 +318,52 @@
                                     <p style="text-decoration:underline;">Specialization</p>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
-                                            <strong class="ps">Express Entry Success</strong>
+                                            <strong class="ps">Express Entry - Enrolled</strong>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->express_entry_enrolment}}
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Express Entry - Success</strong>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->express_entry_success}}
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Express Entry - Rejected</strong>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->express_entry_reject}}
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Express Entry Rejected Reason</strong>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->express_entry_reject_reason}}
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">PNP Enrolled</strong>
                                         </div>
 
                                         <div class="col-md-7">
-                                            <p class="ps">{{$consultants->express_entry_success}}
+                                            <p class="ps">{{$consultants->pnp_enrolment}}
                                             </p>
                                         </div>
                                     </div>
@@ -338,6 +379,36 @@
                                     </div>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
+                                            <strong class="ps">PNP Rejected</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->pnp_reject}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">PNP Rejected Reason</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->pnp_reject_reason}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">LMIA Enrolled</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->lmia_enrolment}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
                                             <strong class="ps">LMIA Success</strong>
                                         </div>
 
@@ -348,11 +419,71 @@
                                     </div>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
+                                            <strong class="ps">LMIA Rejected</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->lmia_reject}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">LMIA Reject Reason</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->lmia_reject_reason}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
                                             <strong class="ps">Others Success</strong>
                                         </div>
 
                                         <div class="col-md-7">
                                             <p class="ps">{{$consultants->other_success}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Others Enrolled</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->other_enrolment}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Others Success</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->other_success}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Others Rejected</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->other_reject}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+                                        <div class="col-md-5">
+                                            <strong class="ps">Others Success</strong>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <p class="ps">{{$consultants->other_reject_reason}}
                                             </p>
                                         </div>
                                     </div>
@@ -473,7 +604,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="col-lg-8 col-md-8 " style="margin-left:auto;margin-right:auto;">
-                                            <img class=" mt-2 img "  src="{{url('files/'.$row)}}" style="width:100%;height:300px">
+                                            <img class=" mt-2 img " src="{{url('files/'.$row)}}" style="width:100%;height:300px">
                                         </div>
                                     </div>
                                 </div>
@@ -596,7 +727,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="col-lg-8 col-md-8 " style="margin-left:auto;margin-right:auto;">
-                                            <img class=" mt-2 img "  src="{{url('files/'.$row)}}" style="width:100%;height:300px">
+                                            <img class=" mt-2 img " src="{{url('files/'.$row)}}" style="width:100%;height:300px">
                                         </div>
                                     </div>
                                 </div>
