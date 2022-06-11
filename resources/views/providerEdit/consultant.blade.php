@@ -258,10 +258,43 @@
                                     </div>
                                     <hr>
                                     <div class="row custom-box">
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Express Entry-Enrolment
+                                                </label>
+                                                <input class="form-control " type="text" placeholder="enter total count" name="express_entry_enrolment" value="{{$consultants->express_entry_enrolment}}">
+                                            </div>
+                                        </div>
 
                                         <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
-                                                <label>Express Entry - Success
+                                                <label>PNP-Enrolment
+                                                </label>
+                                                <input class="form-control " type="text" placeholder="enter total count" name="pnp_enrolment" value="{{$consultants->pnp_enrolment}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>LMIA-Enrolment
+                                                </label>
+                                                <input class="form-control " placeholder="enter total count" type="text" name="lmia_enrolment" value="{{$consultants->lmia_enrolment}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Others-Enrolment
+                                                </label>
+                                                <input class="form-control " placeholder="enter total count" type="text" name="other_enrolment" value="{{$consultants->other_enrolment}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row custom-box">
+
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Express Entry-Success
                                                 </label>
                                                 <input class="form-control " type="text" placeholder="10/10" name="express_entry_success" value="{{$consultants->express_entry_success}}">
                                                 <small>No. of Enrolment/Success</small>
@@ -347,6 +380,42 @@
                                         </div>
                                     </div>
                                     <hr>
+                                    <div class="row custom-box">
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Student Visa-Enrolment
+                                                </label>
+
+                                                <input class="form-control " type="text" placeholder="enter the total count" name="student_visa_enrolment" value="{{$consultants->student_visa_enrolment}}">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Tourist Visa-Enrolment
+                                                </label>
+                                                <input class="form-control " placeholder="enter  total count" type="text" name="tourist_visa_enrolment" value="{{$consultants->tourist_visa_enrolment}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Family Visa-Enrolment
+                                                </label>
+                                                <input class="form-control " placeholder="enter  total count" type="text" name="family_visa_enrolment" value="{{$consultants->family_visa_enrolment}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Other Visa-Enrolment
+                                                </label>
+
+                                                <input class="form-control " placeholder="enter  total count" type="text" name="other_visa_enrolment" value="{{$consultants->other_visa_enrolment}}">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row custom-box">
                                         <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
@@ -1154,7 +1223,7 @@
             sessionStorage.setItem("appendhtml", $('#newRow').html());
         });
 
-        
+
         $("#addImageRow").click(function() {
             console.log('fi')
             var html = '';

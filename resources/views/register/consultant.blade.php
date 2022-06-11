@@ -241,6 +241,38 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
+                                            <label>Express Entry-Enrolment
+                                            </label>
+                                            <input class="form-control " type="text" placeholder="enter total count" name="express_entry_enrolment" value="{{old('express_entry_enrolment')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>PNP-Enrolment
+                                            </label>
+                                            <input class="form-control " type="text" placeholder="enter total count" name="pnp_enrolment" value="{{old('pnp_enrolment')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>LMIA-Enrolment
+                                            </label>
+                                            <input class="form-control " placeholder="enter total count" type="text" name="lmia_enrolment" value="{{old('lmia_enrolment')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Others-Enrolment
+                                            </label>
+                                            <input class="form-control " placeholder="enter total count" type="text" name="other_enrolment" value="{{old('other_enrolment')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
                                             <label>Express Entry-Success
                                             </label>
                                             <input class="form-control " type="text" placeholder="10/10" name="express_entry_success" value="{{old('express_entry_success')}}">
@@ -257,7 +289,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-2 col-md-2 col-12">
+                                    <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>LMIA-Success
                                             </label>
@@ -266,7 +298,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-2 col-md-2 col-12">
+                                    <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>Others-Success
                                             </label>
@@ -375,41 +407,77 @@
 
                                     <div class="col-lg-2 col-md-2 col-12">
                                         <div class="form-group">
+                                            <label>Student Visa-Enrolment
+                                            </label>
+
+                                            <input class="form-control " type="text" placeholder="enter the total count" name="student_visa_enrolment" value="{{old('student_visa_enrolment')}}">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Tourist Visa-Enrolment
+                                            </label>
+                                            <input class="form-control " placeholder="enter  total count" type="text" name="tourist_visa_enrolment" value="{{old('tourist_visa_success')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Family Visa-Enrolment
+                                            </label>
+                                            <input class="form-control " placeholder="enter  total count" type="text" name="family_visa_enrolment" value="{{old('family_visa_enrolment')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Other Visa-Enrolment
+                                            </label>
+
+                                            <input class="form-control " placeholder="enter  total count" type="text" name="other_visa_enrolment" value="{{old('other_visa_enrolment')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
                                             <label>Student Visa-Success
                                             </label>
 
                                             <input class="form-control " type="text" placeholder="10/10" name="student_visa_success" value="{{old('student_visa_success')}}">
-                                            <small>No. of Enrolment/Success</small>
+                                            <small>Success/No. of Enrolment</small>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-2 col-md-2 col-12">
+                                    <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>Tourist Visa-Success
                                             </label>
                                             <input class="form-control " type="text" name="tourist_visa_success" value="{{old('tourist_visa_success')}}">
-                                            <small>No. of Enrolment/Success</small>
+                                            <small>Success/No. of Enrolment</small>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-2 col-md-2 col-12">
+                                    <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>Family Visa-Success
                                             </label>
                                             <input class="form-control " type="text" name="family_visa_success" value="{{old('family_visa_success')}}">
-                                            <small>No. of Enrolment/Success</small>
+                                            <small>Success/No. of Enrolment</small>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-2 col-md-2 col-12">
+                                    <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>Other Visa-Success
                                             </label>
 
                                             <input class="form-control " type="text" name="other_visa_success" value="{{old('other_visa_success')}}">
-                                            <small>No. of Enrolment/Success</small>
+                                            <small>Success/No. of Enrolment</small>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="row custom-box">
 
@@ -419,7 +487,7 @@
                                             </label>
 
                                             <input class="form-control " type="text" placeholder="10/10" name="student_visa_reject" value="{{old('student_visa_reject')}}">
-                                            <small>No. of Enrolment/Success</small>
+                                            <small>Reject/No. of Enrolment</small>
                                         </div>
                                     </div>
 
@@ -428,7 +496,7 @@
                                             <label>Tourist Visa-Reject
                                             </label>
                                             <input class="form-control " type="text" name="tourist_visa_reject" value="{{old('tourist_visa_reject')}}">
-                                            <small>No. of Enrolment/Success</small>
+                                            <small>Reject/No. of Enrolment</small>
                                         </div>
                                     </div>
 
@@ -437,7 +505,7 @@
                                             <label>Family Visa-Reject
                                             </label>
                                             <input class="form-control " type="text" name="family_visa_reject" value="{{old('family_visa_reject')}}">
-                                            <small>No. of Enrolment/Success</small>
+                                            <small>Reject/No. of Enrolment</small>
                                         </div>
                                     </div>
 
@@ -447,7 +515,7 @@
                                             </label>
 
                                             <input class="form-control " type="text" name="other_visa_reject" value="{{old('other_visa_reject')}}">
-                                            <small>No. of Enrolment/Success</small>
+                                            <small>Reject/No. of Enrolment</small>
                                         </div>
                                     </div>
 

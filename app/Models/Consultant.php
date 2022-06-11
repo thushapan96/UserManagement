@@ -25,7 +25,8 @@ class Consultant extends Model
         'communication_mode_success','communication_mode','initial_chargeable_type','vedio_url','is_Policies','privacy_policy_document','history',
         'privacy_policy_detail','brief_introduction','achievement','event_new_weblink','Award','Comment','fb_link','youtube_link','twitter_link','insta_link','Linkedin_link',
         'google_review_link','initial_chargeable_comment','team_info',"response_time",'service_reject_reason','other_visa_reject','family_visa_reject','tourist_visa_reject',
-        'student_visa_reject','specialization_rejected_reason','other_reject','lmia_reject','pnp_reject','express_entry_reject','mutiImg_about_award','mutiImg_about_company'
+        'student_visa_reject','specialization_rejected_reason','other_reject','lmia_reject','pnp_reject','express_entry_reject','mutiImg_about_award','mutiImg_about_company',
+        'other_enrolment','lmia_enrolment','pnp_enrolment','express_entry_enrolment','other_visa_enrolment','family_visa_enrolment','tourist_visa_enrolment','student_visa_enrolment',
     ];
 
     protected $casts = [
