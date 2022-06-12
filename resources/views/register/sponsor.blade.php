@@ -79,7 +79,7 @@
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
 
-                    <input class="form-control " type="text" placeholder="Street Address1" name="sponsor_street">
+                    <input class="form-control " id="pac-input11" type="text" placeholder="Street Address1" name="sponsor_street">
 
                 </div>
             </div>
@@ -87,14 +87,14 @@
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
 
-                    <input class="form-control " type="text" placeholder="Street Address2" name="sponsor_street2">
+                    <input class="form-control " id="pac-input12" type="text" placeholder="Street Address2" name="sponsor_street2">
 
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-4  col-12">
                 <div class="form-group">
-                    <input class="form-control " type="text" placeholder="City" name="sponsor_city">
+                    <input class="form-control " id="pac-input13" type="text" placeholder="City" name="sponsor_city">
 
 
 
@@ -108,7 +108,7 @@
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
 
-                    <input class="form-control " type="text" placeholder="Region Or State" name="sponsor_region">
+                    <input class="form-control " id="pac-input14" type="text" placeholder="Region Or State" name="sponsor_region">
 
                 </div>
             </div>
@@ -116,7 +116,7 @@
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
 
-                    <input class="form-control " type="text" placeholder="Pin Code" name="sponsor_pincode">
+                    <input class="form-control "  type="text" placeholder="Pin Code" name="sponsor_pincode">
 
                 </div>
             </div>
@@ -124,7 +124,7 @@
             <div class="col-lg-4 col-md-4  col-12">
                 <div class="form-group">
 
-                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="sponsor_country" value="" required>
+                    <input class="form-control l-icon"  id="pac-input15" type="text" placeholder="Enter Country" name="sponsor_country" value="" required>
 
                 </div>
             </div>
@@ -200,7 +200,7 @@
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
 
-                    <input class="form-control " type="text" placeholder="Street Address1" name="guardian_street">
+                    <input class="form-control " id="pac-input16" type="text" placeholder="Street Address1" name="guardian_street">
 
                 </div>
             </div>
@@ -208,14 +208,14 @@
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
 
-                    <input class="form-control " type="text" placeholder="Street Address2" name="guardian_street2">
+                    <input class="form-control " id="pac-input17" type="text" placeholder="Street Address2" name="guardian_street2">
 
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-4  col-12">
                 <div class="form-group">
-                    <input class="form-control " type="text" placeholder="City" name="guardian_city">
+                    <input class="form-control " id="pac-input18" type="text" placeholder="City" name="guardian_city">
 
 
 
@@ -229,7 +229,7 @@
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
 
-                    <input class="form-control " type="text" placeholder="Region Or State" name="guardian_region">
+                    <input class="form-control " id="pac-input19" type="text" placeholder="Region Or State" name="guardian_region">
 
                 </div>
             </div>
@@ -245,7 +245,7 @@
             <div class="col-lg-4 col-md-4  col-12">
                 <div class="form-group">
 
-                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="guardian_country" value="" required>
+                    <input class="form-control l-icon" id="pac-input20" type="text" placeholder="Enter Country" name="guardian_country" value="" required>
 
                 </div>
             </div>
@@ -264,68 +264,8 @@
 
 </form>
 
-<div id="map" style=" height: 500px; width:100%"> </div>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-    //.......................current location......................
-
-    $(document).ready(function() {
-
-        "use strict";
-        $('#map').hide();
-
-        initMap();
-
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById("map"), {
-                center: {
-                    lat: -33.8688,
-                    lng: 151.2195,
-                },
-                zoom: 13,
-            });
-            const card = document.getElementById("pac-card");
-            console.log(card);
-            const input1 = $('#pac-input1')[0];
-            const input2 = $('#pac-input2')[0];
 
 
-            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-            const autocomplete1 = new google.maps.places.Autocomplete(input1); // Bind the map's bounds (viewport) property to the autocomplete object,
-            const autocomplete2 = new google.maps.places.Autocomplete(input2);
-
-            autocomplete1.bindTo("bounds", map); // Set the data fields to return when the user selects a place.
-            autocomplete2.bindTo("bounds", map);
-
-            autocomplete1.setFields([
-                "address_components",
-                "geometry",
-                "icon",
-                "name",
-            ]);
-            autocomplete2.setFields([
-                "address_components",
-                "geometry",
-                "icon",
-                "name",
-            ]);
-            const infowindow = new google.maps.InfoWindow();
-            const infowindowContent = document.getElementById("infowindow-content");
-            infowindow.setContent(infowindowContent);
-            const marker = new google.maps.Marker({
-                map,
-                anchorPoint: new google.maps.Point(0, -29),
-            });
-
-        }
-
-
-    });
-</script>
 
 <script>
     $(document).ready(function() {

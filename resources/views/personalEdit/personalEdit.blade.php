@@ -69,37 +69,37 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                    <label class="uk-form-label" >Present Residential Address</label>
-                                    <input name="residential_street" class="form-control " type="text" placeholder="Street Address" value="{{$personal->residential_street}}">
+                                    <input name="residential_street" id="pac-input1" class="form-control " type="text" placeholder="Street Address" value="{{$personal->residential_street}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                    <label class="uk-form-label" > </label>
-                                    <input name="residential_street2" class="form-control " type="text" placeholder="Street Address 2" value="{{$personal->residential_street2}}">
+                                    <input name="residential_street2" id="pac-input2" class="form-control " type="text" placeholder="Street Address 2" value="{{$personal->residential_street2}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                    <label class="uk-form-label" > </label>
-                                    <input name="residential_city" class="form-control " type="text" placeholder="City" value="{{$personal->residential_city}}">
+                                    <input name="residential_city" id="pac-input3" class="form-control " type="text" placeholder="City" value="{{$personal->residential_city}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                    <label class="uk-form-label" ></label>
-                                    <input name="residential_region" class="form-control " type="text" placeholder="Region or State" value="{{$personal->residential_region}}">
+                                    <input name="residential_region" id="pac-input4" class="form-control " type="text" placeholder="Region or State" value="{{$personal->residential_region}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 ">
                                 <div class="form-group">
                                    <label class="uk-form-label" > </label>
-                                    <input name="residential_pincode" class="form-control " type="text" placeholder="Pin Code " value="{{$personal->residential_pincode}}">
+                                    <input name="residential_pincode"  class="form-control " type="text" placeholder="Pin Code " value="{{$personal->residential_pincode}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                    <label class="uk-form-label" ></label>
-                                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="residential_country" value="{{$personal->residential_country}}" required>
+                                    <input class="form-control l-icon" type="text" id="pac-input5" placeholder="Enter Country" name="residential_country" value="{{$personal->residential_country}}" required>
 
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                        <label class="uk-form-label" ></label>
-                                        <input class="form-control " name="corosponding_street" type="text" placeholder="Street Address" value="{{$personal->corosponding_street}}">
+                                        <input class="form-control " id="pac-input6" name="corosponding_street" type="text" placeholder="Street Address" value="{{$personal->corosponding_street}}">
                                     </div>
                                 </div>
 
@@ -137,19 +137,19 @@
                                 <div class="col-lg-4 col-md-4 col-12 ">
                                     <div class="form-group">
                                        <label class="uk-form-label" > </label>
-                                        <input class="form-control " name="corosponding_street2" type="text" placeholder="Street Address 2" value="{{$personal->corosponding_street2}}">
+                                        <input class="form-control " id="pac-input7" name="corosponding_street2" type="text" placeholder="Street Address 2" value="{{$personal->corosponding_street2}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12 ">
                                     <div class="form-group">
                                        <label class="uk-form-label" > </label>
-                                        <input class="form-control " name="corosponding_city" type="text" placeholder="City" value="{{$personal->corosponding_city}}">
+                                        <input class="form-control " id="pac-input8"name="corosponding_city" type="text" placeholder="City" value="{{$personal->corosponding_city}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                        <label class="uk-form-label" ></label>
-                                        <input class="form-control " name="corosponding_region" type="text" placeholder="Region or State" value="{{$personal->corosponding_region}}">
+                                        <input class="form-control " id="pac-input9" name="corosponding_region" type="text" placeholder="Region or State" value="{{$personal->corosponding_region}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12 ">
@@ -161,7 +161,7 @@
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                        <label class="uk-form-label" ></label>
-                                        <input class="form-control l-icon" type="text" placeholder="Enter Country" name="corosponding_country" value="{{$personal->corosponding_country}}">
+                                        <input class="form-control l-icon" id="pac-input10" type="text" placeholder="Enter Country" name="corosponding_country" value="{{$personal->corosponding_country}}">
 
                                     </div>
                                 </div>
@@ -440,74 +440,49 @@
 
 
 
-<script>
-    $(document).ready(function() {
-        console.log("hi")
-        // $('.tab-pane').fadeOut();
-        // $("#menu").fadeIn();
-        // $("#amenu").click(function() {
-        //     $('.tab-pane').fadeOut();
-        //     $("#menu").fadeIn();
-        //     $(".nav-link").removeClass('active')
-        //     $(this).addClass('active')
-        // });
-        // $("#amenu1").click(function() {
-        //     $('.tab-pane').fadeOut();
-        //     $("#menu1").fadeIn();
-        //     $(".nav-link").removeClass('active')
-        //     $(this).addClass('active')
-        // });
-        // $("#amenu2").click(function() {
-        //     $('.tab-pane').fadeOut();
-        //     $("#menu2").fadeIn();
-        //     $(".nav-link.active").removeClass('active')
-        //     $(this).addClass('active')
-        // });
-        // $("#amenu3").click(function() {
-        //     $('.tab-pane').fadeOut();
-        //     $("#menu3").fadeIn();
-        //     $(".nav-link.active").removeClass('active')
-        //     $(this).addClass('active')
-        // });
-        if ($('[name="same_Correspondence_address"]').is(':checked')) {
-            // Do something...
-            $('#sameaddress').addClass('d-none');
-        } else {
-            $('#sameaddress').removeClass('d-none');
-        };
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>
 
-        $('[name="same_Correspondence_address"]').change(function() {
-            if ($(this).is(':checked')) {
-                // Do something...
-                $('#sameaddress').addClass('d-none');
-            } else {
-                $('#sameaddress').removeClass('d-none');
-            };
-        });
-        if ($('#fb_link').val() != '') {
-            $('#facebook').removeClass('d-none');
+
+<script>
+    //.......................current location......................
+
+    $(document).ready(function() {
+
+        "use strict";
+        $('#map').hide();
+
+        initMap();
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: -33.8688,
+                    lng: 151.2195,
+                },
+                zoom: 13,
+            });
+            const card = document.getElementById("pac-card");
+            console.log(card);
+
+            for (let i = 1; i < 11; i++) {
+                const input = $('#pac-input' + i)[0];
+                new google.maps.places.Autocomplete(input).bindTo("bounds", map);
+
+            }
+
+
+
+            const infowindow = new google.maps.InfoWindow();
+            const infowindowContent = document.getElementById("infowindow-content");
+            infowindow.setContent(infowindowContent);
+            const marker = new google.maps.Marker({
+                map,
+                anchorPoint: new google.maps.Point(0, -29),
+            });
+
         }
-        if ($('#twitter_link').val() != '') {
-            $('#twitter').removeClass('d-none');
-        }
-        if ($('#insta_link').val() != '') {
-            $('#instagram').removeClass('d-none');
-        }
-        if ($('#Linkedin_link').val() != '') {
-            $('#linkedin').removeClass('d-none');
-        }
-        $('.facebook').on("click", function() {
-            $('#facebook').removeClass('d-none');
-        });
-        $('.linkedin').on("click", function() {
-            $('#linkedin').removeClass('d-none');
-        });
-        $('.instagram').on("click", function() {
-            $('#instagram').removeClass('d-none');
-        });
-        $('.twitter').on("click", function() {
-            $('#twitter').removeClass('d-none');
-        })
+
+
     });
 </script>
 

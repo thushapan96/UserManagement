@@ -51,7 +51,7 @@
                                             <div class="form-group">
                                                 <label>{{$institutions->type}} Registrar Office area*
                                                 </label>
-                                                <input class="form-control " type="text" name="registrar_office_area" value="{{$institutions->registrar_office_area}}">
+                                                <input class="form-control " id="pac-input5" type="text" name="registrar_office_area" value="{{$institutions->registrar_office_area}}">
                                             </div>
                                         </div>
 
@@ -62,7 +62,7 @@
                                             <div class="form-group">
                                                 <label>Street *
                                                 </label>
-                                                <input class="form-control " type="text" name="streat" value="{{$institutions->streat}}">
+                                                <input class="form-control " id="pac-input1" type="text" name="streat" value="{{$institutions->streat}}">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
@@ -70,7 +70,7 @@
                                                 <label>City *
 
                                                 </label>
-                                                <input class="form-control " type="text" name="city" value="{{$institutions->city}}">
+                                                <input class="form-control " id="pac-input2" type="text" name="city" value="{{$institutions->city}}">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
@@ -78,7 +78,7 @@
                                                 <label>Province/Region *
 
                                                 </label>
-                                                <input class="form-control " type="text" name="region" value="{{$institutions->region}}">
+                                                <input class="form-control " id="pac-input3" type="text" name="region" value="{{$institutions->region}}">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
@@ -86,7 +86,7 @@
                                                 <label>Country *
 
                                                 </label>
-                                                <input class="form-control " type="text" name="country" value="{{$institutions->country}}">
+                                                <input class="form-control " id="pac-input4" type="text" name="country" value="{{$institutions->country}}">
                                             </div>
                                         </div>
 
@@ -946,6 +946,7 @@
 
     </div>
 </section>
+<div id="map" style=" height: 500px; width:100%"> </div>
 
 <script>
     $(document).ready(function() {
@@ -1157,6 +1158,49 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>
 
+
+<script>
+    //.......................current location......................
+
+    $(document).ready(function() {
+
+        "use strict";
+        $('#map').hide();
+
+        initMap();
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: -33.8688,
+                    lng: 151.2195,
+                },
+                zoom: 13,
+            });
+            const card = document.getElementById("pac-card");
+            console.log(card);
+
+            for (let i = 1; i < 6; i++) {
+                const input = $('#pac-input' + i)[0];
+                new google.maps.places.Autocomplete(input).bindTo("bounds", map);
+
+            }
+
+
+
+            const infowindow = new google.maps.InfoWindow();
+            const infowindowContent = document.getElementById("infowindow-content");
+            infowindow.setContent(infowindowContent);
+            const marker = new google.maps.Marker({
+                map,
+                anchorPoint: new google.maps.Point(0, -29),
+            });
+
+        }
+
+
+    });
+</script>
 
 
 

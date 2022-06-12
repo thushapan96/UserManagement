@@ -97,7 +97,6 @@
 </form>
 <!-- ......................script for google map view.................... -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
     //.......................current location......................

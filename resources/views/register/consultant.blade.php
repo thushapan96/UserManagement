@@ -98,7 +98,7 @@
                                         <div class="form-group">
                                             <label>Registered Office - Location *
                                             </label>
-                                            <input class="form-control " type="text" placeholder="Area" name="registrar_office_area" value="{{old('registrar_office_area')}}">
+                                            <input class="form-control " type="text" id="pac-input5" placeholder="Area" name="registrar_office_area" value="{{old('registrar_office_area')}}">
                                         </div>
                                     </div>
 
@@ -141,7 +141,7 @@
                                             <label>Country *
 
                                             </label>
-                                            <input class="form-control " type="text" name="country" value="{{old('country')}}">
+                                            <input class="form-control " id="pac-input1" type="text" name="country" value="{{old('country')}}">
                                         </div>
                                     </div>
 
@@ -150,7 +150,7 @@
                                             <label>Province/Region *
 
                                             </label>
-                                            <input class="form-control " type="text" name="region" value="{{old('region')}}">
+                                            <input class="form-control " id="pac-input2" type="text" name="region" value="{{old('region')}}">
                                         </div>
                                     </div>
 
@@ -159,7 +159,7 @@
                                             <label>City *
 
                                             </label>
-                                            <input class="form-control " type="text" name="city" value="{{old('city')}}">
+                                            <input class="form-control " id="pac-input3" type="text" name="city" value="{{old('city')}}">
                                         </div>
                                     </div>
 
@@ -167,7 +167,7 @@
                                         <div class="form-group">
                                             <label>Street *
                                             </label>
-                                            <input class="form-control " type="text" name="streat" value="{{old('streat')}}">
+                                            <input class="form-control " id="pac-input4" type="text" name="streat" value="{{old('streat')}}">
                                         </div>
                                     </div>
 
@@ -411,7 +411,7 @@
                                             </label>
 
                                             <input class="form-control " type="text" placeholder="enter the total count" name="student_visa_enrolment" value="{{old('student_visa_enrolment')}}">
-                                            
+
                                         </div>
                                     </div>
 
@@ -633,7 +633,7 @@
                                         </div>
                                     </div>
                                 </div>
-                               
+
 
                                 <div class="float-right">
                                     <button type="button" class="client-btn bmenu uk-button uk-button-primary">Next </button>
@@ -842,7 +842,7 @@
                                                 </label>
                                                 <div class="row">
                                                     <a class="facebook" href="##">
-                                                        <div class="icon col-lg-1 col-md-1 col-1 fa-2xl"> 
+                                                        <div class="icon col-lg-1 col-md-1 col-1 fa-2xl">
                                                             <i class="fab fa-facebook-f"></i>
 
                                                         </div>
@@ -855,7 +855,7 @@
                                                     </a>
                                                     <a class="twitter" href="##">
                                                         <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
-                                                        <i class="fab fa-twitter"></i>
+                                                            <i class="fab fa-twitter"></i>
                                                         </div>
                                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
                                                             <div class="form-group">
@@ -866,7 +866,7 @@
                                                     </a>
                                                     <a class="instagram" href="##">
                                                         <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
-                                                        <i class="fab fa-instagram"></i>
+                                                            <i class="fab fa-instagram"></i>
                                                         </div>
                                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
                                                             <div class="form-group">
@@ -877,7 +877,7 @@
                                                     </a>
                                                     <a class="linkedin" href="##">
                                                         <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
-                                                        <i class="fab fa-linkedin-in"></i>
+                                                            <i class="fab fa-linkedin-in"></i>
                                                         </div>
                                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
                                                             <div class="form-group">
@@ -886,7 +886,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                  
+
                                                 </div>
                                             </div>
                                         </div>
@@ -955,10 +955,10 @@
 
             </u1>
         </div>
-        <div id="map" style=" height: 500px; width:100%"> </div>
 
     </form>
 </section>
+<div id="map" style=" height: 500px; width:100%"> </div>
 
 <script>
     $(document).ready(function() {
@@ -1233,7 +1233,6 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
     //.......................current location......................
@@ -1255,29 +1254,15 @@
             });
             const card = document.getElementById("pac-card");
             console.log(card);
-            const input1 = $('#pac-input1')[0];
-            const input2 = $('#pac-input2')[0];
+
+            for (let i = 1; i < 6; i++) {
+                const input = $('#pac-input' + i)[0];
+                new google.maps.places.Autocomplete(input).bindTo("bounds", map);
+
+            }
 
 
-            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-            const autocomplete1 = new google.maps.places.Autocomplete(input1); // Bind the map's bounds (viewport) property to the autocomplete object,
-            const autocomplete2 = new google.maps.places.Autocomplete(input2);
 
-            autocomplete1.bindTo("bounds", map); // Set the data fields to return when the user selects a place.
-            autocomplete2.bindTo("bounds", map);
-
-            autocomplete1.setFields([
-                "address_components",
-                "geometry",
-                "icon",
-                "name",
-            ]);
-            autocomplete2.setFields([
-                "address_components",
-                "geometry",
-                "icon",
-                "name",
-            ]);
             const infowindow = new google.maps.InfoWindow();
             const infowindowContent = document.getElementById("infowindow-content");
             infowindow.setContent(infowindowContent);
@@ -1291,6 +1276,7 @@
 
     });
 </script>
+
 <!-- ...................end...script for google map view.................... -->
 
 

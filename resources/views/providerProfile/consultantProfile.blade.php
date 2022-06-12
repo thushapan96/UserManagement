@@ -314,230 +314,302 @@
                                     </div>
                                 </fieldset><br>
                                 <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
-                                    <h6 style="text-decoration:underline;">Success Rate</h6>
                                     <p style="text-decoration:underline;">Specialization</p>
+                                    <hr>
+                                    <p style="">Express Entry Cases</p>
                                     <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Express Entry - Enrolled</strong>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->express_entry_enrolment}}
-                                            </p>
 
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label><br>
+                                                <small>{{$consultants->express_entry_enrolment}}</small>
+                                            </div>
                                         </div>
+
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label><br>
+                                                <small>{{$consultants->express_entry_success}}</small>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label><br>
+                                                <small>{{$consultants->express_entry_reject}}</small>
+
+                                            </div>
+                                        </div>
+                                        @if($consultants->express_entry_reject_reason)
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label><br>
+                                                <small>{{$consultants->express_entry_reject_reason}}</small>
+
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
+                                    <hr>
+                                    <p style="">PNP Cases</p>
                                     <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Express Entry - Success</strong>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label><br>
+                                                <small>{{$consultants->pnp_enrolment}}</small>
+                                            </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->express_entry_success}}
-                                            </p>
 
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label><br>
+                                                <small>{{$consultants->pnp_success}}</small>
+                                            </div>
                                         </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label><br>
+                                                <small>{{$consultants->pnp_reject}}</small>
+                                            </div>
+                                        </div>
+                                        @if($consultants->pnp_reject_reason)
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label><br>
+                                                <small>{{$consultants->pnp_reject_reason}}</small>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
+                                    <hr>
+                                    <p style="">LMIA Cases</p>
                                     <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Express Entry - Rejected</strong>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label><br>
+                                                <small>{{$consultants->lmia_enrolment}}</small>
+                                            </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->express_entry_reject}}
-                                            </p>
 
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label><br>
+                                                <small>{{$consultants->lmia_success}}</small>
+                                            </div>
                                         </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label><br>
+                                                <small>{{$consultants->lmia_reject}}</small>
+                                            </div>
+                                        </div>
+                                        @if($consultants->lmia_reject_reason)
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label><br>
+                                                <small>{{$consultants->lmia_reject_reason}}</small>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
+                                    <hr>
+                                    <p style="">Other Cases</p>
+
                                     <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Express Entry Rejected Reason</strong>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label><br>
+                                                <small>{{$consultants->other_enrolment}}</small>
+                                            </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->express_entry_reject_reason}}
-                                            </p>
 
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label><br>
+                                                <small>{{$consultants->other_success}}</small>
+                                            </div>
                                         </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label><br>
+                                                <small>{{$consultants->other_reject}}</small>
+                                            </div>
+                                        </div>
+                                        @if($consultants->other_reject_reason)
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label><br>
+                                                <small>{{$consultants->other_reject_reason}}</small>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
+                                </fieldset>
+                                <br>
+                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
 
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">PNP Enrolled</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->pnp_enrolment}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">PNP Success</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->pnp_success}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">PNP Rejected</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->pnp_reject}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">PNP Rejected Reason</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->pnp_reject_reason}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">LMIA Enrolled</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->lmia_enrolment}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">LMIA Success</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->lmia_success}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">LMIA Rejected</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->lmia_reject}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">LMIA Reject Reason</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->lmia_reject_reason}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Others Success</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->other_success}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Others Enrolled</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->other_enrolment}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Others Success</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->other_success}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Others Rejected</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->other_reject}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Others Success</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->other_reject_reason}}
-                                            </p>
-                                        </div>
-                                    </div>
                                     <p style="text-decoration:underline;">Service Offered</p>
+                                    <hr>
+                                    <p>Student Visa </p>
+
                                     <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Student Visa Success</strong>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label><br>
+                                                <small>{{$consultants->student_visa_enrolment}}</small>
+                                            </div>
                                         </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps"> {{$consultants->student_visa_success}}
-                                            </p>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label><br>
+                                                <small>{{$consultants->student_visa_success}}</small>
+                                            </div>
                                         </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label><br>
+                                                <small>{{$consultants->student_visa_reject}}</small>
+                                            </div>
+                                        </div>
+                                        @if($consultants->student_visa_reject_reason)
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label><br>
+                                                <small>{{$consultants->student_visa_reject_reason}}</small>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
+                                    <hr>
+                                    <p >Tourist Visa </p>
+
                                     <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Tourist Visa Success</strong>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label><br>
+                                                <small>{{$consultants->tourist_visa_enrolment}}</small>
+                                            </div>
                                         </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->tourist_visa_success}}
-                                            </p>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label><br>
+                                                <small>{{$consultants->tourist_visa_success}}</small>
+                                            </div>
                                         </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label><br>
+                                                <small>{{$consultants->tourist_visa_reject}}</small>
+                                            </div>
+                                        </div>
+                                        @if($consultants->tourist_visa_reject_reason)
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label><br>
+                                                <small>{{$consultants->tourist_visa_reject_reason}}</small>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
+                                    <hr>
+                                    <p >Family Visa</p>
+
                                     <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Family Visa Success</strong>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label><br>
+                                                <small>{{$consultants->family_visa_enrolment}}</small>
+                                            </div>
                                         </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->family_visa_success}}
-                                            </p>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label><br>
+                                                <small>{{$consultants->family_visa_success}}</small>
+                                            </div>
                                         </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label><br>
+                                                <small>{{$consultants->family_visa_reject}}</small>
+                                            </div>
+                                        </div>
+                                        @if($consultants->family_visa_reject_reason)
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label><br>
+                                                <small>{{$consultants->family_visa_reject_reason}}</small>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
+                                    <hr>
+                                    <p >Other Visa</p>
+
                                     <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Other Visa Success</strong>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Enrolment
+                                                </label><br>
+                                                <small>{{$consultants->other_visa_enrolment}}</small>
+                                            </div>
                                         </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->other_visa_success}}
-                                            </p>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Success
+                                                </label><br>
+                                                <small>{{$consultants->other_visa_success}}</small>
+                                            </div>
                                         </div>
+                                        <div class="col-lg-2 col-md-2 col-12">
+                                            <div class="form-group">
+                                                <label>Rejected
+                                                </label><br>
+                                                <small>{{$consultants->other_visa_reject}}</small>
+                                            </div>
+                                        </div>
+                                        @if($consultants->other_visa_reject_reason)
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label>Reason for rejection
+                                                </label><br>
+                                                <small>{{$consultants->other_visa_reject_reason}}</small>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Communication Success</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->communication_mode_success}}
-                                            </p>
-                                        </div>
-                                    </div>
                                 </fieldset>
                             </fieldset>
                         </div>

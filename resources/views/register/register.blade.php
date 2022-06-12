@@ -82,25 +82,25 @@
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label>Present Residential Address</label>
-                                                <input name="residential_street" class="form-control " type="text" placeholder="Street Address">
+                                                <input name="residential_street" class="form-control " id="pac-input1" type="text" placeholder="Street Address">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-12 mt-2">
                                             <div class="form-group">
                                                 <label> </label>
-                                                <input name="residential_street2" class="form-control " type="text" placeholder="Street Address 2">
+                                                <input name="residential_street2" id="pac-input2" class="form-control " type="text" placeholder="Street Address 2">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-12 mt-2">
                                             <div class="form-group">
                                                 <label> </label>
-                                                <input name="residential_city" class="form-control " type="text" placeholder="City">
+                                                <input name="residential_city" id="pac-input3" class="form-control " type="text" placeholder="City">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label></label>
-                                                <input name="residential_region" class="form-control " type="text" placeholder="Region or State">
+                                                <input name="residential_region" id="pac-input4" class="form-control " type="text" placeholder="Region or State">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-12 ">
@@ -112,7 +112,7 @@
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label></label>
-                                                <input class="form-control l-icon" type="text" placeholder="Enter Country" name="residential_country" value="" required>
+                                                <input class="form-control l-icon" id="pac-input5" type="text" placeholder="Enter Country" name="residential_country" value="" required>
 
                                             </div>
                                         </div>
@@ -142,7 +142,7 @@
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label></label>
-                                                    <input class="form-control " name="corosponding_street" type="text" placeholder="Street Address">
+                                                    <input class="form-control " id="pac-input6" name="corosponding_street" type="text" placeholder="Street Address">
                                                 </div>
                                             </div>
 
@@ -150,19 +150,19 @@
                                             <div class="col-lg-4 col-md-4 col-12 ">
                                                 <div class="form-group">
                                                     <label> </label>
-                                                    <input class="form-control " name="corosponding_street2" type="text" placeholder="Street Address 2">
+                                                    <input class="form-control " id="pac-input7" name="corosponding_street2" type="text" placeholder="Street Address 2">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-12 ">
                                                 <div class="form-group">
                                                     <label> </label>
-                                                    <input class="form-control " name="corosponding_city" type="text" placeholder="City">
+                                                    <input class="form-control " id="pac-input8" name="corosponding_city" type="text" placeholder="City">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label></label>
-                                                    <input class="form-control " name="corosponding_region" type="text" placeholder="Region or State">
+                                                    <input class="form-control " id="pac-input9" name="corosponding_region" type="text" placeholder="Region or State">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-12 ">
@@ -174,7 +174,7 @@
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="form-group">
                                                     <label></label>
-                                                    <input class="form-control l-icon" type="text" placeholder="Enter Country" name="corosponding_country" value="">
+                                                    <input class="form-control l-icon" id="pac-input10" type="text" placeholder="Enter Country" name="corosponding_country" value="">
 
                                                 </div>
                                             </div>
@@ -382,7 +382,7 @@
                                                 <div class="row">
                                                     <a class="facebook" href="##">
                                                         <div class="icon col-lg-1 col-md-1 col-1 fa-2xl">
-                                                        <i class="fab fa-facebook-f"></i>
+                                                            <i class="fab fa-facebook-f"></i>
                                                         </div>
                                                         <div id="facebook" class="col-lg-11 col-md-11 col-11 d-none ">
                                                             <div class="form-group">
@@ -393,7 +393,7 @@
                                                     </a>
                                                     <a class="twitter" href="##">
                                                         <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
-                                                        <i class="fab fa-twitter"></i>
+                                                            <i class="fab fa-twitter"></i>
                                                         </div>
                                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="twitter">
                                                             <div class="form-group">
@@ -404,7 +404,7 @@
                                                     </a>
                                                     <a class="instagram" href="##">
                                                         <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
-                                                        <i class="fab fa-instagram"></i>
+                                                            <i class="fab fa-instagram"></i>
                                                         </div>
                                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="instagram">
                                                             <div class="form-group">
@@ -415,7 +415,7 @@
                                                     </a>
                                                     <a class="linkedin" href="##">
                                                         <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
-                                                        <i class="fab fa-linkedin-in"></i>
+                                                            <i class="fab fa-linkedin-in"></i>
                                                         </div>
                                                         <div class="col-lg-11 col-md-11 col-11 d-none " id="linkedin">
                                                             <div class="form-group">
@@ -489,81 +489,65 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- <script>
-        //.......................current location......................
+<script>
+    //.......................current location......................
 
-        $(document).ready(function() {
+    $(document).ready(function() {
 
-            "use strict";
-            $('#map').hide();
+        "use strict";
+        $('#map').hide();
 
-            initMap();
+        initMap();
 
-            function initMap() {
-                const map = new google.maps.Map(document.getElementById("map"), {
-                    center: {
-                        lat: -33.8688,
-                        lng: 151.2195,
-                    },
-                    zoom: 13,
-                });
-                const card = document.getElementById("pac-card");
-                console.log(card);
-                const input1 = $('#pac-input1')[0];
-                const input2 = $('#pac-input2')[0];
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: -33.8688,
+                    lng: 151.2195,
+                },
+                zoom: 13,
+            });
+            const card = document.getElementById("pac-card");
+            console.log(card);
 
-
-                map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-                const autocomplete1 = new google.maps.places.Autocomplete(
-                    input1); // Bind the map's bounds (viewport) property to the autocomplete object,
-                const autocomplete2 = new google.maps.places.Autocomplete(input2);
-
-                autocomplete1.bindTo("bounds", map); // Set the data fields to return when the user selects a place.
-                autocomplete2.bindTo("bounds", map);
-
-                autocomplete1.setFields([
-                    "address_components",
-                    "geometry",
-                    "icon",
-                    "name",
-                ]);
-                autocomplete2.setFields([
-                    "address_components",
-                    "geometry",
-                    "icon",
-                    "name",
-                ]);
-                const infowindow = new google.maps.InfoWindow();
-                const infowindowContent = document.getElementById("infowindow-content");
-                infowindow.setContent(infowindowContent);
-                const marker = new google.maps.Marker({
-                    map,
-                    anchorPoint: new google.maps.Point(0, -29),
-                });
+            for (let i = 1; i < 21; i++) {
+                const input = $('#pac-input' + i)[0];
+                new google.maps.places.Autocomplete(input).bindTo("bounds", map);
 
             }
+           
 
 
-        });
-    </script> -->
+            const infowindow = new google.maps.InfoWindow();
+            const infowindowContent = document.getElementById("infowindow-content");
+            infowindow.setContent(infowindowContent);
+            const marker = new google.maps.Marker({
+                map,
+                anchorPoint: new google.maps.Point(0, -29),
+            });
+
+        }
+
+
+    });
+</script>
 
 <script>
     $(document).ready(function() {
         console.log("hi")
-        
+
         $("#amenu").click(function() {
-           
+
         });
         $("#amenu1").click(function() {
-            
+
         });
         $("#amenu2").click(function() {
-            
+
         });
         $("#amenu3").click(function() {
-            
+
         });
         $('[name="same_Correspondence_address"]').change(function() {
             if ($(this).is(':checked')) {
@@ -587,7 +571,7 @@
         })
     });
 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <script>
     $(document).ready(function() {
 
