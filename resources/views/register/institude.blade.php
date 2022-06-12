@@ -975,30 +975,34 @@
             var admission_email = $('#admission_email').val();
             var dean_email = $('#dean_email').val();
 
-            if (!validateEmail(email)) {
-                $(".mail").each(function() {
-                    $(this).html('')
-                });
-                $('#append_email').html('please enter valid email')
-                $('#email').focus()
-            } else if (!validateEmail(admission_email)) {
-                $(".mail").each(function() {
-                    $(this).html('')
-                });
-                $('#append_admission_email').html('please enter valid email')
-                $('#admission_email').focus()
-            } else if (!validateEmail(dean_email)) {
-                $(".mail").each(function() {
-                    $(this).html('')
-                });
-                $('#append_dean_email').html('please enter valid email')
-                $('#dean_email').focus()
-            } else {
-                $(".mail").each(function() {
-                    $(this).html('')
-                });
+            // if (!validateEmail(email)) {
+            //     $(".mail").each(function() {
+            //         $(this).html('')
+            //     });
+            //     $('#append_email').html('please enter valid email')
+            //     $('#email').focus()
+            // } else if (!validateEmail(admission_email)) {
+            //     $(".mail").each(function() {
+            //         $(this).html('')
+            //     });
+            //     $('#append_admission_email').html('please enter valid email')
+            //     $('#admission_email').focus()
+            // } else if (!validateEmail(dean_email)) {
+            //     $(".mail").each(function() {
+            //         $(this).html('')
+            //     });
+            //     $('#append_dean_email').html('please enter valid email')
+            //     $('#dean_email').focus()
+            // } else {
+                
 
-                $(".progress-bar").css("width", "30%");
+                
+            // }
+
+            $(".mail").each(function() {
+                    $(this).html('')
+                });
+            $(".progress-bar").css("width", "30%");
                 $(".progress-bar").html("30%");
                 $('.nav-linkk').removeClass('uk-active');
                 $('#amenu1').addClass('uk-active');
@@ -1008,8 +1012,6 @@
                     top: 0,
                     behavior: 'smooth'
                 });
-            }
-
         });
         $(".bmenu1").click(function() {
             $(".progress-bar").css("width", "40%");

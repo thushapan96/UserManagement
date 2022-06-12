@@ -93,7 +93,7 @@
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <label>Street *
-                                                </label>  
+                                                </label>
 
                                                 <input class="form-control " id="pac-input1" type="text" name="streat" value="{{$consultants->streat}}">
                                             </div>
@@ -648,7 +648,7 @@
                                             <div class="form-group">
 
                                                 <label>Your Team Information</label>
-                                                <textarea style="width:100%;" rows="4" placeholder="Provide Team info along with their Specialization" name="team_info">{{$consultants->team_info}}</textarea>
+                                                <textarea style="width:100%;"  placeholder="Provide Team info along with their Specialization" name="team_info">{{$consultants->team_info}}</textarea>
                                             </div>
                                             <hr>
                                             <div class="form-group">
@@ -762,7 +762,7 @@
                                             <div class="form-group">
                                                 <label>Terms if Any
                                                 </label>
-                                                <textarea class="form-control" style="width:100%;" rows="6" name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}">{{$consultants->privacy_policy_detail}}</textarea>
+                                                <textarea class="form-control" style="width:100%;"  name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}">{{$consultants->privacy_policy_detail}}</textarea>
                                             </div>
                                         </div>
 
@@ -774,7 +774,7 @@
                                                 <label>About History
                                                 </label>
                                                 <br>
-                                                <textarea class="form-control" style="width:100%;" rows="9" name="history" value="{{$consultants->history}}">{{$consultants->history}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="history" value="{{$consultants->history}}">{{$consultants->history}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -786,7 +786,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{$consultants->brief_introduction}}">{{$consultants->brief_introduction}}</textarea>
+                                                <textarea style="width:100%;"  name="brief_introduction" value="{{$consultants->brief_introduction}}">{{$consultants->brief_introduction}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -848,7 +848,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;" rows="9" name="achievement" value="{{$consultants->achievement}}">{{$consultants->achievement}}</textarea>
+                                                <textarea style="width:100%;"  name="achievement" value="{{$consultants->achievement}}">{{$consultants->achievement}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -909,7 +909,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;" rows="9" name="event_new_weblink" value="{{$consultants->event_new_weblink}}">{{$consultants->event_new_weblink}}</textarea>
+                                                <textarea style="width:100%;"  name="event_new_weblink" value="{{$consultants->event_new_weblink}}">{{$consultants->event_new_weblink}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -1056,6 +1056,9 @@
 <script>
     $(document).ready(function() {
 
+        $("textarea").each(function(textarea) {
+            $(this).height($(this)[0].scrollHeight+10);
+        });
         $(".amenu").click(function() {
 
         });
