@@ -284,7 +284,7 @@
                                             <div class="form-group">
                                                 <label>Ranking Criteria & Ranking Bodies
                                                 </label>
-                                                <textarea class="form-control" style="width:100%;" rows="5" name="ranking_criteria" value="{{$institutions->ranking_criteria}}">{{$institutions->ranking_criteria}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="ranking_criteria" value="{{$institutions->ranking_criteria}}">{{$institutions->ranking_criteria}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -311,8 +311,12 @@
                                             <div class="form-group">
                                                 <label>Response Time
                                                 </label>
-                                                <input class="form-control " type="text" placeholder="24 or 48 or 72 Hours" name="response_time" value="{{$institutions->response_time}}">
-                                                <small>Number of Cases Enrolled till Date</small>
+                                                <select class="form-control" name="response_time">
+                                                    <option value="24 Hours" {{$institutions->response_time == "24 Hours" ? "selected":""}}>24 Hours</option>
+                                                    <option value="48 Hours" {{ $institutions->response_time == "48 Hours" ? "selected":""}}>48 Hours</option>
+                                                    <option value="72 Hours" {{ $institutions->response_time == "72 Hours" ? "selected":""}}>72 Hours</option>
+                                                </select>
+
                                             </div>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-12">
@@ -626,17 +630,17 @@
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box">
 
-                                        <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
                                                 <label>Do you have any Privacy Policies?
                                                 </label>
-                                                <div class="col-lg-2 col-md-2 col-2 ">
+                                                <div class="col-lg-2 col-md-2 col-12 ">
                                                     <div class="custom-control custom-radio ">
                                                         <input type="radio" class="custom-control-input " id="Policies" name="is_Policies" value="yes" {{ $institutions->is_Policies == "yes"  ? ' checked' : '' }}>
                                                         <label class="custom-control-label mt-1" for="Policies">Yes</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-3 col-md-2 col-3 ">
+                                                <div class="col-lg-8 col-md-8 col-12">
                                                     <div class="custom-control custom-radio ">
                                                         <input type="radio" class="custom-control-input " id="Policiesno" name="is_Policies" value="no" {{ $institutions->is_Policies == "no"  ? ' checked' : '' }}>
                                                         <label class="custom-control-label mt-1" for="Policiesno">No</label>
@@ -644,25 +648,25 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-8 col-md-8 col-12">
                                             <div class="form-group">
                                                 <label>If Yes, Enclose the Document
                                                 </label>
-                                                <br>
-                                                <br>
+                                               
                                                 <a href="{{url('files/'.$institutions->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">{{$institutions->privacy_policy_document}}</a>
                                                 <input class="form-control " type="file" name="privacy_policy_document" value="{{old('privacy_policy_document')}}">
 
                                             </div>
                                         </div>
-                                        <div class="col-lg-7 col-md-7 col-12">
+                                        @if($institutions->privacy_policy_detail)
+                                        <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
                                                 <label>Terms if Any
                                                 </label>
-                                                <textarea class="form-control" style="width:100%;" rows="6" name="privacy_policy_detail" value="{{$institutions->privacy_policy_detail}}">{{$institutions->privacy_policy_detail}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="privacy_policy_detail" value="{{$institutions->privacy_policy_detail}}">{{$institutions->privacy_policy_detail}}</textarea>
                                             </div>
                                         </div>
-
+                                        @endif
                                     </div>
                                     <hr>
                                     <div class="row custom-box">
@@ -671,7 +675,7 @@
                                                 <label>About History
                                                 </label>
                                                 <br>
-                                                <textarea class="form-control" style="width:100%;" rows="9" name="history" value="{{$institutions->history}}">{{$institutions->history}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="history" value="{{$institutions->history}}">{{$institutions->history}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -683,7 +687,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{$institutions->brief_introduction}}">{{$institutions->brief_introduction}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="brief_introduction" value="{{$institutions->brief_introduction}}">{{$institutions->brief_introduction}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -746,7 +750,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;" rows="9" name="achievement" value="{{$institutions->achievement}}">{{$institutions->achievement}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="achievement" value="{{$institutions->achievement}}">{{$institutions->achievement}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -806,7 +810,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;" rows="9" name="event_new_weblink" value="{{$institutions->event_new_weblink}}">{{$institutions->event_new_weblink}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="event_new_weblink" value="{{$institutions->event_new_weblink}}">{{$institutions->event_new_weblink}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -883,7 +887,7 @@
                             </div>
                         </div>
                     </li>
-
+                    <!-- 
                     <li id='menu5' class='tab-pane'>
                         <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
                             <div class="uk-card-body sc-padding-medium">
@@ -927,7 +931,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;" rows="9" name="Comment" value="{{$institutions->Comment}}">{{$institutions->Comment}}</textarea>
+                                                <textarea style="width:100%;"  name="Comment" value="{{$institutions->Comment}}">{{$institutions->Comment}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -937,7 +941,7 @@
                                 </fieldset>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
 
 
                 </u1>
@@ -950,7 +954,9 @@
 
 <script>
     $(document).ready(function() {
-
+        $("textarea").each(function(textarea) {
+            $(this).height($(this)[0].scrollHeight + 10);
+        });
         $(".amenu").click(function() {
 
         });

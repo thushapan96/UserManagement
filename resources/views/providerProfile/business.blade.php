@@ -72,8 +72,8 @@
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} Company</h3>
             <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                 <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
-                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">Team list</a></li>
-                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">About Company </a></li>
+                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">About Company </a></li>
+                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">Team </a></li>
                 <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1rem;"> Award & Certification</a></li>
                 <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1rem;">News and Events</a></li>
                 <!-- <li class="" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1rem;">Canada Inspire</a></li>
@@ -315,20 +315,97 @@
                                     </div>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
-                                            <strong class="ps">Initial chargeable type</strong>
+                                            <strong class="ps">Initial Chargeable Type</strong>
                                         </div>
 
                                         <div class="col-md-7">
-                                            <p class="ps">{{$consultants->initial_chargeable_type}}
-                                            </p>
+
+                                            <div class="row">
+                                                &nbsp;<div class="free ">free</div>
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div class="paid ">paid</div>
+
+                                            </div>
                                         </div>
                                     </div>
+                                    <br>
                                 </fieldset>
                             </fieldset>
                         </div>
                     </div>
                 </li>
                 <li id='menu1' class='tab-pane '>
+                    <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
+                        <div class="uk-card-body sc-padding-medium">
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                @if($consultants->privacy_policy_document)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label>Privacy document of {{$consultants->type}}
+                                            </label>
+                                            <br>
+
+                                            <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$consultants->privacy_policy_document}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($consultants->privacy_policy_detail)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
+
+                                            <textarea name="privacy_policy_detail"  value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($consultants->history)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label>{{$consultants->type}} History
+                                            </label>
+                                            <br>
+
+                                            <textarea class="outset" name="history"  value="{{$consultants->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($consultants->brief_introduction)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label> Brief Introduction of {{$consultants->type}}
+                                            </label>
+                                            <br>
+
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($consultants->mutiImg_about_company)
+                                @foreach($consultants->mutiImg_about_company as $row )
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="col-lg-8 col-md-8 " style="margin-left:auto;margin-right:auto;">
+                                            <img class=" mt-2 img " src="{{url('files/'.$row)}}" style="width:100%;height:300px">
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                                @endif
+                            </fieldset>
+                        </div>
+                    </div>
+                </li>
+                <li id='menu2' class='tab-pane '>
                     <div class=' col-md-11 ' style="margin-left:auto !important;margin-right:auto">
                         <div class="">
                             <div class="form-group col-md-10">
@@ -379,7 +456,7 @@
                                                         <li class="sc-list-group">
                                                             <strong class="sc-list-addon" style="width:130px">no of success cases</strong>
                                                             <div class="sc-list-body">
-                                                                <p class="uk-margin-remove uk-text-wrap"> {{$row->team_number_success_cases}}</p>
+                                                                <p class="uk-margin-remove uk-text-wrap"> {{$row->no_success}}</p>
                                                             </div>
                                                         </li>
                                                     </ul>
@@ -397,77 +474,7 @@
                     </div>
 
                 </li>
-                <li id='menu2' class='tab-pane '>
-                    <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
-                        <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                @if($consultants->privacy_policy_document)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Privacy document of {{$consultants->type}}
-                                            </label>
-                                            <br>
 
-                                            <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$consultants->privacy_policy_document}}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @if($consultants->privacy_policy_detail)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
-
-                                            <textarea name="privacy_policy_detail" rows="10" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @if($consultants->history)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>{{$consultants->type}} History
-                                            </label>
-                                            <br>
-
-                                            <textarea class="outset" name="history" rows="12" value="{{$consultants->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @if($consultants->brief_introduction)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label> Brief Introduction of {{$consultants->type}}
-                                            </label>
-                                            <br>
-
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="12" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @if($consultants->mutiImg_about_company)
-                                @foreach($consultants->mutiImg_about_company as $row )
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="col-lg-8 col-md-8 " style="margin-left:auto;margin-right:auto;">
-                                            <img class=" mt-2 img "  src="{{url('files/'.$row)}}" style="width:100%;height:300px">
-                                        </div>
-                                    </div>
-                                </div>
-                                @endforeach
-                                @endif
-                            </fieldset>
-                        </div>
-                    </div>
-                </li>
                 <li id='menu3' class='tab-pane '>
                     <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
@@ -493,7 +500,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="12" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -503,7 +510,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="col-lg-8 col-md-8 " style="margin-left:auto;margin-right:auto;">
-                                            <img class=" mt-2 img "  src="{{url('files/'.$row)}}" style="width:100%;height:300px">
+                                            <img class=" mt-2 img " src="{{url('files/'.$row)}}" style="width:100%;height:300px">
                                         </div>
                                     </div>
                                 </div>
@@ -536,7 +543,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="9" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -664,6 +671,17 @@
 
 <script>
     $(document).ready(function() {
+        $("textarea").each(function(textarea) {
+            $(this).height($(this)[0].scrollHeight + 10);
+        });
+        var chargeable = "{{$consultants->initial_chargeable_type}}"
+        if (chargeable == 'free') {
+            $('.free').css('text-decoration', 'underline')
+            $('.free').css('text-decoration-color', 'green')
+        } else {
+            $('.paid').css('text-decoration', 'underline')
+            $('.paid').css('text-decoration-color', 'green')
+        }
 
         $(".bmenu").click(function() {
             $('.tab-pane').fadeOut();

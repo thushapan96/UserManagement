@@ -95,7 +95,7 @@
                                         <div class="form-group">
                                             <label>Work Profile
                                             </label>
-                                            <textarea style="width:100%;" rows="5" name="work_profile_letter[]" value="{{$row->work_profile_letter}}">{{$row->work_profile_letter}}</textarea>
+                                            <textarea style="width:100%;"  name="work_profile_letter[]" value="{{$row->work_profile_letter}}">{{$row->work_profile_letter}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -137,6 +137,9 @@
     //.......................current location......................
 
     $(document).ready(function() {
+        $("textarea").each(function(textarea) {
+            $(this).height($(this)[0].scrollHeight+10);
+        });
         var count = 1;
         $("#addRow").click(function() {
             count = count + 1;

@@ -538,7 +538,7 @@
 
                                     <div class="row custom-box">
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label>Year of Establishment
                                                 </label>
@@ -546,7 +546,7 @@
                                                 <small>Year of Registration</small>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label>Offering Services Since
                                                 </label>
@@ -554,7 +554,7 @@
                                                 <small>Number of Years</small>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label>Total Cases Taken
                                                 </label>
@@ -562,15 +562,7 @@
                                                 <small>Number of Cases Enrolled till Date</small>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Mode of Communication
-                                                </label>
 
-                                                <input class="form-control " type="text" name="communication_mode_success" value="{{$consultants->communication_mode_success}}">
-                                                <small>Successful Cases in %</small>
-                                            </div>
-                                        </div>
 
                                     </div>
                                     <hr>
@@ -621,8 +613,13 @@
                                             <div class="form-group">
                                                 <label>Response Time
                                                 </label>
-                                                <input type="text" class="form-control" name="response_time" value="{{$consultants->response_time}}">
-                                                <small>24 or 48 or 72 Hours</small>
+                                                <select class="form-control" name="response_time">{{$consultants->response_time}}
+                                                    <option value="24 Hours" {{$consultants->response_time == "24 Hours" ? "selected":""}}>24 Hours</option>
+                                                    <option value="48 Hours" {{ $consultants->response_time == "48 Hours" ? "selected":""}}>48 Hours</option>
+                                                    <option value="72 Hours" {{ $consultants->response_time == "72 Hours" ? "selected":""}}>72 Hours</option>
+
+                                                </select>
+
                                             </div>
                                         </div>
 
@@ -648,7 +645,7 @@
                                             <div class="form-group">
 
                                                 <label>Your Team Information</label>
-                                                <textarea style="width:100%;"  placeholder="Provide Team info along with their Specialization" name="team_info">{{$consultants->team_info}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" placeholder="Provide Team info along with their Specialization" name="team_info">{{$consultants->team_info}}</textarea>
                                             </div>
                                             <hr>
                                             <div class="form-group">
@@ -729,7 +726,7 @@
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box">
 
-                                        <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
                                                 <label>Do you have any Privacy Policies?
                                                 </label>
@@ -747,25 +744,25 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-8 col-md-8 col-12">
                                             <div class="form-group">
                                                 <label>If Yes, Enclose the Document
                                                 </label>
-                                                <br>
-                                                <br>
+                                               
                                                 <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">{{$consultants->privacy_policy_document}}</a>
                                                 <input class="form-control " type="file" name="privacy_policy_document" value="{{old('privacy_policy_document')}}">
 
                                             </div>
                                         </div>
-                                        <div class="col-lg-7 col-md-7 col-12">
+                                        @if($consultants->privacy_policy_detail)
+                                        <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
                                                 <label>Terms if Any
                                                 </label>
-                                                <textarea class="form-control" style="width:100%;"  name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}">{{$consultants->privacy_policy_detail}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}">{{$consultants->privacy_policy_detail}}</textarea>
                                             </div>
                                         </div>
-
+                                        @endif
                                     </div>
                                     <hr>
                                     <div class="row custom-box">
@@ -786,7 +783,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;"  name="brief_introduction" value="{{$consultants->brief_introduction}}">{{$consultants->brief_introduction}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="brief_introduction" value="{{$consultants->brief_introduction}}">{{$consultants->brief_introduction}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -830,7 +827,7 @@
                         <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <div class="row custom-box">
+                                    <!-- <div class="row custom-box">
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <label>Awards and Certifications
@@ -840,7 +837,7 @@
                                                 <input type="file" class="form-control" name="Award" value="{{old('Award')}}">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="row custom-box">
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
@@ -848,7 +845,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;"  name="achievement" value="{{$consultants->achievement}}">{{$consultants->achievement}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="achievement" value="{{$consultants->achievement}}">{{$consultants->achievement}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -909,7 +906,7 @@
                                                 </label>
                                                 <br>
 
-                                                <textarea style="width:100%;"  name="event_new_weblink" value="{{$consultants->event_new_weblink}}">{{$consultants->event_new_weblink}}</textarea>
+                                                <textarea class="form-control" style="width:100%;" name="event_new_weblink" value="{{$consultants->event_new_weblink}}">{{$consultants->event_new_weblink}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -1057,8 +1054,9 @@
     $(document).ready(function() {
 
         $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight+10);
+            $(this).height($(this)[0].scrollHeight + 10);
         });
+
         $(".amenu").click(function() {
 
         });

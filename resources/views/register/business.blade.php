@@ -310,8 +310,12 @@
                                         <div class="form-group">
                                             <label>Response Time
                                             </label>
-                                            <input type="text" class="form-control" name="response_time" value="{{old('response_time')}}">
-                                            <small>24 or 48 or 72 Hours</small>
+                                            <select class="form-control" name="response_time">
+                                                <option value="24 Hours" {{old('response_time') == "24 Hours" ? "selected":""}}>24 Hours</option>
+                                                <option value="48 Hours" {{old('response_time')== "48 Hours" ? "selected":""}}>48 Hours</option>
+                                                <option value="72 Hours" {{old('response_time') == "72 Hours" ? "selected":""}}>72 Hours</option>
+
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-12">

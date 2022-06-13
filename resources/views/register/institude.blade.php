@@ -45,7 +45,6 @@
 
             </u1>
 
-
             <div class="" style="margin-left:auto !important;margin-right:auto !important">
                 <div class="progress mt-1 ">
                     <div class="progress-bar progress-bar-danger bg-danger progress-bar-striped " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%;background-color:#004e75 !important" style="cursor:pointer;padding: .15rem 0.5rem !important;">
@@ -350,8 +349,13 @@
                                         <div class="form-group">
                                             <label>Response Time
                                             </label>
-                                            <input class="form-control " type="text" placeholder="24 or 48 or 72 Hours" name="response_time" value="{{old('response_time')}}">
-                                            <small>Number of Cases Enrolled till Date</small>
+                                            <select class="form-control" name="response_time">
+                                                <option value="24 Hours" {{old('response_time') == "24 Hours" ? "selected":""}}>24 Hours</option>
+                                                <option value="48 Hours" {{old('response_time')== "48 Hours" ? "selected":""}}>48 Hours</option>
+                                                <option value="72 Hours" {{old('response_time') == "72 Hours" ? "selected":""}}>72 Hours</option>
+
+                                            </select>
+
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-12">
@@ -994,24 +998,24 @@
             //     $('#append_dean_email').html('please enter valid email')
             //     $('#dean_email').focus()
             // } else {
-                
 
-                
+
+
             // }
 
             $(".mail").each(function() {
-                    $(this).html('')
-                });
+                $(this).html('')
+            });
             $(".progress-bar").css("width", "30%");
-                $(".progress-bar").html("30%");
-                $('.nav-linkk').removeClass('uk-active');
-                $('#amenu1').addClass('uk-active');
-                $('.tab-pane').removeClass('uk-active');
-                $('#menu1').addClass('uk-active');
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+            $(".progress-bar").html("30%");
+            $('.nav-linkk').removeClass('uk-active');
+            $('#amenu1').addClass('uk-active');
+            $('.tab-pane').removeClass('uk-active');
+            $('#menu1').addClass('uk-active');
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
         $(".bmenu1").click(function() {
             $(".progress-bar").css("width", "40%");
@@ -1187,7 +1191,7 @@
             $(this).closest('#inputImgCover1').remove();
         });
 
-        
+
     });
 </script>
 

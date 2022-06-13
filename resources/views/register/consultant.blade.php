@@ -533,7 +533,7 @@
                                 <hr>
                                 <div class="row custom-box">
 
-                                    <div class="col-lg-3 col-md-3 col-12">
+                                    <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
                                             <label>Year of Establishment
                                             </label>
@@ -541,7 +541,7 @@
                                             <small>Year of Registration</small>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
+                                    <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
                                             <label>Offering Services Since
                                             </label>
@@ -549,7 +549,7 @@
                                             <small>Number of Years</small>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
+                                    <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
                                             <label>Total Cases Taken
                                             </label>
@@ -557,15 +557,7 @@
                                             <small>Number of Cases Enrolled till Date</small>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Mode of Communication
-                                            </label>
-
-                                            <input class="form-control " type="text" name="communication_mode_success" value="{{old('communication_mode_success')}}">
-                                            <small>Successful Cases in %</small>
-                                        </div>
-                                    </div>
+                                   
 
                                 </div>
                                 <hr>
@@ -599,8 +591,12 @@
                                         <div class="form-group">
                                             <label>Response Time
                                             </label>
-                                            <input type="text" class="form-control" name="response_time" value="{{old('response_time')}}">
-                                            <small>24 or 48 or 72 Hours</small>
+                                            <select class="form-control" name="response_time">
+                                                <option value="24 Hours" {{old('response_time') == "24 Hours" ? "selected":""}}>24 Hours</option>
+                                                <option value="48 Hours" {{old('response_time')== "48 Hours" ? "selected":""}}>48 Hours</option>
+                                                <option value="72 Hours" {{old('response_time') == "72 Hours" ? "selected":""}}>72 Hours</option>
+
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-12">

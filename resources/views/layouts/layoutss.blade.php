@@ -342,7 +342,7 @@
             <div class="sc-sidebar-main-scrollable" data-sc-scrollbar="visible-y">
                 <ul class="sc-sidebar-menu uk-nav">
 
-                    <li class="sc-sidebar-menu-heading"><span>Menu</span></li>
+                    <li class="sc-sidebar-menu-heading" style="color:red"><span>Menu</span></li>
 
 
                     <li title="Dashboards">
@@ -353,6 +353,7 @@
                         </a>
 
                     </li>
+
 
                     <li title="profile">
                         @if(Auth::user())
@@ -380,7 +381,13 @@
                         @endif
                         @endif
                     </li>
+                    <li title="Dashboards">
+                        <a href="">
+                            <span class="uk-nav-icon"><i class="fas fa-users"></i>
+                            </span><span class="uk-nav-title">Membership</span>
+                        </a>
 
+                    </li>
                     <li title="institution">
                         <a href="#">
                             <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
@@ -408,7 +415,7 @@
 
                     <li title="consultant">
                         <a href="#">
-                            <span class="uk-nav-icon"> <i class="nav-icon fa fa-building"></i>
+                            <span class="uk-nav-icon"> <i class=" fa fa-building"></i>
                             </span><span class="uk-nav-title">consultant</span>
                         </a>
 
@@ -428,60 +435,105 @@
                     </li>
 
                     <li title="Business">
-                        <a href="{{route('dashboard.business')}}">
+                        <a href="">
                             <span class="uk-nav-icon"><i class="nav-icon fas fa-handshake"></i>
 
-                            </span><span class="uk-nav-title">Business</span>
+                            </span><span class="uk-nav-title">Business </span>
                         </a>
+                        <ul class="sc-sidebar-menu-sub">
+                            <li>
+
+                                <a href="{{route('dashboard.business')}}">CA & TC </a>
+
+                            </li>
+
+                        </ul>
 
                     </li>
 
                     <li title="enquiries">
                         <a href="#">
-                            <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
-
+                            <span class="uk-nav-icon"><i class="fas fa-bell"></i>
                             </span><span class="uk-nav-title">enquiries</span>
                         </a>
 
 
                     </li>
 
-                    <li title="report">
+                    <li title="CRS Calculator">
                         <a href="#">
-                            <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
+                            <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
-                            </span><span class="uk-nav-title">report</span>
+                            </span><span class="uk-nav-title">CRS Calculator</span>
                         </a>
 
 
                     </li>
-                    @if(Auth::user())
-                    <li title="other">
-                        <a href="#">
-                            <span class="uk-nav-icon"> <i class="mdi mdi-information"></i>
-                            </span><span class="uk-nav-title">others</span>
-                        </a>
 
+                    <li title="Educational Assessment">
+                        <a href="#">
+                            <span class="uk-nav-icon"><i class="fab fa-readme"></i>
+                            </span><span class="uk-nav-title">Educational Assessment</span>
+                        </a>
+                    </li>
+
+                    <li title="report">
+                        <a href="#">
+                            <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>
+
+                            </span><span class="uk-nav-title">report</span>
+                        </a>
                         <ul class="sc-sidebar-menu-sub">
                             <li>
 
-                                <a href="{{route('feedback')}}">Feedback</a>
+                                <a href="#">Summary</a>
 
                             </li>
                             <li>
 
-                                <a href="{{route('canadaInspire')}}">Canada inspire</a>
+                                <a href="#">Details</a>
 
                             </li>
 
                         </ul>
+
                     </li>
-                    @endif
+
+
+                    <li class="sc-sidebar-menu-heading" style="color:red"><span>Application</span></li>
+                    <li title="Appointment Scheduler">
+                        <a href="pages-chat.html">
+                            <span class="uk-nav-icon"><i class="far fa-calendar-alt"></i>
+                            </span><span class="uk-nav-title">Appointment Scheduler</span>
+                        </a>
+                    </li>
+
+                    <li title="QuickBooks">
+                        <a href="pages-chat.html">
+                            <span class="uk-nav-icon"><i class="fab fa-leanpub"></i>
+
+                            </span><span class="uk-nav-title">QuickBooks </span>
+                        </a>
+                    </li>
+
+                    <li title="CRM">
+                        <a href="pages-chat.html">
+                            <span class="uk-nav-icon"><i class="fas fa-sign-language"></i>
+
+                            </span><span class="uk-nav-title">CRM </span>
+                        </a>
+                    </li>
 
 
 
-                    <li class="sc-sidebar-menu-heading"><span>Applications</span></li>
-
+                    <li class="sc-sidebar-menu-heading" style="color:red"><span>Utilities</span></li>
+                    <li title="Chat">
+                        <a href="pages-chat.html">
+                            <span class="uk-nav-icon">
+                                <i class="fas fa-cog"></i>
+                            </span><span class="uk-nav-title">Setting</span>
+                        </a>
+                    </li>
 
                     <li title="Chat">
                         <a href="pages-chat.html">
@@ -522,6 +574,27 @@
                             </span><span class="uk-nav-title">Notes</span>
                         </a>
                     </li>
+
+                    @if(Auth::user())
+                    <li class="sc-sidebar-menu-heading" style="color:red"><span>Canada inspire</span></li>
+
+
+                    <li title="Notes">
+                        <a href="{{route('canadaInspire')}}">
+                            <span class="uk-nav-icon"><i class="fas fa-people-carry"></i>
+                            </span><span class="uk-nav-title">Our Services</span>
+                        </a>
+                    </li>
+                    <li title="Notes">
+                        <a href="{{route('feedback')}}">
+                            <span class="uk-nav-icon"><i class="fas fa-pen-alt"></i>
+
+                            </span><span class="uk-nav-title">Your Feedback</span>
+                        </a>
+                    </li>
+
+                    <br>
+                    @endif
                     @if(Auth::user())
                     <li title="logout">
                         <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -559,7 +632,6 @@
     <script src="{{asset('assets/js/vendor/loadjs.min.js')}}"></script>
 
     <script>
-
         var html = document.getElementsByTagName('html')[0];
         // ----------- CSS
         // md icons
