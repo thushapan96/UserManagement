@@ -156,25 +156,23 @@
     </div>
 
     <div class="col-md-2">
-        @if($type == 'School')Filter By Medium
-        <select class="form-control " id="medium">
-            <option value="" {{request()->query('medium') == "" ? 'selected':''}}>Common</option>
-            <option value="English" {{request()->query('medium') == "English" ? 'selected':''}}> English </option>
-            <option value="French" {{request()->query('medium') == "French" ? 'selected':''}}>French</option>
+        Filter By Course Type
+        <select class="form-control " id="course_type">
+            <option value="" {{request()->query('course_type') == "" ? 'selected':''}}>Common</option>
+            <option value="In Campus" {{request()->query('course_type') == "In Campus" ? 'selected':''}}> In Campus </option>
+            <option value="Online" {{request()->query('course_type') == "Online" ? 'selected':''}}>Online</option>
+            <option value="Distant" {{request()->query('course_type') == "Distant" ? 'selected':''}}> Distant </option>
+            <option value="Others" {{request()->query('course_type') == "Others" ? 'selected':''}}>Others</option>
         </select>
-        @endif
+
     </div>
     <div class="col-md-1">
     </div>
     <div class="col-md-3">Search By
         <select class="form-control filter">
             <option value="Name">{{$type}} Name </option>
-            @if($type == 'School')
             <option value="Neighborhood">Neighborhood</option>
-            @else
             <option value="Courses"> Courses </option>
-            <option value="Course Type"> Course Type </option>
-            @endif
             <option value="City">City </option>
             <option value="Province">Province </option>
             <option value="Country">Country </option>
@@ -293,16 +291,16 @@
 
         $('#searchbar').on('keyup', function() {
             if ($('#medium').length) {
-                var medium = $('#medium').val();
+                var course_type = $('#course_type').val();
             } else {
-                var medium = "";
+                var course_type = "";
             }
             var searchValue = $('#searchbar').val();
             var searchType = $('.filter').val();
             var type = $('#type').val();
             var financial = $('#financial').val();
             console.log("searchType", searchType);
-            console.log("medium", medium);
+            console.log("course_type", course_type);
 
             $.ajax({
 
@@ -316,7 +314,7 @@
                     searchType: searchType,
                     type: type,
                     financial: financial,
-                    medium: medium,
+                    course_type: course_type,
                 },
                 success: function(result) {
                     console.log(result)
@@ -413,21 +411,32 @@
             var typeValue = $('#type').val();
             console.log('hi')
             var financialValue = $('#financial').val();
+
+            var course_type = $('#course_type').val();
             if ($('#type').val() == 'School') {
-                var mediumValue = $('#medium').val();
-                console.log(mediumValue, ' mediumValue ')
-                window.location.assign('/dashboard/view/school?financial=' + financialValue + '&medium=' + mediumValue);
-            } else if (typeValue == 'College') {
-                window.location.assign('/dashboard/view/college?financial=' + financialValue);
+                window.location.assign('/dashboard/view/school?financial=' + financialValue + '&course_type=' + course_type);
+            } else if ($('#type').val() == 'College') {
+                window.location.assign('/dashboard/view/college?financial=' + financialValue + '&course_type=' + course_type);
+
             } else {
-                window.location.assign('/dashboard/view/university?financial=' + financialValue);
+                window.location.assign('/dashboard/view/university?financial=' + financialValue + '&course_type=' + course_type);
+
             }
+
         });
-        $('#medium').on('change', function() {
+        $('#course_type').on('change', function() {
             console.log('hi')
             var financialValue = $('#financial').val();
-            var mediumValue = $('#medium').val();
-            window.location.assign('/dashboard/view/school?financial=' + financialValue + '&medium=' + mediumValue);
+            var course_type = $('#course_type').val();
+            if ($('#type').val() == 'School') {
+            window.location.assign('/dashboard/view/school?financial=' + financialValue + '&course_type=' + course_type);
+            }else if ($('#type').val() == 'College') {
+                window.location.assign('/dashboard/view/college?financial=' + financialValue + '&course_type=' + course_type);
+
+            } else {
+                window.location.assign('/dashboard/view/university?financial=' + financialValue + '&course_type=' + course_type);
+
+            }
         });
     });
 </script>

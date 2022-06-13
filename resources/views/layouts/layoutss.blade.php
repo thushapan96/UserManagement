@@ -319,12 +319,63 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#"><img src="{{asset('assets/img/avatars/avatar_default_sm.png')}}" alt=""></a>
+                        @php
+                        $img = Auth::user()->img;
+                        @endphp
+                        @if($img)
+                        <a href="#"><img src="{{url('files/'.$img)}}" alt="" style="width:38px;height:38px"></a>
+                        @else
+                        <a href="#"><img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" style="width:38px;height:38px"></a>
+                        @endif
                         <div class="uk-navbar-dropdown uk-dropdown-small">
                             <ul class="uk-nav uk-nav-navbar">
-                                <li><a href="pages-user_profile.html">Profile</a></li>
+                                <li title="profile">
+                                    @if(Auth::user())
+
+                                    @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
+                                    <a href="{{route('consultantProfile')}}">
+                                        <span class="uk-nav-icon">
+                                        </span><span class="uk-nav-title">profile</span>
+                                    </a>
+                                    @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
+                                    <a href="{{route('institudeProfile')}}">
+                                        <span class="uk-nav-icon">
+                                        </span><span class="uk-nav-title">profile</span>
+                                    </a>
+                                    @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
+                                    <a href="{{route('businessProfile')}}">
+                                        <span class="uk-nav-icon">
+                                        </span><span class="uk-nav-title">profile</span>
+                                    </a>
+                                    @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
+                                    <a href="{{route('personalProfile')}}">
+                                        <span class="uk-nav-icon">
+                                        </span><span class="uk-nav-title">profile</span>
+                                    </a>
+                                    @endif
+                                    @endif
+                                </li>
                                 <li><a href="pages-settings.html">Settings</a></li>
-                                <li><a href="login_page.html">Log Out</a></li>
+                                @if(Auth::user())
+                                <li title="logout">
+                                    <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        <span class="uk-nav-icon"></span>
+                                        <span class="uk-nav-title">logout</span>
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                                @else
+                                <li title="login">
+                                    <a href="{{route('login')}}">
+                                        <span class="uk-nav-icon"></span>
+                                        <span class="uk-nav-title">Login</span>
+                                    </a>
+                                </li>
+                                @endif
+
                             </ul>
                         </div>
                     </li>
@@ -578,13 +629,14 @@
                     @if(Auth::user())
                     <li class="sc-sidebar-menu-heading" style="color:red"><span>Canada inspire</span></li>
 
-
+                    @if((auth()->user()->service_type == 'Business' || auth()->user()->service_type == 'Institution' || auth()->user()->service_type == 'Consultation'))
                     <li title="Notes">
                         <a href="{{route('canadaInspire')}}">
                             <span class="uk-nav-icon"><i class="fas fa-people-carry"></i>
                             </span><span class="uk-nav-title">Our Services</span>
                         </a>
                     </li>
+                    @endif
                     <li title="Notes">
                         <a href="{{route('feedback')}}">
                             <span class="uk-nav-icon"><i class="fas fa-pen-alt"></i>

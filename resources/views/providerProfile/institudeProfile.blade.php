@@ -19,7 +19,7 @@
 
 
     .img {
-        border: 1px solid #ddd;
+      
         /* border-radius: 4px !important; */
         padding: 5px !important;
         opacity: 1;
@@ -368,6 +368,19 @@
                             </fieldset><br>
                             <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
                                 <h6 style="text-decoration:underline;">Other Details</h6>
+                                @if($institutions->medium)
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Medium</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                        {{$institutions->medium}}
+                                        </p>
+                                    </div>
+                                </div>
+                                @endif
                                 <div class="row custom-box">
                                     <div class="col-md-6">
                                         <strong class="ps">Intake</strong>
@@ -607,7 +620,7 @@
                                         <div class="form-group">
                                             <label style="width:400px">Terms of Privacy of {{$institutions->type}}</label>
 
-                                            <textarea name="privacy_policy_detail" rows="10" value="{{$institutions->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$institutions->privacy_policy_detail}}</textarea>
+                                            <textarea name="privacy_policy_detail"  value="{{$institutions->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$institutions->privacy_policy_detail}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -620,7 +633,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea class="outset" name="history" rows="12" value="{{$institutions->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$institutions->history}}</textarea>
+                                            <textarea class="outset" name="history"  value="{{$institutions->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$institutions->history}}</textarea>
 
 
                                         </div>
@@ -635,7 +648,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="12" name="brief_introduction" value="{{$institutions->brief_introduction}}" disabled>{{$institutions->brief_introduction}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="brief_introduction" value="{{$institutions->brief_introduction}}" disabled>{{$institutions->brief_introduction}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -660,7 +673,7 @@
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 @if($institutions->Award)
-                                <div class="row custom-box">
+                                <!-- <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
                                             <label>{{$institutions->type}} Awards and Certifications
@@ -670,7 +683,7 @@
 
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 @endif
                                 @if($institutions->achievement)
                                 <div class="row custom-box">
@@ -680,7 +693,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="12" name="achievement" value="{{$institutions->achievement}}" disabled>{{$institutions->achievement}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="achievement" value="{{$institutions->achievement}}" disabled>{{$institutions->achievement}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -723,7 +736,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="9" name="event_new_weblink" value="{{$institutions->event_new_weblink}}" disabled>{{$institutions->event_new_weblink}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="event_new_weblink" value="{{$institutions->event_new_weblink}}" disabled>{{$institutions->event_new_weblink}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -743,7 +756,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background:white !important; box-shadow: none ;" rows="12" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
+                                            <textarea style="width:100%;background:white !important; box-shadow: none ;" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
                                          We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
                                          1. Is your Company looking for Website Design/Re Design or Development to give professional look
                                          and exposure for International community?
@@ -772,7 +785,7 @@
                                             <label>Feedback of Canada Inspire
                                             </label>
                                             <br>
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="9" name="Comment" value="{{$institutions->Comment}}" disabled>{{$institutions->Comment}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="Comment" value="{{$institutions->Comment}}" disabled>{{$institutions->Comment}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -784,16 +797,16 @@
 
         </div>
 
-        <div class="col-md-2 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;margin-left:3% !important">
+        <div class="col-md-3 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
                     <div class="d-flex flex-column align-items-center text-center py-1">
                         <div class="row">
                             @if($img)
-                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="{{url('files/'.$img)}}">
+                            <img class="rounded-circle  img " style="width:200px !important;height:180px; " src="{{url('files/'.$img)}}">
                             @else
-                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                            <img class="rounded-circle  img " style="width:200px !important;height:180px;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                             @endif
                         </div>
                         <div class="spinner"></div>

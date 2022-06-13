@@ -61,15 +61,15 @@ class OtherController extends Controller
         $search = $request->search;
         $type = $request->type;
         $searchType = $request->searchType;
-        $medium = $request->medium;
+        $course_type = $request->course_type;
         $financial = $request->financial;
        
         $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->select('institutions.*', 'users.img as img')->where('type',  $type);
         if ($financial != '') {
             $institutions = $institutions->where('is_financial', $financial);
         }
-        if ($medium != '') {
-            $institutions = $institutions->where('medium', $medium);
+        if ($course_type != '') {
+            $institutions = $institutions->where('course_type', $course_type);
         }
         if ($searchType == 'Name') {
             $institutions = $institutions->where('name', 'like', '%' . $search . '%')->get();

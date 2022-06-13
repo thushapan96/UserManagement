@@ -598,7 +598,7 @@
                                         <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
                                                 <label>Fee Structure Website/URL Link
-                                                </label>
+                                                </label><br>
                                                 <input class="form-control " type="text" min="1" name="fee_structure_website" value="{{$institutions->fee_structure_website}}">
                                             </div>
                                         </div>
@@ -731,7 +731,7 @@
                         <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <div class="row custom-box">
+                                    <!-- <div class="row custom-box">
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
                                                 <label>Awards and Certifications
@@ -741,7 +741,7 @@
                                                 <input type="file" class="form-control" name="Award" value="{{old('Award')}}">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="row custom-box">
                                         <div class="col-lg-12 col-md-12 col-12">

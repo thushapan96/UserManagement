@@ -146,15 +146,15 @@
 </style>
 <div class="row">
     <div class="col-md-3">Search By
-        <select class="custom-select filter">
-            <option value="RCIC Number">RCIC Number</option>
+        <select class="form-control filter">
+            <option value="RCIC Number">Registration Number</option>
             <option value="Owner Name">Owner Name</option>
             <option value="Company Name ">Company Name </option>
+            <option value="Specialization">Specialization </option>
+            <option value="Service Type">Service Type </option>
             <option value="Country">Country </option>
             <option value="Province">Province </option>
             <option value="City">City </option>
-            <option value="Specialization">Specialization </option>
-            <option value="Service Type">Service Type </option>
         </select>
     </div>
     <div class="col-md-1"></div>
@@ -358,10 +358,10 @@
                             $('#services-' + first_index).append(service);
 
                         });
-                        if(row.img){
-                            $('#img-' + first_index).attr('src',baseUrlAsset+'/'+row.img);
-                        }else{
-                            $('#img-' + first_index).attr('src','https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
+                        if (row.img) {
+                            $('#img-' + first_index).attr('src', baseUrlAsset + '/' + row.img);
+                        } else {
+                            $('#img-' + first_index).attr('src', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
                         }
 
 

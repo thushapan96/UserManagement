@@ -13,7 +13,6 @@
     }
 
     .img {
-        border: 1px solid #ddd;
         /* border-radius: 4px !important; */
         padding: 5px !important;
         opacity: 1;
@@ -810,7 +809,7 @@
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 @if($consultants->Award)
-                                <div class="row custom-box">
+                                <!-- <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
                                             <label>{{$consultants->type}} Awards and Certifications
@@ -819,8 +818,8 @@
                                             <a href="{{url('files/'.$consultants->Award)}}" target="_blank" style=" text-decoration: underline;">{{$consultants->Award}}</a>
 
                                         </div>
-                                    </div>
-                                </div>
+                                    </div> -->
+                                <!-- </div> -->
                                 @endif
                                 @if($consultants->achievement)
                                 <div class="row custom-box">
@@ -934,16 +933,16 @@
 
         </div>
 
-        <div class="col-md-2 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;margin-left:3% !important;">
+        <div class="col-md-3 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
                     <div class="d-flex flex-column align-items-center text-center py-1">
                         <div class="row">
                             @if($img)
-                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="{{url('files/'.$img)}}">
+                            <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="{{url('files/'.$img)}}">
                             @else
-                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                            <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                             @endif
                         </div>
                         <div class="spinner"></div>

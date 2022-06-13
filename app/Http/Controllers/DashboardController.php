@@ -71,8 +71,11 @@ class DashboardController extends Controller
         if ($request->financial != '') {
             $institutions = $institutions->where('is_financial', $request->financial);
         }
-        if ($request->medium != '') {
-            $institutions = $institutions->where('medium', $request->medium);
+        $temp_array = array();
+        array_push($temp_array, $request->course_type);
+      
+        if ($request->course_type != '') {
+            $institutions = $institutions->whereIn('course_type', $temp_array);
         }
         $institutions = $institutions->get();
         $type = "School";
@@ -85,6 +88,12 @@ class DashboardController extends Controller
         if ($request->financial != '') {
             $institutions = $institutions->where('is_financial', $request->financial);
         }
+        $request->course_type= json_decode($request->course_type, true);
+    
+        if ($request->course_type != '') {
+            $institutions = $institutions->whereIn('course_type', $request->course_type);
+        }
+        return  $institutions;
         $institutions = $institutions->get();
 
         return view('dashboard.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'College');
@@ -92,9 +101,15 @@ class DashboardController extends Controller
     public function universityIndex(Request $request)
     {
         $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'University')->select('institutions.*', 'users.img as img');
+   
         if ($request->financial != '') {
             $institutions = $institutions->where('is_financial', $request->financial);
         }
+        $request->course_type= json_decode($request->course_type, true);
+        if ($request->course_type != '') {
+            $institutions = $institutions->whereIn('course_type',$request->course_type);
+        }
+      
         $institutions = $institutions->get();
 
 

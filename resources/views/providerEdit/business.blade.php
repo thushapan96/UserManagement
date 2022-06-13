@@ -48,7 +48,7 @@
 
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
-                                                <label>RCIC Number*
+                                                <label>Registration Number *
                                                 </label>
                                                 <input class="form-control " type="text" name="registration_number" value="{{$consultants->registration_number}}">
                                             </div>

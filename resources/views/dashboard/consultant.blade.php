@@ -146,15 +146,15 @@
 </style>
 <div class="row">
     <div class="col-md-3">Search By
-        <select class="custom-select filter">
+        <select class="form-control filter">
             <option value="RCIC Number">RCIC Number</option>
             <option value="Owner Name">Owner Name</option>
             <option value="Company Name ">Company Name </option>
+            <option value="Specialization">Specialization </option>
+            <option value="Service Type">Service Type </option>
             <option value="Country">Country </option>
             <option value="Province">Province </option>
             <option value="City">City </option>
-            <option value="Specialization">Specialization </option>
-            <option value="Service Type">Service Type </option>
         </select>
     </div>
     <div class="col-md-1"></div>
