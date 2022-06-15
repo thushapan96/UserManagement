@@ -72,7 +72,7 @@ class DashboardController extends Controller
       
       
         if ($request->course_type != '') {
-            $institutions = $institutions->whereIn('course_type', $request->course_type);
+            // $institutions = $institutions->whereIn('course_type', $request->course_type);
         }
         $institutions = $institutions->get();
         $type = "School";
@@ -86,12 +86,10 @@ class DashboardController extends Controller
         if ($request->financial != '') {
             $institutions = $institutions->where('is_financial', $request->financial);
         }
-        $request->course_type= json_decode($request->course_type, true);
-    
+       
         if ($request->course_type != '') {
-            $institutions = $institutions->whereIn('course_type', $request->course_type);
         }
-        return  $institutions;
+   
         $institutions = $institutions->get();
 
         return view('dashboard.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'College');
