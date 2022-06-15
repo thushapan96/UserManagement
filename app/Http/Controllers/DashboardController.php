@@ -14,7 +14,6 @@ class DashboardController extends Controller
 {
     public function institudeIndex()
     {
-
         $institutions = Institution::all();
 
         return view('dashboard.institution')->with('institutions', $institutions)->with('unique', '');
@@ -66,16 +65,14 @@ class DashboardController extends Controller
     }
     public function schoolIndex(Request $request)
     {
-
         $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'School')->select('institutions.*', 'users.img as img');
         if ($request->financial != '') {
             $institutions = $institutions->where('is_financial', $request->financial);
         }
-        $temp_array = array();
-        array_push($temp_array, $request->course_type);
+      
       
         if ($request->course_type != '') {
-            $institutions = $institutions->whereIn('course_type', $temp_array);
+            $institutions = $institutions->whereIn('course_type', $request->course_type);
         }
         $institutions = $institutions->get();
         $type = "School";
@@ -85,6 +82,7 @@ class DashboardController extends Controller
     {
         $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'College')->select('institutions.*', 'users.img as img');
         $type = "College";
+      
         if ($request->financial != '') {
             $institutions = $institutions->where('is_financial', $request->financial);
         }

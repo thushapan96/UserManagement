@@ -332,9 +332,9 @@
                                         </div>
 
                                         <div class="col-md-7">
-                                            
+
                                             <div class="row">
-                                            &nbsp;<div class="free ">free</div>
+                                                &nbsp;<div class="free ">free</div>
                                                 &nbsp;&nbsp;&nbsp;
                                                 <div class="paid ">paid</div>
 
@@ -706,7 +706,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -1000,11 +1000,9 @@
 
 <script>
     $(document).ready(function() {
-        $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight+10);
-        });
+    
         var chargeable = "{{$consultants->initial_chargeable_type}}"
-        
+
         if (chargeable == 'free') {
             $('.free').css('text-decoration', 'underline')
             $('.free').css('text-decoration-color', 'green')
