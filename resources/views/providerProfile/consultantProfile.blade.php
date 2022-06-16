@@ -31,8 +31,6 @@
     th {
         color: #00000078 !important;
     }
-
-    
 </style>
 @if($message = Session::get('formSuccess'))
 <script>
@@ -1002,10 +1000,11 @@
 <script>
     $(document).ready(function() {
         console.log(2)
-        $("textarea").each(function(index) {
-            console.log(index, $(this)[0].scrollHeight)
-            $(this).height($(this)[0].scrollHeight);
-
+        $("textarea").each(function() {
+            this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;width:100%;background-color:white !important; box-shadow: none ;");
+        }).on("input", function() {
+            this.style.height = "auto";
+            this.style.height = (this.scrollHeight) + "px";
         });
 
         $("#amenu").click(function() {

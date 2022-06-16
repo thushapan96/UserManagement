@@ -7,12 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Canada Inspire</title>
     <meta name="description" content="Scutum Admin Template" />
-    <meta http-equiv='cache-control' content='no-cache'>
-
-    <meta http-equiv='expires' content='0'>
-
-    <meta http-equiv='pragma' content='no-cache'>
-
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/fav/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/fav/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/img/fav/favicon-16x16.png')}}">
