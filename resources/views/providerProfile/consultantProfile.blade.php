@@ -1001,7 +1001,7 @@
 <script>
     $(document).ready(function() {
         $("textarea").each(function() {
-            $(this).height($(this)[0].scrollHeight);
+            $(this).height($(this)[0].scrollHeight+10+'px');
         });
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
