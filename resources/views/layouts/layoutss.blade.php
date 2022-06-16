@@ -135,6 +135,7 @@
         document.body.style.overflow = 'hidden';
         document.body.style.apacity = '0';
         document.body.style.maxHeight = "100%";
+        console.log(1)
     </script>
 
     <header id="sc-header">
@@ -716,6 +717,7 @@
     <script src="{{asset('assets/js/vendor/loadjs.min.js')}}"></script>
 
     <script>
+         console.log(3)
         var html = document.getElementsByTagName('html')[0];
         // ----------- CSS
         // md icons
@@ -780,7 +782,7 @@
             });
         });
         
-       
+        console.log(4)
     </script>
 
     <!-- <div id="sc-style-switcher">

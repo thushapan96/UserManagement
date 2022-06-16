@@ -1000,6 +1000,7 @@
 <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 <script>
     $(document).ready(function() {
+        console.log(2)
         $("textarea").each(function(index) {
     console.log(index,$(this)[0].scrollHeight)
             $(this).height($(this)[0].scrollHeight);
