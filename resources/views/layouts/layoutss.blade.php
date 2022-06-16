@@ -26,6 +26,7 @@
     <script src="{{asset('assets/js/uikit.min.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
@@ -859,5 +860,10 @@
     </div> -->
 
 </body>
+<script>
+    $("textarea").each(function(textarea) {
+        $(this).height($(this)[0].scrollHeight);
+    });
+</script>
 
 </html>
