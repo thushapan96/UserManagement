@@ -1054,9 +1054,9 @@
      
     $(document).ready(function() {
 
-        $("textarea").each(function(textarea) {
+        $("textarea").each(function(index) {
+            console.log(index,$(this)[0].scrollHeight)
             $(this).height($(this)[0].scrollHeight);
-            $(this).height();
         });
 
         $(".amenu").click(function() {

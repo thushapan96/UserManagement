@@ -1000,10 +1000,9 @@
 
 <script>
     $(document).ready(function() {
-        $("textarea").each(function() {
-            console.log('inside vanthuttu',$(this)[0].scrollHeight)
-            $(this).css('height',$(this)[0].scrollHeight+'px');
-            
+        $("textarea").each(function(index) {
+            console.log(index,$(this)[0].scrollHeight)
+            $(this).height($(this)[0].scrollHeight);
         });
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
