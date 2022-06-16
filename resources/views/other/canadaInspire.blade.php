@@ -35,4 +35,11 @@ we  have a Team of professionals who are having expert in Application Developmen
         </fieldset>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-Services').addClass('sc-page-active')
+    });
+</script>
 @endsection

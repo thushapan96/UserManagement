@@ -257,13 +257,22 @@
 
 
     $(document).ready(function() {
+
+        if ($('#type').val() == 'RCIC Consultant') {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-RCIC-Consultant').addClass('sc-page-active')
+        } else {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-immigration ').addClass('sc-page-active')
+        }
+
         const baseUrlAsset = "{{url('files/')}}";
 
         $('#searchbar').on('keyup', function() {
             var searchValue = $('#searchbar').val();
             var searchType = $('.filter').val();
             var type = $('#type').val();
-            console.log("type",type);
+            console.log("type", type);
 
             $.ajax({
 
@@ -353,14 +362,14 @@
                             $('#services-' + first_index).append(service);
 
                         });
-                        if(row.img){
-                            $('#img-' + first_index).attr('src',baseUrlAsset+'/'+row.img);
-                        }else{
-                            $('#img-' + first_index).attr('src','https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
+                        if (row.img) {
+                            $('#img-' + first_index).attr('src', baseUrlAsset + '/' + row.img);
+                        } else {
+                            $('#img-' + first_index).attr('src', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
                         }
 
 
-                       
+
                     });
 
 

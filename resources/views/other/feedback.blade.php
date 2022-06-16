@@ -21,4 +21,11 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-Feedback').addClass('sc-page-active')
+    });
+</script>
+
 @endsection

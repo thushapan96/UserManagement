@@ -288,6 +288,16 @@
 
     $(document).ready(function() {
         const baseUrlAsset = "{{url('files/')}}";
+        if ($('#type').val() == 'School') {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-School').addClass('sc-page-active')
+        } else if ($('#type').val() == 'College') {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-College ').addClass('sc-page-active')
+        } else {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-University ').addClass('sc-page-active')
+        }
 
         $('#searchbar').on('keyup', function() {
             if ($('#medium').length) {
@@ -429,8 +439,8 @@
             var financialValue = $('#financial').val();
             var course_type = $('#course_type').val();
             if ($('#type').val() == 'School') {
-            window.location.assign('/dashboard/view/school?financial=' + financialValue + '&course_type=' + course_type);
-            }else if ($('#type').val() == 'College') {
+                window.location.assign('/dashboard/view/school?financial=' + financialValue + '&course_type=' + course_type);
+            } else if ($('#type').val() == 'College') {
                 window.location.assign('/dashboard/view/college?financial=' + financialValue + '&course_type=' + course_type);
 
             } else {

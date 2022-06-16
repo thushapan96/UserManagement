@@ -104,6 +104,22 @@
         padding-top: 20px !important;
         padding-bottom: 20px !important;
     }
+
+    #sc-sidebar-main .sc-sidebar-menu {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-top: 5px !important;
+        padding-bottom: 10px !important;
+    }
+
+    #sc-sidebar-main .sc-sidebar-menu>li>a .uk-nav-icon>i:before {
+        font-size: 1.2rem !important;
+        -webkit-transition: color 140ms cubic-bezier(.55, 0, .1, 1);
+        transition: color 140ms cubic-bezier(.55, 0, .1, 1);
+    }
+    #sc-sidebar-main .sc-sidebar-menu li a {
+        font-size:15px !important
+    }
 </style>
 
 <body>
@@ -391,260 +407,273 @@
     <aside id="sc-sidebar-main" class="sc-sidebar-info-fixed sideBar">
         <div class="uk-offcanvas-bar">
             <div class="sc-sidebar-main-scrollable" data-sc-scrollbar="visible-y">
-                <ul class="sc-sidebar-menu uk-nav">
+                <ul class="sc-sidebar-menu ">
 
-                    <li class="sc-sidebar-menu-heading" style="color:red"><span>Menu</span></li>
+                    <li class="" style="padding:0 !important">
+                        <a><span style="color:#d81400;font-size: 17px;">Menu</span></a>
 
+                        <ul class="sc-sidebar-menu ">
+                            <li title="" class="sc-page-active page-active">
+                                <a href="{{route('indexx')}}">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
-                    <li title="Dashboards">
-                        <a href="{{route('indexx')}}">
-                            <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
-
-                            </span><span class="uk-nav-title">Dashboards</span>
-                        </a>
-
-                    </li>
-
-
-                    <li title="profile">
-                        @if(Auth::user())
-
-                        @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
-                        <a href="{{route('consultantProfile')}}">
-                            <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                            </span><span class="uk-nav-title">profile</span>
-                        </a>
-                        @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
-                        <a href="{{route('institudeProfile')}}">
-                            <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                            </span><span class="uk-nav-title">profile</span>
-                        </a>
-                        @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
-                        <a href="{{route('businessProfile')}}">
-                            <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                            </span><span class="uk-nav-title">profile</span>
-                        </a>
-                        @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
-                        <a href="{{route('personalProfile')}}">
-                            <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                            </span><span class="uk-nav-title">profile</span>
-                        </a>
-                        @endif
-                        @endif
-                    </li>
-                    <li title="Dashboards">
-                        <a href="">
-                            <span class="uk-nav-icon"><i class="fas fa-users"></i>
-                            </span><span class="uk-nav-title">Membership</span>
-                        </a>
-
-                    </li>
-                    <li title="institution">
-                        <a href="#">
-                            <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
-                            <span class="uk-nav-title">institution</span>
-                        </a>
-
-                        <ul class="sc-sidebar-menu-sub">
-                            <li>
-
-                                <a href="{{route('dashboard.view.school')}}"> School </a>
-
-                            </li>
-                            <li>
-
-                                <a href="{{route('dashboard.view.college')}}"> College </a>
-
-                            </li>
-                            <li>
-                                <a href="{{route('dashboard.view.university')}}"> university </a>
+                                    </span><span class="uk-nav-title">Dashboards</span>
+                                </a>
 
                             </li>
 
+                            <li title="profile" class="page-Profile page-active">
+                                @if(Auth::user())
+
+                                @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
+                                <a href="{{route('consultantProfile')}}">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
+                                    </span><span class="uk-nav-title">profile</span>
+                                </a>
+                                @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
+                                <a href="{{route('institudeProfile')}}">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
+                                    </span><span class="uk-nav-title">profile</span>
+                                </a>
+                                @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
+                                <a href="{{route('businessProfile')}}">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
+                                    </span><span class="uk-nav-title">profile</span>
+                                </a>
+                                @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
+                                <a href="{{route('personalProfile')}}">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
+                                    </span><span class="uk-nav-title">profile</span>
+                                </a>
+                                @endif
+                                @endif
+                            </li>
+                            <li title="Dashboards" class="page-Dashboards page-active">
+                                <a href="">
+                                    <span class="uk-nav-icon"><i class="fas fa-users"></i>
+                                    </span><span class="uk-nav-title">Membership</span>
+                                </a>
+
+                            </li>
+                            <li title="institution" class="page-institution page-active">
+                                <a href="#">
+                                    <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
+                                    <span class="uk-nav-title">institution</span>
+                                </a>
+
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class="page-School page-active">
+
+                                        <a href="{{route('dashboard.view.school')}}"> School </a>
+
+                                    </li>
+                                    <li class="page-College page-active">
+
+                                        <a href="{{route('dashboard.view.college')}}"> College </a>
+
+                                    </li>
+                                    <li class="page-University page-active">
+                                        <a href="{{route('dashboard.view.university')}}"> university </a>
+
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li title="consultant" class=" page-active">
+                                <a href="#">
+                                    <span class="uk-nav-icon"> <i class=" fa fa-building"></i>
+                                    </span><span class="uk-nav-title">consultant</span>
+                                </a>
+
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class="page-RCIC-Consultant page-active">
+
+                                        <a href="{{route('dashboard.view.consultant')}}"> RCIC Consultant </a>
+
+                                    </li>
+                                    <li class="page-immigration page-active">
+
+                                        <a href="{{route('dashboard.view.immigration')}}"> immigration </a>
+
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li title="Business">
+                                <a href="">
+                                    <span class="uk-nav-icon"><i class="nav-icon fas fa-handshake"></i>
+
+                                    </span><span class="uk-nav-title">Business </span>
+                                </a>
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class="page-CA page-active">
+
+                                        <a href="{{route('dashboard.business')}}">CA & TC </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                            <li title="enquiries" class="page-enquiries page-active">
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="fas fa-bell"></i>
+                                    </span><span class="uk-nav-title">enquiries</span>
+                                </a>
+
+
+                            </li>
+
+                            <li title="CRS Calculator" class="page-Calculator page-active">
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
+
+                                    </span><span class="uk-nav-title">CRS Calculator</span>
+                                </a>
+
+
+                            </li>
+
+                            <li title="Educational Assessment" class="page-Educational page-active">
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="fab fa-readme"></i>
+                                    </span><span class="uk-nav-title">Educ Assessment</span>
+                                </a>
+                            </li>
+
+                            <li title="report">
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>
+
+                                    </span><span class="uk-nav-title">report</span>
+                                </a>
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class="page-Summary page-active">
+
+                                        <a href="#">Summary</a>
+
+                                    </li>
+                                    <li class="page-Details page-active">
+
+                                        <a href="#">Details</a>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
                         </ul>
                     </li>
+                    <li class="" style="padding:0 !important">
+                        <a><span style="color:#d81400;font-size: 17px;">Application</span></a>
 
-                    <li title="consultant">
-                        <a href="#">
-                            <span class="uk-nav-icon"> <i class=" fa fa-building"></i>
-                            </span><span class="uk-nav-title">consultant</span>
-                        </a>
-
-                        <ul class="sc-sidebar-menu-sub">
-                            <li>
-
-                                <a href="{{route('dashboard.view.consultant')}}"> RCIC Consultant </a>
-
-                            </li>
-                            <li>
-
-                                <a href="{{route('dashboard.view.immigration')}}"> immigration </a>
-
+                        <ul class="sc-sidebar-menu">
+                            <li title="Appointment Scheduler" class=" page-active">
+                                <a href="pages-chat.html">
+                                    <span class="uk-nav-icon"><i class="far fa-calendar-alt"></i>
+                                    </span><span class="uk-nav-title">Appointment Scheduler</span>
+                                </a>
                             </li>
 
+                            <li title="QuickBooks" class=" page-active">
+                                <a href="pages-chat.html">
+                                    <span class="uk-nav-icon"><i class="fab fa-leanpub"></i>
+
+                                    </span><span class="uk-nav-title">QuickBooks </span>
+                                </a>
+                            </li>
+
+                            <li title="CRM" class=" page-active">
+                                <a href="pages-chat.html">
+                                    <span class="uk-nav-icon"><i class="fas fa-sign-language"></i>
+
+                                    </span><span class="uk-nav-title">CRM </span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
+                    <li class="" style="padding:0 !important">
+                        <a><span style="color:#d81400;font-size: 17px;">Utilities</span></a>
 
-                    <li title="Business">
-                        <a href="">
-                            <span class="uk-nav-icon"><i class="nav-icon fas fa-handshake"></i>
+                        <ul class="sc-sidebar-menu">
 
-                            </span><span class="uk-nav-title">Business </span>
-                        </a>
-                        <ul class="sc-sidebar-menu-sub">
-                            <li>
-
-                                <a href="{{route('dashboard.business')}}">CA & TC </a>
-
+                            <li title="Chat" class=" page-active">
+                                <a href="pages-chat.html">
+                                    <span class="uk-nav-icon">
+                                        <i class="fas fa-cog"></i>
+                                    </span><span class="uk-nav-title">Setting</span>
+                                </a>
                             </li>
 
+                            <li title="Chat" class=" page-active">
+                                <a href="pages-chat.html">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-message-outline"></i>
+
+                                    </span><span class="uk-nav-title">Chat</span>
+                                </a>
+                            </li>
+
+                            <li title="Invoices" class=" page-active">
+                                <a href="pages-invoices.html">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-receipt"></i>
+
+                                    </span><span class="uk-nav-title">Invoices</span>
+                                </a>
+                            </li>
+
+                            <li title="Mailbox" class=" page-active">
+                                <a href="pages-mailbox.html">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-email-outline"></i>
+
+                                    </span><span class="uk-nav-title">Mailbox</span>
+                                </a>
+                            </li>
+
+                            <li title="Task Board" class=" page-active">
+                                <a href="pages-task_board.html">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-calendar-text"></i>
+
+                                    </span><span class="uk-nav-title">Task Board</span>
+                                </a>
+                            </li>
+
+                            <li title="Notes" class=" page-active">
+                                <a href="pages-notes.html">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-note-outline"></i>
+
+                                    </span><span class="uk-nav-title">Notes</span>
+                                </a>
+                            </li>
                         </ul>
-
-                    </li>
-
-                    <li title="enquiries">
-                        <a href="#">
-                            <span class="uk-nav-icon"><i class="fas fa-bell"></i>
-                            </span><span class="uk-nav-title">enquiries</span>
-                        </a>
-
-
-                    </li>
-
-                    <li title="CRS Calculator">
-                        <a href="#">
-                            <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
-
-                            </span><span class="uk-nav-title">CRS Calculator</span>
-                        </a>
-
-
-                    </li>
-
-                    <li title="Educational Assessment">
-                        <a href="#">
-                            <span class="uk-nav-icon"><i class="fab fa-readme"></i>
-                            </span><span class="uk-nav-title">Educational Assessment</span>
-                        </a>
-                    </li>
-
-                    <li title="report">
-                        <a href="#">
-                            <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>
-
-                            </span><span class="uk-nav-title">report</span>
-                        </a>
-                        <ul class="sc-sidebar-menu-sub">
-                            <li>
-
-                                <a href="#">Summary</a>
-
-                            </li>
-                            <li>
-
-                                <a href="#">Details</a>
-
-                            </li>
-
-                        </ul>
-
-                    </li>
-
-
-                    <li class="sc-sidebar-menu-heading" style="color:red"><span>Application</span></li>
-                    <li title="Appointment Scheduler">
-                        <a href="pages-chat.html">
-                            <span class="uk-nav-icon"><i class="far fa-calendar-alt"></i>
-                            </span><span class="uk-nav-title">Appointment Scheduler</span>
-                        </a>
-                    </li>
-
-                    <li title="QuickBooks">
-                        <a href="pages-chat.html">
-                            <span class="uk-nav-icon"><i class="fab fa-leanpub"></i>
-
-                            </span><span class="uk-nav-title">QuickBooks </span>
-                        </a>
-                    </li>
-
-                    <li title="CRM">
-                        <a href="pages-chat.html">
-                            <span class="uk-nav-icon"><i class="fas fa-sign-language"></i>
-
-                            </span><span class="uk-nav-title">CRM </span>
-                        </a>
-                    </li>
-
-
-
-                    <li class="sc-sidebar-menu-heading" style="color:red"><span>Utilities</span></li>
-                    <li title="Chat">
-                        <a href="pages-chat.html">
-                            <span class="uk-nav-icon">
-                                <i class="fas fa-cog"></i>
-                            </span><span class="uk-nav-title">Setting</span>
-                        </a>
-                    </li>
-
-                    <li title="Chat">
-                        <a href="pages-chat.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-message-outline"></i>
-
-                            </span><span class="uk-nav-title">Chat</span>
-                        </a>
-                    </li>
-
-                    <li title="Invoices">
-                        <a href="pages-invoices.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-receipt"></i>
-
-                            </span><span class="uk-nav-title">Invoices</span>
-                        </a>
-                    </li>
-
-                    <li title="Mailbox">
-                        <a href="pages-mailbox.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-email-outline"></i>
-
-                            </span><span class="uk-nav-title">Mailbox</span>
-                        </a>
-                    </li>
-
-                    <li title="Task Board">
-                        <a href="pages-task_board.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-calendar-text"></i>
-
-                            </span><span class="uk-nav-title">Task Board</span>
-                        </a>
-                    </li>
-
-                    <li title="Notes">
-                        <a href="pages-notes.html">
-                            <span class="uk-nav-icon"><i class="mdi mdi-note-outline"></i>
-
-                            </span><span class="uk-nav-title">Notes</span>
-                        </a>
                     </li>
 
                     @if(Auth::user())
-                    <li class="sc-sidebar-menu-heading" style="color:red"><span>Canada inspire</span></li>
+                    <li class="" style="padding:0 !important">
+                        <a><span style="color:#d81400;font-size: 17px;">Canada inspire</span></a>
 
-                    @if((auth()->user()->service_type == 'Business' || auth()->user()->service_type == 'Institution' || auth()->user()->service_type == 'Consultation'))
-                    <li title="Notes">
-                        <a href="{{route('canadaInspire')}}">
-                            <span class="uk-nav-icon"><i class="fas fa-people-carry"></i>
-                            </span><span class="uk-nav-title">Our Services</span>
-                        </a>
+                        <ul class="sc-sidebar-menu">
+
+
+                            @if((auth()->user()->service_type == 'Business' || auth()->user()->service_type == 'Institution' || auth()->user()->service_type == 'Consultation'))
+                            <li title="Notes" class="page-Services page-active">
+                                <a href="{{route('canadaInspire')}}">
+                                    <span class="uk-nav-icon"><i class="fas fa-people-carry"></i>
+                                    </span><span class="uk-nav-title">Our Services</span>
+                                </a>
+                            </li>
+                            @endif
+                            <li title="Notes" class="page-Feedback page-active">
+                                <a href="{{route('feedback')}}">
+                                    <span class="uk-nav-icon"><i class="fas fa-pen-alt"></i>
+
+                                    </span><span class="uk-nav-title">Your Feedback</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    @endif
-                    <li title="Notes">
-                        <a href="{{route('feedback')}}">
-                            <span class="uk-nav-icon"><i class="fas fa-pen-alt"></i>
-
-                            </span><span class="uk-nav-title">Your Feedback</span>
-                        </a>
-                    </li>
-
                     <br>
                     @endif
                     @if(Auth::user())
