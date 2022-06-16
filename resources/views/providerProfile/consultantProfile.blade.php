@@ -1001,7 +1001,7 @@
     $(document).ready(function() {
         console.log(2)
         $("textarea").each(function() {
-            this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;width:100%;background-color:white !important; box-shadow: none ;");
+            this.setAttribute("style", "height:" + (this.scrollHeight+20) + "px;overflow-y:hidden;width:100%;background-color:white !important; box-shadow: none ;");
         }).on("input", function() {
             this.style.height = "auto";
             this.style.height = (this.scrollHeight) + "px";
