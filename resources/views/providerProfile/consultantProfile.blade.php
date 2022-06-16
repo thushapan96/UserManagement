@@ -1002,6 +1002,7 @@
     $(document).ready(function() {
         setTimeout(function() {
             $("textarea").each(function(textarea) {
+                console.log('textarea')
                 $(this).height($(this)[0].scrollHeight + 10);
             });
         }, 2000);
