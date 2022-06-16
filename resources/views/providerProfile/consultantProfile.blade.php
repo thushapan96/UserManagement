@@ -1001,6 +1001,7 @@
 <script>
     $(document).ready(function() {
         $("textarea").each(function() {
+            console.log('inside vanthuttu')
             $(this).height($(this)[0].scrollHeight+10+'px');
         });
         $('.page-active').removeClass('sc-page-active')
