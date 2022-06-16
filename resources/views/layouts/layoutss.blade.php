@@ -110,6 +110,7 @@
         box-sizing: border-box;
         padding-top: 5px !important;
         padding-bottom: 10px !important;
+        line-height: 30px !important;
     }
 
     #sc-sidebar-main .sc-sidebar-menu>li>a .uk-nav-icon>i:before {
@@ -412,7 +413,7 @@
                     <li class="" style="padding:0 !important">
                         <a><span style="color:#d81400;font-size: 17px;">Menu</span></a>
 
-                        <ul class="sc-sidebar-menu ">
+                        <ul class="sc-sidebar-menu " style="" >
                             <li title="" class="sc-page-active page-active">
                                 <a href="{{route('indexx')}}">
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
