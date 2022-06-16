@@ -1000,7 +1000,7 @@
 
 <script>
     $(document).ready(function() {
-        $("textarea").each(function(textarea) {
+        $("textarea").each(function() {
             $(this).height($(this)[0].scrollHeight);
         });
         $('.page-active').removeClass('sc-page-active')
