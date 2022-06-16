@@ -118,8 +118,9 @@
         -webkit-transition: color 140ms cubic-bezier(.55, 0, .1, 1);
         transition: color 140ms cubic-bezier(.55, 0, .1, 1);
     }
+
     #sc-sidebar-main .sc-sidebar-menu li a {
-        font-size:15px !important
+        font-size: 15px !important
     }
 </style>
 
@@ -413,7 +414,7 @@
                     <li class="" style="padding:0 !important">
                         <a><span style="color:#d81400;font-size: 17px;">Menu</span></a>
 
-                        <ul class="sc-sidebar-menu " style="" >
+                        <ul class="sc-sidebar-menu " style="">
                             <li title="" class="sc-page-active page-active">
                                 <a href="{{route('indexx')}}">
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
@@ -714,9 +715,6 @@
     <script src="{{asset('assets/js/vendor/loadjs.min.js')}}"></script>
 
     <script>
-         $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight + 10);
-        });
         var html = document.getElementsByTagName('html')[0];
         // ----------- CSS
         // md icons
@@ -780,8 +778,12 @@
                 });
             });
         });
-       
-      
+
+        setTimeout(function() {
+            $("textarea").each(function(textarea) {
+                $(this).height($(this)[0].scrollHeight + 10);
+            });
+        }, 1000);
     </script>
 
     <!-- <div id="sc-style-switcher">
