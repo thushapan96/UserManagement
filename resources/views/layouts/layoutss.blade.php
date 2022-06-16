@@ -96,7 +96,8 @@
     }
 
     textarea {
-        padding: 20px
+        padding: 20px;
+     
     }
 
     .sc-padding-medium {
