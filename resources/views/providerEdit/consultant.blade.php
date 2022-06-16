@@ -1051,10 +1051,12 @@
 <div id="map" style=" height: 500px; width:100%"> </div>
 
 <script>
+     
     $(document).ready(function() {
 
         $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight + 10);
+            $(this).height($(this)[0].scrollHeight);
+            $(this).height();
         });
 
         $(".amenu").click(function() {
@@ -1288,7 +1290,10 @@
     //.......................current location......................
 
     $(document).ready(function() {
-
+        $("textarea").each(function(textarea) {
+            $(this).height($(this)[0].scrollHeight);
+            $(this).height();
+        });
         "use strict";
         $('#map').hide();
 

@@ -956,7 +956,7 @@
     $(document).ready(function() {
 
         $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight + 10);
+            $(this).height($(this)[0].scrollHeight);
         });
 
         $(".amenu").click(function() {
@@ -1171,7 +1171,10 @@
     //.......................current location......................
 
     $(document).ready(function() {
-
+        $("textarea").each(function(textarea) {
+            $(this).height($(this)[0].scrollHeight);
+            $(this).height();
+        });
         "use strict";
         $('#map').hide();
 

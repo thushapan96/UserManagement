@@ -866,11 +866,9 @@
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
 
-        setTimeout(function() {
-            $("textarea").each(function(textarea) {
-                $(this).height($(this)[0].scrollHeight + 10);
-            });
-        }, 2000);
+        $("textarea").each(function(textarea) {
+            $(this).height($(this)[0].scrollHeight);
+        });
 
         $(".bmenu").click(function() {
             $('.tab-pane').fadeOut();

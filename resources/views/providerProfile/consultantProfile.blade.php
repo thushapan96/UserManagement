@@ -828,8 +828,8 @@
                                             <label>{{$consultants->type}} Achievements
                                             </label>
                                             <br>
+                                            <textarea name="achievement" value="{{$consultants->achievement}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->achievement}}</textarea>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -1000,12 +1000,9 @@
 
 <script>
     $(document).ready(function() {
-        setTimeout(function() {
-            $("textarea").each(function(textarea) {
-                console.log('textarea')
-                $(this).height($(this)[0].scrollHeight + 10);
-            });
-        }, 5000);
+        $("textarea").each(function(textarea) {
+            $(this).height($(this)[0].scrollHeight);
+        });
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
         var chargeable = "{{$consultants->initial_chargeable_type}}"
