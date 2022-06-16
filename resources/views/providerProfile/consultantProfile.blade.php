@@ -1000,7 +1000,9 @@
 
 <script>
     $(document).ready(function() {
-      
+        $("textarea").each(function() {
+            $(this).height($(this)[0].scrollHeight);
+        });
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
         var chargeable = "{{$consultants->initial_chargeable_type}}"

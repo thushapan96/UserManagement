@@ -778,12 +778,8 @@
                 });
             });
         });
-        setTimeout(function() {
-            $("textarea").each(function() {
-                console.log('tttttttttttttttttt')
-                $(this).height($(this)[0].scrollHeight);
-            });
-        }, 2000);
+        
+       
     </script>
 
     <!-- <div id="sc-style-switcher">
