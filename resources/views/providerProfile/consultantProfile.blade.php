@@ -4,7 +4,8 @@
 <style>
     textarea {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        padding: 20px
+
+
     }
 
     th {
@@ -691,7 +692,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea class="outset" name="history" value="{{$consultants->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
+                                            <textarea class="outset" name="history" value="{{$consultants->history}}" style=" width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
 
 
                                         </div>
@@ -706,7 +707,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;height:none !important" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -996,13 +997,36 @@
         </div>
     </div>
 </section>
-
-
+<script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 <script>
     $(document).ready(function() {
-        $("textarea").each(function(index) {
-            console.log(index,$(this)[0].scrollHeight)
+        $("textarea").each(function() {
+            autosize($('textarea'));
+            var height = $('textarea').css('height')
             $(this).height($(this)[0].scrollHeight);
+           
+        });
+
+        $("#amenu").click(function() {
+
+        });
+        $("#amenu1").click(function() {
+
+        });
+        $("#amenu2").click(function() {
+
+        });
+        $("#amenu3").click(function() {
+
+        });
+        $("#amenu4").click(function() {
+
+        });
+        $("#amenu5").click(function() {
+
+        });
+        $("#amenu6").click(function() {
+
         });
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
