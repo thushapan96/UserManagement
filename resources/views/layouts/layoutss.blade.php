@@ -714,6 +714,9 @@
     <script src="{{asset('assets/js/vendor/loadjs.min.js')}}"></script>
 
     <script>
+         $("textarea").each(function(textarea) {
+            $(this).height($(this)[0].scrollHeight + 10);
+        });
         var html = document.getElementsByTagName('html')[0];
         // ----------- CSS
         // md icons
@@ -777,9 +780,8 @@
                 });
             });
         });
-        $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight + 10);
-        });
+       
+      
     </script>
 
     <!-- <div id="sc-style-switcher">
