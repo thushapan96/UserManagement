@@ -779,6 +779,7 @@
             });
         });
         $("textarea").each(function() {
+            console.log('tttttttttttttttttt')
             $(this).height($(this)[0].scrollHeight);
         });
     </script>
