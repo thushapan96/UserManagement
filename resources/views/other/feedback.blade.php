@@ -13,7 +13,7 @@
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
 
-                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="9" name="Comment" value="{{$feedback}}" disabled>{{$feedback}}</textarea>
+                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="Comment" value="{{$feedback}}" disabled>{{$feedback}}</textarea>
                         </div>
                     </div>
                 </div>

@@ -31,19 +31,19 @@
 
     <div class="row">
 
-        <div class="col-md-8" style="margin-left:10%;margin-right:0%">
+        <div class="col-md-8" >
             <h3 class="float-center" style="text-align:center">Profile</h3>
-            <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer; ">
+            <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                 <li class="nav-linkk" id="amenu"><a style="cursor:pointer;padding: .5rem 3rem;" aria-current="page">personal</a></li>
                 <li class="nav-linkk" id="amenu1"><a style="cursor:pointer;padding: .5rem 3rem;">academic</a></li>
                 <li class="nav-linkk" id="amenu2"><a style="cursor:pointer;padding: .5rem 3rem;">work</a></li>
                 <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: .5rem 3rem;">sponsor</a></li>
             </u1>
-            <u1 class="uk-switcher ">
+            <u1 class="uk-switcher " >
                 <li id='menu' class='tab-pane '>
                     @if($personal)
 
-                    <div class='uk-card col-md-10'>
+                    <div class='uk-card col-md-10' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 <h6 class="labels" style="text-decoration: underline;color:#004e75">Personal Information</h6>
@@ -184,7 +184,7 @@
                 </li>
                 <li id='menu1' class='tab-pane'>
                     @if($Academy)
-                    <div class='uk-card col-md-10'>
+                    <div class='uk-card col-md-10' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
 
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
@@ -364,7 +364,7 @@
                 </li>
                 <li id='menu2' class='tab-pane '>
                     @if($Work)
-                    <div class=' card col-md-10'>
+                    <div class=' card col-md-10' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
 
                             @foreach($Work as $key =>$row)
@@ -469,7 +469,7 @@
                 </li>
                 <li id='menu3' class='tab-pane'>
                     @if($Sponsor)
-                    <div class='card col-md-10'>
+                    <div class='card col-md-10' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 <div class=" col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
@@ -646,15 +646,15 @@
             </u1>
         </div>
 
-        <div class="col-md-2 uk-card" style="margin-top:9%;height:100% !important;margin-left:0% !important">
+        <div class="col-md-3 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                     <div class="d-flex flex-column align-items-center text-center py-1">
                         <div class="row">
                             @if($image)
-                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="{{url('files/'.$image)}}">
+                            <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="{{url('files/'.$image)}}">
                             @else
-                            <img class="rounded-circle  img " style="width:150px !important;height:130px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                            <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                             @endif
                         </div>
                         <div class="spinner" style=" margin: 0 auto;"></div>
@@ -714,7 +714,7 @@
 
 <script>
     $(document).ready(function() {
-       
+
         console.log('hiii')
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
