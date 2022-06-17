@@ -678,7 +678,7 @@
                                         <div class="form-group">
                                             <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
 
-                                            <textarea name="privacy_policy_detail" value="" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
+                                            <textarea id="textarea1" name="privacy_policy_detail" value="" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -691,7 +691,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea class="outset" name="history" value="{{$consultants->history}}" style=" width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
+                                            <textarea id="textarea2" class="outset" name="history" value="{{$consultants->history}}" style=" width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
 
 
                                         </div>
@@ -706,7 +706,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;height:none !important" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                            <textarea id="textarea3" style="width:100%;background-color:white !important; box-shadow: none ;height:none !important" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -828,7 +828,7 @@
                                             <label>{{$consultants->type}} Achievements
                                             </label>
                                             <br>
-                                            <textarea name="achievement" value="{{$consultants->achievement}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->achievement}}</textarea>
+                                            <textarea id="textarea4"name="achievement" value="{{$consultants->achievement}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->achievement}}</textarea>
 
                                         </div>
                                     </div>
@@ -872,7 +872,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
+                                            <textarea id="textarea5" style="width:100%;background-color:white !important; box-shadow: none ;" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -1000,11 +1000,15 @@
 <script>
     $(document).ready(function() {
         console.log(2)
-        $("textarea").each(function(index) {
-            console.log(index,$(this)[0].scrollHeight)
-            $(this).height($(this)[0].scrollHeight);
-        });
-
+        // $("textarea").each(function(index) {
+        //     console.log(index,$(this)[0].scrollHeight)
+        //     $(this).height($(this)[0].scrollHeight);
+        // });
+        $('#textarea1').height($('#textarea1')[0].scrollHeight);
+        $('#textarea2').height($('#textarea2')[0].scrollHeight);
+        $('#textarea3').height($('#textarea3')[0].scrollHeight);
+        $('#textarea4').height($('#textarea4')[0].scrollHeight);
+        $('#textarea5').height($('#textarea5')[0].scrollHeight);
         $("#amenu").click(function() {
 
         });
