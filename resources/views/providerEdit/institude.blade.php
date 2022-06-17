@@ -652,7 +652,7 @@
                                             <div class="form-group">
                                                 <label>If Yes, Enclose the Document
                                                 </label>
-                                               
+
                                                 <a href="{{url('files/'.$institutions->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;">{{$institutions->privacy_policy_document}}</a>
                                                 <input class="form-control " type="file" name="privacy_policy_document" value="{{old('privacy_policy_document')}}">
 
@@ -943,7 +943,12 @@
                         </div>
                     </li> -->
 
-
+                    <script>
+                        $("textarea").each(function(index) {
+                            console.log(index, $(this)[0].scrollHeight)
+                            $(this).height($(this)[0].scrollHeight);
+                        });
+                    </script>
                 </u1>
             </form>
         </div>
@@ -955,9 +960,6 @@
 <script>
     $(document).ready(function() {
 
-        $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight);
-        });
 
         $(".amenu").click(function() {
 
@@ -1171,10 +1173,7 @@
     //.......................current location......................
 
     $(document).ready(function() {
-        $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight);
-            $(this).height();
-        });
+
         "use strict";
         $('#map').hide();
 

@@ -599,6 +599,12 @@
                         </div>
                     </div>
                 </li> -->
+                <script>
+                    $("textarea").each(function(index) {
+                        console.log(index, $(this)[0].scrollHeight)
+                        $(this).height($(this)[0].scrollHeight);
+                    });
+                </script>
             </u1>
 
         </div>
@@ -672,10 +678,7 @@
     $(document).ready(function() {
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
-        $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight);
-            $(this).height();
-        });
+        
         var chargeable = "{{$consultants->initial_chargeable_type}}"
         if (chargeable == 'free') {
             $('.free').css('text-decoration', 'underline')

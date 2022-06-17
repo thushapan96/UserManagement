@@ -637,6 +637,12 @@
                     </div>
                     @endif
                 </li>
+                <script>
+                    $("textarea").each(function(index) {
+                        console.log(index, $(this)[0].scrollHeight)
+                        $(this).height($(this)[0].scrollHeight);
+                    });
+                </script>
             </u1>
         </div>
 
@@ -708,10 +714,7 @@
 
 <script>
     $(document).ready(function() {
-        $("textarea").each(function(textarea) {
-            $(this).height($(this)[0].scrollHeight);
-            $(this).height();
-        });
+       
         console.log('hiii')
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
