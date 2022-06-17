@@ -654,6 +654,12 @@
                             </fieldset>
                         </div>
                     </div>
+                    <script>
+                        $("textarea").each(function(index) {
+                            console.log(index, $(this)[0].scrollHeight)
+                            $(this).height($(this)[0].scrollHeight);
+                        });
+                    </script>
                 </li>
                 <li id='menu2' class='tab-pane '>
                     <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
@@ -726,6 +732,12 @@
                             </fieldset>
                         </div>
                     </div>
+                    <script>
+                        $("textarea").each(function(index) {
+                            console.log(index, $(this)[0].scrollHeight)
+                            $(this).height($(this)[0].scrollHeight);
+                        });
+                    </script>
                 </li>
                 <li id='menu1' class='tab-pane '>
                     <div class=' col-md-11' style="margin-left:auto !important;margin-right:auto">
@@ -828,7 +840,7 @@
                                             <label>{{$consultants->type}} Achievements
                                             </label>
                                             <br>
-                                            <textarea id="textarea4"name="achievement" value="{{$consultants->achievement}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->achievement}}</textarea>
+                                            <textarea id="textarea4" name="achievement" value="{{$consultants->achievement}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->achievement}}</textarea>
 
                                         </div>
                                     </div>
@@ -848,6 +860,12 @@
                             </fieldset>
                         </div>
                     </div>
+                    <script>
+                        $("textarea").each(function(index) {
+                            console.log(index, $(this)[0].scrollHeight)
+                            $(this).height($(this)[0].scrollHeight);
+                        });
+                    </script>
                 </li>
                 <li id='menu4' class='tab-pane'>
                     <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
@@ -880,6 +898,12 @@
                             </fieldset>
                         </div>
                     </div>
+                    <script>
+                        $("textarea").each(function(index) {
+                            console.log(index, $(this)[0].scrollHeight)
+                            $(this).height($(this)[0].scrollHeight);
+                        });
+                    </script>
                 </li>
                 <!-- <li class='tab-pane ' id="menu5">
                     <div class="uk-card col-md-10" style="margin-left:5% !important;">
@@ -1000,15 +1024,7 @@
 <script>
     $(document).ready(function() {
         console.log(2)
-        // $("textarea").each(function(index) {
-        //     console.log(index,$(this)[0].scrollHeight)
-        //     $(this).height($(this)[0].scrollHeight);
-        // });
-        $('#textarea1').height($('#textarea1')[0].scrollHeight);
-        $('#textarea2').height($('#textarea2')[0].scrollHeight);
-        $('#textarea3').height($('#textarea3')[0].scrollHeight);
-        $('#textarea4').height($('#textarea4')[0].scrollHeight);
-        $('#textarea5').height($('#textarea5')[0].scrollHeight);
+       
         $("#amenu").click(function() {
 
         });
