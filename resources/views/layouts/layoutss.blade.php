@@ -860,10 +860,6 @@
     </div> -->
 
 </body>
-<script>
-    $("textarea").each(function(textarea) {
-        $(this).height($(this)[0].scrollHeight);
-    });
-</script>
+
 
 </html>

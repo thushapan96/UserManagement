@@ -678,7 +678,7 @@
                                         <div class="form-group">
                                             <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
 
-                                            <textarea name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
+                                            <textarea name="privacy_policy_detail" value="" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -1000,7 +1000,8 @@
 <script>
     $(document).ready(function() {
         console.log(2)
-        $("textarea").each(function(textarea) {
+        $("textarea").each(function(index) {
+            console.log(index,$(this)[0].scrollHeight)
             $(this).height($(this)[0].scrollHeight);
         });
 
