@@ -7,8 +7,11 @@
     }
 
     .service_img {
-        border: 1px solid #555;
         border-radius: 5%;
+        box-shadow: 10px 10px 5px #ccc;
+      -moz-box-shadow: 10px 10px 5px #ccc;
+      -webkit-box-shadow: 10px 10px 5px #ccc;
+      -khtml-box-shadow: 10px 10px 5px #ccc;
     }
 </style>
 
