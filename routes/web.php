@@ -28,7 +28,10 @@ Route::get('/test', function () {
 
     return view('test');
 });
+Route::get('/education', function () {
 
+    return view('education');
+});
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/providerProfile', function () {
