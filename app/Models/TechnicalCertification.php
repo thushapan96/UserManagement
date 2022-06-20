@@ -13,7 +13,7 @@ class TechnicalCertification extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'education_id', 'technical_certification_name', 'certificate_specialization', 'technical_certification_course_duration', 'technical_certification_grade',
-        'technical_certification_year_completion'
+        'education_id','calculator_id', 'technical_certification_name', 'certificate_specialization', 'technical_certification_course_duration', 'technical_certification_grade',
+        'technical_certification_year_completion','type'
     ];
 }

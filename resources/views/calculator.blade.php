@@ -1,6 +1,6 @@
 @extends('layouts.layoutss')
 @section('content')
-<form action="{{route('add.education')}}" method="post" enctype="multipart/form-data">
+<form action="{{route('add.calculator')}}" method="post" enctype="multipart/form-data">
 
     @csrf
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
@@ -11,7 +11,6 @@
     <u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
         <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">tab1 </a></li>
         <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab2 </a></li>
-        <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab3</a></li>
     </u1>
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
         <p>Candidates to provide correct information. We will assist and recommend based on your previous educational qualification and interest. All Universities and Colleges required IELTS Academic but some Universities also required GRE/TOEFL/GMAT/SAT in addition to IELTS. </p>
@@ -81,6 +80,7 @@
                                     <input class="form-control" type="text" value="{{old('country_residence')}}" name="country_residence">
                                 </div>
                             </div>
+
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Contact Number</label>
@@ -89,28 +89,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row custom-box " id="">
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>Enrollment Request</label>
 
-                                    <select class="form-control" name="enrollment_request">
-                                        <option value="Graduation" {{old('enrollment_request') == 'Graduation' ? 'selected':''}}>Graduation</option>
-                                        <option value="Post Graduation" {{old('enrollment_request') == 'Post Graduation' ? 'selected':''}}>Post Graduation</option>
-                                        <option value="Doctorate" {{old('enrollment_request') == 'Doctorate' ? 'selected':''}}>Doctorate</option>
-                                        <option value="PG Diploma" {{old('enrollment_request') == 'PG Diploma' ? 'selected':''}}>PG Diploma</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-9 col-md-9 col-12">
-                                <div class="form-group">
-                                    <label>Remarks/Comments if any</label>
 
-                                    <textarea class="form-control" style="width:100%;" name="enrollment_request_comment" value="{{old('enrollment_request_comment')}}">{{old('enrollment_request_comment')}}</textarea>
-
-                                </div>
-                            </div>
-                        </div>
                         <hr>
                         <h6>Secondary School Certificate -10th/SSC</h6>
                         <div class="row custom-box " id="">
@@ -277,6 +257,55 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
+                        <div class="row custom-box " id="">
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <div class="form-group">
+                                    <label>Have you attempted IELTS?
+                                    </label>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="IELTS1" name="IELTS" value="yes" {{ (is_array(old('IELTS')) and in_array("yes", old('IELTS'))) ? ' checked' : '' }}>
+                                        <label class="custom-control-label" for="IELTS1"> Yes</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="IELTS2" name="IELTS" value="no" {{ (is_array(old('IELTS')) and in_array("no", old('IELTS'))) ? ' checked' : '' }}>
+                                        <label class="custom-control-label" for="IELTS2">No</label>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <div class="form-group">
+                                    <label>Listening</label>
+                                    <input class="form-control" type="text" value="{{old('IELTS_listening')}}" name="IELTS_listening">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <div class="form-group">
+                                    <label>Reading</label>
+                                    <input class="form-control" type="text" value="{{old('IELTS_reading')}}" name="IELTS_reading">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <div class="form-group">
+                                    <label>Writing</label>
+                                    <input class="form-control" type="text" value="{{old('IELTS_writing')}}" name="IELTS_writing">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <div class="form-group">
+                                    <label>Speaking</label>
+                                    <input class="form-control" type="text" value="{{old('IELTS_speaking')}}" name="IELTS_speaking">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <div class="form-group">
+                                    <label>Overall Score</label>
+                                    <input class="form-control" type="text" value="{{old('IELTS_overall_score')}}" name="IELTS_overall_score">
+                                </div>
+                            </div>
+                        </div>
                         <div class="float-right">
                             <button type="button" class="client-btn bmenu uk-button uk-button-primary">Next </button>
                         </div>
@@ -298,123 +327,6 @@
                         </div>
                         <button id="add_TC" type="button" class="btn uk-button uk-button-primary">Add Technical Certification</button>
                         <hr>
-                        <div class="row custom-box">
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-
-                                    <label>Write your Interest to pursue Higher education along with Major Subject/Discipline, provide information wherever necessary:</label>
-                                    <textarea class="form-control" style="width:100%" name="interest_pursue_higher_education">{{old('interest_pursue_higher_education')}}</textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row custom-box " id="">
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>Degree – 4 Years</label>
-                                    <input class="form-control" type="text" value="{{old('degree_year')}}" name="degree_year">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>Master Degree – 2 Years</label>
-                                    <input class="form-control" type="text" value="{{old('master_degree_year')}}" name="master_degree_year">
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>PhD – 3 Years</label>
-                                    <input class="form-control" type="text" value="{{old('phd_year')}}" name="phd_year">
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>PG Diploma – 1 Year</label>
-                                    <input class="form-control" type="text" value="{{old('pg_diploma_year')}}" name="pg_diploma_year">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row custom-box " id="">
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>Preferred College if any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_college')}}" name="preferred_college">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>Preferred University If Any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_university')}}" name="preferred_university">
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>Preferred State if any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_State')}}" name="preferred_State">
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-12">
-                                <div class="form-group">
-                                    <label>Preferred Province if Any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_region')}}" name="preferred_region">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row custom-box " id="">
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <label>Preferred City if Any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_city')}}" name="preferred_city">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <label>Preferred Mode of Education</label>
-                                    <select class="form-control" name="communication_mode">
-                                        <option value="In Campus" {{old('communication_mode') == 'In Campus' ? 'selected':''}}>In Campus</option>
-                                        <option value="Off Campus" {{old('communication_mode') == 'Off Campus' ? 'selected':''}}>Off Campus</option>
-                                        <option value="Online" {{old('communication_mode') == 'Online' ? 'selected':''}}>Online</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <label>Preferred Intake
-                                    </label>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Intake1" name="preferred_intake[]" value="January" {{ (is_array(old('preferred_intake')) and in_array("January", old('preferred_intake'))) ? 'checked' : '' }}>
-                                        <label class="custom-control-label" for="Intake1"> January</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Intake2" name="preferred_intake[]" value="May" {{ (is_array(old('preferred_intake')) and in_array("May", old('preferred_intake'))) ? 'checked' : '' }}>
-                                        <label class="custom-control-label" for="Intake2"> May</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Intake3" name="preferred_intake[]" value="September" {{ (is_array(old('preferred_intake')) and in_array("September", old('preferred_intake'))) ? 'checked' : '' }}>
-                                        <label class="custom-control-label" for="Intake3">September</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Intake4" name="preferred_intake[]" value="Other" {{ (is_array(old('preferred_intake')) and in_array("Other", old('preferred_intake'))) ? 'checked' : '' }}>
-                                        <label class="custom-control-label" for="Intake4"> Other</label>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="float-right">
-                            <button type="button" class="client-btn bmenu1 uk-button uk-button-primary">Next </button>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
-        </li>
-        <li id='menu2' class='tab-pane '>
-            <div class='uk-card col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-                <div class="uk-card-body sc-padding-medium">
-                    <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
@@ -454,14 +366,14 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pasttt" name="is_rejected_visa_past" value="yes" {{ old('is_rejected_visa_past') == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pasttt">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="Pastttt" name="is_rejected_visa_past" value="yes" {{ old('is_rejected_visa_past') == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastttt">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Past2" name="is_rejected_visa_past" value="no" {{ old('is_rejected_visa_past') == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Past2">No</label>
+                                            <input type="radio" class="custom-control-input " id="Pastttt2" name="is_rejected_visa_past" value="no" {{ old('is_rejected_visa_past') == "no" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastttt2">No</label>
                                         </div>
                                     </div>
                                 </div>
@@ -512,177 +424,56 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="row custom-box " id="">
-                            <div class="col-lg-7 col-md-7 col-12">
-                                <div class="form-group">
-                                    <label>Prerequisite and Document Checklist:
-                                    </label>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite" name="prerequisite_document[]" value="Birth Certificate" {{ (is_array(old('prerequisite_document')) and in_array("January", old('prerequisite_document'))) ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="Prerequisite">Do you have a proof of Documents for Birth Certificate?</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite1" name="prerequisite_document[]" value="SSC" {{ (is_array(old('prerequisite_document')) and in_array("SSC", old('prerequisite_document'))) ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="Prerequisite1"> Do you have a proof of Documents for the previous education- SSC?</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite2" name="prerequisite_document[]" value="Intermediate" {{ (is_array(old('prerequisite_document')) and in_array("Intermediate", old('prerequisite_document'))) ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="Prerequisite2"> Do you have a proof of Documents for the previous education - Intermediate?</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite3" name="prerequisite_document[]" value="Graduation" {{ (is_array(old('prerequisite_document')) and in_array("Graduation", old('prerequisite_document'))) ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="Prerequisite3">Do you have a proof of Documents for the previous education - Graduation? If Applicable</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite4" name="prerequisite_document[]" value="Post Graduation" {{ (is_array(old('prerequisite_document')) and in_array("Post Graduation", old('prerequisite_document'))) ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="Prerequisite4"> Do you have a proof of Documents for the previous education – Post Graduation? If Applicable</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row custom-box " id="">
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
-
-                                    <textarea class="form-control" style="width:100%;" name="eca">{{old('eca')}}</textarea>
-
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-
                         <div class="row">
-
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                    <label>Is your Passport Valid for another 6 Months?
+                                    <label>Have you created EOI Profile in the past? If Yes, Valid up to?
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input" id="Passport" name="passport_valid" value="yes" {{ old('passport_valid') == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Passport">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="Pastt11" name="EOI_profile" value="yes" {{ old('EOI_profile') == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastt11">Yes</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-2">
+                                    <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input" id="Passport2" name="passport_valid" value="no" {{ old('passport_valid') == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Passport2">No</label>
+                                            <input type="radio" class="custom-control-input " id="Pastt22" name="EOI_profile" value="no" {{ old('EOI_profile') == "no" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastt22">No</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                    <label>Have you attempted IELTS academic in the past? If Yes, Valid up to?
+                                    <label>Have you created Provincial Profile in the past? If Yes, Valid up to?
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="academic " name="IELTS_attempted" value="yes" {{ old('IELTS_attempted') == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="academic ">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="Pastt3" name="Provincial_profile" value="yes" {{ old('Provincial_profile') == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastt3">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="academic 2" name="IELTS_attempted" value="no" {{ old('IELTS_attempted') == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="academic 2">No</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <label>Have you attempted GRE in the past? If Yes, Valid up to?
-                                    </label>
-                                    <div class="col-lg-2 col-md-2 col-2 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GRE" name="GRE_attempted" value="yes" {{ old('GRE_attempted') == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="GRE">Yes</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GRE2" name="GRE_attempted" value="no" {{ old('GRE_attempted') == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="GRE2">No</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <label>Have you attempted TOEFL academic in the past? If Yes, Valid up to?
-                                    </label>
-                                    <div class="col-lg-2 col-md-2 col-2 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="TOEFL " name="TOEFL_attempted" value="yes" {{ old('TOEFL_attempted') == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="TOEFL ">Yes</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="TOEFL2" name="TOEFL_attempted" value="no" {{ old('TOEFL_attempted') == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="TOEFL2">No</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <label>Have you attempted GMAT academic in the past? If Yes, Valid up to?
-                                    </label>
-                                    <div class="col-lg-2 col-md-2 col-2 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GMAT" name="GMAT_attempted" value="yes" {{ old('GMAT_attempted') == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="GMAT">Yes</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GMAT2" name="GMAT_attempted" value="no" {{ old('GMAT_attempted') == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="GMAT2">No</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
-                                    <label>Are you interested to Attempt GRE/TOEFL/GMAT/SAT if required to fulfil the University/College eligibility criteria?
-                                    </label>
-                                    <div class="col-lg-2 col-md-2 col-2 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="interested" name="interested_attempted" value="yes" {{ old('interested_attempted') == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="interested">Yes</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="interested2" name="interested_attempted" value="no" {{ old('interested_attempted') == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="interested2">No</label>
+                                            <input type="radio" class="custom-control-input " id="Pastt4" name="Provincial_profile" value="no" {{ old('Provincial_profile') == "no" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastt4">No</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-12 ">
-                                <div class="form-group">
-                                    <label>Remarks/Comments if any</label>
-
-                                    <textarea class="form-control" rows="6" style="width:100%;" name="feedback">{{old('feedback')}}</textarea>
-
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="float-right">
                             <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
                         </div>
+
+
+
                     </fieldset>
                 </div>
             </div>
         </li>
+
     </u1>
 
 </form>
@@ -723,8 +514,6 @@
                                     <label>Employment (Employer Name)</label>
                                     <input class="form-control" type="text" value="{{old('employer_name')}}" name="employer_name[]" >
                                     <input type="text" value="yes" name="is_employer[]" hidden>
-                                    <input class="form-control" type="text" name="type" value="education" hidden>
-
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
@@ -788,8 +577,6 @@
                                         <label>Technical Certification (Name of Certificate)</label>
                                         <input class="form-control" type="text" value="{{old('technical_certification_name')}}" name="technical_certification_name[]">
                                         <input type="text" value="yes" name="is_technical_certification[]" hidden>
-                                        <input class="form-control" type="text" name="type" value="education" hidden>
-
 
                                     </div>
                                 </div>

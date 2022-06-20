@@ -8,6 +8,7 @@ use App\Models\Institution;
 use App\Models\Consultant;
 use App\Models\TechnicalCertification;
 use App\Models\Employment;
+use App\Models\Calculator;
 use App\Models\Education;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -119,6 +120,7 @@ class OtherController extends Controller
             for ($i = 0; $i < $count; $i++) {
                 $Employment = new Employment;
                 $Employment->education_id  =  $Education->id;
+                $Employment->type  =  'education';
                 $Employment->employer_name  = $request->employer_name[$i];
                 $Employment->job_tittle  = $request->job_tittle[$i];
                 $Employment->job_field  = $request->job_field[$i];
@@ -136,6 +138,7 @@ class OtherController extends Controller
                 $TechnicalCertification = new TechnicalCertification;
 
                 $TechnicalCertification->education_id  =  $Education->id;
+                $TechnicalCertification->type  =  'education';
                 $TechnicalCertification->technical_certification_name  = $request->technical_certification_name[$i];
                 $TechnicalCertification->certificate_specialization  = $request->certificate_specialization[$i];
                 $TechnicalCertification->technical_certification_course_duration  = $request->technical_certification_course_duration[$i];
@@ -150,7 +153,7 @@ class OtherController extends Controller
     public function educationEdit()
     {
         $educations =  Education::where('user_id', Auth::user()->id)->first();
-        $employments = Employment::where('education_id',  $educations->id)->get();
+        $employments = Employment::where('education_id',  $educations->id)->where('type', 'education')->get();
         $technicalCertifications = TechnicalCertification::where('education_id',  $educations->id)->get();
 
         return view('editeducation')->with('educations', $educations)->with('employments', $employments)->with('technicalCertifications', $technicalCertifications);
@@ -167,6 +170,7 @@ class OtherController extends Controller
             for ($i = 0; $i < $count; $i++) {
                 if ($request->is_employer == 'yes') {
                     $Employment = new Employment;
+                    $Employment->type  =  'education';
                     $Employment->education_id  =  $Education->id;
                     $Employment->employer_name  = $request->employer_name[$i];
                     $Employment->job_tittle  = $request->job_tittle[$i];
@@ -178,6 +182,7 @@ class OtherController extends Controller
                 } else {
                     $Employment = Employment::find($request->employmentsId[$i]);
                     $Employment->education_id  =  $Education->id;
+                    $Employment->type  =  'education';
                     $Employment->employer_name  = $request->employer_name[$i];
                     $Employment->job_tittle  = $request->job_tittle[$i];
                     $Employment->job_field  = $request->job_field[$i];
@@ -195,8 +200,134 @@ class OtherController extends Controller
             for ($i = 0; $i < $count; $i++) {
                 if ($request->is_technical_certification == 'yes') {
                     $TechnicalCertification = new TechnicalCertification;
-
                     $TechnicalCertification->education_id  =  $Education->id;
+                    $TechnicalCertification->type  =  'education';
+                    $TechnicalCertification->technical_certification_name  = $request->technical_certification_name[$i];
+                    $TechnicalCertification->certificate_specialization  = $request->certificate_specialization[$i];
+                    $TechnicalCertification->technical_certification_course_duration  = $request->technical_certification_course_duration[$i];
+                    $TechnicalCertification->technical_certification_grade  = $request->technical_certification_grade[$i];
+                    $TechnicalCertification->technical_certification_year_completion  = $request->technical_certification_year_completion[$i];
+                    $TechnicalCertification->save();
+                } else {
+                    $TechnicalCertification = TechnicalCertification::find($request->technicalCertificationsId[$i]);
+                    $TechnicalCertification->education_id  =  $Education->id;
+                    $TechnicalCertification->type  =  'education';
+                    $TechnicalCertification->technical_certification_name  = $request->technical_certification_name[$i];
+                    $TechnicalCertification->certificate_specialization  = $request->certificate_specialization[$i];
+                    $TechnicalCertification->technical_certification_course_duration  = $request->technical_certification_course_duration[$i];
+                    $TechnicalCertification->technical_certification_grade  = $request->technical_certification_grade[$i];
+                    $TechnicalCertification->technical_certification_year_completion  = $request->technical_certification_year_completion[$i];
+                    $TechnicalCertification->save();
+                }
+            }
+        }
+        return redirect(route('view.education'));
+    }
+
+    public function calculatorIndex()
+    {
+
+        if (Calculator::where('user_id', Auth::user()->id)->first()) {
+            return redirect(route('view.calculator'));
+        } else {
+            return view('calculator');
+        }
+    }
+
+    public function calculatorStore(Request $request)
+    {
+
+        $Calculator = Calculator::create($request->all() + ['user_id' => Auth::user()->id]);
+
+        if ($request->employer_name) {
+            $count = count($request->employer_name);
+
+            for ($i = 0; $i < $count; $i++) {
+                $Employment = new Employment;
+                $Employment->calculator_id   =  $Calculator->id;
+                $Employment->type  =  'calculator';
+                $Employment->employer_name  = $request->employer_name[$i];
+                $Employment->job_tittle  = $request->job_tittle[$i];
+                $Employment->job_field  = $request->job_field[$i];
+                $Employment->year_job_work  = $request->year_job_work[$i];
+                $Employment->from_year_job  = $request->from_year_job[$i];
+                $Employment->to_year_job  = $request->to_year_job[$i];
+                $Employment->save();
+            }
+        }
+
+        if ($request->technical_certification_name) {
+            $count = count($request->technical_certification_name);
+
+            for ($i = 0; $i < $count; $i++) {
+                $TechnicalCertification = new TechnicalCertification;
+
+                $TechnicalCertification->calculator_id  =  $Calculator->id;
+                $TechnicalCertification->type  =  'calculator';
+                $TechnicalCertification->technical_certification_name  = $request->technical_certification_name[$i];
+                $TechnicalCertification->certificate_specialization  = $request->certificate_specialization[$i];
+                $TechnicalCertification->technical_certification_course_duration  = $request->technical_certification_course_duration[$i];
+                $TechnicalCertification->technical_certification_grade  = $request->technical_certification_grade[$i];
+                $TechnicalCertification->technical_certification_year_completion  = $request->technical_certification_year_completion[$i];
+
+                $TechnicalCertification->save();
+            }
+        }
+        return redirect(route('view.calculator'));
+    }
+
+    public function calculatorEdit()
+    {
+        $calculators =  Calculator::where('user_id', Auth::user()->id)->first();
+        $employments = Employment::where('calculator_id',  $calculators->id)->where('type', 'calculator')->get();
+        $technicalCertifications = TechnicalCertification::where('calculator_id',  $calculators->id)->get();
+
+        return view('calculatoredit')->with('calculators', $calculators)->with('employments', $employments)->with('technicalCertifications', $technicalCertifications);
+    }
+
+    public function calculatorUpdate(Request $request)
+    {
+        $Calculator =  Calculator::where('user_id', Auth::user()->id)->first();
+        $Calculator->update($request->all());
+
+        if ($request->employer_name) {
+            $count = count($request->employer_name);
+
+            for ($i = 0; $i < $count; $i++) {
+                if ($request->is_employer == 'yes') {
+                    $Employment = new Employment;
+                    $Employment->calculator_id   =  $Calculator->id;
+                    $Employment->type  =  'calculator';
+                    $Employment->employer_name  = $request->employer_name[$i];
+                    $Employment->job_tittle  = $request->job_tittle[$i];
+                    $Employment->job_field  = $request->job_field[$i];
+                    $Employment->year_job_work  = $request->year_job_work[$i];
+                    $Employment->from_year_job  = $request->from_year_job[$i];
+                    $Employment->to_year_job  = $request->to_year_job[$i];
+                    $Employment->save();
+                } else {
+                    $Employment = Employment::find($request->employmentsId[$i]);
+                    $Employment->calculator_id  =  $Calculator->id;
+                    $Employment->type  =  'calculator';
+                    $Employment->employer_name  = $request->employer_name[$i];
+                    $Employment->job_tittle  = $request->job_tittle[$i];
+                    $Employment->job_field  = $request->job_field[$i];
+                    $Employment->year_job_work  = $request->year_job_work[$i];
+                    $Employment->from_year_job  = $request->from_year_job[$i];
+                    $Employment->to_year_job  = $request->to_year_job[$i];
+                    $Employment->save();
+                }
+            }
+        }
+
+        if ($request->technical_certification_name) {
+            $count = count($request->technical_certification_name);
+
+            for ($i = 0; $i < $count; $i++) {
+                if ($request->is_technical_certification == 'yes') {
+                    $TechnicalCertification = new TechnicalCertification;
+                    $TechnicalCertification->calculator_id  =  $Calculator->id;
+                    $TechnicalCertification->type  =  'calculator';
                     $TechnicalCertification->technical_certification_name  = $request->technical_certification_name[$i];
                     $TechnicalCertification->certificate_specialization  = $request->certificate_specialization[$i];
                     $TechnicalCertification->technical_certification_course_duration  = $request->technical_certification_course_duration[$i];
@@ -206,17 +337,26 @@ class OtherController extends Controller
                     $TechnicalCertification->save();
                 } else {
                     $TechnicalCertification = TechnicalCertification::find($request->technicalCertificationsId[$i]);
-                    $TechnicalCertification->education_id  =  $Education->id;
+                    $TechnicalCertification->calculator_id  = $Calculator->id;
+                    $TechnicalCertification->type  =  'calculator';
                     $TechnicalCertification->technical_certification_name  = $request->technical_certification_name[$i];
                     $TechnicalCertification->certificate_specialization  = $request->certificate_specialization[$i];
                     $TechnicalCertification->technical_certification_course_duration  = $request->technical_certification_course_duration[$i];
                     $TechnicalCertification->technical_certification_grade  = $request->technical_certification_grade[$i];
                     $TechnicalCertification->technical_certification_year_completion  = $request->technical_certification_year_completion[$i];
-
                     $TechnicalCertification->save();
                 }
             }
         }
-        return redirect(route('view.education'));
+        return redirect(route('view.calculator'));
+    }
+
+    public function calculatorview()
+    {
+        $calculators =  Calculator::where('user_id', Auth::user()->id)->first();
+        $employments = Employment::where('calculator_id',  $calculators->id)->where('type', 'calculator')->get();
+        $technicalCertifications = TechnicalCertification::where('calculator_id',  $calculators->id)->get();
+
+        return view('calculatorview')->with('calculators', $calculators)->with('employments', $employments)->with('technicalCertifications', $technicalCertifications);
     }
 }

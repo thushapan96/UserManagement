@@ -17,6 +17,9 @@ class CreateEmploymentTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->bigInteger('education_id')->unsigned()->nullable();
             $table->foreign('education_id')->references('id')->on('education')->onDelete('cascade');
+            $table->bigInteger('calculator_id')->unsigned()->nullable();
+            $table->foreign('calculator_id')->references('id')->on('calculator')->onDelete('cascade');
+            $table->string('type')->nullable();
             $table->string('employer_name')->nullable();
             $table->string('job_tittle')->nullable();
             $table->string('job_field')->nullable();

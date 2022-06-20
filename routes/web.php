@@ -56,6 +56,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('update/education', 'App\Http\Controllers\OtherController@educationUpdate')->name('update.education');
     Route::get('view/education', 'App\Http\Controllers\OtherController@educationview')->name('view.education');
 
+    Route::get('calculator', 'App\Http\Controllers\OtherController@calculatorIndex')->name('calculator');
+    Route::post('add/calculator', 'App\Http\Controllers\OtherController@calculatorStore')->name('add.calculator');
+    Route::get('edit/calculator', 'App\Http\Controllers\OtherController@calculatorEdit')->name('edit.calculator');
+    Route::post('update/calculator', 'App\Http\Controllers\OtherController@calculatorUpdate')->name('update.calculator');
+    Route::get('view/calculator', 'App\Http\Controllers\OtherController@calculatorview')->name('view.calculator');
+
 
 
 

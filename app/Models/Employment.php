@@ -12,6 +12,6 @@ class Employment extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'education_id', 'employer_name', 'job_tittle', 'job_field', 'year_job_work', 'from_year_job', 'to_year_job',
+        'education_id','calculator_id' ,'employer_name', 'job_tittle', 'job_field', 'year_job_work', 'from_year_job', 'to_year_job','type'
     ];
 }

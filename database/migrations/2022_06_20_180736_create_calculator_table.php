@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEducationTable extends Migration
+class CreateCalculatorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateEducationTable extends Migration
      */
     public function up()
     {
-        Schema::create('education', function (Blueprint $table) {
+        Schema::create('calculator', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('age')->nullable();
@@ -26,8 +26,7 @@ class CreateEducationTable extends Migration
             $table->string('country_citizen')->nullable();
             $table->string('country_residence')->nullable();
             $table->string('phone')->nullable();
-            $table->string('enrollment_request')->nullable();
-            $table->string('enrollment_request_comment')->nullable();
+          
             $table->string('secondary_year_completion')->nullable();
             $table->string('secondary_board_name')->nullable();
             $table->string('secondary_total_mark')->nullable();
@@ -48,21 +47,8 @@ class CreateEducationTable extends Migration
             $table->string('post_graduation_gpa')->nullable();
 
 
-            $table->string('degree_year')->nullable();
-            $table->string('master_degree_year')->nullable();
-            $table->string('phd_year')->nullable();
-            $table->string('pg_diploma_year')->nullable();
-            $table->string('interest_pursue_higher_education')->nullable();
-            $table->json('preferred_intake')->nullable();
-            $table->string('preferred_college')->nullable();
-            $table->string('preferred_university')->nullable();
-            $table->string('preferred_State')->nullable();
-            $table->string('preferred_region')->nullable();
-            $table->string('preferred_city')->nullable();
-
-            $table->string('communication_mode')->nullable();
+           
             $table->string('is_rejected_college')->nullable();
-
             $table->string('rejected_college_reason')->nullable();
             $table->string('rejected_college_year')->nullable();
             $table->string('is_rejected_visa_past')->nullable();
@@ -71,16 +57,16 @@ class CreateEducationTable extends Migration
             $table->string('is_rejected_visa')->nullable();
             $table->string('rejected_visa_reason')->nullable();
             $table->string('rejected_visa_year')->nullable();
-            $table->json('prerequisite_document')->nullable();
 
-            $table->string('eca')->nullable();
-            $table->string('passport_valid')->nullable();
-            $table->string('IELTS_attempted')->nullable();
-            $table->string('GRE_attempted')->nullable();
-            $table->string('TOEFL_attempted')->nullable();
-            $table->string('GMAT_attempted')->nullable();
-            $table->string('interested_attempted')->nullable();
-            $table->string('feedback')->nullable();
+            $table->string('IELTS')->nullable();
+            $table->string('IELTS_listening')->nullable();
+            $table->string('IELTS_reading')->nullable();
+            $table->string('IELTS_writing')->nullable();
+            $table->string('IELTS_speaking')->nullable();
+            $table->string('IELTS_overall_score')->nullable();
+
+            $table->string('Provincial_profile')->nullable();
+            $table->string('EOI_profile')->nullable();
 
             $table->timestamps();
         });
@@ -93,6 +79,6 @@ class CreateEducationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('education');
+        Schema::dropIfExists('calculator');
     }
 }

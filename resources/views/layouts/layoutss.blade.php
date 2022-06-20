@@ -421,7 +421,7 @@
                                 <a href="{{route('indexx')}}">
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
-                                    </span><span class="uk-nav-title">Dashboards</span>
+                                    </span><span class="uk-nav-title">Dashboard</span>
                                 </a>
 
                             </li>
@@ -525,7 +525,7 @@
 
                             @if(auth()->user()->role == 'candidate')
                             <li title="CRS Calculator" class="page-Calculator page-active">
-                                <a href="#">
+                                <a href="{{route('calculator')}}">
                                     <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
                                     </span><span class="uk-nav-title">CRS Calculator</span>
