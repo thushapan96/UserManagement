@@ -9,7 +9,7 @@ class Consultant extends Model
 {
     use HasFactory;
 
-    use HasFactory;
+ 
     protected $table = 'providers';
     protected $primaryKey = 'id';
 

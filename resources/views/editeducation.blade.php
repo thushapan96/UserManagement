@@ -1,8 +1,7 @@
 @extends('layouts.layoutss')
 @section('content')
-<form action="{{route('add.education')}}" method="post" enctype="multipart/form-data">
-
-@csrf
+<form action="{{route('update.education')}}" method="post" enctype="multipart/form-data">
+    @csrf
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
         <h3 class="" style="text-align:center">Assessment for Overseas Education - Canada</h3>
 
@@ -14,7 +13,7 @@
         <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab3</a></li>
     </u1>
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-    <p>Candidates to provide correct information. We will assist and recommend based on your previous educational qualification and interest. All Universities and Colleges required IELTS Academic but some Universities also required GRE/TOEFL/GMAT/SAT in addition to IELTS. </p>
+        <p>Candidates to provide correct information. We will assist and recommend based on your previous educational qualification and interest. All Universities and Colleges required IELTS Academic but some Universities also required GRE/TOEFL/GMAT/SAT in addition to IELTS. </p>
     </div>
     <u1 class="uk-switcher">
         <li id='menu' class='tab-pane '>
@@ -26,13 +25,13 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>First Name </label>
-                                    <input class="form-control" type="text" name="first_name" value="{{old('first_name')}}">
+                                    <input class="form-control" type="text" name="first_name" value="{{$educations->first_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>Last Name</label>
-                                    <input class="form-control" type="text" value="{{old('last_name')}}" name="last_name">
+                                    <input class="form-control" type="text" value="{{$educations->last_name}}" name="last_name">
                                 </div>
 
                             </div>
@@ -42,7 +41,7 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Age</label>
-                                    <input class="form-control" type="text" value="{{old('age')}}" name="age">
+                                    <input class="form-control" type="text" value="{{$educations->age}}" name="age">
                                     <small>Number of Years</small>
                                 </div>
                             </div>
@@ -50,14 +49,14 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Gender</label>
-                                    <input class="form-control" type="text" value="{{old('gender')}}" name="gender">
+                                    <input class="form-control" type="text" value="{{$educations->gender}}" name="gender">
                                     <small>Male/Female</small>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Email address for correspondence</label>
-                                    <input class="form-control" type="text" value="{{old('email')}}" name="email">
+                                    <input class="form-control" type="text" value="{{$educations->email}}" name="email">
                                     <small>Valid Email Address</small>
                                 </div>
                             </div>
@@ -66,25 +65,25 @@
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>City </label>
-                                    <input class="form-control" type="text" value="{{old('city')}}" name="city">
+                                    <input class="form-control" type="text" value="{{$educations->city}}" name="city">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Country of Citizenship</label>
-                                    <input class="form-control" type="text" value="{{old('country_citizen')}}" name="country_citizen">
+                                    <input class="form-control" type="text" value="{{$educations->country_citizen}}" name="country_citizen">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Country of Residence</label>
-                                    <input class="form-control" type="text" value="{{old('country_residence')}}" name="country_residence">
+                                    <input class="form-control" type="text" value="{{$educations->country_residence}}" name="country_residence">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Contact Number</label>
-                                    <input class="form-control" type="text" value="{{old('phone')}}" name="phone">
+                                    <input class="form-control" type="text" value="{{$educations->phone}}" name="phone">
 
                                 </div>
                             </div>
@@ -94,11 +93,11 @@
                                 <div class="form-group">
                                     <label>Enrollment Request</label>
 
-                                    <select class="form-control" name="enrollment_request" >
-                                        <option value="Graduation" {{old('enrollment_request') == 'Graduation' ? 'selected':''}}>Graduation</option>
-                                        <option value="Post Graduation" {{old('enrollment_request') == 'Post Graduation' ? 'selected':''}}>Post Graduation</option>
-                                        <option value="Doctorate" {{old('enrollment_request') == 'Doctorate' ? 'selected':''}}>Doctorate</option>
-                                        <option value="PG Diploma" {{old('enrollment_request') == 'PG Diploma' ? 'selected':''}}>PG Diploma</option>
+                                    <select class="form-control" name="enrollment_request">
+                                        <option value="Graduation" {{$educations->enrollment_request == 'Graduation' ? 'selected':''}}>Graduation</option>
+                                        <option value="Post Graduation" {{$educations->enrollment_request == 'Post Graduation' ? 'selected':''}}>Post Graduation</option>
+                                        <option value="Doctorate" {{$educations->enrollment_request  == 'Doctorate' ? 'selected':''}}>Doctorate</option>
+                                        <option value="PG Diploma" {{$educations->enrollment_request  == 'PG Diploma' ? 'selected':''}}>PG Diploma</option>
                                     </select>
                                 </div>
                             </div>
@@ -106,7 +105,7 @@
                                 <div class="form-group">
                                     <label>Remarks/Comments if any</label>
 
-                                    <textarea class="form-control" style="width:100%;" name="enrollment_request_comment" value="{{old('enrollment_request_comment')}}">{{old('enrollment_request_comment')}}</textarea>
+                                    <textarea class="form-control" style="width:100%;" name="enrollment_request_comment" value="{{$educations->enrollment_request_comment}}">{{$educations->enrollment_request_comment}}</textarea>
 
                                 </div>
                             </div>
@@ -118,20 +117,20 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Year of Completion</label>
-                                    <input class="form-control" type="text" value="{{old('secondary_year_completion')}}" name="secondary_year_completion">
+                                    <input class="form-control" type="text" value="{{$educations->secondary_year_completion}}" name="secondary_year_completion">
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Name of the Board for 10th or SSC</label>
-                                    <input class="form-control" type="text" value="{{old('secondary_board_name')}}" name="secondary_board_name">
+                                    <input class="form-control" type="text" value="{{$educations->secondary_board_name}}" name="secondary_board_name">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Total Marks in % (Percentage)</label>
-                                    <input class="form-control" type="text" value="{{old('secondary_total_mark')}}" name="secondary_total_mark">
+                                    <input class="form-control" type="text" value="{{$educations->secondary_total_mark}}" name="secondary_total_mark">
                                 </div>
                             </div>
                         </div>
@@ -142,20 +141,20 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Year of Completion</label>
-                                    <input class="form-control" type="text" value="{{old('intermediate_certificate_year')}}" name="intermediate_certificate_year">
+                                    <input class="form-control" type="text" value="{{$educations->intermediate_certificate_year}}" name="intermediate_certificate_year">
                                 </div>
                             </div>
 
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Name of the Board for 10+2</label>
-                                    <input class="form-control" type="text" value="{{old('intermediate_board_name')}}" name="intermediate_board_name">
+                                    <input class="form-control" type="text" value="{{$educations->intermediate_board_name}}" name="intermediate_board_name">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Total Marks in % (Percentage)</label>
-                                    <input class="form-control" type="text" value="{{old('intermediate_total_mark')}}" name="intermediate_total_mark">
+                                    <input class="form-control" type="text" value="{{$educations->intermediate_total_mark}}" name="intermediate_total_mark">
                                 </div>
                             </div>
                         </div>
@@ -166,23 +165,23 @@
                                     <label>Graduation - Degree
                                     </label>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="GD1" name="graduation_degree[]" value="BA" {{ (is_array(old('graduation_degree')) and in_array("BA", old('graduation_degree'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="GD1" name="graduation_degree[]" value="BA" {{ (is_array($educations->graduation_degree) and in_array("BA", $educations->graduation_degree)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="GD1"> BA</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="GD2" name="graduation_degree[]" value="B.Com" {{ (is_array(old('graduation_degree')) and in_array("B.Com", old('graduation_degree'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="GD2" name="graduation_degree[]" value="B.Com" {{ (is_array($educations->graduation_degree) and in_array("B.Com", $educations->graduation_degree)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="GD2"> B.Com</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="GD3" name="graduation_degree[]" value="B.Sc" {{ (is_array(old('graduation_degree')) and in_array("B.Sc", old('graduation_degree'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="GD3" name="graduation_degree[]" value="B.Sc" {{ (is_array($educations->graduation_degree) and in_array("B.Sc", $educations->graduation_degree)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="GD3"> B.Sc</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="GD4" name="graduation_degree[]" value="B.E" {{ (is_array(old('graduation_degree')) and in_array("B.E", old('graduation_degree'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="GD4" name="graduation_degree[]" value="B.E" {{ (is_array($educations->graduation_degree) and in_array("B.E", $educations->graduation_degree)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="GD4"> B.E</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="GD5" name="graduation_degree[]" value="Other" {{ (is_array(old('graduation_degree')) and in_array("Other", old('graduation_degree'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="GD5" name="graduation_degree[]" value="Other" {{ (is_array($educations->graduation_degree) and in_array("Other", $educations->graduation_degree)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="GD5"> Other if Any</label>
                                     </div>
                                 </div>
@@ -190,31 +189,31 @@
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>Year of Completion</label>
-                                    <input class="form-control" type="text" value="{{old('graduation_degree_year_completion')}}" name="graduation_degree_year_completion">
+                                    <input class="form-control" type="text" value="{{$educations->graduation_degree_year_completion}}" name="graduation_degree_year_completion">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>Course Duration</label>
-                                    <input class="form-control" type="text" value="{{old('graduation_degree_course_duration')}}" name="graduation_degree_course_duration">
+                                    <input class="form-control" type="text" value="{{$educations->graduation_degree_course_duration}}" name="graduation_degree_course_duration">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>Major Subjects</label>
-                                    <input class="form-control" type="text" value="{{old('graduation_degree_major_subject')}}" name="graduation_degree_major_subject">
+                                    <input class="form-control" type="text" value="{{$educations->graduation_degree_major_subject}}" name="graduation_degree_major_subject">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>Years of Gap till Date</label>
-                                    <input class="form-control" type="text" value="{{old('graduation_degree_year_gap')}}" name="graduation_degree_year_gap">
+                                    <input class="form-control" type="text" value="{{$educations->graduation_degree_year_gap}}" name="graduation_degree_year_gap">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>GPA Score</label>
-                                    <input class="form-control" type="text" value="{{old('graduation_degree_gpa')}}" name="graduation_degree_gpa">
+                                    <input class="form-control" type="text" value="{{$educations->graduation_degree_gpa}}" name="graduation_degree_gpa">
                                 </div>
                             </div>
                         </div>
@@ -225,23 +224,23 @@
                                     <label>Post Graduation - Master Degree
                                     </label>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="PG1" name="post_graduation[]" value="MBA" {{ (is_array(old('post_graduation')) and in_array("MBA", old('post_graduation'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="PG1" name="post_graduation[]" value="MBA" {{ (is_array($educations->post_graduation) and in_array("MBA", $educations->post_graduation)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="PG1"> MBA</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="PG2" name="post_graduation[]" value="M.Com" {{ (is_array(old('post_graduation')) and in_array("M.Com", old('post_graduation'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="PG2" name="post_graduation[]" value="M.Com" {{ (is_array($educations->post_graduation) and in_array("M.Com", $educations->post_graduation)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="PG2"> M.Com</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="PG3" name="post_graduation[]" value="M.Sc" {{ (is_array(old('post_graduation')) and in_array("M.Sc", old('post_graduation'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="PG3" name="post_graduation[]" value="M.Sc" {{ (is_array($educations->post_graduation) and in_array("M.Sc", $educations->post_graduation)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="PG3"> M.Sc</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="PG4" name="post_graduation[]" value="B.Tech/M.Tech" {{ (is_array(old('post_graduation')) and in_array("B.Tech/M.Tech", old('post_graduation'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="PG4" name="post_graduation[]" value="B.Tech/M.Tech" {{ (is_array($educations->post_graduation) and in_array("B.Tech/M.Tech", $educations->post_graduation)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="PG4">B.Tech/M.Tech</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="PG5" name="post_graduation[]" value="Other" {{ (is_array(old('post_graduation')) and in_array("Other", old('post_graduation'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="PG5" name="post_graduation[]" value="Other" {{ (is_array($educations->post_graduation) and in_array("Other", $educations->post_graduation)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="PG5"> Other if Any</label>
                                     </div>
                                 </div>
@@ -249,35 +248,37 @@
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>Year of Completion</label>
-                                    <input class="form-control" type="text" value="{{old('post_graduation_year_completion')}}" name="post_graduation_year_completion">
+                                    <input class="form-control" type="text" value="{{$educations->post_graduation_year_completion}}" name="post_graduation_year_completion">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>Course Duration</label>
-                                    <input class="form-control" type="text" value="{{old('post_graduation_course_duration')}}" name="post_graduation_course_duration">
+                                    <input class="form-control" type="text" value="{{$educations->post_graduation_course_duration}}" name="post_graduation_course_duration">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>Major Subjects</label>
-                                    <input class="form-control" type="text" value="{{old('post_graduation_major_subject')}}" name="post_graduation_major_subject">
+                                    <input class="form-control" type="text" value="{{$educations->post_graduation_major_subject}}" name="post_graduation_major_subject">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>Years of Gap till Date</label>
-                                    <input class="form-control" type="text" value="{{old('post_graduation_year_gap')}}" name="post_graduation_year_gap">
+                                    <input class="form-control" type="text" value="{{$educations->post_graduation_year_gap}}" name="post_graduation_year_gap">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label>GPA Score</label>
-                                    <input class="form-control" type="text" value="{{old('post_graduation_gpa')}}" name="post_graduation_gpa">
+                                    <input class="form-control" type="text" value="{{$educations->post_graduation_gpa}}" name="post_graduation_gpa">
                                 </div>
                             </div>
                         </div>
                         <div class="float-right">
+                            <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
+
                             <button type="button" class="client-btn bmenu uk-button uk-button-primary">Next </button>
                         </div>
                     </fieldset>
@@ -289,12 +290,118 @@
                 <div class="uk-card-body sc-padding-medium">
                     <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                         <div id="add_employment_row">
+                            @if($employments)
+                            @foreach($employments as $row)
+                            <div id="inputFormRow">
 
+                                <div class="row custom-box " id="">
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Employment (Employer Name)</label>
+                                            <input class="form-control" type="text" value="{{$row->employer_name}}" name="employer_name[]">
+                                            <input type="text" value="no" name="is_employer[]" hidden>
+                                            <input type="text" value="{{$row->id}}" name="employmentsId[]" hidden>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Job Title or Description</label>
+                                            <input class="form-control" type="text" value="{{$row->job_tittle}}" name="job_tittle[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>Job Field</label>
+                                            <input class="form-control" type="text" value="{{$row->job_field}}" name="job_field[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>Years of Job Work Experience</label>
+                                            <input class="form-control" type="text" value="{{$row->year_job_work}}" name="year_job_work[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>From Year</label>
+                                            <input class="form-control" type="text" value="{{$row->from_year_job}}" name="from_year_job[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>To Year</label>
+                                            <input class="form-control" type="text" value="{{$row->to_year_job}}" name="to_year_job[]">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="float-right">
+
+                                    <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removeRow" style="background:#bf0010 !important;margin-top:7.5%"><a style="color:white;"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
+
+                                </div>
+                                <br>
+                                <hr>
+                            </div>
+                            @endforeach
+                            @endif
                         </div>
                         <button id="add_employment" type="button" class="btn uk-button uk-button-primary">Add Employment</button>
                         <hr>
                         <div id="add_TC_row">
+                            @if($technicalCertifications)
+                            @foreach($technicalCertifications as $row)
+                            <div id="inputFormRow">
 
+                                <div class="row custom-box " id="">
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Technical Certification (Name of Certificate)</label>
+                                            <input class="form-control" type="text" value="{{$row->technical_certification_name}}" name="technical_certification_name[]">
+                                            <input type="text" value="no" name="is_technical_certification[]" hidden>
+                                            <input type="text" value="{{$row->id}}" name="technicalCertificationsId[]" hidden>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Certificate Specialization</label>
+                                            <input class="form-control" type="text" value="{{$row->certificate_specialization}}" name="certificate_specialization[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label>Course Duration</label>
+                                            <input class="form-control" type="text" value="{{$row->technical_certification_course_duration}}" name="technical_certification_course_duration[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label>Grade/Score</label>
+                                            <input class="form-control" type="text" value="{{$row->technical_certification_grade}}" name="technical_certification_grade[]">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label>Year of Completion</label>
+                                            <input class="form-control" type="text" value="{{$row->technical_certification_year_completion}}" name="technical_certification_year_completion[]">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="float-right">
+
+                                    <button type="button" class=" closebtn client-btn uk-button uk-button-danger" id="removeRow1" style="background:#bf0010 !important;margin-top:7.5%"><a style="color:white;"><i class="fa fa-solid fa-minus"></i> Remove</a></button>
+
+                                </div>
+                                <br>
+                                <hr>
+                            </div>
+                            @endforeach
+                            @endif
                         </div>
                         <button id="add_TC" type="button" class="btn uk-button uk-button-primary">Add Technical Certification</button>
                         <hr>
@@ -303,7 +410,7 @@
                                 <div class="form-group">
 
                                     <label>Write your Interest to pursue Higher education along with Major Subject/Discipline, provide information wherever necessary:</label>
-                                    <textarea class="form-control" style="width:100%" name="interest_pursue_higher_education">{{old('interest_pursue_higher_education')}}</textarea>
+                                    <textarea class="form-control" style="width:100%" name="interest_pursue_higher_education">{{$educations->interest_pursue_higher_education}}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -311,26 +418,26 @@
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Degree – 4 Years</label>
-                                    <input class="form-control" type="text" value="{{old('degree_year')}}" name="degree_year">
+                                    <input class="form-control" type="text" value="{{$educations->degree_year}}" name="degree_year">
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Master Degree – 2 Years</label>
-                                    <input class="form-control" type="text" value="{{old('master_degree_year')}}" name="master_degree_year">
+                                    <input class="form-control" type="text" value="{{$educations->master_degree_year}}" name="master_degree_year">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>PhD – 3 Years</label>
-                                    <input class="form-control" type="text" value="{{old('phd_year')}}" name="phd_year">
+                                    <input class="form-control" type="text" value="{{$educations->phd_year}}" name="phd_year">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>PG Diploma – 1 Year</label>
-                                    <input class="form-control" type="text" value="{{old('pg_diploma_year')}}" name="pg_diploma_year">
+                                    <input class="form-control" type="text" value="{{$educations->pg_diploma_year}}" name="pg_diploma_year">
                                 </div>
                             </div>
                         </div>
@@ -338,26 +445,26 @@
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Preferred College if any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_college')}}" name="preferred_college">
+                                    <input class="form-control" type="text" value="{{$educations->preferred_college}}" name="preferred_college">
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Preferred University If Any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_university')}}" name="preferred_university">
+                                    <input class="form-control" type="text" value="{{$educations->preferred_university}}" name="preferred_university">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Preferred State if any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_State')}}" name="preferred_State">
+                                    <input class="form-control" type="text" value="{{$educations->preferred_State}}" name="preferred_State">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Preferred Province if Any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_region')}}" name="preferred_region">
+                                    <input class="form-control" type="text" value="{{$educations->preferred_region}}" name="preferred_region">
                                 </div>
                             </div>
                         </div>
@@ -365,7 +472,7 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Preferred City if Any</label>
-                                    <input class="form-control" type="text" value="{{old('preferred_city')}}" name="preferred_city">
+                                    <input class="form-control" type="text" value="{{$educations->preferred_city}}" name="preferred_city">
                                 </div>
                             </div>
 
@@ -373,9 +480,9 @@
                                 <div class="form-group">
                                     <label>Preferred Mode of Education</label>
                                     <select class="form-control" name="communication_mode">
-                                        <option value="In Campus" {{old('communication_mode') == 'In Campus' ? 'selected':''}}>In Campus</option>
-                                        <option value="Off Campus" {{old('communication_mode') == 'Off Campus' ? 'selected':''}}>Off Campus</option>
-                                        <option value="Online" {{old('communication_mode') == 'Online' ? 'selected':''}}>Online</option>
+                                        <option value="In Campus" {{$educations->communication_mode == 'In Campus' ? 'selected':''}}>In Campus</option>
+                                        <option value="Off Campus" {{$educations->communication_mode == 'Off Campus' ? 'selected':''}}>Off Campus</option>
+                                        <option value="Online" {{$educations->communication_mode == 'Online' ? 'selected':''}}>Online</option>
                                     </select>
                                 </div>
                             </div>
@@ -385,26 +492,28 @@
                                     <label>Preferred Intake
                                     </label>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Intake1" name="preferred_intake[]" value="January" {{ (is_array(old('preferred_intake')) and in_array("January", old('preferred_intake'))) ? 'checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="Intake1" name="preferred_intake[]" value="January" {{ (is_array($educations->preferred_intake) and in_array("January", $educations->preferred_intake)) ? 'checked' : '' }}>
                                         <label class="custom-control-label" for="Intake1"> January</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Intake2" name="preferred_intake[]" value="May" {{ (is_array(old('preferred_intake')) and in_array("May", old('preferred_intake'))) ? 'checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="Intake2" name="preferred_intake[]" value="May" {{ (is_array($educations->preferred_intake) and in_array("May", $educations->preferred_intake)) ? 'checked' : '' }}>
                                         <label class="custom-control-label" for="Intake2"> May</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Intake3" name="preferred_intake[]" value="September" {{ (is_array(old('preferred_intake')) and in_array("September", old('preferred_intake'))) ? 'checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="Intake3" name="preferred_intake[]" value="September" {{ (is_array($educations->preferred_intake) and in_array("September", $educations->preferred_intake)) ? 'checked' : '' }}>
                                         <label class="custom-control-label" for="Intake3">September</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Intake4" name="preferred_intake[]" value="Other" {{ (is_array(old('preferred_intake')) and in_array("Other", old('preferred_intake'))) ? 'checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="Intake4" name="preferred_intake[]" value="Other" {{ (is_array($educations->preferred_intake) and in_array("Other", $educations->preferred_intake)) ? 'checked' : '' }}>
                                         <label class="custom-control-label" for="Intake4"> Other</label>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
                         <div class="float-right">
+                        <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
+
                             <button type="button" class="client-btn bmenu1 uk-button uk-button-primary">Next </button>
                         </div>
                     </fieldset>
@@ -422,13 +531,13 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input" id="Past" name="is_rejected_college" value="yes" {{ old('is_rejected_college') == "yes" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input" id="Past" name="is_rejected_college" value="yes" {{ $educations->is_rejected_college == "yes" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="Past">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Past2" name="is_rejected_college" value="no" {{ old('is_rejected_college') == "no" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="Past2" name="is_rejected_college" value="no" {{ $educations->is_rejected_college == "no" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="Past2">No</label>
                                         </div>
                                     </div>
@@ -437,13 +546,13 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>If Yes, Specify the Reason for rejection</label>
-                                    <input class="form-control" type="text" value="{{old('rejected_college_reason')}}" name="rejected_college_reason">
+                                    <input class="form-control" type="text" value="{{$educations->rejected_college_reason}}" name="rejected_college_reason">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Specify the Year of Rejection</label>
-                                    <input class="form-control" type="text" value="{{old('rejected_college_year')}}" name="rejected_college_year">
+                                    <input class="form-control" type="text" value="{{$educations->rejected_college_year}}" name="rejected_college_year">
                                 </div>
                             </div>
                         </div>
@@ -454,13 +563,13 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pasttt" name="is_rejected_visa_past" value="yes" {{ old('is_rejected_visa_past') == "yes" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="Pasttt" name="is_rejected_visa_past" value="yes" {{ $educations->is_rejected_visa_past == "yes" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="Pasttt">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Past2" name="is_rejected_visa_past" value="no" {{ old('is_rejected_visa_past') == "no" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="Past2" name="is_rejected_visa_past" value="no" {{ $educations->is_rejected_visa_past == "no" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="Past2">No</label>
                                         </div>
                                     </div>
@@ -469,13 +578,13 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>If Yes, Specify the Reason for rejection</label>
-                                    <input class="form-control" type="text" value="{{old('rejected_visa_reason_past')}}" name="rejected_visa_reason_past">
+                                    <input class="form-control" type="text" value="{{$educations->rejected_visa_reason_past}}" name="rejected_visa_reason_past">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Specify the Year of Rejection</label>
-                                    <input class="form-control" type="text" value="{{old('rejected_visa_year_past')}}" name="rejected_visa_year_past">
+                                    <input class="form-control" type="text" value="{{$educations->rejected_visa_year_past}}" name="rejected_visa_year_past">
                                 </div>
                             </div>
                         </div>
@@ -486,13 +595,13 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt" name="is_rejected_visa" value="yes" {{ old('is_rejected_visa') == "yes" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="Pastt" name="is_rejected_visa" value="yes" {{ $educations->is_rejected_visa == "yes" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="Pastt">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt2" name="is_rejected_visa" value="no" {{ old('is_rejected_visa') == "no" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="Pastt2" name="is_rejected_visa" value="no" {{ $educations->is_rejected_visa == "no" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="Pastt2">No</label>
                                         </div>
                                     </div>
@@ -501,13 +610,13 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>If Yes, Specify the Reason for rejection</label>
-                                    <input class="form-control" type="text" value="{{old('rejected_visa_reason')}}" name="rejected_visa_reason">
+                                    <input class="form-control" type="text" value="{{$educations->rejected_visa_reason}}" name="rejected_visa_reason">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Specify the Year of Rejection</label>
-                                    <input class="form-control" type="text" value="{{old('rejected_visa_year')}}" name="rejected_visa_year">
+                                    <input class="form-control" type="text" value="{{$educations->rejected_visa_year}}" name="rejected_visa_year">
                                 </div>
                             </div>
                         </div>
@@ -518,23 +627,23 @@
                                     <label>Prerequisite and Document Checklist:
                                     </label>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite" name="prerequisite_document[]" value="Birth Certificate" {{ (is_array(old('prerequisite_document')) and in_array("January", old('prerequisite_document'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="Prerequisite" name="prerequisite_document[]" value="Birth Certificate" {{ (is_array($educations->prerequisite_document) and in_array("January", $educations->prerequisite_document)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="Prerequisite">Do you have a proof of Documents for Birth Certificate?</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite1" name="prerequisite_document[]" value="SSC" {{ (is_array(old('prerequisite_document')) and in_array("SSC", old('prerequisite_document'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="Prerequisite1" name="prerequisite_document[]" value="SSC" {{ (is_array($educations->prerequisite_document) and in_array("SSC", $educations->prerequisite_document)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="Prerequisite1"> Do you have a proof of Documents for the previous education- SSC?</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite2" name="prerequisite_document[]" value="Intermediate" {{ (is_array(old('prerequisite_document')) and in_array("Intermediate", old('prerequisite_document'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="Prerequisite2" name="prerequisite_document[]" value="Intermediate" {{ (is_array($educations->prerequisite_document) and in_array("Intermediate", $educations->prerequisite_document)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="Prerequisite2"> Do you have a proof of Documents for the previous education - Intermediate?</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite3" name="prerequisite_document[]" value="Graduation" {{ (is_array(old('prerequisite_document')) and in_array("Graduation", old('prerequisite_document'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="Prerequisite3" name="prerequisite_document[]" value="Graduation" {{ (is_array($educations->prerequisite_document) and in_array("Graduation", $educations->prerequisite_document)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="Prerequisite3">Do you have a proof of Documents for the previous education - Graduation? If Applicable</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="Prerequisite4" name="prerequisite_document[]" value="Post Graduation" {{ (is_array(old('prerequisite_document')) and in_array("Post Graduation", old('prerequisite_document'))) ? ' checked' : '' }}>
+                                        <input class="custom-control-input" type="checkbox" id="Prerequisite4" name="prerequisite_document[]" value="Post Graduation" {{ (is_array($educations->prerequisite_document) and in_array("Post Graduation", $educations->prerequisite_document)) ? ' checked' : '' }}>
                                         <label class="custom-control-label" for="Prerequisite4"> Do you have a proof of Documents for the previous education – Post Graduation? If Applicable</label>
                                     </div>
                                 </div>
@@ -545,7 +654,7 @@
                                 <div class="form-group">
                                     <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
 
-                                    <textarea class="form-control" style="width:100%;" name="eca">{{old('eca')}}</textarea>
+                                    <textarea class="form-control" style="width:100%;" name="eca">{{$educations->eca}}</textarea>
 
                                 </div>
                             </div>
@@ -560,13 +669,13 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input" id="Passport" name="passport_valid" value="yes" {{ old('passport_valid') == "yes" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input" id="Passport" name="passport_valid" value="yes" {{ $educations->passport_valid == "yes" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="Passport">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-2">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input" id="Passport2" name="passport_valid" value="no" {{ old('passport_valid') == "no" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input" id="Passport2" name="passport_valid" value="no" {{ $educations->passport_valid == "no" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="Passport2">No</label>
                                         </div>
                                     </div>
@@ -578,13 +687,13 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="academic " name="IELTS_attempted" value="yes" {{ old('IELTS_attempted') == "yes" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="academic " name="IELTS_attempted" value="yes" {{ $educations->IELTS_attempted == "yes" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="academic ">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="academic 2" name="IELTS_attempted" value="no" {{ old('IELTS_attempted') == "no" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="academic 2" name="IELTS_attempted" value="no" {{ $educations->IELTS_attempted == "no" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="academic 2">No</label>
                                         </div>
                                     </div>
@@ -596,13 +705,13 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GRE" name="GRE_attempted" value="yes" {{ old('GRE_attempted') == "yes" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="GRE" name="GRE_attempted" value="yes" {{ $educations->GRE_attempted == "yes" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="GRE">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GRE2" name="GRE_attempted" value="no" {{ old('GRE_attempted') == "no" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="GRE2" name="GRE_attempted" value="no" {{ $educations->GRE_attempted == "no" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="GRE2">No</label>
                                         </div>
                                     </div>
@@ -614,13 +723,13 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="TOEFL " name="TOEFL_attempted" value="yes" {{ old('TOEFL_attempted') == "yes" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="TOEFL " name="TOEFL_attempted" value="yes" {{ $educations->TOEFL_attempted == "yes" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="TOEFL ">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="TOEFL2" name="TOEFL_attempted" value="no" {{ old('TOEFL_attempted') == "no" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="TOEFL2" name="TOEFL_attempted" value="no" {{ $educations->TOEFL_attempted == "no" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="TOEFL2">No</label>
                                         </div>
                                     </div>
@@ -632,13 +741,13 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GMAT" name="GMAT_attempted" value="yes" {{ old('GMAT_attempted') == "yes" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="GMAT" name="GMAT_attempted" value="yes" {{ $educations->GMAT_attempted == "yes" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="GMAT">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GMAT2" name="GMAT_attempted" value="no" {{ old('GMAT_attempted') == "no" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="GMAT2" name="GMAT_attempted" value="no" {{ $educations->GMAT_attempted == "no" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="GMAT2">No</label>
                                         </div>
                                     </div>
@@ -650,13 +759,13 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="interested" name="interested_attempted" value="yes" {{ old('interested_attempted') == "yes" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="interested" name="interested_attempted" value="yes" {{ $educations->interested_attempted == "yes" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="interested">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="interested2" name="interested_attempted" value="no" {{ old('interested_attempted') == "no" ? "checked":"" }}>
+                                            <input type="radio" class="custom-control-input " id="interested2" name="interested_attempted" value="no" {{ $educations->interested_attempted == "no" ? "checked":"" }}>
                                             <label class="custom-control-label mt-1" for="interested2">No</label>
                                         </div>
                                     </div>
@@ -670,14 +779,15 @@
                                 <div class="form-group">
                                     <label>Remarks/Comments if any</label>
 
-                                    <textarea class="form-control" rows="6" style="width:100%;" name="feedback">{{old('feedback')}}</textarea>
+                                    <textarea class="form-control" rows="6" style="width:100%;" name="feedback">{{$educations->feedback}}</textarea>
 
                                 </div>
                             </div>
                         </div>
 
                         <div class="float-right">
-                            <button type="submit" class="client-btn  uk-button uk-button-primary">Submit </button>
+                        <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
+
                         </div>
                     </fieldset>
                 </div>
@@ -721,38 +831,38 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>Employment (Employer Name)</label>
-                                    <input class="form-control" type="text" value="{{old('employer_name')}}" name="employer_name[]" >
+                                    <input class="form-control" type="text" value="" name="employer_name[]" >
                                     <input type="text" value="yes" name="is_employer[]" hidden>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label>Job Title or Description</label>
-                                    <input class="form-control" type="text" value="{{old('job_tittle')}}" name="job_tittle[]">
+                                    <input class="form-control" type="text" value="" name="job_tittle[]">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Job Field</label>
-                                    <input class="form-control" type="text" value="{{old('job_field')}}" name="job_field[]">
+                                    <input class="form-control" type="text" value="" name="job_field[]">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Years of Job Work Experience</label>
-                                    <input class="form-control" type="text" value="{{old('year_job_work')}}" name="year_job_work[]">
+                                    <input class="form-control" type="text" value="" name="year_job_work[]">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>From Year</label>
-                                    <input class="form-control" type="text" value="{{old('from_year_job')}}" name="from_year_job[]">
+                                    <input class="form-control" type="text" value="" name="from_year_job[]">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>To Year</label>
-                                    <input class="form-control" type="text" value="{{old('to_year_job')}}" name="to_year_job[]">
+                                    <input class="form-control" type="text" value="" name="to_year_job[]">
                                 </div>
                             </div>
                         </div>
@@ -784,7 +894,7 @@
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="form-group">
                                         <label>Technical Certification (Name of Certificate)</label>
-                                        <input class="form-control" type="text" value="{{old('technical_certification_name')}}" name="technical_certification_name[]">
+                                        <input class="form-control" type="text" value="" name="technical_certification_name[]">
                                         <input type="text" value="yes" name="is_technical_certification[]" hidden>
 
                                     </div>
@@ -792,25 +902,25 @@
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="form-group">
                                         <label>Certificate Specialization</label>
-                                        <input class="form-control" type="text" value="{{old('certificate_specialization')}}" name="certificate_specialization[]">
+                                        <input class="form-control" type="text" value="" name="certificate_specialization[]">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                         <label>Course Duration</label>
-                                        <input class="form-control" type="text" value="{{old('technical_certification_course_duration')}}" name="technical_certification_course_duration[]">
+                                        <input class="form-control" type="text" value="" name="technical_certification_course_duration[]">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                         <label>Grade/Score</label>
-                                        <input class="form-control" type="text" value="{{old('technical_certification_grade')}}" name="technical_certification_grade[]">
+                                        <input class="form-control" type="text" value="" name="technical_certification_grade[]">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
                                         <label>Year of Completion</label>
-                                        <input class="form-control" type="text" value="{{old('technical_certification_year_completion')}}" name="technical_certification_year_completion[]">
+                                        <input class="form-control" type="text" value="" name="technical_certification_year_completion[]">
                                     </div>
                                 </div>
 

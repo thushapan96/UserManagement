@@ -28,10 +28,7 @@ Route::get('/test', function () {
 
     return view('test');
 });
-Route::get('/education', function () {
 
-    return view('education');
-});
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/providerProfile', function () {
@@ -51,6 +48,15 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('provider/search', 'App\Http\Controllers\OtherController@providerSearch')->name('providerSearch');
     Route::post('institude/search', 'App\Http\Controllers\OtherController@institudeSearch')->name('institudeSearch');
+
+
+    Route::get('education', 'App\Http\Controllers\OtherController@educationIndex')->name('education');
+    Route::post('add/education', 'App\Http\Controllers\OtherController@educationStore')->name('add.education');
+    Route::get('edit/education', 'App\Http\Controllers\OtherController@educationEdit')->name('edit.education');
+    Route::post('update/education', 'App\Http\Controllers\OtherController@educationUpdate')->name('update.education');
+    Route::get('view/education', 'App\Http\Controllers\OtherController@educationview')->name('view.education');
+
+
 
 
 

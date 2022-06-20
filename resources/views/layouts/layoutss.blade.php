@@ -522,15 +522,8 @@
 
                             </li>
 
-                            <li title="enquiries" class="page-enquiries page-active">
-                                <a href="#">
-                                    <span class="uk-nav-icon"><i class="fas fa-bell"></i>
-                                    </span><span class="uk-nav-title">enquiries</span>
-                                </a>
 
-
-                            </li>
-
+                            @if(auth()->user()->role == 'candidate')
                             <li title="CRS Calculator" class="page-Calculator page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
@@ -542,12 +535,19 @@
                             </li>
 
                             <li title="Educational Assessment" class="page-Educational page-active">
-                                <a href="#">
+                                <a href="{{route('education')}}">
                                     <span class="uk-nav-icon"><i class="fab fa-readme"></i>
                                     </span><span class="uk-nav-title">Educ Assessment</span>
                                 </a>
                             </li>
-
+                            @else
+                            <li title="enquiries" class="page-enquiries page-active">
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="fas fa-bell"></i>
+                                    </span><span class="uk-nav-title">enquiries</span>
+                                </a>
+                            </li>
+                            @endif
                             <li title="report">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>
@@ -785,7 +785,7 @@
         console.log(4)
     </script>
 
-   
+
 
 </body>
 
