@@ -977,7 +977,6 @@
                                     </div>
                                     <div class="float-right">
                                         <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
-                                        <button type="button" class="client-btn bmenu4 uk-button uk-button-primary">Next </button>
                                     </div>
                                 </fieldset>
                             </div>

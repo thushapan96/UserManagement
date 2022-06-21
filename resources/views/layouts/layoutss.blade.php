@@ -123,6 +123,9 @@
     #sc-sidebar-main .sc-sidebar-menu li a {
         font-size: 15px !important
     }
+    textarea::-webkit-scrollbar {
+        display: none;
+    }
 </style>
 
 <body>

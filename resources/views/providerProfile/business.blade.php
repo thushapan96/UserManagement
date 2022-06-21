@@ -68,7 +68,7 @@
     <div class="row">
 
         <div class="col-md-9">
-            <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} Company</h3>
+            <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} </h3>
             <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                 <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
                 <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">About Company </a></li>

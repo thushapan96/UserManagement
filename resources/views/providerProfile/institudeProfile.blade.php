@@ -85,18 +85,18 @@
 
     <div class="row">
 
-        <div class="col-md-9">
-            <h3 class="float-center" style="text-align:center">{{$institutions->name}} {{$institutions->type}}</h3>
-            <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+        <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
+            <h3 class="float-center" style="text-align:center">{{$institutions->name}} </h3>
+            <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto;text-align:center">
                 <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
                 <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">Courses</a></li>
                 <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">About {{$institutions->type}} </a></li>
                 <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1rem;"> Award & Certification</a></li>
                 <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1rem;">News and Events</a></li>
-                <!-- <li class="" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1rem;">Canada Inspire</a></li>
-                <li class="" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1rem;">Feedback</a></li> -->
+                
 
             </u1>
+          
             <u1 class="uk-switcher">
                 <li id='menu' class='tab-pane '>
                     <div class='uk-card col-md-11 ' style="margin-left:auto !important;margin-right:auto">
@@ -713,8 +713,8 @@
                         </div>
                     </div>
                 </li>
-                <li id='menu4' class='tab-pane'>
-                    <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
+                <li id='menu4' class='tab-pane '>
+                    <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto !important">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 @if($institutions->vedio_url)
@@ -745,65 +745,19 @@
                         </div>
                     </div>
                 </li>
-                <!-- <li class='tab-pane '>
-                    <div class="uk-card col-md-10" style="margin-left:5% !important;">
-                        <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Canada Inspire provides Additional Services :-
-                                            </label>
-                                            <br>
-
-                                            <textarea style="width:100%;background:white !important; box-shadow: none ;" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
-                                         We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                                         1. Is your Company looking for Website Design/Re Design or Development to give professional look
-                                         and exposure for International community?
-                                         2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
-                                        on your Website?
-                                          3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                                            4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
-                                       enhance your services?
-                                       5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
-                                       your company marketing activities,  follow-up, and efficiency to generate good revenues
-                                       for your company and always ahead with your competitors?</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </li>
-                <li class='tab-pane '>
-                    <div class="uk-card col-md-10" style="margin-left:5% !important;">
-                        <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Feedback of Canada Inspire
-                                            </label>
-                                            <br>
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="Comment" value="{{$institutions->Comment}}" disabled>{{$institutions->Comment}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </li> -->
+               
                 <script>
                     $("textarea").each(function(index) {
                         console.log(index, $(this)[0].scrollHeight)
                         $(this).height($(this)[0].scrollHeight);
+                        
                     });
                 </script>
             </u1>
 
         </div>
 
-        <div class="col-md-3 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;">
+        <div class="col-md-3 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;margin-left:auto !important;margin-right:auto;">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
