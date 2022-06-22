@@ -60,10 +60,10 @@
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} </h3>
             <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                 <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
-                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">About Company </a></li>
-                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">Team </a></li>
-                <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1rem;"> Award & Certification</a></li>
-                <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1rem;">News and Events</a></li>
+                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem 1rem;">About Company </a></li>
+                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1rem;">Team </a></li>
+                <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem 1rem;"> Award & Certification</a></li>
+                <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem 1rem;">News and Events</a></li>
                 <!-- <li class="" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1rem;">Canada Inspire</a></li>
                 <li class="" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1rem;">Feedback</a></li> -->
 
@@ -1004,6 +1004,7 @@
                 </fieldset>
             </div>
         </div>
+        
     </div>
 </section>
 <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>

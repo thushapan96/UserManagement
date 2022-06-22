@@ -3,7 +3,7 @@
 <form action="{{route('update.education')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-        <h3 class="" style="text-align:center">Assessment for Overseas Education - Canada</h3>
+        <h3 class="" style="text-align:center">Edit Assessment for Overseas Education - Canada</h3>
 
     </div>
 
@@ -12,9 +12,9 @@
         <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab2 </a></li>
         <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab3</a></li>
     </u1>
-    <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
+    <!-- <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
         <p>Candidates to provide correct information. We will assist and recommend based on your previous educational qualification and interest. All Universities and Colleges required IELTS Academic but some Universities also required GRE/TOEFL/GMAT/SAT in addition to IELTS. </p>
-    </div>
+    </div> -->
     <u1 class="uk-switcher">
         <li id='menu' class='tab-pane '>
             <div class='uk-card col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">

@@ -757,7 +757,7 @@
 
         </div>
 
-        <div class="col-md-3 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;margin-left:auto !important;margin-right:auto;">
+        <div class="col-md-3 uk-card" style="margin-top:110px;height:100% !important; box-shadow:none !important;margin-left:auto !important;margin-right:auto;">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 

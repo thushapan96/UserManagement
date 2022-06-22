@@ -67,9 +67,9 @@
 
     <div class="row">
 
-        <div class="col-md-9">
+        <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} </h3>
-            <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+            <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                 <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
                 <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">About Company </a></li>
                 <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">Team </a></li>
@@ -609,7 +609,7 @@
 
         </div>
 
-        <div class="col-md-3 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;">
+        <div class="col-md-3 uk-card" style="margin-top:110px;height:100% !important; box-shadow:none !important;">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
