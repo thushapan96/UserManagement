@@ -704,8 +704,8 @@
     $(document).ready(function() {
 
         console.log('hiii')
-        $('.page-active').removeClass('sc-page-active')
-        $('.page-Profile').addClass('sc-page-active')
+        // $('.page-active').removeClass('sc-page-active')
+        // $('.page-Profile').addClass('sc-page-active')
         $("#amenu").click(function() {
             $('.editbtn').html('Edit Personal ')
             var id = $('.editlink').attr('data-id')

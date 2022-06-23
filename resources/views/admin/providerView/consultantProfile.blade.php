@@ -947,34 +947,13 @@
         
     </div>
 </section>
-<script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+
 <script>
     $(document).ready(function() {
-        console.log(2)
-
-        $("#amenu").click(function() {
-
-        });
-        $("#amenu1").click(function() {
-
-        });
-        $("#amenu2").click(function() {
-
-        });
-        $("#amenu3").click(function() {
-
-        });
-        $("#amenu4").click(function() {
-
-        });
-        $("#amenu5").click(function() {
-
-        });
-        $("#amenu6").click(function() {
-
-        });
-        $('.page-active').removeClass('sc-page-active')
-        $('.page-Profile').addClass('sc-page-active')
+       
+        // $('.page-active').removeClass('sc-page-active')
+        // $('.page-Profile').addClass('sc-page-active')
+        
         var chargeable = "{{$consultants->initial_chargeable_type}}"
 
         if (chargeable == 'free') {

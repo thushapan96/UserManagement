@@ -809,8 +809,8 @@
 
 <script>
     $(document).ready(function() {
-        $('.page-active').removeClass('sc-page-active')
-        $('.page-Profile').addClass('sc-page-active')
+        // $('.page-active').removeClass('sc-page-active')
+        // $('.page-Profile').addClass('sc-page-active')
 
 
         $(".bmenu").click(function() {
