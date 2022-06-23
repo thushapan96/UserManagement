@@ -523,7 +523,27 @@
                                 </a>
 
                             </li>
+                            <br>
+                           
+                            @if(Auth::guard('admin')->user())
+                                <li title="logout">
+                                    <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-sign-out-alt"></i></span>
+                                        <span class="uk-nav-title">logout</span>
+                                    </a>
 
+                                    <form id="logout-form" action="{{ route('adminlogout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                                @else
+                                <li title="login">
+                                    <a href="{{route('adminlogin')}}">
+                                    <span class="uk-nav-icon"><i class="nav-icon fas fa-sign-in-alt"></i></span>
+                                        <span class="uk-nav-title">Login</span>
+                                    </a>
+                                </li>
+                                @endif
                         </ul>
                     </li>
 

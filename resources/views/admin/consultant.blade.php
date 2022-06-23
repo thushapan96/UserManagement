@@ -170,7 +170,7 @@
         </div>
     </div>
 </div>
-<br><br>
+<br>
 <input id="type" value="{{$type}}" hidden>
 <u1 id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
 

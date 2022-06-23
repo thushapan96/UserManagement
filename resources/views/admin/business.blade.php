@@ -170,7 +170,7 @@
         </div>
     </div>
 </div>
-<br><br>
+<br>
 <input id="type" value="{{$type}}" hidden>
 
 <div>
