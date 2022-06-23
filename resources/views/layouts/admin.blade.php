@@ -393,7 +393,7 @@
                         <!-- <a><span style="color:#d81400;font-size: 17px;">Profile</span></a> -->
 
                         <ul class="sc-sidebar-menu " style="">
-                            <li title="" class="sc-page-active page-active">
+                            <li title="" class="sc-page-active ">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
