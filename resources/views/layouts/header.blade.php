@@ -74,7 +74,9 @@
 
 
                         @endif
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('adminlogin')}}">Admin Login</a>
+                        </li>
 
                     </ul>
                 </div>

@@ -1,4 +1,4 @@
-@extends('layouts.layoutss')
+@extends('layouts.admin')
 @section('content')
 
 <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
@@ -676,13 +676,10 @@
             console.log(index, $(this)[0].scrollHeight)
             $(this).height($(this)[0].scrollHeight);
         });
-    </script>  
+    </script>
 </u1>
 <br>
-<div class="float-right col-md-3">
-    <a href="{{route('edit.calculator')}}"> <button type="button" class="client-btn uk-button uk-button-primary">Edit CRS Calculator</button></a>
-</div>
-<br>
+
 <script>
 
 </script>

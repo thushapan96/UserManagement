@@ -65,19 +65,19 @@
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>City </label>
-                                    <input class="form-control" type="text" value="{{$educations->city}}" name="city">
+                                    <input class="form-control" type="text" value="{{$educations->city}}" name="city" id="pac-input1">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Country of Citizenship</label>
-                                    <input class="form-control" type="text" value="{{$educations->country_citizen}}" name="country_citizen">
+                                    <input class="form-control" type="text" value="{{$educations->country_citizen}}" name="country_citizen" id="pac-input2">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label>Country of Residence</label>
-                                    <input class="form-control" type="text" value="{{$educations->country_residence}}" name="country_residence">
+                                    <input class="form-control" type="text" value="{{$educations->country_residence}}" name="country_residence" id="pac-input3">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12">
@@ -512,7 +512,7 @@
                             </div>
                         </div>
                         <div class="float-right">
-                        <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
+                            <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
 
                             <button type="button" class="client-btn bmenu1 uk-button uk-button-primary">Next </button>
                         </div>
@@ -786,7 +786,7 @@
                         </div>
 
                         <div class="float-right">
-                        <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
+                            <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
 
                         </div>
                     </fieldset>
@@ -794,14 +794,15 @@
             </div>
         </li>
         <script>
-        $("textarea").each(function(index) {
-            console.log(index, $(this)[0].scrollHeight)
-            $(this).height($(this)[0].scrollHeight);
-        });
-    </script>
+            $("textarea").each(function(index) {
+                console.log(index, $(this)[0].scrollHeight)
+                $(this).height($(this)[0].scrollHeight);
+            });
+        </script>
     </u1>
 
 </form>
+<div id="map" style=" height: 500px; width:100%"> </div>
 
 <script>
     $(document).ready(function() {
@@ -948,6 +949,51 @@
         $(document).on('click', '#removeRow1', function() {
             $(this).closest('#inputFormRow').remove();
         });
+
+    });
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>
+<script>
+    //.......................current location......................
+
+    $(document).ready(function() {
+
+        "use strict";
+        $('#map').hide();
+
+        initMap();
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: -33.8688,
+                    lng: 151.2195,
+                },
+                zoom: 13,
+            });
+            const card = document.getElementById("pac-card");
+            console.log(card);
+            console.log("hi");
+
+            for (let i = 1; i < 4; i++) {
+                const input = $('#pac-input' + i)[0];
+                new google.maps.places.Autocomplete(input).bindTo("bounds", map);
+                console.log("hi");
+
+            }
+
+
+
+            const infowindow = new google.maps.InfoWindow();
+            const infowindowContent = document.getElementById("infowindow-content");
+            infowindow.setContent(infowindowContent);
+            const marker = new google.maps.Marker({
+                map,
+                anchorPoint: new google.maps.Point(0, -29),
+            });
+
+        }
+
 
     });
 </script>

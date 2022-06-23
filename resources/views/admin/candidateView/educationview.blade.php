@@ -1,17 +1,18 @@
-@extends('layouts.layoutss')
+@extends('layouts.admin')
 @section('content')
 
 <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-    <h3 class="" style="text-align:center">CRS Calculator </h3>
+    <h3 class="" style="text-align:center">Assessment for Overseas Education - Canada</h3>
 
 </div>
 
 <u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
     <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">tab1 </a></li>
     <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab2 </a></li>
+    <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab3</a></li>
 </u1>
 <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-    <p>Candidates to provide correct information. We will assist and recommend based on your Academic, Technical Qualification and Work Experience.</p>
+    <p>Candidates to provide correct information. We will assist and recommend based on your previous educational qualification and interest. All Universities and Colleges required IELTS Academic but some Universities also required GRE/TOEFL/GMAT/SAT in addition to IELTS. </p>
 </div>
 <u1 class="uk-switcher">
     <li id='menu' class='tab-pane '>
@@ -28,7 +29,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->first_name}} {{$calculators->last_name}}
+                                    {{$educations->first_name}} {{$educations->last_name}}
                                 </p>
                             </div>
                         </div>
@@ -39,7 +40,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->age}}
+                                    {{$educations->age}}
                                 </p>
                             </div>
                         </div>
@@ -50,7 +51,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->gender }}
+                                    {{$educations->gender }}
                                 </p>
                             </div>
                         </div>
@@ -61,7 +62,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->gender }}
+                                    {{$educations->gender }}
                                 </p>
                             </div>
                         </div>
@@ -71,7 +72,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps"> {{$calculators->city}}
+                                <p class="ps"> {{$educations->city}}
                                 </p>
                             </div>
                         </div>
@@ -81,7 +82,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps"> {{$calculators->country_citizen}}
+                                <p class="ps"> {{$educations->country_citizen}}
                                 </p>
                             </div>
                         </div>
@@ -91,7 +92,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->country_residence}}
+                                <p class="ps">{{$educations->country_residence}}
                                 </p>
                             </div>
                         </div>
@@ -101,7 +102,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->phone}}
+                                <p class="ps">{{$educations->phone}}
                                 </p>
                             </div>
                         </div>
@@ -118,7 +119,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->secondary_year_completion }}
+                                    {{$educations->secondary_year_completion }}
                                 </p>
                             </div>
                         </div>
@@ -129,7 +130,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->secondary_board_name }}
+                                    {{$educations->secondary_board_name }}
                                 </p>
                             </div>
                         </div>
@@ -140,7 +141,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->secondary_total_mark }}
+                                    {{$educations->secondary_total_mark }}
                                 </p>
                             </div>
                         </div>
@@ -152,7 +153,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->intermediate_certificate_year}}
+                                <p class="ps">{{$educations->intermediate_certificate_year}}
                                 </p>
                             </div>
                         </div>
@@ -163,7 +164,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->intermediate_board_name}}
+                                    {{$educations->intermediate_board_name}}
                                 </p>
                             </div>
                         </div>
@@ -174,7 +175,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->intermediate_total_mark}}
+                                    {{$educations->intermediate_total_mark}}
                                 </p>
                             </div>
                         </div>
@@ -187,8 +188,8 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    @if($calculators->graduation_degree)
-                                    @foreach($calculators->graduation_degree as $row)
+                                    @if($educations->graduation_degree)
+                                    @foreach($educations->graduation_degree as $row)
                                     {{$row}}<br>
                                     @endforeach
                                     @endif
@@ -201,7 +202,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->graduation_degree_year_completion}}
+                                <p class="ps">{{$educations->graduation_degree_year_completion}}
                                 </p>
                             </div>
                         </div>
@@ -211,7 +212,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p> {{$calculators->graduation_degree_course_duration}}</p>
+                                <p> {{$educations->graduation_degree_course_duration}}</p>
 
                             </div>
                         </div>
@@ -222,7 +223,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->graduation_degree_major_subject}}
+                                <p class="ps">{{$educations->graduation_degree_major_subject}}
                                 </p>
                             </div>
                         </div>
@@ -233,7 +234,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->graduation_degree_year_gap}}
+                                <p class="ps">{{$educations->graduation_degree_year_gap}}
                                 </p>
                             </div>
                         </div>
@@ -243,7 +244,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->graduation_degree_gpa}}
+                                <p class="ps">{{$educations->graduation_degree_gpa}}
                                 </p>
                             </div>
                         </div>
@@ -257,8 +258,8 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    @if($calculators->post_graduation)
-                                    @foreach($calculators->post_graduation as $row)
+                                    @if($educations->post_graduation)
+                                    @foreach($educations->post_graduation as $row)
                                     {{$row}}<br>
                                     @endforeach
                                     @endif
@@ -271,7 +272,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->post_graduation_year_completion}}
+                                <p class="ps">{{$educations->post_graduation_year_completion}}
                                 </p>
                             </div>
                         </div>
@@ -281,7 +282,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p> {{$calculators->post_graduation_course_duration}}</p>
+                                <p> {{$educations->post_graduation_course_duration}}</p>
 
                             </div>
                         </div>
@@ -292,7 +293,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->post_graduation_major_subject}}
+                                <p class="ps">{{$educations->post_graduation_major_subject}}
                                 </p>
                             </div>
                         </div>
@@ -303,7 +304,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->post_graduation_year_gap}}
+                                <p class="ps">{{$educations->post_graduation_year_gap}}
                                 </p>
                             </div>
                         </div>
@@ -313,7 +314,7 @@
                             </div>
 
                             <div class="col-md-7">
-                                <p class="ps">{{$calculators->post_graduation_gpa}}
+                                <p class="ps">{{$educations->post_graduation_gpa}}
                                 </p>
                             </div>
                         </div>
@@ -474,7 +475,165 @@
                             @endforeach
                             @endif
                         </div>
-                    </fieldset><br>
+                    </fieldset>
+                    <br>
+                    <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                      
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">Degree – 4 Years</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->degree_year}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">Master Degree – 2 Years</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->master_degree_year}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">PhD – 3 Years</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->phd_year}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">PG Diploma – 1 Year</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->pg_diploma_year}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">Preferred College if any</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->preferred_college}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">Preferred University If Any</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->preferred_university}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">Preferred State if any</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->preferred_State}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">Preferred Province if Any</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->preferred_region}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">Preferred City if Any</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->preferred_city}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">Preferred Mode of Education</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->communication_mode}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">Preferred Intake</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    @if($educations->preferred_intake)
+                                    @foreach($educations->preferred_intake as $row)
+                                    {{$row}}
+                                    @endforeach
+                                    @endif
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row custom-box">
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+
+                                    <label>Write your Interest to pursue Higher education along with Major Subject/Discipline, provide information wherever necessary:</label>
+                                    <textarea class="form-control" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="interest_pursue_higher_education">{{$educations->interest_pursue_higher_education}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </fieldset>
+            </div>
+        </div>
+    </li>
+
+    <li id='menu2' class='tab-pane '>
+        <div class='uk-card col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
+            <div class="uk-card-body sc-padding-medium">
+                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                     <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
                         <div class="row">
                             <div class="col-md-5">
@@ -491,7 +650,7 @@
                                 </div>
                             </div>
                             <script>
-                                if ("{{$calculators->is_rejected_college}}" == 'yes') {
+                                if ("{{$educations->is_rejected_college}}" == 'yes') {
                                     $('.is_rejected_college_yes').css('text-decoration', 'underline')
                                     $('.is_rejected_college_yes').css('text-decoration-color', 'green')
                                 } else {
@@ -507,7 +666,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->rejected_college_reason}}
+                                    {{$educations->rejected_college_reason}}
                                 </p>
                             </div>
                         </div>
@@ -518,7 +677,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->rejected_college_year}}
+                                    {{$educations->rejected_college_year}}
                                 </p>
                             </div>
                         </div>
@@ -538,7 +697,7 @@
                                 </div>
                             </div>
                             <script>
-                                if ("{{$calculators->is_rejected_visa_past}}" == 'yes') {
+                                if ("{{$educations->is_rejected_visa_past}}" == 'yes') {
                                     $('.is_rejected_visa_past_yes').css('text-decoration', 'underline')
                                     $('.is_rejected_visa_past_yes').css('text-decoration-color', 'green')
                                 } else {
@@ -554,7 +713,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->rejected_visa_reason_past}}
+                                    {{$educations->rejected_visa_reason_past}}
                                 </p>
                             </div>
                         </div>
@@ -565,7 +724,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->rejected_visa_year_past}}
+                                    {{$educations->rejected_visa_year_past}}
                                 </p>
                             </div>
                         </div>
@@ -585,7 +744,7 @@
                                 </div>
                             </div>
                             <script>
-                                if ("{{$calculators->is_rejected_visa}}" == 'yes') {
+                                if ("{{$educations->is_rejected_visa}}" == 'yes') {
                                     $('.is_rejected_visa_yes').css('text-decoration', 'underline')
                                     $('.is_rejected_visa_yes').css('text-decoration-color', 'green')
                                 } else {
@@ -601,7 +760,7 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->rejected_visa_reason}}
+                                    {{$educations->rejected_visa_reason}}
                                 </p>
                             </div>
                         </div>
@@ -612,77 +771,208 @@
 
                             <div class="col-md-7">
                                 <p class="ps">
-                                    {{$calculators->rejected_visa_year}}
+                                    {{$educations->rejected_visa_year}}
                                 </p>
                             </div>
                         </div>
                         <hr>
+                        <div class="row custom-box">
+                            <div class="col-md-5">
+                                <strong class="ps">Prerequisite and Document Checklist:</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    @if($educations->prerequisite_document)
+                                    @foreach($educations->prerequisite_document as $row)
+                                    {{$row}}
+                                    @endforeach
+                                    @endif
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row custom-box " id="">
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="form-group">
+                                    <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
+
+                                    <textarea class="form-control" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="eca" disabled>{{$educations->eca}}</textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset><br>
+                    <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+
                         <div class="row">
                             <div class="col-md-5">
-                                <strong class="ps">Have you created EOI Profile in the past? If Yes, Valid up to?</strong>
+                                <strong class="ps">Is your Passport Valid for another 6 Months?</strong>
                             </div>
 
                             <div class="col-md-7">
 
                                 <div class="row">
-                                    &nbsp;<div class="EOI_profile_yes ">Yes</div>
+                                    &nbsp;<div class="passport_valid_yes ">Yes</div>
                                     &nbsp;&nbsp;&nbsp;
-                                    <div class="EOI_profile_no ">NO</div>
+                                    <div class="passport_valid_no ">NO</div>
 
                                 </div>
                             </div>
                             <script>
-                                if ("{{$calculators->EOI_profile}}" == 'yes') {
-                                    $('.EOI_profile_yes').css('text-decoration', 'underline')
-                                    $('.EOI_profile_yes').css('text-decoration-color', 'green')
+                                if ("{{$educations->passport_valid}}" == 'yes') {
+                                    $('.passport_valide_yes').css('text-decoration', 'underline')
+                                    $('.passport_valide_yes').css('text-decoration-color', 'green')
                                 } else {
-                                    $('.EOI_profile_no').css('text-decoration', 'underline')
-                                    $('.EOI_profile_no').css('text-decoration-color', 'green')
+                                    $('.passport_valid_no').css('text-decoration', 'underline')
+                                    $('.passport_valid_no').css('text-decoration-color', 'green')
                                 }
                             </script>
                         </div><br>
                         <div class="row">
                             <div class="col-md-5">
-                                <strong class="ps">Have you created Provincial Profile in the past? If Yes, Valid up to?</strong>
+                                <strong class="ps">Have you attempted IELTS academic in the past? If Yes, Valid up to?</strong>
                             </div>
 
                             <div class="col-md-7">
 
                                 <div class="row">
-                                    &nbsp;<div class="Provincial_profile_yes ">Yes</div>
+                                    &nbsp;<div class="IELTS_attempted_yes ">Yes</div>
                                     &nbsp;&nbsp;&nbsp;
-                                    <div class="Provincial_profile_no ">NO</div>
+                                    <div class="IELTS_attempted_no ">NO</div>
 
                                 </div>
                             </div>
                             <script>
-                                if ("{{$calculators->Provincial_profile}}" == 'yes') {
-                                    $('.Provincial_profile_yes').css('text-decoration', 'underline')
-                                    $('.Provincial_profile_yes').css('text-decoration-color', 'green')
+                                if ("{{$educations->IELTS_attempted}}" == 'yes') {
+                                    $('.IELTS_attempted_yes').css('text-decoration', 'underline')
+                                    $('.IELTS_attempted_yes').css('text-decoration-color', 'green')
                                 } else {
-                                    $('.Provincial_profile_no').css('text-decoration', 'underline')
-                                    $('.Provincial_profile_no').css('text-decoration-color', 'green')
+                                    $('.IELTS_attempted_no').css('text-decoration', 'underline')
+                                    $('.IELTS_attempted_no').css('text-decoration-color', 'green')
                                 }
                             </script>
                         </div><br>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <strong class="ps">Have you attempted GRE in the past? If Yes, Valid up to?</strong>
+                            </div>
 
+                            <div class="col-md-7">
+
+                                <div class="row">
+                                    &nbsp;<div class="GRE_attempted_yes ">Yes</div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <div class="GRE_attempted_no ">NO</div>
+
+                                </div>
+                            </div>
+                            <script>
+                                if ("{{$educations->GRE_attempted}}" == 'yes') {
+                                    $('.GRE_attempted_yes').css('text-decoration', 'underline')
+                                    $('.GRE_attempted_yes').css('text-decoration-color', 'green')
+                                } else {
+                                    $('.GRE_attempted_no').css('text-decoration', 'underline')
+                                    $('.GRE_attempted_no').css('text-decoration-color', 'green')
+                                }
+                            </script>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <strong class="ps">Have you attempted TOEFL academic in the past? If Yes, Valid up to?</strong>
+                            </div>
+
+                            <div class="col-md-7">
+
+                                <div class="row">
+                                    &nbsp;<div class="TOEFL_attempted_yes ">Yes</div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <div class="TOEFL_attempted_no ">NO</div>
+
+                                </div>
+                            </div>
+                            <script>
+                                if ("{{$educations->TOEFL_attempted}}" == 'yes') {
+                                    $('.TOEFL_attempted_yes').css('text-decoration', 'underline')
+                                    $('.TOEFL_attempted_yes').css('text-decoration-color', 'green')
+                                } else {
+                                    $('.TOEFL_attempted_no').css('text-decoration', 'underline')
+                                    $('.TOEFL_attempted_no').css('text-decoration-color', 'green')
+                                }
+                            </script>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <strong class="ps">Have you attempted GMAT academic in the past? If Yes, Valid up to?</strong>
+                            </div>
+
+                            <div class="col-md-7">
+
+                                <div class="row">
+                                    &nbsp;<div class="GMAT_attempted_yes ">Yes</div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <div class="GMAT_attempted_no ">NO</div>
+
+                                </div>
+                            </div>
+                            <script>
+                                if ("{{$educations->GMAT_attempted}}" == 'yes') {
+                                    $('.GMAT_attempted_yes').css('text-decoration', 'underline')
+                                    $('.GMAT_attempted_yes').css('text-decoration-color', 'green')
+                                } else {
+                                    $('.GMAT_attempted_no').css('text-decoration', 'underline')
+                                    $('.GMAT_attempted_no').css('text-decoration-color', 'green')
+                                }
+                            </script>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <strong class="ps">Are you interested to Attempt GRE/TOEFL/GMAT/SAT if required to fulfil the University/College eligibility criteria?</strong>
+                            </div>
+
+                            <div class="col-md-7">
+
+                                <div class="row">
+                                    &nbsp;<div class="interested_attempted_yes ">Yes</div>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <div class="interested_attempted_no ">NO</div>
+
+                                </div>
+                            </div>
+                            <script>
+                                if ("{{$educations->interested_attempted}}" == 'yes') {
+                                    $('.interested_attempted_yes').css('text-decoration', 'underline')
+                                    $('.interested_attempted_yes').css('text-decoration-color', 'green')
+                                } else {
+                                    $('.interested_attempted_no').css('text-decoration', 'underline')
+                                    $('.interested_attempted_no').css('text-decoration-color', 'green')
+                                }
+                            </script>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-12 ">
+                                <div class="form-group">
+                                    <label>Remarks/Comments if any</label>
+
+                                    <textarea class="form-control" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="feedback">{{$educations->feedback}}</textarea>
+
+                                </div>
+                            </div>
+                        </div>
                     </fieldset>
                 </fieldset>
             </div>
         </div>
     </li>
+
     <script>
         $("textarea").each(function(index) {
             console.log(index, $(this)[0].scrollHeight)
             $(this).height($(this)[0].scrollHeight);
         });
-    </script>  
+    </script>
 </u1>
 <br>
-<div class="float-right col-md-3">
-    <a href="{{route('edit.calculator')}}"> <button type="button" class="client-btn uk-button uk-button-primary">Edit CRS Calculator</button></a>
-</div>
-<br>
+
 <script>
 
 </script>

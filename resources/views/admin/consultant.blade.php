@@ -1,4 +1,4 @@
-@extends('layouts.layoutss')
+@extends('layouts.admin')
 @section('content')
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
@@ -178,70 +178,75 @@
     @if($consultants)
     @foreach($consultants as $row)
     <li>
-        <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}">
-            <div class="uk-card uk-card-hover " style="height:275px">
-                <div class="uk-card-body sc-padding-remove">
-                    <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                        <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50 imgview">
-                            <div class="sc-padding-medium uk-text-center">
-                                @if($row->img)
-                                <img src="{{url('files/'.$row->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
-                                @else
-                                <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                @endif
-                                <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                    {{$row->company_name}}
-                                </p>
-                                <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$row->registration_number}}</p>
-                            </div>
+        <div class="uk-card uk-card-hover " style="height:275px">
+            <div class="uk-card-body sc-padding-remove">
+                <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                    <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50 imgview">
+                        <div class="sc-padding-medium uk-text-center">
+                            @if($row->img)
+                            <img src="{{url('files/'.$row->img)}}" class="sc-avatar sc-border" alt="xerdman" style="width:100px;height:100px" />
+                            @else
+                            <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                            @endif
+                            <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                {{$row->company_name}}
+                            </p>
+                            <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$row->registration_number}}</p>
                         </div>
-                        <div class="uk-width-2-3@l ">
-                            <div class="sc-padding-medium">
-                                <ul class="uk-list uk-list-divider">
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove sc-text-semibold">{{$row->phone}}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove">{{$row->email}}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                        </div>
-                                    </li>
+                    </div>
+                    <div class="uk-width-2-3@l ">
+                        <div class="sc-padding-medium">
+                            <ul class="uk-list uk-list-divider">
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove sc-text-semibold">{{$row->phone}}</p>
+                                    </div>
+                                </li>
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove">{{$row->email}}</p>
+                                    </div>
+                                </li>
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
+                                    </div>
+                                </li>
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
+                                    </div>
+                                </li>
 
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">
-                                                @if($row->offering_service)
-                                                @foreach($row->offering_service as $service)
-                                                {{$service}},
-                                                @endforeach
-                                                @endif
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">
+                                            @if($row->offering_service)
+                                            @foreach($row->offering_service as $service)
+                                            {{$service}},
+                                            @endforeach
+                                            @endif
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
+        <div data-uk-dropdown="pos: bottom-center">
+            <ul class="uk-nav uk-dropdown-nav">
+                <li><a href="{{route('consultant.admin.view',['id' => $row->id])}}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                <li><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
+            </ul>
+        </div>
     </li>
     @endforeach
     @endif
@@ -277,7 +282,7 @@
             $.ajax({
 
                 method: "post",
-                url: "/provider/search",
+                url: "/admin/search",
                 dataType: 'json',
 
                 data: {
@@ -296,7 +301,6 @@
                         var first_index = index;
                         order_row = `<li>
         <input id="type" value="${row.type}" hidden>
-        <a href="/dashboard/consultant/${row.id}">
             <div class="uk-card uk-card-hover " style="height:280px">
                 <div class="uk-card-body sc-padding-remove">
                     <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
@@ -353,7 +357,14 @@
                     </div>
                 </div>
             </div>
-        </a>
+             <div data-uk-dropdown="pos: bottom-center">
+                 <ul class="uk-nav uk-dropdown-nav">
+                <li><a href="/admin/consultant/${row.id}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                <li><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
+                 </ul>
+             </div>
+      
        </li>`;
 
 

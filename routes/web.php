@@ -29,6 +29,39 @@ Route::get('/test', function () {
     return view('test');
 });
 
+
+
+Route::get('admin/candidate/view', 'App\Http\Controllers\AdminController@candidateIndex')->name('admin.candidate.view');
+Route::get('admin/school/view', 'App\Http\Controllers\AdminController@schoolIndex')->name('admin.school.view');
+Route::get('admin/college/view', 'App\Http\Controllers\AdminController@collegeIndex')->name('admin.college.view');
+Route::get('admin/university/view', 'App\Http\Controllers\AdminController@universityIndex')->name('admin.university.view');
+Route::get('admin/consultant/view', 'App\Http\Controllers\AdminController@consultantIndex')->name('admin.consultant.view');
+Route::get('admin/immigration/view', 'App\Http\Controllers\AdminController@immigrationIndex')->name('admin.immigration.view');
+Route::get('admin/business/view', 'App\Http\Controllers\AdminController@businessIndex')->name('admin.business.view');
+Route::get('admin/consultant/{id}', 'App\Http\Controllers\AdminController@consultantView')->name('consultant.admin.view');
+Route::get('admin/institution/{id}', 'App\Http\Controllers\AdminController@institutionView')->name('institution.admin.view');
+Route::get('admin/business/{id}', 'App\Http\Controllers\AdminController@businessView')->name('business.admin.view');
+Route::get('admin/candidate/{id}', 'App\Http\Controllers\AdminController@candidateProfile')->name('candidate.admin.view');
+Route::get('admin/edu/{id}', 'App\Http\Controllers\AdminController@educationview')->name('edu.admin.view');
+Route::get('admin/crs/{id}', 'App\Http\Controllers\AdminController@calculatorview')->name('crs.admin.view');
+
+
+Route::get('admin/index', 'App\Http\Controllers\UserController@adminIndex')->name('admin.index');
+Route::get('/user/create',  'App\Http\Controllers\UserController@create')->name('user.create');
+Route::post('/user/add',  'App\Http\Controllers\UserController@store')->name('user.add');
+Route::get('/user/edit/{id}',  'App\Http\Controllers\UserController@edit')->name('user.edit');
+Route::post('/user/update',  'App\Http\Controllers\UserController@update')->name('user.update');
+Route::get('/user/delete/{id}',  'App\Http\Controllers\UserController@destroy')->name('user.destroy');
+
+Route::get('/admin/login',  'App\Http\Controllers\UserController@loginPage')->name('adminlogin');;
+Route::post('/adminlogin',  'App\Http\Controllers\UserController@login');
+Route::post('/adminlogout',  'App\Http\Controllers\UserController@logout')->name('adminlogout');
+
+Route::post('/admin/search', 'App\Http\Controllers\SearchController@providerSearch')->name('admin.providerSearch');
+Route::post('/admin/institude/search', 'App\Http\Controllers\SearchController@institudeSearch')->name('admin.institudeSearch');
+
+
+
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/providerProfile', function () {
@@ -148,4 +181,5 @@ Route::group(['middleware' => ['auth']], function () {
         return view('register.sponsor');
     })->name('candidate_sponsor');
 });
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

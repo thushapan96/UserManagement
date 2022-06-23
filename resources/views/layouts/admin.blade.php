@@ -31,6 +31,18 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
+    #sc-sidebar-main .sc-sidebar-menu>li>.sc-sidebar-menu-sub a {
+        padding: 2px 14px 3px 64px !important;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        text-decoration: none;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: relative;
+    }
+
     label {
         text-transform: capitalize;
     }
@@ -123,19 +135,9 @@
     #sc-sidebar-main .sc-sidebar-menu li a {
         font-size: 15px !important
     }
+
     textarea::-webkit-scrollbar {
         display: none;
-    }
-    #sc-sidebar-main .sc-sidebar-menu>li>.sc-sidebar-menu-sub a {
-        padding: 2px 14px 3px 64px !important;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        text-decoration: none;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        position: relative;
     }
 </style>
 
@@ -233,18 +235,7 @@
                     <li class="uk-visible@l">
                         <a href="#" id="sc-js-fullscreen-toggle"><i class="mdi mdi-fullscreen sc-js-el-hide"></i><i class="mdi mdi-fullscreen-exit sc-js-el-show"></i></a>
                     </li>
-                    <li class="uk-visible@s">
-                        <a href="#" class="sc-text-semibold">
-                            EN
-                        </a>
-                        <div class="uk-navbar-dropdown uk-dropdown-small">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#">Deutsch</a></li>
-                                <li><a href="#">Español</a></li>
-                                <li><a href="#">Français</a></li>
-                            </ul>
-                        </div>
-                    </li>
+
                     <li>
                         <a href="#">
                             <span class="mdi mdi-email"></span>
@@ -353,57 +344,27 @@
                         </div>
                     </li>
                     <li>
-                        @php
-                        $img = Auth::user()->img;
-                        @endphp
-                        @if($img)
-                        <a href="#"><img src="{{url('files/'.$img)}}" alt="" style="width:38px;height:38px"></a>
-                        @else
+
+
                         <a href="#"><img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" style="width:38px;height:38px"></a>
-                        @endif
+
                         <div class="uk-navbar-dropdown uk-dropdown-small">
                             <ul class="uk-nav uk-nav-navbar">
-                                <li title="profile">
-                                    @if(Auth::user())
 
-                                    @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
-                                    <a href="{{route('consultantProfile')}}">
-                                        <span class="uk-nav-icon">
-                                        </span><span class="uk-nav-title">profile</span>
-                                    </a>
-                                    @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
-                                    <a href="{{route('institudeProfile')}}">
-                                        <span class="uk-nav-icon">
-                                        </span><span class="uk-nav-title">profile</span>
-                                    </a>
-                                    @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
-                                    <a href="{{route('businessProfile')}}">
-                                        <span class="uk-nav-icon">
-                                        </span><span class="uk-nav-title">profile</span>
-                                    </a>
-                                    @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
-                                    <a href="{{route('personalProfile')}}">
-                                        <span class="uk-nav-icon">
-                                        </span><span class="uk-nav-title">profile</span>
-                                    </a>
-                                    @endif
-                                    @endif
-                                </li>
-                                <li><a href="pages-settings.html">Settings</a></li>
-                                @if(Auth::user())
+                                @if(Auth::guard('admin')->user())
                                 <li title="logout">
                                     <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                         <span class="uk-nav-icon"></span>
                                         <span class="uk-nav-title">logout</span>
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('adminlogout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </li>
                                 @else
                                 <li title="login">
-                                    <a href="{{route('login')}}">
+                                    <a href="{{route('adminlogin')}}">
                                         <span class="uk-nav-icon"></span>
                                         <span class="uk-nav-title">Login</span>
                                     </a>
@@ -413,6 +374,7 @@
                             </ul>
                         </div>
                     </li>
+
                 </ul>
                 <a href="#" class="sc-js-offcanvas-toggle md-color-white uk-margin-left uk-hidden@l">
                     <i class="mdi mdi-menu sc-offcanvas-open"></i>
@@ -428,11 +390,11 @@
                 <ul class="sc-sidebar-menu ">
 
                     <li class="" style="padding:0 !important">
-                        <a><span style="color:#d81400;font-size: 17px;">Menu</span></a>
+                        <!-- <a><span style="color:#d81400;font-size: 17px;">Profile</span></a> -->
 
                         <ul class="sc-sidebar-menu " style="">
                             <li title="" class="sc-page-active page-active">
-                                <a href="{{route('indexx')}}">
+                                <a href="#">
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
                                     </span><span class="uk-nav-title">Dashboard</span>
@@ -440,39 +402,13 @@
 
                             </li>
 
-                            <li title="profile" class="page-Profile page-active">
-                                @if(Auth::user())
-
-                                @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
-                                <a href="{{route('consultantProfile')}}">
+                            <li title="profile" class="page-can page-active">
+                                <a href="{{route('admin.candidate.view')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
+                                    </span><span class="uk-nav-title">Candidate</span>
                                 </a>
-                                @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
-                                <a href="{{route('institudeProfile')}}">
-                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
-                                </a>
-                                @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
-                                <a href="{{route('businessProfile')}}">
-                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
-                                </a>
-                                @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
-                                <a href="{{route('personalProfile')}}">
-                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
-                                </a>
-                                @endif
-                                @endif
                             </li>
-                            <li title="Dashboards" class="page-Dashboards page-active">
-                                <a href="">
-                                    <span class="uk-nav-icon"><i class="fas fa-users"></i>
-                                    </span><span class="uk-nav-title">Membership</span>
-                                </a>
 
-                            </li>
                             <li title="institution" class="page-institution page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
@@ -482,16 +418,16 @@
                                 <ul class="sc-sidebar-menu-sub">
                                     <li class="page-School page-active">
 
-                                        <a href="{{route('dashboard.view.school')}}"> School </a>
+                                        <a href="{{route('admin.school.view')}}"> School </a>
 
                                     </li>
                                     <li class="page-College page-active">
 
-                                        <a href="{{route('dashboard.view.college')}}"> College </a>
+                                        <a href="{{route('admin.college.view')}}"> College </a>
 
                                     </li>
                                     <li class="page-University page-active">
-                                        <a href="{{route('dashboard.view.university')}}"> university </a>
+                                        <a href="{{route('admin.university.view')}}"> university </a>
 
                                     </li>
 
@@ -507,12 +443,12 @@
                                 <ul class="sc-sidebar-menu-sub">
                                     <li class="page-RCIC-Consultant page-active">
 
-                                        <a href="{{route('dashboard.view.consultant')}}"> RCIC Consultant </a>
+                                        <a href="{{route('admin.consultant.view')}}"> RCIC Consultant </a>
 
                                     </li>
                                     <li class="page-immigration page-active">
 
-                                        <a href="{{route('dashboard.view.immigration')}}"> immigration </a>
+                                        <a href="{{route('admin.immigration.view')}}"> immigration </a>
 
                                     </li>
 
@@ -528,7 +464,7 @@
                                 <ul class="sc-sidebar-menu-sub">
                                     <li class="page-CA page-active">
 
-                                        <a href="{{route('dashboard.business')}}">CA & TC </a>
+                                        <a href="{{route('admin.business.view')}}">CA & TC </a>
 
                                     </li>
 
@@ -536,183 +472,63 @@
 
                             </li>
 
+                            <li title="" class="page-Ma page-active">
+                                <a href="{{route('admin.index')}}">
+                                    <span class="uk-nav-icon"><i class="fa fa-users"></i>
 
-                            @if(auth()->user()->role == 'candidate')
-                            <li title="CRS Calculator" class="page-Calculator page-active">
-                                <a href="{{route('calculator')}}">
-                                    <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
-
-                                    </span><span class="uk-nav-title">CRS Calculator</span>
+                                    </span><span class="uk-nav-title">User Management</span>
                                 </a>
-
 
                             </li>
 
-                            <li title="Educational Assessment" class="page-Educational page-active">
-                                <a href="{{route('education')}}">
-                                    <span class="uk-nav-icon"><i class="fab fa-readme"></i>
-                                    </span><span class="uk-nav-title">Educ Assessment</span>
-                                </a>
-                            </li>
-                            @else
-                            <li title="enquiries" class="page-enquiries page-active">
-                                <a href="#">
-                                    <span class="uk-nav-icon"><i class="fas fa-bell"></i>
-                                    </span><span class="uk-nav-title">enquiries</span>
-                                </a>
-                            </li>
-                            @endif
-                            <li title="report">
-                                <a href="#">
-                                    <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>
-
-                                    </span><span class="uk-nav-title">report</span>
-                                </a>
-                                <ul class="sc-sidebar-menu-sub">
-                                    <li class="page-Summary page-active">
-
-                                        <a href="#">Summary</a>
-
-                                    </li>
-                                    <li class="page-Details page-active">
-
-                                        <a href="#">Details</a>
-
-                                    </li>
-
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="" style="padding:0 !important">
-                        <a><span style="color:#d81400;font-size: 17px;">Application</span></a>
-
-                        <ul class="sc-sidebar-menu">
-                            <li title="Appointment Scheduler" class=" page-active">
-                                <a href="pages-chat.html">
-                                    <span class="uk-nav-icon"><i class="far fa-calendar-alt"></i>
-                                    </span><span class="uk-nav-title">Appointment Scheduler</span>
-                                </a>
-                            </li>
-
-                            <li title="QuickBooks" class=" page-active">
-                                <a href="pages-chat.html">
-                                    <span class="uk-nav-icon"><i class="fab fa-leanpub"></i>
-
-                                    </span><span class="uk-nav-title">QuickBooks </span>
-                                </a>
-                            </li>
-
-                            <li title="CRM" class=" page-active">
-                                <a href="pages-chat.html">
-                                    <span class="uk-nav-icon"><i class="fas fa-sign-language"></i>
-
-                                    </span><span class="uk-nav-title">CRM </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="" style="padding:0 !important">
-                        <a><span style="color:#d81400;font-size: 17px;">Utilities</span></a>
-
-                        <ul class="sc-sidebar-menu">
-
-                            <li title="Chat" class=" page-active">
-                                <a href="pages-chat.html">
+                            <li title="" class=" page-active">
+                                <a href="{{route('indexx')}}">
                                     <span class="uk-nav-icon">
-                                        <i class="fas fa-cog"></i>
-                                    </span><span class="uk-nav-title">Settings</span>
+                                        <i class="mdi mdi-receipt"></i>
+                                    </span><span class="uk-nav-title">Accounts</span>
                                 </a>
+
                             </li>
 
-                            <li title="Chat" class=" page-active">
-                                <a href="pages-chat.html">
-                                    <span class="uk-nav-icon"><i class="mdi mdi-message-outline"></i>
-
-                                    </span><span class="uk-nav-title">Chat</span>
-                                </a>
-                            </li>
-
-                            <li title="Invoices" class=" page-active">
-                                <a href="pages-invoices.html">
-                                    <span class="uk-nav-icon"><i class="mdi mdi-receipt"></i>
-
-                                    </span><span class="uk-nav-title">Invoices</span>
-                                </a>
-                            </li>
-
-                            <li title="Mailbox" class=" page-active">
-                                <a href="pages-mailbox.html">
-                                    <span class="uk-nav-icon"><i class="mdi mdi-email-outline"></i>
-
-                                    </span><span class="uk-nav-title">Mailbox</span>
-                                </a>
-                            </li>
-
-                            <li title="Task Board" class=" page-active">
-                                <a href="pages-task_board.html">
-                                    <span class="uk-nav-icon"><i class="mdi mdi-calendar-text"></i>
-
-                                    </span><span class="uk-nav-title">Task Board</span>
-                                </a>
-                            </li>
-
-                            <li title="Notes" class=" page-active">
-                                <a href="pages-notes.html">
+                            <li title="" class=" page-active">
+                                <a href="#">
                                     <span class="uk-nav-icon"><i class="mdi mdi-note-outline"></i>
 
-                                    </span><span class="uk-nav-title">Notes</span>
+                                    </span><span class="uk-nav-title">Reports</span>
                                 </a>
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class=" page-active">
+
+                                        <a href="#"> Membership expiry </a>
+
+                                    </li>
+                                    <li class=" page-active">
+
+                                        <a href="#"> Accounting </a>
+
+                                    </li>
+                                    <li class=" page-active">
+
+                                        <a href="#"> School enquiries and Progress status </a>
+
+                                    </li>
+
+                                </ul>
                             </li>
+                            <li title="" class=" page-active">
+                                <a href="#">
+                                    <span class="uk-nav-icon"> <i class="fas fa-cog"></i>
+
+                                    </span><span class="uk-nav-title">Settings</span>
+                                </a>
+
+                            </li>
+
                         </ul>
                     </li>
 
-                    @if(Auth::user())
-                    <li class="" style="padding:0 !important">
-                        <a><span style="color:#d81400;font-size: 17px;">Canada inspire</span></a>
-
-                        <ul class="sc-sidebar-menu">
 
 
-                            @if((auth()->user()->service_type == 'Business' || auth()->user()->service_type == 'Institution' || auth()->user()->service_type == 'Consultation'))
-                            <li title="Notes" class="page-Services page-active">
-                                <a href="{{route('canadaInspire')}}">
-                                    <span class="uk-nav-icon"><i class="fas fa-people-carry"></i>
-                                    </span><span class="uk-nav-title">Our Services</span>
-                                </a>
-                            </li>
-                            @endif
-                            <li title="Notes" class="page-Feedback page-active">
-                                <a href="{{route('feedback')}}">
-                                    <span class="uk-nav-icon"><i class="fas fa-pen-alt"></i>
-
-                                    </span><span class="uk-nav-title">Your Feedback</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <br>
-                    @endif
-                    @if(Auth::user())
-                    <li title="logout">
-                        <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            <span class="uk-nav-icon"><i class="nav-icon fa fa-sign-out-alt"></i></span>
-                            <span class="uk-nav-title">logout</span>
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
-                    @else
-                    <li title="login">
-                        <a href="{{route('login')}}">
-                            <span class="uk-nav-icon"><i class="nav-icon fas fa-sign-in-alt"></i></span>
-                            <span class="uk-nav-title">Login</span>
-                        </a>
-                    </li>
-                    @endif
                 </ul>
 
             </div>
@@ -768,7 +584,13 @@
                         });
                     }
                 })
-
+                loadjs('assets/js/views/pages/contact_list.min.js', {
+                    success: function() {
+                        $(function() {
+                            scutum.pages.contactList.init()
+                        });
+                    }
+                })
                 // show page
                 setTimeout(function() {
                     // clear styles (FOUC)
@@ -798,8 +620,6 @@
 
         console.log(4)
     </script>
-
-
 
 </body>
 

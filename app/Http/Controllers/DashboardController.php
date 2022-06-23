@@ -46,7 +46,6 @@ class DashboardController extends Controller
     }
     public function businessView($id)
     {
-
         $consultants = Consultant::find($id);
         $teams = Team::where('provider_id', $consultants->id)->get();
         $user_id =  $consultants->user_id;

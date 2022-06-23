@@ -1,4 +1,4 @@
-@extends('layouts.layoutss')
+@extends('layouts.admin')
 @section('content')
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
@@ -147,7 +147,7 @@
 <div class="row">
     <div class="col-md-3">Search By
         <select class="form-control filter">
-            <option value="RCIC Number">RCIC Number</option>
+            <option value="RCIC Number">Registration Number</option>
             <option value="Owner Name">Owner Name</option>
             <option value="Company Name ">Company Name </option>
             <option value="Specialization">Specialization </option>
@@ -172,17 +172,20 @@
 </div>
 <br><br>
 <input id="type" value="{{$type}}" hidden>
-<u1 id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
 
+<div>
 
-    @if($consultants)
-    @foreach($consultants as $row)
-    <li>
-        <a href="{{route('dashboard.consultant.view',['id' => $row->id])}}">
+    <br>
+    <ul id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
+        <input id="type" value="{{$type}}" hidden>
+        @if($consultants)
+        @foreach($consultants as $row)
+        <li>
             <div class="uk-card uk-card-hover " style="height:275px">
                 <div class="uk-card-body sc-padding-remove">
                     <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                        <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50 imgview">
+                        <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
+
                             <div class="sc-padding-medium uk-text-center">
                                 @if($row->img)
                                 <img src="{{url('files/'.$row->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
@@ -193,6 +196,7 @@
                                     {{$row->company_name}}
                                 </p>
                                 <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$row->registration_number}}</p>
+
                             </div>
                         </div>
                         <div class="uk-width-2-3@l ">
@@ -219,10 +223,9 @@
                                     <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
                                         <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">{{$row->streat}} {{$row->city}} {{$row->region}} {{$row->country}}</p>
                                         </div>
                                     </li>
-
                                     <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                         <div class="sc-list-body">
@@ -241,13 +244,20 @@
                     </div>
                 </div>
             </div>
-        </a>
-    </li>
-    @endforeach
-    @endif
+            <div data-uk-dropdown="pos: bottom-center">
+                <ul class="uk-nav uk-dropdown-nav">
+                    <li><a href="{{route('business.admin.view',['id' => $row->id])}}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                    <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                    <li><a href="#" style="color:#17a2b8;">3) View Progress status reports</a></li>
+                </ul>
+            </div>
+        </li>
+        @endforeach
+        @endif
 
-</u1>
+        </u1>
 
+</div>
 <script>
     $.ajaxSetup({
         headers: {
@@ -257,16 +267,10 @@
 
 
     $(document).ready(function() {
-
-        if ($('#type').val() == 'RCIC Consultant') {
-            $('.page-active').removeClass('sc-page-active')
-            $('.page-RCIC-Consultant').addClass('sc-page-active')
-        } else {
-            $('.page-active').removeClass('sc-page-active')
-            $('.page-immigration ').addClass('sc-page-active')
-        }
-
         const baseUrlAsset = "{{url('files/')}}";
+        var type = $('#type').val();
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-CA').addClass('sc-page-active')
 
         $('#searchbar').on('keyup', function() {
             var searchValue = $('#searchbar').val();
@@ -277,7 +281,7 @@
             $.ajax({
 
                 method: "post",
-                url: "/provider/search",
+                url: "/admin/search",
                 dataType: 'json',
 
                 data: {
@@ -296,14 +300,13 @@
                         var first_index = index;
                         order_row = `<li>
         <input id="type" value="${row.type}" hidden>
-        <a href="/dashboard/consultant/${row.id}">
             <div class="uk-card uk-card-hover " style="height:280px">
                 <div class="uk-card-body sc-padding-remove">
                     <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
                         <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
 
                             <div class="sc-padding-medium uk-text-center">
-                                <img id="img-${index}" style="width:100px;height:100px" src="" class="sc-avatar sc-border" alt="xerdman" />
+                                <img id="img-${index}" src="" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
                                 
                                 <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
                                    ${row.company_name}
@@ -353,7 +356,13 @@
                     </div>
                 </div>
             </div>
-        </a>
+            <div data-uk-dropdown="pos: bottom-center">
+                 <ul class="uk-nav uk-dropdown-nav">
+                <li><a href="/admin/business/${row.id}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                <li><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
+                 </ul>
+             </div>
        </li>`;
 
 
@@ -367,6 +376,7 @@
                         } else {
                             $('#img-' + first_index).attr('src', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
                         }
+
 
 
 
