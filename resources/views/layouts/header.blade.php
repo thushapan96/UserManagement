@@ -8,58 +8,23 @@
             @else
             <div class="container" style="max-width: 1200px;">
                 @endif
-               
+
 
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav" style="margin-left:5%;">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('canadainspair')}}">Canada Inspire</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('whycanada')}}">Why Canada</a>
-                        </li>
+                    <ul class="navbar-nav " style="margin-left:60%;">
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Services</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Register</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{route('dashboard.consultant')}}">Consultant</a>
-                                <a class="dropdown-item" href="{{route('dashboard.business')}}">Business</a>
-                                <a class="dropdown-item" href="{{route('dashboard.institution')}}">Institution</a>
-
+                                <a class="dropdown-item" href="{{route('register', ['role' => 'Service Provider'])}}"> as Service Provider</a>
+                                <a class="dropdown-item" href="{{route('register', ['role' => 'candidate'])}}"> as Candidate</a>
                             </div>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
-                        </li>
                         @if(Auth::user())
-
-                        @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('consultantProfile')}}">profile</a>
-                        </li>
-                        @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('institudeProfile')}}">profile</a>
-                        </li>
-                        @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('businessProfile')}}">profile</a>
-                        </li>
-                        @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('personalProfile')}}">profile</a>
-                        </li>
-                        @endif
-                        @endif
-
-                        @if(Auth::user())
-                        <li>
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                        <li class="nav-item float-right">
+                            <a class="nav-link " href="{{ route('logout') }}" onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -68,16 +33,26 @@
                             </form>
                         </li>
                         @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('login')}}">Login</a>
+                        <li class="nav-item float-right">
+                            <a class="nav-link float-right" href="{{route('login')}}">Login</a>
                         </li>
-
-
                         @endif
+
+                        @if(Auth::guard('admin')->user())
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                Admin Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('adminlogout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                        @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('adminlogin')}}">Admin Login</a>
                         </li>
-
+                        @endif
                     </ul>
                 </div>
             </div>

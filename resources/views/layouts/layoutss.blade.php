@@ -157,7 +157,7 @@
             <div class="uk-navbar-left nav-overlay-small uk-margin-right uk-navbar-aside">
                 <a href="#" id="sc-sidebar-main-toggle"><i class="mdi mdi-backburger sc-menu-close hid"></i><i class="mdi mdi-menu sc-menu-open"></i></a>
                 <div class="sc-brand uk-visible@s">
-                    <a href="dashboard-v1.html"><img src="{{asset('images/logo.png')}}" width="150px" alt=""></a>
+                    <a href="/"><img src="{{asset('images/logo.png')}}" width="150px" alt=""></a>
                 </div>
             </div>
             <div class="uk-navbar-left nav-overlay uk-margin-right uk-visible@m">
