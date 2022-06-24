@@ -84,7 +84,7 @@ class UserController extends Controller
     }
     public function create()
     {
-        return view('admin.add');
+        return view('admin.Add');
     }
     public function edit($id)
     {
