@@ -999,12 +999,22 @@
                         <br>
                         @if(!$view)
                         <a href="{{route('edit.consultant')}}"> <button type="button" style="width: 140px;font-size:12px" class="client-btn uk-button uk-button-primary">Edit Profile</button></a>
+                        @elseif(Auth::user()->role == 'candidate')
+                        @php
+                        $candidateId = \App\Models\Personal::where('user_id', Auth::user()->id)->value('id');
+                        $statuss = \App\Models\Enquiry::where(['candidate_id' => $candidateId])->where('provider_id', $consultants->id)->value('statuss');
+                        @endphp
+                        @if($statuss >= 1)
+                        <button type="button" style="" id="enquiry" data-id="{{$consultants->id}}" class="client-btn uk-button uk-button-primary">Cancel Request</button>
+                        @else
+                        <button type="button" style="" id="enquiry" data-id="{{$consultants->id}}" class="client-btn uk-button uk-button-primary">Add Request</button>
+                        @endif
                         @endif
                     </div>
                 </fieldset>
             </div>
         </div>
-        
+
     </div>
 </section>
 <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
@@ -1012,29 +1022,47 @@
     $(document).ready(function() {
         console.log(2)
 
-        $("#amenu").click(function() {
-
-        });
-        $("#amenu1").click(function() {
-
-        });
-        $("#amenu2").click(function() {
-
-        });
-        $("#amenu3").click(function() {
-
-        });
-        $("#amenu4").click(function() {
-
-        });
-        $("#amenu5").click(function() {
-
-        });
-        $("#amenu6").click(function() {
-
-        });
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
+
+        $("#enquiry").click(function() {
+            if (confirm("Are You Sure") == true) {
+                var id = $(this).attr('data-id');
+                var text = $(this).text()
+                if (text == 'Add Request') {
+                    var status = 'Request';
+                    var statuss = 1;
+                } else {
+
+                    var status = 'Cancel by Candidate';
+                    var statuss = 0;
+                }
+
+                $.ajax({
+
+                    method: "post",
+                    url: "/candidate/request",
+                    dataType: 'json',
+
+                    data: {
+                        '_token': '{{ csrf_token() }}',
+                        id: id,
+                        status: status,
+                        statuss: statuss,
+                        type: 'provider'
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        location.reload();
+                    }
+
+                });
+
+            } else {
+
+            }
+        });
+
         var chargeable = "{{$consultants->initial_chargeable_type}}"
 
         if (chargeable == 'free') {

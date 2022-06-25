@@ -143,6 +143,7 @@
         scrollbar-width: none;
         /* Firefox */
     }
+   
 </style>
 <div class="row">
     <div class="col-md-3">Search By
@@ -224,7 +225,7 @@
                                         <li class="sc-list-group">
                                             <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
                                             <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$row->streat}} {{$row->city}} {{$row->region}} {{$row->country}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap"> {{$row->city}} {{$row->region}} {{$row->country}}</p>
                                             </div>
                                         </li>
                                         <li class="sc-list-group">

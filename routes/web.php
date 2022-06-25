@@ -81,6 +81,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('provider/search', 'App\Http\Controllers\OtherController@providerSearch')->name('providerSearch');
     Route::post('institude/search', 'App\Http\Controllers\OtherController@institudeSearch')->name('institudeSearch');
+    Route::post('/candidate/request', 'App\Http\Controllers\EnquiryController@candidateRequest');
+    Route::get('/candidateEnquiry', 'App\Http\Controllers\EnquiryController@candidateEnquiry')->name('candidateEnquiry');
 
 
     Route::get('education', 'App\Http\Controllers\OtherController@educationIndex')->name('education');

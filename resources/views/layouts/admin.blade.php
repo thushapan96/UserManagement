@@ -482,7 +482,7 @@
                             </li>
 
                             <li title="" class=" page-active">
-                                <a href="{{route('indexx')}}">
+                                <a href="#">
                                     <span class="uk-nav-icon">
                                         <i class="mdi mdi-receipt"></i>
                                     </span><span class="uk-nav-title">Accounts</span>

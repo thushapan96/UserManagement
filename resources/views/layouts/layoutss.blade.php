@@ -554,14 +554,14 @@
                                     </span><span class="uk-nav-title">Educ Assessment</span>
                                 </a>
                             </li>
-                            @else
+                            @endif
                             <li title="enquiries" class="page-enquiries page-active">
-                                <a href="#">
+                                <a href="{{route('candidateEnquiry')}}">
                                     <span class="uk-nav-icon"><i class="fas fa-bell"></i>
                                     </span><span class="uk-nav-title">enquiries</span>
                                 </a>
                             </li>
-                            @endif
+                          
                             <li title="report">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>

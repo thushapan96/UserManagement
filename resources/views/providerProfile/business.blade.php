@@ -356,7 +356,7 @@
                                         <div class="form-group">
                                             <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
 
-                                            <textarea name="privacy_policy_detail"  value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
+                                            <textarea name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -369,7 +369,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea class="outset" name="history"  value="{{$consultants->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
+                                            <textarea class="outset" name="history" value="{{$consultants->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
 
 
                                         </div>
@@ -384,7 +384,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -499,7 +499,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -542,7 +542,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -665,6 +665,17 @@
                         <br>
                         @if(!$view)
                         <a href="{{route('edit.business')}}"> <button type="button" style="width: 140px;font-size:12px" class="client-btn uk-button uk-button-primary">Edit Profile</button></a>
+                        @elseif(Auth::user()->role == 'candidate')
+                        @php
+                        $candidateId = \App\Models\Personal::where('user_id', Auth::user()->id)->value('id');
+                        $statuss = \App\Models\Enquiry::where(['candidate_id' => $candidateId])->where('provider_id', $consultants->id)->value('statuss');
+                        @endphp
+                       
+                        @if($statuss >= 1 )
+                        <button type="button" style="" id="enquiry" data-id="{{$consultants->id}}" class="client-btn uk-button uk-button-primary">Cancel Request</button>
+                        @else
+                        <button type="button" style="" id="enquiry" data-id="{{$consultants->id}}" class="client-btn uk-button uk-button-primary">Add Request</button>
+                        @endif
                         @endif
                     </div>
                 </fieldset>
@@ -678,7 +689,44 @@
     $(document).ready(function() {
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
-        
+        $("#enquiry").click(function() {
+            if (confirm("Are You Sure") == true) {
+                var id = $(this).attr('data-id');
+                var text = $(this).text()
+                if (text == 'Add Request') {
+                    var status = 'Request';
+                    var statuss = 1;
+                } else {
+
+                    var status = 'Cancel by Candidate';
+                    var statuss = 0;
+                }
+
+                $.ajax({
+
+                    method: "post",
+                    url: "/candidate/request",
+                    dataType: 'json',
+
+                    data: {
+                        '_token': '{{ csrf_token() }}',
+                        id: id,
+                        status: status,
+                        statuss: statuss,
+                        type: 'provider'
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        location.reload();
+                    }
+
+                });
+
+            } else {
+
+            }
+        });
+
         var chargeable = "{{$consultants->initial_chargeable_type}}"
         if (chargeable == 'free') {
             $('.free').css('text-decoration', 'underline')

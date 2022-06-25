@@ -93,10 +93,10 @@
                 <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">About {{$institutions->type}} </a></li>
                 <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1rem;"> Award & Certification</a></li>
                 <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1rem;">News and Events</a></li>
-                
+
 
             </u1>
-          
+
             <u1 class="uk-switcher">
                 <li id='menu' class='tab-pane '>
                     <div class='uk-card col-md-11 ' style="margin-left:auto !important;margin-right:auto">
@@ -745,12 +745,12 @@
                         </div>
                     </div>
                 </li>
-               
+
                 <script>
                     $("textarea").each(function(index) {
                         console.log(index, $(this)[0].scrollHeight)
                         $(this).height($(this)[0].scrollHeight);
-                        
+
                     });
                 </script>
             </u1>
@@ -811,8 +811,19 @@
 
                         </div>
                         <br>
+                       
                         @if(!$view)
                         <a href="{{route('edit.institution')}}"> <button type="button" style="width: 140px;font-size:12px" class="client-btn uk-button uk-button-primary">Edit Profile</button></a>
+                        @elseif(Auth::user()->role == 'candidate')
+                        @php
+                        $candidateId = \App\Models\Personal::where('user_id', Auth::user()->id)->value('id');
+                        $statuss = \App\Models\Enquiry::where(['candidate_id' => $candidateId])->where('institution_id', $institutions->id)->value('statuss');
+                        @endphp
+                        @if($statuss >= 1)
+                        <button type="button" style="" id="enquiry" data-id="{{$institutions->id}}" class="client-btn uk-button uk-button-primary">Cancel Request</button>
+                        @else
+                        <button type="button" style="" id="enquiry" data-id="{{$institutions->id}}" class="client-btn uk-button uk-button-primary">Add Request</button>
+                        @endif
                         @endif
                     </div>
                 </fieldset>
@@ -823,9 +834,52 @@
 
 <script>
     $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
 
+        $("#enquiry").click(function() {
+            if (confirm("Are You Sure") == true ) {
+                var id = $(this).attr('data-id');
+                var text = $(this).text()
+                if (text == 'Add Request') {
+                    var status = 'Request';
+                    var statuss = 1;
+                } else {
+                    
+                    var status = 'Cancel by Candidate';
+                    var statuss = 0;
+                }
+                
+                $.ajax({
+
+                    method: "post",
+                    url: "/candidate/request",
+                    dataType: 'json',
+
+                    data: {
+                        '_token': '{{ csrf_token() }}',
+                        id: id,
+                        status: status,
+                        statuss: statuss,
+                        type: 'institution'
+                    },
+                    success: function(result) {
+                        console.log(result);
+                        location.reload();
+                    }
+
+                });
+
+            } else {
+
+            }
+        });
 
         $(".bmenu").click(function() {
             $('.tab-pane').fadeOut();
@@ -876,11 +930,7 @@
                 $('#sameaddress').removeClass('d-none');
             };
         });
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+
         $('#profile_img').change(function() {
 
 
