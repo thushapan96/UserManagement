@@ -29,7 +29,7 @@ Route::get('/test', function () {
     return view('test');
 });
 
-
+// admin begin
 
 Route::get('admin/candidate/view', 'App\Http\Controllers\AdminController@candidateIndex')->name('admin.candidate.view');
 Route::get('admin/school/view', 'App\Http\Controllers\AdminController@schoolIndex')->name('admin.school.view');
@@ -59,8 +59,33 @@ Route::post('/adminlogout',  'App\Http\Controllers\UserController@logout')->name
 
 Route::post('/admin/search', 'App\Http\Controllers\SearchController@providerSearch')->name('admin.providerSearch');
 Route::post('/admin/institude/search', 'App\Http\Controllers\SearchController@institudeSearch')->name('admin.institudeSearch');
+Route::post('/admin/institude/enquiry/search', 'App\Http\Controllers\SearchController@institudeEnquirySearch');
+Route::post('/admin/enquiry/search', 'App\Http\Controllers\SearchController@providerEnquirySearch');
+Route::post('/confirmEnquiry', 'App\Http\Controllers\SearchController@confirmEnquiry');
+Route::post('/services/confirmEnquiry', 'App\Http\Controllers\SearchController@servicesConfirmEnquiry');
 
 
+
+
+
+Route::get('/admin/candidateEnquiry/{id}', 'App\Http\Controllers\AdminEnquiryController@candidateEnquiry')->name('admin.candidateEnquiry');
+Route::get('/admin/institudeEnquiry/{id}', 'App\Http\Controllers\AdminEnquiryController@institudeEnquiry')->name('admin.institudeEnquiry');
+Route::get('/admin/consultantEnquiry/{id}', 'App\Http\Controllers\AdminEnquiryController@consultantEnquiry')->name('admin.consultantEnquiry');
+
+
+Route::get('/admin/enquiry/candidates/list', 'App\Http\Controllers\AdminEnquiryController@candidatesList')->name('admin.enquiry.list.candidates');
+
+Route::get('/admin/enquiry/school/list', 'App\Http\Controllers\AdminEnquiryController@schoolList')->name('admin.enquiry.list.school');
+Route::get('/admin/enquiry/college/list', 'App\Http\Controllers\AdminEnquiryController@collegeList')->name('admin.enquiry.list.college');
+Route::get('/admin/enquiry/university/list', 'App\Http\Controllers\AdminEnquiryController@universityList')->name('admin.enquiry.list.university');
+
+Route::get('/admin/enquiry/consultant/list', 'App\Http\Controllers\AdminEnquiryController@consultantList')->name('admin.enquiry.list.consultant');
+Route::get('/admin/enquiry/immigration/list', 'App\Http\Controllers\AdminEnquiryController@immigrationList')->name('admin.enquiry.list.immigration');
+Route::get('/admin/enquiry/business/list', 'App\Http\Controllers\AdminEnquiryController@businessList')->name('admin.enquiry.list.business');
+
+
+
+// admin end
 
 Route::group(['middleware' => ['auth']], function () {
 
@@ -68,8 +93,14 @@ Route::group(['middleware' => ['auth']], function () {
         return view('providerProfile.institudeProfile');
     });
 
+    Route::post('/services/confirmEnquiry/user', 'App\Http\Controllers\SearchController@servicesConfirmEnquiryUser');
+    Route::post('/services/confirmEnquiry/user/reject', 'App\Http\Controllers\SearchController@servicesConfirmEnquiryUserReject');
+
 
     Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('personalProfile');
+    Route::get('/profile/enquiry/{id}', 'App\Http\Controllers\ProfileController@indexEnquiry')->name('personalProfile.enquiry');
+
+
     Route::get('institude/profile', 'App\Http\Controllers\ProviderProfileController@index')->name('institudeProfile');
     Route::get('consultant/profile', 'App\Http\Controllers\ProviderProfileController@consultantIndex')->name('consultantProfile');
     Route::get('business/profile', 'App\Http\Controllers\ProviderProfileController@businessIndex')->name('businessProfile');
@@ -81,21 +112,26 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('provider/search', 'App\Http\Controllers\OtherController@providerSearch')->name('providerSearch');
     Route::post('institude/search', 'App\Http\Controllers\OtherController@institudeSearch')->name('institudeSearch');
+
+    // enquires 
     Route::post('/candidate/request', 'App\Http\Controllers\EnquiryController@candidateRequest');
     Route::get('/candidateEnquiry', 'App\Http\Controllers\EnquiryController@candidateEnquiry')->name('candidateEnquiry');
-
+    Route::get('/providerEnquiry/{id}', 'App\Http\Controllers\EnquiryController@providerEnquiry')->name('providerEnquiry');
 
     Route::get('education', 'App\Http\Controllers\OtherController@educationIndex')->name('education');
     Route::post('add/education', 'App\Http\Controllers\OtherController@educationStore')->name('add.education');
     Route::get('edit/education', 'App\Http\Controllers\OtherController@educationEdit')->name('edit.education');
     Route::post('update/education', 'App\Http\Controllers\OtherController@educationUpdate')->name('update.education');
     Route::get('view/education', 'App\Http\Controllers\OtherController@educationview')->name('view.education');
+    Route::get('enquiry/education/{id}', 'App\Http\Controllers\OtherController@educationviewEnquiry')->name('view.education.enquiry');
+
 
     Route::get('calculator', 'App\Http\Controllers\OtherController@calculatorIndex')->name('calculator');
     Route::post('add/calculator', 'App\Http\Controllers\OtherController@calculatorStore')->name('add.calculator');
     Route::get('edit/calculator', 'App\Http\Controllers\OtherController@calculatorEdit')->name('edit.calculator');
     Route::post('update/calculator', 'App\Http\Controllers\OtherController@calculatorUpdate')->name('update.calculator');
     Route::get('view/calculator', 'App\Http\Controllers\OtherController@calculatorview')->name('view.calculator');
+    Route::get('enquiry/calculator/{id}', 'App\Http\Controllers\OtherController@calculatorviewEnquiry')->name('view.calculator.enquiry');
 
 
 

@@ -123,9 +123,11 @@
     #sc-sidebar-main .sc-sidebar-menu li a {
         font-size: 15px !important
     }
+
     textarea::-webkit-scrollbar {
         display: none;
     }
+
     #sc-sidebar-main .sc-sidebar-menu>li>.sc-sidebar-menu-sub a {
         padding: 2px 14px 3px 64px !important;
         display: -webkit-box;
@@ -497,7 +499,6 @@
 
                                 </ul>
                             </li>
-
                             <li title="consultant" class=" page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"> <i class=" fa fa-building"></i>
@@ -518,7 +519,6 @@
 
                                 </ul>
                             </li>
-
                             <li title="Business">
                                 <a href="">
                                     <span class="uk-nav-icon"><i class="nav-icon fas fa-handshake"></i>
@@ -535,8 +535,6 @@
                                 </ul>
 
                             </li>
-
-
                             @if(auth()->user()->role == 'candidate')
                             <li title="CRS Calculator" class="page-Calculator page-active">
                                 <a href="{{route('calculator')}}">
@@ -547,7 +545,6 @@
 
 
                             </li>
-
                             <li title="Educational Assessment" class="page-Educational page-active">
                                 <a href="{{route('education')}}">
                                     <span class="uk-nav-icon"><i class="fab fa-readme"></i>
@@ -556,12 +553,16 @@
                             </li>
                             @endif
                             <li title="enquiries" class="page-enquiries page-active">
+                                @if(auth()->user()->role == 'candidate')
                                 <a href="{{route('candidateEnquiry')}}">
-                                    <span class="uk-nav-icon"><i class="fas fa-bell"></i>
-                                    </span><span class="uk-nav-title">enquiries</span>
-                                </a>
+                                    @else
+                                    <a href="{{route('providerEnquiry',['id' => auth()->user()->service_type])}}">
+                                        @endif
+
+                                        <span class="uk-nav-icon"><i class="fas fa-bell"></i>
+                                        </span><span class="uk-nav-title">enquiries</span>
+                                    </a>
                             </li>
-                          
                             <li title="report">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>

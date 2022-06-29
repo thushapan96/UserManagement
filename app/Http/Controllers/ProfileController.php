@@ -11,12 +11,19 @@ use App\Models\Sponsor;
 use App\Models\Qualification;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Calculator;
+use App\Models\Education;
+use App\Models\Employment;
+use App\Models\TechnicalCertification;
+
+
 
 
 class ProfileController extends Controller
 {
     public function index()
     {
+
         $id = Auth::user()->id;
         $personal =  Personal::where('user_id', $id)->first();
         $Academy =  Academy::where('user_id', $id)->first();
@@ -36,6 +43,82 @@ class ProfileController extends Controller
             ->with('image', $image)
             ->with('userId', $id)
             ->with('qualification', $qualification);
+    }
+
+    public function indexEnquiry($id)
+    {
+        $Personal = Personal::find($id);
+        $id = $Personal->user_id;
+        $personal =  Personal::where('user_id', $id)->first();
+        $Academy =  Academy::where('user_id', $id)->first();
+        $Sponsor =  Sponsor::where('user_id', $id)->first();
+        $Work =  Work::where('user_id', $id)->get();
+        $image = Auth::user()->img;
+        $qualification = DB::table('candidate_academics')
+            ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
+            ->where('candidate_academics.user_id', $id)
+            ->get();
+
+        return view('candidateProfile')
+            ->with('personal', $personal)
+            ->with('Academy', $Academy)
+            ->with('Sponsor', $Sponsor)
+            ->with('Work', $Work)
+            ->with('image', $image)
+            ->with('userId', $id)
+            ->with('qualification', $qualification);
+    }
+
+    public function candidateProfile($id)
+    {
+
+        $personal =  Personal::where('user_id', $id)->first();
+        $Academy =  Academy::where('user_id', $id)->first();
+        $Sponsor =  Sponsor::where('user_id', $id)->first();
+        $Work =  Work::where('user_id', $id)->get();
+        $image = User::where('id', $id)->value('img');
+        $qualification = DB::table('candidate_academics')
+            ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
+            ->where('candidate_academics.user_id', $id)
+            ->get();
+
+
+
+        return view('admin.candidateView.candidateProfile')
+            ->with('personal', $personal)
+            ->with('Academy', $Academy)
+            ->with('Sponsor', $Sponsor)
+            ->with('Work', $Work)
+            ->with('image', $image)
+            ->with('userId', $id)
+            ->with('qualification', $qualification);
+    }
+
+    public function calculatorview($id)
+    {
+        $calculators =  Calculator::where('user_id', $id)->first();
+        if ($calculators) {
+            $employments = Employment::where('calculator_id', $calculators->id)->where('type', 'calculator')->get();
+            $technicalCertifications = TechnicalCertification::where('calculator_id',  $calculators->id)->get();
+
+            return view('admin.candidateView.calculatorview')->with('calculators', $calculators)->with('employments', $employments)->with('technicalCertifications', $technicalCertifications);
+        } else {
+            return redirect()->back()->with('alert1', 'There No Crs Calcultator Form');
+        }
+    }
+
+    public function educationview($id)
+    {
+
+        $educations =  Education::where('user_id', $id)->first();
+        if ($educations) {
+            $employments = Employment::where('education_id',  $educations->id)->get();
+            $technicalCertifications = TechnicalCertification::where('education_id',  $educations->id)->get();
+
+            return view('admin.candidateView.educationview')->with('educations', $educations)->with('employments', $employments)->with('technicalCertifications', $technicalCertifications);
+        } else {
+            return redirect()->back()->with('alert2', 'There No Educational Assesment Form');
+        }
     }
 
     public function profileEdit($id)

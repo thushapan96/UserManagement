@@ -2,62 +2,24 @@
 
 namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Institution;
 use App\Models\Consultant;
 use App\Models\Enquiry;
 use App\Models\Personal;
+use App\Models\Academy;
+use App\Models\Work;
+use App\Models\Sponsor;
 use Illuminate\Support\Facades\DB;
 
-class EnquiryController extends Controller
+class AdminEnquiryController extends Controller
 {
-    public function candidateRequest(Request $request)
+    public function candidateEnquiry($id)
     {
-        $id = $request->id;
-        $status = $request->status;
-        $statuss = $request->statuss;
-
-        $type = $request->type;
-        $PersonalId =  Personal::where('user_id', Auth::user()->id)->value('id');
-
-        if ($type == 'institution') {
-            $Enquiry =  Enquiry::where('institution_id', $id)->where('candidate_id',  $PersonalId)->first();
-            if ($Enquiry) {
-                $Enquiry->status = $status;
-                $Enquiry->statuss  =  $statuss;
-                $Enquiry->save();
-            } else {
-                $Enquiry =  new Enquiry;
-                $Enquiry->candidate_id = $PersonalId;
-                $Enquiry->institution_id  = $id;
-                $Enquiry->status  =  $status;
-                $Enquiry->statuss  =  $statuss;
-                $Enquiry->save();
-            }
-        } else {
-
-            $Enquiry =  Enquiry::where('provider_id', $id)->where('candidate_id', $PersonalId)->first();
-            if ($Enquiry) {
-                $Enquiry->status = $status;
-                $Enquiry->statuss  =  $statuss;
-                $Enquiry->save();
-            } else {
-                $Enquiry =  new Enquiry;
-                $Enquiry->candidate_id = $PersonalId;
-                $Enquiry->provider_id = $id;
-                $Enquiry->status  =  $status;
-                $Enquiry->statuss  =  $statuss;
-                $Enquiry->save();
-            }
-        }
-        return 1;
-    }
-
-    public function candidateEnquiry()
-    {
-        $candidate_id  =  Personal::where('user_id', Auth::user()->id)->value('id');
-
+        $candidate_id  = $id;
 
         $EnquiryInstitutionSchool =   Enquiry::where('candidate_id', $candidate_id)
             ->join('institutions', 'institutions.id', 'enquiries.institution_id')
@@ -66,6 +28,7 @@ class EnquiryController extends Controller
             ->where('institutions.type', 'School')
             ->select('institutions.*',  'enquiries.*', 'users.img as img', 'institutions.id as serviceId')
             ->get();
+
 
 
         $EnquiryInstitutionCollege =   Enquiry::where('candidate_id', $candidate_id)
@@ -88,6 +51,7 @@ class EnquiryController extends Controller
             ->join('institutions', 'institutions.id', 'enquiries.institution_id')
             ->join('users', 'users.id', 'institutions.user_id')
             ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 0)
             ->where('institutions.type', 'School')
             ->select('institutions.*',  'enquiries.*', 'users.img as img', 'institutions.id as serviceId')
             ->get();
@@ -96,6 +60,7 @@ class EnquiryController extends Controller
             ->join('institutions', 'institutions.id', 'enquiries.institution_id')
             ->join('users', 'users.id', 'institutions.user_id')
             ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 0)
             ->where('institutions.type', 'College')
             ->select('institutions.*',  'enquiries.*', 'users.img as img', 'institutions.id as serviceId')
             ->get();
@@ -104,6 +69,7 @@ class EnquiryController extends Controller
             ->join('institutions', 'institutions.id', 'enquiries.institution_id')
             ->join('users', 'users.id', 'institutions.user_id')
             ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 0)
             ->where('institutions.type', 'University')
             ->select('institutions.*',  'enquiries.*', 'users.img as img', 'institutions.id as serviceId')
             ->get();
@@ -161,6 +127,7 @@ class EnquiryController extends Controller
             ->join('providers', 'providers.id', 'enquiries.provider_id',)
             ->join('users', 'users.id', 'providers.user_id')
             ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 0)
             ->where('providers.type', 'RCIC Consultant')
             ->select('providers.*', 'enquiries.*', 'users.img as img', 'providers.id as serviceId')
             ->get();
@@ -169,6 +136,7 @@ class EnquiryController extends Controller
             ->join('users', 'users.id', 'providers.user_id')
             ->where('enquiries.candidate_id', $candidate_id)
             ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 0)
             ->where('providers.type', 'Immigration Lawyer/Attorney')
             ->select('providers.*', 'enquiries.*', 'users.img as img', 'providers.id as serviceId')
             ->get();
@@ -179,6 +147,7 @@ class EnquiryController extends Controller
             ->join('providers', 'providers.id', 'enquiries.provider_id',)
             ->join('users', 'users.id', 'providers.user_id')
             ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 0)
             ->where('providers.type', 'Chartered Accountant')
             ->select('providers.*', 'enquiries.*', 'users.img as img', 'providers.id as serviceId')
             ->get();
@@ -262,8 +231,12 @@ class EnquiryController extends Controller
             ->select('providers.*', 'enquiries.*', 'users.img as img', 'providers.id as serviceId')
             ->first();
 
+        $candidates = Personal::find($candidate_id);
 
-        return view('enquiry.candidate')
+        // return $EnquiryInstitutionCollegeSubstitude;
+
+        return view('admin.enquiry.candidate')
+            ->with('candidates', $candidates)
             ->with('EnquiryInstitutionSchool', $EnquiryInstitutionSchool)
             ->with('EnquiryInstitutionSchool1', $EnquiryInstitutionSchool1)
             ->with('EnquiryInstitutionSchool2', $EnquiryInstitutionSchool2)
@@ -297,70 +270,191 @@ class EnquiryController extends Controller
             ->with('EnquiryProviderBusinessSubstitude', $EnquiryProviderBusinessSubstitude);
     }
 
-    public function providerEnquiry($id)
+    public function institudeEnquiry($id)
     {
-        
-        if ($id == 'Institution') {
-            $institutionId =   Institution::where('user_id', Auth::user()->id)->value('id');
 
-            $EnquiryCandidate =   Enquiry::where('institution_id',  $institutionId)
-                ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
-                ->join('users', 'users.id', 'candidate_personals.user_id')
-                ->where('enquiries.statuss', 0)
-                ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
-                ->get();
+        $EnquiryCandidate =   Enquiry::where('institution_id',  $id)
+            ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
+            ->join('users', 'users.id', 'candidate_personals.user_id')
+            ->where('enquiries.statuss', 0)
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
+            ->get();
+
+        $EnquiryCandidate1 =   Enquiry::where('institution_id',  $id)
+            ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
+            ->join('users', 'users.id', 'candidate_personals.user_id')
+            ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 0)
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
+            ->get();
+
+        $EnquiryCandidate2 =   Enquiry::where('institution_id',  $id)
+            ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
+            ->join('users', 'users.id', 'candidate_personals.user_id')
+            ->where('enquiries.statuss', 2)
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
+            ->get();
+
+        $EnquiryCandidatesubstitude =   Enquiry::where('institution_id',  $id)
+            ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
+            ->join('users', 'users.id', 'candidate_personals.user_id')
+            ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 2)
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
+            ->get();
+
+        $institutions = Institution::find($id);
 
 
-            $EnquiryCandidate2 =   Enquiry::where('institution_id',  $institutionId)
-                ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
-                ->join('users', 'users.id', 'candidate_personals.user_id')
-                ->where('enquiries.statuss', 2)
-                ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
-                ->get();
+        return view('admin.enquiry.institude')
+            ->with('EnquiryCandidate', $EnquiryCandidate)
+            ->with('EnquiryCandidate1', $EnquiryCandidate1)
+            ->with('EnquiryCandidate2', $EnquiryCandidate2)
+            ->with('EnquiryCandidatesubstitude', $EnquiryCandidatesubstitude)
+            ->with('institutions', $institutions);
+    }
 
-            $EnquiryCandidatesubstitude =   Enquiry::where('institution_id',  $institutionId)
-                ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
-                ->join('users', 'users.id', 'candidate_personals.user_id')
-                ->where('enquiries.statuss', 1)
-                ->where('enquiries.is_forward', 2)
-                ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
-                ->get();
+    public function consultantEnquiry($id)
+    {
 
-            return view('enquiry.institude')
-                ->with('EnquiryCandidate', $EnquiryCandidate)
-                ->with('EnquiryCandidate2', $EnquiryCandidate2)
-                ->with('EnquiryCandidatesubstitude', $EnquiryCandidatesubstitude);
-        } else {
-            $consultantId =   Consultant::where('user_id', Auth::user()->id)->value('id');
+        $EnquiryCandidate =   Enquiry::where('provider_id',  $id)
+            ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
+            ->join('users', 'users.id', 'candidate_personals.user_id')
+            ->where('enquiries.statuss', 0)
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
+            ->get();
 
-           
-            $EnquiryCandidate =   Enquiry::where('provider_id',  $consultantId)
-                ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
-                ->join('users', 'users.id', 'candidate_personals.user_id')
-                ->where('enquiries.statuss', 0)
-                ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
-                ->get();
+        $EnquiryCandidate1 =   Enquiry::where('provider_id',  $id)
+            ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
+            ->join('users', 'users.id', 'candidate_personals.user_id')
+            ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 0)
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
+            ->get();
+        $EnquiryCandidate2 =   Enquiry::where('provider_id',  $id)
+            ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
+            ->join('users', 'users.id', 'candidate_personals.user_id')
+            ->where('enquiries.statuss', 2)
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
+            ->get();
 
-            $EnquiryCandidate2 =   Enquiry::where('provider_id',  $consultantId)
-                ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
-                ->join('users', 'users.id', 'candidate_personals.user_id')
-                ->where('enquiries.statuss', 2)
-                ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
-                ->get();
+        $EnquiryCandidatesubstitude =   Enquiry::where('provider_id',  $id)
+            ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
+            ->join('users', 'users.id', 'candidate_personals.user_id')
+            ->where('enquiries.statuss', 1)
+            ->where('enquiries.is_forward', 2)
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
+            ->get();
 
-            $EnquiryCandidatesubstitude =   Enquiry::where('provider_id',  $consultantId)
-                ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
-                ->join('users', 'users.id', 'candidate_personals.user_id')
-                ->where('enquiries.statuss', 1)
-                ->where('enquiries.is_forward', 2)
-                ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
-                ->get();
+        $consultants = Consultant::find($id);
 
-               
-            return view('enquiry.consultant')
-                ->with('EnquiryCandidate', $EnquiryCandidate)
-                ->with('EnquiryCandidate2', $EnquiryCandidate2)
-                ->with('EnquiryCandidatesubstitude', $EnquiryCandidatesubstitude);
-        }
+        return view('admin.enquiry.consultant')
+            ->with('EnquiryCandidate', $EnquiryCandidate)
+            ->with('EnquiryCandidate1', $EnquiryCandidate1)
+            ->with('EnquiryCandidate2', $EnquiryCandidate2)
+            ->with('EnquiryCandidatesubstitude', $EnquiryCandidatesubstitude)
+            ->with('consultants', $consultants);
+    }
+
+    public function candidatesList()
+    {
+        $candidatesList =   Enquiry::join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
+            ->join('users', 'users.id', 'candidate_personals.user_id')
+            ->where('enquiries.statuss', '!=', 2)
+            ->groupBy('enquiries.candidate_id')
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
+            ->get();
+
+        return view('admin.enquiry.requestCandidate')
+            ->with('candidatesList', $candidatesList);
+    }
+
+    public function schoolList()
+    {
+        $institutions  =  Enquiry::join('institutions', 'institutions.id', 'enquiries.institution_id')
+            ->join('users', 'users.id', 'institutions.user_id')
+            ->where('enquiries.statuss', '!=', 2)
+            ->where('institutions.type', 'School')
+            ->groupBy('enquiries.institution_id')
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'institutions.id as institutionsId', 'institutions.*')
+            ->get();
+        $type = 'School';
+        return view('admin.enquiry.serviceInstitude')
+            ->with('type', $type)
+            ->with('institutions', $institutions);
+    }
+    public function collegeList()
+    {
+        $institutions  =  Enquiry::join('institutions', 'institutions.id', 'enquiries.institution_id')
+            ->join('users', 'users.id', 'institutions.user_id')
+            ->where('enquiries.statuss', '!=', 2)
+            ->where('institutions.type', 'College')
+            ->groupBy('enquiries.institution_id')
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'institutions.id as institutionsId', 'institutions.*')
+            ->get();
+
+        $type = 'College';
+        return view('admin.enquiry.serviceInstitude')
+            ->with('type', $type)
+            ->with('institutions', $institutions);
+    }
+    public function universityList()
+    {
+        $institutions  =  Enquiry::join('institutions', 'institutions.id', 'enquiries.institution_id')
+            ->join('users', 'users.id', 'institutions.user_id')
+            ->where('enquiries.statuss', '!=', 2)
+            ->where('institutions.type', 'University')
+            ->groupBy('enquiries.institution_id')
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'institutions.id as institutionsId', 'institutions.*')
+            ->get();
+
+        $type = 'University';
+        return view('admin.enquiry.serviceInstitude')
+            ->with('type', $type)
+            ->with('institutions', $institutions);
+    }
+    public function consultantList()
+    {
+        $consultants  =  Enquiry::join('providers', 'providers.id', 'enquiries.provider_id')
+            ->join('users', 'users.id', 'providers.user_id')
+            ->where('enquiries.statuss', '!=', 2)
+            ->where('providers.type', '=', 'RCIC Consultant')
+            ->groupBy('enquiries.provider_id')
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'providers.id as providersId', 'providers.*')
+            ->get();
+        $type = 'RCIC Consultant';
+        return view('admin.enquiry.serviceConsultant')
+            ->with('type', $type)
+            ->with('consultants', $consultants);
+    }
+    public function immigrationList()
+    {
+        $consultants  =  Enquiry::join('providers', 'providers.id', 'enquiries.provider_id')
+            ->join('users', 'users.id', 'providers.user_id')
+            ->where('enquiries.statuss', '!=', 2)
+            ->Where('providers.type', '=', 'Immigration Lawyer/Attorney')
+            ->groupBy('enquiries.provider_id')
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'providers.id as providersId', 'providers.*')
+            ->get();
+        $type = 'Immigration Lawyer/Attorney';
+        return view('admin.enquiry.serviceConsultant')
+            ->with('type', $type)
+            ->with('consultants', $consultants);
+    }
+    public function businessList()
+    {
+        $consultants  =  Enquiry::join('providers', 'providers.id', 'enquiries.provider_id')
+            ->join('users', 'users.id', 'providers.user_id')
+            ->where('enquiries.statuss', '!=', 2)
+            ->where('providers.type', "Chartered Accountant")
+            ->groupBy('enquiries.provider_id')
+            ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'providers.id as providersId', 'providers.*')
+            ->get();
+
+
+        $type = 'Chartered Accountant';
+        return view('admin.enquiry.serviceBusiness')
+            ->with('type', $type)
+            ->with('consultants', $consultants);
     }
 }

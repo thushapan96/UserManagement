@@ -811,7 +811,7 @@
 
                         </div>
                         <br>
-                       
+
                         @if(!$view)
                         <a href="{{route('edit.institution')}}"> <button type="button" style="width: 140px;font-size:12px" class="client-btn uk-button uk-button-primary">Edit Profile</button></a>
                         @elseif(Auth::user()->role == 'candidate')
@@ -820,9 +820,9 @@
                         $statuss = \App\Models\Enquiry::where(['candidate_id' => $candidateId])->where('institution_id', $institutions->id)->value('statuss');
                         @endphp
                         @if($statuss >= 1)
-                        <button type="button" style="" id="enquiry" data-id="{{$institutions->id}}" class="client-btn uk-button uk-button-primary">Cancel Request</button>
+                        <button type="button" style="" id="enquiry" data-id="{{$institutions->id}}" class="client-btn uk-button uk-button-primary">Requested Enquiry</button>
                         @else
-                        <button type="button" style="" id="enquiry" data-id="{{$institutions->id}}" class="client-btn uk-button uk-button-primary">Add Request</button>
+                        <button type="button" style="" id="enquiry" data-id="{{$institutions->id}}" class="client-btn uk-button uk-button-primary">New Enquiry</button>
                         @endif
                         @endif
                     </div>
@@ -844,40 +844,38 @@
         $('.page-Profile').addClass('sc-page-active')
 
         $("#enquiry").click(function() {
-            if (confirm("Are You Sure") == true ) {
-                var id = $(this).attr('data-id');
-                var text = $(this).text()
-                if (text == 'Add Request') {
+            var text = $(this).text()
+            if (text == 'New Enquiry') {
+                if (confirm("Are You Sure Want To Select Service ?") == true) {
+                    var id = $(this).attr('data-id');
+                    var text = $(this).text()
+
                     var status = 'Request';
                     var statuss = 1;
-                } else {
-                    
-                    var status = 'Cancel by Candidate';
-                    var statuss = 0;
+
+
+                    $.ajax({
+
+                        method: "post",
+                        url: "/candidate/request",
+                        dataType: 'json',
+
+                        data: {
+                            '_token': '{{ csrf_token() }}',
+                            id: id,
+                            status: status,
+                            statuss: statuss,
+                            type: 'institution'
+                        },
+                        success: function(result) {
+                            console.log(result);
+                            location.reload();
+                        }
+
+                    });
                 }
-                
-                $.ajax({
-
-                    method: "post",
-                    url: "/candidate/request",
-                    dataType: 'json',
-
-                    data: {
-                        '_token': '{{ csrf_token() }}',
-                        id: id,
-                        status: status,
-                        statuss: statuss,
-                        type: 'institution'
-                    },
-                    success: function(result) {
-                        console.log(result);
-                        location.reload();
-                    }
-
-                });
-
-            } else {
-
+            }else{
+                alert("You Can Not Cancel Request" )
             }
         });
 

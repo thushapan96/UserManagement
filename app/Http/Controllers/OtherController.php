@@ -10,6 +10,7 @@ use App\Models\TechnicalCertification;
 use App\Models\Employment;
 use App\Models\Calculator;
 use App\Models\Education;
+use App\Models\Personal;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -102,12 +103,24 @@ class OtherController extends Controller
     }
     public function educationview()
     {
-        $educations =  Education::where('user_id', Auth::user()->id)->first();
-        $employments = Employment::where('education_id',  $educations->id)->get();
-        $technicalCertifications = TechnicalCertification::where('education_id',  $educations->id)->get();
-
+            $educations =  Education::where('user_id', Auth::user()->id)->first();
+            $employments = Employment::where('education_id',  $educations->id)->get();
+            $technicalCertifications = TechnicalCertification::where('education_id',  $educations->id)->get();
+     
         return view('educationview')->with('educations', $educations)->with('employments', $employments)->with('technicalCertifications', $technicalCertifications);
     }
+
+    public function educationviewEnquiry($id)
+    {
+            $Personal = Personal::find($id);
+            $educations =  Education::where('user_id',  $Personal->user_id)->first();
+            $employments = Employment::where('education_id',  $educations->id)->get();
+            $technicalCertifications = TechnicalCertification::where('education_id',  $educations->id)->get();
+       
+        return view('educationview')->with('educations', $educations)->with('employments', $employments)->with('technicalCertifications', $technicalCertifications);
+    }
+
+
 
 
     public function educationStore(Request $request)
@@ -353,9 +366,23 @@ class OtherController extends Controller
 
     public function calculatorview()
     {
-        $calculators =  Calculator::where('user_id', Auth::user()->id)->first();
-        $employments = Employment::where('calculator_id',  $calculators->id)->where('type', 'calculator')->get();
-        $technicalCertifications = TechnicalCertification::where('calculator_id',  $calculators->id)->get();
+            $calculators =  Calculator::where('user_id', Auth::user()->id)->first();
+            $employments = Employment::where('calculator_id',  $calculators->id)->where('type', 'calculator')->get();
+            $technicalCertifications = TechnicalCertification::where('calculator_id',  $calculators->id)->get();
+
+
+        return view('calculatorview')->with('calculators', $calculators)->with('employments', $employments)->with('technicalCertifications', $technicalCertifications);
+    }
+
+    public function calculatorviewEnquiry($id)
+    {
+
+       
+            $Personal = Personal::find($id);
+            $calculators =  Calculator::where('user_id', $Personal->user_id)->first();
+            $employments = Employment::where('calculator_id',  $calculators->id)->where('type', 'calculator')->get();
+            $technicalCertifications = TechnicalCertification::where('calculator_id',  $calculators->id)->get();
+
 
         return view('calculatorview')->with('calculators', $calculators)->with('employments', $employments)->with('technicalCertifications', $technicalCertifications);
     }

@@ -191,8 +191,8 @@
 <br><br> -->
 <u1 id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
 
-    @if($candidates)
-    @foreach($candidates as $row)
+    @if($candidatesList)
+    @foreach($candidatesList as $row)
     <li>
         <div class="uk-card uk-card-hover " style="height:230px">
             <div class="uk-card-body sc-padding-remove">
@@ -254,7 +254,7 @@
                 <li><a href="{{route('candidate.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">1) View Registration form </a></li>
                 <li><a href="{{route('edu.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">2) View Assessment for Education</a></li>
                 <li><a href="{{route('crs.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">3) View CRS Calculator for Immigration</a></li>
-                <li><a href="{{route('admin.candidateEnquiry',['id' => $row->id])}}" style="color:#17a2b8;">4) View Enquiries for Education</a></li>
+                <li><a href="{{route('admin.candidateEnquiry',['id' => $row->id])}}" style="color:#17a2b8;">4) View Enquiries </a></li>
             </ul>
         </div>
     </li>

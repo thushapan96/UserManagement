@@ -145,20 +145,39 @@
     }
 </style>
 <div class="row">
-    <div class="col-md-3">Search By
-        <select class="form-control filter">
-            <option value="RCIC Number">Registration Number</option>
-            <option value="Owner Name">Owner Name</option>
-            <option value="Company Name ">Company Name </option>
-            <option value="Specialization">Specialization </option>
-            <option value="Service Type">Service Type </option>
-            <option value="Country">Country </option>
-            <option value="Province">Province </option>
-            <option value="City">City </option>
+
+    <div class="col-md-2">Filter By Financial
+        <select class="form-control " id="financial">
+            <option value="" {{request()->query('financial') == "" ? 'selected':''}}>Common</option>
+            <option value="yes" {{request()->query('financial') == "yes" ? 'selected':''}}> Aided </option>
+            <option value="no" {{request()->query('financial') == "no" ? 'selected':''}}> Non-Aided </option>
         </select>
     </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-8">
+
+    <div class="col-md-2">
+        Filter By Course Type
+        <select class="form-control " id="course_type">
+            <option value="" {{request()->query('course_type') == "" ? 'selected':''}}>Common</option>
+            <option value="In Campus" {{request()->query('course_type') == "In Campus" ? 'selected':''}}> In Campus </option>
+            <option value="Online" {{request()->query('course_type') == "Online" ? 'selected':''}}>Online</option>
+            <option value="Distant" {{request()->query('course_type') == "Distant" ? 'selected':''}}> Distant </option>
+            <option value="Others" {{request()->query('course_type') == "Others" ? 'selected':''}}>Others</option>
+        </select>
+
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-3">Search By
+        <select class="form-control filter">
+            <option value="Name"> Name </option>
+            <option value="Neighborhood">Neighborhood</option>
+            <option value="Courses"> Courses </option>
+            <option value="City">City </option>
+            <option value="Province">Province </option>
+            <option value="Country">Country </option>
+        </select>
+    </div>
+    <div class="col-md-4">
         <br>
         <div class="p-1 bg-light rounded rounded-pill shadow-sm ">
             <div class="input-group" style="height: 30px">
@@ -172,14 +191,12 @@
 </div>
 <br>
 <input id="type" value="{{$type}}" hidden>
-
 <div>
 
     <br>
-    <u1 id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-        <input id="type" value="{{$type}}" hidden>
-        @if($consultants)
-        @foreach($consultants as $row)
+    <ul id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
+        @if($institutions)
+        @foreach($institutions as $row)
         <li>
             <div class="uk-card uk-card-hover " style="height:275px">
                 <div class="uk-card-body sc-padding-remove">
@@ -193,10 +210,9 @@
                                 <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                                 @endif
                                 <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                    {{$row->company_name}}
+                                    {{$row->name}}
                                 </p>
                                 <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$row->registration_number}}</p>
-
                             </div>
                         </div>
                         <div class="uk-width-2-3@l ">
@@ -230,10 +246,10 @@
                                         <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                         <div class="sc-list-body">
                                             <p class="uk-margin-remove uk-text-wrap">
-                                                @if($row->offering_service)
-                                                @foreach($row->offering_service as $service)
-                                                {{$service}},
-                                                @endforeach
+                                                @if($row->offer_course)
+
+                                                {{$row->offer_course}}
+
                                                 @endif
                                             </p>
                                         </div>
@@ -246,23 +262,20 @@
             </div>
             <div data-uk-dropdown="pos: bottom-center">
                 <ul class="uk-nav uk-dropdown-nav">
-                    <li><a href="{{route('business.admin.view',['id' => $row->id])}}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
-                    <li><a href="{{route('admin.consultantEnquiry',['id' => $row->id])}}" style="color:#17a2b8;">2) View Enquiry Report</a></li>
-                    <li><a href="#" style="color:#17a2b8;">3) View Progress status reports</a></li>
-                    @if(request()->query('select'))
-                    <input type="text" id="candidatesId" value="{{request()->query('select')}}" hidden>
-
-                    <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="{{$row->type}}" data-serviceId="{{$row->id}}">4) Select as Service </a></li>
-                    @endif
+                    <li><a href="{{route('institution.admin.view',['id' => $row->institutionsId])}}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                    <li><a href="{{route('admin.institudeEnquiry',['id' => $row->institutionsId])}}" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                    <li><a href="#" style="color:#17a2b8;">3) View Status progress reports</a></li>
+                  
                 </ul>
             </div>
         </li>
         @endforeach
         @endif
 
-    </u1>
+        </u1>
 
 </div>
+
 <script>
     $.ajaxSetup({
         headers: {
@@ -273,49 +286,34 @@
 
     $(document).ready(function() {
         const baseUrlAsset = "{{url('files/')}}";
-        var type = $('#type').val();
-        $('.page-active').removeClass('sc-page-active')
-        $('.page-CA').addClass('sc-page-active')
-
-        $('.confirmEnquiry').on('click', function() {
-            if (confirm("Are You Sure Want To Select as Service ?") == true) {
-                var type = $(this).attr('data-type')
-                var serviceId = $(this).attr('data-serviceId')
-                var candidatesId = $('#candidatesId').val();
-                console.log("type", type);
-
-                $.ajax({
-
-                    method: "post",
-                    url: "/confirmEnquiry",
-                    dataType: 'json',
-
-                    data: {
-                        '_token': '{{csrf_token()}}',
-                        type: type,
-                        serviceId: serviceId,
-                        candidatesId: candidatesId,
-                        new: 'new',
-                    },
-                    success: function(result) {
-                        console.log('result', result);
-                        location.assign('/admin/candidateEnquiry/' + candidatesId)
-                    },
-
-                });
-            }
-        });
+        // if ($('#type').val() == 'School') {
+        //     $('.page-active').removeClass('sc-page-active')
+        //     $('.page-School').addClass('sc-page-active')
+        // } else if ($('#type').val() == 'College') {
+        //     $('.page-active').removeClass('sc-page-active')
+        //     $('.page-College ').addClass('sc-page-active')
+        // } else {
+        //     $('.page-active').removeClass('sc-page-active')
+        //     $('.page-University ').addClass('sc-page-active')
+        // }
 
         $('#searchbar').on('keyup', function() {
+            if ($('#medium').length) {
+                var course_type = $('#course_type').val();
+            } else {
+                var course_type = "";
+            }
             var searchValue = $('#searchbar').val();
             var searchType = $('.filter').val();
             var type = $('#type').val();
-            console.log("type", type);
+            var financial = $('#financial').val();
+            console.log("searchType", searchType);
+            console.log("course_type", course_type);
 
             $.ajax({
 
                 method: "post",
-                url: "/admin/search",
+                url: "/admin/institude/enquiry/search",
                 dataType: 'json',
 
                 data: {
@@ -323,6 +321,8 @@
                     search: searchValue,
                     searchType: searchType,
                     type: type,
+                    financial: financial,
+                    course_type: course_type,
                 },
                 success: function(result) {
                     console.log(result)
@@ -332,85 +332,87 @@
                     $.each(result, function(index, row) {
 
                         var first_index = index;
-                        order_row = `<li>
-        <input id="type" value="${row.type}" hidden>
-            <div class="uk-card uk-card-hover " style="height:280px">
-                <div class="uk-card-body sc-padding-remove">
-                    <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                        <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
+                        order_row = `
+                        <li>
+    <input id="type" value="${row.type}" hidden>
+    <div class="uk-card uk-card-hover " style="height:100%">
+        <div class="uk-card-body sc-padding-remove">
+            <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
 
-                            <div class="sc-padding-medium uk-text-center">
-                                <img id="img-${index}" src="" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
-                                
-                                <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                   ${row.company_name}
-                                </p>
-                                <p class="uk-margin-remove sc-color-secondary uk-text-medium">${row.registration_number}</p>
-                            </div>
-                        </div>
-                        <div class="uk-width-2-3@l ">
-                            <div class="sc-padding-medium">
-                                <ul class="uk-list uk-list-divider">
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove sc-text-semibold">${row.phone}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove">${row.email}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">${row.website_address}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">${row.city} ${row.region} ${row.country}</p>
-                                        </div>
-                                    </li> 
+                    <div class="sc-padding-medium uk-text-center">
+                        <img id="img-${index}" style="width:100px;height:100px" src="${baseUrlAsset}/${row.img}" class="sc-avatar sc-border" alt="xerdman" />
 
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap" id="services-${index}">
-                        
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                            ${row.name}
+                        </p>
+                        <p class="uk-margin-remove sc-color-secondary uk-text-medium">${row.registration_number}</p>
+                    </div>
+                </div>
+
+                <div class="uk-width-2-3@l ">
+                    <div class="sc-padding-medium">
+                        <ul class="uk-list uk-list-divider">
+                            <li class="sc-list-group">
+                                <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                <div class="sc-list-body">
+                                    <p class="uk-margin-remove sc-text-semibold">${row.phone}</p>
+                                </div>
+                            </li>
+                            <li class="sc-list-group">
+                                <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                <div class="sc-list-body">
+                                    <p class="uk-margin-remove">${row.email}</p>
+                                </div>
+                            </li>
+                            <li class="sc-list-group">
+                                <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                <div class="sc-list-body">
+                                    <p class="uk-margin-remove uk-text-wrap">${row.website_address}</p>
+                                </div>
+                            </li>
+                            <li class="sc-list-group">
+                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                <div class="sc-list-body">
+                                    <p class="uk-margin-remove uk-text-wrap">${row.city} ${row.region} ${row.country}</p>
+                                </div>
+                            </li>
+
+                            <li class="sc-list-group">
+                                <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                <div class="sc-list-body">
+                                    <p class="uk-margin-remove uk-text-wrap" id="services-${index}">
+                                    ${row.offer_course}
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
             <div data-uk-dropdown="pos: bottom-center">
-                 <ul class="uk-nav uk-dropdown-nav">
-                <li><a href="/admin/business/${row.id}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
-                <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
-                <li><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
-                 </ul>
-             </div>
-       </li>`;
+                <ul class="uk-nav uk-dropdown-nav">
+                    <li><a href="/admin/institution/${row.id}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                    <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                    <li><a href="#" style="color:#17a2b8;">3) View Status progress reports</a></li>
+                </ul>
+            </div>
+                  </li>
+                        `;
 
 
                         $('#sc-contact-list').append(order_row);
-                        $.each(row.offering_service, function(index, service) {
-                            $('#services-' + first_index).append(service);
+                        // $.each(row.offer_course, function(index, service) {
+                        //     $('#services-' + first_index).append(service);
 
-                        });
+                        // });
                         if (row.img) {
                             $('#img-' + first_index).attr('src', baseUrlAsset + '/' + row.img);
                         } else {
                             $('#img-' + first_index).attr('src', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
                         }
-
 
 
 
@@ -420,9 +422,39 @@
                 }
 
             });
+        });
+        $('#financial').on('change', function() {
+            var typeValue = $('#type').val();
+            console.log('hi')
+            var financialValue = $('#financial').val();
+
+            var course_type = $('#course_type').val();
+            if ($('#type').val() == 'School') {
+                window.location.assign('/admin/school/view?financial=' + financialValue + '&course_type=' + course_type);
+            } else if ($('#type').val() == 'College') {
+                window.location.assign('/admin/college/view?financial=' + financialValue + '&course_type=' + course_type);
+
+            } else {
+                window.location.assign('/admin/university/view?financial=' + financialValue + '&course_type=' + course_type);
+
+            }
 
         });
+        $('#course_type').on('change', function() {
+            console.log('hi')
+            var financialValue = $('#financial').val();
+            var course_type = $('#course_type').val();
+            if ($('#type').val() == 'School') {
+                window.location.assign('/admin/school/view?financial=' + financialValue + '&course_type=' + course_type);
+            } else if ($('#type').val() == 'College') {
+                window.location.assign('/admin/college/view?financial=' + financialValue + '&course_type=' + course_type);
 
+            } else {
+                window.location.assign('/admin/university/view?financial=' + financialValue + '&course_type=' + course_type);
+
+            }
+        });
     });
 </script>
+
 @endsection

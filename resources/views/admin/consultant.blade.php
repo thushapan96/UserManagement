@@ -243,8 +243,13 @@
         <div data-uk-dropdown="pos: bottom-center">
             <ul class="uk-nav uk-dropdown-nav">
                 <li><a href="{{route('consultant.admin.view',['id' => $row->id])}}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
-                <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                <li><a href="{{route('admin.consultantEnquiry',['id' => $row->id])}}" style="color:#17a2b8;">2) View Enquiry Report</a></li>
                 <li><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
+                @if(request()->query('select'))
+                <input type="text" id="candidatesId" value="{{request()->query('select')}}" hidden>
+
+                <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="{{$row->type}}" data-serviceId="{{$row->id}}">4) Select as Service </a></li>
+                @endif
             </ul>
         </div>
     </li>
@@ -260,7 +265,6 @@
         }
     });
 
-
     $(document).ready(function() {
 
         if ($('#type').val() == 'RCIC Consultant') {
@@ -270,7 +274,34 @@
             $('.page-active').removeClass('sc-page-active')
             $('.page-immigration ').addClass('sc-page-active')
         }
+        $('.confirmEnquiry').on('click', function() {
+            if (confirm("Are You Sure Want To Select as Service ?") == true) {
+                var type = $(this).attr('data-type')
+                var serviceId = $(this).attr('data-serviceId')
+                var candidatesId = $('#candidatesId').val();
+                console.log("type", type);
 
+                $.ajax({
+
+                    method: "post",
+                    url: "/confirmEnquiry",
+                    dataType: 'json',
+
+                    data: {
+                        '_token': '{{csrf_token()}}',
+                        type: type,
+                        serviceId: serviceId,
+                        candidatesId: candidatesId,
+                        new:'new',
+                    },
+                    success: function(result) {
+                        console.log('result', result);
+                        location.assign('/admin/candidateEnquiry/'+candidatesId)
+                    },
+
+                });
+            }
+        });
         const baseUrlAsset = "{{url('files/')}}";
 
         $('#searchbar').on('keyup', function() {

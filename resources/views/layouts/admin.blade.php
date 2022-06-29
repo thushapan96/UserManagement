@@ -401,14 +401,12 @@
                                 </a>
 
                             </li>
-
                             <li title="profile" class="page-can page-active">
                                 <a href="{{route('admin.candidate.view')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
                                     </span><span class="uk-nav-title">Candidate</span>
                                 </a>
                             </li>
-
                             <li title="institution" class="page-institution page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
@@ -433,7 +431,6 @@
 
                                 </ul>
                             </li>
-
                             <li title="consultant" class=" page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"> <i class=" fa fa-building"></i>
@@ -454,7 +451,6 @@
 
                                 </ul>
                             </li>
-
                             <li title="Business">
                                 <a href="">
                                     <span class="uk-nav-icon"><i class="nav-icon fas fa-handshake"></i>
@@ -471,7 +467,49 @@
                                 </ul>
 
                             </li>
+                            <li title="enquiries" class="page-enquiries page-active">
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="fas fa-bell"></i>
+                                    </span><span class="uk-nav-title">pending enquiries</span>
+                                </a>
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class=" page-active">
+                                        <a href="{{route('admin.enquiry.list.candidates')}}"> Candidates</a>
+                                    </li>
+                                    <li class=" page-active">
+                                        <a href="#"> Institution</a>
+                                        <ul class="sc-sidebar-menu-sub">
+                                        
+    
+                                            <li class="page-active">
+                                                <a href="{{route('admin.enquiry.list.school')}}" style="left: 18px !important;width: 70%;"> school</a>
+                                            </li>
+                                            <li class=" page-active">
+                                                <a href="{{route('admin.enquiry.list.college')}}" style="left: 18px !important;width: 70%;"> college</a>
+                                            </li>
+                                            <li class=" page-active">
+                                                <a href="{{route('admin.enquiry.list.university')}}" style="left: 18px !important;width: 70%;"> university</a>
+                                            </li>
 
+                                        </ul>
+                                    </li>
+                                    <li class=" page-active">
+                                        <a href="#"> Consultant</a>
+                                        <ul class="sc-sidebar-menu-sub">
+                                        <li class=" page-active">
+                                                <a href="{{route('admin.enquiry.list.consultant')}}" style="left: 18px !important;width: 70%;"> RCIC </a>
+                                            </li>
+                                            <li class=" page-active">
+                                                <a href="{{route('admin.enquiry.list.immigration')}}" style="left: 18px !important;width: 70%;"> immigration</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class=" page-active">
+                                        <a href="{{route('admin.enquiry.list.business')}}"> Business</a>
+                                    </li>
+
+                                </ul>
+                            </li>
                             <li title="" class="page-Ma page-active">
                                 <a href="{{route('admin.index')}}">
                                     <span class="uk-nav-icon"><i class="fa fa-users"></i>
@@ -480,7 +518,6 @@
                                 </a>
 
                             </li>
-
                             <li title="" class=" page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon">
@@ -489,7 +526,6 @@
                                 </a>
 
                             </li>
-
                             <li title="" class=" page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="mdi mdi-note-outline"></i>
@@ -524,26 +560,26 @@
 
                             </li>
                             <br>
-                           
-                            @if(Auth::guard('admin')->user())
-                                <li title="logout">
-                                    <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-sign-out-alt"></i></span>
-                                        <span class="uk-nav-title">logout</span>
-                                    </a>
 
-                                    <form id="logout-form" action="{{ route('adminlogout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </li>
-                                @else
-                                <li title="login">
-                                    <a href="{{route('adminlogin')}}">
+                            @if(Auth::guard('admin')->user())
+                            <li title="logout">
+                                <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-sign-out-alt"></i></span>
+                                    <span class="uk-nav-title">logout</span>
+                                </a>
+
+                                <form id="logout-form" action="{{ route('adminlogout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                            @else
+                            <li title="login">
+                                <a href="{{route('adminlogin')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fas fa-sign-in-alt"></i></span>
-                                        <span class="uk-nav-title">Login</span>
-                                    </a>
-                                </li>
-                                @endif
+                                    <span class="uk-nav-title">Login</span>
+                                </a>
+                            </li>
+                            @endif
                         </ul>
                     </li>
 
