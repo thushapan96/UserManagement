@@ -261,11 +261,13 @@ class SearchController extends Controller
         $serviceId = $request->serviceId;
 
         if ($type == 'School' || $type == 'College' || $type == 'University') {
+            $serviceId =    Institution::where('user_id', $serviceId)->value('id');
             Enquiry::where('candidate_id', $candidateId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('enquiries.institution_id', $serviceId)->update([
                 'statuss' => 2
             ]);
             return 1;
         } else {
+            $serviceId =    Consultant::where('user_id', $serviceId)->value('id');
             Enquiry::where('candidate_id', $candidateId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('enquiries.provider_id', $serviceId)->update([
                 'statuss' => 2
             ]);
@@ -281,11 +283,14 @@ class SearchController extends Controller
         $serviceId = $request->serviceId;
 
         if ($type == 'School' || $type == 'College' || $type == 'University') {
+            $serviceId =    Institution::where('user_id', $serviceId)->value('id');
             Enquiry::where('candidate_id', $candidateId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('enquiries.institution_id', $serviceId)->update([
                 'statuss' => 0
             ]);
             return 1;
         } else {
+            $serviceId =    Consultant::where('user_id', $serviceId)->value('id');
+
             Enquiry::where('candidate_id', $candidateId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('enquiries.provider_id', $serviceId)->update([
                 'statuss' => 0
             ]);

@@ -438,7 +438,7 @@
                 },
                 success: function(result) {
                     console.log('result', result);
-                    location.reload();
+                    // location.reload();
                 },
 
             });
