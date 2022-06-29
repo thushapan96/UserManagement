@@ -164,24 +164,36 @@ class SearchController extends Controller
 
         if ($type == 'School' || $type == 'College' || $type == 'University') {
             if ($request->new) {
-                $Enquiry = new Enquiry;
-                $Enquiry->candidate_id = $candidatesId;
-                $Enquiry->institution_id  = $serviceId;
-                $Enquiry->status = 'Request';
-                $Enquiry->statuss = 1;
-                $Enquiry->is_forward  = 2;
+                if (Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('enquiries.institution_id', $serviceId)->first()) {
+                    Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('institutions.type', $type)->update([
+                        'is_forward' => 1
+                    ]);
 
-                $Enquiry->save();
+                    Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('enquiries.institution_id', $serviceId)->update([
+                        'is_forward' => 2
+                    ]);
 
-                Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('institutions.type', $type)->update([
-                    'is_forward' => 1
-                ]);
+                    return 1;
+                } else {
+                    $Enquiry = new Enquiry;
+                    $Enquiry->candidate_id = $candidatesId;
+                    $Enquiry->institution_id  = $serviceId;
+                    $Enquiry->status = 'Request';
+                    $Enquiry->statuss = 1;
+                    $Enquiry->is_forward  = 2;
 
-                Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('enquiries.institution_id', $serviceId)->update([
-                    'is_forward' => 2
-                ]);
+                    $Enquiry->save();
 
-                return 1;
+                    Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('institutions.type', $type)->update([
+                        'is_forward' => 1
+                    ]);
+
+                    Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('enquiries.institution_id', $serviceId)->update([
+                        'is_forward' => 2
+                    ]);
+
+                    return 1;
+                }
             } else {
                 Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('institutions.type', $type)->update([
                     'is_forward' => 1
@@ -196,24 +208,35 @@ class SearchController extends Controller
         } else {
 
             if ($request->new) {
-                $Enquiry = new Enquiry;
-                $Enquiry->candidate_id = $candidatesId;
-                $Enquiry->provider_id   = $serviceId;
-                $Enquiry->status = 'Request';
-                $Enquiry->statuss = 1;
-                $Enquiry->is_forward  = 2;
+                if (Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('enquiries.provider_id', $serviceId)->first()) {
+                    Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('providers.type', $type)->update([
+                        'is_forward' => 1
+                    ]);
 
-                $Enquiry->save();
+                    Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('enquiries.provider_id', $serviceId)->update([
+                        'is_forward' => 2
+                    ]);
+                    return 1;
+                } else {
+                    $Enquiry = new Enquiry;
+                    $Enquiry->candidate_id = $candidatesId;
+                    $Enquiry->provider_id   = $serviceId;
+                    $Enquiry->status = 'Request';
+                    $Enquiry->statuss = 1;
+                    $Enquiry->is_forward  = 2;
 
-                Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('providers.type', $type)->update([
-                    'is_forward' => 1
-                ]);
+                    $Enquiry->save();
 
-                Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('enquiries.provider_id', $serviceId)->update([
-                    'is_forward' => 2
-                ]);
-                
-                return 1;
+                    Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('providers.type', $type)->update([
+                        'is_forward' => 1
+                    ]);
+
+                    Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('enquiries.provider_id', $serviceId)->update([
+                        'is_forward' => 2
+                    ]);
+
+                    return 1;
+                }
             } else {
                 Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('providers.type', $type)->update([
                     'is_forward' => 1
@@ -275,7 +298,7 @@ class SearchController extends Controller
         }
     }
 
-    
+
     public function servicesConfirmEnquiryUserReject(Request $request)
     {
         $type = $request->type;
