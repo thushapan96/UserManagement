@@ -650,14 +650,16 @@
                             </div>
                         </div>
                         <div class="row custom-box " id="">
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
 
-                                    <textarea class="form-control" style="width:100%;" name="eca">{{$educations->eca}}</textarea>
 
-                                </div>
+                            <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
+                            <div class="col-lg-6 col-md-6">
+                                <input class="form-control" name="eca" value="{{$educations->eca}}" >
                             </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input class="form-control" type="date" id="Prerequisite4" name="eca_date" value="{{$educations->eca_date}}">
+                            </div>
+
                         </div>
                         <hr>
 

@@ -172,7 +172,16 @@
 </div>
 <br>
 <input id="type" value="{{$type}}" hidden>
-
+<div id="modal-close-default" data-uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" data-uk-close></button>
+        <h6 class="">Comments If Any </h6>
+        <textarea class="form-control textarea" rows="5" style="width:100%" name="description" id="msg"></textarea>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-primary confirmEnquiryy" type="button">Confirm</button>
+        </p>
+    </div>
+</div>
 <div>
 
     <br>
@@ -252,7 +261,7 @@
                     @if(request()->query('select'))
                     <input type="text" id="candidatesId" value="{{request()->query('select')}}" hidden>
 
-                    <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="{{$row->type}}" data-serviceId="{{$row->id}}">4) Select as Service </a></li>
+                    <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="{{$row->type}}" data-serviceId="{{$row->id}}" data-uk-toggle="target: #modal-close-default">4) Select as Service </a></li>
                     @endif
                 </ul>
             </div>
@@ -277,13 +286,16 @@
         $('.page-active').removeClass('sc-page-active')
         $('.page-CA').addClass('sc-page-active')
 
-        $('.confirmEnquiry').on('click', function() {
-            if (confirm("Are You Sure Want To Select as Service ?") == true) {
-                var type = $(this).attr('data-type')
-                var serviceId = $(this).attr('data-serviceId')
-                var candidatesId = $('#candidatesId').val();
-                console.log("type", type);
+        
 
+        $('.confirmEnquiry').on('click', function() {
+            var type = $(this).attr('data-type')
+            var serviceId = $(this).attr('data-serviceId')
+            var candidatesId = $('#candidatesId').val();
+            console.log("type", type);
+            $('.confirmEnquiryy').on('click', function() {
+                var description = $('#msg').val();
+                $('#modal-close-default').fadeOut();
                 $.ajax({
 
                     method: "post",
@@ -295,6 +307,7 @@
                         type: type,
                         serviceId: serviceId,
                         candidatesId: candidatesId,
+                        description: description,
                         new: 'new',
                     },
                     success: function(result) {
@@ -303,8 +316,10 @@
                     },
 
                 });
-            }
+            });
+
         });
+
 
         $('#searchbar').on('keyup', function() {
             var searchValue = $('#searchbar').val();

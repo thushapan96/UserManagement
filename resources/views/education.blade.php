@@ -4,7 +4,7 @@
 
     @csrf
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-        <h3 class="" style="text-align:center">Assessment for Overseas Education - Canada</h3>
+        <h3 class="" style="text-align:center">Assessment for Education - Canada</h3>
 
     </div>
 
@@ -541,14 +541,16 @@
                             </div>
                         </div>
                         <div class="row custom-box " id="">
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
 
-                                    <textarea class="form-control" style="width:100%;" name="eca">{{old('eca')}}</textarea>
 
-                                </div>
+                            <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
+                            <div class="col-lg-6 col-md-6">
+                                <input class="form-control"  name="eca" value="{{old('eca')}}">
                             </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input class="form-control" type="date" id="Prerequisite4" name="eca_date" value="{{old('eca_date')}}">
+                            </div>
+
                         </div>
                         <hr>
 
@@ -863,7 +865,7 @@
             console.log(card);
             console.log("hi");
 
-            for (let i = 1; i < 4; i++) { 
+            for (let i = 1; i < 4; i++) {
                 console.log("hi");
 
 

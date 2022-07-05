@@ -189,6 +189,8 @@
     </div>
 </div>
 <br><br> -->
+
+
 <u1 id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
 
     @if($candidatesList)
@@ -273,12 +275,12 @@
 
     $(document).ready(function() {
 
-       
-            $('.page-active').removeClass('sc-page-active')
-            $('.page-can').addClass('sc-page-active')
-       
 
-        
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-can').addClass('sc-page-active')
+
+
+
     });
 </script>
 

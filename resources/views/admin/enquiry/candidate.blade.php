@@ -172,6 +172,17 @@
 </div>
 <br><br>
  -->
+<div id="modal-close-default" data-uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" data-uk-close></button>
+        <h6 class="">Comments If Any </h6>
+        <textarea class="form-control textarea" rows="5" style="width:100%" name="description" id="msg"></textarea>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-primary confirmEnquiryy" type="button">Confirm</button>
+        </p>
+    </div>
+</div>
+
 <u1 id="sc-contact-list" class="uk-child-width-2-3@l" data-uk-grid style="width:70%;margin-left:auto;margin-right:auto">
 
     @if($candidates)
@@ -261,7 +272,7 @@
                 <h6>School</h6>
             </div>
             <div class="float-right" style="right:0%">
-                <a href="/admin/school/view?select={{$candidates->id}}">  <button type="button"  class="client-btn uk-button uk-button-primary"> Forward to other School =>></button></a>
+                <a href="/admin/school/view?select={{$candidates->id}}"> <button type="button" class="client-btn uk-button uk-button-primary"> Forward to other School =>></button></a>
             </div>
         </div>
         <br>
@@ -337,7 +348,7 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('institution.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;">View Registration form </a></li>
                             @if($row->is_forward == 0)
-                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="School" data-serviceId="{{$row->serviceId}}">Select as Service </a></li>
+                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="School" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -356,16 +367,16 @@
         @endif
         @if(count($EnquiryInstitutionCollege1))
 
-       
+
         <div class="row">
             <div class="col-9">
-            <h6>College</h6>
+                <h6>College</h6>
             </div>
             <div class="float-right" style="right:0%">
-                <a href="/admin/college/view?select={{$candidates->id}}">  <button type="button"  class="client-btn uk-button uk-button-primary"> Forward to other College =>></button></a>
+                <a href="/admin/college/view?select={{$candidates->id}}"> <button type="button" class="client-btn uk-button uk-button-primary"> Forward to other College =>></button></a>
             </div>
         </div>
-<br>
+        <br>
         <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
             @foreach($EnquiryInstitutionCollege1 as $row)
             <li>
@@ -436,7 +447,7 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('institution.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
                             @if($row->is_forward == 0)
-                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="College" data-serviceId="{{$row->serviceId}}">Select as Service </a></li>
+                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="College" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="College" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -453,14 +464,14 @@
         <hr>
         @endif
         @if(count($EnquiryInstitutionUniversity1))
-        
+
         <div class="row">
             <div class="col-9">
-            <h6>University</h6>
+                <h6>University</h6>
             </div>
-            
+
             <div class="float-right" style="right:0%">
-                <a href="/admin/university/view?select={{$candidates->id}}">  <button type="button"  class="client-btn uk-button uk-button-primary"> Forward to other University =>></button></a>
+                <a href="/admin/university/view?select={{$candidates->id}}"> <button type="button" class="client-btn uk-button uk-button-primary"> Forward to other University =>></button></a>
             </div>
         </div>
         <br>
@@ -534,7 +545,7 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('institution.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
                             @if($row->is_forward == 0)
-                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="University" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}">Select as Service </a></li>
+                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="University" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="University" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -550,13 +561,13 @@
         @endif
         @if(count($EnquiryProviderConsultant1))
 
-        
+
         <div class="row">
             <div class="col-9">
-            <h6>Consultant</h6>
+                <h6>Consultant</h6>
             </div>
             <div class="float-right" style="right:0%">
-                <a href="/admin/consultant/view?select={{$candidates->id}}">  <button type="button"  class="client-btn uk-button uk-button-primary"> Forward to other Consultant =>></button></a>
+                <a href="/admin/consultant/view?select={{$candidates->id}}"> <button type="button" class="client-btn uk-button uk-button-primary"> Forward to other Consultant =>></button></a>
             </div>
         </div><br>
         <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
@@ -629,7 +640,7 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('consultant.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;">View Registration form </a></li>
                             @if($row->is_forward == 0)
-                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="RCIC Consultant" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}">Select as Service </a></li>
+                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="RCIC Consultant" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="RCIC Consultant" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -648,10 +659,10 @@
 
         <div class="row">
             <div class="col-9">
-            <h6>Immigration</h6>
+                <h6>Immigration</h6>
             </div>
             <div class="float-right" style="right:0%">
-                <a href="/admin/immigration/view?select={{$candidates->id}}">  <button type="button"  class="client-btn uk-button uk-button-primary"> Forward to other Immigration =>></button></a>
+                <a href="/admin/immigration/view?select={{$candidates->id}}"> <button type="button" class="client-btn uk-button uk-button-primary"> Forward to other Immigration =>></button></a>
             </div>
         </div><br>
         <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
@@ -725,7 +736,7 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('consultant.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
                             @if($row->is_forward == 0)
-                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="Immigration Lawyer/Attorney" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}">Select as Service </a></li>
+                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="Immigration Lawyer/Attorney" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="Immigration Lawyer/Attorney" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -741,13 +752,13 @@
         @endif
         @if(count($EnquiryProviderBusiness1))
 
-    
+
         <div class="row">
             <div class="col-9">
-            <h6>Business</h6>
+                <h6>Business</h6>
             </div>
             <div class="float-right" style="right:0%">
-                <a href="/admin/business/view?select={{$candidates->id}}">  <button type="button"  class="client-btn uk-button uk-button-primary"> Forward to other Business =>></button></a>
+                <a href="/admin/business/view?select={{$candidates->id}}"> <button type="button" class="client-btn uk-button uk-button-primary"> Forward to other Business =>></button></a>
             </div>
         </div><br>
         <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
@@ -820,7 +831,7 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('business.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
                             @if($row->is_forward == 0)
-                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="Chartered Accountant" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}">Select as Service </a></li>
+                            <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="Chartered Accountant" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="Chartered Accountant" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -837,8 +848,8 @@
     <u1>
         @if($EnquiryInstitutionSchoolSubstitude)
         <h6>School</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <li>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
                 <a href="#">
                     <div class="uk-card uk-card-hover " style="height:275px">
                         <div class="uk-card-body sc-padding-remove">
@@ -908,15 +919,21 @@
                         </ul>
                     </div>
                 </a>
-            </li>
-        </u1>
+            </div>
+            @if($EnquiryInstitutionSchoolSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryInstitutionSchoolSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
         @if($EnquiryInstitutionCollegeSubstitude)
 
         <h6>College</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <li>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
                 <a href="#">
                     <div class="uk-card uk-card-hover " style="height:275px">
                         <div class="uk-card-body sc-padding-remove">
@@ -986,90 +1003,106 @@
                         </ul>
                     </div>
                 </a>
-            </li>
-        </u1>
+            </div>
+            @if($EnquiryInstitutionCollegeSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryInstitutionCollegeSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
         @if($EnquiryInstitutionUniversitySubstitude)
         <h6>University</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <a href="#">
-                <div class="uk-card uk-card-hover " style="height:275px">
-                    <div class="uk-card-body sc-padding-remove">
-                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <a href="#">
+                    <div class="uk-card uk-card-hover " style="height:275px">
+                        <div class="uk-card-body sc-padding-remove">
+                            <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                                <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300">
 
-                                <div class="sc-padding-medium uk-text-center">
-                                    @if($EnquiryInstitutionUniversitySubstitude->img)
-                                    <img src="{{url('files/'.$EnquiryInstitutionUniversitySubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
-                                    @else
-                                    <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                    @endif
-                                    <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                        {{$EnquiryInstitutionUniversitySubstitude->name}}
-                                    </p>
-                                    <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryInstitutionUniversitySubstitude->registration_number}}</p>
+                                    <div class="sc-padding-medium uk-text-center">
+                                        @if($EnquiryInstitutionUniversitySubstitude->img)
+                                        <img src="{{url('files/'.$EnquiryInstitutionUniversitySubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
+                                        @else
+                                        <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                        @endif
+                                        <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                            {{$EnquiryInstitutionUniversitySubstitude->name}}
+                                        </p>
+                                        <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryInstitutionUniversitySubstitude->registration_number}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="uk-width-2-3@l ">
-                                <div class="sc-padding-medium">
-                                    <ul class="uk-list uk-list-divider">
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove sc-text-semibold">{{$EnquiryInstitutionUniversitySubstitude->phone}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove">{{$EnquiryInstitutionUniversitySubstitude->email}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionUniversitySubstitude->website_address}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionUniversitySubstitude->city}} {{$EnquiryInstitutionUniversitySubstitude->region}} {{$EnquiryInstitutionUniversitySubstitude->country}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">
-                                                    @if($EnquiryInstitutionUniversitySubstitude->offer_course)
+                                <div class="uk-width-2-3@l ">
+                                    <div class="sc-padding-medium">
+                                        <ul class="uk-list uk-list-divider">
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove sc-text-semibold">{{$EnquiryInstitutionUniversitySubstitude->phone}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove">{{$EnquiryInstitutionUniversitySubstitude->email}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionUniversitySubstitude->website_address}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionUniversitySubstitude->city}} {{$EnquiryInstitutionUniversitySubstitude->region}} {{$EnquiryInstitutionUniversitySubstitude->country}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">
+                                                        @if($EnquiryInstitutionUniversitySubstitude->offer_course)
 
-                                                    {{$EnquiryInstitutionUniversitySubstitude->offer_course}}
+                                                        {{$EnquiryInstitutionUniversitySubstitude->offer_course}}
 
-                                                    @endif
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div data-uk-dropdown="pos: bottom-center">
-                    <ul class="uk-nav uk-dropdown-nav">
-                        <li><a href="{{route('institution.admin.view',['id' => $EnquiryInstitutionUniversitySubstitude->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
-                    </ul>
-                </div>
-            </a>
-        </u1>
+                    
+                    <div data-uk-dropdown="pos: bottom-center">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="{{route('institution.admin.view',['id' => $EnquiryInstitutionUniversitySubstitude->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
+                        </ul>
+                    </div>
+                </a>
+
+            </div>
+            @if($EnquiryInstitutionUniversitySubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryInstitutionUniversitySubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
         @if($EnquiryProviderConsultantSubstitude)
 
         <h6>Consultant</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <li>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
                 <a href="#">
                     <div class="uk-card uk-card-hover " style="height:275px">
                         <div class="uk-card-body sc-padding-remove">
@@ -1139,15 +1172,21 @@
                         </ul>
                     </div>
                 </a>
-            </li>
-        </u1>
+            </div>
+            @if($EnquiryProviderConsultantSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryProviderConsultantSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
 
         @if($EnquiryProviderImmigrationSubstitude)
         <h6>Immigration</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <li>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
                 <a href="#">
                     <div class="uk-card uk-card-hover " style="height:275px">
                         <div class="uk-card-body sc-padding-remove">
@@ -1217,14 +1256,20 @@
                         </ul>
                     </div>
                 </a>
-            </li>
-        </u1>
+            </div>
+            @if($EnquiryProviderImmigrationSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryProviderImmigrationSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
         @if($EnquiryProviderBusinessSubstitude)
         <h6>Business</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <li>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
                 <a href="#">
                     <div class="uk-card uk-card-hover " style="height:275px">
                         <div class="uk-card-body sc-padding-remove">
@@ -1294,8 +1339,14 @@
                         </ul>
                     </div>
                 </a>
-            </li>
-        </u1>
+            </div>
+            @if($EnquiryProviderBusinessSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryProviderBusinessSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         @endif
     </u1>
     <u1>
@@ -2288,12 +2339,13 @@
         // }
 
         $('.confirmEnquiry').on('click', function() {
-            if (confirm("Are You Sure Want To Select as Service ?") == true) {
-                var type = $(this).attr('data-type')
-                var serviceId = $(this).attr('data-serviceId')
-                var candidatesId = $('#candidatesId').val();
-                console.log("type", type);
-
+            var type = $(this).attr('data-type')
+            var serviceId = $(this).attr('data-serviceId')
+            var candidatesId = $('#candidatesId').val();
+            console.log("type", type);
+            $('.confirmEnquiryy').on('click', function() {
+                var description = $('#msg').val();
+                $('#modal-close-default').fadeOut();
                 $.ajax({
 
                     method: "post",
@@ -2305,6 +2357,7 @@
                         type: type,
                         serviceId: serviceId,
                         candidatesId: candidatesId,
+                        description: description,
                     },
                     success: function(result) {
                         console.log('result', result);
@@ -2312,11 +2365,9 @@
                     },
 
                 });
-            }
+            });
+
         });
-
-
-
 
     });
 </script>

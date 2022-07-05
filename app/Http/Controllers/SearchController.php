@@ -160,6 +160,7 @@ class SearchController extends Controller
         $type = $request->type;
         $candidatesId = $request->candidatesId;
         $serviceId = $request->serviceId;
+        $description = $request->description;
 
 
         if ($type == 'School' || $type == 'College' || $type == 'University') {
@@ -170,7 +171,8 @@ class SearchController extends Controller
                     ]);
 
                     Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('enquiries.institution_id', $serviceId)->update([
-                        'is_forward' => 2
+                        'is_forward' => 2,
+                        'description' =>  $description,
                     ]);
 
                     return 1;
@@ -189,7 +191,8 @@ class SearchController extends Controller
                     ]);
 
                     Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('enquiries.institution_id', $serviceId)->update([
-                        'is_forward' => 2
+                        'is_forward' => 2,
+                        'description' =>  $description,
                     ]);
 
                     return 1;
@@ -200,7 +203,8 @@ class SearchController extends Controller
                 ]);
 
                 Enquiry::where('candidate_id', $candidatesId)->join('institutions', 'institutions.id', 'enquiries.institution_id')->where('enquiries.institution_id', $serviceId)->update([
-                    'is_forward' => 2
+                    'is_forward' => 2,
+                    'description' =>  $description,
                 ]);
 
                 return 1;
@@ -214,7 +218,8 @@ class SearchController extends Controller
                     ]);
 
                     Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('enquiries.provider_id', $serviceId)->update([
-                        'is_forward' => 2
+                        'is_forward' => 2,
+                        'description' =>  $description,
                     ]);
                     return 1;
                 } else {
@@ -232,7 +237,8 @@ class SearchController extends Controller
                     ]);
 
                     Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('enquiries.provider_id', $serviceId)->update([
-                        'is_forward' => 2
+                        'is_forward' => 2,
+                        'description' =>  $description,
                     ]);
 
                     return 1;
@@ -243,7 +249,8 @@ class SearchController extends Controller
                 ]);
 
                 Enquiry::where('candidate_id', $candidatesId)->join('providers', 'providers.id', 'enquiries.provider_id')->where('enquiries.provider_id', $serviceId)->update([
-                    'is_forward' => 2
+                    'is_forward' => 2,
+                    'description' =>  $description,
                 ]);
                 return 1;
             }

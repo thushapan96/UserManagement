@@ -18,7 +18,7 @@ class Education extends Model
          'post_graduation','post_graduation_year_completion','post_graduation_course_duration','post_graduation_major_subject','post_graduation_year_gap','post_graduation_gpa',
          'degree_year','master_degree_year','phd_year','pg_diploma_year','interest_pursue_higher_education','preferred_intake','preferred_college','preferred_university','preferred_State',
          'preferred_region','preferred_city','communication_mode','is_rejected_college','rejected_college_reason','rejected_college_year','is_rejected_visa_past','rejected_visa_reason_past','rejected_visa_year_past',
-         'is_rejected_visa','rejected_visa_reason','rejected_visa_year','prerequisite_document','eca','passport_valid','IELTS_attempted','GRE_attempted','TOEFL_attempted',
+         'is_rejected_visa','rejected_visa_reason','rejected_visa_year','prerequisite_document','eca','eca_date','passport_valid','IELTS_attempted','GRE_attempted','TOEFL_attempted',
          'GMAT_attempted','interested_attempted','feedback',
     ];
 

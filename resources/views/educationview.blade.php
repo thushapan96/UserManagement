@@ -478,7 +478,7 @@
                     </fieldset>
                     <br>
                     <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
-                      
+
                         <div class="row custom-box " id="">
                             <div class="col-md-5">
                                 <strong class="ps">Degree – 4 Years</strong>
@@ -791,16 +791,31 @@
                                 </p>
                             </div>
                         </div>
+                        @if($educations->eca)
                         <div class="row custom-box " id="">
-                            <div class="col-lg-12 col-md-12 col-12">
-                                <div class="form-group">
-                                    <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
-
-                                    <textarea class="form-control" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="eca" disabled>{{$educations->eca}}</textarea>
-
-                                </div>
+                            <div class="col-md-5">
+                                <strong class="ps">ECA Organization</strong>
+                            </div>
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->eca}}
+                                </p>
                             </div>
                         </div>
+                        @endif
+                        @if($educations->eca_date)
+                        <div class="row custom-box " id="">
+                            <div class="col-md-5">
+                                <strong class="ps">ECA Valid Upto</strong>
+                            </div>
+
+                            <div class="col-md-7">
+                                <p class="ps">
+                                    {{$educations->eca_date}}
+                                </p>
+                            </div>
+                        </div>
+                        @endif
                     </fieldset><br>
                     <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
 
@@ -972,8 +987,8 @@
     </script>
 </u1>
 <br>
-<div class="float-right col-md-3" >
-<a href="{{route('edit.education')}}"> <button type="button"  class="client-btn uk-button uk-button-primary">Edit EDUCATION  Assessment</button></a>
+<div class="float-right col-md-3">
+    <a href="{{route('edit.education')}}"> <button type="button" class="client-btn uk-button uk-button-primary">Edit EDUCATION Assessment</button></a>
 </div>
 <br>
 <script>

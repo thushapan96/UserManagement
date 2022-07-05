@@ -625,425 +625,473 @@
     <li>
         @if($EnquiryInstitutionSchoolSubstitude)
         <h6>School</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <a href="{{route('dashboard.institution.view',['id' => $EnquiryInstitutionSchoolSubstitude->serviceId])}}">
-                <div class="uk-card uk-card-hover " style="height:275px">
-                    <div class="uk-card-body sc-padding-remove">
-                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <a href="{{route('dashboard.institution.view',['id' => $EnquiryInstitutionSchoolSubstitude->serviceId])}}">
+                    <div class="uk-card uk-card-hover " style="height:275px">
+                        <div class="uk-card-body sc-padding-remove">
+                            <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                                <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300">
 
-                                <div class="sc-padding-medium uk-text-center">
-                                    @if($EnquiryInstitutionSchoolSubstitude->img)
-                                    <img src="{{url('files/'.$EnquiryInstitutionSchoolSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
-                                    @else
-                                    <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                    @endif
-                                    <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                        {{$EnquiryInstitutionSchoolSubstitude->name}}
-                                    </p>
-                                    <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryInstitutionSchoolSubstitude->registration_number}}</p>
+                                    <div class="sc-padding-medium uk-text-center">
+                                        @if($EnquiryInstitutionSchoolSubstitude->img)
+                                        <img src="{{url('files/'.$EnquiryInstitutionSchoolSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
+                                        @else
+                                        <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                        @endif
+                                        <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                            {{$EnquiryInstitutionSchoolSubstitude->name}}
+                                        </p>
+                                        <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryInstitutionSchoolSubstitude->registration_number}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="uk-width-2-3@l ">
-                                <div class="sc-padding-medium">
-                                    <ul class="uk-list uk-list-divider">
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove sc-text-semibold">{{$EnquiryInstitutionSchoolSubstitude->phone}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove">{{$EnquiryInstitutionSchoolSubstitude->email}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionSchoolSubstitude->website_address}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionSchoolSubstitude->city}} {{$EnquiryInstitutionSchoolSubstitude->region}} {{$EnquiryInstitutionSchoolSubstitude->country}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">
-                                                    @if($EnquiryInstitutionSchoolSubstitude->offer_course)
+                                <div class="uk-width-2-3@l ">
+                                    <div class="sc-padding-medium">
+                                        <ul class="uk-list uk-list-divider">
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove sc-text-semibold">{{$EnquiryInstitutionSchoolSubstitude->phone}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove">{{$EnquiryInstitutionSchoolSubstitude->email}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionSchoolSubstitude->website_address}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionSchoolSubstitude->city}} {{$EnquiryInstitutionSchoolSubstitude->region}} {{$EnquiryInstitutionSchoolSubstitude->country}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">
+                                                        @if($EnquiryInstitutionSchoolSubstitude->offer_course)
 
-                                                    {{$EnquiryInstitutionSchoolSubstitude->offer_course}}
+                                                        {{$EnquiryInstitutionSchoolSubstitude->offer_course}}
 
-                                                    @endif
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </u1>
+                </a>
+            </div>
+            @if($EnquiryInstitutionSchoolSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryInstitutionSchoolSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
         @if($EnquiryInstitutionCollegeSubstitude)
 
         <h6>College</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <a href="{{route('dashboard.institution.view',['id' => $EnquiryInstitutionCollegeSubstitude->serviceId])}}">
-                <div class="uk-card uk-card-hover " style="height:275px">
-                    <div class="uk-card-body sc-padding-remove">
-                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <a href="{{route('dashboard.institution.view',['id' => $EnquiryInstitutionCollegeSubstitude->serviceId])}}">
+                    <div class="uk-card uk-card-hover " style="height:275px">
+                        <div class="uk-card-body sc-padding-remove">
+                            <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                                <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300">
 
-                                <div class="sc-padding-medium uk-text-center">
-                                    @if($EnquiryInstitutionCollegeSubstitude->img)
-                                    <img src="{{url('files/'.$EnquiryInstitutionCollegeSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
-                                    @else
-                                    <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                    @endif
-                                    <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                        {{$EnquiryInstitutionCollegeSubstitude->name}}
-                                    </p>
-                                    <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryInstitutionCollegeSubstitude->registration_number}}</p>
+                                    <div class="sc-padding-medium uk-text-center">
+                                        @if($EnquiryInstitutionCollegeSubstitude->img)
+                                        <img src="{{url('files/'.$EnquiryInstitutionCollegeSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
+                                        @else
+                                        <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                        @endif
+                                        <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                            {{$EnquiryInstitutionCollegeSubstitude->name}}
+                                        </p>
+                                        <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryInstitutionCollegeSubstitude->registration_number}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="uk-width-2-3@l ">
-                                <div class="sc-padding-medium">
-                                    <ul class="uk-list uk-list-divider">
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove sc-text-semibold">{{$EnquiryInstitutionCollegeSubstitude->phone}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove">{{$EnquiryInstitutionCollegeSubstitude->email}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionCollegeSubstitude->website_address}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionCollegeSubstitude->city}} {{$EnquiryInstitutionCollegeSubstitude->region}} {{$EnquiryInstitutionCollegeSubstitude->country}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">
-                                                    @if($EnquiryInstitutionCollegeSubstitude->offer_course)
+                                <div class="uk-width-2-3@l ">
+                                    <div class="sc-padding-medium">
+                                        <ul class="uk-list uk-list-divider">
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove sc-text-semibold">{{$EnquiryInstitutionCollegeSubstitude->phone}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove">{{$EnquiryInstitutionCollegeSubstitude->email}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionCollegeSubstitude->website_address}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionCollegeSubstitude->city}} {{$EnquiryInstitutionCollegeSubstitude->region}} {{$EnquiryInstitutionCollegeSubstitude->country}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">
+                                                        @if($EnquiryInstitutionCollegeSubstitude->offer_course)
 
-                                                    {{$EnquiryInstitutionCollegeSubstitude->offer_course}}
+                                                        {{$EnquiryInstitutionCollegeSubstitude->offer_course}}
 
-                                                    @endif
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </u1>
+                </a>
+            </div>
+            @if($EnquiryInstitutionCollegeSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryInstitutionCollegeSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
         @if($EnquiryInstitutionUniversitySubstitude)
         <h6>University</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <a href="{{route('dashboard.institution.view',['id' => $EnquiryInstitutionUniversitySubstitude->serviceId])}}">
-                <div class="uk-card uk-card-hover " style="height:275px">
-                    <div class="uk-card-body sc-padding-remove">
-                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <a href="{{route('dashboard.institution.view',['id' => $EnquiryInstitutionUniversitySubstitude->serviceId])}}">
+                    <div class="uk-card uk-card-hover " style="height:275px">
+                        <div class="uk-card-body sc-padding-remove">
+                            <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                                <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300">
 
-                                <div class="sc-padding-medium uk-text-center">
-                                    @if($EnquiryInstitutionUniversitySubstitude->img)
-                                    <img src="{{url('files/'.$EnquiryInstitutionUniversitySubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
-                                    @else
-                                    <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                    @endif
-                                    <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                        {{$EnquiryInstitutionUniversitySubstitude->name}}
-                                    </p>
-                                    <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryInstitutionUniversitySubstitude->registration_number}}</p>
+                                    <div class="sc-padding-medium uk-text-center">
+                                        @if($EnquiryInstitutionUniversitySubstitude->img)
+                                        <img src="{{url('files/'.$EnquiryInstitutionUniversitySubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
+                                        @else
+                                        <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                        @endif
+                                        <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                            {{$EnquiryInstitutionUniversitySubstitude->name}}
+                                        </p>
+                                        <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryInstitutionUniversitySubstitude->registration_number}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="uk-width-2-3@l ">
-                                <div class="sc-padding-medium">
-                                    <ul class="uk-list uk-list-divider">
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove sc-text-semibold">{{$EnquiryInstitutionUniversitySubstitude->phone}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove">{{$EnquiryInstitutionUniversitySubstitude->email}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionUniversitySubstitude->website_address}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionUniversitySubstitude->city}} {{$EnquiryInstitutionUniversitySubstitude->region}} {{$EnquiryInstitutionUniversitySubstitude->country}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">
-                                                    @if($EnquiryInstitutionUniversitySubstitude->offer_course)
+                                <div class="uk-width-2-3@l ">
+                                    <div class="sc-padding-medium">
+                                        <ul class="uk-list uk-list-divider">
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove sc-text-semibold">{{$EnquiryInstitutionUniversitySubstitude->phone}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove">{{$EnquiryInstitutionUniversitySubstitude->email}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionUniversitySubstitude->website_address}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryInstitutionUniversitySubstitude->city}} {{$EnquiryInstitutionUniversitySubstitude->region}} {{$EnquiryInstitutionUniversitySubstitude->country}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">
+                                                        @if($EnquiryInstitutionUniversitySubstitude->offer_course)
 
-                                                    {{$EnquiryInstitutionUniversitySubstitude->offer_course}}
+                                                        {{$EnquiryInstitutionUniversitySubstitude->offer_course}}
 
-                                                    @endif
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </u1>
+                </a>
+            </div>
+            @if($EnquiryInstitutionUniversitySubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryInstitutionUniversitySubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
         @if($EnquiryProviderConsultantSubstitude)
 
         <h6>Consultant</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <a href="{{route('dashboard.consultant.view',['id' => $EnquiryProviderConsultantSubstitude->serviceId])}}">
-                <div class="uk-card uk-card-hover " style="height:275px">
-                    <div class="uk-card-body sc-padding-remove">
-                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300 imgview">
-                                <div class="sc-padding-medium uk-text-center">
-                                    @if($EnquiryProviderConsultantSubstitude->img)
-                                    <img src="{{url('files/'.$EnquiryProviderConsultantSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
-                                    @else
-                                    <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                    @endif
-                                    <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                        {{$EnquiryProviderConsultantSubstitude->company_name}}
-                                    </p>
-                                    <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryProviderConsultantSubstitude->registration_number}}</p>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <a href="{{route('dashboard.consultant.view',['id' => $EnquiryProviderConsultantSubstitude->serviceId])}}">
+                    <div class="uk-card uk-card-hover " style="height:275px">
+                        <div class="uk-card-body sc-padding-remove">
+                            <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                                <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300 imgview">
+                                    <div class="sc-padding-medium uk-text-center">
+                                        @if($EnquiryProviderConsultantSubstitude->img)
+                                        <img src="{{url('files/'.$EnquiryProviderConsultantSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
+                                        @else
+                                        <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                        @endif
+                                        <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                            {{$EnquiryProviderConsultantSubstitude->company_name}}
+                                        </p>
+                                        <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryProviderConsultantSubstitude->registration_number}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="uk-width-2-3@l ">
-                                <div class="sc-padding-medium">
-                                    <ul class="uk-list uk-list-divider">
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove sc-text-semibold">{{$EnquiryProviderConsultantSubstitude->phone}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove">{{$EnquiryProviderConsultantSubstitude->email}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderConsultantSubstitude->website_address}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderConsultantSubstitude->city}} {{$EnquiryProviderConsultantSubstitude->region}} {{$EnquiryProviderConsultantSubstitude->country}}</p>
-                                            </div>
-                                        </li>
+                                <div class="uk-width-2-3@l ">
+                                    <div class="sc-padding-medium">
+                                        <ul class="uk-list uk-list-divider">
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove sc-text-semibold">{{$EnquiryProviderConsultantSubstitude->phone}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove">{{$EnquiryProviderConsultantSubstitude->email}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderConsultantSubstitude->website_address}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderConsultantSubstitude->city}} {{$EnquiryProviderConsultantSubstitude->region}} {{$EnquiryProviderConsultantSubstitude->country}}</p>
+                                                </div>
+                                            </li>
 
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">
-                                                    @if($EnquiryProviderConsultantSubstitude->offering_service)
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">
+                                                        @if($EnquiryProviderConsultantSubstitude->offering_service)
 
-                                                    {{$EnquiryProviderConsultantSubstitude->offering_service}}
+                                                        {{$EnquiryProviderConsultantSubstitude->offering_service}}
 
-                                                    @endif
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </u1>
+                </a>
+            </div>
+            @if($EnquiryProviderConsultantSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryProviderConsultantSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
 
         @if($EnquiryProviderImmigrationSubstitude)
         <h6>Immigration</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <a href="{{route('dashboard.consultant.view',['id' => $EnquiryProviderImmigrationSubstitude->serviceId])}}">
-                <div class="uk-card uk-card-hover " style="height:275px">
-                    <div class="uk-card-body sc-padding-remove">
-                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300 imgview">
-                                <div class="sc-padding-medium uk-text-center">
-                                    @if($EnquiryProviderImmigrationSubstitude->img)
-                                    <img src="{{url('files/'.$EnquiryProviderImmigrationSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
-                                    @else
-                                    <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                    @endif
-                                    <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                        {{$EnquiryProviderImmigrationSubstitude->company_name}}
-                                    </p>
-                                    <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryProviderImmigrationSubstitude->registration_number}}</p>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <a href="{{route('dashboard.consultant.view',['id' => $EnquiryProviderImmigrationSubstitude->serviceId])}}">
+                    <div class="uk-card uk-card-hover " style="height:275px">
+                        <div class="uk-card-body sc-padding-remove">
+                            <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                                <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300 imgview">
+                                    <div class="sc-padding-medium uk-text-center">
+                                        @if($EnquiryProviderImmigrationSubstitude->img)
+                                        <img src="{{url('files/'.$EnquiryProviderImmigrationSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
+                                        @else
+                                        <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                        @endif
+                                        <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                            {{$EnquiryProviderImmigrationSubstitude->company_name}}
+                                        </p>
+                                        <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryProviderImmigrationSubstitude->registration_number}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="uk-width-2-3@l ">
-                                <div class="sc-padding-medium">
-                                    <ul class="uk-list uk-list-divider">
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove sc-text-semibold">{{$EnquiryProviderImmigrationSubstitude->phone}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove">{{$EnquiryProviderImmigrationSubstitude->email}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderImmigrationSubstitude->website_address}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderImmigrationSubstitude->city}} {{$EnquiryProviderImmigrationSubstitude->region}} {{$EnquiryProviderImmigrationSubstitude->country}}</p>
-                                            </div>
-                                        </li>
+                                <div class="uk-width-2-3@l ">
+                                    <div class="sc-padding-medium">
+                                        <ul class="uk-list uk-list-divider">
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove sc-text-semibold">{{$EnquiryProviderImmigrationSubstitude->phone}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove">{{$EnquiryProviderImmigrationSubstitude->email}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderImmigrationSubstitude->website_address}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderImmigrationSubstitude->city}} {{$EnquiryProviderImmigrationSubstitude->region}} {{$EnquiryProviderImmigrationSubstitude->country}}</p>
+                                                </div>
+                                            </li>
 
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">
-                                                    @if($EnquiryProviderImmigrationSubstitude->offering_service)
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">
+                                                        @if($EnquiryProviderImmigrationSubstitude->offering_service)
 
-                                                    {{$EnquiryProviderImmigrationSubstitude->offering_service}}
+                                                        {{$EnquiryProviderImmigrationSubstitude->offering_service}}
 
-                                                    @endif
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </u1>
+                </a>
+            </div>
+            @if($EnquiryProviderImmigrationSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryProviderImmigrationSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         <hr>
         @endif
         @if($EnquiryProviderBusinessSubstitude)
         <h6>Business</h6>
-        <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
-            <a href="{{route('dashboard.business.view',['id' => $EnquiryProviderBusinessSubstitude->serviceId])}}">
-                <div class="uk-card uk-card-hover " style="height:275px">
-                    <div class="uk-card-body sc-padding-remove">
-                        <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300 imgview">
-                                <div class="sc-padding-medium uk-text-center">
-                                    @if($EnquiryProviderBusinessSubstitude->img)
-                                    <img src="{{url('files/'.$EnquiryProviderBusinessSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
-                                    @else
-                                    <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                                    @endif
-                                    <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                        {{$EnquiryProviderBusinessSubstitude->company_name}}
-                                    </p>
-                                    <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryProviderBusinessSubstitude->registration_number}}</p>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <a href="{{route('dashboard.business.view',['id' => $EnquiryProviderBusinessSubstitude->serviceId])}}">
+                    <div class="uk-card uk-card-hover " style="height:275px">
+                        <div class="uk-card-body sc-padding-remove">
+                            <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                                <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-orange-300 imgview">
+                                    <div class="sc-padding-medium uk-text-center">
+                                        @if($EnquiryProviderBusinessSubstitude->img)
+                                        <img src="{{url('files/'.$EnquiryProviderBusinessSubstitude->img)}}" style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" />
+                                        @else
+                                        <img class="rounded-circle  img " style="width:100px;height:100px" class="sc-avatar sc-border" alt="xerdman" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                        @endif
+                                        <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                            {{$EnquiryProviderBusinessSubstitude->company_name}}
+                                        </p>
+                                        <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$EnquiryProviderBusinessSubstitude->registration_number}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="uk-width-2-3@l ">
-                                <div class="sc-padding-medium">
-                                    <ul class="uk-list uk-list-divider">
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove sc-text-semibold">{{$EnquiryProviderBusinessSubstitude->phone}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove">{{$EnquiryProviderBusinessSubstitude->email}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderBusinessSubstitude->website_address}}</p>
-                                            </div>
-                                        </li>
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderBusinessSubstitude->city}} {{$EnquiryProviderBusinessSubstitude->region}} {{$EnquiryProviderBusinessSubstitude->country}}</p>
-                                            </div>
-                                        </li>
+                                <div class="uk-width-2-3@l ">
+                                    <div class="sc-padding-medium">
+                                        <ul class="uk-list uk-list-divider">
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove sc-text-semibold">{{$EnquiryProviderBusinessSubstitude->phone}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove">{{$EnquiryProviderBusinessSubstitude->email}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderBusinessSubstitude->website_address}}</p>
+                                                </div>
+                                            </li>
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">{{$EnquiryProviderBusinessSubstitude->city}} {{$EnquiryProviderBusinessSubstitude->region}} {{$EnquiryProviderBusinessSubstitude->country}}</p>
+                                                </div>
+                                            </li>
 
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">
-                                                    @if($EnquiryProviderBusinessSubstitude->offering_service)
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">
+                                                        @if($EnquiryProviderBusinessSubstitude->offering_service)
 
-                                                    {{$EnquiryProviderBusinessSubstitude->offering_service}}
+                                                        {{$EnquiryProviderBusinessSubstitude->offering_service}}
 
-                                                    @endif
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </u1>
+                </a>
+            </div>
+            @if($EnquiryProviderBusinessSubstitude->description)
+            <div class="col-lg-6 col-md-6">
+                <p style="color:tomato">Forwarded Message !</p>
+                <textarea class="form-control textarea" rows="7" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled name="description" id="msg">{{$EnquiryProviderBusinessSubstitude->description}}</textarea>
+            </div>
+            @endif
+        </div>
         @endif
     </li>
     <li>
