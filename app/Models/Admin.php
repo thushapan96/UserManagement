@@ -21,7 +21,7 @@ class Admin extends Authenticatable
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'first_name','last_name','phone','email','role','password','img'   
+       'role_id', 'first_name','last_name','phone','email','role','password','img'   
    ];
 
 }

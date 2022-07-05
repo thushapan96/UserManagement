@@ -51,14 +51,15 @@
                         <label>Role</label>
                         <div class="form-group">
                             <select id="role" name="role" class="form-control " required>
-                                <option value="Super Admin" {{$user->role == 'Super Admin' ? 'selected':''}}>Super Admin</option>
-                                <option value="Admin" {{$user->role == 'Admin' ? 'selected':''}}>Admin</option>
-                                <option value="Entry Level User" {{$user->role == 'Entry Level User' ? 'selected':''}}>Entry Level User</option>
-                                <option value="Co-Ordinator" {{$user->role == 'Co-Ordinator' ? 'selected':''}}>Co-Ordinator</option>
-                                <option value="Accountant" {{$user->role == 'Accountant' ? 'selected':''}}>Accountant</option>
+                                <option role="1" value="Super Admin" {{$user->role == 'Super Admin' ? 'selected':''}}>Super Admin</option>
+                                <option role="2" value="Admin" {{$user->role == 'Admin' ? 'selected':''}}>Admin</option>
+                                <option role="3" value="Entry Level User" {{$user->role == 'Entry Level User' ? 'selected':''}}>Entry Level User</option>
+                                <option role="4" value="Co-Ordinator" {{$user->role == 'Co-Ordinator' ? 'selected':''}}>Co-Ordinator</option>
+                                <option role="5" value="Accountant" {{$user->role == 'Accountant' ? 'selected':''}}>Accountant</option>
                             </select>
                         </div>
                     </div>
+                    <input id="role_id" name="role_id" type="text" class="form-control" value="" hidden />
 
                     <div class="col-md-6">
                         <label>Password</label>
@@ -81,9 +82,14 @@
 
 <script>
     $(document).ready(function() {
+        var role_id = $('#role option:selected').attr('role');
+        $('#role_id').val(role_id);
         $('.page-active').removeClass('sc-page-active')
         $('.page-Ma').addClass('sc-page-active')
+        $('#role').on('change', function() {
+            var role_id = $('option:selected', this).attr('role');
+            $('#role_id').val(role_id);
+        });
     });
 </script>
 @endsection
-

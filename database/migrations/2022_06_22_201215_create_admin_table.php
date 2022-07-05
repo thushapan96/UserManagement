@@ -15,6 +15,8 @@ class CreateAdminTable extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
+            $table->bigInteger('role_id')->unsigned()->nullable();
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->nullable();

@@ -51,14 +51,15 @@
                         <label>Role</label>
                         <div class="form-group">
                             <select id="role" name="role" class="form-control " required>
-                                <option value="Super Admin">Super Admin</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Entry Level User">Entry Level User</option>
-                                <option value="Co-Ordinator">Co-Ordinator</option>
-                                <option value="Accountant">Accountant</option>
+                                <option value="Super Admin" role="1">Super Admin</option>
+                                <option value="Admin" role="2">Admin</option>
+                                <option value="Accountant" role="3">Accountant</option>
+                                <option value="Co-Ordinator" role="4">Co-Ordinator</option>
+                                <option value="Entry Level User" role="5">Entry Level User</option>
                             </select>
                         </div>
                     </div>
+                    <input id="role_id" name="role_id" type="text" class="form-control" value="" hidden />
 
                     <div class="col-md-6">
                         <label>Password</label>
@@ -82,6 +83,10 @@
     $(document).ready(function() {
         $('.page-active').removeClass('sc-page-active')
         $('.page-Ma').addClass('sc-page-active')
+        $('#role').on('change',function(){
+            var role_id = $('option:selected', this).attr('role');
+            $('#role_id').val(role_id);
+        });
     });
 </script>
 @endsection
