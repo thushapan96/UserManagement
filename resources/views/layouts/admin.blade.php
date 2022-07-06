@@ -617,7 +617,7 @@ $ExportIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('adm
 
                                     </li>
                                     @endif
-                                    @if( $ReportsAccountsIdExist )
+                                    @if( $ReportsAccountsExist )
                                     <li class=" page-active">
 
                                         <a href="#"> Accounting </a>
