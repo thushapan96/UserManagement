@@ -387,70 +387,70 @@
     <aside id="sc-sidebar-main" class="sc-sidebar-info-fixed sideBar">
         <div class="uk-offcanvas-bar">
             <div class="sc-sidebar-main-scrollable" data-sc-scrollbar="visible-y">
-            @php
-    $DashboardId = \App\Models\Permisson::where(['name' => 'Dashboard'])->value('id');
-    $DashboardIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $DashboardId)->first();
-
-    $ReportsEnquiry = \App\Models\Permisson::where(['name' => 'Reports Enquiry'])->value('id');
-    $ReportsEnquiryExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsEnquiry)->first();
-
-    $ReportsMembership = \App\Models\Permisson::where(['name' => 'Reports Membership'])->value('id');
-    $ReportsMembershipExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsMembership)->first();
-
-    $ReportsAccounts = \App\Models\Permisson::where(['name' => 'Reports Accounts'])->value('id');
-    $ReportsAccountsExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsAccounts)->first();
-
-    $settingId = \App\Models\Permisson::where(['name' => 'Settings'])->value('id');
-    $settingIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $settingId)->first();
-
-    $CandidateformsViewId = \App\Models\Permisson::where(['name' => 'Candidate forms View'])->value('id');
-    $CandidateformsViewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $CandidateformsViewId)->first();
-
-    $ServiceProviderformsviewId = \App\Models\Permisson::where(['name' => 'Service Provider forms view'])->value('id');
-    $ServiceProviderformsviewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ServiceProviderformsviewId)->first();
-
-    $CandidateEnquiryId = \App\Models\Permisson::where(['name' => 'Candidate Enquiry'])->value('id');
-    $CandidateEnquiryIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $CandidateEnquiryId)->first();
-
-    $ServiceProviderEnquiryId = \App\Models\Permisson::where(['name' => 'Service Provider Enquiry'])->value('id');
-    $ServiceProviderEnquiryIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ServiceProviderEnquiryId)->first();
-
-    $UserManagementViewId = \App\Models\Permisson::where(['name' => 'User Management View'])->value('id');
-    $UserManagementViewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementViewId)->first();
-
-    $UserManagementAddId = \App\Models\Permisson::where(['name' => 'User Management Add'])->value('id');
-    $UserManagementAddIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementAddId)->first();
-
-    $UserManagementEditId = \App\Models\Permisson::where(['name' => 'User Management Edit'])->value('id');
-    $UserManagementEditIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementEditId)->first();
-
-    $UserManagementDeleteId = \App\Models\Permisson::where(['name' => 'User Management Delete'])->value('id');
-    $UserManagementDeleteIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementDeleteId)->first();
-
-    $AccountsId = \App\Models\Permisson::where(['name' => 'Accounts'])->value('id');
-    $AccountsIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $AccountsId)->first();
-
-    $ReportsEnquiryId = \App\Models\Permisson::where(['name' => 'Reports Enquiry'])->value('id');
-    $ReportsEnquiryExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsEnquiryId)->first();
-
-    $ReportsMembershipId = \App\Models\Permisson::where(['name' => 'Reports Membership'])->value('id');
-    $ReportsMembershipIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsMembershipId)->first();
-
-    $ReportsAccountsId = \App\Models\Permisson::where(['name' => 'Reports Accounts'])->value('id');
-    $ReportsAccountsIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsAccountsId)->first();
-
-    $PrintId = \App\Models\Permisson::where(['name' => 'Print'])->value('id');
-    $PrintIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $PrintId)->first();
-
-    $ExportId = \App\Models\Permisson::where(['name' => 'Export'])->value('id');
-    $ExportIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ExportId)->first();
-
-    @endphp
+               
                 <ul class="sc-sidebar-menu ">
 
                     <li class="" style="padding:0 !important">
                         <!-- <a><span style="color:#d81400;font-size: 17px;">Profile</span></a> -->
+                        @php
+                $DashboardId = \App\Models\Permisson::where(['name' => 'Dashboard'])->value('id');
+                $DashboardIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $DashboardId)->first();
 
+                $ReportsEnquiry = \App\Models\Permisson::where(['name' => 'Reports Enquiry'])->value('id');
+                $ReportsEnquiryExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsEnquiry)->first();
+
+                $ReportsMembership = \App\Models\Permisson::where(['name' => 'Reports Membership'])->value('id');
+                $ReportsMembershipExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsMembership)->first();
+
+                $ReportsAccounts = \App\Models\Permisson::where(['name' => 'Reports Accounts'])->value('id');
+                $ReportsAccountsExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsAccounts)->first();
+
+                $settingId = \App\Models\Permisson::where(['name' => 'Settings'])->value('id');
+                $settingIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $settingId)->first();
+
+                $CandidateformsViewId = \App\Models\Permisson::where(['name' => 'Candidate forms View'])->value('id');
+                $CandidateformsViewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $CandidateformsViewId)->first();
+
+                $ServiceProviderformsviewId = \App\Models\Permisson::where(['name' => 'Service Provider forms view'])->value('id');
+                $ServiceProviderformsviewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ServiceProviderformsviewId)->first();
+
+                $CandidateEnquiryId = \App\Models\Permisson::where(['name' => 'Candidate Enquiry'])->value('id');
+                $CandidateEnquiryIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $CandidateEnquiryId)->first();
+
+                $ServiceProviderEnquiryId = \App\Models\Permisson::where(['name' => 'Service Provider Enquiry'])->value('id');
+                $ServiceProviderEnquiryIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ServiceProviderEnquiryId)->first();
+
+                $UserManagementViewId = \App\Models\Permisson::where(['name' => 'User Management View'])->value('id');
+                $UserManagementViewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementViewId)->first();
+
+                $UserManagementAddId = \App\Models\Permisson::where(['name' => 'User Management Add'])->value('id');
+                $UserManagementAddIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementAddId)->first();
+
+                $UserManagementEditId = \App\Models\Permisson::where(['name' => 'User Management Edit'])->value('id');
+                $UserManagementEditIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementEditId)->first();
+
+                $UserManagementDeleteId = \App\Models\Permisson::where(['name' => 'User Management Delete'])->value('id');
+                $UserManagementDeleteIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementDeleteId)->first();
+
+                $AccountsId = \App\Models\Permisson::where(['name' => 'Accounts'])->value('id');
+                $AccountsIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $AccountsId)->first();
+
+                $ReportsEnquiryId = \App\Models\Permisson::where(['name' => 'Reports Enquiry'])->value('id');
+                $ReportsEnquiryExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsEnquiryId)->first();
+
+                $ReportsMembershipId = \App\Models\Permisson::where(['name' => 'Reports Membership'])->value('id');
+                $ReportsMembershipIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsMembershipId)->first();
+
+                $ReportsAccountsId = \App\Models\Permisson::where(['name' => 'Reports Accounts'])->value('id');
+                $ReportsAccountsIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsAccountsId)->first();
+
+                $PrintId = \App\Models\Permisson::where(['name' => 'Print'])->value('id');
+                $PrintIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $PrintId)->first();
+
+                $ExportId = \App\Models\Permisson::where(['name' => 'Export'])->value('id');
+                $ExportIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ExportId)->first();
+
+                @endphp
                         <ul class="sc-sidebar-menu " style="">
 
                             @if($DashboardIdExist)
