@@ -2,24 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Consultant;
-use App\Models\Institution;
-use App\Models\User;
-use App\Models\Team;
+
 use Illuminate\Http\Request;
 use PHPUnit\TextUI\XmlConfiguration\Constant;
 use Illuminate\Support\Facades\DB;
-use App\Models\Personal;
-use App\Models\Academy;
-use App\Models\Work;
-use App\Models\Sponsor;
-use App\Models\Qualification;
 use Illuminate\Support\Facades\Auth;
-use App\Models\TechnicalCertification;
-use App\Models\Employment;
-use App\Models\Calculator;
-use App\Models\Education;
 use App\Models\Admin;
+use App\Models\Role;
+use App\Models\Permisson;
+use App\Models\RolePermisson;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
@@ -44,14 +35,13 @@ class UserController extends Controller
             ->where('password', $request->password)
             ->first();
 
-        if( $user ){
+        if ($user) {
             Auth::guard('admin')->login($user);
             return redirect(route('admin.candidate.view'));
-        }else{
+        } else {
             return redirect('/')->with('message', 'Your email and password does not match !');
- 
         }
-      
+
         // $credentials = $request->only('email', 'password');
 
 
@@ -72,7 +62,7 @@ class UserController extends Controller
 
         Auth::logout();
 
-        return Redirect('/');
+        return Redirect(route('adminlogin'));
     }
 
     public function adminIndex()
@@ -94,7 +84,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-       
+
         Admin::create($request->all());
 
         return redirect(route('admin.index'));
@@ -104,7 +94,7 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
-      
+
         Admin::find($request->id)->update($request->all());
 
         return redirect(route('admin.index'));
@@ -117,5 +107,36 @@ class UserController extends Controller
         $user = Admin::find($id);
         $user->delete();
         return redirect(route('admin.index'));
+    }
+
+    public function privillage(Request $request)
+
+    {
+
+        $permissons = Permisson::all();
+
+        return view('admin.privillage')->with('permissons', $permissons);
+    }
+
+    public function addPrivillage(Request $request)
+
+    {
+        RolePermisson::where('role_id', $request->role)->delete();
+
+
+        foreach ($request->access as $row) {
+            $RolePermisson = new RolePermisson;
+            $RolePermisson->role_id = $request->role;
+            $RolePermisson->permisson_id = $row;
+            $RolePermisson->save();
+        }
+
+        $roleType =  $request->roleType;
+      
+        if( $roleType){
+            return redirect("/privillage/setup?roleType=$roleType");
+
+        }
+        return redirect(route('admin.privillage'));
     }
 }

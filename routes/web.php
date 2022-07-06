@@ -24,66 +24,62 @@ Route::get('/indexx', function () {
 
     return view('indexx');
 })->name('indexx');
-Route::get('/test', function () {
 
-    return view('test');
-});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // admin begin
-
-Route::get('admin/candidate/view', 'App\Http\Controllers\AdminController@candidateIndex')->name('admin.candidate.view');
-Route::get('admin/school/view', 'App\Http\Controllers\AdminController@schoolIndex')->name('admin.school.view');
-Route::get('admin/college/view', 'App\Http\Controllers\AdminController@collegeIndex')->name('admin.college.view');
-Route::get('admin/university/view', 'App\Http\Controllers\AdminController@universityIndex')->name('admin.university.view');
-Route::get('admin/consultant/view', 'App\Http\Controllers\AdminController@consultantIndex')->name('admin.consultant.view');
-Route::get('admin/immigration/view', 'App\Http\Controllers\AdminController@immigrationIndex')->name('admin.immigration.view');
-Route::get('admin/business/view', 'App\Http\Controllers\AdminController@businessIndex')->name('admin.business.view');
-Route::get('admin/consultant/{id}', 'App\Http\Controllers\AdminController@consultantView')->name('consultant.admin.view');
-Route::get('admin/institution/{id}', 'App\Http\Controllers\AdminController@institutionView')->name('institution.admin.view');
-Route::get('admin/business/{id}', 'App\Http\Controllers\AdminController@businessView')->name('business.admin.view');
-Route::get('admin/candidate/{id}', 'App\Http\Controllers\AdminController@candidateProfile')->name('candidate.admin.view');
-Route::get('admin/edu/{id}', 'App\Http\Controllers\AdminController@educationview')->name('edu.admin.view');
-Route::get('admin/crs/{id}', 'App\Http\Controllers\AdminController@calculatorview')->name('crs.admin.view');
-
-
-Route::get('admin/index', 'App\Http\Controllers\UserController@adminIndex')->name('admin.index');
-Route::get('/user/create',  'App\Http\Controllers\UserController@create')->name('user.create');
-Route::post('/user/add',  'App\Http\Controllers\UserController@store')->name('user.add');
-Route::get('/user/edit/{id}',  'App\Http\Controllers\UserController@edit')->name('user.edit');
-Route::post('/user/update',  'App\Http\Controllers\UserController@update')->name('user.update');
-Route::get('/user/delete/{id}',  'App\Http\Controllers\UserController@destroy')->name('user.destroy');
 
 Route::get('/admin/login',  'App\Http\Controllers\UserController@loginPage')->name('adminlogin');;
 Route::post('/adminlogin',  'App\Http\Controllers\UserController@login');
 Route::post('/adminlogout',  'App\Http\Controllers\UserController@logout')->name('adminlogout');
 
-Route::post('/admin/search', 'App\Http\Controllers\SearchController@providerSearch')->name('admin.providerSearch');
-Route::post('/admin/institude/search', 'App\Http\Controllers\SearchController@institudeSearch')->name('admin.institudeSearch');
-Route::post('/admin/institude/enquiry/search', 'App\Http\Controllers\SearchController@institudeEnquirySearch');
-Route::post('/admin/enquiry/search', 'App\Http\Controllers\SearchController@providerEnquirySearch');
-Route::post('/confirmEnquiry', 'App\Http\Controllers\SearchController@confirmEnquiry');
-Route::post('/services/confirmEnquiry', 'App\Http\Controllers\SearchController@servicesConfirmEnquiry');
+Route::group(['middleware' => ['is_admin']], function () {
+
+    Route::get('admin/candidate/view', 'App\Http\Controllers\AdminController@candidateIndex')->name('admin.candidate.view');
+    Route::get('admin/school/view', 'App\Http\Controllers\AdminController@schoolIndex')->name('admin.school.view');
+    Route::get('admin/college/view', 'App\Http\Controllers\AdminController@collegeIndex')->name('admin.college.view');
+    Route::get('admin/university/view', 'App\Http\Controllers\AdminController@universityIndex')->name('admin.university.view');
+    Route::get('admin/consultant/view', 'App\Http\Controllers\AdminController@consultantIndex')->name('admin.consultant.view');
+    Route::get('admin/immigration/view', 'App\Http\Controllers\AdminController@immigrationIndex')->name('admin.immigration.view');
+    Route::get('admin/business/view', 'App\Http\Controllers\AdminController@businessIndex')->name('admin.business.view');
+    Route::get('admin/consultant/{id}', 'App\Http\Controllers\AdminController@consultantView')->name('consultant.admin.view');
+    Route::get('admin/institution/{id}', 'App\Http\Controllers\AdminController@institutionView')->name('institution.admin.view');
+    Route::get('admin/business/{id}', 'App\Http\Controllers\AdminController@businessView')->name('business.admin.view');
+    Route::get('admin/candidate/{id}', 'App\Http\Controllers\AdminController@candidateProfile')->name('candidate.admin.view');
+    Route::get('admin/edu/{id}', 'App\Http\Controllers\AdminController@educationview')->name('edu.admin.view');
+    Route::get('admin/crs/{id}', 'App\Http\Controllers\AdminController@calculatorview')->name('crs.admin.view');
 
 
+    Route::get('admin/index', 'App\Http\Controllers\UserController@adminIndex')->name('admin.index');
+    Route::get('/user/create',  'App\Http\Controllers\UserController@create')->name('user.create');
+    Route::post('/user/add',  'App\Http\Controllers\UserController@store')->name('user.add');
+    Route::get('/user/edit/{id}',  'App\Http\Controllers\UserController@edit')->name('user.edit');
+    Route::post('/user/update',  'App\Http\Controllers\UserController@update')->name('user.update');
+    Route::get('/user/delete/{id}',  'App\Http\Controllers\UserController@destroy')->name('user.destroy');
+    Route::get('/privillage/setup', 'App\Http\Controllers\UserController@privillage')->name('admin.privillage');
+    Route::post('/add/privillage', 'App\Http\Controllers\UserController@addPrivillage')->name('add.privillage');
 
+    Route::post('/admin/search', 'App\Http\Controllers\SearchController@providerSearch')->name('admin.providerSearch');
+    Route::post('/admin/institude/search', 'App\Http\Controllers\SearchController@institudeSearch')->name('admin.institudeSearch');
+    Route::post('/admin/institude/enquiry/search', 'App\Http\Controllers\SearchController@institudeEnquirySearch');
+    Route::post('/admin/enquiry/search', 'App\Http\Controllers\SearchController@providerEnquirySearch');
+    Route::post('/confirmEnquiry', 'App\Http\Controllers\SearchController@confirmEnquiry');
+    Route::post('/services/confirmEnquiry', 'App\Http\Controllers\SearchController@servicesConfirmEnquiry');
 
+    Route::get('/admin/candidateEnquiry/{id}', 'App\Http\Controllers\AdminEnquiryController@candidateEnquiry')->name('admin.candidateEnquiry');
+    Route::get('/admin/institudeEnquiry/{id}', 'App\Http\Controllers\AdminEnquiryController@institudeEnquiry')->name('admin.institudeEnquiry');
+    Route::get('/admin/consultantEnquiry/{id}', 'App\Http\Controllers\AdminEnquiryController@consultantEnquiry')->name('admin.consultantEnquiry');
 
-Route::get('/admin/candidateEnquiry/{id}', 'App\Http\Controllers\AdminEnquiryController@candidateEnquiry')->name('admin.candidateEnquiry');
-Route::get('/admin/institudeEnquiry/{id}', 'App\Http\Controllers\AdminEnquiryController@institudeEnquiry')->name('admin.institudeEnquiry');
-Route::get('/admin/consultantEnquiry/{id}', 'App\Http\Controllers\AdminEnquiryController@consultantEnquiry')->name('admin.consultantEnquiry');
+    Route::get('/admin/enquiry/candidates/list', 'App\Http\Controllers\AdminEnquiryController@candidatesList')->name('admin.enquiry.list.candidates');
 
+    Route::get('/admin/enquiry/school/list', 'App\Http\Controllers\AdminEnquiryController@schoolList')->name('admin.enquiry.list.school');
+    Route::get('/admin/enquiry/college/list', 'App\Http\Controllers\AdminEnquiryController@collegeList')->name('admin.enquiry.list.college');
+    Route::get('/admin/enquiry/university/list', 'App\Http\Controllers\AdminEnquiryController@universityList')->name('admin.enquiry.list.university');
 
-Route::get('/admin/enquiry/candidates/list', 'App\Http\Controllers\AdminEnquiryController@candidatesList')->name('admin.enquiry.list.candidates');
-
-Route::get('/admin/enquiry/school/list', 'App\Http\Controllers\AdminEnquiryController@schoolList')->name('admin.enquiry.list.school');
-Route::get('/admin/enquiry/college/list', 'App\Http\Controllers\AdminEnquiryController@collegeList')->name('admin.enquiry.list.college');
-Route::get('/admin/enquiry/university/list', 'App\Http\Controllers\AdminEnquiryController@universityList')->name('admin.enquiry.list.university');
-
-Route::get('/admin/enquiry/consultant/list', 'App\Http\Controllers\AdminEnquiryController@consultantList')->name('admin.enquiry.list.consultant');
-Route::get('/admin/enquiry/immigration/list', 'App\Http\Controllers\AdminEnquiryController@immigrationList')->name('admin.enquiry.list.immigration');
-Route::get('/admin/enquiry/business/list', 'App\Http\Controllers\AdminEnquiryController@businessList')->name('admin.enquiry.list.business');
-
-
+    Route::get('/admin/enquiry/consultant/list', 'App\Http\Controllers\AdminEnquiryController@consultantList')->name('admin.enquiry.list.consultant');
+    Route::get('/admin/enquiry/immigration/list', 'App\Http\Controllers\AdminEnquiryController@immigrationList')->name('admin.enquiry.list.immigration');
+    Route::get('/admin/enquiry/business/list', 'App\Http\Controllers\AdminEnquiryController@businessList')->name('admin.enquiry.list.business');
+});
 
 // admin end
 
@@ -132,19 +128,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('update/calculator', 'App\Http\Controllers\OtherController@calculatorUpdate')->name('update.calculator');
     Route::get('view/calculator', 'App\Http\Controllers\OtherController@calculatorview')->name('view.calculator');
     Route::get('enquiry/calculator/{id}', 'App\Http\Controllers\OtherController@calculatorviewEnquiry')->name('view.calculator.enquiry');
-
-
-
-
-
-
-    Route::get('/canadainspair', function () {
-        return view('canadainspair');
-    })->name('canadainspair');
-
-    Route::get('/whycanada', function () {
-        return view('whycanada');
-    })->name('whycanada');
 
     Route::get('/personalEdit/{id}', 'App\Http\Controllers\ProfileController@profileEdit')->name('personalEdit');
     Route::post('/profilePersonalupdate/{id}', 'App\Http\Controllers\ProfileController@profileUpdate')->name('profilePersonalupdate');
@@ -210,7 +193,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/candidate/work/add', [App\Http\Controllers\CandidateWorkController::class, 'store'])->name('candidate_work_add');
     Route::post('/candidate/sponsor/add', [App\Http\Controllers\SponsorController::class, 'store'])->name('candidate_sponsor_add');
 
-
     Route::get('register/candidate/workexperience', function () {
         return view('register.workexperience');
     })->name('candidate_workexperience');
@@ -218,6 +200,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('register/candidate/sponsor', function () {
         return view('register.sponsor');
     })->name('candidate_sponsor');
+
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/test', function () {
+
+    return view('test');
+});

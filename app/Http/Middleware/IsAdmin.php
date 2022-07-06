@@ -4,7 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Sponsor;
 
 class IsAdmin
 {
@@ -18,10 +19,10 @@ class IsAdmin
     public function handle(Request $request, Closure $next)
     {
              
-        if($request->user()){
+        if(Auth::guard('admin')->user()){
         
              return $next($request);   
         }
-        return redirect('/');
+        return redirect(route('adminlogin'));
     }
 }

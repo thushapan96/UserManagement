@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RolePermisson extends Model
 {
     use HasFactory;
-    protected $table = 'role_permission';
+    protected $table = 'role_permisson';
     protected $primaryKey = 'id';
 
     protected $fillable = [

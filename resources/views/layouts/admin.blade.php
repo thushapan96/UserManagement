@@ -383,7 +383,65 @@
             </div>
         </nav>
     </header>
+    @php
+    $DashboardId = \App\Models\Permisson::where(['name' => 'Dashboard'])->value('id');
+    $DashboardIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $DashboardId)->first();
 
+    $ReportsEnquiry = \App\Models\Permisson::where(['name' => 'Reports Enquiry'])->value('id');
+    $ReportsEnquiryExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsEnquiry)->first();
+
+    $ReportsMembership = \App\Models\Permisson::where(['name' => 'Reports Membership'])->value('id');
+    $ReportsMembershipExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsMembership)->first();
+
+    $ReportsAccounts = \App\Models\Permisson::where(['name' => 'Reports Accounts'])->value('id');
+    $ReportsAccountsExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsAccounts)->first();
+
+    $settingId = \App\Models\Permisson::where(['name' => 'Settings'])->value('id');
+    $settingIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $settingId)->first();
+
+    $CandidateformsViewId = \App\Models\Permisson::where(['name' => 'Candidate forms View'])->value('id');
+    $CandidateformsViewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $CandidateformsViewId)->first();
+
+    $ServiceProviderformsviewId = \App\Models\Permisson::where(['name' => 'Service Provider forms view'])->value('id');
+    $ServiceProviderformsviewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ServiceProviderformsviewId)->first();
+
+    $CandidateEnquiryId = \App\Models\Permisson::where(['name' => 'Candidate Enquiry'])->value('id');
+    $CandidateEnquiryIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $CandidateEnquiryId)->first();
+
+    $ServiceProviderEnquiryId = \App\Models\Permisson::where(['name' => 'Service Provider Enquiry'])->value('id');
+    $ServiceProviderEnquiryIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ServiceProviderEnquiryId)->first();
+
+    $UserManagementViewId = \App\Models\Permisson::where(['name' => 'User Management View'])->value('id');
+    $UserManagementViewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementViewId)->first();
+
+    $UserManagementAddId = \App\Models\Permisson::where(['name' => 'User Management Add'])->value('id');
+    $UserManagementAddIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementAddId)->first();
+
+    $UserManagementEditId = \App\Models\Permisson::where(['name' => 'User Management Edit'])->value('id');
+    $UserManagementEditIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementEditId)->first();
+
+    $UserManagementDeleteId = \App\Models\Permisson::where(['name' => 'User Management Delete'])->value('id');
+    $UserManagementDeleteIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementDeleteId)->first();
+
+    $AccountsId = \App\Models\Permisson::where(['name' => 'Accounts'])->value('id');
+    $AccountsIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $AccountsId)->first();
+
+    $ReportsEnquiryId = \App\Models\Permisson::where(['name' => 'Reports Enquiry'])->value('id');
+    $ReportsEnquiryExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsEnquiryId)->first();
+
+    $ReportsMembershipId = \App\Models\Permisson::where(['name' => 'Reports Membership'])->value('id');
+    $ReportsMembershipIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsMembershipId)->first();
+
+    $ReportsAccountsId = \App\Models\Permisson::where(['name' => 'Reports Accounts'])->value('id');
+    $ReportsAccountsIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsAccountsId)->first();
+
+    $PrintId = \App\Models\Permisson::where(['name' => 'Print'])->value('id');
+    $PrintIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $PrintId)->first();
+
+    $ExportId = \App\Models\Permisson::where(['name' => 'Export'])->value('id');
+    $ExportIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ExportId)->first();
+
+    @endphp
     <aside id="sc-sidebar-main" class="sc-sidebar-info-fixed sideBar">
         <div class="uk-offcanvas-bar">
             <div class="sc-sidebar-main-scrollable" data-sc-scrollbar="visible-y">
@@ -393,7 +451,9 @@
                         <!-- <a><span style="color:#d81400;font-size: 17px;">Profile</span></a> -->
 
                         <ul class="sc-sidebar-menu " style="">
-                            <li title="" class="sc-page-active page-active">
+
+                            @if($DashboardIdExist)
+                            <li title="" class="">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
@@ -401,12 +461,16 @@
                                 </a>
 
                             </li>
+                            @endif
+                            @if($CandidateformsViewIdExist)
                             <li title="profile" class="page-can page-active">
                                 <a href="{{route('admin.candidate.view')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
                                     </span><span class="uk-nav-title">Candidate</span>
                                 </a>
                             </li>
+                            @endif
+                            @if($ServiceProviderformsviewIdExist)
                             <li title="institution" class="page-institution page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
@@ -467,20 +531,25 @@
                                 </ul>
 
                             </li>
+                            @endif
+                            @if($CandidateEnquiryIdExist || $ServiceProviderEnquiryIdExist)
                             <li title="enquiries" class="page-enquiries page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="fas fa-bell"></i>
                                     </span><span class="uk-nav-title">pending enquiries</span>
                                 </a>
                                 <ul class="sc-sidebar-menu-sub">
+                                    @if($CandidateEnquiryIdExist)
                                     <li class=" page-active">
                                         <a href="{{route('admin.enquiry.list.candidates')}}"> Candidates</a>
                                     </li>
+                                    @endif
+                                    @if($ServiceProviderEnquiryIdExist)
                                     <li class=" page-active">
                                         <a href="#"> Institution</a>
                                         <ul class="sc-sidebar-menu-sub">
-                                        
-    
+
+
                                             <li class="page-active">
                                                 <a href="{{route('admin.enquiry.list.school')}}" style="left: 18px !important;width: 70%;"> school</a>
                                             </li>
@@ -496,7 +565,7 @@
                                     <li class=" page-active">
                                         <a href="#"> Consultant</a>
                                         <ul class="sc-sidebar-menu-sub">
-                                        <li class=" page-active">
+                                            <li class=" page-active">
                                                 <a href="{{route('admin.enquiry.list.consultant')}}" style="left: 18px !important;width: 70%;"> RCIC </a>
                                             </li>
                                             <li class=" page-active">
@@ -507,9 +576,11 @@
                                     <li class=" page-active">
                                         <a href="{{route('admin.enquiry.list.business')}}"> Business</a>
                                     </li>
-
+                                    @endif
                                 </ul>
                             </li>
+                            @endif
+                            @if($UserManagementDeleteIdExist || $UserManagementEditIdExist || $UserManagementAddIdExist || $UserManagementViewIdExist)
                             <li title="" class="page-Ma page-active">
                                 <a href="{{route('admin.index')}}">
                                     <span class="uk-nav-icon"><i class="fa fa-users"></i>
@@ -518,6 +589,8 @@
                                 </a>
 
                             </li>
+                            @endif
+                            @if($AccountsIdExist)
                             <li title="" class=" page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon">
@@ -526,6 +599,8 @@
                                 </a>
 
                             </li>
+                            @endif
+                            @if( $ReportsEnquiryExist || $ReportsMembershipExist || $ReportsAccountsIdExist)
                             <li title="" class=" page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="mdi mdi-note-outline"></i>
@@ -533,36 +608,46 @@
                                     </span><span class="uk-nav-title">Reports</span>
                                 </a>
                                 <ul class="sc-sidebar-menu-sub">
+                                    @if( $ReportsMembershipExist )
                                     <li class=" page-active">
 
                                         <a href="#"> Membership expiry </a>
 
                                     </li>
+                                    @endif
+                                    @if( $ReportsAccountsIdExist )
                                     <li class=" page-active">
 
                                         <a href="#"> Accounting </a>
 
                                     </li>
+                                    @endif
+                                    @if( $ReportsEnquiryExist )
                                     <li class=" page-active">
 
-                                        <a href="#"> School enquiries and Progress status </a>
+                                        <a href="#"> enquiries</a>
 
                                     </li>
-
+                                    @endif
                                 </ul>
                             </li>
+                            @endif
+
+
+                            @if($settingIdExist)
                             <li title="" class=" page-active">
-                                <a href="#">
+                                <a href="{{route('admin.privillage')}}">
                                     <span class="uk-nav-icon"> <i class="fas fa-cog"></i>
 
                                     </span><span class="uk-nav-title">Settings</span>
                                 </a>
 
                             </li>
+                            @endif
                             <br>
 
                             @if(Auth::guard('admin')->user())
-                            <li title="logout">
+                            <li title="logout" class="sc-page-active  page-active">
                                 <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-sign-out-alt"></i></span>
                                     <span class="uk-nav-title">logout</span>
@@ -573,13 +658,14 @@
                                 </form>
                             </li>
                             @else
-                            <li title="login">
+                            <li title="login" class="sc-page-active  page-active">
                                 <a href="{{route('adminlogin')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fas fa-sign-in-alt"></i></span>
                                     <span class="uk-nav-title">Login</span>
                                 </a>
                             </li>
                             @endif
+
                         </ul>
                     </li>
 
