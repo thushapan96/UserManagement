@@ -404,7 +404,7 @@
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
-                                    </span><span class="uk-nav-title">Dashboard{{$DashboardId }}</span>
+                                    </span><span class="uk-nav-title">Dashboard}</span>
                                 </a>
 
                             </li>
