@@ -481,12 +481,9 @@
                                     </span><span class="uk-nav-title">pending enquiries</span>
                                 </a>
                                 <ul class="sc-sidebar-menu-sub">
-                                    @if($CandidateEnquiryIdExist)
                                     <li class=" page-active">
                                         <a href="{{route('admin.enquiry.list.candidates')}}"> Candidates</a>
                                     </li>
-                                    @endif
-                                    @if($ServiceProviderEnquiryIdExist)
                                     <li class=" page-active">
                                         <a href="#"> Institution</a>
                                         <ul class="sc-sidebar-menu-sub">
@@ -518,7 +515,6 @@
                                     <li class=" page-active">
                                         <a href="{{route('admin.enquiry.list.business')}}"> Business</a>
                                     </li>
-                                    @endif
                                 </ul>
                             </li>
                             
