@@ -28,7 +28,17 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
+@php
 
+
+
+$PrintId = \App\Models\Permisson::where(['name' => 'Print'])->value('id');
+$PrintIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $PrintId)->first();
+
+$ExportId = \App\Models\Permisson::where(['name' => 'Export'])->value('id');
+$ExportIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ExportId)->first();
+
+@endphp
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
@@ -409,12 +419,23 @@
 
                             </li>
                             @endif
+                            @php
+                            $CandidateformsViewId = \App\Models\Permisson::where(['name' => 'Candidate forms View'])->value('id');
+                            $CandidateformsViewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $CandidateformsViewId)->first();
+                            @endphp
+                            @if($CandidateformsViewIdExist)
                             <li title="profile" class="page-can page-active">
                                 <a href="{{route('admin.candidate.view')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
                                     </span><span class="uk-nav-title">Candidate</span>
                                 </a>
                             </li>
+                            @endif
+                            @php
+                            $ServiceProviderformsviewId = \App\Models\Permisson::where(['name' => 'Service Provider forms view'])->value('id');
+                            $ServiceProviderformsviewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ServiceProviderformsviewId)->first();
+                            @endphp
+                            @if($ServiceProviderformsviewIdExist)
                             <li title="institution" class="page-institution page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
@@ -475,15 +496,27 @@
                                 </ul>
 
                             </li>
+                            @endif
+                            @php
+                            $CandidateEnquiryId = \App\Models\Permisson::where(['name' => 'Candidate Enquiry'])->value('id');
+                            $CandidateEnquiryIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $CandidateEnquiryId)->first();
+
+                            $ServiceProviderEnquiryId = \App\Models\Permisson::where(['name' => 'Service Provider Enquiry'])->value('id');
+                            $ServiceProviderEnquiryIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ServiceProviderEnquiryId)->first();
+                            @endphp
+                            @if($CandidateEnquiryIdExist || $ServiceProviderEnquiryIdExist)
                             <li title="enquiries" class="page-enquiries page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="fas fa-bell"></i>
                                     </span><span class="uk-nav-title">pending enquiries</span>
                                 </a>
                                 <ul class="sc-sidebar-menu-sub">
+                                    @if($CandidateEnquiryIdExist)
                                     <li class=" page-active">
                                         <a href="{{route('admin.enquiry.list.candidates')}}"> Candidates</a>
                                     </li>
+                                    @endif
+                                    @if($ServiceProviderEnquiryIdExist)
                                     <li class=" page-active">
                                         <a href="#"> Institution</a>
                                         <ul class="sc-sidebar-menu-sub">
@@ -515,9 +548,26 @@
                                     <li class=" page-active">
                                         <a href="{{route('admin.enquiry.list.business')}}"> Business</a>
                                     </li>
+                                    @endif
                                 </ul>
                             </li>
-                            
+                            @endif
+
+                            @php
+                            $UserManagementViewId = \App\Models\Permisson::where(['name' => 'User Management View'])->value('id');
+                            $UserManagementViewIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementViewId)->first();
+
+                            $UserManagementAddId = \App\Models\Permisson::where(['name' => 'User Management Add'])->value('id');
+                            $UserManagementAddIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementAddId)->first();
+
+                            $UserManagementEditId = \App\Models\Permisson::where(['name' => 'User Management Edit'])->value('id');
+                            $UserManagementEditIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementEditId)->first();
+
+                            $UserManagementDeleteId = \App\Models\Permisson::where(['name' => 'User Management Delete'])->value('id');
+                            $UserManagementDeleteIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $UserManagementDeleteId)->first();
+                            @endphp
+
+                            @if($UserManagementDeleteIdExist || $UserManagementEditIdExist || $UserManagementAddIdExist || $UserManagementViewIdExist)
                             <li title="" class="page-Ma page-active">
                                 <a href="{{route('admin.index')}}">
                                     <span class="uk-nav-icon"><i class="fa fa-users"></i>
@@ -526,7 +576,12 @@
                                 </a>
 
                             </li>
-                            
+                            @endif
+                            @php
+                            $AccountsId = \App\Models\Permisson::where(['name' => 'Accounts'])->value('id');
+                            $AccountsIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $AccountsId)->first();
+                            @endphp
+                            @if($AccountsIdExist)
                             <li title="" class=" page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon">
@@ -535,6 +590,19 @@
                                 </a>
 
                             </li>
+                            @endif
+                            @php
+                            $ReportsEnquiry = \App\Models\Permisson::where(['name' => 'Reports Enquiry'])->value('id');
+                            $ReportsEnquiryExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsEnquiry)->first();
+
+                            $ReportsMembership = \App\Models\Permisson::where(['name' => 'Reports Membership'])->value('id');
+                            $ReportsMembershipExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsMembership)->first();
+
+                            $ReportsAccounts = \App\Models\Permisson::where(['name' => 'Reports Accounts'])->value('id');
+                            $ReportsAccountsExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ReportsAccounts)->first();
+                            @endphp
+
+                            @if( $ReportsEnquiryExist || $ReportsMembershipExist || $ReportsAccountsIdExist)
                             <li title="" class=" page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="mdi mdi-note-outline"></i>
@@ -542,28 +610,37 @@
                                     </span><span class="uk-nav-title">Reports</span>
                                 </a>
                                 <ul class="sc-sidebar-menu-sub">
+                                    @if( $ReportsMembershipExist )
                                     <li class=" page-active">
 
                                         <a href="#"> Membership expiry </a>
 
                                     </li>
-                                   
+                                    @endif
+                                    @if( $ReportsAccountsIdExist )
                                     <li class=" page-active">
 
                                         <a href="#"> Accounting </a>
 
                                     </li>
-                                    
+                                    @endif
+                                    @if( $ReportsEnquiryExist )
                                     <li class=" page-active">
 
                                         <a href="#"> enquiries</a>
 
                                     </li>
-                                    
+                                    @endif
                                 </ul>
                             </li>
+                            @endif
 
+                            @php
+                            $settingId = \App\Models\Permisson::where(['name' => 'Settings'])->value('id');
+                            $settingIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $settingId)->first();
+                            @endphp
 
+                            @if($settingIdExist)
                             <li title="" class=" page-active">
                                 <a href="{{route('admin.privillage')}}">
                                     <span class="uk-nav-icon"> <i class="fas fa-cog"></i>
@@ -572,6 +649,7 @@
                                 </a>
 
                             </li>
+                            @endif
                             <br>
 
                             @if(Auth::guard('admin')->user())
