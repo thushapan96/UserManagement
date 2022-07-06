@@ -28,17 +28,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
-@php
 
-
-
-$PrintId = \App\Models\Permisson::where(['name' => 'Print'])->value('id');
-$PrintIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $PrintId)->first();
-
-$ExportId = \App\Models\Permisson::where(['name' => 'Export'])->value('id');
-$ExportIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $ExportId)->first();
-
-@endphp
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
@@ -414,7 +404,7 @@ $ExportIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('adm
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
-                                    </span><span class="uk-nav-title">Dashboard</span>
+                                    </span><span class="uk-nav-title">Dashboard{{$DashboardIdExist}}</span>
                                 </a>
 
                             </li>
