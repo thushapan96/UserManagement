@@ -203,8 +203,9 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/test', function () {
-
-    return view('test');
-});
+Route::get('/membership', [App\Http\Controllers\HomeController::class, 'membership'])->name('membership');
+Route::get('/membership/add', [App\Http\Controllers\HomeController::class, 'membershipAdd'])->name('add.membership');
+Route::post('/membership/add', [App\Http\Controllers\HomeController::class, 'membershipStore'])->name('membership.add');
+Route::post('/extend/add', [App\Http\Controllers\HomeController::class, 'extendService'])->name('service.add');

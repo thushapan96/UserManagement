@@ -11,7 +11,7 @@
 
     <div class='uk-card col-md-6' style="margin-left:auto !important;margin-right:auto !important">
         <div class="uk-card-body sc-padding-medium">
-            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+            <fieldset class="uk-fieldset md-bg-blue-grey-50 sc-padding">
 
                 <div class="row custom-box " id="">
 
@@ -26,7 +26,16 @@
                             </select>
                         </div>
                     </div>
+                    @php
+                    $mytime = Carbon\Carbon::now()->format('Y-m-d');
+                    @endphp
 
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <label>Register Date</label>
+                            <input class="form-control" type="date" value="{{$mytime}}" id="StartDate" name="start_date" readonly>
+                        </div>
+                    </div>
 
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
@@ -42,7 +51,7 @@
 
                         <div class="col-lg-4 col-md-4 col-4">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck" name="services[]" value="study" {{ (is_array($membership->service) and in_array("study", $membership->service)) ? ' checked' : '' }}>
+                                <input type="checkbox" class="custom-control-input" id="customCheck" name="service[]" value="study" {{ (is_array($membership->service) and in_array("study", $membership->service)) ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="customCheck">Study </label>
                             </div>
                         </div>

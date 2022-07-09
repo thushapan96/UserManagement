@@ -321,12 +321,37 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#"><img src="{{asset('assets/img/avatars/avatar_default_sm.png')}}" alt=""></a>
+                        @php
+                        $img = Auth::user()->img;
+                        @endphp
+                        @if($img)
+                        <a href="#"><img src="{{url('files/'.$img)}}" alt="" style="width:38px;height:38px"></a>
+                        @else
+                        <a href="#"><img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" style="width:38px;height:38px"></a>
+                        @endif
                         <div class="uk-navbar-dropdown uk-dropdown-small">
                             <ul class="uk-nav uk-nav-navbar">
-                                <li><a href="pages-user_profile.html">Profile</a></li>
-                                <li><a href="pages-settings.html">Settings</a></li>
-                                <li><a href="login_page.html">Log Out</a></li>
+
+                                @if(Auth::user())
+                                <li title="logout">
+                                    <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        <span class="uk-nav-icon"></span>
+                                        <span class="uk-nav-title">logout</span>
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                                @else
+                                <li title="login">
+                                    <a href="{{route('login')}}">
+                                        <span class="uk-nav-icon"></span>
+                                        <span class="uk-nav-title">Login</span>
+                                    </a>
+                                </li>
+                                @endif
+
                             </ul>
                         </div>
                     </li>
