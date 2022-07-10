@@ -468,15 +468,21 @@
                                 @endif
                                 @endif
                             </li>
-                            @if(auth()->user()->role == 'candidate')
+
                             <li title="Dashboards" class="page-Dashboards page-active">
+                                @if(auth()->user()->role == 'candidate')
                                 <a href="{{route('membership')}}">
-                                    <span class="uk-nav-icon"><i class="fas fa-users"></i>
-                                    </span><span class="uk-nav-title">Membership</span>
-                                </a>
+                                    @elseif(auth()->user()->service_type == 'Institution')
+                                    <a href="{{route('membership.institude')}}">
+                                        @else
+                                        <a href="{{route('membership.provider')}}">
+                                            @endif
+                                            <span class="uk-nav-icon"><i class="fas fa-users"></i>
+                                            </span><span class="uk-nav-title">Membership</span>
+                                        </a>
 
                             </li>
-                            @endif
+
                             <li title="institution" class="page-institution page-active">
                                 <a href="#">
                                     <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>

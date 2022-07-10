@@ -79,6 +79,15 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::get('/admin/enquiry/consultant/list', 'App\Http\Controllers\AdminEnquiryController@consultantList')->name('admin.enquiry.list.consultant');
     Route::get('/admin/enquiry/immigration/list', 'App\Http\Controllers\AdminEnquiryController@immigrationList')->name('admin.enquiry.list.immigration');
     Route::get('/admin/enquiry/business/list', 'App\Http\Controllers\AdminEnquiryController@businessList')->name('admin.enquiry.list.business');
+
+    Route::get('/admin/membership/candidate', 'App\Http\Controllers\MembershipController@membershipCandidate')->name('admin.membership.candidate');
+    Route::get('/admin/membership/institution', 'App\Http\Controllers\MembershipController@membershipInstitution')->name('admin.membership.institution');
+    Route::get('/admin/membership/provider', 'App\Http\Controllers\MembershipController@membershipProvider')->name('admin.membership.provider');
+
+    Route::post('/admin/candidate/mebership/add', 'App\Http\Controllers\MembershipController@candidateMebershipAdd')->name('admin.candidate.mebership.add');
+    Route::post('/admin/institution/mebership/add', 'App\Http\Controllers\MembershipController@institutionMebershipAdd')->name('admin.institution.mebership.add');
+    Route::post('/admin/provider/mebership/add', 'App\Http\Controllers\MembershipController@providerMebershipAdd')->name('admin.provider.mebership.add');
+
 });
 
 // admin end
@@ -209,3 +218,15 @@ Route::get('/membership', [App\Http\Controllers\HomeController::class, 'membersh
 Route::get('/membership/add', [App\Http\Controllers\HomeController::class, 'membershipAdd'])->name('add.membership');
 Route::post('/membership/add', [App\Http\Controllers\HomeController::class, 'membershipStore'])->name('membership.add');
 Route::post('/extend/add', [App\Http\Controllers\HomeController::class, 'extendService'])->name('service.add');
+Route::post('/package/add', [App\Http\Controllers\HomeController::class, 'packageAdd'])->name('package.add');
+
+
+Route::get('/membership/institude', [App\Http\Controllers\HomeController::class, 'membershipInstitude'])->name('membership.institude');
+Route::get('/membership/add/institude', [App\Http\Controllers\HomeController::class, 'membershipAddInstitude'])->name('add.membership.institude');
+Route::post('/membership/add/institude', [App\Http\Controllers\HomeController::class, 'membershipStoreInstitude'])->name('membership.add.institude');
+Route::post('/package/add/institude', [App\Http\Controllers\HomeController::class, 'packageAddInstitude'])->name('package.add.institude');
+
+Route::get('/membership/provider', [App\Http\Controllers\HomeController::class, 'membershipProvider'])->name('membership.provider');
+Route::get('/membership/add/provider', [App\Http\Controllers\HomeController::class, 'membershipAddProvider'])->name('add.membership.provider');
+Route::post('/membership/add/provider', [App\Http\Controllers\HomeController::class, 'membershipStoreProvider'])->name('membership.add.provider');
+Route::post('/package/add/provider', [App\Http\Controllers\HomeController::class, 'packageAddProvider'])->name('package.add.provider');

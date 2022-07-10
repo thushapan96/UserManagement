@@ -13,7 +13,6 @@
 @endif
 <!-- Subscribe & Stay Connected. Start -->
 <style>
-
 </style>
 <section>
     <form id="form" action="{{route('add.consultant')}}" method="post" enctype="multipart/form-data">

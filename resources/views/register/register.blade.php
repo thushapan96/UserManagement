@@ -442,6 +442,7 @@
                                                     </div>
                                                     <div class="ld ld-ring ld-spin"></div>
                                                 </button> </a>
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -516,7 +517,7 @@
                 new google.maps.places.Autocomplete(input).bindTo("bounds", map);
 
             }
-           
+
 
 
             const infowindow = new google.maps.InfoWindow();

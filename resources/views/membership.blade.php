@@ -2,12 +2,12 @@
 @section('content')
 
 <div id="modal-close-default" data-uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
+    <div class="uk-modal-dialog uk-modal-body" style="width:500px !important">
         <button class="uk-modal-close-default" type="button" data-uk-close></button>
         <form action="{{route('service.add')}}" method="post">
             @csrf
-            <label> Extend Services</label>
-            <div class="row custom-box sd multipleCandidate ">
+            <h6> Extend Services</h6>
+            <div class="row custom-box sd multipleCandidate">
 
                 <div class="col-lg-4 col-md-4 col-4">
                     <div class="custom-control custom-checkbox">
@@ -47,145 +47,183 @@
                     </div>
                 </div>
             </div>
-            <p class="uk-text-right">
-                <button class="uk-button uk-button-primary confirmEnquiryy" type="submit">Confirm</button>
+            <p class="uk-text-center">
+                <button class="sc-button" type="submit">Confirm</button>
             </p>
         </form>
     </div>
 </div>
 
+<div id="modal-close-Package" data-uk-modal>
+    <div class="uk-modal-dialog uk-modal-body" style="width:500px !important">
+        <button class="uk-modal-close-default" type="button" data-uk-close></button>
+        <form action="{{route('package.add')}}" method="post">
+            @csrf
+            <h6> Extend Services</h6>
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="form-group">
+                    <label>Select Package </label>
+                    <select class="form-control" name="package" id="package">
+                        <option value="Basic" {{$package == 'Basic' ? 'selected':''}}>Basic</option>
+                        <option value="Stanadard" {{$package == 'Stanadard' ? 'selected':''}}>Standard</option>
+                        <option value="Premium" {{$package == 'Premium' ? 'selected':''}}>Premium</option>
+                    </select>
+                </div>
+            </div>
+            <input type="text" value="{{$membership->membership_duration}}" name="membership_duration"  hidden>
+            <p class="uk-text-center">
+                <button class="sc-button" type="submit">Confirm</button>
+            </p>
+        </form>
+    </div>
+</div>
 @csrf
 <div class='col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
     <h6 class="" style="text-align:center">Membership </h6>
 
 </div>
 
+<div class='col-md-8' style="margin-left:auto !important;margin-right:auto !important">
 
-<div class='uk-card col-md-8' style="margin-left:auto !important;margin-right:auto !important">
-    <div class="uk-card-body sc-padding-medium">
-        <fieldset class="uk-fieldset md-bg-blue-grey-50  sc-padding">
-
-            <div class="row ">
-                <div class="col-md-4">
-                    <strong class="labels"> Name </strong>
-                </div>
-                <div class="col-md-1">
-                    <strong class="labels"> : </strong>
-                </div>
-                <div class="col-md-7">
-                    <label class="labels">{{$membership->first_name}}</label>&nbsp;&nbsp;
-                    <label class="labels">{{$membership->middle_name}}</label>&nbsp;&nbsp;
+    <div class="uk-child-width-2-2@s uk-child-width-3-3@l uk-grid" data-uk-grid="" style="margin-left:auto !important;margin-right:auto !important">
+        <div class="uk-grid-margin uk-first-column">
+            @csrf
+            <div class="uk-card">
+                <div class="uk-card-header md-bg-red-700 sc-light uk-margin-medium-bottom">
+                    <label class="labels">{{$membership->first_name}}</label>&nbsp;
+                    <label class="labels">{{$membership->middle_name}}</label>&nbsp;
                     <label class="labels">{{$membership->last_name}}</label>
-                </div>
-            </div><br>
-
-            <div class="row ">
-                <div class="col-md-4">
-                    <strong class="labels"> Service Type</strong>
-                </div>
-
-                <div class="col-md-1">
-                    <strong class="labels"> : </strong>
-                </div>
-                <div class="col-md-7">
-                    <label class="labels">{{$membership->service_type}}</label><br>
 
                 </div>
-            </div><br>
+                <input type="text" name="type" value="Basic" hidden>
+                <input type="text" name="duration" value="12" hidden>
 
-            <div class="row ">
-                <div class="col-md-4">
-                    <strong class="labels"> Selected Serivecs</strong>
-                </div>
+                <div class="uk-card-body">
 
-                <div class="col-md-1">
-                    <strong class="labels"> : </strong>
-                </div>
-                <div class="col-md-7">
-                    @foreach($membership->service as $row)
-                    <label class="labels"> {{$row}}</label><br>
-                    @endforeach
-                </div>
-            </div><br>
 
-            @if($membership->membership_duration)
-            <div class="row ">
-                <div class="col-md-4">
-                    <strong class="labels"> Register Date</strong>
-                </div>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <strong class="labels"> Service Type</strong>
+                        </div>
 
-                <div class="col-md-1">
-                    <strong class="labels"> : </strong>
-                </div>
-                <div class="col-md-7">
+                        <div class="col-md-1">
+                            <strong class="labels"> : </strong>
+                        </div>
+                        <div class="col-md-7">
+                            <label class="labels">{{$membership->service_type}}</label><br>
 
-                    <label class="labels"> {{$membership->start_date}}</label><br>
+                        </div>
+                    </div><br>
+
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <strong class="labels"> Selected Services</strong>
+                        </div>
+
+                        <div class="col-md-1">
+                            <strong class="labels"> : </strong>
+                        </div>
+                        <div class="col-md-7">
+                            @foreach($membership->service as $row)
+                            <label class="labels"> {{$row}}</label><br>
+                            @endforeach
+                        </div>
+                    </div><br>
+
+                    @if($membership->membership_duration)
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <strong class="labels"> Register Date</strong>
+                        </div>
+
+                        <div class="col-md-1">
+                            <strong class="labels"> : </strong>
+                        </div>
+                        <div class="col-md-7">
+
+                            <label class="labels"> {{$membership->start_date}}</label><br>
+
+                        </div>
+                    </div><br>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <strong class="labels"> Expiry Date</strong>
+                        </div>
+
+                        <div class="col-md-1">
+                            <strong class="labels"> : </strong>
+                        </div>
+                        <div class="col-md-7">
+
+                            <label class="labels"> {{$membership->end_date}}</label><br>
+
+                        </div>
+                    </div><br>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <strong class="labels"> Membership Duration</strong>
+                        </div>
+
+                        <div class="col-md-1">
+                            <strong class="labels"> : </strong>
+                        </div>
+                        <div class="col-md-7">
+
+                            <label class="labels"> {{$membership->membership_duration}} Months</label><br>
+
+                        </div>
+                    </div><br>
+
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <strong class="labels"> Selected Package</strong>
+                        </div>
+
+                        <div class="col-md-1">
+                            <strong class="labels"> : </strong>
+                        </div>
+                        <div class="col-md-7">
+
+                            <label class="labels"> {{$package == 'Stanadard' ? 'Standard':$package}}</label><br>
+
+                        </div>
+                    </div><br>
+                    @endif
 
                 </div>
-            </div><br>
-            <div class="row ">
-                <div class="col-md-4">
-                    <strong class="labels"> Expiry Date</strong>
+                <hr class="uk-margin-remove">
+                <div class="uk-card-footer md-bg-grey-50">
+                    @if($membership->membership_duration == '')
+                    <div style="color:tomato">If you want extend services, you need to get membership !</div><br>
+                    <a href="{{route('add.membership')}}" class="sc-button"> Membership Registration</a><br><br>
+                    @else
+                    <a href="#" class="sc-button" data-uk-toggle="target: #modal-close-default"> Extend Services</a><br><br>
+                    <a href="#" class="sc-button" data-uk-toggle="target: #modal-close-Package"> Change Package</a>
+                    @endif
                 </div>
+            </div>
 
-                <div class="col-md-1">
-                    <strong class="labels"> : </strong>
-                </div>
-                <div class="col-md-7">
-
-                    <label class="labels"> {{$membership->end_date}}</label><br>
-
-                </div>
-            </div><br>
-            <div class="row ">
-                <div class="col-md-4">
-                    <strong class="labels"> Membership Duration</strong>
-                </div>
-
-                <div class="col-md-1">
-                    <strong class="labels"> : </strong>
-                </div>
-                <div class="col-md-7">
-
-                    <label class="labels"> {{$membership->membership_duration}} Months</label><br>
-
-                </div>
-            </div><br>
-            @endif
-            <!-- <div class="float-right">
-                    <button type="submit" class="client-btn bmenu uk-button uk-button-primary">Save </button>
-                </div> -->
-            @if($membership->membership_duration == '')
-            <div style="color:tomato">If you want extend services, you need to get membership !</div><br>
-            <a href="{{route('add.membership')}}"><button type="button" class="sc-button sc-button-primary sc-js-button-wave-light uk-width-1-3 waves-effect waves-button waves-light"> Membership Registration</button></a><br><br>
-            @else
-            <button type="button" class="sc-button sc-button-primary sc-js-button-wave-light uk-width-1-3 waves-effect waves-button waves-light" data-uk-toggle="target: #modal-close-default"> Extend Services</button><br>
-            @endif
-        </fieldset>
+        </div>
     </div>
-</div>
+
+    <script>
+        $(document).ready(function() {
+            var service = @json($membership -> service);
 
 
+            console.log(service);
+            $(".service").click(function() {
 
+                var val = $(this).val();
 
-<script>
-    $(document).ready(function() {
-        var service = @json($membership -> service);
-        
-        
-        console.log(service);
-        $(".service").click(function() {
+                if (jQuery.inArray(val, service) != -1) {
+                    alert('You Can not Degrade Services !')
+                    return false;
+                }
 
-            var val = $(this).val();
+            })
 
-            if (jQuery.inArray(val, service) != -1) {
-                alert('You Can not Degrade Services !')
-                return false;
-            }
+        });
+    </script>
 
-        })
-
-    });
-</script>
-
-@endsection
+    @endsection

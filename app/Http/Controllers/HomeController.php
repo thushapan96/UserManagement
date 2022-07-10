@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\MembershipCandidate;
+use App\Models\MembershipInstitution;
+use App\Models\MembershipProvider;
 use App\Models\Personal;
 use Carbon\Carbon;
 
@@ -67,8 +70,12 @@ class HomeController extends Controller
 
         $membership =   User::where('users.id', Auth::user()->id)->join('candidate_personals', 'candidate_personals.user_id', 'users.id')
             ->select('users.*', 'candidate_personals.first_name', 'candidate_personals.middle_name', 'candidate_personals.last_name')->first();
-
-        return view('membership')->with('membership', $membership);
+        if ($membership->membership_plan_id) {
+            $package = MembershipCandidate::where('id', $membership->membership_plan_id)->value('type');
+        } else {
+            $package = '';
+        }
+        return view('membership')->with('membership', $membership)->with('package', $package);
     }
     public function membershipAdd()
     {
@@ -93,12 +100,19 @@ class HomeController extends Controller
             $user->service = $request->service;
             $user->service_type = 'multiple';
         }
+        $mId = MembershipCandidate::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
+        $user->membership_plan_id =  $mId;
+
         $user->save();
+
+
+
+
 
         return redirect(route('membership'));
     }
     public function extendService(Request $request)
-    {     
+    {
         $user =   User::find(Auth::user()->id);
 
         $user->service = $request->service;
@@ -107,5 +121,110 @@ class HomeController extends Controller
         $user->save();
 
         return redirect(route('membership'));
+    }
+    public function packageAdd(Request $request)
+    {
+        $user =   User::find(Auth::user()->id);
+
+        $mId = MembershipCandidate::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
+        $user->membership_plan_id = $mId;
+        $user->save();
+
+        return redirect(route('membership'));
+    }
+
+
+    public function membershipInstitude()
+    {
+        $membership =   User::where('users.id', Auth::user()->id)->join('institutions', 'institutions.user_id', 'users.id')
+            ->select('users.*', 'institutions.name')->first();
+
+        if ($membership->membership_institution_id) {
+            $package = MembershipInstitution::where('id', $membership->membership_institution_id)->value('type');
+        } else {
+            $package = '';
+        }
+        return view('membershipInstitude')->with('membership', $membership)->with('package', $package);
+    }
+    public function membershipAddInstitude()
+    {
+
+        $membership =   User::where('users.id', Auth::user()->id)->join('institutions', 'institutions.user_id', 'users.id')
+            ->select('users.*', 'institutions.name')->first();
+
+        return view('membershipInstitudeAdd')->with('membership', $membership);
+    }
+    public function membershipStoreInstitude(Request $request)
+    {
+
+        $user =   User::find(Auth::user()->id);
+        $user->start_date = $request->start_date;
+        $user->end_date = $request->end_date;
+        $user->membership_duration = $request->membership_duration;
+
+        $mId = MembershipInstitution::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
+        $user->membership_institution_id  =  $mId;
+
+        $user->save();
+
+        return redirect(route('membership.institude'));
+    }
+
+    public function packageAddInstitude(Request $request)
+    {
+        $user =   User::find(Auth::user()->id);
+
+        $mId = MembershipInstitution::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
+        $user->membership_institution_id = $mId;
+        $user->save();
+
+        return redirect(route('membership.institude'));
+    }
+
+    public function membershipProvider()
+    {
+        $membership =   User::where('users.id', Auth::user()->id)->join('providers', 'providers.user_id', 'users.id')
+            ->select('users.*', 'providers.first_name', 'providers.last_name')->first();
+
+        if ($membership->membership_provider_id) {
+            $package = MembershipProvider::where('id', $membership->membership_provider_id)->value('type');
+        } else {
+            $package = '';
+        }
+        return view('membershipProvider')->with('membership', $membership)->with('package', $package);
+    }
+    public function membershipAddProvider()
+    {
+
+        $membership =   User::where('users.id', Auth::user()->id)->join('providers', 'providers.user_id', 'users.id')
+            ->select('users.*', 'providers.first_name', 'providers.last_name')->first();
+
+        return view('membershipProviderAdd')->with('membership', $membership);
+    }
+    public function membershipStoreProvider(Request $request)
+    {
+
+        $user =   User::find(Auth::user()->id);
+        $user->start_date = $request->start_date;
+        $user->end_date = $request->end_date;
+        $user->membership_duration = $request->membership_duration;
+
+        $mId = MembershipProvider::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
+        $user->membership_provider_id  =  $mId;
+
+        $user->save();
+
+        return redirect(route('membership.provider'));
+    }
+
+    public function packageAddProvider(Request $request)
+    {
+        $user =   User::find(Auth::user()->id);
+
+        $mId = MembershipProvider::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
+        $user->membership_provider_id = $mId;
+        $user->save();
+
+        return redirect(route('membership.provider'));
     }
 }

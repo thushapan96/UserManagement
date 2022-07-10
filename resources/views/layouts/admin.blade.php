@@ -630,16 +630,55 @@
                             $settingIdExist = \App\Models\RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $settingId)->first();
                             @endphp
 
-                            @if($settingIdExist)
+
                             <li title="" class=" page-active">
-                                <a href="{{route('admin.privillage')}}">
+                                <a href="#">
                                     <span class="uk-nav-icon"> <i class="fas fa-cog"></i>
 
                                     </span><span class="uk-nav-title">Settings</span>
                                 </a>
+                                <ul class="sc-sidebar-menu-sub">
+                                    @if($settingIdExist)
+                                    <li class=" page-active">
 
+                                        <a href="{{route('admin.privillage')}}"> User Management </a>
+
+                                    </li>
+                                    @endif
+                                    <li class=" page-active">
+
+                                        <a href="#"> Membership </a>
+
+                                        <ul class="sc-sidebar-menu-sub">
+
+                                            <li class="page-active">
+
+                                                <a href="{{route('admin.membership.candidate')}}" style="left: 15px !important;width:70%;">Candidate </a>
+
+                                            </li>
+
+                                            <li class=" page-active">
+
+                                                <a href="{{route('admin.membership.institution')}}" style="left: 15px !important;width:70%;">Institution </a>
+
+                                            </li>
+
+                                            <li class=" page-active">
+
+                                                <a href="{{route('admin.membership.provider')}}" style="left: 15px !important;width:70%;">Provider </a>
+
+                                            </li>
+
+
+                                        </ul>
+
+                                    </li>
+
+
+
+                                </ul>
                             </li>
-                            @endif
+
                             <br>
 
                             @if(Auth::guard('admin')->user())
