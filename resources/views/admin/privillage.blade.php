@@ -10,7 +10,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <label>Select Role Type</label>
                     <select id="role" name="role" class="form-control" required>
-                        <!-- <option value="1" {{request()->query('roleType') == "1" ? 'selected':''}}>Super Admin</option> -->
+                        <option value="1" {{request()->query('roleType') == "1" ? 'selected':''}}>Super Admin</option>
                         <option value="2" {{request()->query('roleType') == "2" ? 'selected':''}}>Admin</option>
                         <option value="3" {{request()->query('roleType') == "3" ? 'selected':''}}>Accountant</option>
                         <option value="4" {{request()->query('roleType') == "4" ? 'selected':''}}>Co-Ordinator</option>
