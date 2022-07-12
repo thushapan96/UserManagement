@@ -18,7 +18,7 @@
                     </select><br>
                 </div>
                 @php
-                $roleType = request()->query('roleType');
+                 $roleType = request()->query('roleType');
                 if($roleType){
                 $ArraypermissonId = \App\Models\RolePermisson::where(['role_id' => $roleType])->get()->pluck('permisson_id');
                 }else{

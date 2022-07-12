@@ -228,9 +228,7 @@
                                     <div class="sc-list-body">
                                         <p class="uk-margin-remove uk-text-wrap">
                                             @if($row->offering_service)
-                                            @foreach($row->offering_service as $service)
-                                            {{$service}},
-                                            @endforeach
+                                            {{$row->offering_service}},
                                             @endif
                                         </p>
                                     </div>

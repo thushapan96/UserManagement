@@ -182,7 +182,7 @@
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="3BCalculator" name="Calculator" value="1" {{ $membershipCandidate1->Calculator == 1 ? ' checked' : '' }}>
-                                <label class="custom-control-label" for="3BCalculator">Calculator</label>
+                                <label class="custom-control-label" for="3BCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="3BDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate1->DefaultReports == 1 ? ' checked' : '' }}>
@@ -208,27 +208,28 @@
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3BAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate1->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BAdd_On_features_Free">Add_On_features_Free</label>
-
+                                    <label class="custom-control-label" for="3BAdd_On_features_Free">Free</label>
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="3BAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate1->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BAdd_On_features_Free-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="3BAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
+                               
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3BAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate1->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BAnytime_Single_Multiple">Anytime upgrade services for free</label>
+                                    <label class="custom-control-label" for="3BAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-
                                     <input class="custom-control-input" type="checkbox" id="3BAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate1->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BAnytime_Single_Multiple-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="3BAnytime_Single_Multiple-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : Anytime upgrade services  </label> 
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3BEnquiriesSchool" style="width:12%;height:50%" name="EnquiriesSchool" value="{{$membershipCandidate1->EnquiriesSchool}}">
@@ -285,7 +286,7 @@
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="3SCalculator" name="Calculator" value="1" {{ $membershipCandidate2->Calculator == 1 ? ' checked' : '' }}>
-                                <label class="custom-control-label" for="3SCalculator">Calculator</label>
+                                <label class="custom-control-label" for="3SCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="3SDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate2->DefaultReports == 1 ? ' checked' : '' }}>
@@ -311,27 +312,29 @@
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3SAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate2->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3SAdd_On_features_Free">Add_On_features_Free</label>
+                                    <label class="custom-control-label" for="3SAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="3SAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate2->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3SAdd_On_features_Free-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="3SAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3SAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate2->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3SAnytime_Single_Multiple">Anytime upgrade services for free</label>
+                                    <label class="custom-control-label" for="3SAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="3SAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate2->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3SAnytime_Single_Multiple-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="3SAnytime_Single_Multiple-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : Anytime upgrade services  </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3SEnquiriesSchool" style="width:12%;height:50%" name="EnquiriesSchool" value="{{$membershipCandidate2->EnquiriesSchool}}">
@@ -388,7 +391,7 @@
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="3PCalculator" name="Calculator" value="1" {{ $membershipCandidate3->Calculator == 1 ? ' checked' : '' }}>
-                                <label class="custom-control-label" for="3PCalculator">Calculator</label>
+                                <label class="custom-control-label" for="3PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="3PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate3->DefaultReports == 1 ? ' checked' : '' }}>
@@ -414,27 +417,29 @@
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate3->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3PAdd_On_features_Free">Add_On_features_Free</label>
+                                    <label class="custom-control-label" for="3PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="3PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate3->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3PAdd_On_features_Free-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="3PAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate3->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3PAnytime_Single_Multiple">Anytime upgrade services for free</label>
+                                    <label class="custom-control-label" for="3PAnytime_Single_Multiple">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="3PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate3->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3PAnytime_Single_Multiple-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="3PAnytime_Single_Multiple-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : Anytime upgrade services  </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3PEnquiriesSchool" style="width:12%;height:50%" name="EnquiriesSchool" value="{{$membershipCandidate3->EnquiriesSchool}}">
@@ -499,7 +504,7 @@
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate4->Calculator == 1 ? ' checked' : '' }}>
-                                <label class="custom-control-label" for="9PCalculator">Calculator</label>
+                                <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate4->DefaultReports == 1 ? ' checked' : '' }}>
@@ -525,27 +530,29 @@
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate4->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Add_On_features_Free</label>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate4->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate4->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">Anytime upgrade services for free</label>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate4->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : Anytime upgrade services  </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiriesSchool" style="width:12%;height:50%" name="EnquiriesSchool" value="{{$membershipCandidate4->EnquiriesSchool}}">
@@ -602,7 +609,7 @@
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate5->Calculator == 1 ? ' checked' : '' }}>
-                                <label class="custom-control-label" for="9PCalculator">Calculator</label>
+                                <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate5->DefaultReports == 1 ? ' checked' : '' }}>
@@ -628,27 +635,29 @@
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate5->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Add_On_features_Free</label>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate5->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate5->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">Anytime upgrade services for free</label>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate5->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : Anytime upgrade services  </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiriesSchool" style="width:12%;height:50%" name="EnquiriesSchool" value="{{$membershipCandidate5->EnquiriesSchool}}">
@@ -706,7 +715,7 @@
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate6->Calculator == 1 ? ' checked' : '' }}>
-                                <label class="custom-control-label" for="9PCalculator">Calculator</label>
+                                <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate6->DefaultReports == 1 ? ' checked' : '' }}>
@@ -732,27 +741,29 @@
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate6->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Add_On_features_Free</label>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate6->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate6->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">Anytime upgrade services for free</label>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate6->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : Anytime upgrade services  </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiriesSchool" style="width:12%;height:50%" name="EnquiriesSchool" value="{{$membershipCandidate6->EnquiriesSchool}}">
@@ -816,7 +827,7 @@
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate7->Calculator == 1 ? ' checked' : '' }}>
-                                <label class="custom-control-label" for="9PCalculator">Calculator</label>
+                                <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate7->DefaultReports == 1 ? ' checked' : '' }}>
@@ -842,27 +853,29 @@
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate7->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Add_On_features_Free</label>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate7->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate7->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">Anytime upgrade services for free</label>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple"> free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate7->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : Anytime upgrade services  </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiriesSchool" style="width:12%;height:50%" name="EnquiriesSchool" value="{{$membershipCandidate7->EnquiriesSchool}}">
@@ -919,7 +932,7 @@
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate8->Calculator == 1 ? ' checked' : '' }}>
-                                <label class="custom-control-label" for="9PCalculator">Calculator</label>
+                                <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate8->DefaultReports == 1 ? ' checked' : '' }}>
@@ -945,27 +958,29 @@
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate8->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Add_On_features_Free</label>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate8->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate8->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">Anytime upgrade services for free</label>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate8->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : Anytime upgrade services  </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiriesSchool" style="width:12%;height:50%" name="EnquiriesSchool" value="{{$membershipCandidate8->EnquiriesSchool}}">
@@ -1023,7 +1038,7 @@
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate9->Calculator == 1 ? ' checked' : '' }}>
-                                <label class="custom-control-label" for="9PCalculator">Calculator</label>
+                                <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate9->DefaultReports == 1 ? ' checked' : '' }}>
@@ -1047,29 +1062,32 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
+                                <label>Add On features</label>
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate9->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Add_On_features_Free</label>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate9->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate9->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">Anytime upgrade services for free</label>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
                                     <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate9->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paidable</label>
-                                </div>
+                                    <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : Anytime upgrade services  </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiriesSchool" style="width:12%;height:50%" name="EnquiriesSchool" value="{{$membershipCandidate9->EnquiriesSchool}}">
