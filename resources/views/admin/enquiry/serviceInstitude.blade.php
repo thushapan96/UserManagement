@@ -262,9 +262,15 @@
             </div>
             <div data-uk-dropdown="pos: bottom-center">
                 <ul class="uk-nav uk-dropdown-nav">
+                    @if($InstitudeformsviewIdExist)
                     <li><a href="{{route('institution.admin.view',['id' => $row->institutionsId])}}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                    @endif
+                    @if($InstitutionEnquiryIdExist)
                     <li><a href="{{route('admin.institudeEnquiry',['id' => $row->institutionsId])}}" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                    @endif
+                    @if($InstitudeformsviewIdExist2)
                     <li><a href="#" style="color:#17a2b8;">3) View Status progress reports</a></li>
+                    @endif
                   
                 </ul>
             </div>

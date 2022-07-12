@@ -13,6 +13,6 @@ class Permisson extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-      'name',
+      'name','category'
    ];
 }

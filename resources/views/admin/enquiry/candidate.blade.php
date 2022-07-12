@@ -272,7 +272,9 @@
                 <h6>School</h6>
             </div>
             <div class="float-right" style="right:0%">
+                @if($CandidateEnquiryIdExist2)
                 <a href="/admin/school/view?select={{$candidates->id}}"> <button type="button" class="client-btn uk-button uk-button-primary"> Forward to other School =>></button></a>
+                @enddif
             </div>
         </div>
         <br>
@@ -348,7 +350,9 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('institution.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;">View Registration form </a></li>
                             @if($row->is_forward == 0)
+                            @if($CandidateEnquiryIdExist2)
                             <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
+                            @endif
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="School" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -447,7 +451,9 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('institution.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
                             @if($row->is_forward == 0)
+                            @if($CandidateEnquiryIdExist2)
                             <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="College" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
+                            @endif
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="College" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -545,7 +551,9 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('institution.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
                             @if($row->is_forward == 0)
+                            @if($CandidateEnquiryIdExist2)
                             <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="University" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
+                            @endif
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="University" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -640,7 +648,9 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('consultant.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;">View Registration form </a></li>
                             @if($row->is_forward == 0)
+                            @if($CandidateEnquiryIdExist2)
                             <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="RCIC Consultant" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
+                            @endif
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="RCIC Consultant" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -736,7 +746,9 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('consultant.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
                             @if($row->is_forward == 0)
+                            @if($CandidateEnquiryIdExist2)
                             <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="Immigration Lawyer/Attorney" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
+                            2endif
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="Immigration Lawyer/Attorney" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -831,7 +843,9 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('business.admin.view',['id' => $row->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>
                             @if($row->is_forward == 0)
+                            @if($CandidateEnquiryIdExist2)
                             <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="Chartered Accountant" data-serviceId="{{$row->serviceId}}" data-type="School" data-serviceId="{{$row->serviceId}}" data-uk-toggle="target: #modal-close-default">Select as Service </a></li>
+                            @endif
                             @elseif($row->is_forward == 1)
                             <li><a href="#" style="color:#f39c12;" data-type="Chartered Accountant" data-serviceId="{{$row->serviceId}}">Service Substituded</a></li>
                             @elseif($row->is_forward == 2)
@@ -1080,7 +1094,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div data-uk-dropdown="pos: bottom-center">
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="{{route('institution.admin.view',['id' => $EnquiryInstitutionUniversitySubstitude->serviceId])}}" style="color:#17a2b8;"> View Registration form </a></li>

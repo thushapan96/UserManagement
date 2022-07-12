@@ -178,8 +178,8 @@
     @if($institutions)
 
     <li>
-    <input type="text" id="consultantId" value="{{$institutions->id}}" hidden>
-    <input type="text" id="type" value="{{$institutions->type}}" hidden>
+        <input type="text" id="consultantId" value="{{$institutions->id}}" hidden>
+        <input type="text" id="type" value="{{$institutions->type}}" hidden>
 
 
         <div class="uk-card uk-card-hover " style="height:275px">
@@ -327,7 +327,9 @@
                 </div>
                 <div data-uk-dropdown="pos: bottom-center">
                     <ul class="uk-nav uk-dropdown-nav">
-                         <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="{{$row->type}}" data-serviceId="{{$row->candidate_personalsId}}">1) Select Candidate </a></li>
+                        @if($InstitutionEnquiryIdExist2)
+                        <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="{{$row->type}}" data-serviceId="{{$row->candidate_personalsId}}">1) Select Candidate </a></li>
+                        @endif
                         <li><a href="{{route('candidate.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">2) View Registration form </a></li>
                         <li><a href="{{route('edu.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">3) View Assessment for Education</a></li>
                         <li><a href="{{route('crs.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">4) View CRS Calculator for Immigration</a></li>
@@ -577,12 +579,12 @@
 
 
     $('.confirmEnquiry').on('click', function() {
-     
+
         if (confirm("Are You Sure Want To Select as Service ?") == true) {
             var type = $('#type').val();
             var serviceId = $(this).attr('data-serviceId')
             var consultantId = $('#consultantId').val();
-         
+
 
             $.ajax({
 

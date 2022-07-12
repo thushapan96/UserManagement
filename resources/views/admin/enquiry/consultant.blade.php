@@ -328,7 +328,9 @@
 
                 <div data-uk-dropdown="pos: bottom-center">
                     <ul class="uk-nav uk-dropdown-nav">
+                        @if($ConsultantEnquiryIdExist2 || $ImmigrationEnquiryIdExist2 || $CharteredEnquiryIdExist2)
                         <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="{{$row->type}}" data-serviceId="{{$row->candidate_personalsId}}">1) Select Candidate </a></li>
+                        @endif
                         <li><a href="{{route('candidate.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">2) View Registration form </a></li>
                         <li><a href="{{route('edu.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">3) View Assessment for Education</a></li>
                         <li><a href="{{route('crs.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">4) View CRS Calculator for Immigration</a></li>

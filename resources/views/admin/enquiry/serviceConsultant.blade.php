@@ -243,9 +243,16 @@
         </div>
         <div data-uk-dropdown="pos: bottom-center">
             <ul class="uk-nav uk-dropdown-nav">
+                @if($ConsultantformsviewId || $ImmigrationformsviewIdExist)
                 <li><a href="{{route('consultant.admin.view',['id' => $row->providersId])}}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                @endif
+                @if($ConsultantEnquiryIdExist || $ImmigrationEnquiryIdExist)
                 <li><a href="{{route('admin.consultantEnquiry',['id' => $row->providersId])}}" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                @endif
+                @if($ConsultantformsviewId2 || $ImmigrationformsviewIdExist2)
                 <li><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
+                @endif
+               
             </ul>
         </div>
     </li>

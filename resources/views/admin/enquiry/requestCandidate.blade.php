@@ -253,10 +253,18 @@
         </div>
         <div data-uk-dropdown="pos: bottom-center">
             <ul class="uk-nav uk-dropdown-nav">
+                @if($CandidateformsViewIdExist)
                 <li><a href="{{route('candidate.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">1) View Registration form </a></li>
+                @endif
+                @if($CandidateformsViewIdExist2)
                 <li><a href="{{route('edu.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">2) View Assessment for Education</a></li>
+                @endif
+                @if($CandidateformsViewIdExist3)
                 <li><a href="{{route('crs.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">3) View CRS Calculator for Immigration</a></li>
-                <li><a href="{{route('admin.candidateEnquiry',['id' => $row->id])}}" style="color:#17a2b8;">4) View Enquiries </a></li>
+                @endif
+                @if($CandidateEnquiryIdExist)
+                <li><a href="{{route('admin.candidateEnquiry',['id' => $row->id])}}" style="color:#17a2b8;">4) View Enquiries for Education</a></li>
+                @endif
             </ul>
         </div>
     </li>

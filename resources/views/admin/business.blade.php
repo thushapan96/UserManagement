@@ -255,12 +255,17 @@
             </div>
             <div data-uk-dropdown="pos: bottom-center">
                 <ul class="uk-nav uk-dropdown-nav">
+                    @if($CharteredformsviewIdExist )
                     <li><a href="{{route('business.admin.view',['id' => $row->id])}}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                    @endif
+                    @if($CharteredEnquiryIdExist)
                     <li><a href="{{route('admin.consultantEnquiry',['id' => $row->id])}}" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                    @endif
+                    @if($CharteredformsviewIdExist2)
                     <li><a href="#" style="color:#17a2b8;">3) View Progress status reports</a></li>
+                    @endif
                     @if(request()->query('select'))
                     <input type="text" id="candidatesId" value="{{request()->query('select')}}" hidden>
-
                     <li><a href="#" style="color:#17a2b8;" class="confirmEnquiry" data-type="{{$row->type}}" data-serviceId="{{$row->id}}" data-uk-toggle="target: #modal-close-default">4) Select as Service </a></li>
                     @endif
                 </ul>
@@ -286,7 +291,7 @@
         $('.page-active').removeClass('sc-page-active')
         $('.page-CA').addClass('sc-page-active')
 
-        
+
 
         $('.confirmEnquiry').on('click', function() {
             var type = $(this).attr('data-type')
