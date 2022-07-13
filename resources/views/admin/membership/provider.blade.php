@@ -269,7 +269,10 @@
                                 <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate1->EnquiriesBusiness}}">
                                 <label>Enquiries Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate1->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
 
@@ -390,7 +393,10 @@
                                 <input class="" type="number" id="3SEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate2->EnquiriesBusiness}}">
                                 <label>Enquiries Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate2->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
                         <hr class="uk-margin-remove">
@@ -510,7 +516,10 @@
                                 <input class="" type="number" id="3PEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate3->EnquiriesBusiness}}">
                                 <label>Enquiries Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate3->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
                         <hr class="uk-margin-remove">
@@ -638,7 +647,10 @@
                                 <input class="" type="number" id="6BEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate4->EnquiriesBusiness}}">
                                 <label>Enquiries Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate4->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
 
@@ -759,7 +771,10 @@
                                 <input class="" type="number" id="6SEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate5->EnquiriesBusiness}}">
                                 <label>Enquiries Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate5->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
                         <hr class="uk-margin-remove">
@@ -880,7 +895,10 @@
                                 <input class="" type="number" id="6PEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate6->EnquiriesBusiness}}">
                                 <label>Enquiries Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate6->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
                         <hr class="uk-margin-remove">
@@ -1007,7 +1025,10 @@
                                 <input class="" type="number" id="9BEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate7->EnquiriesBusiness}}">
                                 <label>Enquiries Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate7->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
                         <hr class="uk-margin-remove">
@@ -1127,7 +1148,10 @@
                                 <input class="" type="number" id="9SEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate8->EnquiriesBusiness}}">
                                 <label>Enquiries Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate8->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
                         <hr class="uk-margin-remove">
@@ -1248,7 +1272,10 @@
                                 <input class="" type="number" id="9PEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate9->EnquiriesBusiness}}">
                                 <label>Enquiries Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate9->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
                         <hr class="uk-margin-remove">

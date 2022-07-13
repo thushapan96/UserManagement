@@ -58,6 +58,7 @@ class MembershipController extends Controller
         $MembershipCandidate->TelephonicSupport = $request->TelephonicSupport;
         $MembershipCandidate->Add_On_features_Free = $request->Add_On_features_Free;
         $MembershipCandidate->Anytime_Single_Multiple = $request->Anytime_Single_Multiple;
+        $MembershipCandidate->price = $request->price;
 
         $MembershipCandidate->save();
 
@@ -105,6 +106,7 @@ class MembershipController extends Controller
         $MembershipCandidate->AppointmentScheduler = $request->AppointmentScheduler;
         $MembershipCandidate->eLearningManagementSystem = $request->eLearningManagementSystem;
         $MembershipCandidate->QuickBooks = $request->QuickBooks;
+        $MembershipCandidate->price = $request->price;
 
         $MembershipCandidate->save();
 
@@ -154,6 +156,7 @@ class MembershipController extends Controller
         $MembershipCandidate->AppointmentScheduler = $request->AppointmentScheduler;
         $MembershipCandidate->CRM = $request->CRM;
         $MembershipCandidate->QuickBooks = $request->QuickBooks;
+        $MembershipCandidate->price = $request->price;
 
         $MembershipCandidate->save();
 

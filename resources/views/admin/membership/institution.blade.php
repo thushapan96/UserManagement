@@ -265,6 +265,10 @@
                                 <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate1->Enquiries}}">
                                 <label>Enquiries </label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate1->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
 
@@ -378,6 +382,10 @@
                                 <input class="" type="number" id="3SEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate2->Enquiries}}">
                                 <label>Enquiries </label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate2->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
                         </div>
                         <hr class="uk-margin-remove">
@@ -489,6 +497,10 @@
                             <div class="">
                                 <input class="" type="number" id="3PEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate3->Enquiries}}">
                                 <label>Enquiries </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate3->price}}">
+                                <label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -609,7 +621,10 @@
                                 <input class="" type="number" id="6BEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate4->Enquiries}}">
                                 <label>Enquiries </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate4->price}}">
+                                <label> Package Price</label>
+                            </div><br>
                         </div>
 
                         <hr class="uk-margin-remove">
@@ -721,7 +736,10 @@
                                 <input class="" type="number" id="6SEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate5->Enquiries}}">
                                 <label>Enquiries </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate5->price}}">
+                                <label> Package Price</label>
+                            </div><br>
                         </div>
                         <hr class="uk-margin-remove">
                         <div class="uk-card-footer md-bg-grey-50">
@@ -833,7 +851,10 @@
                                 <input class="" type="number" id="6PEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate6->Enquiries}}">
                                 <label>Enquiries </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate6->price}}">
+                                <label> Package Price</label>
+                            </div><br>
                         </div>
                         <hr class="uk-margin-remove">
                         <div class="uk-card-footer md-bg-grey-50">
@@ -950,7 +971,10 @@
                                 <input class="" type="number" id="9BEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate7->Enquiries}}">
                                 <label>Enquiries </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate7->price}}">
+                                <label> Package Price</label>
+                            </div><br>
                         </div>
                         <hr class="uk-margin-remove">
                         <div class="uk-card-footer md-bg-grey-50">
@@ -1061,7 +1085,10 @@
                                 <input class="" type="number" id="9SEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate8->Enquiries}}">
                                 <label>Enquiries </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate8->price}}">
+                                <label> Package Price</label>
+                            </div><br>
                         </div>
                         <hr class="uk-margin-remove">
                         <div class="uk-card-footer md-bg-grey-50">
@@ -1174,6 +1201,10 @@
                             <div class="">
                                 <input class="" type="number" id="9PEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate9->Enquiries}}">
                                 <label>Enquiries </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate9->price}}">
+                                <label> Package Price</label>
                             </div><br>
 
                         </div>

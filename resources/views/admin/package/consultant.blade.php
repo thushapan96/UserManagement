@@ -36,7 +36,7 @@
                     @foreach($membershipCandidate as $row)
                     <tr>
                         <td>{{$row->type == 'Stanadard' ? 'Standard':$row->type}}</td>
-                        <td>{{$row->duration}}</td>
+                        <td>{{$row->duration}} Months</td>
                         <td>{{$row->price}}</td>
                         <td>
                             <button class="sc-button sc-button-mini" data-price="{{$row->price}}" data-type="{{$row->type}}" data-duration="{{$row->duration}}" data-uk-toggle="target: #modal-close-Price">Change Price</button>
