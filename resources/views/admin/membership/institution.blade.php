@@ -219,7 +219,6 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3BAppointmentScheduler" name="AppointmentScheduler" value="1" {{ $membershipCandidate1->AppointmentScheduler == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3BAppointmentScheduler">Free</label>
@@ -335,7 +334,6 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>AppointmentScheduler:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3SAppointmentScheduler" name="AppointmentScheduler" value="1" {{ $membershipCandidate2->AppointmentScheduler == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3SAppointmentScheduler">Free</label>
@@ -346,7 +344,7 @@
                                     <input class="custom-control-input" type="checkbox" id="3SAppointmentScheduler-paid" name="AppointmentScheduler" value="2" {{ $membershipCandidate2->AppointmentScheduler == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3SAppointmentScheduler-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label>: Add On features</label>
+                                <label>: Appointment Scheduler</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -433,7 +431,6 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>Add_On_features:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate3->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3PAdd_On_features_Free">Free</label>
@@ -896,7 +893,6 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>Add_On_features:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9BAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate7->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BAdd_On_features_Free">Free</label>
@@ -905,11 +901,11 @@
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9BAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate7->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BAdd_On_features_Free-paid"> Paid</label>
-                                </div>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>AppointmentScheduler:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9BAppointmentScheduler" name="AppointmentScheduler" value="1" {{ $membershipCandidate7->AppointmentScheduler == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BAppointmentScheduler">Free</label>
@@ -919,11 +915,11 @@
 
                                     <input class="custom-control-input" type="checkbox" id="9BAppointmentScheduler-paid" name="AppointmentScheduler" value="2" {{ $membershipCandidate7->AppointmentScheduler == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BAppointmentScheduler-paid"> Paid</label>
-                                </div>
+                                </div>&nbsp;&nbsp;
+                                <label>: Appointment Scheduler</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>eLearningManagementSystem:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9BeLearningManagementSystem" name="eLearningManagementSystem" value="1" {{ $membershipCandidate7->eLearningManagementSystem == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BeLearningManagementSystem">Free</label>
@@ -933,11 +929,11 @@
 
                                     <input class="custom-control-input" type="checkbox" id="9BeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate7->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BeLearningManagementSystem-paid"> Paid</label>
-                                </div>
+                                </div>  &nbsp;&nbsp;
+                                <label>: eLearning Management System</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>QuickBooks:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9BQuickBooks" name="QuickBooks" value="1" {{ $membershipCandidate7->QuickBooks == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BQuickBooks">Free</label>
@@ -947,7 +943,8 @@
 
                                     <input class="custom-control-input" type="checkbox" id="9BQuickBooks-paid" name="QuickBooks" value="2" {{ $membershipCandidate7->QuickBooks == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BQuickBooks-paid"> Paid</label>
-                                </div>
+                                </div>&nbsp;&nbsp;
+                                <label>: QuickBooks</label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9BEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate7->Enquiries}}">
@@ -1006,7 +1003,6 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>Add_On_features:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9SAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate8->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SAdd_On_features_Free">Free</label>
@@ -1016,11 +1012,11 @@
 
                                     <input class="custom-control-input" type="checkbox" id="9SAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate8->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SAdd_On_features_Free-paid"> Paid</label>
-                                </div>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>AppointmentScheduler:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9SAppointmentScheduler" name="AppointmentScheduler" value="1" {{ $membershipCandidate8->AppointmentScheduler == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SAppointmentScheduler">Free</label>
@@ -1030,11 +1026,11 @@
 
                                     <input class="custom-control-input" type="checkbox" id="9SAppointmentScheduler-paid" name="AppointmentScheduler" value="2" {{ $membershipCandidate8->AppointmentScheduler == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SAppointmentScheduler-paid"> Paid</label>
-                                </div>
+                                </div>&nbsp;&nbsp;
+                                <label>: Appointment Scheduler</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>eLearningManagementSystem:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9SeLearningManagementSystem" name="eLearningManagementSystem" value="1" {{ $membershipCandidate8->eLearningManagementSystem == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SeLearningManagementSystem">Free</label>
@@ -1044,11 +1040,11 @@
 
                                     <input class="custom-control-input" type="checkbox" id="9SeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate8->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SeLearningManagementSystem-paid"> Paid</label>
-                                </div>
+                                </div>&nbsp;&nbsp;
+                                <label>: eLearning Management System</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>QuickBooks:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9SQuickBooks" name="QuickBooks" value="1" {{ $membershipCandidate8->QuickBooks == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SQuickBooks">Free</label>
@@ -1059,7 +1055,8 @@
                                     <input class="custom-control-input" type="checkbox" id="9SQuickBooks-paid" name="QuickBooks" value="2" {{ $membershipCandidate8->QuickBooks == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SQuickBooks-paid"> Paid</label>
                                 </div>
-                            </div><br>
+                            </div><br>&nbsp;&nbsp;
+                                <label>: QuickBooks</label>
                             <div class="">
                                 <input class="" type="number" id="9SEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate8->Enquiries}}">
                                 <label>Enquiries </label>
@@ -1162,7 +1159,6 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                <label>QuickBooks:</label>&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PQuickBooks" name="QuickBooks" value="1" {{ $membershipCandidate9->QuickBooks == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PQuickBooks">Free</label>
@@ -1172,7 +1168,8 @@
 
                                     <input class="custom-control-input" type="checkbox" id="9PQuickBooks-paid" name="QuickBooks" value="2" {{ $membershipCandidate9->QuickBooks == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PQuickBooks-paid"> Paid</label>
-                                </div>
+                                </div>&nbsp;&nbsp;
+                                <label>: QuickBooks</label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate9->Enquiries}}">

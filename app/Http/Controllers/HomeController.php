@@ -75,7 +75,27 @@ class HomeController extends Controller
         } else {
             $package = '';
         }
-        return view('membership')->with('membership', $membership)->with('package', $package);
+        $membershipCandidate1 = MembershipCandidate::find(1);
+        $membershipCandidate4 = MembershipCandidate::find(2);
+        $membershipCandidate7 = MembershipCandidate::find(3);
+        $membershipCandidate2 = MembershipCandidate::find(4);
+        $membershipCandidate5 = MembershipCandidate::find(5);
+        $membershipCandidate8 = MembershipCandidate::find(6);
+        $membershipCandidate3 = MembershipCandidate::find(7);
+        $membershipCandidate6 = MembershipCandidate::find(8);
+        $membershipCandidate9 = MembershipCandidate::find(9);
+
+        return view('membership')->with('membership', $membership)->with('package', $package)
+            ->with('membershipCandidate1', $membershipCandidate1)
+            ->with('membershipCandidate4', $membershipCandidate4)
+            ->with('membershipCandidate7', $membershipCandidate7)
+            ->with('membershipCandidate2', $membershipCandidate2)
+            ->with('membershipCandidate2', $membershipCandidate2)
+            ->with('membershipCandidate5', $membershipCandidate5)
+            ->with('membershipCandidate8', $membershipCandidate8)
+            ->with('membershipCandidate3', $membershipCandidate3)
+            ->with('membershipCandidate6', $membershipCandidate6)
+            ->with('membershipCandidate9', $membershipCandidate9);
     }
     public function membershipAdd()
     {
@@ -191,7 +211,28 @@ class HomeController extends Controller
         } else {
             $package = '';
         }
-        return view('membershipProvider')->with('membership', $membership)->with('package', $package);
+
+        $membershipCandidate1 = MembershipProvider::find(1);
+        $membershipCandidate4 = MembershipProvider::find(2);
+        $membershipCandidate7 = MembershipProvider::find(3);
+        $membershipCandidate2 = MembershipProvider::find(4);
+        $membershipCandidate5 = MembershipProvider::find(5);
+        $membershipCandidate8 = MembershipProvider::find(6);
+        $membershipCandidate3 = MembershipProvider::find(7);
+        $membershipCandidate6 = MembershipProvider::find(8);
+        $membershipCandidate9 = MembershipProvider::find(9);
+
+        return view('membershipProvider')->with('membership', $membership)->with('package', $package)
+            ->with('membershipCandidate1', $membershipCandidate1)
+            ->with('membershipCandidate4', $membershipCandidate4)
+            ->with('membershipCandidate7', $membershipCandidate7)
+            ->with('membershipCandidate2', $membershipCandidate2)
+            ->with('membershipCandidate2', $membershipCandidate2)
+            ->with('membershipCandidate5', $membershipCandidate5)
+            ->with('membershipCandidate8', $membershipCandidate8)
+            ->with('membershipCandidate3', $membershipCandidate3)
+            ->with('membershipCandidate6', $membershipCandidate6)
+            ->with('membershipCandidate9', $membershipCandidate9);
     }
     public function membershipAddProvider()
     {
