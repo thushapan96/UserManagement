@@ -229,24 +229,10 @@
             <div class="nav-overlay nav-overlay-small uk-navbar-right">
                 <ul class="uk-navbar-nav">
                     <li>
-                        <a class="uk-navbar-toggle uk-visible@m" href="#" data-uk-toggle="target: .nav-overlay; animation: uk-animation-slide-top"><i class="mdi mdi-magnify"></i></a>
-                        <a class="uk-navbar-toggle uk-hidden@m" href="#" id="sc-search-main-toggle-mobile" data-uk-toggle="target: .nav-overlay-small; animation: uk-animation-slide-top"><i class="mdi mdi-magnify"></i></a>
                     </li>
                     <li class="uk-visible@l">
-                        <a href="#" id="sc-js-fullscreen-toggle"><i class="mdi mdi-fullscreen sc-js-el-hide"></i><i class="mdi mdi-fullscreen-exit sc-js-el-show"></i></a>
                     </li>
-                    <li class="uk-visible@s">
-                        <a href="#" class="sc-text-semibold">
-                            EN
-                        </a>
-                        <div class="uk-navbar-dropdown uk-dropdown-small">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#">Deutsch</a></li>
-                                <li><a href="#">Español</a></li>
-                                <li><a href="#">Français</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                 
                     <li>
                         <a href="#">
                             <span class="mdi mdi-email"></span>

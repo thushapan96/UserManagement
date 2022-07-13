@@ -33,7 +33,7 @@
 
     .progress {
         background-color: #bf0010 !important;
-     
+
 
     }
 
@@ -102,10 +102,49 @@
     }
 
     textarea {
-        padding: 20px
+        padding: 20px;
+
     }
 
-   
+    .sc-padding-medium {
+        padding: 12px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+
+    #sc-sidebar-main .sc-sidebar-menu {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-top: 5px !important;
+        padding-bottom: 10px !important;
+        line-height: 30px !important;
+    }
+
+    #sc-sidebar-main .sc-sidebar-menu>li>a .uk-nav-icon>i:before {
+        font-size: 1.2rem !important;
+        -webkit-transition: color 140ms cubic-bezier(.55, 0, .1, 1);
+        transition: color 140ms cubic-bezier(.55, 0, .1, 1);
+    }
+
+    #sc-sidebar-main .sc-sidebar-menu li a {
+        font-size: 15px !important
+    }
+
+    textarea::-webkit-scrollbar {
+        display: none;
+    }
+
+    #sc-sidebar-main .sc-sidebar-menu>li>.sc-sidebar-menu-sub a {
+        padding: 2px 14px 3px 64px !important;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        text-decoration: none;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: relative;
+    }
 </style>
 
 <body>
@@ -187,7 +226,7 @@
                     <div class="uk-flex-1 uk-position-relative">
                         <input class="uk-search-input" type="search" placeholder="Search...">
                     </div>
-                    <button class="sc-button sc-button-default sc-button-small sc-button-icon sc-button-flat uk-margin-small-left" type="button"><i class="mdi mdi-magnify sc-icon-24 md-color-white"></i></button>
+                    <button class=" -default -small -icon -flat uk-margin-small-left" type="button"><i class="mdi mdi-magnify sc-icon-24 md-color-white"></i></button>
 
                 </div>
             </div>
@@ -195,23 +234,11 @@
             <div class="nav-overlay nav-overlay-small uk-navbar-right">
                 <ul class="uk-navbar-nav">
                     <li>
-                        <a class="uk-navbar-toggle uk-visible@m" href="#" data-uk-toggle="target: .nav-overlay; animation: uk-animation-slide-top"><i class="mdi mdi-magnify"></i></a>
-                        <a class="uk-navbar-toggle uk-hidden@m" href="#" id="sc-search-main-toggle-mobile" data-uk-toggle="target: .nav-overlay-small; animation: uk-animation-slide-top"><i class="mdi mdi-magnify"></i></a>
                     </li>
                     <li class="uk-visible@l">
-                        <a href="#" id="sc-js-fullscreen-toggle"><i class="mdi mdi-fullscreen sc-js-el-hide"></i><i class="mdi mdi-fullscreen-exit sc-js-el-show"></i></a>
                     </li>
                     <li class="uk-visible@s">
-                        <a href="#" class="sc-text-semibold">
-                            EN
-                        </a>
-                        <div class="uk-navbar-dropdown uk-dropdown-small">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="#">Deutsch</a></li>
-                                <li><a href="#">Español</a></li>
-                                <li><a href="#">Français</a></li>
-                            </ul>
-                        </div>
+                        
                     </li>
                     <li>
                         <a href="#">
@@ -288,7 +315,7 @@
                         <div class="uk-navbar-dropdown md-bg-grey-100">
                             <div class="sc-padding-medium sc-padding-small-ends">
                                 <div class="uk-text-right uk-margin-medium-bottom">
-                                    <button class="sc-button sc-button-default sc-button-outline sc-button-mini sc-js-clear-alerts">Clear all</button>
+                                    <button class=" -default -outline -mini sc-js-clear-alerts">Clear all</button>
                                 </div>
                                 <ul class="uk-list uk-margin-remove" id="sc-header-alerts">
                                     <li class="sc-border sc-round md-bg-white">
@@ -364,7 +391,312 @@
         </nav>
     </header>
 
+    <aside id="sc-sidebar-main" class="sc-sidebar-info-fixed sideBar">
+        <div class="uk-offcanvas-bar">
+            <div class="sc-sidebar-main-scrollable" data-sc-scrollbar="visible-y">
+                <ul class="sc-sidebar-menu ">
 
+                    <li class="" style="padding:0 !important">
+                        <a><span style="color:#d81400;font-size: 17px;" class="menuClick">Menu</span></a>
+
+                        <ul class="sc-sidebar-menu " style="" >
+                            <li title="" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning" disabled>
+                                    <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
+
+                                    </span><span class="uk-nav-title">Dashboard</span>
+                                </a>
+
+
+                            </li>
+
+                            <li class="sc-page-active page-active d-none">link</li>
+                            <li title="profile" class="page-Profile page-active">
+                                @if(Auth::user())
+
+                                @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
+                                    </span><span class="uk-nav-title">profile</span>
+                                </a>
+                                @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
+                                    </span><span class="uk-nav-title">profile</span>
+                                </a>
+                                @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
+                                    </span><span class="uk-nav-title">profile</span>
+                                </a>
+                                @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
+                                    </span><span class="uk-nav-title">profile</span>
+                                </a>
+                                @endif
+                                @endif
+                            </li>
+
+                            <li title="Dashboards" class="page-Dashboards page-active">
+                                @if(auth()->user()->role == 'candidate')
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    @elseif(auth()->user()->service_type == 'Institution')
+                                    <a href="#" class=" sc-js-notify-status-warning">
+                                        @else
+                                        <a href="#" class=" sc-js-notify-status-warning">
+                                            @endif
+                                            <span class="uk-nav-icon"><i class="fas fa-users"></i>
+                                            </span><span class="uk-nav-title">Membership</span>
+                                        </a>
+
+                            </li>
+
+                            <li title="institution" class="page-institution page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
+                                    <span class="uk-nav-title">institution</span>
+                                </a>
+
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class="page-School page-active">
+
+                                        <a href="#" class=" sc-js-notify-status-warning"> School </a>
+
+                                    </li>
+                                    <li class="page-College page-active">
+
+                                        <a href="#" class=" sc-js-notify-status-warning"> College </a>
+
+                                    </li>
+                                    <li class="page-University page-active">
+                                        <a href="#" class=" sc-js-notify-status-warning"> university </a>
+
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li title="consultant" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"> <i class=" fa fa-building"></i>
+                                    </span><span class="uk-nav-title">consultant</span>
+                                </a>
+
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class="page-RCIC-Consultant page-active">
+
+                                        <a href="#" class=" sc-js-notify-status-warning"> RCIC Consultant </a>
+
+                                    </li>
+                                    <li class="page-immigration page-active">
+
+                                        <a href="#" class=" sc-js-notify-status-warning"> immigration </a>
+
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li title="Business">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="nav-icon fas fa-handshake"></i>
+
+                                    </span><span class="uk-nav-title">Business </span>
+                                </a>
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class="page-CA page-active">
+
+                                        <a href="#" class=" sc-js-notify-status-warning">CA & TC </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
+                            @if(auth()->user()->role == 'candidate')
+                            <li title="CRS Calculator" class="page-Calculator page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
+
+                                    </span><span class="uk-nav-title">CRS Calculator</span>
+                                </a>
+
+
+                            </li>
+                            <li title="Educational Assessment" class="page-Educational page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="fab fa-readme"></i>
+                                    </span><span class="uk-nav-title">Educ Assessment</span>
+                                </a>
+                            </li>
+                            @endif
+                            <li title="enquiries" class="page-enquiries page-active">
+                                @if(auth()->user()->role == 'candidate')
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    @else
+                                    <a href="#">
+                                        @endif
+
+                                        <span class="uk-nav-icon"><i class="fas fa-bell"></i>
+                                        </span><span class="uk-nav-title">enquiries</span>
+                                    </a>
+                            </li>
+                            <li title="report">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>
+
+                                    </span><span class="uk-nav-title">report</span>
+                                </a>
+                                <ul class="sc-sidebar-menu-sub">
+                                    <li class="page-Summary page-active">
+
+                                        <a href="#" class=" sc-js-notify-status-warning">Summary</a>
+
+                                    </li>
+                                    <li class="page-Details page-active">
+
+                                        <a href="#" class=" sc-js-notify-status-warning">Details</a>
+
+                                    </li>
+
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="" style="padding:0 !important">
+                        <a><span style="color:#d81400;font-size: 17px;">Application</span></a>
+
+                        <ul class="sc-sidebar-menu">
+                            <li title="Appointment Scheduler" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="far fa-calendar-alt"></i>
+                                    </span><span class="uk-nav-title">Appointment Scheduler</span>
+                                </a>
+                            </li>
+
+                            <li title="QuickBooks" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="fab fa-leanpub"></i>
+
+                                    </span><span class="uk-nav-title">QuickBooks </span>
+                                </a>
+                            </li>
+
+                            <li title="CRM" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="fas fa-sign-language"></i>
+
+                                    </span><span class="uk-nav-title">CRM </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="" style="padding:0 !important">
+                        <a href="#" class=" sc-js-notify-status-warning"><span style="color:#d81400;font-size: 17px;">Utilities</span></a>
+
+                        <ul class="sc-sidebar-menu">
+
+                            <li title="Chat" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon">
+                                        <i class="fas fa-cog"></i>
+                                    </span><span class="uk-nav-title">Settings</span>
+                                </a>
+                            </li>
+
+                            <li title="Chat" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-message-outline"></i>
+
+                                    </span><span class="uk-nav-title">Chat</span>
+                                </a>
+                            </li>
+
+                            <li title="Invoices" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-receipt"></i>
+
+                                    </span><span class="uk-nav-title">Invoices</span>
+                                </a>
+                            </li>
+
+                            <li title="Mailbox" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-email-outline"></i>
+
+                                    </span><span class="uk-nav-title">Mailbox</span>
+                                </a>
+                            </li>
+
+                            <li title="Task Board" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-calendar-text"></i>
+
+                                    </span><span class="uk-nav-title">Task Board</span>
+                                </a>
+                            </li>
+
+                            <li title="Notes" class=" page-active">
+                                <a href="#" class=" sc-js-notify-status-warning">
+                                    <span class="uk-nav-icon"><i class="mdi mdi-note-outline"></i>
+
+                                    </span><span class="uk-nav-title">Notes</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    @if(Auth::user())
+                    <li class="" style="padding:0 !important">
+                        <a><span style="color:#d81400;font-size: 17px;">Canada inspire</span></a>
+
+                        <ul class="sc-sidebar-menu">
+
+
+                            @if((auth()->user()->service_type == 'Business' || auth()->user()->service_type == 'Institution' || auth()->user()->service_type == 'Consultation'))
+                            <li title="Notes" class="page-Services page-active">
+                                <a href="{{route('canadaInspire')}}">
+                                    <span class="uk-nav-icon"><i class="fas fa-people-carry"></i>
+                                    </span><span class="uk-nav-title">Our Services</span>
+                                </a>
+                            </li>
+                            @endif
+                            <li title="Notes" class="page-Feedback page-active">
+                                <a href="#">
+                                    <span class="uk-nav-icon"><i class="fas fa-pen-alt"></i>
+
+                                    </span><span class="uk-nav-title">Your Feedback</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <br>
+                    @endif
+                    @if(Auth::user())
+                    <li title="logout" class="">
+                        <a onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <span class="uk-nav-icon"><i class="nav-icon fa fa-sign-out-alt"></i></span>
+                            <span class="uk-nav-title">logout</span>
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                    @else
+                    <li title="login" class="">
+                        <a href="{{route('login')}}">
+                            <span class="uk-nav-icon"><i class="nav-icon fas fa-sign-in-alt"></i></span>
+                            <span class="uk-nav-title">Login</span>
+                        </a>
+                    </li>
+                    @endif
+                </ul>
+
+            </div>
+
+        </div>
+    </aside>
 
     <div id="sc-page-wrapper">
         <div id="sc-page-content">
@@ -412,9 +744,16 @@
                             scutum.dashboard.init()
                         });
                     }
+                });
+                loadjs("{{asset('assets/js/views/components/notifications.js')}}", {
+                    success: function() {
+                        $(function() {
+                            scutum.components.notifications.init()
+                        });
+                    }
                 })
 
-                // show page
+                // show pag,
                 setTimeout(function() {
                     // clear styles (FOUC)
                     $(html).css({
@@ -440,88 +779,8 @@
                 });
             });
         });
-
-        setTimeout(function() {
-            console.log('time')
-            $('#sc-sidebar-main-toggle').click();
-        }, 700);
-
     </script>
 
-
-    <!-- <div id="sc-style-switcher">
-        <a href="#" class="sc-sSw-toggle"><i class="mdi mdi-tune"></i></a>
-        <p class="sc-text-semibold uk-margin-top-remove uk-margin-bottom">Themes</p>
-        <ul class="sc-sSw-theme-switcher">
-            <li class="active">
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-default" data-theme="">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-a" data-theme="sc-theme-a">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-b" data-theme="sc-theme-b">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-c" data-theme="sc-theme-c">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-d" data-theme="sc-theme-d">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-e" data-theme="sc-theme-e">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-f" data-theme="sc-theme-f">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-g" data-theme="sc-theme-g">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-h" data-theme="sc-theme-h">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="sc-sSw-theme-switch sc-sW-theme-dark" data-theme="sc-theme-dark">
-                    <span class="sc-sSw-theme-switch-color-1"></span>
-                    <span class="sc-sSw-theme-switch-color-2"></span>
-                </a>
-            </li>
-        </ul>
-        <p class="sc-text-semibold uk-margin-large-top uk-margin-bottom">Main Menu</p>
-        <div class="uk-flex uk-flex-middle uk-margin-small-bottom">
-            <input type="checkbox" id="sc-menu-scroll-to-active" data-sc-icheck><label for="sc-menu-scroll-to-active">Scroll to active</label>
-        </div>
-        <div class="uk-flex uk-flex-middle">
-            <input type="checkbox" id="sc-menu-accordion-mode" data-sc-icheck><label for="sc-menu-accordion-mode">Accordion mode</label>
-        </div>
-    </div> -->
 
 </body>
 

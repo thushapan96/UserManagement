@@ -25,6 +25,11 @@ Route::get('/indexx', function () {
     return view('indexx');
 })->name('indexx');
 
+Route::get('/test', function () {
+
+    return view('test2');
+})->name('test2');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // admin begin
