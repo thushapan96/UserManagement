@@ -29,6 +29,10 @@ Route::get('/test', function () {
 
     return view('test2');
 })->name('test2');
+Route::get('/table', function () {
+
+    return view('admin.package.candidate');
+})->name('table');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -92,6 +96,16 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::post('/admin/candidate/mebership/add', 'App\Http\Controllers\MembershipController@candidateMebershipAdd')->name('admin.candidate.mebership.add');
     Route::post('/admin/institution/mebership/add', 'App\Http\Controllers\MembershipController@institutionMebershipAdd')->name('admin.institution.mebership.add');
     Route::post('/admin/provider/mebership/add', 'App\Http\Controllers\MembershipController@providerMebershipAdd')->name('admin.provider.mebership.add');
+
+    Route::get('/candidate/price', 'App\Http\Controllers\MembershipController@candidatePrice')->name('candidate.price');
+    Route::get('/institution/price', 'App\Http\Controllers\MembershipController@institutionPrice')->name('institution.price');
+    Route::get('/provider/price', 'App\Http\Controllers\MembershipController@providerPrice')->name('provider.price');
+
+    Route::post('/candidate/price', 'App\Http\Controllers\MembershipController@candidatePriceChange')->name('candidate.price.post');
+    Route::post('/institution/price/post', 'App\Http\Controllers\MembershipController@institutionPriceChange')->name('institution.price.post');
+    Route::post('/provider/price/post', 'App\Http\Controllers\MembershipController@providerPriceChange')->name('provider.price.post');
+
+
 
 });
 

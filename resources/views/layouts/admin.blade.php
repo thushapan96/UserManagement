@@ -641,6 +641,35 @@
 
                                     </li>
 
+                                    <li class=" page-active">
+
+                                        <a href="#"> Packages </a>
+
+                                        <ul class="sc-sidebar-menu-sub">
+
+                                            <li class="page-active">
+
+                                                <a href="{{route('candidate.price')}}" style="left: 15px !important;width:70%;">Candidate </a>
+
+                                            </li>
+
+                                            <li class=" page-active">
+
+                                                <a href="{{route('institution.price')}}" style="left: 15px !important;width:70%;">Institution </a>
+
+                                            </li>
+
+                                            <li class=" page-active">
+
+                                                <a href="{{route('provider.price')}}" style="left: 15px !important;width:70%;">Provider </a>
+
+                                            </li>
+
+
+                                        </ul>
+
+                                    </li>
+
                                 </ul>
                             </li>
                             @endif
@@ -665,6 +694,8 @@
                                 </a>
                             </li>
                             @endif
+
+
 
                         </ul>
                     </li>

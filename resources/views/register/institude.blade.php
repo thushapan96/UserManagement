@@ -31,7 +31,7 @@
 <section>
     <form id="form" action="{{route('add.institution')}}" method="post" enctype="multipart/form-data">
         @csrf
-        <div class="col-md-10" style="margin-left:auto !important;margin-right:auto !important">
+        <div class="col-md-12" style="margin-left:auto !important;margin-right:auto !important">
             <h4 style="text-align:center">{{request()->query('service')}} Enrollment</h4>
 
             <u1 class="" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">

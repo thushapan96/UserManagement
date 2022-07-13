@@ -161,4 +161,51 @@ class MembershipController extends Controller
 
         return redirect(route('admin.membership.provider'))->with('tab', $tab);
     }
+
+    public function candidatePrice(Request $request)
+    {
+        
+        $membershipCandidate = MembershipCandidate::select('type', 'duration', 'price')->get();
+
+        return view('admin.package.candidate')->with('membershipCandidate', $membershipCandidate);
+    }
+    public function institutionPrice(Request $request)
+    {
+        $membershipCandidate = MembershipInstitution::select('type', 'duration', 'price')->get();
+
+        return view('admin.package.institude')->with('membershipCandidate', $membershipCandidate);
+    }
+    public function providerPrice(Request $request)
+    {
+        $membershipCandidate = MembershipProvider::select('type', 'duration', 'price')->get();
+
+        return view('admin.package.consultant')->with('membershipCandidate', $membershipCandidate);
+    }
+
+    public function candidatePriceChange(Request $request)
+    {
+        MembershipCandidate::where('type', $request->type)->where('duration', $request->duration)->update([
+            'price' => $request->price
+        ]);
+
+        return redirect(route('candidate.price'));
+    }
+
+    public function institutionPriceChange(Request $request)
+    {
+        MembershipInstitution::where('type', $request->type)->where('duration', $request->duration)->update([
+            'price' => $request->price
+        ]);
+
+        return redirect(route('institution.price'));
+    }
+
+    public function providerPriceChange(Request $request)
+    {
+        MembershipProvider::where('type', $request->type)->where('duration', $request->duration)->update([
+            'price' => $request->price
+        ]);
+
+        return redirect(route('provider.price'));
+    }
 }
