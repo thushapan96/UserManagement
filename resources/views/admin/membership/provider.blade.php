@@ -259,19 +259,19 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="EnquiriesRCICConsultant" value="{{$membershipCandidate1->EnquiriesRCICConsultant}}">
-                                <label>Enquiries RCIC Consultant </label>
+                                <label>Enquiries-RCIC Consultant </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="EnquiriesImmigration" value="{{$membershipCandidate1->EnquiriesImmigration}}">
-                                <label>Enquiries Immigration </label>
+                                <label>Enquiries-Immigration </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate1->EnquiriesBusiness}}">
-                                <label>Enquiries Business </label>
+                                <label>Enquiries-Business </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate1->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -383,19 +383,19 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3SEnquiries" style="width:12%;height:50%" name="EnquiriesRCICConsultant" value="{{$membershipCandidate2->EnquiriesRCICConsultant}}">
-                                <label>Enquiries RCIC Consultant </label>
+                                <label>Enquiries-RCIC Consultant </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3SEnquiries" style="width:12%;height:50%" name="EnquiriesImmigration" value="{{$membershipCandidate2->EnquiriesImmigration}}">
-                                <label>Enquiries Immigration </label>
+                                <label>Enquiries-Immigration </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3SEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate2->EnquiriesBusiness}}">
-                                <label>Enquiries Business </label>
+                                <label>Enquiries-Business </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate2->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -506,19 +506,19 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3PEnquiries" style="width:12%;height:50%" name="EnquiriesRCICConsultant" value="{{$membershipCandidate3->EnquiriesRCICConsultant}}">
-                                <label>Enquiries RCIC Consultant </label>
+                                <label>Enquiries-RCIC Consultant </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3PEnquiries" style="width:12%;height:50%" name="EnquiriesImmigration" value="{{$membershipCandidate3->EnquiriesImmigration}}">
-                                <label>Enquiries Immigration </label>
+                                <label>Enquiries-Immigration </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="3PEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate3->EnquiriesBusiness}}">
-                                <label>Enquiries Business </label>
+                                <label>Enquiries-Business </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate3->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -637,19 +637,19 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="6BEnquiries" style="width:12%;height:50%" name="EnquiriesRCICConsultant" value="{{$membershipCandidate4->EnquiriesRCICConsultant}}">
-                                <label>Enquiries RCIC Consultant </label>
+                                <label>Enquiries-RCIC Consultant </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="6BEnquiries" style="width:12%;height:50%" name="EnquiriesImmigration" value="{{$membershipCandidate4->EnquiriesImmigration}}">
-                                <label>Enquiries Immigration </label>
+                                <label>Enquiries-Immigration </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="6BEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate4->EnquiriesBusiness}}">
-                                <label>Enquiries Business </label>
+                                <label>Enquiries-Business </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate4->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -761,19 +761,19 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="6SEnquiries" style="width:12%;height:50%" name="EnquiriesRCICConsultant" value="{{$membershipCandidate5->EnquiriesRCICConsultant}}">
-                                <label>Enquiries RCIC Consultant </label>
+                                <label>Enquiries-RCIC Consultant </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="6SEnquiries" style="width:12%;height:50%" name="EnquiriesImmigration" value="{{$membershipCandidate5->EnquiriesImmigration}}">
-                                <label>Enquiries Immigration </label>
+                                <label>Enquiries-Immigration </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="6SEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate5->EnquiriesBusiness}}">
-                                <label>Enquiries Business </label>
+                                <label>Enquiries-Business </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate5->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -885,19 +885,19 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="6PEnquiries" style="width:12%;height:50%" name="EnquiriesRCICConsultant" value="{{$membershipCandidate6->EnquiriesRCICConsultant}}">
-                                <label>Enquiries RCIC Consultant </label>
+                                <label>Enquiries-RCIC Consultant </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="6PEnquiries" style="width:12%;height:50%" name="EnquiriesImmigration" value="{{$membershipCandidate6->EnquiriesImmigration}}">
-                                <label>Enquiries Immigration </label>
+                                <label>Enquiries-Immigration </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="6PEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate6->EnquiriesBusiness}}">
-                                <label>Enquiries Business </label>
+                                <label>Enquiries-Business </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate6->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -1015,19 +1015,19 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9BEnquiries" style="width:12%;height:50%" name="EnquiriesRCICConsultant" value="{{$membershipCandidate7->EnquiriesRCICConsultant}}">
-                                <label>Enquiries RCIC Consultant </label>
+                                <label>Enquiries-RCIC Consultant </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9BEnquiries" style="width:12%;height:50%" name="EnquiriesImmigration" value="{{$membershipCandidate7->EnquiriesImmigration}}">
-                                <label>Enquiries Immigration </label>
+                                <label>Enquiries-Immigration </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9BEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate7->EnquiriesBusiness}}">
-                                <label>Enquiries Business </label>
+                                <label>Enquiries-Business </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate7->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -1138,19 +1138,19 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9SEnquiries" style="width:12%;height:50%" name="EnquiriesRCICConsultant" value="{{$membershipCandidate8->EnquiriesRCICConsultant}}">
-                                <label>Enquiries RCIC Consultant </label>
+                                <label>Enquiries-RCIC Consultant </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9SEnquiries" style="width:12%;height:50%" name="EnquiriesImmigration" value="{{$membershipCandidate8->EnquiriesImmigration}}">
-                                <label>Enquiries Immigration </label>
+                                <label>Enquiries-Immigration </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9SEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate8->EnquiriesBusiness}}">
-                                <label>Enquiries Business </label>
+                                <label>Enquiries-Business </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate8->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -1262,19 +1262,19 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiries" style="width:12%;height:50%" name="EnquiriesRCICConsultant" value="{{$membershipCandidate9->EnquiriesRCICConsultant}}">
-                                <label>Enquiries RCIC Consultant </label>
+                                <label>Enquiries-RCIC Consultant </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiries" style="width:12%;height:50%" name="EnquiriesImmigration" value="{{$membershipCandidate9->EnquiriesImmigration}}">
-                                <label>Enquiries Immigration </label>
+                                <label>Enquiries-Immigration </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" id="9PEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate9->EnquiriesBusiness}}">
-                                <label>Enquiries Business </label>
+                                <label>Enquiries-Business </label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate9->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
 
                         </div>

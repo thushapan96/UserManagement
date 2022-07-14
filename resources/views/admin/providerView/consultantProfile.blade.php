@@ -31,6 +31,9 @@
     th {
         color: #00000078 !important;
     }
+    label {
+        font-weight: bold !important;
+    }
 </style>
 @if($message = Session::get('formSuccess'))
 <script>
@@ -72,9 +75,8 @@
                 <li id='menu' class='tab-pane '>
                     <div class='uk-card col-md-11' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Personal Information</h6>
 
                                     <div class="row custom-box">
@@ -156,7 +158,7 @@
                                         </div>
                                     </div>
                                 </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Address</h6>
 
                                     <div class="row custom-box">
@@ -223,7 +225,7 @@
                                         </div>
                                     </div>
                                 </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">other Information</h6>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
@@ -353,7 +355,7 @@
                                         </div>
                                     </div>
                                 </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <p style="text-decoration:underline;">Specialization</p>
                                     <hr>
                                     <p style="color: #00000078 !important;">Express Entry Cases</p>
@@ -502,7 +504,7 @@
                                     </div>
                                 </fieldset>
                                 <br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
                                     <p style="text-decoration:underline;">Service Offered</p>
                                     <hr>
@@ -651,7 +653,6 @@
                                     </div>
 
                                 </fieldset>
-                            </fieldset>
                         </div>
                     </div>
 
@@ -750,7 +751,7 @@
                                     <div class="uk-card-body sc-padding-remove">
                                         <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
 
-                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
+                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-100">
 
                                                 <div class="sc-padding-medium uk-text-center">
                                                     @if($row->team_img)
@@ -889,7 +890,7 @@
                 <script>
                     $("textarea").each(function(index) {
                         console.log(index, $(this)[0].scrollHeight)
-                        $(this).height($(this)[0].scrollHeight);
+                        $(this).height($(this)[0].scrollHeight+15);
                     });
                 </script>
             </u1>

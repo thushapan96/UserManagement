@@ -3,264 +3,264 @@
 <form action="{{route('candidate_sponsor_add')}}" method="POST" id="sponsor_form" enctype="multipart/form-data">
     @csrf
 
-        <h6>Sponsor Details</h6>
-        <!--div class="news-title">You have questions, let's have a conversation </div-->
-        <div class="row mt-4 custom-box">
+    <h6>Sponsor Details</h6>
+    <!--div class="news-title">You have questions, let's have a conversation </div-->
+    <div class="row mt-4 custom-box">
 
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
 
-                    <input class="form-control " type="text" placeholder="First Name" name="first_name">
+                <input class="form-control " type="text" placeholder="First Name" name="first_name">
 
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-
-                    <input class="form-control " type="text" placeholder="Middle Name" name="middle_name">
-
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4  col-12">
-                <div class="form-group">
-
-                    <input class="form-control " type="text" placeholder="Last Name" name="last_name">
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row mt-4 custom-box">
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-                    <label>
-                        Sponsor Status
-                    </label>
-                    <select class="form-control " name="sponsor_status">
-                        <option value="Working">Working</option>
-                        <option value="Retired">Retired</option>
-                        <option value="Business">Business</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-                    <label>Relationship with Child
-                    </label>
-                    <select class="form-control " name="sponsor_relation">
-                        <option value="Working">Mother</option>
-                        <option value="Retired">Father</option>
-                        <option value="Business">Brother</option>
-                        <option value="Working">Uncle</option>
-                        <option value="Retired">Grand parent</option>
-                    </select>
-
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-                    <label>
-                        Mobile Number
-                    </label>
-                    <input class="form-control " type="number" placeholder="Mobile" name="sponsor_mobile">
-                </div>
-            </div>
-
-
-        </div>
-
-        <div class="row mt-4 custom-box">
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-
-                    <input class="form-control " id="pac-input11" type="text" placeholder="Street Address1" name="sponsor_street">
-
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-
-                    <input class="form-control " id="pac-input12" type="text" placeholder="Street Address2" name="sponsor_street2">
-
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4  col-12">
-                <div class="form-group">
-                    <input class="form-control " id="pac-input13" type="text" placeholder="City" name="sponsor_city">
-
-
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row mt-4 custom-box">
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-
-                    <input class="form-control " id="pac-input14" type="text" placeholder="Region Or State" name="sponsor_region">
-
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-
-                    <input class="form-control "  type="text" placeholder="Pin Code" name="sponsor_pincode">
-
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4  col-12">
-                <div class="form-group">
-
-                    <input class="form-control l-icon"  id="pac-input15" type="text" placeholder="Enter Country" name="sponsor_country" value="" required>
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row mt-4 custom-box">
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="form-group">
-                    <label>Telephone Number
-                    </label>
-                    <input class="form-control " type="number" name="sponsor_telephone">
-
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="form-group">
-                    <label>
-                        Email ID
-                    </label>
-                    <input class="form-control " type="email" name="sponsor_email">
-                    <p style="color:Tomato"> @error('sponsor_email'){{$message}} @enderror</p>
-                </div>
             </div>
         </div>
 
-        <hr style="height:12px;">
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
 
-        <h6>Address of Guardian</h6>
-        <!--div class="news-title">You have questions, let's have a conversation </div-->
-        <div class="row mt-4 custom-box">
+                <input class="form-control " type="text" placeholder="Middle Name" name="middle_name">
 
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-                    <label>Relationship with Child
-                    </label>
-                    <select class="form-control " name="guardian_relation">
-                        <option value="Working">Mother</option>
-                        <option value="Retired">Father</option>
-                        <option value="Business">Brother</option>
-                        <option value="Working">Uncle</option>
-                        <option value="Retired">Grand parent</option>
-                    </select>
-                </div>
             </div>
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-                    <label>
-                        Mobile Number
-                    </label>
-                    <input class="form-control " type="number" placeholder="Mobile" name="guardian_mobile">
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-                    <label>
-                        Email
-                    </label>
-                    <input class="form-control " type="email" placeholder="Email" name="guardian_email">
-                    <p style="color:Tomato"> @error('guardian_mobile'){{$message}} @enderror</p>
-
-                </div>
-            </div>
-
         </div>
 
-        <div class="row mt-4 custom-box">
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
 
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
+                <input class="form-control " type="text" placeholder="Last Name" name="last_name">
 
-                    <input class="form-control " id="pac-input16" type="text" placeholder="Street Address1" name="guardian_street">
-
-                </div>
             </div>
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-
-                    <input class="form-control " id="pac-input17" type="text" placeholder="Street Address2" name="guardian_street2">
-
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4  col-12">
-                <div class="form-group">
-                    <input class="form-control " id="pac-input18" type="text" placeholder="City" name="guardian_city">
-
-
-
-                </div>
-            </div>
-
         </div>
 
-        <div class="row mt-4 custom-box">
+    </div>
 
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-
-                    <input class="form-control " id="pac-input19" type="text" placeholder="Region Or State" name="guardian_region">
-
-                </div>
+    <div class="row mt-4 custom-box">
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>
+                    Sponsor Status
+                </label>
+                <select class="form-control " name="sponsor_status">
+                    <option value="Working">Working</option>
+                    <option value="Retired">Retired</option>
+                    <option value="Business">Business</option>
+                </select>
             </div>
-
-            <div class="col-lg-4 col-md-4 col-12">
-                <div class="form-group">
-
-                    <input class="form-control " type="text" placeholder="Pin Code" name="guardian_pincode">
-
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4  col-12">
-                <div class="form-group">
-
-                    <input class="form-control l-icon" id="pac-input20" type="text" placeholder="Enter Country" name="guardian_country" value="" required>
-
-                </div>
-            </div>
-
         </div>
 
-        <div class="float-right">
-            <button type="submit" class="client-btn uk-button uk-button-primary" id="submit4">
-                <div id="loading4">Submit
-                    And
-                    Next
-                </div>
-            </button>
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>Relationship with Child
+                </label>
+                <select class="form-control " name="sponsor_relation">
+                    <option value="Working">Mother</option>
+                    <option value="Retired">Father</option>
+                    <option value="Business">Brother</option>
+                    <option value="Working">Uncle</option>
+                    <option value="Retired">Grand parent</option>
+                </select>
+
+            </div>
         </div>
-   
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>
+                    Mobile Number
+                </label>
+                <input class="form-control " type="number" placeholder="Mobile" name="sponsor_mobile">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " id="pac-input11" type="text" placeholder="Street Address1" name="sponsor_street">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " id="pac-input12" type="text" placeholder="Street Address2" name="sponsor_street2">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
+                <input class="form-control " id="pac-input13" type="text" placeholder="City" name="sponsor_city">
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " id="pac-input14" type="text" placeholder="Region Or State" name="sponsor_region">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Pin Code" name="sponsor_pincode">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
+
+                <input class="form-control l-icon" id="pac-input15" type="text" placeholder="Enter Country" name="sponsor_country" value="" required>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4 custom-box">
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="form-group">
+                <label>Telephone Number
+                </label>
+                <input class="form-control " type="number" name="sponsor_telephone">
+
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="form-group">
+                <label>
+                    Email ID
+                </label>
+                <input class="form-control " type="email" name="sponsor_email">
+                <p style="color:Tomato"> @error('sponsor_email'){{$message}} @enderror</p>
+            </div>
+        </div>
+    </div>
+
+    <hr style="height:12px;">
+
+    <h6>Address of Guardian</h6>
+    <!--div class="news-title">You have questions, let's have a conversation </div-->
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>Relationship with Child
+                </label>
+                <select class="form-control " name="guardian_relation">
+                    <option value="Working">Mother</option>
+                    <option value="Retired">Father</option>
+                    <option value="Business">Brother</option>
+                    <option value="Working">Uncle</option>
+                    <option value="Retired">Grand parent</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>
+                    Mobile Number
+                </label>
+                <input class="form-control " type="number" placeholder="Mobile" name="guardian_mobile">
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+                <label>
+                    Email
+                </label>
+                <input class="form-control " type="email" placeholder="Email" name="guardian_email">
+                <p style="color:Tomato"> @error('guardian_mobile'){{$message}} @enderror</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " id="pac-input16" type="text" placeholder="Street Address1" name="guardian_street">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " id="pac-input17" type="text" placeholder="Street Address2" name="guardian_street2">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
+                <input class="form-control " id="pac-input18" type="text" placeholder="City" name="guardian_city">
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4 custom-box">
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " id="pac-input19" type="text" placeholder="Region Or State" name="guardian_region">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-12">
+            <div class="form-group">
+
+                <input class="form-control " type="text" placeholder="Pin Code" name="guardian_pincode">
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4  col-12">
+            <div class="form-group">
+
+                <input class="form-control l-icon" id="pac-input20" type="text" placeholder="Enter Country" name="guardian_country" value="" required>
+
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    <div class="float-right">
+        <button type="submit" class="client-btn uk-button uk-button-primary" id="submit4">
+            <div id="loading4">Submit
+                And
+                Next
+            </div>
+        </button>
+    </div>
+
 
 </form>
 

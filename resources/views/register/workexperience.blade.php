@@ -84,7 +84,7 @@
 
         </div>
         <button id="addRow" type="button" class="add-btn uk-button uk-button-primary">+ Add WorkPlace </button>
-        <br>
+        <hr>
         <div class="float-right">
             <a> <button type="submit" class="client-btn uk-button uk-button-primary" id="submit3">
                     <div id="loading3">Submit

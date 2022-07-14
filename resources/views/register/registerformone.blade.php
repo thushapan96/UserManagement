@@ -4,131 +4,149 @@
 <h6>Candidate Registration - Academic</h6>
 
 
-    <form id="academy_form" action="{{route('candidate_academy_add')}}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <!--div class="news-title">You have questions, let's have a conversation </div-->
-        <div class="row mt-4 custom-box">
+<form id="academy_form" action="{{route('candidate_academy_add')}}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <!--div class="news-title">You have questions, let's have a conversation </div-->
+    <div class="row mt-4 custom-box">
 
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="form-group">
-                    <label>Language Proficiency
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="form-group">
+                <label>Language Proficiency
 
-                    </label>
-                    <select name="language_proficiency" class="form-control">
-                        <option value="English">English</option>
-                        <option value="Tamil">Tamil</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="form-group">
-                    <label>Level
-
-                    </label>
-                    <select name="language_level" class="form-control">
-                        <option value="Beginner">Beginner</option>
-                        <option value="Intermediate">Intermediate</option>
-                        <option value="Competent">Competent</option>
-                        <option value="Expert">Expert</option>
-                    </select>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row mt-4 custom-box">
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="">
-                    <label>
-                        Certified By 
-                    </label>
-                    <input type="text" class="form-control" name="language_certified_by">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="">
-                    <label>
-                        Attachment 
-                    </label>
-                    <input type="file" class="form-control" name="language_attachment">
-                </div>
+                </label>
+                <select name="language_proficiency" class="form-control">
+                    <option value="English">English</option>
+                    <option value="Tamil">Tamil</option>
+                </select>
             </div>
         </div>
-        <hr>
-        <div class="row mt-4 custom-box">
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="form-group">
-                    <label>Applicant Test Scores</label>
-                    <select class="form-control" id="" name="applicant_test_name[]">
-                        <option value="">Select</option>
-                        <option value="IELTS">IELTS</option>
-                        <option value="TOFEL">TOFEL</option>
-                        <option value="CELPIP">CELPIP</option>
-                        <option value="GRE">GRE</option>
-                        <option value="PTE">PTE</option>
-                        <option value="SAT">SAT</option>
-                        <option value="GMAT">GMAT</option>
-                        <option value="HSEiT">HSEiT</option>
-                        <option value="LSAT">LSAT</option>
 
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="form-group">
+                <label>Level
 
-                    </select>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-12">
-                <div class="form-group">
-                    <label>If Other Applicant</label>
-                    <input class="form-control " type="text" name="applicant_test_name[]">
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-12 ">
-                <div class="form-group">
-                    <label> Valid Upto
-                    </label>
-                    <input class="form-control " name="test_valid_upto" type="date" placeholder="Valid Upto">
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-12 ">
-                <div class="form-group">
-                    <label>Attachment 
-                    </label>
-                    <input type="file" class="form-control" name="test_attachment">
-                </div>
+                </label>
+                <select name="language_level" class="form-control">
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Competent">Competent</option>
+                    <option value="Expert">Expert</option>
+                </select>
             </div>
         </div>
-<hr>
-        <div id="addschoolrow">
 
-        </div>
-        <div class="col-lg-12 col-md-12 mt-2 col-12">
-            <button type="button" class="add-btn uk-button uk-button-primary" id="addschoolbtn"> + Add
-                School</button>
+    </div>
 
+    <div class="row mt-4 custom-box">
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="">
+                <label>
+                    Certified By
+                </label>
+                <input type="text" class="form-control" name="language_certified_by">
+            </div>
         </div>
-        <div id="addcollegerow">
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="">
+                <label>
+                    Attachment
+                </label>
+                <input type="file" class="form-control" name="language_attachment">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-4 custom-box">
+        <div class="col-lg-3 col-md-3 col-12">
+            <div class="form-group">
+                <label>Applicant Test Scores</label>
+                <select class="form-control" id="" name="applicant_test_name[]">
+                    <option value="">Select</option>
+                    <option value="IELTS">IELTS</option>
+                    <option value="TOFEL">TOFEL</option>
+                    <option value="CELPIP">CELPIP</option>
+                    <option value="GRE">GRE</option>
+                    <option value="PTE">PTE</option>
+                    <option value="SAT">SAT</option>
+                    <option value="GMAT">GMAT</option>
+                    <option value="HSEiT">HSEiT</option>
+                    <option value="LSAT">LSAT</option>
 
-        </div>
-        <div class="col-lg-12 col-md-12  mt-2 col-12">
-            <button type="button" class="add-btn  uk-button uk-button-primary" id="collegebtn"> + Add
-                College</button>
-        </div>
-        <div id="addpgrow">
 
-        </div>
-        <div class="col-lg-12 col-md-12 mt-2 col-12">
-            <button type="button" class="add-btn uk-button uk-button-primary" id="pgbtn"> + Add
-                PostGraduation</button>
-        </div>
-        <div id="addotherrow">
-        </div>
-        <div class="col-lg-12 col-md-12 mt-2 col-12">
-            <button type="button" class="add-btn uk-button uk-button-primary" id="otherbtn"> + Add
-                OtherQualification</button>
-        </div>
-        <hr>
+                </select>
 
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-12">
+            <div class="form-group">
+                <label>If Other Applicant</label>
+                <input class="form-control " type="text" name="applicant_test_name[]">
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-12 ">
+            <div class="form-group">
+                <label> Valid Upto
+                </label>
+                <input class="form-control " name="test_valid_upto" type="date" placeholder="Valid Upto">
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-12 ">
+            <div class="form-group">
+                <label>Attachment
+                </label>
+                <input type="file" class="form-control" name="test_attachment">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <u1 data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto !important">
+        <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">School </a></li>
+        <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">College </a></li>
+        <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">PostGraduation</a></li>
+        <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">OtherQualification</a></li>
+
+    </u1>
+    <u1 class="uk-switcher" class="">
+        <li id='menu' class='tab-pane '>
+            <div id="addschoolrow">
+
+            </div>
+            <div class="col-lg-12 col-md-12 mt-2 col-12">
+                <button type="button" class="add-btn uk-button uk-button-primary" id="addschoolbtn"> + Add
+                    School</button>
+
+            </div>
+        </li>
+        <li id='menu1' class='tab-pane '>
+            <div id="addcollegerow">
+
+            </div>
+            <div class="col-lg-12 col-md-12  mt-2 col-12">
+                <button type="button" class="add-btn  uk-button uk-button-primary" id="collegebtn"> + Add
+                    College</button>
+            </div>
+        </li>
+        <li id='menu2' class='tab-pane '>
+            <div id="addpgrow">
+
+            </div>
+            <div class="col-lg-12 col-md-12 mt-2 col-12">
+                <button type="button" class="add-btn uk-button uk-button-primary" id="pgbtn"> + Add
+                    PostGraduation</button>
+            </div>
+        </li>
+        <li id='menu3' class='tab-pane '>
+
+            <div id="addotherrow">
+            </div>
+            <div class="col-lg-12 col-md-12 mt-2 col-12">
+                <button type="button" class="add-btn uk-button uk-button-primary" id="otherbtn"> + Add
+                    OtherQualification</button>
+            </div>
+        </li>
+    </u1>
+    <hr>
+    <div class="float-right">
         <div class="col-lg-12 col-md-12 col-12">
             <button type="submit" id="submit2" class="client-btn uk-button uk-button-primary">
                 <div id="loading2">Submit
@@ -137,7 +155,8 @@
                 </div>
             </button>
         </div>
-    </form>
+    </div>
+</form>
 
 
 
@@ -250,7 +269,7 @@
                 </div>
                    <hr>
                     </div>
-                             <br>
+                            
                                 `
 
             $('#addschoolrow').append(html);

@@ -101,8 +101,7 @@
                 <li id='menu' class='tab-pane '>
                     <div class='uk-card col-md-11 ' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Personal Information</h6>
 
                                     <div class="row custom-box">
@@ -180,7 +179,7 @@
                                         </div>
                                     </div>
                                 </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Address</h6>
 
                                     <div class="row custom-box">
@@ -247,15 +246,13 @@
                                         </div>
                                     </div>
                                 </fieldset>
-                            </fieldset>
                         </div>
                     </div>
                 </li>
                 <li id='menu1' class='tab-pane '>
                     <div class='uk-card col-md-11' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Course Details</h6>
                                     <div class="row custom-box">
                                         <div class="col-md-6">
@@ -366,7 +363,7 @@
                                         </div>
                                     </div>
                                 </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Other Details</h6>
                                     @if($institutions->medium)
                                     <div class="row custom-box">
@@ -593,7 +590,6 @@
                                         </div>
                                     </div>
                                 </fieldset>
-                            </fieldset>
                         </div>
                     </div>
                 </li>
@@ -633,7 +629,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea class="outset" name="history" value="{{$institutions->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$institutions->history}}</textarea>
+                                            <textarea name="history" value="{{$institutions->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$institutions->history}}</textarea>
 
 
                                         </div>
@@ -749,7 +745,7 @@
                 <script>
                     $("textarea").each(function(index) {
                         console.log(index, $(this)[0].scrollHeight)
-                        $(this).height($(this)[0].scrollHeight);
+                        $(this).height($(this)[0].scrollHeight+15);
 
                     });
                 </script>

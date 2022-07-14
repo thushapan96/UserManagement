@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Permisson;
 use App\Models\RolePermisson;
+use App\Models\Setting;
 
 
 
@@ -125,6 +126,7 @@ class AppServiceProvider extends ServiceProvider
                 $settingId = Permisson::where(['name' => 'Settings'])->value('id');
                 $settingIdExist = RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $settingId)->first();
 
+                $currencyPrice = Setting::where('type','currency')->value('value');
                 $view->with('DashboardIdExist', $DashboardIdExist)
                     ->with('test', $test)
                     ->with('CandidateformsViewIdExist', $CandidateformsViewIdExist)
@@ -162,7 +164,9 @@ class AppServiceProvider extends ServiceProvider
                     ->with('ReportsExist2', $ReportsExist2)
                     ->with('ReportsExist3', $ReportsExist3)
                     ->with('AccountsIdExist', $AccountsIdExist)
-                    ->with('settingIdExist', $settingIdExist);
+                    ->with('settingIdExist', $settingIdExist)
+                    
+                    ->with('currencyPrice', $currencyPrice);
             }
         });
     }

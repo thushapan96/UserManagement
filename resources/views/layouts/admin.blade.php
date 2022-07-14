@@ -670,6 +670,12 @@
 
                                     </li>
 
+                                    <li class=" page-active">
+
+                                        <a href="{{route('configure')}}"> Configuration </a>
+
+                                    </li>
+
                                 </ul>
                             </li>
                             @endif

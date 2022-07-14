@@ -1,0 +1,28 @@
+1) if text null put symbole no data or --
+2) profile image change to increase
+3) feedbacks and canada inspire modulation changed as request
+
+5) year sholud be years format
+6) view pdf format
+7) display all element
+8) edit sidebar
+9) changing naming convention for example about company change  about team LIST chanhe teAM
+10) filter function same for every one
+11) register form alignment when refresh
+12) redirect to direclty dashboard after login
+
+
+
+
+
+
+
+
+
+
+
+tomorrow
+1) textarea setting for add blade
+12) validation for all form
+13) register form reason for rejectipn
+4) feedback editable

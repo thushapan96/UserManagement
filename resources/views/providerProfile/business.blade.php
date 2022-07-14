@@ -42,6 +42,9 @@
         vertical-align: top;
         border-top: 0.1px solid #dee2e6 !important;
     }
+    label {
+        font-weight: bold !important;
+    }
 </style>
 @if($message = Session::get('formSuccess'))
 <script>
@@ -83,8 +86,7 @@
                 <li id='menu' class='tab-pane '>
                     <div class='uk-card col-md-11 ' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Personal Information</h6>
 
                                     <div class="row custom-box">
@@ -111,7 +113,7 @@
                                     </div>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
-                                            <strong class="ps">RCIC Number*</strong>
+                                            <strong class="ps">Registration Number</strong>
                                         </div>
 
                                         <div class="col-md-7">
@@ -166,7 +168,7 @@
                                         </div>
                                     </div>
                                 </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Address</h6>
 
                                     <div class="row custom-box">
@@ -232,9 +234,8 @@
                                             </p>
                                         </div>
                                     </div>
-                                </fieldset>
-                                <br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                </fieldset><br>
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">other Information</h6>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
@@ -329,7 +330,6 @@
                                     </div>
                                     <br>
                                 </fieldset>
-                            </fieldset>
                         </div>
                     </div>
                 </li>
@@ -551,58 +551,11 @@
                         </div>
                     </div>
                 </li>
-                <!-- <li class='tab-pane ' id="menu5">
-                    <div class="uk-card col-md-10" style="margin-left:5% !important;">
-                        <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Canada Inspire provides Additional Services :-
-                                            </label>
-                                            <br>
-
-                                            <textarea style="width:100%;background:white !important; box-shadow: none ;" rows="12" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
-                             have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                             1. Is your Company looking for Website Design/Re Design or Development to give professional look
-                               and exposure for International community?
-                               2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
-                               on your Website?
-                            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                             4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
-                               enhance your services?
-                              5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
-                                your company marketing activities,  follow-up, and efficiency to generate good revenues
-                                 for your company and always ahead with your competitors?</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </li>
-                <li class='tab-pane ' id="menu6">
-                    <div class="uk-card col-md-10" style="margin-left:5% !important;">
-                        <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Feedback of Canada Inspire
-                                            </label>
-                                            <br>
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="9" name="Comment" value="{{$consultants->Comment}}" disabled>{{$consultants->Comment}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </li> -->
+               
                 <script>
                     $("textarea").each(function(index) {
                         console.log(index, $(this)[0].scrollHeight)
-                        $(this).height($(this)[0].scrollHeight);
+                        $(this).height($(this)[0].scrollHeight+15);
                     });
                 </script>
             </u1>

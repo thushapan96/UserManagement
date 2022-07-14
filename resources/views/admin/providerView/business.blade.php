@@ -42,6 +42,10 @@
         vertical-align: top;
         border-top: 0.1px solid #dee2e6 !important;
     }
+
+    label {
+        font-weight: bold !important;
+    }
 </style>
 @if($message = Session::get('formSuccess'))
 <script>
@@ -81,8 +85,7 @@
                 <li id='menu' class='tab-pane '>
                     <div class='uk-card col-md-11 ' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Personal Information</h6>
 
                                     <div class="row custom-box">
@@ -164,7 +167,7 @@
                                         </div>
                                     </div>
                                 </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">Address</h6>
 
                                     <div class="row custom-box">
@@ -232,7 +235,7 @@
                                     </div>
                                 </fieldset>
                                 <br>
-                                <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <h6 style="text-decoration:underline;">other Information</h6>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
@@ -327,7 +330,6 @@
                                     </div>
                                     <br>
                                 </fieldset>
-                            </fieldset>
                         </div>
                     </div>
                 </li>
@@ -354,7 +356,7 @@
                                         <div class="form-group">
                                             <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
 
-                                            <textarea name="privacy_policy_detail"  value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
+                                            <textarea name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -367,7 +369,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea class="outset" name="history"  value="{{$consultants->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
+                                            <textarea class="outset" name="history" value="{{$consultants->history}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled> {{$consultants->history}}</textarea>
 
 
                                         </div>
@@ -382,7 +384,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -419,10 +421,10 @@
                             @foreach($teams as $key=>$row )
 
                             <div class="col-md-10" style="margin-left: auto;margin-right:auto;">
-                                <div class="uk-card uk-card-hover" style="height:250px">
+                                <div class="uk-card uk-card-hover" style="height:248px">
                                     <div class="uk-card-body sc-padding-remove">
                                         <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative" style="height:248px;overflow:none">
+                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-100" >
                                                 @if($row->team_img)
                                                 <img class="rounded-circle  img " style="width:200px !important;height:200px; margin: 0 auto;" src="{{url('files/'.$row->team_img)}}">
                                                 @else
@@ -497,7 +499,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="achievement" value="{{$consultants->achievement}}" disabled>{{$consultants->achievement}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -540,7 +542,7 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;"  name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
+                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="event_new_weblink" value="{{$consultants->event_new_weblink}}" disabled>{{$consultants->event_new_weblink}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -549,65 +551,18 @@
                         </div>
                     </div>
                 </li>
-                <!-- <li class='tab-pane ' id="menu5">
-                    <div class="uk-card col-md-10" style="margin-left:5% !important;">
-                        <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Canada Inspire provides Additional Services :-
-                                            </label>
-                                            <br>
-
-                                            <textarea style="width:100%;background:white !important; box-shadow: none ;" rows="12" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
-                             have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                             1. Is your Company looking for Website Design/Re Design or Development to give professional look
-                               and exposure for International community?
-                               2. Are you looking for development of Online Appointments and Payment Gateway or Integration 
-                               on your Website?
-                            3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                             4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and 
-                               enhance your services?
-                              5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage 
-                                your company marketing activities,  follow-up, and efficiency to generate good revenues
-                                 for your company and always ahead with your competitors?</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </li>
-                <li class='tab-pane ' id="menu6">
-                    <div class="uk-card col-md-10" style="margin-left:5% !important;">
-                        <div class="uk-card-body sc-padding-medium">
-                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Feedback of Canada Inspire
-                                            </label>
-                                            <br>
-                                            <textarea style="width:100%;background-color:white !important; box-shadow: none ;" rows="9" name="Comment" value="{{$consultants->Comment}}" disabled>{{$consultants->Comment}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </li> -->
+             
                 <script>
                     $("textarea").each(function(index) {
                         console.log(index, $(this)[0].scrollHeight)
-                        $(this).height($(this)[0].scrollHeight);
+                        $(this).height($(this)[0].scrollHeight+15);
                     });
                 </script>
             </u1>
 
         </div>
 
-        <div class="col-md-3 uk-card" style="margin-top:110px;height:100% !important; box-shadow:none !important;">
+        <div class="col-md-3 uk-card" style="margin-top:110px;height:100% !important; box-shadow:none !important;margin-left:auto !important;margin-right:auto !important">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
@@ -619,7 +574,7 @@
                             <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                             @endif
                         </div>
-                       <br>
+                        <br>
 
                         <div class="row">
                             <a class="facebook" href="{{$consultants->fb_link}}" target="_blank">
@@ -647,8 +602,8 @@
                             </a>
 
                         </div>
-                       
-                       
+
+
                     </div>
                 </fieldset>
             </div>
@@ -661,7 +616,7 @@
     $(document).ready(function() {
         // $('.page-active').removeClass('sc-page-active')
         // $('.page-Profile').addClass('sc-page-active')
-        
+
         var chargeable = "{{$consultants->initial_chargeable_type}}"
         if (chargeable == 'free') {
             $('.free').css('text-decoration', 'underline')

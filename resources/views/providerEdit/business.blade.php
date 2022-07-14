@@ -652,64 +652,10 @@
                         </div>
                     </li>
 
-                    <!-- <li id='menu5' class='tab-pane'>
-                        <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
-                            <div class="uk-card-body sc-padding-medium">
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label>Canada Inspire provides Additional Services :-
-                                                </label>
-                                                <br>
-
-                                                <textarea class="form-control" style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
-                                   We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                                   1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
-                                   2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
-                                   3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                                   4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
-                                   5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, 
-                                   follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="float-right">
-                                        <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
-
-                                        <button type="button" class="client-btn bmenu5 uk-button uk-button-primary">Next </button>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li id='menu6' class='tab-pane'>
-                        <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
-                            <div class="uk-card-body sc-padding-medium">
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label>We are looking forward to have your valuable Comments/Remarks to add or modify on the above given information to make it more informative.
-                                                </label>
-                                                <br>
-
-                                                <textarea style="width:100%;" name="Comment" value="{{$consultants->Comment}}">{{$consultants->Comment}}</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="float-right">
-                                        <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </li> -->
                     <script>
                         $("textarea").each(function(index) {
                             console.log(index, $(this)[0].scrollHeight)
-                            $(this).height($(this)[0].scrollHeight);
+                            $(this).height($(this)[0].scrollHeight+15);
                         });
                     </script>
                 </u1>

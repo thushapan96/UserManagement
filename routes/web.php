@@ -29,10 +29,7 @@ Route::get('/test', function () {
 
     return view('test2');
 })->name('test2');
-Route::get('/table', function () {
 
-    return view('admin.package.candidate');
-})->name('table');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -106,6 +103,8 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::post('/provider/price/post', 'App\Http\Controllers\MembershipController@providerPriceChange')->name('provider.price.post');
 
 
+    Route::get('/configure', 'App\Http\Controllers\MembershipController@configure')->name('configure');
+    Route::post('/currency/change', 'App\Http\Controllers\MembershipController@currencyChange')->name('currency.change');
 
 });
 

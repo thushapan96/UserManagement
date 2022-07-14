@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\MembershipCandidate;
 use App\Models\MembershipInstitution;
 use App\Models\MembershipProvider;
+use App\Models\Setting;
 use App\Models\Personal;
 
 class MembershipController extends Controller
@@ -172,7 +173,7 @@ class MembershipController extends Controller
 
     public function candidatePrice(Request $request)
     {
-        
+
         $membershipCandidate = MembershipCandidate::select('type', 'duration', 'price')->get();
 
         return view('admin.package.candidate')->with('membershipCandidate', $membershipCandidate);
@@ -216,5 +217,20 @@ class MembershipController extends Controller
 
         return redirect(route('provider.price'));
     }
-    
+
+    public function configure(Request $request)
+    {
+        $currency = Setting::where('type', 'currency')->first();
+
+        return view('admin.configure')->with('currency', $currency);
+    }
+
+    public function currencyChange(Request $request)
+    {
+        $currency = Setting::where('type', 'currency')->first();
+        $currency->value = $request->currency;
+        $currency->save();
+
+        return redirect(route('configure'));
+    }
 }

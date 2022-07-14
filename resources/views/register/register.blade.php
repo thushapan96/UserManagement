@@ -20,7 +20,7 @@
 
 <!-- Subscribe & Stay Connected. Start -->
 <section>
-    
+
     <div class="col-md-10" style="margin-left:auto !important;margin-right:auto !important">
 
         <u1 class="col-md-8" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto !important">
@@ -431,20 +431,21 @@
                                     </div>
 
                                     <hr>
-                                    <div class="row mb-1">
+                                  
 
+                                        <div class="float-right">
+                                            <div class="col-lg-12 col-md-12 col-12">
+                                                <a href="{{route('candidate_personal_add')}}"> <button type="submit" id="submit1" class="client-btn uk-button uk-button-primary" onclick="this.classList.toggle('running')">
+                                                        <div id="loading1">Submit
+                                                            And
+                                                            Next
+                                                        </div>
+                                                        <div class="ld ld-ring ld-spin"></div>
+                                                    </button> </a>
 
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <a href="{{route('candidate_personal_add')}}"> <button type="submit" id="submit1" class="client-btn uk-button uk-button-primary" onclick="this.classList.toggle('running')">
-                                                    <div id="loading1">Submit
-                                                        And
-                                                        Next
-                                                    </div>
-                                                    <div class="ld ld-ring ld-spin"></div>
-                                                </button> </a>
-
+                                            </div>
                                         </div>
-                                    </div>
+                                   
                                 </div>
                             </form>
                         </fieldset>
