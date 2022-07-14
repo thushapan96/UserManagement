@@ -17,6 +17,7 @@ class EnquiryController extends Controller
         $id = $request->id;
         $status = $request->status;
         $statuss = $request->statuss;
+        $course_enquiry = $request->course_enquiry;
 
         $type = $request->type;
         $PersonalId =  Personal::where('user_id', Auth::user()->id)->value('id');
@@ -26,6 +27,7 @@ class EnquiryController extends Controller
             if ($Enquiry) {
                 $Enquiry->status = $status;
                 $Enquiry->statuss  =  $statuss;
+                $Enquiry->course_enquiry  =  $course_enquiry;
                 $Enquiry->save();
             } else {
                 $Enquiry =  new Enquiry;
@@ -33,6 +35,7 @@ class EnquiryController extends Controller
                 $Enquiry->institution_id  = $id;
                 $Enquiry->status  =  $status;
                 $Enquiry->statuss  =  $statuss;
+                $Enquiry->course_enquiry  =  $course_enquiry;
                 $Enquiry->save();
             }
         } else {

@@ -453,7 +453,7 @@
                             </li>
 
                             <li title="institution" class="page-institution page-active">
-                                <a href="#" class=" sc-js-notify-status-warning">
+                                <a href="#" class=" ">
                                     <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
                                     <span class="uk-nav-title">institution</span>
                                 </a>
@@ -477,7 +477,7 @@
                                 </ul>
                             </li>
                             <li title="consultant" class=" page-active">
-                                <a href="#" class=" sc-js-notify-status-warning">
+                                <a href="#" class="">
                                     <span class="uk-nav-icon"> <i class=" fa fa-building"></i>
                                     </span><span class="uk-nav-title">consultant</span>
                                 </a>
@@ -541,7 +541,7 @@
                                     </a>
                             </li>
                             <li title="report">
-                                <a href="#" class=" sc-js-notify-status-warning">
+                                <a href="#" class=" ">
                                     <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>
 
                                     </span><span class="uk-nav-title">report</span>
@@ -592,7 +592,7 @@
                         </ul>
                     </li>
                     <li class="" style="padding:0 !important">
-                        <a href="#" class=" sc-js-notify-status-warning"><span style="color:#d81400;font-size: 17px;">Utilities</span></a>
+                        <a href="#" class=" "><span style="color:#d81400;font-size: 17px;">Utilities</span></a>
 
                         <ul class="sc-sidebar-menu">
 

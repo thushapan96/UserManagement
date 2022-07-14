@@ -96,7 +96,12 @@ class MembershipController extends Controller
 
         $MembershipCandidate->Dashboard = $request->Dashboard;
         $MembershipCandidate->EA = $request->EA;
-        $MembershipCandidate->Enquiries = $request->Enquiries;
+        $MembershipCandidate->Diploma = $request->Diploma;
+        $MembershipCandidate->PG_Diploma = $request->PG_Diploma;
+        $MembershipCandidate->Certification = $request->Certification;
+        $MembershipCandidate->Graduation = $request->Graduation;
+        $MembershipCandidate->Post_Graduation = $request->Post_Graduation;
+        $MembershipCandidate->Doctorate = $request->Doctorate;
         $MembershipCandidate->DefaultReports = $request->DefaultReports;
         $MembershipCandidate->CustomizedReports = $request->CustomizedReports;
         $MembershipCandidate->ChatAgents = $request->ChatAgents;
@@ -211,4 +216,5 @@ class MembershipController extends Controller
 
         return redirect(route('provider.price'));
     }
+    
 }

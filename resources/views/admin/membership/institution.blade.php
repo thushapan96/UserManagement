@@ -203,7 +203,7 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                               
+
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3BAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate1->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3BAdd_On_features_Free">Free</label>
@@ -232,7 +232,7 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                               
+
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3BeLearningManagementSystem" name="eLearningManagementSystem" value="1" {{ $membershipCandidate1->eLearningManagementSystem == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3BeLearningManagementSystem">Free</label>
@@ -248,7 +248,7 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                              
+
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3BQuickBooks" name="QuickBooks" value="1" {{ $membershipCandidate1->QuickBooks == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3BQuickBooks">Free</label>
@@ -259,14 +259,34 @@
                                     <input class="custom-control-input" type="checkbox" id="3BQuickBooks-paid" name="QuickBooks" value="2" {{ $membershipCandidate1->QuickBooks == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3BQuickBooks-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label> : QuickBooks  </label>
+                                <label> : QuickBooks </label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate1->Enquiries}}">
-                                <label>Enquiries </label>
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate1->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate1->price}}">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate1->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate1->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate1->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate1->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate1->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate1->price}}">
                                 <label> Package Price</label>
                             </div><br>
 
@@ -323,7 +343,7 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                               
+
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3SAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate2->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3SAdd_On_features_Free">Free</label>
@@ -379,11 +399,31 @@
                                 <label>: QuickBooks</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number" id="3SEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate2->Enquiries}}">
-                                <label>Enquiries </label>
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate2->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate2->price}}">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate2->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate2->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate2->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate2->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate2->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate2->price}}">
                                 <label> Package Price</label>
                             </div><br>
 
@@ -467,7 +507,7 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                
+
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3PeLearningManagementSystem" name="eLearningManagementSystem" value="1" {{ $membershipCandidate3->eLearningManagementSystem == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3PeLearningManagementSystem">Free</label>
@@ -482,7 +522,7 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                               
+
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="3PQuickBooks" name="QuickBooks" value="1" {{ $membershipCandidate3->QuickBooks == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3PQuickBooks">Free</label>
@@ -495,11 +535,31 @@
                                 <label>: QuickBooks</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number" id="3PEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate3->Enquiries}}">
-                                <label>Enquiries </label>
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate3->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate3->price}}">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate3->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate3->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate3->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate3->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate3->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate3->price}}">
                                 <label> Package Price</label>
                             </div><br>
 
@@ -573,7 +633,7 @@
                                     <input class="custom-control-input" type="checkbox" id="6BAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate4->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="6BAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label> : Add On features  </label>
+                                <label> : Add On features </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -587,7 +647,7 @@
                                     <input class="custom-control-input" type="checkbox" id="6BAppointmentScheduler-paid" name="AppointmentScheduler" value="2" {{ $membershipCandidate4->AppointmentScheduler == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="6BAppointmentScheduler-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label> : Appointment Scheduler  </label>
+                                <label> : Appointment Scheduler </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -618,11 +678,31 @@
                                 <label> : QuickBooks </label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number" id="6BEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate4->Enquiries}}">
-                                <label>Enquiries </label>
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate4->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate4->price}}">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate4->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate4->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate4->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate4->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate4->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate4->price}}">
                                 <label> Package Price</label>
                             </div><br>
                         </div>
@@ -733,11 +813,31 @@
                                 <label>: QuickBooks</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number" id="6SEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate5->Enquiries}}">
-                                <label>Enquiries </label>
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate5->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate5->price}}">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate5->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate5->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate5->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate5->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate5->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate5->price}}">
                                 <label> Package Price</label>
                             </div><br>
                         </div>
@@ -848,11 +948,31 @@
                                 <label>: QuickBooks</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number" id="6PEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate6->Enquiries}}">
-                                <label>Enquiries </label>
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate6->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate6->price}}">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate6->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate6->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate6->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate6->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate6->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate6->price}}">
                                 <label> Package Price</label>
                             </div><br>
                         </div>
@@ -950,7 +1070,7 @@
 
                                     <input class="custom-control-input" type="checkbox" id="9BeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate7->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BeLearningManagementSystem-paid"> Paid</label>
-                                </div>  &nbsp;&nbsp;
+                                </div> &nbsp;&nbsp;
                                 <label>: eLearning Management System</label>
                             </div><br>
                             <div class="row">
@@ -968,11 +1088,31 @@
                                 <label>: QuickBooks</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number" id="9BEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate7->Enquiries}}">
-                                <label>Enquiries </label>
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate7->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate7->price}}">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate7->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate7->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate7->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate7->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate7->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate7->price}}">
                                 <label> Package Price</label>
                             </div><br>
                         </div>
@@ -1080,13 +1220,33 @@
                                     <label class="custom-control-label" for="9SQuickBooks-paid"> Paid</label>
                                 </div>
                             </div><br>&nbsp;&nbsp;
-                                <label>: QuickBooks</label>
+                            <label>: QuickBooks</label>
                             <div class="">
-                                <input class="" type="number" id="9SEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate8->Enquiries}}">
-                                <label>Enquiries </label>
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate8->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate8->price}}">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate8->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate8->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate8->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate8->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate8->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate8->price}}">
                                 <label> Package Price</label>
                             </div><br>
                         </div>
@@ -1142,7 +1302,7 @@
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
-                                
+
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate9->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
@@ -1182,7 +1342,7 @@
                                     <input class="custom-control-input" type="checkbox" id="9PeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate9->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PeLearningManagementSystem-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label> : eLearning Management System  </label>
+                                <label> : eLearning Management System </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -1199,11 +1359,31 @@
                                 <label>: QuickBooks</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number" id="9PEnquiries" style="width:12%;height:50%" name="Enquiries" value="{{$membershipCandidate9->Enquiries}}">
-                                <label>Enquiries </label>
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate9->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
                             </div><br>
                             <div class="">
-                                <input class="" type="number"  style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate9->price}}">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate9->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate9->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate9->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate9->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate9->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate9->price}}">
                                 <label> Package Price</label>
                             </div><br>
 

@@ -77,8 +77,14 @@ scutum.components.notifications = {
             });
         });
         $('.sc-js-notify-status-warning').on('click', function() {
-            UIkit.notification('If you want to view the page , you should complete Registration', {
+            UIkit.notification('Complete your registration process to enable the features and access the portal.', {
                 status: 'warning',
+
+            });
+        });
+        $('.sc-js-notify-status-warningg').on('click', function() {
+            UIkit.notification('Complete your Membership process to access the Databank and start Consulting Schools/Colleges/Universities/RCIC Consultants/Immigration Lawyers/Attorneys/Chartered Accountants.', {
+                pos: 'top-center',
 
             });
         });

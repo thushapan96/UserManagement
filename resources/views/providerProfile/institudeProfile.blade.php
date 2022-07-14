@@ -80,7 +80,60 @@
     )
 </script>
 @endif
+<div id="modal-close-default" data-uk-modal>
+    <div class="uk-modal-dialog uk-modal-body" style="width:500px !important">
+        <button class="uk-modal-close-default" type="button" data-uk-close></button>
 
+
+        <h6> Extend Services</h6>
+        <div class="row custom-box sd multipleCandidate">
+            @if($institutions->type == 'College')
+            <div class="col-lg-4 col-md-4 col-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input service find" id="customCheck" name="course_enquiry[]" value="Diploma">
+                    <label class="custom-control-label" for="customCheck">Diploma</label>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input service find" id="customCheck1" name="course_enquiry[]" value="PG Diploma">
+                    <label class="custom-control-label" for="customCheck1">PG Diploma </label>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-4 mb-3">
+                <div class="custom-control custom-checkbox ">
+                    <input type="checkbox" class="custom-control-input service find" id="customCheck2" name="course_enquiry[]" value="Certification">
+                    <label class="custom-control-label" for="customCheck2">Certification</label>
+                </div>
+            </div>
+            @endif
+            @if($institutions->type == 'University')
+            <div class="col-lg-4 col-md-4 col-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input service find" id="customCheck" name="course_enquiry[]" value="Graduation">
+                    <label class="custom-control-label" for="customCheck">Graduation</label>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input service find" id="customCheck1" name="course_enquiry[]" value="Post Graduation ">
+                    <label class="custom-control-label" for="customCheck1">Post Graduation </label>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-4 mb-3">
+                <div class="custom-control custom-checkbox ">
+                    <input type="checkbox" class="custom-control-input service find" id="customCheck2" name="course_enquiry[]" value="Doctorate">
+                    <label class="custom-control-label" for="customCheck2">Doctorate</label>
+                </div>
+            </div>
+            @endif
+        </div>
+        <p class="uk-text-center">
+            <button class="sc-button confirm" type="submit">Confirm</button>
+        </p>
+
+    </div>
+</div>
 <section>
 
     <div class="row">
@@ -839,6 +892,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        var institype = "{{$institutions->type}}"
 
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
@@ -852,30 +906,58 @@
 
                     var status = 'Request';
                     var statuss = 1;
+                    if (institype == 'School') {
+                        $.ajax({
 
+                            method: "post",
+                            url: "/candidate/request",
+                            dataType: 'json',
 
-                    $.ajax({
+                            data: {
+                                '_token': '{{ csrf_token() }}',
+                                id: id,
+                                status: status,
+                                statuss: statuss,
+                                type: 'institution'
+                            },
+                            success: function(result) {
+                                console.log(result);
+                                location.reload();
+                            }
 
-                        method: "post",
-                        url: "/candidate/request",
-                        dataType: 'json',
+                        });
+                    } else {
+                        UIkit.modal('#modal-close-default').toggle();
+                        $('.confirm').click(function() {
+                            var course_enquiry = []
+                            $("input[name='course_enquiry[]']:checked").each(function() {
+                                course_enquiry.push($(this).val());
+                            });
+                            $.ajax({
 
-                        data: {
-                            '_token': '{{ csrf_token() }}',
-                            id: id,
-                            status: status,
-                            statuss: statuss,
-                            type: 'institution'
-                        },
-                        success: function(result) {
-                            console.log(result);
-                            location.reload();
-                        }
+                                method: "post",
+                                url: "/candidate/request",
+                                dataType: 'json',
 
-                    });
+                                data: {
+                                    '_token': '{{ csrf_token() }}',
+                                    id: id,
+                                    status: status,
+                                    statuss: statuss,
+                                    course_enquiry: course_enquiry,
+                                    type: 'institution',
+                                },
+                                success: function(result) {
+                                    console.log(result);
+                                    location.reload();
+                                }
+
+                            });
+                        })
+                    }
                 }
-            }else{
-                alert("You Can Not Cancel Request" )
+            } else {
+                alert("You Can Not Cancel Request")
             }
         });
 

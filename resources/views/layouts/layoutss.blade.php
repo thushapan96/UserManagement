@@ -139,6 +139,19 @@
         align-items: center;
         position: relative;
     }
+
+    .uk-notification-message {
+        background: #f39c12 !important;
+        color: #fff;
+        font-size: 14px;
+        font-size: .875rem;
+        padding: 12px 36px 12px 16px;
+        border-radius: 3px;
+        margin-bottom: 4px;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        width: 500px;
+    }
 </style>
 
 <body>
@@ -232,7 +245,7 @@
                     </li>
                     <li class="uk-visible@l">
                     </li>
-                 
+
                     <li>
                         <a href="#">
                             <span class="mdi mdi-email"></span>
@@ -477,18 +490,25 @@
 
                                 <ul class="sc-sidebar-menu-sub">
                                     <li class="page-School page-active">
-
+                                        @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                         <a href="{{route('dashboard.view.school')}}"> School </a>
-
+                                        @else
+                                        <a href="#" class="sc-js-notify-status-warningg"> School </a>
+                                        @endif
                                     </li>
                                     <li class="page-College page-active">
-
+                                        @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                         <a href="{{route('dashboard.view.college')}}"> College </a>
-
+                                        @else
+                                        <a href="#" class="sc-js-notify-status-warningg"> College </a>
+                                        @endif
                                     </li>
                                     <li class="page-University page-active">
-                                        <a href="{{route('dashboard.view.university')}}"> university </a>
-
+                                        @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
+                                        <a href="{{route('dashboard.view.university')}}" class="sc-js-notify-status-warningg"> university </a>
+                                        @else
+                                        <a href="#" class="sc-js-notify-status-warningg"> university </a>
+                                        @endif
                                     </li>
 
                                 </ul>
@@ -501,14 +521,18 @@
 
                                 <ul class="sc-sidebar-menu-sub">
                                     <li class="page-RCIC-Consultant page-active">
-
+                                        @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                         <a href="{{route('dashboard.view.consultant')}}"> RCIC Consultant </a>
-
+                                        @else
+                                        <a href="#" class="sc-js-notify-status-warningg"> RCIC Consultant </a>
+                                        @endif
                                     </li>
                                     <li class="page-immigration page-active">
-
+                                        @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                         <a href="{{route('dashboard.view.immigration')}}"> immigration </a>
-
+                                        @else
+                                        <a href="#" class="sc-js-notify-status-warningg"> immigration </a>
+                                        @endif
                                     </li>
 
                                 </ul>
@@ -521,9 +545,11 @@
                                 </a>
                                 <ul class="sc-sidebar-menu-sub">
                                     <li class="page-CA page-active">
-
+                                        @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                         <a href="{{route('dashboard.business')}}">CA & TC </a>
-
+                                        @else
+                                        <a href="#" class="sc-js-notify-status-warningg">CA & TC </a>
+                                        @endif
                                     </li>
 
                                 </ul>
@@ -531,31 +557,51 @@
                             </li>
                             @if(auth()->user()->role == 'candidate')
                             <li title="CRS Calculator" class="page-Calculator page-active">
+                                @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                 <a href="{{route('calculator')}}">
                                     <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
                                     </span><span class="uk-nav-title">CRS Calculator</span>
-                                </a>
+                                </a> @else
+                                <a href="#" class="sc-js-notify-status-warningg">
+                                    <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
+                                    </span><span class="uk-nav-title">CRS Calculator</span>
+                                </a>
+                                @endif
 
                             </li>
                             <li title="Educational Assessment" class="page-Educational page-active">
+                                @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                 <a href="{{route('education')}}">
                                     <span class="uk-nav-icon"><i class="fab fa-readme"></i>
                                     </span><span class="uk-nav-title">Educ Assessment</span>
+                                </a> @else
+                                <a href="#" class="sc-js-notify-status-warningg">
+                                    <span class="uk-nav-icon"><i class="fab fa-readme"></i>
+                                    </span><span class="uk-nav-title">Educ Assessment</span>
                                 </a>
+                                @endif
                             </li>
                             @endif
                             <li title="enquiries" class="page-enquiries page-active">
                                 @if(auth()->user()->role == 'candidate')
+                                @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                 <a href="{{route('candidateEnquiry')}}">
                                     @else
-                                    <a href="{{route('providerEnquiry',['id' => auth()->user()->service_type])}}">
+                                    <a href="#" class="sc-js-notify-status-warningg">
                                         @endif
+                                        @else
+                                        @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
+                                        <a href="{{route('providerEnquiry',['id' => auth()->user()->service_type])}}">
+                                            @else
+                                            <a href="#" class="sc-js-notify-status-warningg">
+                                                @endif
+                                                @endif
 
-                                        <span class="uk-nav-icon"><i class="fas fa-bell"></i>
-                                        </span><span class="uk-nav-title">enquiries</span>
-                                    </a>
+                                                <span class="uk-nav-icon"><i class="fas fa-bell"></i>
+                                                </span><span class="uk-nav-title">enquiries</span>
+                                            </a>
                             </li>
                             <li title="report">
                                 <a href="#">
@@ -762,7 +808,15 @@
                             scutum.dashboard.init()
                         });
                     }
-                })
+                });
+                loadjs("{{asset('assets/js/views/components/notifications.js')}}", {
+                    success: function() {
+                        $(function() {
+                            scutum.components.notifications.init()
+                        });
+                    }
+                });
+
 
                 // show page
                 setTimeout(function() {

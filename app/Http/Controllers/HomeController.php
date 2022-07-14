@@ -164,7 +164,28 @@ class HomeController extends Controller
         } else {
             $package = '';
         }
-        return view('membershipInstitude')->with('membership', $membership)->with('package', $package);
+
+        $membershipCandidate1 = MembershipInstitution::find(1);
+        $membershipCandidate4 = MembershipInstitution::find(2);
+        $membershipCandidate7 = MembershipInstitution::find(3);
+        $membershipCandidate2 = MembershipInstitution::find(4);
+        $membershipCandidate5 = MembershipInstitution::find(5);
+        $membershipCandidate8 = MembershipInstitution::find(6);
+        $membershipCandidate3 = MembershipInstitution::find(7);
+        $membershipCandidate6 = MembershipInstitution::find(8);
+        $membershipCandidate9 = MembershipInstitution::find(9);
+
+        return view('membershipInstitude')->with('membership', $membership)->with('package', $package)
+            ->with('membershipCandidate1', $membershipCandidate1)
+            ->with('membershipCandidate4', $membershipCandidate4)
+            ->with('membershipCandidate7', $membershipCandidate7)
+            ->with('membershipCandidate2', $membershipCandidate2)
+            ->with('membershipCandidate2', $membershipCandidate2)
+            ->with('membershipCandidate5', $membershipCandidate5)
+            ->with('membershipCandidate8', $membershipCandidate8)
+            ->with('membershipCandidate3', $membershipCandidate3)
+            ->with('membershipCandidate6', $membershipCandidate6)
+            ->with('membershipCandidate9', $membershipCandidate9);
     }
     public function membershipAddInstitude()
     {

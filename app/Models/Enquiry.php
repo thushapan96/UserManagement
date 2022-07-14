@@ -13,6 +13,10 @@ class Enquiry extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-       'candidate_id','provider_id','institution_id' ,'status', 'statuss', 'date', 'description', 
+       'candidate_id','provider_id','institution_id' ,'status', 'statuss', 'date', 'description','course_enquiry'
+    ];
+    protected $casts = [
+        'course_enquiry' => 'array',
+        
     ];
 }
