@@ -127,6 +127,9 @@ class AppServiceProvider extends ServiceProvider
                 $settingIdExist = RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $settingId)->first();
 
                 $currencyPrice = Setting::where('type','currency')->value('value');
+                $configureDate = Setting::where('type','date')->value('value');
+
+
                 $view->with('DashboardIdExist', $DashboardIdExist)
                     ->with('test', $test)
                     ->with('CandidateformsViewIdExist', $CandidateformsViewIdExist)
@@ -166,7 +169,8 @@ class AppServiceProvider extends ServiceProvider
                     ->with('AccountsIdExist', $AccountsIdExist)
                     ->with('settingIdExist', $settingIdExist)
                     
-                    ->with('currencyPrice', $currencyPrice);
+                    ->with('currencyPrice', $currencyPrice)
+                    ->with('configureDate', $configureDate);
             }
         });
     }

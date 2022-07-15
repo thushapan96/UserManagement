@@ -105,6 +105,7 @@ Route::group(['middleware' => ['is_admin']], function () {
 
     Route::get('/configure', 'App\Http\Controllers\MembershipController@configure')->name('configure');
     Route::post('/currency/change', 'App\Http\Controllers\MembershipController@currencyChange')->name('currency.change');
+    Route::post('/date/change', 'App\Http\Controllers\MembershipController@dateChange')->name('date.change');
 
 });
 

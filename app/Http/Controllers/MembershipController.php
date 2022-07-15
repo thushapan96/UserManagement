@@ -221,8 +221,9 @@ class MembershipController extends Controller
     public function configure(Request $request)
     {
         $currency = Setting::where('type', 'currency')->first();
+        $dateConfigure = Setting::where('type', 'date')->first();
 
-        return view('admin.configure')->with('currency', $currency);
+        return view('admin.configure')->with('currency', $currency)->with('dateConfigure', $dateConfigure);
     }
 
     public function currencyChange(Request $request)
@@ -233,4 +234,14 @@ class MembershipController extends Controller
 
         return redirect(route('configure'));
     }
+
+    public function dateChange(Request $request)
+    {
+        $date = Setting::where('type', 'date')->first();
+        $date->value = $request->date;
+        $date->save();
+
+        return redirect(route('configure'));
+    }
+    
 }
