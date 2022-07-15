@@ -116,6 +116,7 @@
 
     #sc-sidebar-main .sc-sidebar-menu>li>a .uk-nav-icon>i:before {
         font-size: 1.2rem !important;
+        color: #343a40 !important;
         -webkit-transition: color 140ms cubic-bezier(.55, 0, .1, 1);
         transition: color 140ms cubic-bezier(.55, 0, .1, 1);
     }

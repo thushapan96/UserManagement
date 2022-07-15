@@ -10,7 +10,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <label>Select Role Type</label>
                     <select id="role" name="role" class="form-control" required>
-                        <!-- <option value="1" {{request()->query('roleType') == "1" ? 'selected':''}}>Super Admin</option> -->
+                        <option value="1" {{request()->query('roleType') == "1" ? 'selected':''}}>Super Admin</option>
                         <option value="2" {{request()->query('roleType') == "2" ? 'selected':''}}>Admin</option>
                         <option value="3" {{request()->query('roleType') == "3" ? 'selected':''}}>Accountant</option>
                         <option value="4" {{request()->query('roleType') == "4" ? 'selected':''}}>Co-Ordinator</option>
@@ -18,7 +18,7 @@
                     </select><br>
                 </div>
                 @php
-                 $roleType = request()->query('roleType');
+                $roleType = request()->query('roleType');
                 if($roleType){
                 $ArraypermissonId = \App\Models\RolePermisson::where(['role_id' => $roleType])->get()->pluck('permisson_id');
                 }else{
@@ -81,17 +81,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group">
-                        <h6>others</h6>
-                        @foreach($permissons as $row)
-                        @if($row->category == 'others')
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="checkbox-{{$loop->iteration}}" name="access[]" value="{{$row->id}}" {{ $ArraypermissonId->contains($row->id) ? ' checked' : '' }}>
-                            <label class="custom-control-label" for="checkbox-{{$loop->iteration}}">{{$row->name}}</label><br>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="form-group">
+                            <h6>CONFIGURE RIGHTS</h6>
+                            @foreach($permissons as $row)
+                            @if($row->category == 'configure')
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox-{{$loop->iteration}}" name="access[]" value="{{$row->id}}" {{ $ArraypermissonId->contains($row->id) ? ' checked' : '' }}>
+                                <label class="custom-control-label" for="checkbox-{{$loop->iteration}}">{{$row->name}}</label><br>
+                            </div>
+                            @endif
+                            @endforeach
                         </div>
-                        @endif
-                        @endforeach
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="form-group">
+                            <h6>others</h6>
+                            @foreach($permissons as $row)
+                            @if($row->category == 'others')
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="checkbox-{{$loop->iteration}}" name="access[]" value="{{$row->id}}" {{ $ArraypermissonId->contains($row->id) ? ' checked' : '' }}>
+                                <label class="custom-control-label" for="checkbox-{{$loop->iteration}}">{{$row->name}}</label><br>
+                            </div>
+                            @endif
+                            @endforeach
+                        </div>
                     </div>
                 </div>
                 <div class="float-right">

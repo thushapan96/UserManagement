@@ -129,6 +129,8 @@
 
     #sc-sidebar-main .sc-sidebar-menu>li>a .uk-nav-icon>i:before {
         font-size: 1.2rem !important;
+        color: #343a40 !important;
+
         -webkit-transition: color 140ms cubic-bezier(.55, 0, .1, 1);
         transition: color 140ms cubic-bezier(.55, 0, .1, 1);
     }
@@ -612,73 +614,77 @@
                                         <a href="{{route('admin.privillage')}}"> User Management </a>
 
                                     </li>
-                                    <li class=" page-active">
 
-                                        <a href="#"> Membership </a>
-
-                                        <ul class="sc-sidebar-menu-sub">
-
-                                            <li class="page-active">
-
-                                                <a href="{{route('admin.membership.candidate')}}" style="left: 15px !important;width:70%;">Candidate </a>
-
-                                            </li>
-
-                                            <li class=" page-active">
-
-                                                <a href="{{route('admin.membership.institution')}}" style="left: 15px !important;width:70%;">Institution </a>
-
-                                            </li>
-
-                                            <li class=" page-active">
-
-                                                <a href="{{route('admin.membership.provider')}}" style="left: 15px !important;width:70%;">Provider </a>
-
-                                            </li>
-
-
-                                        </ul>
-
-                                    </li>
-
-                                    <li class=" page-active">
-
-                                        <a href="#"> Packages </a>
-
-                                        <ul class="sc-sidebar-menu-sub">
-
-                                            <li class="page-active">
-
-                                                <a href="{{route('candidate.price')}}" style="left: 15px !important;width:70%;">Candidate </a>
-
-                                            </li>
-
-                                            <li class=" page-active">
-
-                                                <a href="{{route('institution.price')}}" style="left: 15px !important;width:70%;">Institution </a>
-
-                                            </li>
-
-                                            <li class=" page-active">
-
-                                                <a href="{{route('provider.price')}}" style="left: 15px !important;width:70%;">Provider </a>
-
-                                            </li>
-
-
-                                        </ul>
-
-                                    </li>
-
-                                    <li class=" page-active">
-
-                                        <a href="{{route('configure')}}"> Configuration </a>
-
-                                    </li>
 
                                 </ul>
                             </li>
                             @endif
+                            <li class=" page-active">
+
+                                <a href="#"> <span class="uk-nav-icon"> <i class="fas fa-users"></i>
+
+                                    </span> Membership </a>
+
+                                <ul class="sc-sidebar-menu-sub">
+
+                                    <li class="page-active">
+
+                                        <a href="{{route('admin.membership.candidate')}}" style="left: 15px !important;width:70%;">Candidate </a>
+
+                                    </li>
+
+                                    <li class=" page-active">
+
+                                        <a href="{{route('admin.membership.institution')}}" style="left: 15px !important;width:70%;">Institution </a>
+
+                                    </li>
+
+                                    <li class=" page-active">
+
+                                        <a href="{{route('admin.membership.provider')}}" style="left: 15px !important;width:70%;">Provider </a>
+
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+                            <li class=" page-active">
+
+                                <a href="#"> <span class="uk-nav-icon"> <i class="fas fa-cubes"></i></span>
+                                    Packages </a>
+
+                                <ul class="sc-sidebar-menu-sub">
+
+                                    <li class="page-active">
+
+                                        <a href="{{route('candidate.price')}}" style="left: 15px !important;width:70%;">Candidate </a>
+
+                                    </li>
+
+                                    <li class=" page-active">
+
+                                        <a href="{{route('institution.price')}}" style="left: 15px !important;width:70%;">Institution </a>
+
+                                    </li>
+
+                                    <li class=" page-active">
+
+                                        <a href="{{route('provider.price')}}" style="left: 15px !important;width:70%;">Provider </a>
+
+                                    </li>
+
+
+                                </ul>
+
+                            </li>
+
+                            <li class=" page-active">
+
+                                <a href="{{route('configure')}}"><span class="uk-nav-icon"> <i class="fas fa-wrench"></i></span>
+                                    Configuration </a>
+
+                            </li>
                             <br>
 
                             @if(Auth::guard('admin')->user())
