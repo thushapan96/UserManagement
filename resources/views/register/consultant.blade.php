@@ -21,13 +21,14 @@
         <div class="col-md-12" style="margin-left:auto !important;margin-right:auto !important">
             <h4 style="text-align:center">{{request()->query('service')}} Enrollment</h4>
             <u1 class="" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">
-                <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">Main</a></li>
-                <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Team </a></li>
-                <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">About Company</a></li>
-                <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.8rem;"> Award & Certification</a></li>
-                <li class="nav-linkk" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">News and Events</a></li>
-                <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Canada Inspire</a></li>
-                <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Feedback</a></li>
+                <li class="nav-linkk " id="amenu"><a aria-current="page">Main</a></li>
+                <li class="nav-linkk " id="amenu1"><a>Team </a></li>
+                <li class="nav-linkk " id="amenu2"><a>About Company</a></li>
+                <li class="nav-linkk " id="amenu7"><a>Our Services</a></li>
+                <li class="nav-linkk" id="amenu3"><a> Award & Certification</a></li>
+                <li class="nav-linkk" id="amenu4"><a>News and Events</a></li>
+                <li class="nav-linkk" id="amenu5"><a>Canada Inspire</a></li>
+                <li class="nav-linkk" id="amenu6"><a>Feedback</a></li>
 
             </u1>
 
@@ -214,323 +215,7 @@
 
                                 </div>
                                 <hr>
-                                <div class="row custom-box">
 
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>Specialization *
-                                            </label>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="Specialization1" name="specialization[]" value="Express Entry" {{ (is_array(old('specialization')) and in_array("Express Entry", old('specialization'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="Specialization1"> Express Entry </label><br>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="Specialization2" name="specialization[]" value="PNP" {{ (is_array(old('specialization')) and in_array("PNP", old('specialization'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="Specialization2"> PNP</label><br>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="Specialization3" name="specialization[]" value="LMIA" {{ (is_array(old('specialization')) and in_array("LMIA", old('specialization'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="Specialization3"> LMIA</label><br>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="Specialization4" name="specialization[]" value="Others" {{ (is_array(old('specialization')) and in_array("Others", old('specialization'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="Specialization4"> Others</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Express Entry-Enrolment
-                                            </label>
-                                            <input class="form-control " type="text" placeholder="enter total count" name="express_entry_enrolment" value="{{old('express_entry_enrolment')}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>PNP-Enrolment
-                                            </label>
-                                            <input class="form-control " type="text" placeholder="enter total count" name="pnp_enrolment" value="{{old('pnp_enrolment')}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>LMIA-Enrolment
-                                            </label>
-                                            <input class="form-control " placeholder="enter total count" type="text" name="lmia_enrolment" value="{{old('lmia_enrolment')}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>Others-Enrolment
-                                            </label>
-                                            <input class="form-control " placeholder="enter total count" type="text" name="other_enrolment" value="{{old('other_enrolment')}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Express Entry-Success
-                                            </label>
-                                            <input class="form-control " type="text" placeholder="10/10" name="express_entry_success" value="{{old('express_entry_success')}}">
-                                            <small>Success/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>PNP-Success
-                                            </label>
-                                            <input class="form-control " type="text" name="pnp_success" value="{{old('pnp_success')}}">
-                                            <small>Success/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>LMIA-Success
-                                            </label>
-                                            <input class="form-control " type="text" name="lmia_success" value="{{old('lmia_success')}}">
-                                            <small>Success/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Others-Success
-                                            </label>
-                                            <input class="form-control " type="text" name="other_success" value="{{old('other_success')}}">
-                                            <small>Success/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row custom-box">
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Express Entry-Rejected
-                                            </label>
-                                            <input class="form-control " type="text" placeholder="10/10" name="express_entry_reject" value="{{old('express_entry_reject')}}">
-                                            <small>Rejected/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>PNP-Rejected
-                                            </label>
-                                            <input class="form-control " type="text" name="pnp_reject" value="{{old('pnp_reject')}}">
-                                            <small>Rejected/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>LMIA-Rejected
-                                            </label>
-                                            <input class="form-control " type="text" name="lmia_reject" value="{{old('lmia_reject')}}">
-                                            <small>Rejected/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Others-Rejected
-                                            </label>
-                                            <input class="form-control " type="text" name="other_reject" value="{{old('other_reject')}}">
-                                            <small>Rejected/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Common reason for Reject specialization
-                                            </label>
-                                            <textarea class="form-control " type="text" name="specialization_rejected_reason" value="{{old('specialization_rejected_reason')}}"></textarea>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <hr>
-                                <div class="row custom-box">
-
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>Service Offered *</label>
-
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Student Visa" {{ (is_array(old('offering_service')) and in_array("Student Visa", old('offering_service'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="Service1">Student Visa</label><br>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="Service2" name="offering_service[]" value="Tourist Visa" {{ (is_array(old('offering_service')) and in_array("Tourist Visa Visa", old('offering_service'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="Service2"> Tourist Visa</label><br>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="Service3" name="offering_service[]" value="Family Visa" {{ (is_array(old('offering_service')) and in_array("Family Visa", old('offering_service'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="Service3"> Family Visa</label><br>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="Service4" name="offering_service[]" value="Other Visa" {{ (is_array(old('offering_service')) and in_array("Other Visa", old('offering_service'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="Service4"> Other Visa</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>Other Services *
-                                            </label>
-                                            <br>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="OtherServices1" name="other_service[]" value="Innovator Visa" {{ (is_array(old('other_service')) and in_array("Innovator Visa", old('other_service'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="OtherServices1"> Innovator Visa</label><br>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="OtherServices2" name="other_service[]" value="Franchisee" {{ (is_array(old('other_service')) and in_array("Franchisee", old('other_service'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="OtherServices2">Franchisee</label><br>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="OtherServices3" name="other_service[]" value="Intra Company Transfer" {{ (is_array(old('other_service')) and in_array("Intra Company Transfer", old('other_service'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="OtherServices3"> Intra Company Transfer</label><br>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>Student Visa-Enrolment
-                                            </label>
-
-                                            <input class="form-control " type="text" placeholder="enter the total count" name="student_visa_enrolment" value="{{old('student_visa_enrolment')}}">
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>Tourist Visa-Enrolment
-                                            </label>
-                                            <input class="form-control " placeholder="enter  total count" type="text" name="tourist_visa_enrolment" value="{{old('tourist_visa_success')}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>Family Visa-Enrolment
-                                            </label>
-                                            <input class="form-control " placeholder="enter  total count" type="text" name="family_visa_enrolment" value="{{old('family_visa_enrolment')}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>Other Visa-Enrolment
-                                            </label>
-
-                                            <input class="form-control " placeholder="enter  total count" type="text" name="other_visa_enrolment" value="{{old('other_visa_enrolment')}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Student Visa-Success
-                                            </label>
-
-                                            <input class="form-control " type="text" placeholder="10/10" name="student_visa_success" value="{{old('student_visa_success')}}">
-                                            <small>Success/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Tourist Visa-Success
-                                            </label>
-                                            <input class="form-control " type="text" name="tourist_visa_success" value="{{old('tourist_visa_success')}}">
-                                            <small>Success/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Family Visa-Success
-                                            </label>
-                                            <input class="form-control " type="text" name="family_visa_success" value="{{old('family_visa_success')}}">
-                                            <small>Success/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Other Visa-Success
-                                            </label>
-
-                                            <input class="form-control " type="text" name="other_visa_success" value="{{old('other_visa_success')}}">
-                                            <small>Success/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="row custom-box">
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Student Visa-Reject
-                                            </label>
-
-                                            <input class="form-control " type="text" placeholder="10/10" name="student_visa_reject" value="{{old('student_visa_reject')}}">
-                                            <small>Reject/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Tourist Visa-Reject
-                                            </label>
-                                            <input class="form-control " type="text" name="tourist_visa_reject" value="{{old('tourist_visa_reject')}}">
-                                            <small>Reject/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Family Visa-Reject
-                                            </label>
-                                            <input class="form-control " type="text" name="family_visa_reject" value="{{old('family_visa_reject')}}">
-                                            <small>Reject/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Other Visa-Reject
-                                            </label>
-
-                                            <input class="form-control " type="text" name="other_visa_reject" value="{{old('other_visa_reject')}}">
-                                            <small>Reject/No. of Enrolment</small>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Common reason for Reject services
-                                            </label>
-                                            <textarea class="form-control " type="text" name="service_reject_reason" value="{{old('service_reject_reason')}}"></textarea>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
                                 <div class="row custom-box">
 
                                     <div class="col-lg-4 col-md-4 col-12">
@@ -557,7 +242,7 @@
                                             <small>Number of Cases Enrolled till Date</small>
                                         </div>
                                     </div>
-                                   
+
 
                                 </div>
                                 <hr>
@@ -756,6 +441,285 @@
                     </div>
                 </li>
 
+                <li id='menu7' class='tab-pane '>
+                    <div class='uk-card ' style="">
+                        <div class="uk-card-body sc-padding-medium">
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+
+
+                                <div class="">
+                                    <div class="form-group">
+                                        <label>Select Provide Services </label><br><br>
+                                        <div class="row col-lg-12 col-md-12 col-12 ">
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Specialization1" name="offering_service[]" value="Express Entry" {{ (is_array(old('offering_service')) and in_array("Express Entry", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Specialization1"> Express Entry </label><br>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Specialization2" name="offering_service[]" value="PNP" {{ (is_array(old('offering_service')) and in_array("PNP", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Specialization2"> PNP</label><br>
+                                            </div>
+                                            <div class=" col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Specialization3" name="offering_service[]" value="LMIA" {{ (is_array(old('offering_service')) and in_array("LMIA", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Specialization3"> LMIA</label><br>
+                                            </div>
+
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Student Visa" {{ (is_array(old('offering_service')) and in_array("Student Visa", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Service1">Student Visa</label><br>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Service2" name="offering_service[]" value="Tourist Visa" {{ (is_array(old('offering_service')) and in_array("Tourist Visa Visa", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Service2"> Tourist Visa</label><br>
+                                            </div>
+                                        </div><br>
+                                        <div class="row  col-lg-12 col-md-12 col-12 ">
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Service3" name="offering_service[]" value="Family Visa" {{ (is_array(old('offering_service')) and in_array("Family Visa", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Service3"> Family Visa</label><br>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="OtherServices1" name="offering_service[]" value="Innovator Visa" {{ (is_array(old('offering_service')) and in_array("Innovator Visa", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="OtherServices1"> Innovator Visa</label><br>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="OtherServices2" name="offering_service[]" value="Start-Up Visa" {{ (is_array(old('offering_service')) and in_array("Start-Up Visa", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="OtherServices2">Start-Up Visa </label><br>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="OtherServices3" name="offering_service[]" value="Intra Company Transfer" {{ (is_array(old('offering_service')) and in_array("Intra Company Transfer", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="OtherServices3"> Intra Company Transfer</label><br>
+                                            </div>
+                                            @if(request()->query('service') == 'Immigration Lawyer/Attorney')
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="OtherServices2" name="offering_service[]" value="Legal Assistance" {{ (is_array(old('offering_service')) and in_array("Legal Assistance", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="OtherServices2"> Legal Assistance </label><br>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="OtherServices3" name="offering_service[]" value="Refugee Cases" {{ (is_array(old('offering_service')) and in_array("Refugee Cases", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="OtherServices3"> Refugee Cases</label><br>
+                                            </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p style="text-decoration:underline">Express Entry Rate</p>
+                                <div class="row custom-box">
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label>
+                                            <input class="form-control " type="text" name="express_entry_enrolment" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label>
+                                            <input class="form-control " type="text" name="express_entry_success" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label>
+                                            <input class="form-control " type="text" name="express_entry_reject" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label>
+                                            <input class="form-control " type="text" name="express_entry_reject_reason" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <p style="text-decoration:underline">PNP Rate</p>
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label>
+                                            <input class="form-control " type="text" name="pnp_enrolment" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label>
+                                            <input class="form-control " type="text" name="pnp_success" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label>
+                                            <input class="form-control " type="text" name="pnp_reject" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label>
+                                            <input class="form-control " type="text" name="pnp_reject_reason" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <p style="text-decoration:underline">LMIA Rate</p>
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label>
+                                            <input class="form-control " type="text" name="lmia_enrolment" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label>
+                                            <input class="form-control " type="text" name="lmia_success" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label>
+                                            <input class="form-control " type="text" name="lmia_reject" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label>
+                                            <input class="form-control " type="text" name="lmia_reject_reason" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <hr>
+                                <p style="text-decoration:underline">Student Visa Rate</p>
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label>
+                                            <input class="form-control " type="text" name="student_visa_enrolment" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label>
+                                            <input class="form-control " type="text" name="student_visa_success" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label>
+                                            <input class="form-control " type="text" name="student_visa_reject" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label>
+                                            <input class="form-control " type="text" name="student_visa_reject_reason" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <p style="text-decoration:underline">Tourist Visa Rate</p>
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label>
+                                            <input class="form-control " type="text" name="tourist_visa_enrolment" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label>
+                                            <input class="form-control " type="text" name="tourist_visa_success" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label>
+                                            <input class="form-control " type="text" name="tourist_visa_reject" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label>
+                                            <input class="form-control " type="text" name="tourist_visa_reject_reason" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <p style="text-decoration:underline">Family Visa</p>
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label>
+                                            <input class="form-control " type="text" name="family_visa_enrolment" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label>
+                                            <input class="form-control " type="text" name="family_visa_success" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label>
+                                            <input class="form-control " type="text" name="family_visa_reject" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label>
+                                            <input class="form-control " type="text" name="family_visa_reject_reason" value="{{old('offering_service')}}">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="float-right">
+                                    <button type="button" class="client-btn bmenu6 uk-button uk-button-primary">Next </button>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </li>
                 <li id='menu3' class='tab-pane '>
                     <div class='uk-card ' style="">
                         <div class="uk-card-body sc-padding-medium">
@@ -960,30 +924,6 @@
     $(document).ready(function() {
 
 
-
-
-        $(".amenu").click(function() {
-
-        });
-        $(".amenu1").click(function() {
-
-        });
-        $(".amenu2").click(function() {
-
-        });
-        $(".amenu3").click(function() {
-
-        });
-        $(".amenu4").click(function() {
-
-        });
-        $(".amenu5").click(function() {
-
-        });
-        $(".amenu6").click(function() {
-
-        });
-
         $(".bmenu").click(function() {
             if ($('#first_name').val() == '') {
                 $('.error-first_name').html('first name is required')
@@ -1032,6 +972,18 @@
         $(".bmenu2").click(function() {
             $(".progress-bar").css("width", "50%");
             $(".progress-bar").html("50%");
+            $('.nav-linkk').removeClass('uk-active');
+            $('#amenu7').addClass('uk-active');
+            $('.tab-pane').removeClass('uk-active');
+            $('#menu7').addClass('uk-active');
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        $(".bmenu7").click(function() {
+            $(".progress-bar").css("width", "60%");
+            $(".progress-bar").html("60%");
             $('.nav-linkk').removeClass('uk-active');
             $('#amenu3').addClass('uk-active');
             $('.tab-pane').removeClass('uk-active');

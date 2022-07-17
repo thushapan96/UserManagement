@@ -9,12 +9,12 @@
     <div class="row">
 
         <div class="col-md-11" style="margin-left:auto;margin-right:auto">
-            <h5 style="text-align:center">edit institution details</h5><br>
+            <h5 style="text-align:center">edit </h5><br>
             <form id="form" action="{{route('update.institution' ,['id'=>$institutions->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:5% !important;">
                     <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">Main </a></li>
-                    <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">Courses </a></li>
+                    <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">Programs </a></li>
                     <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">About Company</a></li>
                     <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  2rem;"> Award & Certification</a></li>
                     <li class="nav-linkk" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  2rem;">News and Events</a></li>
@@ -203,7 +203,41 @@
                                     <hr>
                                     <div class="row custom-box">
 
-                                        <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="form-group">
+                                                <label>Year of Establishment
+                                                </label>
+                                                <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{$institutions->establishment_year}}">
+                                                <small>Year of Registration</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="form-group">
+                                                <label>Offering Services Since
+                                                </label>
+                                                <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{$institutions->offering_year}}">
+                                                <small>Number of Years</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12">
+                                            <div class="form-group">
+                                                <label>Response Time
+                                                </label>
+                                                <select class="form-control" name="response_time">
+                                                    <option value="24 Hours" {{$institutions->response_time == "24 Hours" ? "selected":""}}>24 Hours</option>
+                                                    <option value="48 Hours" {{ $institutions->response_time == "48 Hours" ? "selected":""}}>48 Hours</option>
+                                                    <option value="72 Hours" {{ $institutions->response_time == "72 Hours" ? "selected":""}}>72 Hours</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <hr>
+                                    <div class="row custom-box">
+
+                                        <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
                                                 <label>Type of Courses *
                                                 </label>
@@ -228,7 +262,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
                                                 <label>Intake *
                                                 </label>
@@ -252,73 +286,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-4 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Admission Type *
-                                                </label>
-                                                <br>
-                                                <br>
-                                                <select class="form-control " name="admission_type">
-                                                    <option value="Domestic" {{$institutions->admission_type == 'Domestic'? 'selected':'' }}>Domestic</option>
-                                                    <option value="International" {{$institutions->admission_type == 'International'? 'selected':'' }}>International</option>
-                                                </select>
-
-                                                <!-- <input class="form-control " type="text" name="admission_type" value="{{old('admission_type')}}"> -->
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>{{$institutions->type}} Ranking
-                                                </label>
-                                                <br>
-                                                <br>
-                                                <input class="form-control " type="text" name="college_ranking" value="{{$institutions->college_ranking}}">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <hr>
-                                    <div class="row custom-box">
-                                        <div class=" col-12">
-                                            <div class="form-group">
-                                                <label>Ranking Criteria & Ranking Bodies
-                                                </label>
-                                                <textarea class="form-control" style="width:100%;" name="ranking_criteria" value="{{$institutions->ranking_criteria}}">{{$institutions->ranking_criteria}}</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row custom-box">
-
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Year of Establishment
-                                                </label>
-                                                <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{$institutions->establishment_year}}">
-                                                <small>Year of Registration</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Offering Services Since
-                                                </label>
-                                                <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{$institutions->offering_year}}">
-                                                <small>Number of Years</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Response Time
-                                                </label>
-                                                <select class="form-control" name="response_time">
-                                                    <option value="24 Hours" {{$institutions->response_time == "24 Hours" ? "selected":""}}>24 Hours</option>
-                                                    <option value="48 Hours" {{ $institutions->response_time == "48 Hours" ? "selected":""}}>48 Hours</option>
-                                                    <option value="72 Hours" {{ $institutions->response_time == "72 Hours" ? "selected":""}}>72 Hours</option>
-                                                </select>
-
-                                            </div>
-                                        </div>
                                         <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
                                                 <label>Mode of Communication
@@ -343,8 +310,43 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Admission Type *
+                                                </label>
+                                                <br>
+                                                <br>
+                                                <select class="form-control " name="admission_type">
+                                                    <option value="Domestic" {{$institutions->admission_type == 'Domestic'? 'selected':'' }}>Domestic</option>
+                                                    <option value="International" {{$institutions->admission_type == 'International'? 'selected':'' }}>International</option>
+                                                </select>
+
+                                                <!-- <input class="form-control " type="text" name="admission_type" value="{{old('admission_type')}}"> -->
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-lg-4 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>{{$institutions->type}} Ranking
+                                                </label>
+                                                <br>
+                                                <br>
+                                                <input class="form-control " type="text" name="college_ranking" value="{{$institutions->college_ranking}}">
+                                            </div>
+                                        </div> -->
 
                                     </div>
+                                    <!-- <hr>
+                                    <div class="row custom-box">
+                                        <div class=" col-12">
+                                            <div class="form-group">
+                                                <label>Ranking Criteria & Ranking Bodies
+                                                </label>
+                                                <textarea class="form-control" style="width:100%;" name="ranking_criteria" value="{{$institutions->ranking_criteria}}">{{$institutions->ranking_criteria}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
                                     <div class="float-right">
                                         <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
 
@@ -363,8 +365,8 @@
 
                                         <div class="col-lg-12col-md-12 col-12">
                                             <div class="form-group">
-                                                <label>Courses Offered Information </label>
-                                                <input class="form-control " type="text" id="offer_course_info" name="offer_course_info" placeholder="Courses Information" value="{{$institutions->offer_course_info}}">
+                                                <label>Courses </label>
+                                                <!-- <input class="form-control " type="text" id="offer_course_info" name="offer_course_info" placeholder="Courses Information" value="{{$institutions->offer_course_info}}"> -->
 
                                             </div>
                                             <div id="newRow">
@@ -391,66 +393,6 @@
                                     <div class="row custom-box">
 
                                         <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Total Number of Students Enrolled
-                                                </label>
-                                                <input class="form-control " type="number" name="no_student" value="{{$institutions->no_student}}">
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Total Number of Successful Students
-                                                </label>
-                                                <input class="form-control " type="number" name="no_success_student" value="{{$institutions->no_success_student}}">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Is it Financial Aided?
-                                                </label>
-                                                <br>
-                                                <br>
-                                                <div class="col-lg-2 col-md-2 col-2 ">
-                                                    <div class="custom-control custom-radio ">
-                                                        <input type="radio" class="custom-control-input " id="Financialyes" name="is_financial" value="yes" {{ $institutions->is_financial == "yes" ? "checked":"" }}>
-                                                        <label class="custom-control-label mt-1" for="Financialyes">Yes</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-2 col-md-2 col-2 ">
-                                                    <div class="custom-control custom-radio ">
-                                                        <input type="radio" class="custom-control-input " id="Financialno" name="is_financial" value="no" {{ $institutions->is_financial == "no" ? "checked":"" }}>
-                                                        <label class="custom-control-label mt-1" for="Financialno">No</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
-                                            <div class="form-group">
-                                                <label>Is Transfer of Credits available?
-                                                </label>
-                                                <br>
-                                                <br>
-                                                <div class="col-lg-2 col-md-2 col-2 ">
-                                                    <div class="custom-control custom-radio ">
-                                                        <input type="radio" class="custom-control-input " id="Creditsyes" name="is_credit" value="yes" {{ $institutions->is_credit == "yes" ? "checked":"" }}>
-                                                        <label class="custom-control-label mt-1" for="Creditsyes">Yes</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-2 col-md-2 col-2 ">
-                                                    <div class="custom-control custom-radio ">
-                                                        <input type="radio" class="custom-control-input " id="Creditsno" name="is_credit" value="no" {{ $institutions->is_credit == "no" ? "checked":"" }}>
-                                                        <label class="custom-control-label mt-1" for="Creditsno">No</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <hr>
-                                    <div class="row custom-box">
-
-                                        <div class="col-lg-3 col-md-3 col-12">
                                             <div class="custom-control custom-checkbox">
                                                 <label>What type of Certificate do you Offer?
                                                 </label>
@@ -468,9 +410,18 @@
                                                     <label class="custom-control-label" for=" checkbox14"> Certification</label><br>
                                                 </div>
                                                 <div class="custom-control custom-checkbox">
-                                                    <input class="custom-control-input" type="checkbox" id="checkbox15" name="certificate_type[]" value="Others" {{ (is_array($institutions->certificate_type) and in_array("Others", $institutions->certificate_type)) ? ' checked' : '' }}>
-                                                    <label class="custom-control-label" for="checkbox15"> Others</label>
+                                                    <input class="custom-control-input" type="checkbox" id="checkboxGraduation" name="certificate_type[]" value="Graduation" {{ (is_array($institutions->certificate_type) and in_array("Graduation", $institutions->certificate_type)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="checkboxGraduation"> Graduation </label>
                                                 </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" id="checkboxPost" name="certificate_type[]" value="Post Graduation" {{ (is_array($institutions->certificate_type) and in_array("Post Graduation", $institutions->certificate_type)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="checkboxPost"> Post Graduation </label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" id="checkboxDoctorate" name="certificate_type[]" value="Doctorate" {{ (is_array($institutions->certificate_type) and in_array("Doctorate", $institutions->certificate_type)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="checkboxDoctorate"> Doctorate </label>
+                                                </div>
+
                                             </div>
                                         </div>
 
@@ -546,12 +497,72 @@
                                             </div>
                                         </div>
 
-
                                     </div>
                                     <hr>
                                     <div class="row custom-box">
 
                                         <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Total Number of Students Enrolled
+                                                </label>
+                                                <input class="form-control " type="number" name="no_student" value="{{$institutions->no_student}}">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Total Number of Successful Students
+                                                </label>
+                                                <input class="form-control " type="number" name="no_success_student" value="{{$institutions->no_success_student}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Is it Financial Aided?
+                                                </label>
+                                                <br>
+                                                <br>
+                                                <div class="col-lg-2 col-md-2 col-2 ">
+                                                    <div class="custom-control custom-radio ">
+                                                        <input type="radio" class="custom-control-input " id="Financialyes" name="is_financial" value="yes" {{ $institutions->is_financial == "yes" ? "checked":"" }}>
+                                                        <label class="custom-control-label mt-1" for="Financialyes">Yes</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-2 ">
+                                                    <div class="custom-control custom-radio ">
+                                                        <input type="radio" class="custom-control-input " id="Financialno" name="is_financial" value="no" {{ $institutions->is_financial == "no" ? "checked":"" }}>
+                                                        <label class="custom-control-label mt-1" for="Financialno">No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-12">
+                                            <div class="form-group">
+                                                <label>Is Transfer of Credits available?
+                                                </label>
+                                                <br>
+                                                <br>
+                                                <div class="col-lg-2 col-md-2 col-2 ">
+                                                    <div class="custom-control custom-radio ">
+                                                        <input type="radio" class="custom-control-input " id="Creditsyes" name="is_credit" value="yes" {{ $institutions->is_credit == "yes" ? "checked":"" }}>
+                                                        <label class="custom-control-label mt-1" for="Creditsyes">Yes</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-2 ">
+                                                    <div class="custom-control custom-radio ">
+                                                        <input type="radio" class="custom-control-input " id="Creditsno" name="is_credit" value="no" {{ $institutions->is_credit == "no" ? "checked":"" }}>
+                                                        <label class="custom-control-label mt-1" for="Creditsno">No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <hr>
+
+                                    <div class="row custom-box">
+
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
                                                 <label>Do you offer Scholarships?
                                                 </label>
@@ -570,17 +581,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-2 col-md-2 col-12">
                                             <div class="form-group">
                                                 <label>Do you conduct Webinars?
                                                 </label>
-                                                <div class="col-lg-2 col-md-2 col-2 ">
+                                                <div class="col-lg-1 col-md-1 col-1 ">
                                                     <div class="custom-control custom-radio ">
                                                         <input type="radio" class="custom-control-input " id="Webinarsyes" name="is_conduct_webinar" value="yes" {{ $institutions->is_conduct_webinar == "yes" ? "checked":"" }}>
                                                         <label class="custom-control-label mt-1" for="Webinarsyes">Yes</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-2 col-md-2 col-2 ">
+                                                <div class="col-lg-1 col-md-1 col-1 ">
                                                     <div class="custom-control custom-radio ">
                                                         <input type="radio" class="custom-control-input " id="Webinarsno" name="is_conduct_webinar" value="no" {{ $institutions->is_conduct_webinar == "no" ? "checked":"" }}>
                                                         <label class="custom-control-label mt-1" for="Webinarsno">No</label>
@@ -588,14 +599,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label>Admission Criteria Website/URL Link
                                                 </label>
                                                 <input class="form-control " type="text" name="admission_criteria_website" value="{{$institutions->admission_criteria_website}}">
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label>Fee Structure Website/URL Link
                                                 </label><br>
@@ -890,7 +901,7 @@
                     <script>
                         $("textarea").each(function(index) {
                             console.log(index, $(this)[0].scrollHeight)
-                            $(this).height($(this)[0].scrollHeight+15);
+                            $(this).height($(this)[0].scrollHeight + 15);
                         });
                     </script>
                 </u1>

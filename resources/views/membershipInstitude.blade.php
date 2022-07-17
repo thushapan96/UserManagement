@@ -50,7 +50,7 @@
 
                     <div class="row ">
                         <div class="col-md-4">
-                            <strong class="labels">Providing Service </strong>
+                            <strong class="labels">Service Provider Type </strong>
                         </div>
 
                         <div class="col-md-1">
@@ -128,7 +128,7 @@
                 <hr class="uk-margin-remove">
                 <div class="uk-card-footer md-bg-grey-50">
                     @if($membership->membership_duration == '')
-                    <div style="color:tomato">If you want to get our services, you need to get membership !</div><br>
+                    <div style="color:tomato">Please complete membership registration to avail Services and Enquiries!</div><br>
                     <a href="{{route('add.membership.institude')}}" class="sc-button"> Membership Registration</a><br><br>
                     @else
 
@@ -156,129 +156,129 @@
                 <u1 class="uk-switcher">
 
                     <li>
-                       
-                            <div class="uk-card-body">
+
+                        <div class="uk-card-body">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="3BDashboard" name="Dashboard" value="1" {{ $membershipCandidate1->Dashboard == 1 ? ' checked' : '' }}>
+                                <label class="custom-control-label" for="3BDashboard">Dashboard</label>
+
+                            </div><br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="3BEA" name="EA" value="1" {{ $membershipCandidate1->EA == 1 ? ' checked' : '' }}>
+                                <label class="custom-control-label" for="3BEA">Educational Assessment</label>
+                            </div><br>
+
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="3BDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate1->DefaultReports == 1 ? ' checked' : '' }}>
+                                <label class="custom-control-label" for="3BDefaultReports">Default Reports</label>
+                            </div><br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="3BCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate1->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <label class="custom-control-label" for="3BCustomizedReports">Customized Reports</label>
+                            </div><br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="3BChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate1->ChatAgents == 1 ? ' checked' : '' }}>
+                                <label class="custom-control-label" for="3BChatAgents">Chat Agents</label>
+                            </div><br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="3BEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate1->EmailSupport == 1 ? ' checked' : '' }}>
+                                <label class="custom-control-label" for="3BEmailSupport">Email Support</label>
+                            </div><br>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="3BTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate1->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <label class="custom-control-label" for="3BTelephonicSupport">Telephonic Support</label>
+                            </div><br>
+                            <div class="row">
+                                &nbsp;&nbsp;
+
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BDashboard" name="Dashboard" value="1" {{ $membershipCandidate1->Dashboard == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BDashboard">Dashboard</label>
+                                    <input class="custom-control-input" type="checkbox" id="3BAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate1->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <label class="custom-control-label" for="3BAdd_On_features_Free">Free</label>
 
-                                </div><br>
+                                </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BEA" name="EA" value="1" {{ $membershipCandidate1->EA == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BEA">Educational Assessment</label>
-                                </div><br>
+
+                                    <input class="custom-control-input" type="checkbox" id="3BAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate1->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <label class="custom-control-label" for="3BAdd_On_features_Free-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Add On features</label>
+
+                            </div><br>
+                            <div class="row">
+                                &nbsp;&nbsp;
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="3BAppointmentScheduler" name="AppointmentScheduler" value="1" {{ $membershipCandidate1->AppointmentScheduler == 1 ? ' checked' : '' }}>
+                                    <label class="custom-control-label" for="3BAppointmentScheduler">Free</label>
+
+                                </div>&nbsp;&nbsp;&nbsp;
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="3BAppointmentScheduler-paid" name="AppointmentScheduler" value="2" {{ $membershipCandidate1->AppointmentScheduler == 2 ? ' checked' : '' }}>
+                                    <label class="custom-control-label" for="3BAppointmentScheduler-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: Appointment Scheduler</label>
+                            </div><br>
+                            <div class="row">
+                                &nbsp;&nbsp;
 
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate1->DefaultReports == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BDefaultReports">Default Reports</label>
-                                </div><br>
+                                    <input class="custom-control-input" type="checkbox" id="3BeLearningManagementSystem" name="eLearningManagementSystem" value="1" {{ $membershipCandidate1->eLearningManagementSystem == 1 ? ' checked' : '' }}>
+                                    <label class="custom-control-label" for="3BeLearningManagementSystem">Free</label>
+
+                                </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate1->CustomizedReports == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BCustomizedReports">Customized Reports</label>
-                                </div><br>
+
+                                    <input class="custom-control-input" type="checkbox" id="3BeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate1->eLearningManagementSystem == 2 ? ' checked' : '' }}>
+                                    <label class="custom-control-label" for="3BeLearningManagementSystem-paid"> Paid</label>
+                                </div>
+                                &nbsp;&nbsp;
+                                <label style="text-transform:none !important">: eLearning Management </label>
+                            </div><br>
+                            <div class="row">
+                                &nbsp;&nbsp;
+
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate1->ChatAgents == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BChatAgents">Chat Agents</label>
-                                </div><br>
+                                    <input class="custom-control-input" type="checkbox" id="3BQuickBooks" name="QuickBooks" value="1" {{ $membershipCandidate1->QuickBooks == 1 ? ' checked' : '' }}>
+                                    <label class="custom-control-label" for="3BQuickBooks">Free</label>
+
+                                </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate1->EmailSupport == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BEmailSupport">Email Support</label>
-                                </div><br>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate1->TelephonicSupport == 1 ? ' checked' : '' }}>
-                                    <label class="custom-control-label" for="3BTelephonicSupport">Telephonic Support</label>
-                                </div><br>
-                                <div class="row">
-                                    &nbsp;&nbsp;
 
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="3BAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate1->Add_On_features_Free == 1 ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="3BAdd_On_features_Free">Free</label>
+                                    <input class="custom-control-input" type="checkbox" id="3BQuickBooks-paid" name="QuickBooks" value="2" {{ $membershipCandidate1->QuickBooks == 2 ? ' checked' : '' }}>
+                                    <label class="custom-control-label" for="3BQuickBooks-paid"> Paid</label>
+                                </div>&nbsp;&nbsp;
+                                <label> : QuickBooks </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate1->Diploma}}">
+                                <label>Enquiries TO Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate1->PG_Diploma}}">
+                                <label>Enquiries To PG Diploma</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate1->Certification}}">
+                                <label>Enquiries To Certification </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate1->Graduation}}">
+                                <label>Enquiries To Graduation </label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate1->Post_Graduation}}">
+                                <label>Enquiries To Post Graduation</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate1->Doctorate}}">
+                                <label>Enquiries To Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate1->price}}">
+                                <label> Package Price</label>
+                            </div><br>
 
-                                    </div>&nbsp;&nbsp;&nbsp;
-                                    <div class="custom-control custom-checkbox">
+                        </div>
 
-                                        <input class="custom-control-input" type="checkbox" id="3BAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate1->Add_On_features_Free == 2 ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="3BAdd_On_features_Free-paid"> Paid</label>
-                                    </div>&nbsp;&nbsp;
-                                    <label>: Add On features</label>
-
-                                </div><br>
-                                <div class="row">
-                                    &nbsp;&nbsp;
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="3BAppointmentScheduler" name="AppointmentScheduler" value="1" {{ $membershipCandidate1->AppointmentScheduler == 1 ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="3BAppointmentScheduler">Free</label>
-
-                                    </div>&nbsp;&nbsp;&nbsp;
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="3BAppointmentScheduler-paid" name="AppointmentScheduler" value="2" {{ $membershipCandidate1->AppointmentScheduler == 2 ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="3BAppointmentScheduler-paid"> Paid</label>
-                                    </div>&nbsp;&nbsp;
-                                    <label>: Appointment Scheduler</label>
-                                </div><br>
-                                <div class="row">
-                                    &nbsp;&nbsp;
-
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="3BeLearningManagementSystem" name="eLearningManagementSystem" value="1" {{ $membershipCandidate1->eLearningManagementSystem == 1 ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="3BeLearningManagementSystem">Free</label>
-
-                                    </div>&nbsp;&nbsp;&nbsp;
-                                    <div class="custom-control custom-checkbox">
-
-                                        <input class="custom-control-input" type="checkbox" id="3BeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate1->eLearningManagementSystem == 2 ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="3BeLearningManagementSystem-paid"> Paid</label>
-                                    </div>
-                                    &nbsp;&nbsp;
-                                    <label>: eLearning Management </label>
-                                </div><br>
-                                <div class="row">
-                                    &nbsp;&nbsp;
-
-                                    <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="3BQuickBooks" name="QuickBooks" value="1" {{ $membershipCandidate1->QuickBooks == 1 ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="3BQuickBooks">Free</label>
-
-                                    </div>&nbsp;&nbsp;&nbsp;
-                                    <div class="custom-control custom-checkbox">
-
-                                        <input class="custom-control-input" type="checkbox" id="3BQuickBooks-paid" name="QuickBooks" value="2" {{ $membershipCandidate1->QuickBooks == 2 ? ' checked' : '' }}>
-                                        <label class="custom-control-label" for="3BQuickBooks-paid"> Paid</label>
-                                    </div>&nbsp;&nbsp;
-                                    <label> : QuickBooks </label>
-                                </div><br>
-                                <div class="">
-                                    <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate1->Diploma}}">
-                                    <label>Enquiries TO Diploma</label>
-                                </div><br>
-                                <div class="">
-                                    <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="PG_Diploma" value="{{$membershipCandidate1->PG_Diploma}}">
-                                    <label>Enquiries To PG Diploma</label>
-                                </div><br>
-                                <div class="">
-                                    <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Certification" value="{{$membershipCandidate1->Certification}}">
-                                    <label>Enquiries To Certification </label>
-                                </div><br>
-                                <div class="">
-                                    <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Graduation" value="{{$membershipCandidate1->Graduation}}">
-                                    <label>Enquiries To Graduation </label>
-                                </div><br>
-                                <div class="">
-                                    <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Post_Graduation" value="{{$membershipCandidate1->Post_Graduation}}">
-                                    <label>Enquiries To Post Graduation</label>
-                                </div><br>
-                                <div class="">
-                                    <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate" value="{{$membershipCandidate1->Doctorate}}">
-                                    <label>Enquiries To Doctorate</label>
-                                </div><br>
-                                <div class="">
-                                    <input class="" type="text" style="width:32%;height:50%" name="price" min="0" value="{{$membershipCandidate1->price}}">
-                                    <label> Package Price</label>
-                                </div><br>
-
-                            </div>
-                       
                     </li>
                     <li>
                         <div class="uk-card-body">
@@ -352,7 +352,7 @@
                                     <input class="custom-control-input" type="checkbox" id="6BeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate4->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="6BeLearningManagementSystem-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label> : eLearning Management  </label>
+                                <label style="text-transform:none !important"> : eLearning Management </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -469,7 +469,7 @@
                                     <input class="custom-control-input" type="checkbox" id="9BeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate7->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9BeLearningManagementSystem-paid"> Paid</label>
                                 </div> &nbsp;&nbsp;
-                                <label>: eLearning Management </label>
+                                <label style="text-transform:none !important">: eLearning Management </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -604,7 +604,7 @@
                                     <input class="custom-control-input" type="checkbox" id="3SeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate2->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3SeLearningManagementSystem-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label>: eLearning Management </label>
+                                <label style="text-transform:none !important">: eLearning Management </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -723,7 +723,7 @@
                                     <input class="custom-control-input" type="checkbox" id="6SeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate5->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="6SeLearningManagementSystem-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label>: eLearning Management </label>
+                                <label style="text-transform:none !important">: eLearning Management </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -841,7 +841,7 @@
                                     <input class="custom-control-input" type="checkbox" id="9SeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate8->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SeLearningManagementSystem-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label>: eLearning Management </label>
+                                <label style="text-transform:none !important">: eLearning Management </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -854,9 +854,9 @@
 
                                     <input class="custom-control-input" type="checkbox" id="9SQuickBooks-paid" name="QuickBooks" value="2" {{ $membershipCandidate8->QuickBooks == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9SQuickBooks-paid"> Paid</label>
-                                </div>
-                            </div><br>&nbsp;&nbsp;
-                            <label>: QuickBooks</label>
+                                </div>&nbsp;&nbsp;
+                                <label>: QuickBooks</label>
+                            </div><br>
                             <div class="">
                                 <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="Diploma" value="{{$membershipCandidate8->Diploma}}">
                                 <label>Enquiries TO Diploma</label>
@@ -976,7 +976,7 @@
                                     <input class="custom-control-input" type="checkbox" id="3PeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate3->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3PeLearningManagementSystem-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label>: eLearning Management </label>
+                                <label style="text-transform:none !important">: eLearning Management </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -1095,7 +1095,7 @@
                                     <input class="custom-control-input" type="checkbox" id="6PeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate6->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="6PeLearningManagementSystem-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label>: eLearning Management </label>
+                                <label style="text-transform:none !important">: eLearning Management </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
@@ -1215,7 +1215,7 @@
                                     <input class="custom-control-input" type="checkbox" id="9PeLearningManagementSystem-paid" name="eLearningManagementSystem" value="2" {{ $membershipCandidate9->eLearningManagementSystem == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PeLearningManagementSystem-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
-                                <label> : eLearning Management  </label>
+                                <label style="text-transform:none !important"> : eLearning Management </label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;

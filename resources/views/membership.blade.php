@@ -194,7 +194,7 @@
                 <hr class="uk-margin-remove">
                 <div class="uk-card-footer md-bg-grey-50">
                     @if($membership->membership_duration == '')
-                    <div style="color:tomato">If you want extend services, you need to get membership !</div><br>
+                    <div style="color:tomato">Please complete membership registration to avail Services and Enquiries!</div><br>
                     <a href="{{route('add.membership')}}" class="sc-button"> Membership Registration</a><br><br>
                     @else
                     <a href="#" class="sc-button" data-uk-toggle="target: #modal-close-default"> Extend Services</a><br><br>

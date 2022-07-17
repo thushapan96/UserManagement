@@ -36,7 +36,7 @@
 
             <u1 class="" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">
                 <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">Main </a></li>
-                <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Courses </a></li>
+                <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Programs </a></li>
                 <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">About Company</a></li>
                 <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.8rem;"> Award & Certification</a></li>
                 <li class="nav-linkk" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">News and Events</a></li>
@@ -241,7 +241,49 @@
                                 <hr>
                                 <div class="row custom-box">
 
-                                    <div class="col-lg-2 col-md-2 col-12">
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label>Year of Establishment
+                                            </label>
+                                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{old('establishment_year')}}">
+                                            <small>Year of Registration</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label>Offering Services Since
+                                            </label>
+                                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{old('offering_year')}}">
+                                            <small>Number of Years</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label>Response Time
+                                            </label>
+                                            <select class="form-control" name="response_time">
+                                                <option value="24 Hours" {{old('response_time') == "24 Hours" ? "selected":""}}>24 Hours</option>
+                                                <option value="48 Hours" {{old('response_time')== "48 Hours" ? "selected":""}}>48 Hours</option>
+                                                <option value="72 Hours" {{old('response_time') == "72 Hours" ? "selected":""}}>72 Hours</option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>upload profile image
+                                            </label>
+                                            <input class="form-control" type="file" name="img">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row custom-box">
+
+                                    <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>Type of Courses *
                                             </label>
@@ -266,7 +308,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-2 col-md-2 col-12">
+                                    <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>Intake *
                                             </label>
@@ -290,74 +332,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-2 col-12">
-                                        <div class="form-group">
-                                            <label>Admission Type *
-                                            </label>
-                                            <br>
-                                            <br>
-                                            <select class="form-control " name="admission_type">
-                                                <option value="Domestic" {{ old('admission_type') == 'Domestic'? 'selected':'' }}>Domestic</option>
-                                                <option value="International" {{ old('admission_type') == 'International'? 'selected':'' }}>International</option>
-                                            </select>
-
-                                            <!-- <input class="form-control " type="text" name="admission_type" value="{{old('admission_type')}}"> -->
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>{{request()->query('service')}} Ranking
-                                            </label>
-                                            <br>
-                                            <br>
-                                            <input class="form-control " type="text" name="college_ranking" value="{{old('college_ranking')}}">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <hr>
-                                <div class="row custom-box">
-                                    <div class=" col-12">
-                                        <div class="form-group">
-                                            <label>Ranking Criteria & Ranking Bodies
-                                            </label>
-                                            <textarea style="width:100%;" rows="5" name="ranking_criteria" vaue="{{old('ranking_criteria')}}"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row custom-box">
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Year of Establishment
-                                            </label>
-                                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{old('establishment_year')}}">
-                                            <small>Year of Registration</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Offering Services Since
-                                            </label>
-                                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{old('offering_year')}}">
-                                            <small>Number of Years</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Response Time
-                                            </label>
-                                            <select class="form-control" name="response_time">
-                                                <option value="24 Hours" {{old('response_time') == "24 Hours" ? "selected":""}}>24 Hours</option>
-                                                <option value="48 Hours" {{old('response_time')== "48 Hours" ? "selected":""}}>48 Hours</option>
-                                                <option value="72 Hours" {{old('response_time') == "72 Hours" ? "selected":""}}>72 Hours</option>
-
-                                            </select>
-
-                                        </div>
-                                    </div>
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>Mode of Communication
@@ -382,15 +356,44 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-12">
+                                    
+                                    <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>upload profile image
+                                            <label>Admission Type *
                                             </label>
-                                            <input class="form-control" type="file" name="img">
+                                            <br>
+                                            <br>
+                                            <select class="form-control " name="admission_type">
+                                                <option value="Domestic" {{ old('admission_type') == 'Domestic'? 'selected':'' }}>Domestic</option>
+                                                <option value="International" {{ old('admission_type') == 'International'? 'selected':'' }}>International</option>
+                                            </select>
 
+                                            <!-- <input class="form-control " type="text" name="admission_type" value="{{old('admission_type')}}"> -->
                                         </div>
                                     </div>
+
+                                    <!-- <div class="col-lg-4 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>{{request()->query('service')}} Ranking
+                                            </label>
+                                            <br>
+                                            <br>
+                                            <input class="form-control " type="text" name="college_ranking" value="{{old('college_ranking')}}">
+                                        </div>
+                                    </div> -->
+
                                 </div>
+                                <!-- <hr>
+                                <div class="row custom-box">
+                                    <div class=" col-12">
+                                        <div class="form-group">
+                                            <label>Ranking Criteria & Ranking Bodies
+                                            </label>
+                                            <textarea style="width:100%;" rows="5" name="ranking_criteria" vaue="{{old('ranking_criteria')}}"></textarea>
+                                        </div>
+                                    </div>
+                                </div> -->
+
 
                                 <div class="float-right">
                                     <button type="button" class="client-btn bmenu uk-button uk-button-primary">Next </button>
@@ -409,73 +412,13 @@
 
                                     <div class="col-lg-12col-md-12 col-12">
                                         <div class="form-group">
-                                            <label>Courses Offered
+                                            <!-- <label>Courses Offered
                                             </label>
-                                            <input class="form-control " type="text" id="offer_course_info" name="offer_course_info" placeholder="Courses Information" value="" onkeyup='sessionStorage.setItem("offer_course",this.value)'>
+                                            <input class="form-control " type="text" id="offer_course_info" name="offer_course_info" placeholder="Courses Information" value="" onkeyup='sessionStorage.setItem("offer_course",this.value)'> -->
 
                                         </div>
                                         <div id="newRow"></div>
                                         <button id="addRow" type="button" class="btn crew-btn uk-button uk-button-primary" name="">Add Course</button>
-                                    </div>
-
-                                </div>
-                                <hr>
-                                <div class="row custom-box">
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Total Number of Students Enrolled
-                                            </label>
-                                            <input class="form-control " type="number" name="no_student" value="{{old('no_student')}}">
-
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Total Number of Successful Students
-                                            </label>
-                                            <input class="form-control " type="number" name="no_success_student" value="{{old('no_success_student')}}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Is it Financial Aided?
-                                            </label>
-                                            <br>
-                                            <br>
-                                            <div class="col-lg-2 col-md-2 col-2 ">
-                                                <div class="custom-control custom-radio ">
-                                                    <input type="radio" class="custom-control-input " id="Financialyes" name="is_financial" value="yes" {{ old('is_financial') == "yes" ? "checked":"" }}>
-                                                    <label class="custom-control-label mt-1" for="Financialyes">Yes</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-2 ">
-                                                <div class="custom-control custom-radio ">
-                                                    <input type="radio" class="custom-control-input " id="Financialno" name="is_financial" value="no" {{ old('is_financial') == "no" ? "checked":"" }}>
-                                                    <label class="custom-control-label mt-1" for="Financialno">No</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Is Transfer of Credits available?
-                                            </label>
-                                            <br>
-                                            <br>
-                                            <div class="col-lg-2 col-md-2 col-2 ">
-                                                <div class="custom-control custom-radio ">
-                                                    <input type="radio" class="custom-control-input " id="Creditsyes" name="is_credit" value="yes" {{ old('is_credit') == "yes" ? "checked":"" }}>
-                                                    <label class="custom-control-label mt-1" for="Creditsyes">Yes</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-2 ">
-                                                <div class="custom-control custom-radio ">
-                                                    <input type="radio" class="custom-control-input " id="Creditsno" name="is_credit" value="no" {{ old('is_credit') == "no" ? "checked":"" }}>
-                                                    <label class="custom-control-label mt-1" for="Creditsno">No</label>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
 
                                 </div>
@@ -500,9 +443,18 @@
                                                 <label class="custom-control-label" for=" checkbox14"> Certification</label><br>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="checkbox15" name="certificate_type[]" value="Others" {{ (is_array(old('certificate_type')) and in_array("Others", old('certificate_type'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="checkbox15"> Others</label>
+                                                <input class="custom-control-input" type="checkbox" id="checkboxGraduation" name="certificate_type[]" value="Graduation" {{ (is_array(old('certificate_type')) and in_array("Graduation", old('certificate_type'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="checkboxGraduation"> Graduation </label>
                                             </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="checkboxPost" name="certificate_type[]" value="Post Graduation" {{ (is_array(old('certificate_type')) and in_array("Post Graduation", old('certificate_type'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="checkboxPost"> Post Graduation </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="checkboxDoctorate" name="certificate_type[]" value="Doctorate" {{ (is_array(old('certificate_type')e) and in_array("Doctorate", old('certificate_type'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="checkboxDoctorate"> Doctorate </label>
+                                            </div>
+
                                         </div>
                                     </div>
 
@@ -581,6 +533,67 @@
 
                                 </div>
                                 <hr>
+                                <div class="row custom-box">
+
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>Total Number of Students Enrolled
+                                            </label>
+                                            <input class="form-control " type="number" name="no_student" value="{{old('no_student')}}">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>Total Number of Successful Students
+                                            </label>
+                                            <input class="form-control " type="number" name="no_success_student" value="{{old('no_success_student')}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>Is it Financial Aided?
+                                            </label>
+                                            <br>
+                                            <br>
+                                            <div class="col-lg-2 col-md-2 col-2 ">
+                                                <div class="custom-control custom-radio ">
+                                                    <input type="radio" class="custom-control-input " id="Financialyes" name="is_financial" value="yes" {{ old('is_financial') == "yes" ? "checked":"" }}>
+                                                    <label class="custom-control-label mt-1" for="Financialyes">Yes</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-2 ">
+                                                <div class="custom-control custom-radio ">
+                                                    <input type="radio" class="custom-control-input " id="Financialno" name="is_financial" value="no" {{ old('is_financial') == "no" ? "checked":"" }}>
+                                                    <label class="custom-control-label mt-1" for="Financialno">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="form-group">
+                                            <label>Is Transfer of Credits available?
+                                            </label>
+                                            <br>
+                                            <br>
+                                            <div class="col-lg-2 col-md-2 col-2 ">
+                                                <div class="custom-control custom-radio ">
+                                                    <input type="radio" class="custom-control-input " id="Creditsyes" name="is_credit" value="yes" {{ old('is_credit') == "yes" ? "checked":"" }}>
+                                                    <label class="custom-control-label mt-1" for="Creditsyes">Yes</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-2 ">
+                                                <div class="custom-control custom-radio ">
+                                                    <input type="radio" class="custom-control-input " id="Creditsno" name="is_credit" value="no" {{ old('is_credit') == "no" ? "checked":"" }}>
+                                                    <label class="custom-control-label mt-1" for="Creditsno">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <hr>
+
                                 <div class="row custom-box">
 
                                     <div class="col-lg-3 col-md-3 col-12">

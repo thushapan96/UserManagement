@@ -20,13 +20,14 @@
         <div class="col-md-12" style="margin-left:auto !important;margin-right:auto !important">
             <h4 style="text-align:center">{{request()->query('service')}} Enrollment</h4>
             <u1 class="" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">
-                <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">Main</a></li>
-                <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Team </a></li>
-                <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">About Company</a></li>
-                <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.8rem;"> Award & Certification</a></li>
-                <li class="nav-linkk" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">News and Events</a></li>
-                <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Canada Inspire</a></li>
-                <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Feedback</a></li>
+                <li class="nav-linkk " id="amenu"><a style="" aria-current="page">Main</a></li>
+                <li class="nav-linkk " id="amenu1"><a style="">Team </a></li>
+                <li class="nav-linkk " id="amenu2"><a style="">About Company</a></li>
+                <li class="nav-linkk " id="amenu7"><a>Our Services</a></li>
+                <li class="nav-linkk" id="amenu3"><a style=""> Award & Certification</a></li>
+                <li class="nav-linkk" id="amenu4"><a style="">News and Events</a></li>
+                <li class="nav-linkk" id="amenu5"><a style="">Canada Inspire</a></li>
+                <li class="nav-linkk" id="amenu6"><a style="">Feedback</a></li>
 
             </u1>
 
@@ -177,7 +178,7 @@
                                         <div class="form-group">
                                             <label>Postal Code *
                                             </label>
-                                           
+
                                             <input class="form-control " type="text" name="postal_code" value="{{old('postal_code')}}">
                                         </div>
                                     </div>
@@ -194,7 +195,7 @@
                                         <div class="form-group">
                                             <label>URL - Website Address *
                                             </label>
-                                            
+
                                             <input class="form-control " type="text" name="website_address" value="{{old('website_address')}}">
                                         </div>
                                     </div>
@@ -203,7 +204,7 @@
                                         <div class="form-group">
                                             <label>Contact Number *
                                             </label>
-                                            
+
                                             <input class="form-control " type="text" name="phone" value="{{old('phone')}}">
                                         </div>
                                     </div>
@@ -213,7 +214,7 @@
                                 <hr>
                                 <div class="row custom-box">
 
-                                    <div class="col-lg-3 col-md-3 col-12">
+                                    <!-- <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>Specialization *
                                             </label>
@@ -257,8 +258,8 @@
                                                 <label class="custom-control-label" for="Service4"> Others</label>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
+                                    </div> -->
+                                    <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
                                             <label>Is your Initial Consultation chargeable?
                                             </label>
@@ -277,47 +278,14 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-3 col-md-3 col-12">
+                                    <!-- <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
                                             <label>Remarks/Comments if any
                                             </label>
                                             <input class="form-control " type="text" name="initial_chargeable_comment" value="{{old('initial_chargeable_comment')}}">
                                         </div>
-                                    </div>
-
-                                </div>
-                                <hr>
-                                <div class="row custom-box">
-
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Year of Establishment
-                                            </label>
-                                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{old('establishment_year')}}">
-                                            <small>Year of Registration</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Offering Services Since
-                                            </label>
-                                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{old('offering_year')}}">
-                                            <small>Number of Years</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
-                                        <div class="form-group">
-                                            <label>Response Time
-                                            </label>
-                                            <select class="form-control" name="response_time">
-                                                <option value="24 Hours" {{old('response_time') == "24 Hours" ? "selected":""}}>24 Hours</option>
-                                                <option value="48 Hours" {{old('response_time')== "48 Hours" ? "selected":""}}>48 Hours</option>
-                                                <option value="72 Hours" {{old('response_time') == "72 Hours" ? "selected":""}}>72 Hours</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-12">
+                                    </div> -->
+                                    <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
                                             <label>What type of Correspondence you prefer?
                                             </label>
@@ -341,6 +309,40 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                </div>
+                                <hr>
+                                <div class="row custom-box">
+
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label>Year of Establishment
+                                            </label>
+                                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{old('establishment_year')}}">
+                                            <small>Year of Registration</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label>Offering Services Since
+                                            </label>
+                                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{old('offering_year')}}">
+                                            <small>Number of Years</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="form-group">
+                                            <label>Response Time
+                                            </label>
+                                            <select class="form-control" name="response_time">
+                                                <option value="24 Hours" {{old('response_time') == "24 Hours" ? "selected":""}}>24 Hours</option>
+                                                <option value="48 Hours" {{old('response_time')== "48 Hours" ? "selected":""}}>48 Hours</option>
+                                                <option value="72 Hours" {{old('response_time') == "72 Hours" ? "selected":""}}>72 Hours</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     <div class="row custom-box">
                                         <div class="col-lg-10 col-md-10 col-12">
                                             <div class="form-group">
@@ -352,7 +354,7 @@
                                         </div>
                                     </div>
                                 </div>
-                             
+
                                 <div class="float-right">
                                     <button type="button" class="client-btn bmenu uk-button uk-button-primary">Next </button>
                                 </div>
@@ -473,6 +475,65 @@
                                     <button type="button" class="client-btn bmenu2 uk-button uk-button-primary">Next </button>
                                 </div>
 
+                            </fieldset>
+                        </div>
+                    </div>
+                </li>
+                <li id='menu7' class='tab-pane '>
+
+                    <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
+                        <div class="uk-card-body sc-padding-medium">
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+
+                                <div class="">
+                                    <div class="form-group">
+                                        <label>Select Provide Services </label><br><br>
+                                        <div class="row col-lg-12 col-md-12 col-12 ">
+                                            <div class="col-lg-3 col-md-3 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Specialization1" name="offering_service[]" value="Business Incorporation" {{ (is_array(old('offering_service')) and in_array("Business Incorporation", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Specialization1">Business Incorporation </label><br>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Specialization2" name="offering_service[]" value="Taxation" {{ (is_array(old('offering_service')) and in_array("Taxation", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Specialization2"> Taxation</label><br>
+                                            </div>
+                                            <div class=" col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Specialization3" name="offering_service[]" value="Auditing" {{ (is_array(old('offering_service')) and in_array("Auditing", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Specialization3"> Auditing</label><br>
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-3 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Commercial Filing" {{ (is_array(old('offering_service')) and in_array("Commercial Filing", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Service1">Commercial Filing</label><br>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Service2" name="offering_service[]" value="Professional Tax" {{ (is_array(old('offering_service')) and in_array("Professional Tax", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Service2"> Professional Tax</label><br>
+                                            </div>
+                                        </div><br>
+                                        <div class="row  col-lg-12 col-md-12 col-12 ">
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="Service3" name="offering_service[]" value="Insurance" {{ (is_array(old('offering_service')) and in_array("Insurance", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="Service3"> Insurance</label><br>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="OtherServices1" name="offering_service[]" value="Others" {{ (is_array(old('offering_service')) and in_array("Others", old('offering_service'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="OtherServices1"> Others</label><br>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="float-right">
+                                    <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
+
+                                    <button type="button" class="client-btn bmenu5 uk-button uk-button-primary">Next </button>
+                                </div>
                             </fieldset>
                         </div>
                     </div>
@@ -604,7 +665,7 @@
                                                             </div>
                                                         </div>
                                                     </a>
-                                                 
+
                                                 </div>
                                             </div>
                                         </div>
@@ -683,29 +744,6 @@
 
 
 
-
-        $(".amenu").click(function() {
-
-        });
-        $(".amenu1").click(function() {
-
-        });
-        $(".amenu2").click(function() {
-
-        });
-        $(".amenu3").click(function() {
-
-        });
-        $(".amenu4").click(function() {
-
-        });
-        $(".amenu5").click(function() {
-
-        });
-        $(".amenu6").click(function() {
-
-        });
-
         $(".bmenu").click(function() {
             if ($('#first_name').val() == '') {
                 $('.error-first_name').html('first name is required')
@@ -754,6 +792,18 @@
         $(".bmenu2").click(function() {
             $(".progress-bar").css("width", "50%");
             $(".progress-bar").html("50%");
+            $('.nav-linkk').removeClass('uk-active');
+            $('#amenu7').addClass('uk-active');
+            $('.tab-pane').removeClass('uk-active');
+            $('#menu7').addClass('uk-active');
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        $(".bmenu7").click(function() {
+            $(".progress-bar").css("width", "60%");
+            $(".progress-bar").html("60%");
             $('.nav-linkk').removeClass('uk-active');
             $('#amenu3').addClass('uk-active');
             $('.tab-pane').removeClass('uk-active');

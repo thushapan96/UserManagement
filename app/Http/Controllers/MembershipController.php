@@ -40,28 +40,31 @@ class MembershipController extends Controller
     public function candidateMebershipAdd(Request $request)
     {
 
-        $MembershipCandidate = MembershipCandidate::where('type', $request->type)->where('duration', $request->duration)->first();
+        for ($i = 1; $i < 10; $i++) {
 
-        $MembershipCandidate->Dashboard = $request->Dashboard;
+            $membershipCandidate = MembershipCandidate::find($i);
 
-        $MembershipCandidate->EA = $request->EA;
-        $MembershipCandidate->Calculator = $request->Calculator;
-        $MembershipCandidate->EnquiriesSchool = $request->EnquiriesSchool;
-        $MembershipCandidate->EnquiriesUniversity = $request->EnquiriesUniversity;
-        $MembershipCandidate->EnquiriesCollege = $request->EnquiriesCollege;
-        $MembershipCandidate->EnquiriesRCICConsultant = $request->EnquiriesRCICConsultant;
-        $MembershipCandidate->EnquiriesImmigration = $request->EnquiriesImmigration;
-        $MembershipCandidate->EnquiriesBusiness = $request->EnquiriesBusiness;
-        $MembershipCandidate->DefaultReports = $request->DefaultReports;
-        $MembershipCandidate->CustomizedReports = $request->CustomizedReports;
-        $MembershipCandidate->ChatAgents = $request->ChatAgents;
-        $MembershipCandidate->EmailSupport = $request->EmailSupport;
-        $MembershipCandidate->TelephonicSupport = $request->TelephonicSupport;
-        $MembershipCandidate->Add_On_features_Free = $request->Add_On_features_Free;
-        $MembershipCandidate->Anytime_Single_Multiple = $request->Anytime_Single_Multiple;
-        $MembershipCandidate->price = $request->price;
+            $membershipCandidate->Dashboard = $request->input("Dashboard$i");
+            $membershipCandidate->EA = $request->input("EA$i");
+            $membershipCandidate->Calculator = $request->input("Calculator$i");
+            $membershipCandidate->EnquiriesSchool = $request->input("EnquiriesSchool$i");
+            $membershipCandidate->EnquiriesUniversity = $request->input("EnquiriesUniversity$i");
+            $membershipCandidate->EnquiriesCollege = $request->input("EnquiriesCollege$i");
+            $membershipCandidate->EnquiriesRCICConsultant = $request->input("EnquiriesRCICConsultant$i");
+            $membershipCandidate->EnquiriesImmigration = $request->input("EnquiriesImmigration$i");
+            $membershipCandidate->EnquiriesBusiness = $request->input("EnquiriesBusiness$i");
+            $membershipCandidate->DefaultReports = $request->input("DefaultReports$i");
+            $membershipCandidate->CustomizedReports = $request->input("CustomizedReports$i");
+            $membershipCandidate->ChatAgents = $request->input("ChatAgents$i");
+            $membershipCandidate->EmailSupport = $request->input("EmailSupport$i");
+            $membershipCandidate->TelephonicSupport = $request->input("TelephonicSupport$i");
+            $membershipCandidate->Add_On_features_Free = $request->input("Add_On_features_Free$i");
+            $membershipCandidate->Anytime_Single_Multiple = $request->input("Anytime_Single_Multiple$i");
+            $membershipCandidate->price = $request->input("price$i");
 
-        $MembershipCandidate->save();
+            $membershipCandidate->save();
+        }
+
 
         $tab = $request->duration;
         return redirect(route('admin.membership.candidate'))->with('tab', $tab);
@@ -93,28 +96,33 @@ class MembershipController extends Controller
     public function institutionMebershipAdd(Request $request)
     {
 
-        $MembershipCandidate = MembershipInstitution::where('type', $request->type)->where('duration', $request->duration)->first();
 
-        $MembershipCandidate->Dashboard = $request->Dashboard;
-        $MembershipCandidate->EA = $request->EA;
-        $MembershipCandidate->Diploma = $request->Diploma;
-        $MembershipCandidate->PG_Diploma = $request->PG_Diploma;
-        $MembershipCandidate->Certification = $request->Certification;
-        $MembershipCandidate->Graduation = $request->Graduation;
-        $MembershipCandidate->Post_Graduation = $request->Post_Graduation;
-        $MembershipCandidate->Doctorate = $request->Doctorate;
-        $MembershipCandidate->DefaultReports = $request->DefaultReports;
-        $MembershipCandidate->CustomizedReports = $request->CustomizedReports;
-        $MembershipCandidate->ChatAgents = $request->ChatAgents;
-        $MembershipCandidate->EmailSupport = $request->EmailSupport;
-        $MembershipCandidate->TelephonicSupport = $request->TelephonicSupport;
-        $MembershipCandidate->Add_On_features_Free = $request->Add_On_features_Free;
-        $MembershipCandidate->AppointmentScheduler = $request->AppointmentScheduler;
-        $MembershipCandidate->eLearningManagementSystem = $request->eLearningManagementSystem;
-        $MembershipCandidate->QuickBooks = $request->QuickBooks;
-        $MembershipCandidate->price = $request->price;
+        for ($i = 1; $i < 10; $i++) {
 
-        $MembershipCandidate->save();
+            $MembershipCandidate = MembershipInstitution::find($i);
+
+            $MembershipCandidate->Dashboard = $request->input("Dashboard$i");
+            $MembershipCandidate->EA = $request->input("EA$i");
+            $MembershipCandidate->Diploma = $request->input("Diploma$i");
+            $MembershipCandidate->PG_Diploma = $request->input("PG_Diploma$i");
+            $MembershipCandidate->Certification = $request->input("Certification$i");
+            $MembershipCandidate->Graduation = $request->input("Graduation$i");
+            $MembershipCandidate->Post_Graduation = $request->input("Post_Graduation$i");
+            $MembershipCandidate->Doctorate = $request->input("Doctorate$i");
+            $MembershipCandidate->DefaultReports = $request->input("DefaultReports$i");
+            $MembershipCandidate->CustomizedReports = $request->input("CustomizedReports$i");
+            $MembershipCandidate->ChatAgents = $request->input("ChatAgents$i");
+            $MembershipCandidate->EmailSupport = $request->input("EmailSupport$i");
+            $MembershipCandidate->TelephonicSupport = $request->input("TelephonicSupport$i");
+            $MembershipCandidate->Add_On_features_Free = $request->input("Add_On_features_Free$i");
+            $MembershipCandidate->AppointmentScheduler = $request->input("AppointmentScheduler$i");
+            $MembershipCandidate->eLearningManagementSystem = $request->input("eLearningManagementSystem$i");
+            $MembershipCandidate->QuickBooks = $request->input("QuickBooks$i");
+            $MembershipCandidate->price = $request->input("price$i");
+
+            $MembershipCandidate->save();
+        }
+
 
         $tab = $request->duration;
 
@@ -146,25 +154,27 @@ class MembershipController extends Controller
     public function providerMebershipAdd(Request $request)
     {
 
-        $MembershipCandidate = MembershipProvider::where('type', $request->type)->where('duration', $request->duration)->first();
+        for ($i = 1; $i < 10; $i++) {
+            $MembershipCandidate = MembershipProvider::find($i);
 
-        $MembershipCandidate->Dashboard = $request->Dashboard;
-        $MembershipCandidate->Calculator = $request->Calculator;
-        $MembershipCandidate->EnquiriesRCICConsultant = $request->EnquiriesRCICConsultant;
-        $MembershipCandidate->EnquiriesImmigration = $request->EnquiriesImmigration;
-        $MembershipCandidate->EnquiriesBusiness = $request->EnquiriesBusiness;
-        $MembershipCandidate->DefaultReports = $request->DefaultReports;
-        $MembershipCandidate->CustomizedReports = $request->CustomizedReports;
-        $MembershipCandidate->ChatAgents = $request->ChatAgents;
-        $MembershipCandidate->EmailSupport = $request->EmailSupport;
-        $MembershipCandidate->TelephonicSupport = $request->TelephonicSupport;
-        $MembershipCandidate->Add_On_features_Free = $request->Add_On_features_Free;
-        $MembershipCandidate->AppointmentScheduler = $request->AppointmentScheduler;
-        $MembershipCandidate->CRM = $request->CRM;
-        $MembershipCandidate->QuickBooks = $request->QuickBooks;
-        $MembershipCandidate->price = $request->price;
+            $MembershipCandidate->Dashboard = $request->input("Dashboard$i");
+            $MembershipCandidate->Calculator = $request->input("Calculator$i");
+            $MembershipCandidate->EnquiriesRCICConsultant = $request->input("EnquiriesRCICConsultant$i");
+            $MembershipCandidate->EnquiriesImmigration = $request->input("EnquiriesImmigration$i");
+            $MembershipCandidate->EnquiriesBusiness = $request->input("EnquiriesBusiness$i");
+            $MembershipCandidate->DefaultReports = $request->input("DefaultReports$i");
+            $MembershipCandidate->CustomizedReports = $request->input("CustomizedReports$i");
+            $MembershipCandidate->ChatAgents = $request->input("ChatAgents$i");
+            $MembershipCandidate->EmailSupport = $request->input("EmailSupport$i");
+            $MembershipCandidate->TelephonicSupport = $request->input("TelephonicSupport$i");
+            $MembershipCandidate->Add_On_features_Free = $request->input("Add_On_features_Free$i");
+            $MembershipCandidate->AppointmentScheduler = $request->input("AppointmentScheduler$i");
+            $MembershipCandidate->CRM = $request->input("CRM$i");
+            $MembershipCandidate->QuickBooks = $request->input("QuickBooks$i");
+            $MembershipCandidate->price = $request->input("price$i");
 
-        $MembershipCandidate->save();
+            $MembershipCandidate->save();
+        }
 
         $tab = $request->duration;
 
@@ -193,28 +203,42 @@ class MembershipController extends Controller
 
     public function candidatePriceChange(Request $request)
     {
-        MembershipCandidate::where('type', $request->type)->where('duration', $request->duration)->update([
-            'price' => $request->price
-        ]);
+
+        $count = count($request->type);
+
+        for ($i = 0; $i < $count; $i++) {
+            MembershipCandidate::where('type', $request->type[$i])->where('duration', $request->duration[$i])->update([
+                'price' => $request->price[$i]
+            ]);
+        }
 
         return redirect(route('candidate.price'));
     }
 
     public function institutionPriceChange(Request $request)
     {
-        MembershipInstitution::where('type', $request->type)->where('duration', $request->duration)->update([
-            'price' => $request->price
-        ]);
+
+        $count = count($request->type);
+
+        for ($i = 0; $i < $count; $i++) {
+            MembershipInstitution::where('type', $request->type[$i])->where('duration', $request->duration[$i])->update([
+                'price' => $request->price[$i]
+            ]);
+        }
 
         return redirect(route('institution.price'));
     }
 
     public function providerPriceChange(Request $request)
     {
-        MembershipProvider::where('type', $request->type)->where('duration', $request->duration)->update([
-            'price' => $request->price
-        ]);
 
+        $count = count($request->type);
+
+        for ($i = 0; $i < $count; $i++) {
+            MembershipProvider::where('type', $request->type[$i])->where('duration', $request->duration[$i])->update([
+                'price' => $request->price[$i]
+            ]);
+        }
         return redirect(route('provider.price'));
     }
 
@@ -243,5 +267,4 @@ class MembershipController extends Controller
 
         return redirect(route('configure'));
     }
-    
 }

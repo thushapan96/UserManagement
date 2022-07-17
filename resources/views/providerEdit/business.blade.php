@@ -10,20 +10,21 @@
 
             <form id="form" action="{{route('update.consultant' ,['id'=>$consultants->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
-                <h5 style="text-align:center"> edit Business details</h5><br>
-                <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:5% !important;">
-                    <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">Main </a></li>
-                    <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">Team </a></li>
-                    <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">About Company</a></li>
-                    <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  2rem;"> Award & Certification</a></li>
-                    <li class="nav-linkk" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  2rem;">News and Events</a></li>
+                <h5 style="text-align:center"> edit </h5><br>
+                <u1 class="col-md-9" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto;margin-right:auto">
+                    <li class="nav-linkk " id="amenu"><a  aria-current="page">Main </a></li>
+                    <li class="nav-linkk " id="amenu1"><a >Team </a></li>
+                    <li class="nav-linkk " id="amenu2"><a >About Company</a></li>
+                    <li class="nav-linkk " id="amenu5"><a>Our Services</a></li>
+                    <li class="nav-linkk" id="amenu3"><a > Award & Certification</a></li>
+                    <li class="nav-linkk" id="amenu4"><a >News and Events</a></li>
                     <!-- <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Canada Inspire</a></li>
                     <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Feedback</a></li> -->
                 </u1>
                 <u1 class="uk-switcher">
 
                     <li id='menu' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
+                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box " id="">
@@ -169,7 +170,7 @@
                                     <hr>
                                     <div class="row custom-box">
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <!-- <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
                                                 <label>Specialization *
                                                 </label>
@@ -213,8 +214,8 @@
                                                     <label class="custom-control-label" for="Service4"> Others</label>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        </div> -->
+                                        <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label>Is your Initial Consultation chargeable?
                                                 </label>
@@ -233,7 +234,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-3 col-md-3 col-12">
+                                        <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
                                                 <label>What type of Correspondence you prefer?
                                                 </label>
@@ -305,7 +306,7 @@
                     </li>
 
                     <li id='menu1' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
+                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box">
@@ -389,7 +390,7 @@
                     </li>
 
                     <li id='menu2' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
+                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box">
@@ -490,9 +491,66 @@
                             </div>
                         </div>
                     </li>
+                    <li id='menu5' class='tab-pane '>
+                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
+                            <div class="uk-card-body sc-padding-medium">
+                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
+                                    <div class="">
+                                        <div class="form-group">
+                                            <label>Select Provide Services </label><br><br>
+                                            <div class="row col-lg-12 col-md-12 col-12 ">
+                                                <div class="col-lg-3 col-md-3 col-12 custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" id="Specialization1" name="offering_service[]" value="Business Incorporation" {{ (is_array($consultants->offering_service) and in_array("Business Incorporation", $consultants->offering_service)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="Specialization1">Business Incorporation </label><br>
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" id="Specialization2" name="offering_service[]" value="Taxation" {{ (is_array($consultants->offering_service) and in_array("Taxation", $consultants->offering_service)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="Specialization2"> Taxation</label><br>
+                                                </div>
+                                                <div class=" col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" id="Specialization3" name="offering_service[]" value="Auditing" {{ (is_array($consultants->offering_service) and in_array("Auditing", $consultants->offering_service)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="Specialization3"> Auditing</label><br>
+                                                </div>
+
+                                                <div class="col-lg-3 col-md-3 col-12 custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Commercial Filing" {{ (is_array($consultants->offering_service) and in_array("Commercial Filing", $consultants->offering_service)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="Service1">Commercial Filing</label><br>
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" id="Service2" name="offering_service[]" value="Professional Tax" {{ (is_array($consultants->offering_service) and in_array("Professional Tax", $consultants->offering_service)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="Service2"> Professional Tax</label><br>
+                                                </div>
+                                            </div><br>
+                                            <div class="row  col-lg-12 col-md-12 col-12 ">
+                                                <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" id="Service3" name="offering_service[]" value="Insurance" {{ (is_array($consultants->offering_service) and in_array("Insurance", $consultants->offering_service)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="Service3"> Insurance</label><br>
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" id="OtherServices1" name="offering_service[]" value="Others" {{ (is_array($consultants->offering_service) and in_array("Others", $consultants->offering_service)) ? ' checked' : '' }}>
+                                                    <label class="custom-control-label" for="OtherServices1"> Others</label><br>
+                                                </div>
+                                                
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                
+
+
+                                    <div class="float-right">
+                                        <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
+
+                                        <button type="button" class="client-btn bmenu5 uk-button uk-button-primary">Next </button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </li>
                     <li id='menu3' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
+                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <!-- <div class="row custom-box">
@@ -556,7 +614,7 @@
                     </li>
 
                     <li id='menu4' class='tab-pane'>
-                        <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
+                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box">
@@ -655,7 +713,7 @@
                     <script>
                         $("textarea").each(function(index) {
                             console.log(index, $(this)[0].scrollHeight)
-                            $(this).height($(this)[0].scrollHeight+15);
+                            $(this).height($(this)[0].scrollHeight + 15);
                         });
                     </script>
                 </u1>
@@ -672,28 +730,6 @@
 <script>
     $(document).ready(function() {
 
-       
-        $(".amenu").click(function() {
-
-        });
-        $(".amenu1").click(function() {
-
-        });
-        $(".amenu2").click(function() {
-
-        });
-        $(".amenu3").click(function() {
-
-        });
-        $(".amenu4").click(function() {
-
-        });
-        $(".amenu5").click(function() {
-
-        });
-        $(".amenu6").click(function() {
-
-        });
 
         $(".bmenu").click(function() {
             $('.nav-linkk').removeClass('uk-active');
@@ -716,6 +752,17 @@
             });
         });
         $(".bmenu2").click(function() {
+            $('.nav-linkk').removeClass('uk-active');
+            $('#amenu5').addClass('uk-active');
+            $('.tab-pane').removeClass('uk-active');
+            $('#menu5').addClass('uk-active');
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        });
+        $(".bmenu5").click(function() {
             $('.nav-linkk').removeClass('uk-active');
             $('#amenu3').addClass('uk-active');
             $('.tab-pane').removeClass('uk-active');
@@ -748,17 +795,7 @@
             });
 
         });
-        $(".bmenu5").click(function() {
-            $('.nav-linkk').removeClass('uk-active');
-            $('#amenu6').addClass('uk-active');
-            $('.tab-pane').removeClass('uk-active');
-            $('#menu6').addClass('uk-active');
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-
-        });
+      
 
         // if (sessionStorage.getItem("appendhtml")) {
         //     $('#newRow').html(sessionStorage.getItem("appendhtml"))
@@ -903,7 +940,7 @@
     //.......................current location......................
 
     $(document).ready(function() {
-       
+
         "use strict";
         $('#map').hide();
 

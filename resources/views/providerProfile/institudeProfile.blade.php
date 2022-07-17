@@ -61,6 +61,9 @@
     .py-5 {
         padding-top: 7rem !important;
     }
+    .uk-fieldset{
+        min-height:300px !important ;
+    }
 </style>
 @if($message = Session::get('formSuccess'))
 <script>
@@ -141,12 +144,11 @@
         <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
             <h3 class="float-center" style="text-align:center">{{$institutions->name}} </h3>
             <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto;text-align:center">
-                <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
-                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">Courses</a></li>
-                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">About {{$institutions->type}} </a></li>
-                <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1rem;"> Award & Certification</a></li>
-                <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1rem;">News and Events</a></li>
-
+                <li class=" uk-active" id="amenu"><a style="" aria-current="page">Main </a></li>
+                <li class="" id="amenu1"><a style="">Programs </a></li>
+                <li class="" id="amenu2"><a style="">About {{$institutions->type}} </a></li>
+                <li class="" id="amenu3"><a style=""> Award & Certification</a></li>
+                <li class="" id="amenu4"><a style="">News and Events</a></li>
 
             </u1>
 
@@ -154,178 +156,180 @@
                 <li id='menu' class='tab-pane '>
                     <div class='uk-card col-md-11 ' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">Personal Information</h6>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <h6 style="text-decoration:underline;">Personal Information</h6>
 
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Name</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$institutions->name}}
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Name</strong>
                                     </div>
 
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Contact Number</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps"> {{$institutions->phone}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$institutions->name}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Register number </strong>
-                                        </div>
+                                </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$institutions->registration_number}}
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Contact Number</strong>
                                     </div>
 
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Admission Cell - Contact Person</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps"> {{$institutions->admission_phone}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps"> {{$institutions->phone}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Correspondence Email</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps"> {{$institutions->email}}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Register number </strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Dean Email ID</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps"> {{$institutions->dean_email}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$institutions->registration_number}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">URL Website Address</strong>
-                                        </div>
+                                </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$institutions->website_address}}
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Admission Cell - Contact Person</strong>
                                     </div>
-                                </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">Address</h6>
 
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">postal Code</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$institutions->postal_code}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps"> {{$institutions->admission_phone}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Street</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$institutions->streat}}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Correspondence Email</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">City</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$institutions->city}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps"> {{$institutions->email}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">province</strong>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Dean Email ID</strong>
+                                    </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$institutions->region}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps"> {{$institutions->dean_email}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Country</strong>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">URL Website Address</strong>
+                                    </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$institutions->country}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$institutions->website_address}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Registered Office - Locations</strong>
-                                        </div>
+                                </div>
+                            </fieldset><br>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <h6 style="text-decoration:underline;">Address</h6>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$institutions->registrar_office_area}}
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">postal Code</strong>
                                     </div>
-                                </fieldset>
-                           
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$institutions->postal_code}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Street</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$institutions->streat}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">City</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$institutions->city}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">province</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$institutions->region}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Country</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$institutions->country}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Registered Office - Locations</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$institutions->registrar_office_area}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </fieldset>
+
                         </div>
                     </div>
                 </li>
                 <li id='menu1' class='tab-pane '>
                     <div class='uk-card col-md-11' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">Course Details</h6>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Type of Courses</strong>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->course_type)
-                                                @foreach($institutions->course_type as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <h6 style="text-decoration:underline;">Course Details</h6>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Type of Courses</strong>
                                     </div>
-                                    <div class="row custom-box">
+
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->course_type)
+                                            @foreach($institutions->course_type as $row)
+                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- <div class="row custom-box">
                                         <div class="col-md-6">
                                             <strong class="ps">Courses Information</strong>
                                         </div>
@@ -337,313 +341,332 @@
                                                 @endif
                                             </p>
                                         </div>
+                                    </div> -->
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Courses</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Courses</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->offer_course)
-                                                @foreach($institutions->offer_course as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @else
-                                                <br>
-                                                @endif
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->offer_course)
+                                            @foreach($institutions->offer_course as $row)
+                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+                                            @endif
 
-                                            </p>
-                                        </div>
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Total Number of Students Enrolled</strong>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p class="ps"> @if($institutions->no_student){{$institutions->no_student}}
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Offer Certificate type</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Total Number of Successful Students</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps"> @if($institutions->no_success_student){{$institutions->no_success_student}}
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->certificate_type)
+                                            @foreach($institutions->certificate_type as $row)
+                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Course Duration</strong>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->course_duration)
-                                                @foreach($institutions->course_duration as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                </div>
+                                @if($institutions->medium)
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Medium</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">prefer language</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->language_test_type)
-                                                @foreach($institutions->language_test_type as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            {{$institutions->medium}}
+                                        </p>
                                     </div>
-                                </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">Other Details</h6>
-                                    @if($institutions->medium)
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Medium</strong>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                {{$institutions->medium}}
-                                            </p>
-                                        </div>
+                                </div>
+                                @endif
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Intake</strong>
                                     </div>
-                                    @endif
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Intake</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->intake)
-                                                @foreach($institutions->intake as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->intake)
+                                            @foreach($institutions->intake as $row)
+                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Admission Type </strong>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->admission_type){{$institutions->admission_type}}
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Admission Type </strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Year of Establishment</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps"> @if($institutions->establishment_year){{$institutions->establishment_year}}
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->admission_type){{$institutions->admission_type}}
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Response Time</strong>
-                                        </div>
+                                </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->response_time){{$institutions->response_time}}
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Total Number of Students Enrolled</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Mode of Communication</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->communication_mode)
-                                                @foreach($institutions->communication_mode as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @else
-                                                <br>
-                                                @endif
-
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps"> @if($institutions->no_student){{$institutions->no_student}}
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Offering Services Since</strong>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p class="ps"> @if($institutions->offering_year){{$institutions->offering_year}}
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Total Number of Successful Students</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Financial Aided Type</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">{{$institutions->is_financial == 'yes' ? 'Financial':'Un Financial'}}</p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps"> @if($institutions->no_success_student){{$institutions->no_success_student}}
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Transfer Credits</strong>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p class="ps">{{$institutions->is_credit == 'yes' ? 'Available':'Un Available'}}</p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Course Duration</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Offer Certificate type</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->certificate_type)
-                                                @foreach($institutions->certificate_type as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @else
-                                                <br>
-
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->course_duration)
+                                            @foreach($institutions->course_duration as $row)
+                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">other requirement</strong>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->other_require)
-                                                @foreach($institutions->other_require as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @else
-                                                <br>
-
-                                                @endif
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">prefer language</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps"> offer any Scholarships</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">
-
-                                                @if($institutions->is_scholarship_offer){{$institutions->is_scholarship_offer}}
-                                                @else
-                                                <br>
-                                                @endif
-
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->language_test_type)
+                                            @foreach($institutions->language_test_type as $row)
+                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps"> conduct any Webinars</strong>
-                                        </div>
+                                </div>
+                            </fieldset><br>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <h6 style="text-decoration:underline;">Other Details</h6>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">
-
-                                                @if($institutions->is_conduct_webinar){{$institutions->is_conduct_webinar}}@else
-                                                <br>
-                                                @endif
-
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Year of Establishment</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Admission Criteria Website</strong>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps"> @if($institutions->admission_criteria_website){{$institutions->admission_criteria_website}}@else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps"> @if($institutions->establishment_year){{$institutions->establishment_year}}
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Fee Structure Website</strong>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Response Time</strong>
+                                    </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps">
-                                                @if($institutions->fee_structure_website){{$institutions->fee_structure_website}}@else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->response_time){{$institutions->response_time}}
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Education Certificate Assessment Organization Name</strong>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Mode of Communication</strong>
+                                    </div>
 
-                                        <div class="col-md-6">
-                                            <p class="ps"> @if($institutions->eca){{$institutions->eca}}@else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->communication_mode)
+                                            @foreach($institutions->communication_mode as $row)
+                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+                                            @endif
+
+                                        </p>
                                     </div>
-                                </fieldset>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Offering Services Since</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps"> @if($institutions->offering_year){{$institutions->offering_year}}
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Is Financial Aided ?</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps">{{$institutions->is_financial}}</p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Is Transfer Credits Available ?</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps">{{$institutions->is_credit}}</p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">other requirement</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->other_require)
+                                            @foreach($institutions->other_require as $row)
+                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps"> Is offer any Scholarships ?</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps">
+
+                                            @if($institutions->is_scholarship_offer){{$institutions->is_scholarship_offer}}
+                                            @else
+                                            <br>
+                                            @endif
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps"> Is conduct any Webinars ?</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps">
+
+                                            @if($institutions->is_conduct_webinar){{$institutions->is_conduct_webinar}}@else
+                                            <br>
+                                            @endif
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Admission Criteria Website</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps"> @if($institutions->admission_criteria_website){{$institutions->admission_criteria_website}}@else
+                                            <br>
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Fee Structure Website</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->fee_structure_website){{$institutions->fee_structure_website}}@else
+                                            <br>
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Education Certificate Assessment Organization Name</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps"> @if($institutions->eca){{$institutions->eca}}@else
+                                            <br>
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
                 </li>
@@ -799,7 +822,7 @@
                 <script>
                     $("textarea").each(function(index) {
                         console.log(index, $(this)[0].scrollHeight)
-                        $(this).height($(this)[0].scrollHeight+15);
+                        $(this).height($(this)[0].scrollHeight + 15);
 
                     });
                 </script>

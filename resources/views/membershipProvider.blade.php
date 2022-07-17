@@ -51,7 +51,7 @@
 
                     <div class="row ">
                         <div class="col-md-4">
-                            <strong class="labels"> Providing Service </strong>
+                            <strong class="labels"> Service Provider Type </strong>
                         </div>
 
                         <div class="col-md-1">
@@ -129,7 +129,7 @@
                 <hr class="uk-margin-remove">
                 <div class="uk-card-footer md-bg-grey-50">
                     @if($membership->membership_duration == '')
-                    <div style="color:tomato">If you want to get our services, you need to get membership !</div><br>
+                    <div style="color:tomato">Please complete membership registration to avail Services and Enquiries!</div><br>
                     <a href="{{route('add.membership.provider')}}" class="sc-button"> Membership Registration</a><br><br>
                     @else
 
