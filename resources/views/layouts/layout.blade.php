@@ -432,7 +432,7 @@
                                 @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
+                                    </span><span class="uk-nav-title" style="color:#00008B">profile</span>
                                 </a>
                                 @endif
                                 @endif
@@ -517,7 +517,7 @@
                                 <a href="#" class=" sc-js-notify-status-warning">
                                     <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
-                                    </span><span class="uk-nav-title">CRS Calculator</span>
+                                    </span><span class="uk-nav-title" style="color:red">CRS Calculator</span>
                                 </a>
 
 
@@ -525,7 +525,7 @@
                             <li title="Educational Assessment" class="page-Educational page-active">
                                 <a href="#" class=" sc-js-notify-status-warning">
                                     <span class="uk-nav-icon"><i class="fab fa-readme"></i>
-                                    </span><span class="uk-nav-title">Educ Assessment</span>
+                                    </span><span class="uk-nav-title" style="color:red">Educ Assessment</span>
                                 </a>
                             </li>
                             @endif

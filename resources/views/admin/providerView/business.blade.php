@@ -46,6 +46,10 @@
     label {
         font-weight: bold !important;
     }
+
+    .uk-fieldset {
+        min-height: 300px !important;
+    }
 </style>
 @if($message = Session::get('formSuccess'))
 <script>
@@ -73,171 +77,174 @@
 
         <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} </h3>
-            <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
-                <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
-                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">About Company </a></li>
-                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">Team </a></li>
-                <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1rem;"> Award & Certification</a></li>
-                <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1rem;">News and Events</a></li>
+            <u1 class="col-md-12" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+                <li class=" uk-active" id="amenu"><a style="" aria-current="page">Main </a></li>
+                <li class="" id="amenu1"><a style="">About Company </a></li>
+                <li class="" id="amenu5"><a>Our Services </a></li>
+                <li class="" id="amenu2"><a style="">Team </a></li>
+                <li class="" id="amenu3"><a style=""> Award & Certification</a></li>
+                <li class="" id="amenu4"><a style="">News and Events</a></li>
+                <!-- <li class="" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1rem;">Canada Inspire</a></li>
+                <li class="" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1rem;">Feedback</a></li> -->
 
             </u1>
             <u1 class="uk-switcher">
                 <li id='menu' class='tab-pane '>
                     <div class='uk-card col-md-11 ' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">Personal Information</h6>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <h6 style="text-decoration:underline;">Personal Information</h6>
 
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Full Name</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}}
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Full Name</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Company Name</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->company_name}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">RCIC Number*</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->registration_number}}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Company Name</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Languages Known </strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                @if($consultants->language_known)
-                                                @foreach($consultants->language_known as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->company_name}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Contact Number</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps"> {{$consultants->phone}}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Registration Number</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Correspondence Email</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps"> {{$consultants->email}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->registration_number}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">URL Website Address</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->website_address}}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Languages Known </strong>
                                     </div>
-                                </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">Address</h6>
 
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">postal Code</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->postal_code}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            @if($consultants->language_known)
+                                            @foreach($consultants->language_known as $row)
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif{{$row}}<br>
+                                            @endforeach
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Street</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->streat}}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Contact Number</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">City</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->city}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps"> {{$consultants->phone}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">province</strong>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Correspondence Email</strong>
+                                    </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->region}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps"> {{$consultants->email}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Country</strong>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">URL Website Address</strong>
+                                    </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->country}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->website_address}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Registered Office - Locations</strong>
-                                        </div>
+                                </div>
+                            </fieldset><br>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <h6 style="text-decoration:underline;">Address</h6>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->registrar_office_area}}
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">postal Code</strong>
                                     </div>
-                                </fieldset>
-                                <br>
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">other Information</h6>
-                                    <div class="row custom-box">
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->postal_code}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Street</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->streat}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">City</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->city}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">province</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->region}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Country</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->country}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Registered Office - Locations</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->registrar_office_area}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </fieldset><br>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <h6 style="text-decoration:underline;">other Information</h6>
+                                <!-- <div class="row custom-box">
                                         <div class="col-md-5">
                                             <strong class="ps">Specialization</strong>
                                         </div>
@@ -266,70 +273,71 @@
                                                 @endif
                                             </p>
                                         </div>
+                                    </div> -->
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Year of Establishment</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Year of Establishment</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->establishment_year}}
-                                            </p>
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->establishment_year}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Offering Services Since</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->offering_year}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Communication prefer mode</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            @if($consultants->communication_mode)
+                                            @foreach($consultants->communication_mode as $row)
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif{{$row}}<br>
+                                            @endforeach
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Response Time</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->response_time}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Initial Chargeable Type</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+
+                                        <div class="row">
+                                            &nbsp;<div class="free ">free</div>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <div class="paid ">paid</div>
+
                                         </div>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Offering Services Since</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->offering_year}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Communication prefer mode</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                @if($consultants->communication_mode)
-                                                @foreach($consultants->communication_mode as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @endif
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Response Time</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->response_time}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Initial Chargeable Type</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-
-                                            <div class="row">
-                                                &nbsp;<div class="free ">free</div>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <div class="paid ">paid</div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                </fieldset>
+                                </div>
+                                <br>
+                            </fieldset>
                         </div>
                     </div>
                 </li>
@@ -404,6 +412,31 @@
                         </div>
                     </div>
                 </li>
+                <li id='menu5' class='tab-pane '>
+                    <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
+                        <div class="uk-card-body sc-padding-medium">
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps"> Offered Services</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            @if($consultants->offering_service)
+                                            @foreach($consultants->offering_service as $row)
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif {{$row}}<br>
+                                            @endforeach
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                </li>
                 <li id='menu2' class='tab-pane '>
                     <div class=' col-md-11 ' style="margin-left:auto !important;margin-right:auto">
                         <div class="">
@@ -421,10 +454,10 @@
                             @foreach($teams as $key=>$row )
 
                             <div class="col-md-10" style="margin-left: auto;margin-right:auto;">
-                                <div class="uk-card uk-card-hover" style="height:248px">
+                                <div class="uk-card uk-card-hover" style="height:250px">
                                     <div class="uk-card-body sc-padding-remove">
                                         <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-100" >
+                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative" style="height:248px;overflow:none">
                                                 @if($row->team_img)
                                                 <img class="rounded-circle  img " style="width:200px !important;height:200px; margin: 0 auto;" src="{{url('files/'.$row->team_img)}}">
                                                 @else
@@ -473,6 +506,7 @@
                     </div>
 
                 </li>
+
 
                 <li id='menu3' class='tab-pane '>
                     <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
@@ -551,11 +585,11 @@
                         </div>
                     </div>
                 </li>
-             
+
                 <script>
                     $("textarea").each(function(index) {
                         console.log(index, $(this)[0].scrollHeight)
-                        $(this).height($(this)[0].scrollHeight+15);
+                        $(this).height($(this)[0].scrollHeight + 15);
                     });
                 </script>
             </u1>

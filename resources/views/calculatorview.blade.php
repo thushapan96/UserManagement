@@ -324,88 +324,91 @@
         <div class='uk-card col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                    @if($employments->count())
                     <h6 style="text-decoration:underline;">Employment</h6>
 
-                    @if($employments)
                     @foreach($employments as $row)
-                    <div id="inputFormRow">
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="ps">Employment (Employer Name)</strong>
+                    <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
+                        <div id="inputFormRow">
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="ps">Employment (Employer Name)</strong>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <p class="ps">
+                                        {{$row->employer_name}}
+                                    </p>
+                                </div>
                             </div>
 
-                            <div class="col-md-7">
-                                <p class="ps">
-                                    {{$row->employer_name}}
-                                </p>
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="ps">Job Title or Description)</strong>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <p class="ps">
+                                        {{$row->job_tittle}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="ps">Job Field</strong>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <p class="ps">
+                                        {{$row->job_field}}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="ps">Years of Job Work Experience</strong>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <p class="ps">
+                                        {{$row->year_job_work}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="ps">From Year</strong>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <p class="ps">
+                                        {{$row->from_year_job}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row custom-box">
+                                <div class="col-md-5">
+                                    <strong class="ps">to Year</strong>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <p class="ps">
+                                        {{$row->to_year_job}}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="ps">Job Title or Description)</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <p class="ps">
-                                    {{$row->job_tittle}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="ps">Job Field</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <p class="ps">
-                                    {{$row->job_field}}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="ps">Years of Job Work Experience</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <p class="ps">
-                                    {{$row->year_job_work}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="ps">From Year</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <p class="ps">
-                                    {{$row->from_year_job}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row custom-box">
-                            <div class="col-md-5">
-                                <strong class="ps">to Year</strong>
-                            </div>
-
-                            <div class="col-md-7">
-                                <p class="ps">
-                                    {{$row->to_year_job}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    </fieldset><br>
                     @endforeach
                     @endif
+                    @if($technicalCertifications)
                     <hr>
                     <h6 style="text-decoration:underline;">Technical Certification</h6>
 
-                    <div id="add_TC_row">
-                        @if($technicalCertifications)
-                        @foreach($technicalCertifications as $row)
+
+                    @foreach($technicalCertifications as $row)
+                    <fieldset class="uk-fieldset md-bg-grey-300 sc-padding">
                         <div id="inputFormRow">
                             <div class="row custom-box">
                                 <div class="col-md-5">
@@ -466,9 +469,10 @@
                             </div>
 
                         </div>
-                        @endforeach
-                        @endif
-                    </div>
+                    </fieldset><br>
+                    @endforeach
+                    @endif
+
                 </fieldset><br>
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                     <div class="row custom-box">
@@ -633,9 +637,9 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                                &nbsp;<div class="EOI_profile_yes ">Yes</div>
-                                &nbsp;&nbsp;&nbsp;
-                                <div class="EOI_profile_no ">NO</div>
+                                &nbsp;<div class="EOI_profile_yes ">Yes</div> &nbsp;&nbsp;&nbsp;                               
+                                <div class="EOI_profile_no ">NO</div>&nbsp;&nbsp;&nbsp;
+                                {{$calculators->EOI_profile_date}}
 
                             </div><br>
                         </div>
@@ -657,9 +661,9 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                                &nbsp;<div class="Provincial_profile_yes ">Yes</div>
-                                &nbsp;&nbsp;&nbsp;
-                                <div class="Provincial_profile_no ">NO</div>
+                                &nbsp;<div class="Provincial_profile_yes ">Yes</div>  &nbsp;&nbsp;&nbsp;                              
+                                <div class="Provincial_profile_no ">NO</div>&nbsp;&nbsp;&nbsp;
+                                {{$calculators->Provincial_profile_date}}
 
                             </div>
                         </div>
@@ -685,8 +689,10 @@
         });
     </script>
 </u1><br>
-<div class="float-right col-md-3">
-    <a href="{{route('edit.calculator')}}"> <button type="button" class="client-btn uk-button uk-button-primary">Edit CRS Calculator</button></a>
+<div class="col-md-9" style="margin-left:auto !important;margin-right:auto !important">
+    <div class="float-right">
+        <a href="{{route('edit.calculator')}}"> <button type="button" class="client-btn uk-button uk-button-primary">Edit CRS Calculator</button></a>
+    </div>
 </div>
 <br>
 <script>

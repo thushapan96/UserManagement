@@ -21,7 +21,7 @@ class Calculator extends Model
         'is_rejected_visa','rejected_visa_reason','rejected_visa_year',
 
         'IELTS','IELTS_listening','IELTS_reading',
-        'IELTS_writing','IELTS_speaking','IELTS_overall_score','Provincial_profile','EOI_profile',
+        'IELTS_writing','IELTS_speaking','IELTS_overall_score','Provincial_profile','EOI_profile','Provincial_profile_date','EOI_profile_date'
    ];
 
    protected $casts = [

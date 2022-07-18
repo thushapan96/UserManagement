@@ -24,11 +24,14 @@
     /* img {
         border: 2px solid #555 !important;
     } */
+    .uk-fieldset {
+        min-height: 300px !important;
+    }
 </style>
 
 
 <section>
-   
+
     <div class="row">
 
         <div class="col-md-8">
@@ -47,7 +50,7 @@
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 <h6 class="labels" style="text-decoration: underline;">Personal Information</h6>
-                             
+                                <br>
                                 <div class="row ">
                                     <div class="col-md-5">
                                         <strong class="labels"> Name </strong>
@@ -189,7 +192,7 @@
 
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
-                                <h6 class="labels" style="text-decoration: underline;">Language Qualification</h6>
+                                <h6 class="labels" style="text-decoration: underline;">Language Qualification</h6><br>
                                 @if($Academy->language_proficiency)
                                 <div class="row ">
                                     <div class="col-md-5">
@@ -287,13 +290,13 @@
                             @foreach($qualification as $row)
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 @if($row->type == 'school')
-                                <h6 class="labels" style="text-decoration: underline;">School </h6>
+                                <h6 class="labels" style="text-decoration: underline;">School </h6><br>
                                 @elseif($row->type == 'college')
-                                <h6 class="labels" style="text-decoration: underline;">College </h6>
+                                <h6 class="labels" style="text-decoration: underline;">College </h6><br>
                                 @elseif($row->type == 'PG')
-                                <h6 class="labels" style="text-decoration: underline;">Post Graduation </h6>
+                                <h6 class="labels" style="text-decoration: underline;">Post Graduation </h6><br>
                                 @else
-                                <h6 class="labels" style="text-decoration: underline;">Other Qualification </h6>
+                                <h6 class="labels" style="text-decoration: underline;">Other Qualification </h6><br>
                                 @endif
                                 <div class="row ">
                                     <div class="col-md-4">
@@ -370,7 +373,7 @@
                             @foreach($Work as $key =>$row)
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 <div class="card col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
-                                    <h6 class="labels" style="text-decoration: underline;">Place work {{$key + 1 }}</h6>
+                                    <h6 class="labels" style="text-decoration: underline;">Place work {{$key + 1 }}</h6><br>
                                     <div class="row ">
                                         <div class="col-md-5">
                                             <strong class="labels">Designation</strong>
@@ -475,7 +478,7 @@
                                 <div class=" col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
 
 
-                                    <h6 class="labels" style="text-decoration: underline;">Sponsor Details</h6>
+                                    <h6 class="labels" style="text-decoration: underline;">Sponsor Details</h6><br>
                                     <div class="row ">
                                         <div class="col-md-4">
                                             <strong class="labels">Name </strong>
@@ -566,7 +569,7 @@
                             <br>
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 <div class=" col-md-12" style="background-color: #f5f5f5!important; box-shadow: none ;">
-                                    <h6 class="labels" style="text-decoration: underline;">Guadian Details</h6>
+                                    <h6 class="labels" style="text-decoration: underline;">Guadian Details</h6><br>
                                     <div class="row ">
                                         <div class="col-md-4">
                                             <strong class="labels">Relationship with Child</strong>

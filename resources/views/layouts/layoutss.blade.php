@@ -448,7 +448,7 @@
                                 @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
                                 <a href="{{route('consultantProfile')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
+                                    </span><span class="uk-nav-title" >profilee</span>
                                 </a>
                                 @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
                                 <a href="{{route('institudeProfile')}}">
@@ -463,7 +463,7 @@
                                 @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
                                 <a href="{{route('personalProfile')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
+                                    </span><span class="uk-nav-title" style="color:#00008B">profile</span>
                                 </a>
                                 @endif
                                 @endif
@@ -562,12 +562,12 @@
                                 <a href="{{route('calculator')}}">
                                     <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
-                                    </span><span class="uk-nav-title">CRS Calculator</span>
+                                    </span><span class="uk-nav-title" style="color:#00008b">CRS Calculator</span>
                                 </a> @else
                                 <a href="#" class="sc-js-notify-status-warningg">
                                     <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
-                                    </span><span class="uk-nav-title">CRS Calculator</span>
+                                    </span><span class="uk-nav-title" style="color:red">CRS Calculator</span>
                                 </a>
                                 @endif
 
@@ -576,11 +576,11 @@
                                 @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                 <a href="{{route('education')}}">
                                     <span class="uk-nav-icon"><i class="fab fa-readme"></i>
-                                    </span><span class="uk-nav-title">Educ Assessment</span>
+                                    </span><span class="uk-nav-title" style="color:#00008b">Educ Assessment</span>
                                 </a> @else
                                 <a href="#" class="sc-js-notify-status-warningg">
                                     <span class="uk-nav-icon"><i class="fab fa-readme"></i>
-                                    </span><span class="uk-nav-title">Educ Assessment</span>
+                                    </span><span class="uk-nav-title" style="color:red">Educ Assessment</span>
                                 </a>
                                 @endif
                             </li>

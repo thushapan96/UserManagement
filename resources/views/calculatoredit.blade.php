@@ -543,10 +543,19 @@
                                             <label class="custom-control-label mt-1" for="Pastt">Yes</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt2" name="EOI_profile" value="no" {{ $calculators->EOI_profile == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt2">No</label>
+                                    <div style="line-height:2">
+
+                                        <div class="col-lg-3 col-md-2 col-3 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="Pastt2" name="EOI_profile" value="no" {{ $calculators->EOI_profile == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="Pastt2">No</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-12">
+
+                                            <input type="date" class="form-control" name="EOI_profile_date" value="{{$calculators->EOI_profile_date}}">
+
                                         </div>
                                     </div>
                                 </div>
@@ -561,10 +570,18 @@
                                             <label class="custom-control-label mt-1" for="Pastt">Yes</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt2" name="Provincial_profile" value="no" {{ $calculators->Provincial_profile == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt2">No</label>
+                                    <div style="line-height:2">
+
+                                        <div class="col-lg-3 col-md-2 col-3 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="Pastt2" name="Provincial_profile" value="no" {{ $calculators->Provincial_profile == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="Pastt2">No</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-12">
+
+                                            <input type="date" class="form-control" name="Provincial_profile_date" value="{{$calculators->Provincial_profile_date}}">
+
                                         </div>
                                     </div>
                                 </div>

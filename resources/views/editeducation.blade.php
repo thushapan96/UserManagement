@@ -531,14 +531,14 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input" id="Past" name="is_rejected_college" value="yes" {{ $educations->is_rejected_college == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Past">Yes</label>
+                                            <input type="radio" class="custom-control-input" id="Pastis_rejected_college" name="is_rejected_college" value="yes" {{ $educations->is_rejected_college == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastis_rejected_college">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Past2" name="is_rejected_college" value="no" {{ $educations->is_rejected_college == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Past2">No</label>
+                                            <input type="radio" class="custom-control-input " id="Past2is_rejected_college" name="is_rejected_college" value="no" {{ $educations->is_rejected_college == "no" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Past2is_rejected_college">No</label>
                                         </div>
                                     </div>
                                 </div>
@@ -563,14 +563,14 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pasttt" name="is_rejected_visa_past" value="yes" {{ $educations->is_rejected_visa_past == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pasttt">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="Pastttis_rejected_visa_past" name="is_rejected_visa_past" value="yes" {{ $educations->is_rejected_visa_past == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastttis_rejected_visa_past">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Past2" name="is_rejected_visa_past" value="no" {{ $educations->is_rejected_visa_past == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Past2">No</label>
+                                            <input type="radio" class="custom-control-input " id="Past2is_rejected_visa_past" name="is_rejected_visa_past" value="no" {{ $educations->is_rejected_visa_past == "no" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Past2is_rejected_visa_past">No</label>
                                         </div>
                                     </div>
                                 </div>
@@ -595,14 +595,14 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt" name="is_rejected_visa" value="yes" {{ $educations->is_rejected_visa == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="Pasttis_rejected_visa" name="is_rejected_visa" value="yes" {{ $educations->is_rejected_visa == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pasttis_rejected_visa">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt2" name="is_rejected_visa" value="no" {{ $educations->is_rejected_visa == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt2">No</label>
+                                            <input type="radio" class="custom-control-input " id="Pastt2is_rejected_visa" name="is_rejected_visa" value="no" {{ $educations->is_rejected_visa == "no" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastt2is_rejected_visa">No</label>
                                         </div>
                                     </div>
                                 </div>
@@ -654,7 +654,7 @@
 
                             <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
                             <div class="col-lg-6 col-md-6">
-                                <input class="form-control" name="eca" value="{{$educations->eca}}" >
+                                <input class="form-control" name="eca" value="{{$educations->eca}}">
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <input class="form-control" type="date" id="Prerequisite4" name="eca_date" value="{{$educations->eca_date}}">
@@ -693,14 +693,23 @@
                                             <label class="custom-control-label mt-1" for="academic ">Yes</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="academic 2" name="IELTS_attempted" value="no" {{ $educations->IELTS_attempted == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="academic 2">No</label>
+                                    <div style="line-height:2">
+                                        <div class="col-lg-3 col-md-2 col-3 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="academic 2" name="IELTS_attempted" value="no" {{ $educations->IELTS_attempted == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="academic 2">No</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-12">
+
+                                            <input type="date" class="form-control" name="IELTS_attempted_date" value="{{$educations->IELTS_attempted_date}}">
+
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
+
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Have you attempted GRE in the past? If Yes, Valid up to?
@@ -711,10 +720,18 @@
                                             <label class="custom-control-label mt-1" for="GRE">Yes</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GRE2" name="GRE_attempted" value="no" {{ $educations->GRE_attempted == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="GRE2">No</label>
+                                    <div style="line-height:2">
+
+                                        <div class="col-lg-3 col-md-2 col-3 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="GRE2" name="GRE_attempted" value="no" {{ $educations->GRE_attempted == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="GRE2">No</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-12">
+
+                                            <input type="date" class="form-control" name="GRE_attempted_date" value="{{$educations->GRE_attempted_date}}">
+
                                         </div>
                                     </div>
                                 </div>
@@ -729,10 +746,18 @@
                                             <label class="custom-control-label mt-1" for="TOEFL ">Yes</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="TOEFL2" name="TOEFL_attempted" value="no" {{ $educations->TOEFL_attempted == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="TOEFL2">No</label>
+                                    <div style="line-height:2">
+
+                                        <div class="col-lg-3 col-md-2 col-3 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="TOEFL2" name="TOEFL_attempted" value="no" {{ $educations->TOEFL_attempted == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="TOEFL2">No</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-12">
+
+                                            <input type="date" class="form-control" name="TOEFL_attempted_date" value="{{$educations->TOEFL_attempted_date}}">
+
                                         </div>
                                     </div>
                                 </div>
@@ -747,10 +772,18 @@
                                             <label class="custom-control-label mt-1" for="GMAT">Yes</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="GMAT2" name="GMAT_attempted" value="no" {{ $educations->GMAT_attempted == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="GMAT2">No</label>
+                                    <div style="line-height:2">
+
+                                        <div class="col-lg-3 col-md-2 col-3 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="GMAT2" name="GMAT_attempted" value="no" {{ $educations->GMAT_attempted == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="GMAT2">No</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-12">
+
+                                            <input type="date" class="form-control" name="GMAT_attempted_date" value="{{$educations->GMAT_attempted_date}}">
+
                                         </div>
                                     </div>
                                 </div>

@@ -435,10 +435,18 @@
                                             <label class="custom-control-label mt-1" for="Pastt11">Yes</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt22" name="EOI_profile" value="no" {{ old('EOI_profile') == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt22">No</label>
+                                    <div style="line-height:2">
+
+                                        <div class="col-lg-3 col-md-2 col-3 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="Pastt22" name="EOI_profile" value="no" {{ old('EOI_profile') == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="Pastt22">No</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-12">
+
+                                            <input type="date" class="form-control" name="EOI_profile_date" value="{{old('EOI_profile_date')}}">
+
                                         </div>
                                     </div>
                                 </div>
@@ -453,10 +461,18 @@
                                             <label class="custom-control-label mt-1" for="Pastt3">Yes</label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-2 col-3 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt4" name="Provincial_profile" value="no" {{ old('Provincial_profile') == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt4">No</label>
+                                    <div style="line-height:2">
+
+                                        <div class="col-lg-3 col-md-2 col-3 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="Pastt4" name="Provincial_profile" value="no" {{ old('Provincial_profile') == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="Pastt4">No</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-12">
+
+                                            <input type="date" class="form-control" name="Provincial_profile_date" value="{{old('Provincial_profile_date')}}">
+
                                         </div>
                                     </div>
                                 </div>

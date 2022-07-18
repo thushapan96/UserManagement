@@ -31,8 +31,13 @@
     th {
         color: #00000078 !important;
     }
+
     label {
         font-weight: bold !important;
+    }
+
+    .uk-fieldset {
+        min-height: 300px !important;
     }
 </style>
 @if($message = Session::get('formSuccess'))
@@ -61,14 +66,15 @@
 
         <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} </h3>
-            <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
-                <li class=" uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page">Main </a></li>
-                <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem 1rem;">About Company </a></li>
-                <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1rem;">Team </a></li>
-                <li class="" id="amenu3"><a style="cursor:pointer;padding: 0.5rem 1rem;"> Award & Certification</a></li>
-                <li class="" id="amenu4"><a style="cursor:pointer;padding: 0.5rem 1rem;">News and Events</a></li>
-                <!-- <li class="" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1rem;">Canada Inspire</a></li>
-                <li class="" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1rem;">Feedback</a></li> -->
+            <u1 class="col-md-12" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+                <li class=" uk-active" id="amenu"><a aria-current="page">Main </a></li>
+                <li class="" id="amenu2"><a>About Company </a></li>
+                <li class="" id="amenu5"><a>Our Services </a></li>
+                <li class="" id="amenu1"><a>Team </a></li>
+                <li class="" id="amenu3"><a> Award & Certification</a></li>
+                <li class="" id="amenu4"><a>News and Events</a></li>
+                <!-- <li class="" id="amenu5"><a>Canada Inspire</a></li>
+                <li class="" id="amenu6"><a>Feedback</a></li> -->
 
             </u1>
             <u1 class="uk-switcher">
@@ -76,157 +82,159 @@
                     <div class='uk-card col-md-11' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
 
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">Personal Information</h6>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <p style="text-decoration:underline;">Personal Information</p>
 
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Full Name</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}}
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Full Name</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Company Name</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->company_name}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->first_name}} {{$consultants->middle_name}}{{$consultants->last_name}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">RCIC number </strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->registration_number }}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Company Name</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Languages Known </strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                @if($consultants->language_known)
-                                                @foreach($consultants->language_known as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @endif
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->company_name}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Contact Number</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps"> {{$consultants->phone}}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">RCIC number </strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Correspondence Email</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps"> {{$consultants->email}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->registration_number }}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">URL Website Address</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->website_address}}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Languages Known </strong>
                                     </div>
-                                </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">Address</h6>
 
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">postal Code</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->postal_code}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            @if($consultants->language_known)
+                                            @foreach($consultants->language_known as $row)
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @endif
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Street</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->streat}}
-                                            </p>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Contact Number</strong>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">City</strong>
-                                        </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->city}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps"> {{$consultants->phone}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">province</strong>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Correspondence Email</strong>
+                                    </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->region}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps"> {{$consultants->email}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Country</strong>
-                                        </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">URL Website Address</strong>
+                                    </div>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->country}}
-                                            </p>
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->website_address}}
+                                        </p>
                                     </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Registered Office - Locations</strong>
-                                        </div>
+                                </div>
+                            </fieldset><br>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <p style="text-decoration:underline;">Address</p>
 
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->registrar_office_area}}
-                                            </p>
-                                        </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">postal Code</strong>
                                     </div>
-                                </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <h6 style="text-decoration:underline;">other Information</h6>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->postal_code}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Street</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->streat}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">City</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->city}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">province</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->region}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Country</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->country}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Registered Office - Locations</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->registrar_office_area}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </fieldset><br>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <!-- <p style="text-decoration:underline;">other Information</p>
                                     <div class="row custom-box">
                                         <div class="col-md-5">
                                             <strong class="ps">Specialization</strong>
@@ -241,418 +249,103 @@
                                                 @endif
                                             </p>
                                         </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Service Offered</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                @if($consultants->offering_service)
-                                                @foreach($consultants->offering_service as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @endif
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Languages Known</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                @if($consultants->language_known)
-                                                @foreach($consultants->language_known as $row)
-                                                {{$row}}<br>
-                                                @endforeach
-                                                @endif
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Year of Establishment</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->establishment_year}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Offering Services Since</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                {{$consultants->offering_year}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Communication prefer mode</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">
-                                                @if($consultants->communication_mode)
-                                                @foreach($consultants->communication_mode as $row)
-                                                {{$row}}
-                                                @endforeach
-                                                @endif
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Total Cases Taken</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->total_cases_taken}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Response Time</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->response_time}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Initial Consultation Chargeable</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-
-                                            <div class="row">
-                                                &nbsp;<div class="free ">free</div>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <div class="paid ">paid</div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row custom-box">
-                                        <div class="col-md-5">
-                                            <strong class="ps">Other Services</strong>
-                                        </div>
-
-                                        <div class="col-md-7">
-                                            <p class="ps">{{$consultants->initial_chargeable_type}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </fieldset><br>
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <p style="text-decoration:underline;">Specialization</p>
-                                    <hr>
-                                    <p style="color: #00000078 !important;">Express Entry Cases</p>
-                                    <div class="row custom-box">
-
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Enrolment
-                                                </label><br>
-                                                <small>{{$consultants->express_entry_enrolment}}</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Success
-                                                </label><br>
-                                                <small>{{$consultants->express_entry_success}}</small>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Rejected
-                                                </label><br>
-                                                <small>{{$consultants->express_entry_reject}}</small>
-
-                                            </div>
-                                        </div>
-                                        @if($consultants->express_entry_reject_reason)
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label>Reason for rejection
-                                                </label><br>
-                                                <small>{{$consultants->express_entry_reject_reason}}</small>
-
-                                            </div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                    <hr>
-                                    <p style="color: #00000078 !important;">PNP Cases</p>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Enrolment
-                                                </label><br>
-                                                <small>{{$consultants->pnp_enrolment}}</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Success
-                                                </label><br>
-                                                <small>{{$consultants->pnp_success}}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Rejected
-                                                </label><br>
-                                                <small>{{$consultants->pnp_reject}}</small>
-                                            </div>
-                                        </div>
-                                        @if($consultants->pnp_reject_reason)
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label>Reason for rejection
-                                                </label><br>
-                                                <small>{{$consultants->pnp_reject_reason}}</small>
-                                            </div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                    <hr>
-                                    <p style="color: #00000078 !important;">LMIA Cases</p>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Enrolment
-                                                </label><br>
-                                                <small>{{$consultants->lmia_enrolment}}</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Success
-                                                </label><br>
-                                                <small>{{$consultants->lmia_success}}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Rejected
-                                                </label><br>
-                                                <small>{{$consultants->lmia_reject}}</small>
-                                            </div>
-                                        </div>
-                                        @if($consultants->lmia_reject_reason)
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label>Reason for rejection
-                                                </label><br>
-                                                <small>{{$consultants->lmia_reject_reason}}</small>
-                                            </div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                    <hr>
-                                    <p style="color: #00000078 !important;">Other Cases</p>
-
-                                    <div class="row custom-box">
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Enrolment
-                                                </label><br>
-                                                <small>{{$consultants->other_enrolment}}</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Success
-                                                </label><br>
-                                                <small>{{$consultants->other_success}}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Rejected
-                                                </label><br>
-                                                <small>{{$consultants->other_reject}}</small>
-                                            </div>
-                                        </div>
-                                        @if($consultants->other_reject_reason)
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label>Reason for rejection
-                                                </label><br>
-                                                <small>{{$consultants->other_reject_reason}}</small>
-                                            </div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                </fieldset>
-                                <br>
-                                <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-
-                                    <p style="text-decoration:underline;">Service Offered</p>
-                                    <hr>
-                                    <p style="color: #00000078 !important;">Student Visa </p>
-
-                                    <div class="row custom-box">
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Enrolment
-                                                </label><br>
-                                                <small>{{$consultants->student_visa_enrolment}}</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Success
-                                                </label><br>
-                                                <small>{{$consultants->student_visa_success}}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Rejected
-                                                </label><br>
-                                                <small>{{$consultants->student_visa_reject}}</small>
-                                            </div>
-                                        </div>
-                                        @if($consultants->student_visa_reject_reason)
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label>Reason for rejection
-                                                </label><br>
-                                                <small>{{$consultants->student_visa_reject_reason}}</small>
-                                            </div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                    <hr>
-                                    <p style="color: #00000078 !important;">Tourist Visa </p>
-
-                                    <div class="row custom-box">
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Enrolment
-                                                </label><br>
-                                                <small>{{$consultants->tourist_visa_enrolment}}</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Success
-                                                </label><br>
-                                                <small>{{$consultants->tourist_visa_success}}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Rejected
-                                                </label><br>
-                                                <small>{{$consultants->tourist_visa_reject}}</small>
-                                            </div>
-                                        </div>
-                                        @if($consultants->tourist_visa_reject_reason)
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label>Reason for rejection
-                                                </label><br>
-                                                <small>{{$consultants->tourist_visa_reject_reason}}</small>
-                                            </div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                    <hr>
-                                    <p style="color: #00000078 !important;">Family Visa</p>
-
-                                    <div class="row custom-box">
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Enrolment
-                                                </label><br>
-                                                <small>{{$consultants->family_visa_enrolment}}</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Success
-                                                </label><br>
-                                                <small>{{$consultants->family_visa_success}}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Rejected
-                                                </label><br>
-                                                <small>{{$consultants->family_visa_reject}}</small>
-                                            </div>
-                                        </div>
-                                        @if($consultants->family_visa_reject_reason)
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label>Reason for rejection
-                                                </label><br>
-                                                <small>{{$consultants->family_visa_reject_reason}}</small>
-                                            </div>
-                                        </div>
-                                        @endif
-                                    </div>
-                                    <hr>
-                                    <p style="color: #00000078 !important;">Other Visa</p>
-
-                                    <div class="row custom-box">
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Enrolment
-                                                </label><br>
-                                                <small>{{$consultants->other_visa_enrolment}}</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Success
-                                                </label><br>
-                                                <small>{{$consultants->other_visa_success}}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-12">
-                                            <div class="form-group">
-                                                <label>Rejected
-                                                </label><br>
-                                                <small>{{$consultants->other_visa_reject}}</small>
-                                            </div>
-                                        </div>
-                                        @if($consultants->other_visa_reject_reason)
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label>Reason for rejection
-                                                </label><br>
-                                                <small>{{$consultants->other_visa_reject_reason}}</small>
-                                            </div>
-                                        </div>
-                                        @endif
+                                    </div> -->
+                                <p style="text-decoration:underline;">Other Information</p>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Languages Known</strong>
                                     </div>
 
-                                </fieldset>
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            @if($consultants->language_known)
+                                            @foreach($consultants->language_known as $row)
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Year of Establishment</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->establishment_year}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Offering Services Since</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            {{$consultants->offering_year}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Communication prefer mode</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            @if($consultants->communication_mode)
+                                            @foreach($consultants->communication_mode as $row)
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}
+                                            @endforeach
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Total Cases Taken</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->total_cases_taken}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Response Time</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">{{$consultants->response_time}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps">Initial Consultation Chargeable</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+
+                                        <div class="row">
+                                            &nbsp;<div class="free ">free</div>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <div class="paid ">paid</div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </fieldset><br>
+
+
                         </div>
                     </div>
 
@@ -730,6 +423,254 @@
                     </div>
 
                 </li>
+
+                <li id='menu5' class='tab-pane '>
+                    <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
+                        <div class="uk-card-body sc-padding-medium">
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+                                <div class="row custom-box">
+                                    <div class="col-md-5">
+                                        <strong class="ps"> Offered Services</strong>
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <p class="ps">
+                                            @if($consultants->offering_service)
+                                            @foreach($consultants->offering_service as $row)
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <strong>Express Entry Cases</strong><br><br>
+                                <div class="row custom-box">
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label><br>
+                                            <small>{{$consultants->express_entry_enrolment}}</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label><br>
+                                            <small>{{$consultants->express_entry_success}}</small>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label><br>
+                                            <small>{{$consultants->express_entry_reject}}</small>
+
+                                        </div>
+                                    </div>
+                                    @if($consultants->express_entry_reject_reason)
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label><br>
+                                            <small>{{$consultants->express_entry_reject_reason}}</small>
+
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                                <hr>
+                                <strong>PNP Cases</strong><br><br>
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label><br>
+                                            <small>{{$consultants->pnp_enrolment}}</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label><br>
+                                            <small>{{$consultants->pnp_success}}</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label><br>
+                                            <small>{{$consultants->pnp_reject}}</small>
+                                        </div>
+                                    </div>
+                                    @if($consultants->pnp_reject_reason)
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label><br>
+                                            <small>{{$consultants->pnp_reject_reason}}</small>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                                <hr>
+                                <strong>LMIA Cases</strong><br><br>
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label><br>
+                                            <small>{{$consultants->lmia_enrolment}}</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label><br>
+                                            <small>{{$consultants->lmia_success}}</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label><br>
+                                            <small>{{$consultants->lmia_reject}}</small>
+                                        </div>
+                                    </div>
+                                    @if($consultants->lmia_reject_reason)
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label><br>
+                                            <small>{{$consultants->lmia_reject_reason}}</small>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                                <hr>
+
+                                <strong>Student Visa </strong><br><br>
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label><br>
+                                            <small>{{$consultants->student_visa_enrolment}}</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label><br>
+                                            <small>{{$consultants->student_visa_success}}</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label><br>
+                                            <small>{{$consultants->student_visa_reject}}</small>
+                                        </div>
+                                    </div>
+                                    @if($consultants->student_visa_reject_reason)
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label><br>
+                                            <small>{{$consultants->student_visa_reject_reason}}</small>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                                <hr>
+                                <strong>Tourist Visa </strong><br><br>
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label><br>
+                                            <small>{{$consultants->tourist_visa_enrolment}}</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label><br>
+                                            <small>{{$consultants->tourist_visa_success}}</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label><br>
+                                            <small>{{$consultants->tourist_visa_reject}}</small>
+                                        </div>
+                                    </div>
+                                    @if($consultants->tourist_visa_reject_reason)
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label><br>
+                                            <small>{{$consultants->tourist_visa_reject_reason}}</small>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                                <hr>
+                                <strong>Family Visa</strong><br><br>
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Enrolment
+                                            </label><br>
+                                            <small>{{$consultants->family_visa_enrolment}}</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Success
+                                            </label><br>
+                                            <small>{{$consultants->family_visa_success}}</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-12">
+                                        <div class="form-group">
+                                            <label>Rejected
+                                            </label><br>
+                                            <small>{{$consultants->family_visa_reject}}</small>
+                                        </div>
+                                    </div>
+                                    @if($consultants->family_visa_reject_reason)
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label>Reason for rejection
+                                            </label><br>
+                                            <small>{{$consultants->family_visa_reject_reason}}</small>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                                <hr>
+
+                            </fieldset>
+                        </div>
+                    </div>
+
+                </li>
+
                 <li id='menu1' class='tab-pane '>
                     <div class=' col-md-11' style="margin-left:auto !important;margin-right:auto">
                         <div class="">
@@ -751,7 +692,7 @@
                                     <div class="uk-card-body sc-padding-remove">
                                         <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
 
-                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-100">
+                                            <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
 
                                                 <div class="sc-padding-medium uk-text-center">
                                                     @if($row->team_img)
@@ -886,11 +827,11 @@
                     </div>
 
                 </li>
-               
+
                 <script>
                     $("textarea").each(function(index) {
                         console.log(index, $(this)[0].scrollHeight)
-                        $(this).height($(this)[0].scrollHeight+15);
+                        $(this).height($(this)[0].scrollHeight + 15);
                     });
                 </script>
             </u1>
@@ -909,9 +850,9 @@
                             <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
                             @endif
                         </div>
-                      <br>
+                        <br>
 
-                     
+
 
 
                         <div class="row">
@@ -940,20 +881,20 @@
                             </a>
 
                         </div>
-                      
+
                     </div>
                 </fieldset>
             </div>
         </div>
-        
+
     </div>
 </section>
 
 <script>
     $(document).ready(function() {
-       
-        
-        
+
+
+
         var chargeable = "{{$consultants->initial_chargeable_type}}"
 
         if (chargeable == 'free') {
