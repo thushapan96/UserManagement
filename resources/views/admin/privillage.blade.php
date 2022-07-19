@@ -118,6 +118,10 @@
 </div>
 <script>
     $(document).ready(function() {
+
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-Settings-Management').addClass('sc-page-active')
+
         $('#role').on('change', function() {
             var roleType = $('#role').val();
             window.location.assign('/privillage/setup?roleType=' + roleType);

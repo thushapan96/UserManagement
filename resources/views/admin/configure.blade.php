@@ -37,4 +37,14 @@
         </form>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-Configuration').addClass('sc-page-active')
+
+       
+    });
+</script>
 @endsection

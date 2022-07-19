@@ -355,6 +355,31 @@
                     <div class='uk-card ' style="">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label>About History
+                                            </label>
+                                            <br>
+                                            <textarea style="width:100%;" rows="9" name="history" value="{{old('history')}}"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label> Brief Introduction
+                                            </label>
+                                            <br>
+
+                                            <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{old('brief_introduction')}}"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
                                 <div class="row custom-box">
 
                                     <div class="col-lg-2 col-md-2 col-12">
@@ -394,30 +419,6 @@
                                     </div>
 
 
-                                </div>
-                                <hr>
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>About History
-                                            </label>
-                                            <br>
-                                            <textarea style="width:100%;" rows="9" name="history" value="{{old('history')}}"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label> Brief Introduction
-                                            </label>
-                                            <br>
-
-                                            <textarea style="width:100%;" rows="9" name="brief_introduction" value="{{old('brief_introduction')}}"></textarea>
-                                        </div>
-                                    </div>
                                 </div>
                                 <hr>
                                 <div class="row custom-box">

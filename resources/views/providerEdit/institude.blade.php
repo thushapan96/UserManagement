@@ -361,35 +361,7 @@
                         <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                    <div class="row custom-box">
 
-                                        <div class="col-lg-12col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label>Courses </label>
-                                                <!-- <input class="form-control " type="text" id="offer_course_info" name="offer_course_info" placeholder="Courses Information" value="{{$institutions->offer_course_info}}"> -->
-
-                                            </div>
-                                            <div id="newRow">
-                                                @if($institutions->offer_course)
-                                                @foreach($institutions->offer_course as $key => $row)
-                                                <div id="inputFormRow">
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" name="offer_course[]" class="form-control m-input addinput" placeholder="Enter courses" autocomplete="off" value="{{$row}}" />
-                                                        <div class="input-group-append">
-                                                            <button id="removeRow" type="button" style="background:#bf0010 !important" class="btn btn-danger btn">Remove</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <br>
-                                                @endforeach
-                                                @endif
-                                            </div>
-
-                                            <button id="addRow" type="button" class="btn crew-btn btn btn-primary" name="">Add Course</button>
-                                        </div>
-
-                                    </div>
-                                    <hr>
                                     <div class="row custom-box">
 
                                         <div class="col-lg-3 col-md-3 col-12">
@@ -495,6 +467,35 @@
                                                     <label class="custom-control-label" for="checkbox27">Others</label>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                    </div>
+                                    <hr>
+                                    <div class="row custom-box">
+
+                                        <div class="col-lg-12col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label>Courses </label>
+                                                <!-- <input class="form-control " type="text" id="offer_course_info" name="offer_course_info" placeholder="Courses Information" value="{{$institutions->offer_course_info}}"> -->
+
+                                            </div>
+                                            <div id="newRow">
+                                                @if($institutions->offer_course)
+                                                @foreach($institutions->offer_course as $key => $row)
+                                                <div id="inputFormRow">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" name="offer_course[]" class="form-control m-input addinput" placeholder="Enter courses" autocomplete="off" value="{{$row}}" />
+                                                        <div class="input-group-append">
+                                                            <button id="removeRow" type="button" style="background:#bf0010 !important" class="btn btn-danger btn">Remove</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                @endforeach
+                                                @endif
+                                            </div>
+
+                                            <button id="addRow" type="button" class="btn crew-btn btn btn-primary" name="">Add Course</button>
                                         </div>
 
                                     </div>
@@ -639,6 +640,30 @@
                         <div class='uk-card col-md-10 ' style="margin-left:5% !important;">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+
+                                    <div class="row custom-box">
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label>About History
+                                                </label>
+                                                <br>
+                                                <textarea class="form-control" style="width:100%;" name="history" value="{{$institutions->history}}">{{$institutions->history}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row custom-box">
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label> Brief Introduction
+                                                </label>
+                                                <br>
+
+                                                <textarea class="form-control" style="width:100%;" name="brief_introduction" value="{{$institutions->brief_introduction}}">{{$institutions->brief_introduction}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
                                     <div class="row custom-box">
 
                                         <div class="col-lg-3 col-md-3 col-12">
@@ -678,29 +703,6 @@
                                             </div>
                                         </div>
                                         @endif
-                                    </div>
-                                    <hr>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label>About History
-                                                </label>
-                                                <br>
-                                                <textarea class="form-control" style="width:100%;" name="history" value="{{$institutions->history}}">{{$institutions->history}}</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label> Brief Introduction
-                                                </label>
-                                                <br>
-
-                                                <textarea class="form-control" style="width:100%;" name="brief_introduction" value="{{$institutions->brief_introduction}}">{{$institutions->brief_introduction}}</textarea>
-                                            </div>
-                                        </div>
                                     </div>
                                     <hr>
                                     <div class="row custom-box">

@@ -323,6 +323,7 @@
     <li id='menu1' class='tab-pane '>
         <div class='uk-card col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
             <div class="uk-card-body sc-padding-medium">
+         
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                     @if($employments->count())
                     <h6 style="text-decoration:underline;">Employment</h6>
@@ -402,7 +403,7 @@
                     </fieldset><br>
                     @endforeach
                     @endif
-                    @if($technicalCertifications)
+                    @if($technicalCertifications->count())
                     <hr>
                     <h6 style="text-decoration:underline;">Technical Certification</h6>
 

@@ -448,7 +448,7 @@
                                 @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
                                 <a href="{{route('consultantProfile')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title" >profilee</span>
+                                    </span><span class="uk-nav-title" >profile</span>
                                 </a>
                                 @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
                                 <a href="{{route('institudeProfile')}}">

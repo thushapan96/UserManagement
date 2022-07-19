@@ -144,20 +144,18 @@
         /* Firefox */
     }
 </style>
+<h6 style="text-align:center;color:#3f6791">Provider Membership Management</h6>
+<br>
 <form id="form" action="{{route('admin.provider.mebership.add')}}" method="post">
     @csrf
 
-    <br>
-    <u1 class="col-md-6" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+    <u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
         <li class="uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page"> 3 Months </a></li>
         <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;"> 6 Months</a></li>
         <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">12 Months </a></li>
 
     </u1>
-    <div class="col-md-1">
-        <button class="sc-button" type="submit">Submit</button>
-    </div>
-    <br>
+
     <u1 class="uk-switcher">
 
         <li>
@@ -1249,6 +1247,12 @@
         </li>
 
     </u1>
+    <div class="">
+        <div class="float-right">
+            <button class="sc-button" type="submit">Submit</button>
+        </div>
+    </div>
+    <br>
 </form>
 <script>
     $.ajaxSetup({
@@ -1256,5 +1260,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $('.page-active').removeClass('sc-page-active')
+    $('.page-Membership-Provider ').addClass('sc-page-active')
 </script>
 @endsection

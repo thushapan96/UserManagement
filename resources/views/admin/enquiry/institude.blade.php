@@ -576,7 +576,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
+   
 
     $('.confirmEnquiry').on('click', function() {
 

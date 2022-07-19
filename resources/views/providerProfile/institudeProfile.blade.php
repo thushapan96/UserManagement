@@ -61,8 +61,9 @@
     .py-5 {
         padding-top: 7rem !important;
     }
-    .uk-fieldset{
-        min-height:300px !important ;
+
+    .uk-fieldset {
+        min-height: 300px !important;
     }
 </style>
 @if($message = Session::get('formSuccess'))
@@ -144,12 +145,11 @@
         <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
             <h3 class="float-center" style="text-align:center">{{$institutions->name}} </h3>
             <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto;text-align:center">
-                <li class=" uk-active" id="amenu"><a style="" aria-current="page">Main </a></li>
-                <li class="" id="amenu1"><a style="">Programs </a></li>
-                <li class="" id="amenu2"><a style="">About {{$institutions->type}} </a></li>
-                <li class="" id="amenu3"><a style=""> Award & Certification</a></li>
-                <li class="" id="amenu4"><a style="">News and Events</a></li>
-
+                <li class=" uk-active" id="amenu"><a style="padding: .5rem 1rem;" aria-current="page">Main </a></li>
+                <li class="" id="amenu1"><a style="padding: .5rem 1rem;">Programs </a></li>
+                <li class="" id="amenu2"><a style="padding: .5rem 1rem;">About {{$institutions->type}} </a></li>
+                <li class="" id="amenu3"><a style="padding: .5rem 1rem;"> Award & Certification</a></li>
+                <li class="" id="amenu4"><a style="padding: .5rem 1rem;">News and Events</a></li>
             </u1>
 
             <u1 class="uk-switcher">
@@ -310,58 +310,7 @@
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                 <h6 style="text-decoration:underline;">Course Details</h6>
-                                <div class="row custom-box">
-                                    <div class="col-md-6">
-                                        <strong class="ps">Type of Courses</strong>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <p class="ps">
-                                            @if($institutions->course_type)
-                                            @foreach($institutions->course_type as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
-                                            @endif
-                                            {{$row}}<br>
-                                            @endforeach
-                                            @else
-                                            <br>
-                                            @endif
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- <div class="row custom-box">
-                                        <div class="col-md-6">
-                                            <strong class="ps">Courses Information</strong>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <p class="ps"> @if($institutions->offer_course_info){{$institutions->offer_course_info}}
-                                                @else
-                                                <br>
-                                                @endif
-                                            </p>
-                                        </div>
-                                    </div> -->
-                                <div class="row custom-box">
-                                    <div class="col-md-6">
-                                        <strong class="ps">Courses</strong>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <p class="ps">
-                                            @if($institutions->offer_course)
-                                            @foreach($institutions->offer_course as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
-                                            @endif
-                                            {{$row}}<br>
-                                            @endforeach
-                                            @else
-                                            <br>
-                                            @endif
-
-                                        </p>
-                                    </div>
-                                </div>
+                                @if($institutions->certificate_type)
                                 <div class="row custom-box">
                                     <div class="col-md-6">
                                         <strong class="ps">Offer Certificate type</strong>
@@ -371,7 +320,7 @@
                                         <p class="ps">
                                             @if($institutions->certificate_type)
                                             @foreach($institutions->certificate_type as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}<br>
                                             @endforeach
@@ -382,6 +331,51 @@
                                         </p>
                                     </div>
                                 </div>
+                                @endif
+                                @if($institutions->course_type)
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Type of Courses</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->course_type)
+                                            @foreach($institutions->course_type as $row)
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                                @endif
+
+                                @if($institutions->offer_course)
+                                <div class="row custom-box">
+                                    <div class="col-md-6">
+                                        <strong class="ps">Courses</strong>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="ps">
+                                            @if($institutions->offer_course)
+                                            @foreach($institutions->offer_course as $row)
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @endif
+                                            {{$row}}<br>
+                                            @endforeach
+                                            @else
+                                            <br>
+                                            @endif
+
+                                        </p>
+                                    </div>
+                                </div>
+                                @endif
                                 @if($institutions->medium)
                                 <div class="row custom-box">
                                     <div class="col-md-6">
@@ -404,7 +398,7 @@
                                         <p class="ps">
                                             @if($institutions->intake)
                                             @foreach($institutions->intake as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}<br>
                                             @endforeach
@@ -464,7 +458,7 @@
                                         <p class="ps">
                                             @if($institutions->course_duration)
                                             @foreach($institutions->course_duration as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}<br>
                                             @endforeach
@@ -483,7 +477,7 @@
                                         <p class="ps">
                                             @if($institutions->language_test_type)
                                             @foreach($institutions->language_test_type as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}<br>
                                             @endforeach
@@ -533,7 +527,7 @@
                                         <p class="ps">
                                             @if($institutions->communication_mode)
                                             @foreach($institutions->communication_mode as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}<br>
                                             @endforeach
@@ -587,7 +581,7 @@
                                         <p class="ps">
                                             @if($institutions->other_require)
                                             @foreach($institutions->other_require as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}<br>
                                             @endforeach
@@ -674,30 +668,7 @@
                     <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                @if($institutions->privacy_policy_document)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Privacy document of {{$institutions->type}}
-                                            </label>
-                                            <br>
 
-                                            <a href="{{url('files/'.$institutions->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$institutions->privacy_policy_document}}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @if($institutions->privacy_policy_detail)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label style="width:400px">Terms of Privacy of {{$institutions->type}}</label>
-
-                                            <textarea name="privacy_policy_detail" value="{{$institutions->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$institutions->privacy_policy_detail}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
                                 @if($institutions->history)
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
@@ -722,6 +693,30 @@
                                             <br>
 
                                             <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="brief_introduction" value="{{$institutions->brief_introduction}}" disabled>{{$institutions->brief_introduction}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($institutions->privacy_policy_document)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label>Privacy document of {{$institutions->type}}
+                                            </label>
+                                            <br>
+
+                                            <a href="{{url('files/'.$institutions->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$institutions->privacy_policy_document}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($institutions->privacy_policy_detail)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label style="width:400px">Terms of Privacy of {{$institutions->type}}</label>
+
+                                            <textarea name="privacy_policy_detail" value="{{$institutions->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$institutions->privacy_policy_detail}}</textarea>
                                         </div>
                                     </div>
                                 </div>

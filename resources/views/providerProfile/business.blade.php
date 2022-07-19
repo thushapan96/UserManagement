@@ -77,7 +77,7 @@
 
         <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} </h3>
-            <u1 class="col-md-12" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+            <u1 class="col-md-12" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:3%">
                 <li class=" uk-active" id="amenu"><a style="" aria-current="page">Main </a></li>
                 <li class="" id="amenu1"><a style="">About Company </a></li>
                 <li class="" id="amenu5"><a>Our Services </a></li>
@@ -137,7 +137,7 @@
                                         <p class="ps">
                                             @if($consultants->language_known)
                                             @foreach($consultants->language_known as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif{{$row}}<br>
                                             @endforeach
                                             @endif
@@ -304,7 +304,7 @@
                                         <p class="ps">
                                             @if($consultants->communication_mode)
                                             @foreach($consultants->communication_mode as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif{{$row}}<br>
                                             @endforeach
                                             @endif
@@ -345,30 +345,7 @@
                     <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                @if($consultants->privacy_policy_document)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Privacy document of {{$consultants->type}}
-                                            </label>
-                                            <br>
 
-                                            <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$consultants->privacy_policy_document}}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @if($consultants->privacy_policy_detail)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
-
-                                            <textarea name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
                                 @if($consultants->history)
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
@@ -393,6 +370,30 @@
                                             <br>
 
                                             <textarea style="width:100%;background-color:white !important; box-shadow: none ;" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($consultants->privacy_policy_document)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label>Privacy document of {{$consultants->type}}
+                                            </label>
+                                            <br>
+
+                                            <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$consultants->privacy_policy_document}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($consultants->privacy_policy_detail)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
+
+                                            <textarea name="privacy_policy_detail" value="{{$consultants->privacy_policy_detail}}" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -425,7 +426,7 @@
                                         <p class="ps">
                                             @if($consultants->offering_service)
                                             @foreach($consultants->offering_service as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif {{$row}}<br>
                                             @endforeach
                                             @endif

@@ -285,7 +285,7 @@
 
 
         $('.page-active').removeClass('sc-page-active')
-        $('.page-can').addClass('sc-page-active')
+        $('.page-enquiries-Candidates').addClass('sc-page-active')
 
 
 

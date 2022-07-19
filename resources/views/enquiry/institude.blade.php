@@ -144,6 +144,7 @@
         /* Firefox */
     }
 </style>
+
 <!-- <div class="row">
     <div class="col-md-3">Search By
         <select class="form-control filter">
@@ -172,6 +173,7 @@
 </div>
 <br><br>
  -->
+
 <input type="text" id="serviceId" value="{{Auth::user()->id}}" hidden>
 <input type="text" id="serviceType" value="{{Auth::user()->service}}" hidden>
 
@@ -182,7 +184,6 @@
 </u1>
 <br>
 <u1 class="uk-switcher">
-
 
     <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
         @if($EnquiryCandidatesubstitude)
@@ -333,7 +334,6 @@
         @endif
     </u1>
 
-
     <u1 class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
         @if($EnquiryCandidate)
         @foreach($EnquiryCandidate as $row)
@@ -415,7 +415,9 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
+    
+    // $('.page-active').removeClass('sc-page-active')
+    // $('.page-enquiries').addClass('sc-page-active')
 
     $('.confirmEnquiry').on('click', function() {
         if (confirm("Are You Sure Want To Select as Service ?") == true) {

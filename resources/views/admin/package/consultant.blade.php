@@ -12,9 +12,9 @@
 
                         <thead>
                             <tr>
-                                <th class="uk-text-nowrap">Package Name</th>
-                                <th class="uk-text-nowrap">Duration</th>
-                                <th class="uk-text-nowrap">Price</th>
+                                <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Package Name</th>
+                                <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Duration</th>
+                                <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Price</th>
                                 <!-- <th class="uk-text-nowrap">Change Price</th> -->
                             </tr>
                         </thead>
@@ -44,7 +44,7 @@
     </div>
 </div>
 
-<h6 style="text-align:center">Packages</h6>
+<h6 style="text-align:center;color:#3f6791">Provider Package Price</h6>
 <div class="col-md-8 uk-card" style="margin-left:auto !important;margin-right:auto !important">
     <div class="uk-card-body">
         <div class="uk-overflow-auto">
@@ -52,9 +52,9 @@
 
                 <thead>
                     <tr>
-                        <th class="uk-text-nowrap">Package Name</th>
-                        <th class="uk-text-nowrap">Duration</th>
-                        <th class="uk-text-nowrap">Price</th>
+                        <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Package Name</th>
+                        <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Duration</th>
+                        <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Price</th>
                         <!-- <th class="uk-text-nowrap">Change Price</th> -->
                     </tr>
                 </thead>
@@ -84,7 +84,8 @@
 
 <script>
     $(document).ready(function() {
-
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-Packages-Provider ').addClass('sc-page-active')
     });
 </script>
 @endsection

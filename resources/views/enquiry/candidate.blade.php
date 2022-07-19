@@ -1975,8 +1975,10 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $('.page-active').removeClass('sc-page-active')
+    $('.page-enquiries').addClass('sc-page-active')
 
-
+   
     // $(document).ready(function() {
 
     //     if ($('#type').val() == 'RCIC Consultant') {

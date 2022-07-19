@@ -574,7 +574,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
+  
     $('.confirmEnquiry').on('click', function() {
         if (confirm("Are You Sure Want To Select as Service ?") == true) {
             var type = $('#type').val();

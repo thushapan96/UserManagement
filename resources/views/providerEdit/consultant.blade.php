@@ -383,6 +383,30 @@
                         <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+
+                                    <div class="row custom-box">
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label>About History
+                                                </label>
+                                                <br>
+                                                <textarea class="form-control" style="width:100%;" name="history" value="{{$consultants->history}}">{{$consultants->history}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row custom-box">
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label> Brief Introduction
+                                                </label>
+                                                <br>
+
+                                                <textarea class="form-control" style="width:100%;" name="brief_introduction" value="{{$consultants->brief_introduction}}">{{$consultants->brief_introduction}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
                                     <div class="row custom-box">
 
                                         <div class="col-lg-3 col-md-3 col-12">
@@ -422,29 +446,6 @@
                                             </div>
                                         </div>
                                         @endif
-                                    </div>
-                                    <hr>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label>About History
-                                                </label>
-                                                <br>
-                                                <textarea class="form-control" style="width:100%;" name="history" value="{{$consultants->history}}">{{$consultants->history}}</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label> Brief Introduction
-                                                </label>
-                                                <br>
-
-                                                <textarea class="form-control" style="width:100%;" name="brief_introduction" value="{{$consultants->brief_introduction}}">{{$consultants->brief_introduction}}</textarea>
-                                            </div>
-                                        </div>
                                     </div>
                                     <hr>
                                     <div class="row custom-box">

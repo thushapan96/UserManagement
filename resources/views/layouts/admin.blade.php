@@ -496,23 +496,22 @@
                                 </a>
                                 <ul class="sc-sidebar-menu-sub">
                                     @if( $CandidateEnquiryIdExist2 || $CandidateEnquiryIdExist)
-                                    <li class=" page-active">
+                                    <li class="page-enquiries-Candidates page-active">
                                         <a href="{{route('admin.enquiry.list.candidates')}}"> Candidates</a>
                                     </li>
                                     @endif
                                     @if( $InstitutionEnquiryIdExist2 || $InstitutionEnquiryIdExist)
-                                    <li class=" page-active">
+                                    <li class="page-enquiries-Institution page-active">
                                         <a href="#"> Institution</a>
                                         <ul class="sc-sidebar-menu-sub">
 
-
-                                            <li class="page-active">
+                                            <li class="page-enquiries-School page-active">
                                                 <a href="{{route('admin.enquiry.list.school')}}" style="left: 18px !important;width: 70%;"> school</a>
                                             </li>
-                                            <li class=" page-active">
+                                            <li class="page-enquiries-College page-active">
                                                 <a href="{{route('admin.enquiry.list.college')}}" style="left: 18px !important;width: 70%;"> college</a>
                                             </li>
-                                            <li class=" page-active">
+                                            <li class="page-enquiries-University page-active">
                                                 <a href="{{route('admin.enquiry.list.university')}}" style="left: 18px !important;width: 70%;"> university</a>
                                             </li>
 
@@ -524,12 +523,12 @@
                                         <a href="#"> Consultant</a>
                                         <ul class="sc-sidebar-menu-sub">
                                             @if( $ConsultantEnquiryIdExist2 || $ConsultantEnquiryIdExist)
-                                            <li class=" page-active">
+                                            <li class="page-enquiries-RCIC page-active">
                                                 <a href="{{route('admin.enquiry.list.consultant')}}" style="left: 18px !important;width: 70%;"> RCIC </a>
                                             </li>
                                             @endif
                                             @if( $ImmigrationEnquiryIdExist2 || $ImmigrationEnquiryIdExist)
-                                            <li class=" page-active">
+                                            <li class="page-enquiries-immigration page-active">
                                                 <a href="{{route('admin.enquiry.list.immigration')}}" style="left: 18px !important;width: 70%;"> immigration</a>
                                             </li>
                                             @endif
@@ -537,7 +536,7 @@
                                     </li>
                                     @endif
                                     @if( $CharteredEnquiryIdExist2 || $CharteredEnquiryIdExist)
-                                    <li class=" page-active">
+                                    <li class="page-enquiries-Business page-active">
                                         <a href="{{route('admin.enquiry.list.business')}}"> Business</a>
                                     </li>
                                     @endif
@@ -609,7 +608,7 @@
                                     </span><span class="uk-nav-title">Settings</span>
                                 </a>
                                 <ul class="sc-sidebar-menu-sub">
-                                    <li class=" page-active">
+                                    <li class="page-Settings-Management page-active">
 
                                         <a href="{{route('admin.privillage')}}"> User Management </a>
 
@@ -627,19 +626,19 @@
 
                                 <ul class="sc-sidebar-menu-sub">
 
-                                    <li class="page-active">
+                                    <li class="page-Membership-Candidate page-active">
 
                                         <a href="{{route('admin.membership.candidate')}}" style="left: 15px !important;width:70%;">Candidate </a>
 
                                     </li>
 
-                                    <li class=" page-active">
+                                    <li class="page-Membership-Institution page-active">
 
                                         <a href="{{route('admin.membership.institution')}}" style="left: 15px !important;width:70%;">Institution </a>
 
                                     </li>
 
-                                    <li class=" page-active">
+                                    <li class="page-Membership-Provider page-active">
 
                                         <a href="{{route('admin.membership.provider')}}" style="left: 15px !important;width:70%;">Provider </a>
 
@@ -656,19 +655,19 @@
 
                                 <ul class="sc-sidebar-menu-sub">
 
-                                    <li class="page-active">
+                                    <li class="page-Packages-Candidate page-active">
 
                                         <a href="{{route('candidate.price')}}" style="left: 15px !important;width:70%;">Candidate </a>
 
                                     </li>
 
-                                    <li class=" page-active">
+                                    <li class=" page-Packages-Institution page-active">
 
                                         <a href="{{route('institution.price')}}" style="left: 15px !important;width:70%;">Institution </a>
 
                                     </li>
 
-                                    <li class=" page-active">
+                                    <li class="page-Packages-Provider page-active">
 
                                         <a href="{{route('provider.price')}}" style="left: 15px !important;width:70%;">Provider </a>
 
@@ -679,7 +678,7 @@
 
                             </li>
 
-                            <li class=" page-active">
+                            <li class="page-Configuration page-active">
 
                                 <a href="{{route('configure')}}"><span class="uk-nav-icon"> <i class="fas fa-wrench"></i></span>
                                     Configuration </a>

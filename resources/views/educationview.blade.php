@@ -325,7 +325,9 @@
     <li id='menu1' class='tab-pane '>
         <div class='uk-card col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
             <div class="uk-card-body sc-padding-medium">
+                @if($employments->count() || $technicalCertifications->count())
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+
                     @if($employments->count())
                     <h6 style="text-decoration:underline;">Employment</h6>
 
@@ -476,6 +478,7 @@
                     @endif
                 </fieldset>
                 <br>
+                @endif
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
                     <div class="row custom-box " id="">
@@ -1001,6 +1004,7 @@
 </div>
 <br>
 <script>
-
+    $('.page-active').removeClass('sc-page-active')
+    $('.page-Educational').addClass('sc-page-active')
 </script>
 @endsection

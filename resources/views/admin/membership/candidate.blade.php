@@ -145,7 +145,7 @@
     }
 </style>
 
-
+<h6 style="text-align:center;color:#3f6791">Candidate Membership Management</h6>
 <br>
 <form id="form" action="{{route('admin.candidate.mebership.add')}}" method="post">
     @csrf
@@ -155,10 +155,7 @@
         <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">12 Months </a></li>
 
     </u1>
-    <div class="col-md-1">
-        <button class="sc-button" type="submit">Submit</button>
-    </div>
-    <br>
+
 
     <u1 class="uk-switcher">
 
@@ -922,11 +919,7 @@
                             </div><br>
                         </div>
                         <hr class="uk-margin-remove">
-                        <!-- <div class="uk-card-footer md-bg-grey-50">
-                            <div class="float-right">
-                                <button type="submit" class="client-btn bmenu1 uk-button uk-button-primary">Save </button>
-                            </div>
-                        </div> -->
+
                     </div>
 
                 </div>
@@ -1139,20 +1132,21 @@
                             </div><br>
                         </div>
                         <hr class="uk-margin-remove">
-                        <!-- <div class="uk-card-footer md-bg-grey-50">
-        <div class="float-right">
-            <button type="submit" class="client-btn bmenu1 uk-button uk-button-primary">Save </button>
-        </div>
-    </div> -->
+
+
                     </div>
 
                 </div>
             </div>
         </li>
 
-
-    </u1>
-    
+    </u1><br>
+    <div class="">
+        <div class="float-right">
+            <button class="sc-button" type="submit">Submit</button>
+        </div>
+    </div>
+    <br>
 </form>
 <script>
     $.ajaxSetup({
@@ -1160,5 +1154,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $('.page-active').removeClass('sc-page-active')
+    $('.page-Membership-Candidate').addClass('sc-page-active')
 </script>
 @endsection

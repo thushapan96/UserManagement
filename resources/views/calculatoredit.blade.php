@@ -442,25 +442,25 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input" id="Past" name="is_rejected_college" value="yes" {{ $calculators->is_rejected_college == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Past">Yes</label>
+                                            <input type="radio" class="custom-control-input" id="Pastis_rejected_college" name="is_rejected_college" value="yes" {{ $calculators->is_rejected_college == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastis_rejected_college">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Past2" name="is_rejected_college" value="no" {{ $calculators->is_rejected_college == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Past2">No</label>
+                                            <input type="radio" class="custom-control-input " id="Past2is_rejected_college" name="is_rejected_college" value="no" {{ $calculators->is_rejected_college == "no" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Past2is_rejected_college">No</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_College d-none">
                                 <div class="form-group">
                                     <label>If Yes, Specify the Reason for rejection</label>
                                     <input class="form-control" type="text" value="{{$calculators->rejected_college_reason}}" name="rejected_college_reason">
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_College d-none">
                                 <div class="form-group">
                                     <label>Specify the Year of Rejection</label>
                                     <input class="form-control" type="text" value="{{$calculators->rejected_college_year}}" name="rejected_college_year">
@@ -474,25 +474,25 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pasttt" name="is_rejected_visa_past" value="yes" {{ $calculators->is_rejected_visa_past == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pasttt">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="Pastttis_rejected_visa_past" name="is_rejected_visa_past" value="yes" {{ $calculators->is_rejected_visa_past == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastttis_rejected_visa_past">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Past2" name="is_rejected_visa_past" value="no" {{ $calculators->is_rejected_visa_past == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Past2">No</label>
+                                            <input type="radio" class="custom-control-input " id="Past2is_rejected_visa_past" name="is_rejected_visa_past" value="no" {{ $calculators->is_rejected_visa_past == "no" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Past2is_rejected_visa_past">No</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_Visa d-none">
                                 <div class="form-group">
                                     <label>If Yes, Specify the Reason for rejection</label>
                                     <input class="form-control" type="text" value="{{$calculators->rejected_visa_reason_past}}" name="rejected_visa_reason_past">
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_Visa d-none">
                                 <div class="form-group">
                                     <label>Specify the Year of Rejection</label>
                                     <input class="form-control" type="text" value="{{$calculators->rejected_visa_year_past}}" name="rejected_visa_year_past">
@@ -506,25 +506,25 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt" name="is_rejected_visa" value="yes" {{ $calculators->is_rejected_visa == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="Pasttis_rejected_visa" name="is_rejected_visa" value="yes" {{ $calculators->is_rejected_visa == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pasttis_rejected_visa">Yes</label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-2 col-3 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt2" name="is_rejected_visa" value="no" {{ $calculators->is_rejected_visa == "no" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt2">No</label>
+                                            <input type="radio" class="custom-control-input " id="Pastt2is_rejected_visa" name="is_rejected_visa" value="no" {{ $calculators->is_rejected_visa == "no" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="Pastt2is_rejected_visa">No</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_Visa_Usa d-none">
                                 <div class="form-group">
                                     <label>If Yes, Specify the Reason for rejection</label>
                                     <input class="form-control" type="text" value="{{$calculators->rejected_visa_reason}}" name="rejected_visa_reason">
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_Visa_Usa d-none">
                                 <div class="form-group">
                                     <label>Specify the Year of Rejection</label>
                                     <input class="form-control" type="text" value="{{$calculators->rejected_visa_year}}" name="rejected_visa_year">
@@ -539,20 +539,20 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt" name="EOI_profile" value="yes" {{ $calculators->EOI_profile == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="academic" name="EOI_profile" value="yes" {{ $calculators->EOI_profile == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="academic">Yes</label>
                                         </div>
                                     </div>
                                     <div style="line-height:2">
 
                                         <div class="col-lg-3 col-md-2 col-3 ">
                                             <div class="custom-control custom-radio ">
-                                                <input type="radio" class="custom-control-input " id="Pastt2" name="EOI_profile" value="no" {{ $calculators->EOI_profile == "no" ? "checked":"" }}>
-                                                <label class="custom-control-label mt-1" for="Pastt2">No</label>
+                                                <input type="radio" class="custom-control-input " id="academic2" name="EOI_profile" value="no" {{ $calculators->EOI_profile == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="academic2">No</label>
                                             </div>
 
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-12">
+                                        <div class="col-lg-10 col-md-10 col-12 d-none append_EOI_profile_date">
 
                                             <input type="date" class="form-control" name="EOI_profile_date" value="{{$calculators->EOI_profile_date}}">
 
@@ -566,19 +566,19 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="Pastt" name="Provincial_profile" value="yes" {{ $calculators->Provincial_profile == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="Pastt">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="GRE" name="Provincial_profile" value="yes" {{ $calculators->Provincial_profile == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="GRE">Yes</label>
                                         </div>
                                     </div>
                                     <div style="line-height:2">
 
                                         <div class="col-lg-3 col-md-2 col-3 ">
                                             <div class="custom-control custom-radio ">
-                                                <input type="radio" class="custom-control-input " id="Pastt2" name="Provincial_profile" value="no" {{ $calculators->Provincial_profile == "no" ? "checked":"" }}>
-                                                <label class="custom-control-label mt-1" for="Pastt2">No</label>
+                                                <input type="radio" class="custom-control-input " id="GRE2" name="Provincial_profile" value="no" {{ $calculators->Provincial_profile == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="GRE2">No</label>
                                             </div>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-12">
+                                        <div class="col-lg-10 col-md-10 col-12 d-none append_Provincial_profile_date">
 
                                             <input type="date" class="form-control" name="Provincial_profile_date" value="{{$calculators->Provincial_profile_date}}">
 
@@ -611,7 +611,92 @@
 
 <script>
     $(document).ready(function() {
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-Calculator').addClass('sc-page-active')
+        //hide and view reason
+        var Rejected_College = "{{$calculators->is_rejected_college}}";
+        var Rejected_Visa = "{{$calculators->is_rejected_visa_past}}";
+        var Rejected_Visa_Usa = "{{$calculators->is_rejected_visa}}";
 
+        if (Rejected_College == 'yes') {
+            $('.Rejected_College').removeClass('d-none')
+        } else {
+            $('.Rejected_College').addClass('d-none')
+        }
+        if (Rejected_Visa == 'yes') {
+            $('.Rejected_Visa').removeClass('d-none')
+        } else {
+            $('.Rejected_Visa').addClass('d-none')
+        }
+        if (Rejected_Visa_Usa == 'yes') {
+            $('.Rejected_Visa_Usa').removeClass('d-none')
+        } else {
+            $('.Rejected_Visa_Usa').addClass('d-none')
+        }
+
+        $('#Pastis_rejected_college').click(function() {
+            $('.Rejected_College').removeClass('d-none')
+        })
+        $('#Past2is_rejected_college').click(function() {
+            $('.Rejected_College').addClass('d-none')
+            $('[name=rejected_college_year]').val('')
+            $('[name=rejected_college_reason]').val('')
+        })
+
+        $('#Pastttis_rejected_visa_past').click(function() {
+            $('.Rejected_Visa').removeClass('d-none')
+        })
+        $('#Past2is_rejected_visa_past').click(function() {
+            $('.Rejected_Visa').addClass('d-none')
+            $('[name=rejected_visa_year_past]').val('')
+            $('[name=rejected_visa_reason_past]').val('')
+        })
+
+        $('#Pasttis_rejected_visa').click(function() {
+            $('.Rejected_Visa_Usa').removeClass('d-none')
+        })
+        $('#Pastt2is_rejected_visa').click(function() {
+            $('.Rejected_Visa_Usa').addClass('d-none')
+            $('[name=rejected_visa_year]').val('')
+            $('[name=rejected_visa_reason]').val('')
+        })
+
+        //end hide and view reason
+        var EOI_profile = "{{$calculators->EOI_profile}}";
+        var Provincial_profile = "{{$calculators->Provincial_profile}}";
+
+
+
+        if (EOI_profile == 'yes') {
+            $('.append_EOI_profile_date').removeClass('d-none');
+        } else {
+            $('.append_EOI_profile_date').addClass('d-none');
+            $('[name=EOI_profile_date]').val('')
+        }
+        if (Provincial_profile == 'yes') {
+            $('.append_Provincial_profile_date').removeClass('d-none');
+        } else {
+            $('.append_Provincial_profile_date').addClass('d-none');
+            $('[name=Provincial_profile_date]').val('')
+        }
+
+        $('#academic').click(function() {
+            $('.append_EOI_profile_date').removeClass('d-none');
+        });
+        $('#academic2').click(function() {
+            $('.append_EOI_profile_date').addClass('d-none');
+            $('[name=EOI_profile_date]').val('')
+        });
+        $('#GRE').click(function() {
+            $('.append_Provincial_profile_date').removeClass('d-none');
+        });
+        $('#GRE2').click(function() {
+            $('.append_Provincial_profile_date').addClass('d-none');
+            $('[name=Provincial_profile_date]').val('')
+        });
+
+
+        // endddddddddddddddddddddddddddddddddddddddddddd
         $(".bmenu").click(function() {
             $('.nav-linkk').removeClass('uk-active');
             $('#amenu1').addClass('uk-active');

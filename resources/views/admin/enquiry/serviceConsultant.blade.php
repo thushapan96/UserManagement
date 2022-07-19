@@ -252,7 +252,7 @@
                 @if($ConsultantformsviewIdExist2 || $ImmigrationformsviewIdExist2)
                 <li><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
                 @endif
-               
+
             </ul>
         </div>
     </li>
@@ -271,6 +271,13 @@
 
     $(document).ready(function() {
 
+        if ($('#type').val() == 'RCIC Consultant') {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-enquiries-RCIC').addClass('sc-page-active')
+        } else {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-enquiries-immigration ').addClass('sc-page-active')
+        }
 
         const baseUrlAsset = "{{url('files/')}}";
 

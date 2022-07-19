@@ -424,6 +424,9 @@
         }
     });
 
+    $('.page-active').removeClass('sc-page-active')
+    $('.page-enquiries').addClass('sc-page-active')
+
     $('.confirmEnquiry').on('click', function() {
         if (confirm("Are You Sure Want To Select as Service ?") == true) {
             var type = $('#serviceType').val();

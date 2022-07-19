@@ -2343,14 +2343,9 @@
 
     $(document).ready(function() {
 
-        // if ($('#type').val() == 'RCIC Consultant') {
-        //     $('.page-active').removeClass('sc-page-active')
-        //     $('.page-RCIC-Consultant').addClass('sc-page-active')
-        // } else {
-        //     $('.page-active').removeClass('sc-page-active')
-        //     $('.page-immigration ').addClass('sc-page-active')
-        // }
-
+     
+          
+       
         $('.confirmEnquiry').on('click', function() {
             var type = $(this).attr('data-type')
             var serviceId = $(this).attr('data-serviceId')

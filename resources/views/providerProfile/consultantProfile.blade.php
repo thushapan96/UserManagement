@@ -35,8 +35,9 @@
     label {
         font-weight: bold !important;
     }
-    .uk-fieldset{
-        min-height:300px !important ;
+
+    .uk-fieldset {
+        min-height: 300px !important;
     }
 </style>
 @if($message = Session::get('formSuccess'))
@@ -65,7 +66,7 @@
 
         <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} </h3>
-            <u1 class="col-md-12" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+            <u1 class="col-md-12" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:3%">
                 <li class=" uk-active" id="amenu"><a aria-current="page">Main </a></li>
                 <li class="" id="amenu2"><a>About Company </a></li>
                 <li class="" id="amenu5"><a>Our Services </a></li>
@@ -126,7 +127,7 @@
                                         <p class="ps">
                                             @if($consultants->language_known)
                                             @foreach($consultants->language_known as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}<br>
                                             @endforeach
@@ -259,7 +260,7 @@
                                         <p class="ps">
                                             @if($consultants->language_known)
                                             @foreach($consultants->language_known as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}<br>
                                             @endforeach
@@ -297,7 +298,7 @@
                                         <p class="ps">
                                             @if($consultants->communication_mode)
                                             @foreach($consultants->communication_mode as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}
                                             @endforeach
@@ -353,30 +354,7 @@
                     <div class="uk-card col-md-11" style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
-                                @if($consultants->privacy_policy_document)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label>Privacy document of {{$consultants->type}}
-                                            </label>
-                                            <br>
 
-                                            <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$consultants->privacy_policy_document}}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @if($consultants->privacy_policy_detail)
-                                <div class="row custom-box">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="form-group">
-                                            <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
-
-                                            <textarea id="textarea1" name="privacy_policy_detail" value="" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
                                 @if($consultants->history)
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
@@ -401,6 +379,30 @@
                                             <br>
 
                                             <textarea id="textarea3" style="width:100%;background-color:white !important; box-shadow: none ;height:none !important" name="brief_introduction" value="{{$consultants->brief_introduction}}" disabled>{{$consultants->brief_introduction}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($consultants->privacy_policy_document)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label>Privacy document of {{$consultants->type}}
+                                            </label>
+                                            <br>
+
+                                            <a href="{{url('files/'.$consultants->privacy_policy_document)}}" target="_blank" style=" text-decoration: underline;width:100% !important">{{$consultants->privacy_policy_document}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @if($consultants->privacy_policy_detail)
+                                <div class="row custom-box">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label style="width:400px">Terms of Privacy of {{$consultants->type}}</label>
+
+                                            <textarea id="textarea1" name="privacy_policy_detail" value="" style="display: table-cell; vertical-align: middle;width:100%;background-color:white !important; box-shadow: none ;" disabled>{{$consultants->privacy_policy_detail}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -436,7 +438,7 @@
                                         <p class="ps">
                                             @if($consultants->offering_service)
                                             @foreach($consultants->offering_service as $row)
-                                             @if($loop->count > 1) <i class='fas fa-caret-right'></i>
+                                            @if($loop->count > 1) <i class='fas fa-caret-right'></i>
                                             @endif
                                             {{$row}}<br>
                                             @endforeach
@@ -452,7 +454,7 @@
                                         <div class="form-group">
                                             <label>Enrolment
                                             </label><br>
-                                            <small>{{$consultants->express_entry_enrolment}}</small>
+                                            <p>{{$consultants->express_entry_enrolment}}</p>
                                         </div>
                                     </div>
 
@@ -460,7 +462,7 @@
                                         <div class="form-group">
                                             <label>Success
                                             </label><br>
-                                            <small>{{$consultants->express_entry_success}}</small>
+                                            <p>{{$consultants->express_entry_success}}</p>
 
                                         </div>
                                     </div>
@@ -468,7 +470,7 @@
                                         <div class="form-group">
                                             <label>Rejected
                                             </label><br>
-                                            <small>{{$consultants->express_entry_reject}}</small>
+                                            <p>{{$consultants->express_entry_reject}}</p>
 
                                         </div>
                                     </div>
@@ -477,7 +479,7 @@
                                         <div class="form-group">
                                             <label>Reason for rejection
                                             </label><br>
-                                            <small>{{$consultants->express_entry_reject_reason}}</small>
+                                            <p>{{$consultants->express_entry_reject_reason}}</p>
 
                                         </div>
                                     </div>
@@ -490,7 +492,7 @@
                                         <div class="form-group">
                                             <label>Enrolment
                                             </label><br>
-                                            <small>{{$consultants->pnp_enrolment}}</small>
+                                            <p>{{$consultants->pnp_enrolment}}</p>
                                         </div>
                                     </div>
 
@@ -498,14 +500,14 @@
                                         <div class="form-group">
                                             <label>Success
                                             </label><br>
-                                            <small>{{$consultants->pnp_success}}</small>
+                                            <p>{{$consultants->pnp_success}}</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-12">
                                         <div class="form-group">
                                             <label>Rejected
                                             </label><br>
-                                            <small>{{$consultants->pnp_reject}}</small>
+                                            <p>{{$consultants->pnp_reject}}</p>
                                         </div>
                                     </div>
                                     @if($consultants->pnp_reject_reason)
@@ -513,7 +515,7 @@
                                         <div class="form-group">
                                             <label>Reason for rejection
                                             </label><br>
-                                            <small>{{$consultants->pnp_reject_reason}}</small>
+                                            <p>{{$consultants->pnp_reject_reason}}</p>
                                         </div>
                                     </div>
                                     @endif
@@ -525,7 +527,7 @@
                                         <div class="form-group">
                                             <label>Enrolment
                                             </label><br>
-                                            <small>{{$consultants->lmia_enrolment}}</small>
+                                            <p>{{$consultants->lmia_enrolment}}</p>
                                         </div>
                                     </div>
 
@@ -533,14 +535,14 @@
                                         <div class="form-group">
                                             <label>Success
                                             </label><br>
-                                            <small>{{$consultants->lmia_success}}</small>
+                                            <p>{{$consultants->lmia_success}}</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-12">
                                         <div class="form-group">
                                             <label>Rejected
                                             </label><br>
-                                            <small>{{$consultants->lmia_reject}}</small>
+                                            <p>{{$consultants->lmia_reject}}</p>
                                         </div>
                                     </div>
                                     @if($consultants->lmia_reject_reason)
@@ -548,7 +550,7 @@
                                         <div class="form-group">
                                             <label>Reason for rejection
                                             </label><br>
-                                            <small>{{$consultants->lmia_reject_reason}}</small>
+                                            <p>{{$consultants->lmia_reject_reason}}</p>
                                         </div>
                                     </div>
                                     @endif
@@ -562,7 +564,7 @@
                                         <div class="form-group">
                                             <label>Enrolment
                                             </label><br>
-                                            <small>{{$consultants->student_visa_enrolment}}</small>
+                                            <p>{{$consultants->student_visa_enrolment}}</p>
                                         </div>
                                     </div>
 
@@ -570,14 +572,14 @@
                                         <div class="form-group">
                                             <label>Success
                                             </label><br>
-                                            <small>{{$consultants->student_visa_success}}</small>
+                                            <p>{{$consultants->student_visa_success}}</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-12">
                                         <div class="form-group">
                                             <label>Rejected
                                             </label><br>
-                                            <small>{{$consultants->student_visa_reject}}</small>
+                                            <p>{{$consultants->student_visa_reject}}</p>
                                         </div>
                                     </div>
                                     @if($consultants->student_visa_reject_reason)
@@ -585,7 +587,7 @@
                                         <div class="form-group">
                                             <label>Reason for rejection
                                             </label><br>
-                                            <small>{{$consultants->student_visa_reject_reason}}</small>
+                                            <p>{{$consultants->student_visa_reject_reason}}</p>
                                         </div>
                                     </div>
                                     @endif
@@ -598,7 +600,7 @@
                                         <div class="form-group">
                                             <label>Enrolment
                                             </label><br>
-                                            <small>{{$consultants->tourist_visa_enrolment}}</small>
+                                            <p>{{$consultants->tourist_visa_enrolment}}</p>
                                         </div>
                                     </div>
 
@@ -606,14 +608,14 @@
                                         <div class="form-group">
                                             <label>Success
                                             </label><br>
-                                            <small>{{$consultants->tourist_visa_success}}</small>
+                                            <p>{{$consultants->tourist_visa_success}}</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-12">
                                         <div class="form-group">
                                             <label>Rejected
                                             </label><br>
-                                            <small>{{$consultants->tourist_visa_reject}}</small>
+                                            <p>{{$consultants->tourist_visa_reject}}</p>
                                         </div>
                                     </div>
                                     @if($consultants->tourist_visa_reject_reason)
@@ -621,7 +623,7 @@
                                         <div class="form-group">
                                             <label>Reason for rejection
                                             </label><br>
-                                            <small>{{$consultants->tourist_visa_reject_reason}}</small>
+                                            <p>{{$consultants->tourist_visa_reject_reason}}</p>
                                         </div>
                                     </div>
                                     @endif
@@ -634,7 +636,7 @@
                                         <div class="form-group">
                                             <label>Enrolment
                                             </label><br>
-                                            <small>{{$consultants->family_visa_enrolment}}</small>
+                                            <p>{{$consultants->family_visa_enrolment}}</p>
                                         </div>
                                     </div>
 
@@ -642,14 +644,14 @@
                                         <div class="form-group">
                                             <label>Success
                                             </label><br>
-                                            <small>{{$consultants->family_visa_success}}</small>
+                                            <p>{{$consultants->family_visa_success}}</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-12">
                                         <div class="form-group">
                                             <label>Rejected
                                             </label><br>
-                                            <small>{{$consultants->family_visa_reject}}</small>
+                                            <p>{{$consultants->family_visa_reject}}</p>
                                         </div>
                                     </div>
                                     @if($consultants->family_visa_reject_reason)
@@ -657,7 +659,7 @@
                                         <div class="form-group">
                                             <label>Reason for rejection
                                             </label><br>
-                                            <small>{{$consultants->family_visa_reject_reason}}</small>
+                                            <p>{{$consultants->family_visa_reject_reason}}</p>
                                         </div>
                                     </div>
                                     @endif

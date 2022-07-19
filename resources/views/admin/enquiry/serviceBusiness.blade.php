@@ -269,10 +269,14 @@
 
 
     $(document).ready(function() {
+
+     
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-enquiries-Business').addClass('sc-page-active')
+   
         const baseUrlAsset = "{{url('files/')}}";
         var type = $('#type').val();
-        $('.page-active').removeClass('sc-page-active')
-        $('.page-CA').addClass('sc-page-active')
+      
 
         $('#searchbar').on('keyup', function() {
             var searchValue = $('#searchbar').val();

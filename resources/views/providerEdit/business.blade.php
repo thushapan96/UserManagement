@@ -12,12 +12,12 @@
                 @csrf
                 <h5 style="text-align:center"> edit </h5><br>
                 <u1 class="col-md-9" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto;margin-right:auto">
-                    <li class="nav-linkk " id="amenu"><a  aria-current="page">Main </a></li>
-                    <li class="nav-linkk " id="amenu1"><a >Team </a></li>
-                    <li class="nav-linkk " id="amenu2"><a >About Company</a></li>
+                    <li class="nav-linkk " id="amenu"><a aria-current="page">Main </a></li>
+                    <li class="nav-linkk " id="amenu1"><a>Team </a></li>
+                    <li class="nav-linkk " id="amenu2"><a>About Company</a></li>
                     <li class="nav-linkk " id="amenu5"><a>Our Services</a></li>
-                    <li class="nav-linkk" id="amenu3"><a > Award & Certification</a></li>
-                    <li class="nav-linkk" id="amenu4"><a >News and Events</a></li>
+                    <li class="nav-linkk" id="amenu3"><a> Award & Certification</a></li>
+                    <li class="nav-linkk" id="amenu4"><a>News and Events</a></li>
                     <!-- <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Canada Inspire</a></li>
                     <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Feedback</a></li> -->
                 </u1>
@@ -393,6 +393,30 @@
                         <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+
+                                    <div class="row custom-box">
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label>About History
+                                                </label>
+                                                <br>
+                                                <textarea class="form-control" style="width:100%;" name="history" value="{{$consultants->history}}">{{$consultants->history}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row custom-box">
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label> Brief Introduction
+                                                </label>
+                                                <br>
+
+                                                <textarea class="form-control" style="width:100%;" name="brief_introduction" value="{{$consultants->brief_introduction}}">{{$consultants->brief_introduction}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
                                     <div class="row custom-box">
 
                                         <div class="col-lg-3 col-md-3 col-12">
@@ -432,29 +456,6 @@
                                             </div>
                                         </div>
                                         @endif
-                                    </div>
-                                    <hr>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label>About History
-                                                </label>
-                                                <br>
-                                                <textarea class="form-control" style="width:100%;" name="history" value="{{$consultants->history}}">{{$consultants->history}}</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row custom-box">
-                                        <div class="col-lg-12 col-md-12 col-12">
-                                            <div class="form-group">
-                                                <label> Brief Introduction
-                                                </label>
-                                                <br>
-
-                                                <textarea class="form-control" style="width:100%;" name="brief_introduction" value="{{$consultants->brief_introduction}}">{{$consultants->brief_introduction}}</textarea>
-                                            </div>
-                                        </div>
                                     </div>
                                     <hr>
                                     <div class="row custom-box">
@@ -531,13 +532,13 @@
                                                     <input class="custom-control-input" type="checkbox" id="OtherServices1" name="offering_service[]" value="Others" {{ (is_array($consultants->offering_service) and in_array("Others", $consultants->offering_service)) ? ' checked' : '' }}>
                                                     <label class="custom-control-label" for="OtherServices1"> Others</label><br>
                                                 </div>
-                                                
-                                               
+
+
                                             </div>
                                         </div>
                                     </div>
 
-                                
+
 
 
                                     <div class="float-right">
@@ -795,7 +796,7 @@
             });
 
         });
-      
+
 
         // if (sessionStorage.getItem("appendhtml")) {
         //     $('#newRow').html(sessionStorage.getItem("appendhtml"))

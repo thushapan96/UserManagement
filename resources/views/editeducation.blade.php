@@ -543,20 +543,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_College d-none">
                                 <div class="form-group">
                                     <label>If Yes, Specify the Reason for rejection</label>
-                                    <input class="form-control" type="text" value="{{$educations->rejected_college_reason}}" name="rejected_college_reason">
+                                    <input class="form-control " type="text" value="{{$educations->rejected_college_reason}}" name="rejected_college_reason">
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_College d-none">
                                 <div class="form-group">
                                     <label>Specify the Year of Rejection</label>
                                     <input class="form-control" type="text" value="{{$educations->rejected_college_year}}" name="rejected_college_year">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Have you been Rejected for Study Visa or Immigration or any Visa in the past?
@@ -575,20 +575,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_Visa d-none">
                                 <div class="form-group">
                                     <label>If Yes, Specify the Reason for rejection</label>
                                     <input class="form-control" type="text" value="{{$educations->rejected_visa_reason_past}}" name="rejected_visa_reason_past">
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_Visa d-none">
                                 <div class="form-group">
                                     <label>Specify the Year of Rejection</label>
                                     <input class="form-control" type="text" value="{{$educations->rejected_visa_year_past}}" name="rejected_visa_year_past">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Have you been Rejected for Study Visa or Immigration or any Visa in the past for USA?
@@ -607,18 +607,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_Visa_Usa d-none">
                                 <div class="form-group">
                                     <label>If Yes, Specify the Reason for rejection</label>
                                     <input class="form-control" type="text" value="{{$educations->rejected_visa_reason}}" name="rejected_visa_reason">
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 Rejected_Visa_Usa d-none">
                                 <div class="form-group">
                                     <label>Specify the Year of Rejection</label>
                                     <input class="form-control" type="text" value="{{$educations->rejected_visa_year}}" name="rejected_visa_year">
                                 </div>
                             </div>
+
                         </div>
                         <hr>
                         <div class="row custom-box " id="">
@@ -689,22 +691,24 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="academic " name="IELTS_attempted" value="yes" {{ $educations->IELTS_attempted == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="academic ">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="academic" name="IELTS_attempted" value="yes" {{ $educations->IELTS_attempted == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="academic">Yes</label>
                                         </div>
                                     </div>
                                     <div style="line-height:2">
                                         <div class="col-lg-3 col-md-2 col-3 ">
                                             <div class="custom-control custom-radio ">
-                                                <input type="radio" class="custom-control-input " id="academic 2" name="IELTS_attempted" value="no" {{ $educations->IELTS_attempted == "no" ? "checked":"" }}>
-                                                <label class="custom-control-label mt-1" for="academic 2">No</label>
+                                                <input type="radio" class="custom-control-input " id="academic2" name="IELTS_attempted" value="no" {{ $educations->IELTS_attempted == "no" ? "checked":"" }}>
+                                                <label class="custom-control-label mt-1" for="academic2">No</label>
                                             </div>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-12">
+
+                                        <div class="col-lg-10 col-md-10 col-12 d-none append_IELTS_attempted_date">
 
                                             <input type="date" class="form-control" name="IELTS_attempted_date" value="{{$educations->IELTS_attempted_date}}">
 
                                         </div>
+
                                     </div>
                                 </div>
 
@@ -728,11 +732,14 @@
                                                 <label class="custom-control-label mt-1" for="GRE2">No</label>
                                             </div>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-12">
+                                        <div class="col-lg-10 col-md-10 col-12  d-none append_GRE_attempted_date">
 
                                             <input type="date" class="form-control" name="GRE_attempted_date" value="{{$educations->GRE_attempted_date}}">
 
                                         </div>
+                                        <script>
+
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -742,8 +749,8 @@
                                     </label>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="TOEFL " name="TOEFL_attempted" value="yes" {{ $educations->TOEFL_attempted == "yes" ? "checked":"" }}>
-                                            <label class="custom-control-label mt-1" for="TOEFL ">Yes</label>
+                                            <input type="radio" class="custom-control-input " id="TOEFL" name="TOEFL_attempted" value="yes" {{ $educations->TOEFL_attempted == "yes" ? "checked":"" }}>
+                                            <label class="custom-control-label mt-1" for="TOEFL">Yes</label>
                                         </div>
                                     </div>
                                     <div style="line-height:2">
@@ -754,11 +761,14 @@
                                                 <label class="custom-control-label mt-1" for="TOEFL2">No</label>
                                             </div>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-12">
+                                        <div class="col-lg-10 col-md-10 col-12 d-none append_TOEFL_attempted_date">
 
                                             <input type="date" class="form-control" name="TOEFL_attempted_date" value="{{$educations->TOEFL_attempted_date}}">
 
                                         </div>
+                                        <script>
+
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -780,11 +790,14 @@
                                                 <label class="custom-control-label mt-1" for="GMAT2">No</label>
                                             </div>
                                         </div>
-                                        <div class="col-lg-10 col-md-10 col-12">
+                                        <div class="col-lg-10 col-md-10 col-12  d-none append_GMAT_attempted_date">
 
                                             <input type="date" class="form-control" name="GMAT_attempted_date" value="{{$educations->GMAT_attempted_date}}">
 
                                         </div>
+                                        <script>
+
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -841,6 +854,8 @@
 
 <script>
     $(document).ready(function() {
+        $('.page-active').removeClass('sc-page-active')
+        $('.page-Educational').addClass('sc-page-active')
 
         $(".bmenu").click(function() {
             $('.nav-linkk').removeClass('uk-active');
@@ -862,6 +877,113 @@
                 behavior: 'smooth'
             });
         });
+        //hide and view reason
+        var Rejected_College = "{{$educations->is_rejected_college}}";
+        var Rejected_Visa = "{{$educations->is_rejected_visa_past}}";
+        var Rejected_Visa_Usa = "{{$educations->is_rejected_visa}}";
+
+        if (Rejected_College == 'yes') {
+            $('.Rejected_College').removeClass('d-none')
+        } else {
+            $('.Rejected_College').addClass('d-none')
+        }
+        if (Rejected_Visa == 'yes') {
+            $('.Rejected_Visa').removeClass('d-none')
+        } else {
+            $('.Rejected_Visa').addClass('d-none')
+        }
+        if (Rejected_Visa_Usa == 'yes') {
+            $('.Rejected_Visa_Usa').removeClass('d-none')
+        } else {
+            $('.Rejected_Visa_Usa').addClass('d-none')
+        }
+
+        $('#Pastis_rejected_college').click(function() {
+            $('.Rejected_College').removeClass('d-none')
+        })
+        $('#Past2is_rejected_college').click(function() {
+            $('.Rejected_College').addClass('d-none')
+            $('[name=rejected_college_year]').val('')
+            $('[name=rejected_college_reason]').val('')
+        })
+
+        $('#Pastttis_rejected_visa_past').click(function() {
+            $('.Rejected_Visa').removeClass('d-none')
+        })
+        $('#Past2is_rejected_visa_past').click(function() {
+            $('.Rejected_Visa').addClass('d-none')
+            $('[name=rejected_visa_year_past]').val('')
+            $('[name=rejected_visa_reason_past]').val('')
+        })
+
+        $('#Pasttis_rejected_visa').click(function() {
+            $('.Rejected_Visa_Usa').removeClass('d-none')
+        })
+        $('#Pastt2is_rejected_visa').click(function() {
+            $('.Rejected_Visa_Usa').addClass('d-none')
+            $('[name=rejected_visa_year]').val('')
+            $('[name=rejected_visa_reason]').val('')
+        })
+
+        //end hide and view reason
+        var IELTS_attempted = "{{$educations->IELTS_attempted}}";
+        var GRE_attempted = "{{$educations->GRE_attempted}}";
+        var TOEFL_attempted = "{{$educations->TOEFL_attempted}}";
+        var GMAT_attempted = "{{$educations->GMAT_attempted}}";
+
+
+        if (IELTS_attempted == 'yes') {
+            $('.append_IELTS_attempted_date').removeClass('d-none');
+
+        } else {
+            $('.append_IELTS_attempted_date').addClass('d-none');
+
+        }
+        if (GRE_attempted == 'yes') {
+            $('.append_GRE_attempted_date').removeClass('d-none');
+        } else {
+            $('.append_GRE_attempted_date').addClass('d-none');
+        }
+        if (TOEFL_attempted == 'yes') {
+            $('.append_TOEFL_attempted_date').removeClass('d-none');
+        } else {
+            $('.append_TOEFL_attempted_date').addClass('d-none');
+        }
+        if (GMAT_attempted == 'yes') {
+            $('.append_GMAT_attempted_date').removeClass('d-none');
+        } else {
+            $('.append_GMAT_attempted_date').addClass('d-none');
+        }
+        $('#academic').click(function() {
+            $('.append_IELTS_attempted_date').removeClass('d-none');
+        });
+        $('#academic2').click(function() {
+            $('.append_IELTS_attempted_date').addClass('d-none');
+            $('[name=IELTS_attempted_date]').val('')
+        });
+        $('#GRE').click(function() {
+            $('.append_GRE_attempted_date').removeClass('d-none');
+        });
+        $('#GRE2').click(function() {
+            $('.append_GRE_attempted_date').addClass('d-none');
+            $('[name=GRE_attempted_date]').val('')
+        });
+        $('#TOEFL').click(function() {
+            $('.append_TOEFL_attempted_date').removeClass('d-none');
+        });
+        $('#TOEFL2').click(function() {
+            $('.append_TOEFL_attempted_date').addClass('d-none');
+            $('[name=TOEFL_attempted_date]').val('')
+        });
+        $('#GMAT').click(function() {
+            $('.append_GMAT_attempted_date').removeClass('d-none');
+        });
+        $('#GMAT2').click(function() {
+            $('.append_GMAT_attempted_date').addClass('d-none');
+            $('[name=GMAT_attempted_date]').val('')
+        });
+
+        // endddddddddddddddddddddddddddddddddddddddddddd
         $("#add_employment").click(function() {
 
             var html = '';
@@ -920,6 +1042,7 @@
 
 
         });
+
 
         $(document).on('click', '#removeRow', function() {
             $(this).closest('#inputFormRow').remove();
@@ -985,6 +1108,7 @@
             $(this).closest('#inputFormRow').remove();
         });
 
+        $('#')
     });
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX4GRZHCs7t1pkpjrRaLoTlCgqX8o46wY&libraries=places&callback=initMap&libraries=places&v=weekly" defer></script>

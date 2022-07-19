@@ -271,7 +271,7 @@
                     @if($InstitudeformsviewIdExist2)
                     <li><a href="#" style="color:#17a2b8;">3) View Status progress reports</a></li>
                     @endif
-                  
+
                 </ul>
             </div>
         </li>
@@ -291,6 +291,19 @@
 
 
     $(document).ready(function() {
+
+
+        if ($('#type').val() == 'School') {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-enquiries-School').addClass('sc-page-active')
+        } else if ('College') {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-enquiries-College ').addClass('sc-page-active')
+        } else {
+            $('.page-active').removeClass('sc-page-active')
+            $('.page-enquiries-University ').addClass('sc-page-active')
+        }
+
         const baseUrlAsset = "{{url('files/')}}";
         // if ($('#type').val() == 'School') {
         //     $('.page-active').removeClass('sc-page-active')
