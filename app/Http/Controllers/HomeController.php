@@ -70,8 +70,10 @@ class HomeController extends Controller
 
         $membership =   User::where('users.id', Auth::user()->id)->join('candidate_personals', 'candidate_personals.user_id', 'users.id')
             ->select('users.*', 'candidate_personals.first_name', 'candidate_personals.middle_name', 'candidate_personals.last_name')->first();
+
+          
         if ($membership->membership_plan_id) {
-            $package = MembershipCandidate::where('id', $membership->membership_plan_id)->value('type');
+            $package = MembershipCandidate::where('id', $membership->membership_plan_id)->value('id');
         } else {
             $package = '';
         }
@@ -120,14 +122,11 @@ class HomeController extends Controller
             $user->service = $request->service;
             $user->service_type = 'multiple';
         }
-        $mId = MembershipCandidate::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
-        $user->membership_plan_id =  $mId;
+
+       
+        $user->membership_plan_id =  $request->package;
 
         $user->save();
-
-
-
-
 
         return redirect(route('membership'));
     }
@@ -146,8 +145,7 @@ class HomeController extends Controller
     {
         $user =   User::find(Auth::user()->id);
 
-        $mId = MembershipCandidate::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
-        $user->membership_plan_id = $mId;
+        $user->membership_plan_id = $request->package;
         $user->save();
 
         return redirect(route('membership'));
@@ -160,7 +158,7 @@ class HomeController extends Controller
             ->select('users.*', 'institutions.name')->first();
 
         if ($membership->membership_institution_id) {
-            $package = MembershipInstitution::where('id', $membership->membership_institution_id)->value('type');
+            $package = MembershipCandidate::where('id', $membership->membership_institution_id)->value('id') ;
         } else {
             $package = '';
         }
@@ -203,8 +201,7 @@ class HomeController extends Controller
         $user->end_date = $request->end_date;
         $user->membership_duration = $request->membership_duration;
 
-        $mId = MembershipInstitution::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
-        $user->membership_institution_id  =  $mId;
+        $user->membership_institution_id =  $request->package;
 
         $user->save();
 
@@ -215,8 +212,7 @@ class HomeController extends Controller
     {
         $user =   User::find(Auth::user()->id);
 
-        $mId = MembershipInstitution::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
-        $user->membership_institution_id = $mId;
+        $user->membership_institution_id =  $request->package;
         $user->save();
 
         return redirect(route('membership.institude'));
@@ -228,7 +224,7 @@ class HomeController extends Controller
             ->select('users.*', 'providers.first_name', 'providers.last_name')->first();
 
         if ($membership->membership_provider_id) {
-            $package = MembershipProvider::where('id', $membership->membership_provider_id)->value('type');
+            $package = MembershipProvider::where('id', $membership->membership_provider_id)->value('id');
         } else {
             $package = '';
         }
@@ -271,8 +267,7 @@ class HomeController extends Controller
         $user->end_date = $request->end_date;
         $user->membership_duration = $request->membership_duration;
 
-        $mId = MembershipProvider::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
-        $user->membership_provider_id  =  $mId;
+        $user->membership_provider_id =  $request->package;
 
         $user->save();
 
@@ -283,8 +278,7 @@ class HomeController extends Controller
     {
         $user =   User::find(Auth::user()->id);
 
-        $mId = MembershipProvider::where('type', $request->package)->where('duration', $request->membership_duration)->value('id');
-        $user->membership_provider_id = $mId;
+        $user->membership_provider_id =  $request->package;
         $user->save();
 
         return redirect(route('membership.provider'));

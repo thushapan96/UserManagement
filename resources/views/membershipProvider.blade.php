@@ -7,14 +7,21 @@
         <button class="uk-modal-close-default" type="button" data-uk-close></button>
         <form action="{{route('package.add.provider')}}" method="post">
             @csrf
-            <h6> Extend Services</h6>
+            <h6> Select Package</h6>
             <div class="col-lg-12 col-md-12 col-12">
                 <div class="form-group">
-                    <label>Select Package </label>
+                    
                     <select class="form-control" name="package" id="package">
-                        <option value="Basic" {{$package == 'Basic' ? 'selected':''}}>Basic</option>
-                        <option value="Stanadard" {{$package == 'Stanadard' ? 'selected':''}}>Standard</option>
-                        <option value="Premium" {{$package == 'Premium' ? 'selected':''}}>Premium</option>
+                        <option value="1" {{$package == '1' ? 'selected':''}}>Basic For 3Months</option>
+                        <option value="2" {{$package == '2' ? 'selected':''}}>Basic For 6Months</option>
+                        <option value="3" {{$package == '3' ? 'selected':''}}>Basic For 12Months</option>
+                        <option value="4" {{$package == '4' ? 'selected':''}}>Standard For 3Months</option>
+                        <option value="5" {{$package == '5' ? 'selected':''}}>Standard For 6Months</option>
+                        <option value="6" {{$package == '6' ? 'selected':''}}>Standard For 12Months</option>
+                        <option value="7" {{$package == '7' ? 'selected':''}}>Premium For 3Months</option>
+                        <option value="8" {{$package == '8' ? 'selected':''}}>Premium For 6Months</option>
+                        <option value="9" {{$package == '9' ? 'selected':''}}>Premium For 12Months</option>
+
                     </select>
                 </div>
             </div>
@@ -119,7 +126,18 @@
                         </div>
                         <div class="col-md-7">
 
-                            <label class="labels"> {{$package == 'Stanadard' ? 'Standard':$package}}</label><br>
+                            <label class="labels">
+                                @if($package == 1) Basic For 3Months
+                                @elseif($package == 2)Basic For 6Months
+                                @elseif($package == 3)Basic For 12Months
+                                @elseif($package == 4)Standard For 3Months
+                                @elseif($package == 5)Standard For 6Months
+                                @elseif($package == 6)Standard For 12Months
+                                @elseif($package == 7)Premium For 3Months
+                                @elseif($package == 8)Premium For 6Months
+                                @elseif($package == 9)Premium For 12Months
+                                @endif
+                            </label><br>
 
                         </div>
                     </div><br>
@@ -258,7 +276,10 @@
                                 <input class="" type="text" id="3BEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate1->EnquiriesBusiness}}">
                                 <label>Enquiries To Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate1->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
 
                         </div>
                     </li>
@@ -364,7 +385,10 @@
                                 <input class="" type="text" id="6BEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate4->EnquiriesBusiness}}">
                                 <label>Enquiries To Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate4->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
 
                         </div>
                     </li>
@@ -470,7 +494,10 @@
                                 <input class="" type="text" id="9BEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate7->EnquiriesBusiness}}">
                                 <label>Enquiries To Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate7->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
 
                         </div>
                     </li>
@@ -592,7 +619,10 @@
                                 <input class="" type="text" id="3SEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate2->EnquiriesBusiness}}">
                                 <label>Enquiries To Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate2->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
 
                         </div>
                     </li>
@@ -698,7 +728,10 @@
                                 <input class="" type="text" id="6SEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate5->EnquiriesBusiness}}">
                                 <label>Enquiries To Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate5->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
 
                         </div>
                     </li>
@@ -804,7 +837,10 @@
                                 <input class="" type="text" id="9SEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate8->EnquiriesBusiness}}">
                                 <label>Enquiries To Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate8->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
 
                         </div>
                     </li>
@@ -926,7 +962,10 @@
                                 <input class="" type="text" id="3PEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate3->EnquiriesBusiness}}">
                                 <label>Enquiries To Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate3->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
 
                         </div>
                     </li>
@@ -1032,7 +1071,10 @@
                                 <input class="" type="text" id="6PEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate6->EnquiriesBusiness}}">
                                 <label>Enquiries To Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate6->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
 
                         </div>
                     </li>
@@ -1138,7 +1180,10 @@
                                 <input class="" type="text" id="9PEnquiries" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate9->EnquiriesBusiness}}">
                                 <label>Enquiries To Business </label>
                             </div><br>
-
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate9->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
 
                         </div>
                     </li>

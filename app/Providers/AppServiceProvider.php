@@ -172,6 +172,14 @@ class AppServiceProvider extends ServiceProvider
                     ->with('currencyPrice', $currencyPrice)
                     ->with('configureDate', $configureDate);
             }
+
+            $currencyPrice = Setting::where('type','currency')->value('value');
+            $configureDate = Setting::where('type','date')->value('value');
+
+
+            $view->with('currencyPrice', $currencyPrice)
+                ->with('configureDate', $configureDate);
+
         });
     }
 }

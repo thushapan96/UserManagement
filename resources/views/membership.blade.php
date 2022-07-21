@@ -11,38 +11,38 @@
 
                 <div class="col-lg-4 col-md-4 col-4">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input service" id="customCheck" name="service[]" value="study" {{ (is_array($membership->service) and in_array("study", $membership->service)) ? ' checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input  service" id="customCheck" name="service[]" value="study" {{ (is_array($membership->service) and in_array("study", $membership->service)) ? ' checked' : '' }}>
                         <label class="custom-control-label" for="customCheck">Study </label>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-4">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input service" id="customCheck1" name="service[]" value="migration" {{ (is_array($membership->service) and in_array("migration", $membership->service)) ? ' checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input  service" id="customCheck1" name="service[]" value="migration" {{ (is_array($membership->service) and in_array("migration", $membership->service)) ? ' checked' : '' }}>
                         <label class="custom-control-label" for="customCheck1">Migration </label>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-4 mb-3">
                     <div class="custom-control custom-checkbox ">
-                        <input type="checkbox" class="custom-control-input service" id="customCheck2" name="service[]" value="work" {{ (is_array($membership->service) and in_array("work", $membership->service)) ? ' checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input  service" id="customCheck2" name="service[]" value="work" {{ (is_array($membership->service) and in_array("work", $membership->service)) ? ' checked' : '' }}>
                         <label class="custom-control-label" for="customCheck2">Work</label>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-4 mb-3">
                     <div class="custom-control custom-checkbox ">
-                        <input type="checkbox" class="custom-control-input service" id="customCheck3" name="service[]" value="business" {{ (is_array($membership->service) and in_array("business", $membership->service)) ? ' checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input  service" id="customCheck3" name="service[]" value="business" {{ (is_array($membership->service) and in_array("business", $membership->service)) ? ' checked' : '' }}>
                         <label class="custom-control-label" for="customCheck3">Business</label>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-4 mb-3">
                     <div class="custom-control custom-checkbox ">
-                        <input type="checkbox" class="custom-control-input service" id="customCheck4" name="service[]" value="visa" {{ (is_array($membership->service) and in_array("visa", $membership->service)) ? ' checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input  service" id="customCheck4" name="service[]" value="visa" {{ (is_array($membership->service) and in_array("visa", $membership->service)) ? ' checked' : '' }}>
                         <label class="custom-control-label" for="customCheck4">Visa</label>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-4 mb-3">
                     <div class="custom-control custom-checkbox ">
-                        <input type="checkbox" class="custom-control-input service" id="customCheck5" name="service[]" value="others" {{ (is_array($membership->service) and in_array("others", $membership->service)) ? ' checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input  service" id="customCheck5" name="service[]" value="others" {{ (is_array($membership->service) and in_array("others", $membership->service)) ? ' checked' : '' }}>
                         <label class="custom-control-label" for="customCheck5">Others</label>
                     </div>
                 </div>
@@ -64,9 +64,16 @@
                 <div class="form-group">
                     <label>Select Package </label>
                     <select class="form-control" name="package" id="package">
-                        <option value="Basic" {{$package == 'Basic' ? 'selected':''}}>Basic</option>
-                        <option value="Stanadard" {{$package == 'Stanadard' ? 'selected':''}}>Standard</option>
-                        <option value="Premium" {{$package == 'Premium' ? 'selected':''}}>Premium</option>
+                        <option value="1" {{$package == '1' ? 'selected':''}}>Basic For 3Months</option>
+                        <option value="2" {{$package == '2' ? 'selected':''}}>Basic For 6Months</option>
+                        <option value="3" {{$package == '3' ? 'selected':''}}>Basic For 12Months</option>
+                        <option value="4" {{$package == '4' ? 'selected':''}}>Standard For 3Months</option>
+                        <option value="5" {{$package == '5' ? 'selected':''}}>Standard For 6Months</option>
+                        <option value="6" {{$package == '6' ? 'selected':''}}>Standard For 12Months</option>
+                        <option value="7" {{$package == '7' ? 'selected':''}}>Premium For 3Months</option>
+                        <option value="8" {{$package == '8' ? 'selected':''}}>Premium For 6Months</option>
+                        <option value="9" {{$package == '9' ? 'selected':''}}>Premium For 12Months</option>
+
                     </select>
                 </div>
             </div>
@@ -184,7 +191,18 @@
                         </div>
                         <div class="col-md-7">
 
-                            <label class="labels"> {{$package == 'Stanadard' ? 'Standard':$package}}</label><br>
+                            <label class="labels">
+                                @if($package == 1) Basic For 3Months
+                                @elseif($package == 2)Basic For 6Months
+                                @elseif($package == 3)Basic For 12Months
+                                @elseif($package == 4)Standard For 3Months
+                                @elseif($package == 5)Standard For 6Months
+                                @elseif($package == 6)Standard For 12Months
+                                @elseif($package == 7)Premium For 3Months
+                                @elseif($package == 8)Premium For 6Months
+                                @elseif($package == 9)Premium For 12Months
+                                @endif
+                            </label><br>
 
                         </div>
                     </div><br>
@@ -224,47 +242,47 @@
                     <li>
                         <div class="uk-card-body">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3BDashboard" name="Dashboard" value="1" {{ $membershipCandidate1->Dashboard == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3BDashboard" name="Dashboard" value="1" {{ $membershipCandidate1->Dashboard == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3BDashboard">Dashboard</label>
 
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3BEA" name="EA" value="1" {{ $membershipCandidate1->EA == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3BEA" name="EA" value="1" {{ $membershipCandidate1->EA == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3BEA">Educational Assessment</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3BCalculator" name="Calculator" value="1" {{ $membershipCandidate1->Calculator == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3BCalculator" name="Calculator" value="1" {{ $membershipCandidate1->Calculator == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3BCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3BDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate1->DefaultReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3BDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate1->DefaultReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3BDefaultReports">Default Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3BCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate1->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3BCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate1->CustomizedReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3BCustomizedReports">Customized Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3BChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate1->ChatAgents == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3BChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate1->ChatAgents == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3BChatAgents">Chat Agents</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3BEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate1->EmailSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3BEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate1->EmailSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3BEmailSupport">Email Support</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3BTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate1->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3BTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate1->TelephonicSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3BTelephonicSupport">Telephonic Support</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate1->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3BAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate1->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3BAdd_On_features_Free">Free</label>
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="3BAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate1->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3BAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate1->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3BAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label>: Add On features</label>
@@ -273,12 +291,12 @@
                                 &nbsp;&nbsp;
 
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate1->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3BAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate1->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3BAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3BAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate1->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3BAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate1->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3BAnytime_Single_Multiple-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label> : Anytime upgrade services </label>
@@ -309,53 +327,57 @@
                                 <input class="" type="text" id="3BEnquiriesBusiness" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate1->EnquiriesBusiness}}">
                                 <label>Enquiries To Business</label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate1->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
                         </div>
                     </li>
                     <li>
                         <div class="uk-card-body">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate4->Dashboard == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate4->Dashboard == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDashboard">Dashboard</label>
 
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate4->EA == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate4->EA == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEA">Educational Assessment</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate4->Calculator == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate4->Calculator == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate4->DefaultReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate4->DefaultReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDefaultReports">Default Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate4->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate4->CustomizedReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCustomizedReports">Customized Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate4->ChatAgents == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate4->ChatAgents == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PChatAgents">Chat Agents</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate4->EmailSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate4->EmailSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEmailSupport">Email Support</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate4->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate4->TelephonicSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PTelephonicSupport">Telephonic Support</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate4->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate4->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate4->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate4->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label>: Add On features</label>
@@ -363,13 +385,13 @@
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate4->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate4->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate4->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate4->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label> : Anytime upgrade services </label>
@@ -400,53 +422,57 @@
                                 <input class="" type="text" id="9PEnquiriesBusiness" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate4->EnquiriesBusiness}}">
                                 <label>Enquiries To Business</label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate4->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
                         </div>
                     </li>
                     <li>
                         <div class="uk-card-body">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate7->Dashboard == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate7->Dashboard == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDashboard">Dashboard</label>
 
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate7->EA == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate7->EA == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEA">Educational Assessment</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate7->Calculator == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate7->Calculator == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate7->DefaultReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate7->DefaultReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDefaultReports">Default Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate7->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate7->CustomizedReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCustomizedReports">Customized Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate7->ChatAgents == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate7->ChatAgents == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PChatAgents">Chat Agents</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate7->EmailSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate7->EmailSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEmailSupport">Email Support</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate7->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate7->TelephonicSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PTelephonicSupport">Telephonic Support</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate7->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate7->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate7->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate7->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label>: Add On features</label>
@@ -454,13 +480,13 @@
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate7->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate7->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple"> free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate7->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate7->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label> : Anytime upgrade services </label>
@@ -491,6 +517,10 @@
                                 <input class="" type="text" id="9PEnquiriesBusiness" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate7->EnquiriesBusiness}}">
                                 <label>Enquiries To Business</label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate7->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
                         </div>
                     </li>
                 </u1>
@@ -512,48 +542,48 @@
                     <li>
                         <div class="uk-card-body">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3SDashboard" name="Dashboard" value="1" {{ $membershipCandidate2->Dashboard == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3SDashboard" name="Dashboard" value="1" {{ $membershipCandidate2->Dashboard == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3SDashboard">Dashboard</label>
 
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3SEA" name="EA" value="1" {{ $membershipCandidate2->EA == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3SEA" name="EA" value="1" {{ $membershipCandidate2->EA == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3SEA">Educational Assessment</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3SCalculator" name="Calculator" value="1" {{ $membershipCandidate2->Calculator == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3SCalculator" name="Calculator" value="1" {{ $membershipCandidate2->Calculator == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3SCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3SDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate2->DefaultReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3SDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate2->DefaultReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3SDefaultReports">Default Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3SCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate2->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3SCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate2->CustomizedReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3SCustomizedReports">Customized Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3SChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate2->ChatAgents == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3SChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate2->ChatAgents == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3SChatAgents">Chat Agents</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3SEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate2->EmailSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3SEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate2->EmailSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3SEmailSupport">Email Support</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3STelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate2->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3STelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate2->TelephonicSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3STelephonicSupport">Telephonic Support</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3SAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate2->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3SAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate2->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3SAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="3SAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate2->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3SAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate2->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3SAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label>: Add On features</label>
@@ -561,13 +591,13 @@
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3SAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate2->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3SAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate2->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3SAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="3SAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate2->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3SAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate2->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3SAnytime_Single_Multiple-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label> : Anytime upgrade services </label>
@@ -598,53 +628,57 @@
                                 <input class="" type="text" id="3SEnquiriesBusiness" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate2->EnquiriesBusiness}}">
                                 <label>Enquiries To Business</label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate2->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
                         </div>
                     </li>
                     <li>
                         <div class="uk-card-body">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate5->Dashboard == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate5->Dashboard == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDashboard">Dashboard</label>
 
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate5->EA == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate5->EA == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEA">Educational Assessment</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate5->Calculator == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate5->Calculator == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate5->DefaultReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate5->DefaultReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDefaultReports">Default Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate5->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate5->CustomizedReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCustomizedReports">Customized Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate5->ChatAgents == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate5->ChatAgents == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PChatAgents">Chat Agents</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate5->EmailSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate5->EmailSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEmailSupport">Email Support</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate5->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate5->TelephonicSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PTelephonicSupport">Telephonic Support</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate5->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate5->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate5->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate5->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label>: Add On features</label>
@@ -652,13 +686,13 @@
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate5->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate5->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate5->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate5->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label> : Anytime upgrade services </label>
@@ -689,53 +723,57 @@
                                 <input class="" type="text" id="9PEnquiriesBusiness" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate5->EnquiriesBusiness}}">
                                 <label>Enquiries To Business</label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate5->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
                         </div>
                     </li>
                     <li>
                         <div class="uk-card-body">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate8->Dashboard == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate8->Dashboard == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDashboard">Dashboard</label>
 
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate8->EA == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate8->EA == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEA">Educational Assessment</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate8->Calculator == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate8->Calculator == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate8->DefaultReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate8->DefaultReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDefaultReports">Default Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate8->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate8->CustomizedReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCustomizedReports">Customized Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate8->ChatAgents == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate8->ChatAgents == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PChatAgents">Chat Agents</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate8->EmailSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate8->EmailSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEmailSupport">Email Support</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate8->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate8->TelephonicSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PTelephonicSupport">Telephonic Support</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate8->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate8->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate8->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate8->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label>: Add On features</label>
@@ -743,13 +781,13 @@
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate8->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate8->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate8->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate8->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label> : Anytime upgrade services </label>
@@ -780,6 +818,10 @@
                                 <input class="" type="text" id="9PEnquiriesBusiness" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate8->EnquiriesBusiness}}">
                                 <label>Enquiries To Business</label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate8->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
                         </div>
                     </li>
                 </u1>
@@ -793,56 +835,56 @@
                 <u1 class="" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                     <li class="uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page"> 3 Months </a></li>
                     <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;"> 6 Months</a></li>
-                    <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">12 Months </a></li>
-
+                    <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;"> 12 Months </a></li>
                 </u1>
+
                 <u1 class="uk-switcher">
 
                     <li>
                         <div class="uk-card-body">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3PDashboard" name="Dashboard" value="1" {{ $membershipCandidate3->Dashboard == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3PDashboard" name="Dashboard" value="1" {{ $membershipCandidate3->Dashboard == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3PDashboard">Dashboard</label>
 
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3PEA" name="EA" value="1" {{ $membershipCandidate3->EA == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3PEA" name="EA" value="1" {{ $membershipCandidate3->EA == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3PEA">Educational Assessment</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3PCalculator" name="Calculator" value="1" {{ $membershipCandidate3->Calculator == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3PCalculator" name="Calculator" value="1" {{ $membershipCandidate3->Calculator == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate3->DefaultReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate3->DefaultReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3PDefaultReports">Default Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate3->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate3->CustomizedReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3PCustomizedReports">Customized Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate3->ChatAgents == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate3->ChatAgents == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3PChatAgents">Chat Agents</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate3->EmailSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate3->EmailSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3PEmailSupport">Email Support</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="3PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate3->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="3PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate3->TelephonicSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="3PTelephonicSupport">Telephonic Support</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate3->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate3->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="3PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate3->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate3->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3PAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label>: Add On features</label>
@@ -850,13 +892,13 @@
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="3PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate3->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate3->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3PAnytime_Single_Multiple">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="3PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate3->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="3PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate3->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="3PAnytime_Single_Multiple-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label> : Anytime upgrade services </label>
@@ -887,53 +929,57 @@
                                 <input class="" type="text" id="3PEnquiriesBusiness" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate3->EnquiriesBusiness}}">
                                 <label>Enquiries To Business</label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate3->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
                         </div>
                     </li>
                     <li>
                         <div class="uk-card-body">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate6->Dashboard == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate6->Dashboard == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDashboard">Dashboard</label>
 
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate6->EA == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate6->EA == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEA">Educational Assessment</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate6->Calculator == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate6->Calculator == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate6->DefaultReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate6->DefaultReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDefaultReports">Default Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate6->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate6->CustomizedReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCustomizedReports">Customized Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate6->ChatAgents == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate6->ChatAgents == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PChatAgents">Chat Agents</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate6->EmailSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate6->EmailSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEmailSupport">Email Support</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate6->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate6->TelephonicSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PTelephonicSupport">Telephonic Support</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate6->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate6->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate6->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate6->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label>: Add On features</label>
@@ -941,13 +987,13 @@
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate6->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate6->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate6->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate6->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label> : Anytime upgrade services </label>
@@ -978,54 +1024,58 @@
                                 <input class="" type="text" id="9PEnquiriesBusiness" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate6->EnquiriesBusiness}}">
                                 <label>Enquiries To Business</label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate6->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
                         </div>
                     </li>
                     <li>
                         <div class="uk-card-body">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate9->Dashboard == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDashboard" name="Dashboard" value="1" {{ $membershipCandidate9->Dashboard == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDashboard">Dashboard</label>
 
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate9->EA == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEA" name="EA" value="1" {{ $membershipCandidate9->EA == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEA">Educational Assessment</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate9->Calculator == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCalculator" name="Calculator" value="1" {{ $membershipCandidate9->Calculator == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCalculator">CRS Calculator</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate9->DefaultReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PDefaultReports" name="DefaultReports" value="1" {{ $membershipCandidate9->DefaultReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PDefaultReports">Default Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate9->CustomizedReports == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PCustomizedReports" name="CustomizedReports" value="1" {{ $membershipCandidate9->CustomizedReports == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PCustomizedReports">Customized Reports</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate9->ChatAgents == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PChatAgents" name="ChatAgents" value="1" {{ $membershipCandidate9->ChatAgents == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PChatAgents">Chat Agents</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate9->EmailSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PEmailSupport" name="EmailSupport" value="1" {{ $membershipCandidate9->EmailSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PEmailSupport">Email Support</label>
                             </div><br>
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate9->TelephonicSupport == 1 ? ' checked' : '' }}>
+                                <input class="custom-control-input checkfalse" type="checkbox" id="9PTelephonicSupport" name="TelephonicSupport" value="1" {{ $membershipCandidate9->TelephonicSupport == 1 ? ' checked' : '' }}>
                                 <label class="custom-control-label" for="9PTelephonicSupport">Telephonic Support</label>
                             </div><br>
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <label>Add On features</label>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate9->Add_On_features_Free == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free" name="Add_On_features_Free" value="1" {{ $membershipCandidate9->Add_On_features_Free == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free">Free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate9->Add_On_features_Free == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAdd_On_features_Free-paid" name="Add_On_features_Free" value="2" {{ $membershipCandidate9->Add_On_features_Free == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAdd_On_features_Free-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label>: Add On features</label>
@@ -1033,13 +1083,13 @@
                             <div class="row">
                                 &nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate9->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple" name="Anytime_Single_Multiple" value="1" {{ $membershipCandidate9->Anytime_Single_Multiple == 1 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple">free</label>
 
                                 </div>&nbsp;&nbsp;&nbsp;
                                 <div class="custom-control custom-checkbox">
 
-                                    <input class="custom-control-input" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate9->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
+                                    <input class="custom-control-input checkfalse" type="checkbox" id="9PAnytime_Single_Multiple-paid" name="Anytime_Single_Multiple" value="2" {{ $membershipCandidate9->Anytime_Single_Multiple == 2 ? ' checked' : '' }}>
                                     <label class="custom-control-label" for="9PAnytime_Single_Multiple-paid"> Paid</label>
                                 </div>&nbsp;&nbsp;
                                 <label> : Anytime upgrade services </label>
@@ -1070,6 +1120,10 @@
                                 <input class="" type="text" id="9PEnquiriesBusiness" style="width:12%;height:50%" name="EnquiriesBusiness" value="{{$membershipCandidate9->EnquiriesBusiness}}">
                                 <label>Enquiries To Business</label>
                             </div><br>
+                            <div class="">
+                                <input class="" type="text" style="width:40%;height:50%"  value="{{$membershipCandidate9->price}}">
+                                {{$currencyPrice}} : <label> Package Price</label>
+                            </div><br>
                         </div>
                     </li>
                 </u1>
@@ -1082,7 +1136,7 @@
     $(document).ready(function() {
         $("input[type='text']").prop("disabled", true);
 
-        $("input[type='checkbox']").click(function() {
+        $(".checkfalse").click(function() {
             return false;
         })
         var service = @json($membership -> service);
