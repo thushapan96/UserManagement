@@ -4,7 +4,7 @@
 
     @csrf
     <div class='col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
-        <h6 class="" style="text-align:center">Registration Of Membership</h6>
+        <h5  style="text-align:center;color:#3f6791">Registration Of Membership</h5>
 
     </div>
 
@@ -106,7 +106,7 @@
                     </div>
                     <br>
                 </div>
-                <button type="button" id="ES" class="sc-button sc-button-primary sc-js-button-wave-light uk-width-1-3 waves-effect waves-button waves-light">Convert To Mutiple  Services</button><br><br>
+                <button type="button" id="ES" class="sc-button sc-button-primary sc-js-button-wave-light uk-width-1-3 waves-effect waves-button waves-light">Extend Services</button><br><br>
 
                 <div class="float-right">
                     <button type="submit" class="client-btn bmenu uk-button uk-button-primary">Register </button>

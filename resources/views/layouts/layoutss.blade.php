@@ -249,69 +249,16 @@
 
                     <li>
                         <a href="#">
-                            <span class="mdi mdi-email"></span>
+                            @if(auth()->user())
+                            Login As
+                            @if(auth()->user()->role == 'candidate')
+                            Candidate
+                            @else
+                            Service Provider
+                            @endif
+                            @endif
                         </a>
-                        <div class="uk-navbar-dropdown sc-padding-remove">
-                            <div class="uk-panel uk-panel-scrollable uk-height-medium">
-                                <ul class="uk-list uk-list-divider sc-js-edge-fix">
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon">
-                                            <span class="sc-avatar-initials md-color-white md-bg-red-500" title="elvie.jakubowski">MO</span>
-                                        </div>
-                                        <a href="#" class="sc-list-body uk-display-block">
-                                            <span class="uk-text-small uk-text-muted uk-width-expand">05:13 PM</span>
-                                            <span class="uk-display-block uk-text-truncate">Expedita aut voluptatem labore explicabo consequatur dignissimos quia enim consequatur.</span>
-                                        </a>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon">
-                                            <img src="{{asset('assets/img/avatars/avatar_05_sm.png')}}" class="sc-avatar " alt="osbaldo.stracke" />
-                                        </div>
-                                        <a href="#" class="sc-list-body uk-display-block">
-                                            <div class="uk-text-small uk-text-muted uk-width-expand">Feb 8, 2021</div>
-                                            <span class="uk-display-block uk-text-truncate">Est magnam quod et aut amet.</span>
-                                        </a>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon">
-                                            <span class="sc-avatar-initials md-color-white md-bg-light-green-500" title="sgreenholt">KS</span>
-                                        </div>
-                                        <a href="#" class="sc-list-body uk-display-block">
-                                            <span class="uk-text-small uk-text-muted uk-width-expand">03:13 PM</span>
-                                            <span class="uk-display-block uk-text-truncate">Libero natus qui nisi quo est enim recusandae sit et reprehenderit ipsum.</span>
-                                        </a>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon">
-                                            <img src="{{asset('assets/img/avatars/avatar_06_sm.png')}}" class="sc-avatar " alt="wade21" />
-                                        </div>
-                                        <a href="#" class="sc-list-body uk-display-block">
-                                            <span class="uk-text-small uk-text-muted uk-width-expand">Feb 7, 2021</span>
-                                            <span class="uk-display-block uk-text-truncate">Iure aut libero expedita dolorum et rerum molestiae molestiae.</span>
-                                        </a>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon">
-                                            <img src="{{asset('assets/img/avatars/avatar_02_sm.png')}}" class="sc-avatar " alt="loy.vandervort" />
-                                        </div>
-                                        <a href="#" class="sc-list-body uk-display-block">
-                                            <span class="uk-text-small uk-text-muted uk-width-expand">Feb 5, 2021</span>
-                                            <span class="uk-display-block uk-text-truncate">Et in voluptate vero tempora occaecati atque et autem.</span>
-                                        </a>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon">
-                                            <span class="sc-avatar-initials md-color-white md-bg-purple-500" title="arlene.jerde">FA</span>
-                                        </div>
-                                        <a href="#" class="sc-list-body uk-display-block">
-                                            <span class="uk-text-small uk-text-muted uk-width-expand">Feb 3, 2021</span>
-                                            <span class="uk-display-block uk-text-truncate">Ut possimus architecto deleniti eos voluptatibus sed magnam facilis.</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="pages-mailbox.html" class="uk-flex uk-text-small sc-padding-small-ends sc-padding-medium">Show all in mailbox</a>
-                        </div>
+
                     </li>
                     <li class="uk-visible@s">
                         <a href="#">
@@ -448,7 +395,7 @@
                                 @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
                                 <a href="{{route('consultantProfile')}}">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title" >profile</span>
+                                    </span><span class="uk-nav-title">profile</span>
                                 </a>
                                 @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
                                 <a href="{{route('institudeProfile')}}">

@@ -30,18 +30,17 @@
 
     <div class="row">
 
-        <div class="col-md-8" >
-            <h3 class="float-center" style="text-align:center">Profile</h3>
+        <div class="col-md-8">
+            <h5 style="text-align:center;color:#3f6791">Profile</h5>
             <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                 <li class="nav-linkk" id="amenu"><a style="cursor:pointer;padding: .5rem 3rem;" aria-current="page">personal</a></li>
                 <li class="nav-linkk" id="amenu1"><a style="cursor:pointer;padding: .5rem 3rem;">academic</a></li>
                 <li class="nav-linkk" id="amenu2"><a style="cursor:pointer;padding: .5rem 3rem;">work</a></li>
                 <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: .5rem 3rem;">sponsor</a></li>
             </u1>
-            <u1 class="uk-switcher " >
+            <u1 class="uk-switcher ">
                 <li id='menu' class='tab-pane '>
                     @if($personal)
-
                     <div class='uk-card col-md-10' style="margin-left:auto !important;margin-right:auto">
                         <div class="uk-card-body sc-padding-medium">
                             <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
@@ -122,6 +121,11 @@
                                         <label class="labels">{{$personal->is_vaccinate}}</label>
                                     </div>
                                 </div>
+                            </fieldset>
+                            @if($personal->residential_street || $personal->residential_street2 || $personal->residential_city || $personal->residential_country || $personal->residential_region || $personal->residential_pincode)
+                            <br>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+
                                 <div class="row ">
                                     <div class="col-md-5">
                                         <strong class="labels"> Residential Address </strong>
@@ -129,25 +133,31 @@
 
                                     <div class="col-md-7">
                                         @if($personal->residential_street)
-                                        <label class="labels">{{$personal->residential_street}}</label>
+                                        <strong> Street 1:</strong> <label class="labels">{{$personal->residential_street}}</label><br>
                                         @endif
                                         @if($personal->residential_street2)
-                                        <label class="labels">{{$personal->residential_street2}}</label>
+                                        <strong> Street 2 :</strong> <label class="labels">{{$personal->residential_street2}}</label><br>
                                         @endif
                                         @if($personal->residential_city)
-                                        <label class="labels">{{$personal->residential_city}}</label>
+                                        <strong> city     :</strong><label class="labels">{{$personal->residential_city}}</label><br>
                                         @endif
                                         @if($personal->residential_region)
-                                        <label class="labels">{{$personal->residential_region}}</label>
-                                        @endif
-                                        @if($personal->residential_pincode)
-                                        <label class="labels">{{$personal->residential_pincode}}</label>
+                                        <strong> Region :</strong><label class="labels">{{$personal->residential_region}}</label><br>
                                         @endif
                                         @if($personal->residential_country)
-                                        <label class="labels">{{$personal->residential_country}}</label>
+                                        <strong> Country :</strong> <label class="labels">{{$personal->residential_country}}</label><br>
+                                        @endif
+                                        @if($personal->residential_pincode)
+                                        <strong> Pincode :</strong><label class="labels">{{$personal->residential_pincode}}</label><br>
                                         @endif
                                     </div>
                                 </div>
+                            </fieldset>
+                            @endif
+                            @if($personal->corosponding_street || $personal->corosponding_street2 || $personal->corosponding_city || $personal->corosponding_country || $personal->corosponding_region || $personal->corosponding_pincode)
+                            <br>
+                            <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
+
                                 <div class="row ">
                                     <div class="col-md-5">
                                         <strong class="labels"> corosponding Address </strong>
@@ -155,30 +165,31 @@
 
                                     <div class="col-md-7">
                                         @if($personal->corosponding_street)
-                                        <label class="labels">{{$personal->corosponding_street}}</label>
+                                        <strong>Street 1:</strong><label class="labels">{{$personal->corosponding_street}}</label><br>
                                         @endif
                                         @if($personal->corosponding_street2)
-                                        <label class="labels">{{$personal->corosponding_street2}}</label>
+                                        <strong>Street 2:</strong><label class="labels">{{$personal->corosponding_street2}}</label><br>
                                         @endif
                                         @if($personal->corosponding_city)
-                                        <label class="labels">{{$personal->corosponding_city}}</label>
+                                        <strong>City    :</strong><label class="labels">{{$personal->corosponding_city}}</label><br>
                                         @endif
                                         @if($personal->corosponding_region)
-                                        <label class="labels">{{$personal->corosponding_region}}</label>
+                                        <strong>Region :</strong><label class="labels">{{$personal->corosponding_region}}</label><br>
                                         @endif
                                         @if($personal->corosponding_pincode)
-                                        <label class="labels">{{$personal->corosponding_pincode}}</label>
+                                        <strong>Country:</strong><label class="labels">{{$personal->corosponding_country}}</label><br>
                                         @endif
                                         @if($personal->corosponding_pincode)
-                                        <label class="labels">{{$personal->corosponding_country}}</label>
+                                        <strong>Pincode:</strong><label class="labels">{{$personal->corosponding_pincode}}</label><br>
                                         @endif
+
 
                                     </div>
                                 </div>
                             </fieldset>
+                            @endif
                         </div>
                     </div>
-
                     @endif
                 </li>
                 <li id='menu1' class='tab-pane'>
@@ -540,23 +551,24 @@
                                         </div>
                                         <div class="col-md-7">
                                             @if($Sponsor->sponsor_street)
-                                            <label class="labels">{{$Sponsor->sponsor_street}}</label><br>
+                                            <strong> Street 1 :</strong><label class="labels">{{$Sponsor->sponsor_street}}</label><br>
                                             @endif
                                             @if($Sponsor->sponsor_street2)
-                                            <label class="labels">{{$Sponsor->sponsor_street2}}</label><br>
+                                            <strong> Street 2 :</strong><label class="labels">{{$Sponsor->sponsor_street2}}</label><br>
                                             @endif
                                             @if($Sponsor->sponsor_city)
-                                            <label class="labels">{{$Sponsor->sponsor_city}}</label><br>
+                                            <strong> City     :</strong><label class="labels">{{$Sponsor->sponsor_city}}</label><br>
                                             @endif
                                             @if($Sponsor->sponsor_region)
-                                            <label class="labels">{{$Sponsor->sponsor_region}}</label><br>
-                                            @endif
-                                            @if($Sponsor->sponsor_pincode)
-                                            <label class="labels">{{$Sponsor->sponsor_pincode}}</label><br>
+                                            <strong> Region :</strong><label class="labels">{{$Sponsor->sponsor_region}}</label><br>
                                             @endif
                                             @if($Sponsor->sponsor_country)
-                                            <label class="labels">{{$Sponsor->sponsor_country}}</label><br>
+                                            <strong> Country :</strong><label class="labels">{{$Sponsor->sponsor_country}}</label><br>
                                             @endif
+                                            @if($Sponsor->sponsor_pincode)
+                                            <strong> Pincode :</strong><label class="labels">{{$Sponsor->sponsor_pincode}}</label><br>
+                                            @endif
+
                                         </div>
                                     </div>
 
@@ -608,22 +620,20 @@
                                         </div>
                                         <div class="col-md-7">
                                             @if($Sponsor->guardian_street)
-                                            <label class="labels">{{$Sponsor->guardian_street}}</label><br>
+                                            <strong> Street 1 :</strong><label class="labels">{{$Sponsor->guardian_street}}</label><br>
                                             @endif
                                             @if($Sponsor->guardian_street2)
-                                            <label class="labels">{{$Sponsor->guardian_street2}}</label><br>
+                                            <strong> Street 2 :</strong><label class="labels">{{$Sponsor->guardian_street2}}</label><br>
                                             @endif
                                             @if($Sponsor->guardian_city)
-                                            <label class="labels">{{$Sponsor->guardian_city}}</label><br>
+                                            <strong> City     :</strong><label class="labels">{{$Sponsor->guardian_city}}</label><br>
                                             @endif
                                             @if($Sponsor->guardian_region)
-                                            <label class="labels">{{$Sponsor->guardian_region}}</label><br>
+                                            <strong> Region :</strong><label class="labels">{{$Sponsor->guardian_region}}</label><br>
                                             @endif
-                                            @if($Sponsor->guardian_pincode)
-                                            <label class="labels">{{$Sponsor->guardian_pincode}}</label><br>
-                                            @endif
+                                           
                                             @if($Sponsor->guardian_country)
-                                            <label class="labels">{{$Sponsor->guardian_country}}</label>
+                                            <strong> Country :</strong><label class="labels">{{$Sponsor->guardian_country}}</label>
                                             @endif
                                         </div>
                                     </div>

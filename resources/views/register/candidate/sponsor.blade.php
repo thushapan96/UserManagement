@@ -253,12 +253,9 @@
     </div>
     <hr>
     <div class="float-right">
-        <button type="submit" class="client-btn uk-button uk-button-primary" id="submit4">
-            <div id="loading4">Submit
-                And
-                Next
-            </div>
-        </button>
+        <div class="button_personal" id="loading4">
+            <button type="submit" id="" class="client-btn uk-button uk-button-primary">Submit And Next</button>
+        </div>
     </div>
 
 
@@ -281,7 +278,8 @@
 
             var actionUrl = $(this).attr('action');
             var form = new FormData(this);
-            $("#loading4").append(' <i class="fa fa-refresh fa-spin"></i>');
+            $("#loading4").html('');
+            $("#loading4").append('<button class="btn btn-primary" type="button" disabled> <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Loading...</button>');
 
             $.ajax({
                 type: "POST",
@@ -296,16 +294,21 @@
                         console.log("hiiiiii");
                         $('.alert-danger').show();
                         $('.alert-danger').html('');
+                        $("#loading4").html('');
+                        $("#loading4").html('<button type="submit" id="submit1" class="client-btn uk-button uk-button-primary" >Submit And Next</button>');
                         jQuery.each(data.errors, function(key, value) {
                             console.log(value);
                             jQuery('.alert-danger').show();
-                            jQuery('.alert-danger').append('<p>' + value + '</p>');
+                            jQuery('.alert-danger').append('<p style="color:tomato">' + value + '</p>');
                             window.scrollTo(0, 0);
-                            $("#loading4").html('');
-                            $("#loading4").html('Submit And Next');
+
                         });
                     }
                     if (data.success) {
+                        sessionStorage. removeItem('css');
+                        sessionStorage. removeItem('html');
+                        $("#loading4").html('');
+                        $("#loading4").html('<button type="submit" id="submit1" class="client-btn uk-button uk-button-primary" >Submit And Next</button>');
                         $('.alert-danger').html('');
                         $('.alert-danger').hide();
                         jQuery('.alert-danger').hide();

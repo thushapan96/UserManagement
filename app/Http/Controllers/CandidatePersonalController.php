@@ -3,12 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Models\Personal;
+use App\Models\Academy;
+use App\Models\Sponsor;
+use App\Models\Work;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CandidatePersonalController extends Controller
 {
+    public function index(Request $request)
+    {
+        $personal =  Personal::where('user_id', Auth::user()->id)->first();
+        $sponsor =  Sponsor::where('user_id', Auth::user()->id)->first();
+        $work =  Work::where('user_id', Auth::user()->id)->get();
+
+        $Academy =  Academy::where('user_id', Auth::user()->id)->first();
+        $qualification = DB::table('candidate_academics')
+            ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
+            ->where('candidate_academics.user_id', Auth::user()->id)
+            ->get();
+
+            
+           
+        return view('register.candidate.candidate')->with('personal', $personal)
+            ->with('Academy', $Academy)
+            ->with('qualification', $qualification)
+            ->with('sponsor', $sponsor)
+            ->with('work', $work);
+    }
+
     function store(Request $request)
     {
         $id = Auth::user()->id;

@@ -100,14 +100,14 @@
     </div>
     <hr>
     <u1 data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto !important">
-        <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">School </a></li>
-        <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">College </a></li>
-        <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">PostGraduation</a></li>
-        <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">OtherQualification</a></li>
+        <li class="nav-linkk " id=""><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">School </a></li>
+        <li class="nav-linkk " id=""><a style="cursor:pointer;padding: 0.5rem 1.8rem;">College </a></li>
+        <li class="nav-linkk " id=""><a style="cursor:pointer;padding: 0.5rem  1.8rem;">PostGraduation</a></li>
+        <li class="nav-linkk" id=""><a style="cursor:pointer;padding: 0.5rem  1.8rem;">OtherQualification</a></li>
 
     </u1>
     <u1 class="uk-switcher" class="">
-        <li id='menu' class='tab-pane '>
+        <li id='' class='tab-pane '>
             <div id="addschoolrow">
 
             </div>
@@ -117,7 +117,7 @@
 
             </div>
         </li>
-        <li id='menu1' class='tab-pane '>
+        <li id='' class='tab-pane '>
             <div id="addcollegerow">
 
             </div>
@@ -126,7 +126,7 @@
                     College</button>
             </div>
         </li>
-        <li id='menu2' class='tab-pane '>
+        <li id='' class='tab-pane '>
             <div id="addpgrow">
 
             </div>
@@ -135,7 +135,7 @@
                     PostGraduation</button>
             </div>
         </li>
-        <li id='menu3' class='tab-pane '>
+        <li id='' class='tab-pane '>
 
             <div id="addotherrow">
             </div>
@@ -148,12 +148,9 @@
     <hr>
     <div class="float-right">
         <div class="col-lg-12 col-md-12 col-12">
-            <button type="submit" id="submit2" class="client-btn uk-button uk-button-primary">
-                <div id="loading2">Submit
-                    And
-                    Next
-                </div>
-            </button>
+            <div class="button_personal" id="loading2">
+                <button type="submit" id="" class="client-btn uk-button uk-button-primary">Submit And Next</button>
+            </div>
         </div>
     </div>
 </form>
@@ -170,9 +167,6 @@
 
 
 <!-- ......................script for google map view.................... -->
-
-
-
 
 
 <script>
@@ -593,7 +587,8 @@
 
             var actionUrl = $(this).attr('action');
             var form = new FormData(this);
-            $("#loading2").append(' <i class="fa fa-refresh fa-spin"></i>');
+            $("#loading2").html('');
+            $("#loading2").append('<button class="btn btn-primary" type="button" disabled> <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Loading...</button>');
 
             $.ajax({
                 type: "POST",
@@ -606,36 +601,52 @@
                     console.log(data);
                     if (data.errors) {
                         console.log("hiiiiii");
+                        $("#loading2").html('');
+                        $("#loading2").html('<button type="submit" id="submit1" class="client-btn uk-button uk-button-primary" >Submit And Next</button>');
                         $('.alert-danger').show();
                         $('.alert-danger').html('');
 
                         jQuery.each(data.errors, function(key, value) {
                             console.log(value);
                             jQuery('.alert-danger').show();
-                            jQuery('.alert-danger').append('<p>' + value + '</p>');
+                            jQuery('.alert-danger').append('<p style="color:tomato">' + value + '</p>');
                             window.scrollTo(0, 0);
-                            $("#loading2").html('');
-                            $("#loading2").html('Submit And Next');
+
 
                         });
                     }
                     if (data.success) {
-                        $('.alert-danger').html('');
-                        $('.alert-danger').hide();
-                        jQuery('.alert-danger').hide();
-                        Swal.fire(
-                            'Success!',
-                            'Successfully submitted academy details!',
-                            'success'
-                        )
-                        $(".progress-bar").css("width", "50%");
-                        $(".progress-bar").html("50%");
+                        function first(callback) {
+                            location.reload();
+                        }
 
-                        $('.tab-pane').fadeOut();
-                        $("#menu2").fadeIn();
-                        $(".nav-link").removeClass('active')
-                        $('#amenu2').addClass('active')
-                        $('#submit2').hide();
+                        function second() {
+                            $('.alert-danger').html('');
+                            $('.alert-danger').hide();
+                            $("#loading2").html('');
+                            $("#loading2").html(' <button type="button" class="client-btn uk-button uk-button-primary" ">Submitted</button>');
+                            jQuery('.alert-danger').hide();
+                            Swal.fire(
+                                'Success!',
+                                'Successfully submitted academy details!',
+                                'success'
+                            )
+                            $(".progress-bar").css("width", "50%");
+                            $(".progress-bar").html("50%");
+
+                            sessionStorage.setItem('css', '50%')
+                            sessionStorage.setItem('html', '50%')
+
+                            $('.tab-pane').removeClass('uk-active')
+                            $("#menu2").addClass('uk-active')
+                            $(".nav-linkk").removeClass('uk-active')
+                            $('#amenu2').addClass('uk-active')
+                        }
+
+                        second(function() {
+                            first();
+                        });
+
                     }
 
                 }

@@ -81,7 +81,9 @@ class CandidateAcademyController extends Controller
                             $qualification->attachment = $name;
                         }
                     }
-                    $qualification->save();
+                    if ($request->name[$i] || $request->tech[$i]) {
+                        $qualification->save();
+                    }
                 }
             }
 

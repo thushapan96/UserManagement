@@ -238,7 +238,7 @@
                     <li class="uk-visible@l">
                     </li>
                     <li class="uk-visible@s">
-                        
+
                     </li>
                     <li>
                         <a href="#">
@@ -399,7 +399,7 @@
                     <li class="" style="padding:0 !important">
                         <a><span style="color:#d81400;font-size: 17px;" class="menuClick">Menu</span></a>
 
-                        <ul class="sc-sidebar-menu " style="" >
+                        <ul class="sc-sidebar-menu " style="">
                             <li title="" class=" page-active">
                                 <a href="#" class=" sc-js-notify-status-warning" disabled>
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
@@ -415,24 +415,24 @@
                                 @if(Auth::user())
 
                                 @if((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Consultation')
-                                <a href="#">
+                                <a href="#" class=" sc-js-notify-status-warning">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
+                                    </span><span class="uk-nav-title" style="color:red">profile</span>
                                 </a>
                                 @elseif((\App\Models\Institution::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Institution')
-                                <a href="#">
+                                <a href="#" class=" sc-js-notify-status-warning">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
+                                    </span><span class="uk-nav-title" style="color:red">profile</span>
                                 </a>
                                 @elseif((\App\Models\Consultant::where(['user_id' => auth()->user()->id])->first()) && auth()->user()->service_type == 'Business')
-                                <a href="#">
+                                <a href="#" class=" sc-js-notify-status-warning">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title">profile</span>
+                                    </span><span class="uk-nav-title" style="color:red">profile</span>
                                 </a>
                                 @elseif((\App\Models\Personal::where(['user_id' => auth()->user()->id])->first()) && (auth()->user()->service_type != 'Business' && auth()->user()->service_type != 'Institution' && auth()->user()->service_type != 'Consultation'))
-                                <a href="#">
+                                <a href="#" class=" sc-js-notify-status-warning">
                                     <span class="uk-nav-icon"><i class="nav-icon fa fa-user"></i>
-                                    </span><span class="uk-nav-title" style="color:#00008B">profile</span>
+                                    </span><span class="uk-nav-title" style="color:red">profile</span>
                                 </a>
                                 @endif
                                 @endif
@@ -497,7 +497,7 @@
                                 </ul>
                             </li>
                             <li title="Business">
-                                <a href="#" class=" sc-js-notify-status-warning">
+                                <a href="#">
                                     <span class="uk-nav-icon"><i class="nav-icon fas fa-handshake"></i>
 
                                     </span><span class="uk-nav-title">Business </span>

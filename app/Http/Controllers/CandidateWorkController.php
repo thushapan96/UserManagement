@@ -34,7 +34,7 @@ class CandidateWorkController extends Controller
 
 
             for ($i = 0; $i < $count; $i++) {
-                if ($request->designation[$i] != "") {
+                if ($request->designation[$i] != "" ) {
 
                     $Work = new Work;
                     $Work->user_id = $id;

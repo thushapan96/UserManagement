@@ -2,7 +2,7 @@
 @section('content')
 
 <div class='col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
-    <h3 class="" style="text-align:center">CRS Calculator </h3>
+    <h5 class="" style="text-align:center;color:#3f6791">CRS Calculator </h5>
 
 </div>
 

@@ -4,7 +4,7 @@
 
     @csrf
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-        <h3 class="" style="text-align:center">Add CRS Calculator </h3>
+        <h5 class="" style="text-align:center;color:#3f6791"> CRS Calculator Form</h5>
     </div>
 
     <u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">

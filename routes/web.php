@@ -106,7 +106,6 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::get('/configure', 'App\Http\Controllers\MembershipController@configure')->name('configure');
     Route::post('/currency/change', 'App\Http\Controllers\MembershipController@currencyChange')->name('currency.change');
     Route::post('/date/change', 'App\Http\Controllers\MembershipController@dateChange')->name('date.change');
-
 });
 
 // admin end
@@ -169,14 +168,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/sponsorEdit/{id}', 'App\Http\Controllers\ProfileController@sponsoredit')->name('sponsorEdit');
     Route::post('/profileSponsorupdate/{id}', 'App\Http\Controllers\ProfileController@sponsorUpdate')->name('profileSponsorupdate');
 
-    Route::get('/register/candidate/personal', function () {
 
-        return view('register/register');
-    })->name('candidate_personal');
 
-    Route::get('/register/candidate/acadamic', function () {
-        return view('register/registerformone');
-    })->name('candidate_acadamic');
 
     Route::post('/img/upload/', 'App\Http\Controllers\ProfileController@addImage')->name('ajaxupload.action');
 
@@ -221,6 +214,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/candidate/work/add', [App\Http\Controllers\CandidateWorkController::class, 'store'])->name('candidate_work_add');
     Route::post('/candidate/sponsor/add', [App\Http\Controllers\SponsorController::class, 'store'])->name('candidate_sponsor_add');
 
+    Route::get('/register/candidate/personal', [App\Http\Controllers\CandidatePersonalController::class, 'index'])->name('candidate_personal');
+
+  
+
     Route::get('register/candidate/workexperience', function () {
         return view('register.workexperience');
     })->name('candidate_workexperience');
@@ -228,7 +225,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('register/candidate/sponsor', function () {
         return view('register.sponsor');
     })->name('candidate_sponsor');
-
+    
+    Route::get('/register/candidate/acadamic', function () {
+        return view('register/registerformone');
+    })->name('candidate_acadamic');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

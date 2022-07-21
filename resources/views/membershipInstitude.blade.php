@@ -34,7 +34,7 @@
 </div>
 @csrf
 <div class='col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
-    <h6 class="" style="text-align:center">Membership </h6>
+    <h5 class="" style="text-align:center;color:#3f6791">Membership Management</h5>
 
 </div>
 

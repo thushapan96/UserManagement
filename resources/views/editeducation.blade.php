@@ -3,7 +3,7 @@
 <form action="{{route('update.education')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-        <h3 class="" style="text-align:center">Edit Assessment for Overseas Education - Canada</h3>
+        <h5 class="" style="text-align:center;color:#3f6791">Edit Assessment for Overseas Education - Canada</h5>
 
     </div>
 
