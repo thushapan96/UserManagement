@@ -38,7 +38,7 @@
                 <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">Main </a></li>
                 <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Programs </a></li>
                 <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">About Company</a></li>
-                <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.8rem;"> Award & Certification</a></li>
+                <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.8rem;"> Award & Recognization</a></li>
                 <li class="nav-linkk" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">News and Events</a></li>
                 <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Canada Inspire</a></li>
                 <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Feedback</a></li>

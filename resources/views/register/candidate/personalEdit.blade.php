@@ -282,8 +282,9 @@
                     <label class="uk-form-label">Preference of Immigration
                     </label>
                     <select name="immigration_preference" class="form-control">
+                        <option value="Express Entry" {{$personal->immigration_preference == 'Express Entry' ? 'selected':''}}>Express Entry</option>
                         <option value="PNP" {{$personal->immigration_preference == 'PNP' ? 'selected':''}}>PNP</option>
-                        <option value="AIPP" {{$personal->immigration_preference == 'AIP' ? 'selected':''}}>AIP</option>
+                        <option value="AIP" {{$personal->immigration_preference == 'AIP' ? 'selected':''}}>AIP</option>
                         <option value="Visit" {{$personal->immigration_preference == 'Visit' ? 'selected':''}}>Visit</option>
                         <option value="Student" {{$personal->immigration_preference == 'Student' ? 'selected':''}}>Student</option>
                         <option value="Business" {{$personal->immigration_preference == 'Business' ? 'selected':''}}>Business</option>

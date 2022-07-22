@@ -709,7 +709,7 @@
                         <br>
 
 
-                        <a class="editlink " data-id="{{$personal->user_id}}" href="{{route('personalEdit', ['id' => $personal->user_id])}}"><button class="btn uk-button uk-button-primary profile-button editbtn" type="button" style="width: 140px;font-size:12px">Edit Personal </button></a>
+                        <a class="editlink " data-id="{{$personal->user_id}}" href="{{route('personalEdit', ['id' => $personal->user_id])}}"><button class="btn uk-button uk-button-primary profile-button editbtn" type="button" style="width: 140px;font-size:12px">Edit Profile </button></a>
 
                     </div>
                 </fieldset>
@@ -727,25 +727,25 @@
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
         $("#amenu").click(function() {
-            $('.editbtn').html('Edit Personal ')
+            // $('.editbtn').html('Edit Profile')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('personalEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
         });
         $("#amenu1").click(function() {
-            $('.editbtn').html('Edit Academic ')
+            // $('.editbtn').html('Edit Academic ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('academyEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
         });
         $("#amenu2").click(function() {
-            $('.editbtn').html('Edit Work ')
+            // $('.editbtn').html('Edit Work ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('workEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
         });
         $("#amenu3").click(function() {
-            $('.editbtn').html('Edit Sponsor ')
+            // $('.editbtn').html('Edit Sponsor ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('sponsorEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
@@ -807,7 +807,7 @@
         $("#amenu1").addClass('uk-active');
         $('.tab-pane').removeClass('uk-active');
         $("#menu1").addClass('uk-active');
-        $('.editbtn').html('Edit Academic ')
+        // $('.editbtn').html('Edit Academic ')
         var id = $('.editlink').attr('data-id')
         var url = "{{route('academyEdit', '')}}" + "/" + id;
         $('.editlink').attr('href', url)
@@ -828,7 +828,7 @@
         $("#amenu2").addClass('uk-active');
         $('.tab-pane').removeClass('uk-active');
         $("#menu2").addClass('uk-active');
-        $('.editbtn').html('Edit Work ')
+        // $('.editbtn').html('Edit Work ')
         var id = $('.editlink').attr('data-id')
         var url = "{{route('workEdit', '')}}" + "/" + id;
         $('.editlink').attr('href', url)
@@ -849,7 +849,7 @@
         $("#amenu3").addClass('uk-active');
         $('.tab-pane').removeClass('uk-active');
         $("#menu3").addClass('uk-active');
-        $('.editbtn').html('Edit Sponsor ')
+        // $('.editbtn').html('Edit Sponsor ')
         var id = $('.editlink').attr('data-id')
         var url = "{{route('sponsorEdit', '')}}" + "/" + id;
         $('.editlink').attr('href', url)

@@ -284,6 +284,7 @@
                     <label>Preference of Immigration
                     </label>
                     <select name="immigration_preference" class="form-control">
+                        <option value="Express Entry">Express Entry</option>
                         <option value="PNP">PNP</option>
                         <option value="AIP">AIP</option>
                         <option value="Visit">Visit</option>

@@ -148,7 +148,7 @@
                 <li class=" uk-active" id="amenu"><a style="padding: .5rem 1rem;" aria-current="page">Main </a></li>
                 <li class="" id="amenu1"><a style="padding: .5rem 1rem;">Programs </a></li>
                 <li class="" id="amenu2"><a style="padding: .5rem 1rem;">About {{$institutions->type}} </a></li>
-                <li class="" id="amenu3"><a style="padding: .5rem 1rem;"> Award & Certification</a></li>
+                <li class="" id="amenu3"><a style="padding: .5rem 1rem;"> Award & Recognization</a></li>
                 <li class="" id="amenu4"><a style="padding: .5rem 1rem;">News and Events</a></li>
             </u1>
 

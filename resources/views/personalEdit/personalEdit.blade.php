@@ -51,13 +51,13 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                   <label class="uk-form-label" > </label>
+                                    <label class="uk-form-label"> </label>
                                     <input name="middle_name" class="uk-input" type="text" placeholder="Middle Name" value="{{$personal->middle_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                   <label class="uk-form-label" > </label>
+                                    <label class="uk-form-label"> </label>
                                     <input name="last_name" class="uk-input " type="text" placeholder="Last Name" value="{{$personal->last_name}}">
                                 </div>
                             </div>
@@ -68,37 +68,37 @@
 
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                   <label class="uk-form-label" >Present Residential Address</label>
+                                    <label class="uk-form-label">Present Residential Address</label>
                                     <input name="residential_street" id="pac-input1" class="form-control " type="text" placeholder="Street Address" value="{{$personal->residential_street}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                   <label class="uk-form-label" > </label>
+                                    <label class="uk-form-label"> </label>
                                     <input name="residential_street2" id="pac-input2" class="form-control " type="text" placeholder="Street Address 2" value="{{$personal->residential_street2}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                   <label class="uk-form-label" > </label>
+                                    <label class="uk-form-label"> </label>
                                     <input name="residential_city" id="pac-input3" class="form-control " type="text" placeholder="City" value="{{$personal->residential_city}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                   <label class="uk-form-label" ></label>
+                                    <label class="uk-form-label"></label>
                                     <input name="residential_region" id="pac-input4" class="form-control " type="text" placeholder="Region or State" value="{{$personal->residential_region}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 ">
                                 <div class="form-group">
-                                   <label class="uk-form-label" > </label>
-                                    <input name="residential_pincode"  class="form-control " type="text" placeholder="Pin Code " value="{{$personal->residential_pincode}}">
+                                    <label class="uk-form-label"> </label>
+                                    <input name="residential_pincode" class="form-control " type="text" placeholder="Pin Code " value="{{$personal->residential_pincode}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                   <label class="uk-form-label" ></label>
+                                    <label class="uk-form-label"></label>
                                     <input class="form-control l-icon" type="text" id="pac-input5" placeholder="Enter Country" name="residential_country" value="{{$personal->residential_country}}" required>
 
                                 </div>
@@ -111,7 +111,7 @@
 
                             <div class="col-lg-3 col-md-3 col-12 m-1 ">
                                 <div class="form-group">
-                                   <label class="uk-form-label" >Corosponding Address</label>
+                                    <label class="uk-form-label">Corosponding Address</label>
                                 </div>
                             </div>
 
@@ -119,16 +119,16 @@
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="customCheckaddress" name="same_Correspondence_address" value="1">
                                     <label class="custom-control-label" class="custom-control-label " for="customCheckaddress"> Check the Box if
-                                    Correspondence
-                                    Address
-                                    is same as Present Residential Address. </label>
+                                        Correspondence
+                                        Address
+                                        is same as Present Residential Address. </label>
                                 </div>
                             </div>
 
                             <div class="row m-1 sameaddress" id="sameaddress">
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
-                                       <label class="uk-form-label" ></label>
+                                        <label class="uk-form-label"></label>
                                         <input class="form-control " id="pac-input6" name="corosponding_street" type="text" placeholder="Street Address" value="{{$personal->corosponding_street}}">
                                     </div>
                                 </div>
@@ -136,31 +136,31 @@
 
                                 <div class="col-lg-4 col-md-4 col-12 ">
                                     <div class="form-group">
-                                       <label class="uk-form-label" > </label>
+                                        <label class="uk-form-label"> </label>
                                         <input class="form-control " id="pac-input7" name="corosponding_street2" type="text" placeholder="Street Address 2" value="{{$personal->corosponding_street2}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12 ">
                                     <div class="form-group">
-                                       <label class="uk-form-label" > </label>
-                                        <input class="form-control " id="pac-input8"name="corosponding_city" type="text" placeholder="City" value="{{$personal->corosponding_city}}">
+                                        <label class="uk-form-label"> </label>
+                                        <input class="form-control " id="pac-input8" name="corosponding_city" type="text" placeholder="City" value="{{$personal->corosponding_city}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
-                                       <label class="uk-form-label" ></label>
+                                        <label class="uk-form-label"></label>
                                         <input class="form-control " id="pac-input9" name="corosponding_region" type="text" placeholder="Region or State" value="{{$personal->corosponding_region}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12 ">
                                     <div class="form-group">
-                                       <label class="uk-form-label" > </label>
+                                        <label class="uk-form-label"> </label>
                                         <input class="form-control " name="corosponding_pincode" type="text" placeholder="Pin Code " value="{{$personal->corosponding_pincode}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group">
-                                       <label class="uk-form-label" ></label>
+                                        <label class="uk-form-label"></label>
                                         <input class="form-control l-icon" id="pac-input10" type="text" placeholder="Enter Country" name="corosponding_country" value="{{$personal->corosponding_country}}">
 
                                     </div>
@@ -173,19 +173,19 @@
                         <div class="row mb-4">
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                   <label class="uk-form-label" >Contact Info</label>
+                                    <label class="uk-form-label">Contact Info</label>
                                     <input name="mobile" class="form-control " type="text" placeholder="Mobile" value="{{$personal->mobile}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                   <label class="uk-form-label" ></label>
+                                    <label class="uk-form-label"></label>
                                     <input name="phone" class="form-control " type="text" placeholder="Phone" value="{{$personal->phone}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                   <label class="uk-form-label" ></label>
+                                    <label class="uk-form-label"></label>
                                     <input name="email" class="form-control " type="email" placeholder="Email" value="{{$personal->email}}">
                                     <p style="color:Tomato"> @error('email'){{$message}} @enderror</p>
                                 </div>
@@ -197,7 +197,7 @@
                         <div class="row mb-4">
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
-                                   <label class="uk-form-label" >Date of Birth</label>
+                                    <label class="uk-form-label">Date of Birth</label>
                                     <input name="birth_date" class="form-control" type="date" placeholder="Date of Birth" value="{{$personal->birth_date}}">
                                 </div>
                             </div>
@@ -207,7 +207,7 @@
                             <div class="col-lg-8 col-md-8 col-12">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-12">
-                                       <label class="uk-form-label" >Gender</label>
+                                        <label class="uk-form-label">Gender</label>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
@@ -242,7 +242,7 @@
 
                         <div class="row mb-4">
                             <div class="col-lg-6 col-md-6 col-12">
-                               <label class="uk-form-label" >Have you applied Visa for USA and Canada
+                                <label class="uk-form-label">Have you applied Visa for USA and Canada
                                 </label>
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-2 ">
@@ -261,7 +261,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                   <label class="uk-form-label" >Possible Start Date
+                                    <label class="uk-form-label">Possible Start Date
                                     </label>
                                     <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process" value='{{$personal->possible_start_date}}'>
                                 </div>
@@ -272,7 +272,7 @@
 
                         <div class="row mb-4">
                             <div class="col-lg-12 col-md-12 col-12">
-                               <label class="uk-form-label" >Which Describes you best?
+                                <label class="uk-form-label">Which Describes you best?
                                 </label>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 ">
@@ -317,9 +317,10 @@
                         <div class="row mb-4">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                   <label class="uk-form-label" >Preference of Immigration
+                                    <label class="uk-form-label">Preference of Immigration
                                     </label>
                                     <select name="immigration_preference" class="form-control">
+                                        <option value="Express Entry" {{$personal->immigration_preference == 'Express Entry' ? 'selected':''}}>Express Entry</option>
                                         <option value="PNP" {{$personal->immigration_preference == 'PNP' ? 'selected':''}}>PNP</option>
                                         <option value="AIPP" {{$personal->immigration_preference == 'AIP' ? 'selected':''}}>AIP</option>
                                         <option value="Visit" {{$personal->immigration_preference == 'Visit' ? 'selected':''}}>Visit</option>
@@ -331,7 +332,7 @@
 
 
                             <div class="col-lg-6 col-md-6 col-12 ">
-                               <label class="uk-form-label" >Have you been Vaccinated against COVID
+                                <label class="uk-form-label">Have you been Vaccinated against COVID
                                 </label>
 
                                 <div class="row">
@@ -357,7 +358,7 @@
 
                             <div class="col-lg-12 col-md-12 col-12">
                                 <div class="form-group">
-                                   <label class="uk-form-label" >Social Media Profile
+                                    <label class="uk-form-label">Social Media Profile
 
                                     </label>
                                     <div class="row">
@@ -367,7 +368,7 @@
                                             </div>
                                             <div id="facebook" class="col-lg-11 col-md-11 col-11  ">
                                                 <div class="form-group">
-                                                   <label class="uk-form-label" > </label>
+                                                    <label class="uk-form-label"> </label>
 
                                                     <input id="fb_link" name="fb_link" class="form-control " type="text" placeholder="Facebook Profile " value="{{$personal->fb_link}}">
                                                 </div>
@@ -379,7 +380,7 @@
                                             </div>
                                             <div class="col-lg-11 col-md-11 col-11  " id="twitter">
                                                 <div class="form-group">
-                                                   <label class="uk-form-label" > </label>
+                                                    <label class="uk-form-label"> </label>
                                                     <input id="twitter_link" name="twitter_link" class="form-control " type="text" placeholder="Twitter Profile " value="{{$personal->twitter_link}}">
                                                 </div>
                                             </div>
@@ -390,7 +391,7 @@
                                             </div>
                                             <div class="col-lg-11 col-md-11 col-11  " id="instagram">
                                                 <div class="form-group">
-                                                   <label class="uk-form-label" > </label>
+                                                    <label class="uk-form-label"> </label>
                                                     <input id="insta_link" name="insta_link" class="form-control " type="text" placeholder="Instagram Profile " value="{{$personal->insta_link}}">
                                                 </div>
                                             </div>
@@ -401,7 +402,7 @@
                                             </div>
                                             <div class="col-lg-11 col-md-11 col-11  " id="linkedin">
                                                 <div class="form-group">
-                                                   <label class="uk-form-label" > </label>
+                                                    <label class="uk-form-label"> </label>
                                                     <input id="Linkedin_link" name="Linkedin_link" class="form-control " type="text" placeholder="Linkedin Profile " value="{{$personal->Linkedin_link}}">
                                                 </div>
                                             </div>

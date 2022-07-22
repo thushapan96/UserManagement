@@ -16,7 +16,7 @@
                     <li class="nav-linkk " id="amenu1"><a>Team </a></li>
                     <li class="nav-linkk " id="amenu2"><a>About Company</a></li>
                     <li class="nav-linkk " id="amenu5"><a>Our Services</a></li>
-                    <li class="nav-linkk" id="amenu3"><a> Award & Certification</a></li>
+                    <li class="nav-linkk" id="amenu3"><a>Award & Recognization</a></li>
                     <li class="nav-linkk" id="amenu4"><a>News and Events</a></li>
                     <!-- <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Canada Inspire</a></li>
                     <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Feedback</a></li> -->
