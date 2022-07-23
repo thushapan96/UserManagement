@@ -25,7 +25,6 @@
         border: 2px solid #555 !important;
     } */
 </style>
-
 <section>
 
     <div class="row">
@@ -63,8 +62,8 @@
                                     </div>
 
                                     <div class="col-md-7">
-                                        <label class="labels">{{$personal->mobile}}</label>
-                                        <label class="labels">{{$personal->phone}}</label>
+                                        <label class="labels">Mobile : {{$personal->mobile}}</label><br>
+                                        <label class="labels">Telephone : {{$personal->phone}}</label>
                                     </div>
                                 </div>
                                 <div class="row ">
@@ -78,11 +77,22 @@
                                 </div>
                                 <div class="row ">
                                     <div class="col-md-5">
-                                        <strong class="labels"> birth_date</strong>
+                                        <strong class="labels"> birth date</strong>
                                     </div>
 
                                     <div class="col-md-7">
-                                        <label class="labels">{{$personal->birth_date}}</label>
+                                        <label class="labels">
+                                            
+                                            @if($personal->birth_date)
+                                            @if($configureDate == '1')
+                                            {{date('Y-m-d', strtotime($personal->birth_date))}}
+                                            @elseif($configureDate == '2')
+                                            {{date('d-m-Y', strtotime($personal->birth_date))}}
+                                            @elseif($configureDate == '3')
+                                            {{date('m-d-Y', strtotime($personal->birth_date))}}
+                                            @endif
+                                            @endif
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="row ">
@@ -139,7 +149,7 @@
                                         <strong> Street 2 :</strong> <label class="labels">{{$personal->residential_street2}}</label><br>
                                         @endif
                                         @if($personal->residential_city)
-                                        <strong> city     :</strong><label class="labels">{{$personal->residential_city}}</label><br>
+                                        <strong> city :</strong><label class="labels">{{$personal->residential_city}}</label><br>
                                         @endif
                                         @if($personal->residential_region)
                                         <strong> Region :</strong><label class="labels">{{$personal->residential_region}}</label><br>
@@ -171,7 +181,7 @@
                                         <strong>Street 2:</strong><label class="labels">{{$personal->corosponding_street2}}</label><br>
                                         @endif
                                         @if($personal->corosponding_city)
-                                        <strong>City    :</strong><label class="labels">{{$personal->corosponding_city}}</label><br>
+                                        <strong>City :</strong><label class="labels">{{$personal->corosponding_city}}</label><br>
                                         @endif
                                         @if($personal->corosponding_region)
                                         <strong>Region :</strong><label class="labels">{{$personal->corosponding_region}}</label><br>
@@ -262,7 +272,17 @@
                                         <strong class="labels"> :</strong>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="labels">{{$Academy->test_valid_upto}}</label><br>
+                                        <label class="labels">
+                                            @if($Academy->test_valid_upto)
+                                            @if($configureDate == '1')
+                                            {{date('Y-m-d', strtotime($Academy->test_valid_upto))}}
+                                            @elseif($configureDate == '2')
+                                            {{date('d-m-Y', strtotime($Academy->test_valid_upto))}}
+                                            @elseif($configureDate == '3')
+                                            {{date('m-d-Y', strtotime($Academy->test_valid_upto))}}
+                                            @endif
+                                            @endif
+                                        </label><br>
                                     </div>
                                 </div>
                                 @endif
@@ -557,7 +577,7 @@
                                             <strong> Street 2 :</strong><label class="labels">{{$Sponsor->sponsor_street2}}</label><br>
                                             @endif
                                             @if($Sponsor->sponsor_city)
-                                            <strong> City     :</strong><label class="labels">{{$Sponsor->sponsor_city}}</label><br>
+                                            <strong> City :</strong><label class="labels">{{$Sponsor->sponsor_city}}</label><br>
                                             @endif
                                             @if($Sponsor->sponsor_region)
                                             <strong> Region :</strong><label class="labels">{{$Sponsor->sponsor_region}}</label><br>
@@ -626,12 +646,12 @@
                                             <strong> Street 2 :</strong><label class="labels">{{$Sponsor->guardian_street2}}</label><br>
                                             @endif
                                             @if($Sponsor->guardian_city)
-                                            <strong> City     :</strong><label class="labels">{{$Sponsor->guardian_city}}</label><br>
+                                            <strong> City :</strong><label class="labels">{{$Sponsor->guardian_city}}</label><br>
                                             @endif
                                             @if($Sponsor->guardian_region)
                                             <strong> Region :</strong><label class="labels">{{$Sponsor->guardian_region}}</label><br>
                                             @endif
-                                           
+
                                             @if($Sponsor->guardian_country)
                                             <strong> Country :</strong><label class="labels">{{$Sponsor->guardian_country}}</label>
                                             @endif
@@ -719,9 +739,9 @@
     </div>
 
 </section>
-
 <script>
     $(document).ready(function() {
+
 
         console.log('hiii')
         $('.page-active').removeClass('sc-page-active')
@@ -800,7 +820,6 @@
         'success'
     )
 </script>
-
 <script>
     setTimeout(function() {
         $(".nav-linkk").removeClass('uk-active');

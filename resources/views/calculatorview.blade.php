@@ -642,8 +642,15 @@
                             <div class="row">
                                 &nbsp;<div class="EOI_profile_yes ">Yes</div> &nbsp;&nbsp;&nbsp;
                                 <div class="EOI_profile_no ">NO</div>&nbsp;&nbsp;&nbsp;
-                                {{$calculators->EOI_profile_date}}
-
+                                @if($calculators->EOI_profile_date)
+                                @if($configureDate == '1')
+                                {{date('Y-m-d', strtotime($calculators->EOI_profile_date))}}
+                                @elseif($configureDate == '2')
+                                {{date('d-m-Y', strtotime($calculators->EOI_profile_date))}}
+                                @elseif($configureDate == '3')
+                                {{date('m-d-Y', strtotime($calculators->EOI_profile_date))}}
+                                @endif
+                                @endif
                             </div><br>
                         </div>
                         <script>
@@ -666,8 +673,15 @@
                             <div class="row">
                                 &nbsp;<div class="Provincial_profile_yes ">Yes</div> &nbsp;&nbsp;&nbsp;
                                 <div class="Provincial_profile_no ">NO</div>&nbsp;&nbsp;&nbsp;
-                                {{$calculators->Provincial_profile_date}}
-
+                                @if($calculators->Provincial_profile_date)
+                                @if($configureDate == '1')
+                                {{date('Y-m-d', strtotime($calculators->Provincial_profile_date))}}
+                                @elseif($configureDate == '2')
+                                {{date('d-m-Y', strtotime($calculators->Provincial_profile_date))}}
+                                @elseif($configureDate == '3')
+                                {{date('m-d-Y', strtotime($calculators->Provincial_profile_date))}}
+                                @endif
+                                @endif
                             </div>
                         </div>
                         <script>
