@@ -82,7 +82,7 @@
 
                                     <div class="col-md-7">
                                         <label class="labels">
-                                            
+
                                             @if($personal->birth_date)
                                             @if($configureDate == '1')
                                             {{date('Y-m-d', strtotime($personal->birth_date))}}
@@ -110,7 +110,17 @@
                                     </div>
 
                                     <div class="col-md-7">
-                                        <label class="labels">{{$personal->possible_start_date}}</label>
+                                        <label class="labels">
+                                            @if($personal->possible_start_date)
+                                            @if($configureDate == '1')
+                                            {{date('Y-m-d', strtotime($personal->possible_start_date))}}
+                                            @elseif($configureDate == '2')
+                                            {{date('d-m-Y', strtotime($personal->possible_start_date))}}
+                                            @elseif($configureDate == '3')
+                                            {{date('m-d-Y', strtotime($personal->possible_start_date))}}
+                                            @endif
+                                            @endif
+                                        </label><br>
                                     </div>
                                 </div>
                                 <div class="row ">

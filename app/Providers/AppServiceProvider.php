@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Permisson;
 use App\Models\RolePermisson;
 use App\Models\Setting;
+use App\Models\User;
+use App\Models\MembershipCandidate;
+use App\Models\MembershipInstitution;
+use App\Models\MembershipProvider;
 
 
 
@@ -34,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
 
             if (Auth::guard('admin')->user()) {
                 $CandidateformsViewId = Permisson::where(['name' => 'Candidate Registration'])->value('id');
-                $CandidateformsViewIdExist = RolePermisson::where('role_id' , Auth::guard('admin')->user()->role_id)->where('permisson_id', $CandidateformsViewId)->first();
+                $CandidateformsViewIdExist = RolePermisson::where('role_id', Auth::guard('admin')->user()->role_id)->where('permisson_id', $CandidateformsViewId)->first();
                 $CandidateformsViewId2 = Permisson::where(['name' => 'Candidate Educational Assessment'])->value('id');
                 $CandidateformsViewIdExist2 = RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $CandidateformsViewId2)->first();
                 $CandidateformsViewId3 = Permisson::where(['name' => 'Candidate CRS Calculator'])->value('id');
@@ -119,15 +123,15 @@ class AppServiceProvider extends ServiceProvider
                 $DashboardId = Permisson::where(['name' => 'Dashboard'])->value('id');
                 $DashboardIdExist = RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $DashboardId)->first();
                 $test = $DashboardIdExist;
-                
+
                 $AccountsId = Permisson::where(['name' => 'Account'])->value('id');
                 $AccountsIdExist = RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $AccountsId)->first();
 
                 $settingId = Permisson::where(['name' => 'Settings'])->value('id');
                 $settingIdExist = RolePermisson::where(['role_id' => Auth::guard('admin')->user()->role_id])->where('permisson_id', $settingId)->first();
 
-                $currencyPrice = Setting::where('type','currency')->value('value');
-                $configureDate = Setting::where('type','date')->value('value');
+                $currencyPrice = Setting::where('type', 'currency')->value('value');
+                $configureDate = Setting::where('type', 'date')->value('value');
 
 
                 $view->with('DashboardIdExist', $DashboardIdExist)
@@ -168,18 +172,29 @@ class AppServiceProvider extends ServiceProvider
                     ->with('ReportsExist3', $ReportsExist3)
                     ->with('AccountsIdExist', $AccountsIdExist)
                     ->with('settingIdExist', $settingIdExist)
-                    
+
                     ->with('currencyPrice', $currencyPrice)
                     ->with('configureDate', $configureDate);
             }
 
-            $currencyPrice = Setting::where('type','currency')->value('value');
-            $configureDate = Setting::where('type','date')->value('value');
+            if (Auth::user()) {
+                if (Auth::user()->service_type == 'Institution') {
+                    Auth::user()->membership_institution_id;
+                    
+                } else if (Auth::user()->service_type == 'Business' || Auth::user()->service_type == 'Consultation') {
+
+                }else{
+
+                }
+
+            }
+
+            $currencyPrice = Setting::where('type', 'currency')->value('value');
+            $configureDate = Setting::where('type', 'date')->value('value');
 
 
             $view->with('currencyPrice', $currencyPrice)
                 ->with('configureDate', $configureDate);
-
         });
     }
 }
