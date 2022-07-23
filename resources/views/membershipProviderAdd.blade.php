@@ -4,7 +4,7 @@
 
     @csrf
     <div class='col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
-        <h5 style="text-align:center;color:#3f6791" >Registration Of Membership</h5>
+        <h5 style="text-align:center;color:#3f6791">Registration Of Membership</h5>
 
     </div>
 
@@ -30,15 +30,9 @@
                         <div class="form-group">
                             <label>Select Package </label>
                             <select class="form-control" name="package" id="package">
-                                <option value="1" {{old('package') == '1' ? 'selected':''}}>Basic For 3Months</option>
-                                <option value="2" {{old('package') == '2' ? 'selected':''}}>Basic For 6Months</option>
-                                <option value="3" {{old('package') == '3' ? 'selected':''}}>Basic For 12Months</option>
-                                <option value="4" {{old('package') == '4' ? 'selected':''}}>Standard For 3Months</option>
-                                <option value="5" {{old('package') == '5' ? 'selected':''}}>Standard For 6Months</option>
-                                <option value="6" {{old('package') == '6' ? 'selected':''}}>Standard For 12Months</option>
-                                <option value="7" {{old('package') == '7' ? 'selected':''}}>Premium For 3Months</option>
-                                <option value="8" {{old('package') == '8' ? 'selected':''}}>Premium For 6Months</option>
-                                <option value="9" {{old('package') == '9' ? 'selected':''}}>Premium For 12Months</option>
+                                @foreach($packagePriceList as $row)
+                                <option value="{{$row->id}}" {{old('package') == $row->id ? 'selected' :''}}>{{$row->type == 'Stanadard' ? 'Standard':$row->type}} For {{$row->duration}} Months - {{$row->price}} {{$currencyPrice}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

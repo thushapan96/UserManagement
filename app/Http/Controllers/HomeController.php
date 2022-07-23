@@ -71,11 +71,16 @@ class HomeController extends Controller
         $membership =   User::where('users.id', Auth::user()->id)->join('candidate_personals', 'candidate_personals.user_id', 'users.id')
             ->select('users.*', 'candidate_personals.first_name', 'candidate_personals.middle_name', 'candidate_personals.last_name')->first();
 
-          
+
         if ($membership->membership_plan_id) {
             $package = MembershipCandidate::where('id', $membership->membership_plan_id)->value('id');
         } else {
             $package = '';
+        }
+        if ($membership->membership_plan_id) {
+            $packagePrice = MembershipCandidate::where('id', $membership->membership_plan_id)->value('price');
+        } else {
+            $packagePrice = '';
         }
         $membershipCandidate1 = MembershipCandidate::find(1);
         $membershipCandidate4 = MembershipCandidate::find(2);
@@ -87,7 +92,9 @@ class HomeController extends Controller
         $membershipCandidate6 = MembershipCandidate::find(8);
         $membershipCandidate9 = MembershipCandidate::find(9);
 
-        return view('membership')->with('membership', $membership)->with('package', $package)
+        $packagePriceList = MembershipCandidate::all();
+        return view('membership')->with('membership', $membership)->with('package', $package)->with('packagePrice', $packagePrice)
+            ->with('packagePriceList', $packagePriceList)
             ->with('membershipCandidate1', $membershipCandidate1)
             ->with('membershipCandidate4', $membershipCandidate4)
             ->with('membershipCandidate7', $membershipCandidate7)
@@ -105,9 +112,8 @@ class HomeController extends Controller
         $membership =   User::where('users.id', Auth::user()->id)->join('candidate_personals', 'candidate_personals.user_id', 'users.id')
             ->select('users.*', 'candidate_personals.first_name', 'candidate_personals.middle_name', 'candidate_personals.last_name')->first();
 
-
-
-        return view('membershipAdd')->with('membership', $membership);
+        $packagePriceList = MembershipCandidate::all();
+        return view('membershipAdd')->with('packagePriceList', $packagePriceList)->with('membership', $membership);
     }
     public function membershipStore(Request $request)
     {
@@ -123,7 +129,7 @@ class HomeController extends Controller
             $user->service_type = 'multiple';
         }
 
-       
+
         $user->membership_plan_id =  $request->package;
 
         $user->save();
@@ -158,10 +164,18 @@ class HomeController extends Controller
             ->select('users.*', 'institutions.name')->first();
 
         if ($membership->membership_institution_id) {
-            $package = MembershipCandidate::where('id', $membership->membership_institution_id)->value('id') ;
+            $package = MembershipInstitution::where('id', $membership->membership_institution_id)->value('id');
         } else {
             $package = '';
         }
+
+        if ($membership->membership_plan_id) {
+            $packagePrice = MembershipInstitution::where('id', $membership->membership_plan_id)->value('price');
+        } else {
+            $packagePrice = '';
+        }
+
+        $packagePriceList = MembershipInstitution::all();
 
         $membershipCandidate1 = MembershipInstitution::find(1);
         $membershipCandidate4 = MembershipInstitution::find(2);
@@ -174,6 +188,8 @@ class HomeController extends Controller
         $membershipCandidate9 = MembershipInstitution::find(9);
 
         return view('membershipInstitude')->with('membership', $membership)->with('package', $package)
+            ->with('packagePriceList', $packagePriceList)
+            ->with('packagePrice', $packagePrice)
             ->with('membershipCandidate1', $membershipCandidate1)
             ->with('membershipCandidate4', $membershipCandidate4)
             ->with('membershipCandidate7', $membershipCandidate7)
@@ -191,7 +207,8 @@ class HomeController extends Controller
         $membership =   User::where('users.id', Auth::user()->id)->join('institutions', 'institutions.user_id', 'users.id')
             ->select('users.*', 'institutions.name')->first();
 
-        return view('membershipInstitudeAdd')->with('membership', $membership);
+        $packagePriceList = MembershipInstitution::all();
+        return view('membershipInstitudeAdd')->with('membership', $membership)->with('packagePriceList', $packagePriceList);
     }
     public function membershipStoreInstitude(Request $request)
     {
@@ -228,7 +245,12 @@ class HomeController extends Controller
         } else {
             $package = '';
         }
-
+        if ($membership->membership_provider_id) {
+            $packagePrice = MembershipProvider::where('id', $membership->membership_provider_id)->value('price');
+        } else {
+            $packagePrice = '';
+        }
+        $packagePriceList = MembershipProvider::all();
         $membershipCandidate1 = MembershipProvider::find(1);
         $membershipCandidate4 = MembershipProvider::find(2);
         $membershipCandidate7 = MembershipProvider::find(3);
@@ -240,6 +262,8 @@ class HomeController extends Controller
         $membershipCandidate9 = MembershipProvider::find(9);
 
         return view('membershipProvider')->with('membership', $membership)->with('package', $package)
+            ->with('packagePrice', $packagePrice)
+            ->with('packagePriceList', $packagePriceList)
             ->with('membershipCandidate1', $membershipCandidate1)
             ->with('membershipCandidate4', $membershipCandidate4)
             ->with('membershipCandidate7', $membershipCandidate7)
@@ -256,8 +280,8 @@ class HomeController extends Controller
 
         $membership =   User::where('users.id', Auth::user()->id)->join('providers', 'providers.user_id', 'users.id')
             ->select('users.*', 'providers.first_name', 'providers.last_name')->first();
-
-        return view('membershipProviderAdd')->with('membership', $membership);
+        $packagePriceList = MembershipProvider::all();
+        return view('membershipProviderAdd')->with('membership', $membership)->with('packagePriceList', $packagePriceList);
     }
     public function membershipStoreProvider(Request $request)
     {

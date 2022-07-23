@@ -10,18 +10,11 @@
             <h6>Select Package</h6>
             <div class="col-lg-12 col-md-12 col-12">
                 <div class="form-group">
-                  
-                    <select class="form-control" name="package" id="package">
-                        <option value="1" {{$package == '1' ? 'selected':''}}>Basic For 3Months</option>
-                        <option value="2" {{$package == '2' ? 'selected':''}}>Basic For 6Months</option>
-                        <option value="3" {{$package == '3' ? 'selected':''}}>Basic For 12Months</option>
-                        <option value="4" {{$package == '4' ? 'selected':''}}>Standard For 3Months</option>
-                        <option value="5" {{$package == '5' ? 'selected':''}}>Standard For 6Months</option>
-                        <option value="6" {{$package == '6' ? 'selected':''}}>Standard For 12Months</option>
-                        <option value="7" {{$package == '7' ? 'selected':''}}>Premium For 3Months</option>
-                        <option value="8" {{$package == '8' ? 'selected':''}}>Premium For 6Months</option>
-                        <option value="9" {{$package == '9' ? 'selected':''}}>Premium For 12Months</option>
 
+                    <select class="form-control" name="package" id="package">
+                        @foreach($packagePriceList as $row)
+                        <option value="{{$row->id}}" {{$package == $row->id ? 'selected' :''}}>{{$row->type == 'Stanadard' ? 'Standard':$row->type}} For {{$row->duration}} Months - {{$row->price}} {{$currencyPrice}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -82,7 +75,17 @@
                         </div>
                         <div class="col-md-7">
 
-                            <label class="labels"> {{$membership->start_date}}</label><br>
+                            <label class="labels">
+                                @if($membership->start_date)
+                                @if($configureDate == '1')
+                                {{date('Y-m-d', strtotime($membership->start_date))}}
+                                @elseif($configureDate == '2')
+                                {{date('d-m-Y', strtotime($membership->start_date))}}
+                                @elseif($configureDate == '3')
+                                {{date('m-d-Y', strtotime($membership->start_date))}}
+                                @endif
+                                @endif
+                            </label><br>
 
                         </div>
                     </div><br>
@@ -96,7 +99,17 @@
                         </div>
                         <div class="col-md-7">
 
-                            <label class="labels"> {{$membership->end_date}}</label><br>
+                            <label class="labels">
+                                @if($membership->end_date)
+                                @if($configureDate == '1')
+                                {{date('Y-m-d', strtotime($membership->end_date))}}
+                                @elseif($configureDate == '2')
+                                {{date('d-m-Y', strtotime($membership->end_date))}}
+                                @elseif($configureDate == '3')
+                                {{date('m-d-Y', strtotime($membership->end_date))}}
+                                @endif
+                                @endif
+                            </label><br>
 
                         </div>
                     </div><br>
@@ -136,6 +149,22 @@
                                 @elseif($package == 8)Premium For 6Months
                                 @elseif($package == 9)Premium For 12Months
                                 @endif
+                            </label><br>
+
+                        </div>
+                    </div><br>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <strong class="labels"> Selected Package Price</strong>
+                        </div>
+
+                        <div class="col-md-1">
+                            <strong class="labels"> : </strong>
+                        </div>
+                        <div class="col-md-7">
+
+                            <label class="labels">
+                                {{$packagePrice}} {{$currencyPrice}}
                             </label><br>
 
                         </div>

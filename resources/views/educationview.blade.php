@@ -824,7 +824,15 @@
 
                         <div class="col-md-7">
                             <p class="ps">
-                                {{$educations->eca_date}}
+                                @if($educations->eca_date)
+                                @if($configureDate == '1')
+                                {{date('Y-m-d', strtotime($educations->eca_date))}}
+                                @elseif($configureDate == '2')
+                                {{date('d-m-Y', strtotime($educations->eca_date))}}
+                                @elseif($configureDate == '3')
+                                {{date('m-d-Y', strtotime($educations->eca_date))}}
+                                @endif
+                                @endif
                             </p>
                         </div>
                     </div>
@@ -866,7 +874,15 @@
                             <div class="row">
                                 &nbsp;<div class="IELTS_attempted_yes ">Yes</div>&nbsp;&nbsp;&nbsp;
                                 <div class="IELTS_attempted_no ">NO</div>&nbsp;&nbsp;&nbsp;
-                                {{$educations->IELTS_attempted_date}}
+                                @if($educations->IELTS_attempted_date)
+                                @if($configureDate == '1')
+                                {{date('Y-m-d', strtotime($educations->IELTS_attempted_date))}}
+                                @elseif($configureDate == '2')
+                                {{date('d-m-Y', strtotime($educations->IELTS_attempted_date))}}
+                                @elseif($configureDate == '3')
+                                {{date('m-d-Y', strtotime($educations->IELTS_attempted_date))}}
+                                @endif
+                                @endif
                             </div>
                         </div>
                         <script>
@@ -889,7 +905,15 @@
                             <div class="row">
                                 &nbsp;<div class="GRE_attempted_yes ">Yes</div> &nbsp;&nbsp;&nbsp;
                                 <div class="GRE_attempted_no ">NO</div> &nbsp;&nbsp;&nbsp;
-                                {{$educations->GRE_attempted_date}}
+                                @if($educations->GRE_attempted_date)
+                                @if($configureDate == '1')
+                                {{date('Y-m-d', strtotime($educations->GRE_attempted_date))}}
+                                @elseif($configureDate == '2')
+                                {{date('d-m-Y', strtotime($educations->GRE_attempted_date))}}
+                                @elseif($configureDate == '3')
+                                {{date('m-d-Y', strtotime($educations->GRE_attempted_date))}}
+                                @endif
+                                @endif
                             </div>
                         </div>
                         <script>
@@ -912,7 +936,15 @@
                             <div class="row">
                                 &nbsp;<div class="TOEFL_attempted_yes ">Yes</div>&nbsp;&nbsp;&nbsp;
                                 <div class="TOEFL_attempted_no ">NO</div> &nbsp;&nbsp;&nbsp;
-                                {{$educations->TOEFL_attempted_date}}
+                                @if($educations->TOEFL_attempted_date)
+                                @if($configureDate == '1')
+                                {{date('Y-m-d', strtotime($educations->TOEFL_attempted_date))}}
+                                @elseif($configureDate == '2')
+                                {{date('d-m-Y', strtotime($educations->TOEFL_attempted_date))}}
+                                @elseif($configureDate == '3')
+                                {{date('m-d-Y', strtotime($educations->TOEFL_attempted_date))}}
+                                @endif
+                                @endif
 
                             </div>
                         </div>
@@ -936,7 +968,15 @@
                             <div class="row">
                                 &nbsp;<div class="GMAT_attempted_yes ">Yes</div> &nbsp;&nbsp;&nbsp;
                                 <div class="GMAT_attempted_no ">NO</div> &nbsp;&nbsp;&nbsp;
-                                {{$educations->GMAT_attempted_date}}
+                                @if($educations->GMAT_attempted_date)
+                                @if($configureDate == '1')
+                                {{date('Y-m-d', strtotime($educations->GMAT_attempted_date))}}
+                                @elseif($configureDate == '2')
+                                {{date('d-m-Y', strtotime($educations->GMAT_attempted_date))}}
+                                @elseif($configureDate == '3')
+                                {{date('m-d-Y', strtotime($educations->GMAT_attempted_date))}}
+                                @endif
+                                @endif
 
                             </div>
                         </div>
