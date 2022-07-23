@@ -30,15 +30,15 @@
                         <div class="form-group">
                             <label>Select Package </label>
                             <select class="form-control" name="package" id="package">
-                                <option value="1" {{old('package') == '1' ? 'selected':''}}>Basic For 3Months</option>
-                                <option value="2" {{old('package') == '2' ? 'selected':''}}>Basic For 6Months</option>
-                                <option value="3" {{old('package') == '3' ? 'selected':''}}>Basic For 12Months</option>
-                                <option value="4" {{old('package') == '4' ? 'selected':''}}>Standard For 3Months</option>
-                                <option value="5" {{old('package') == '5' ? 'selected':''}}>Standard For 6Months</option>
-                                <option value="6" {{old('package') == '6' ? 'selected':''}}>Standard For 12Months</option>
-                                <option value="7" {{old('package') == '7' ? 'selected':''}}>Premium For 3Months</option>
-                                <option value="8" {{old('package') == '8' ? 'selected':''}}>Premium For 6Months</option>
-                                <option value="9" {{old('package') == '9' ? 'selected':''}}>Premium For 12Months</option>
+                                <option value="1" {{old('package') == '1' ? 'selected':''}}>Basic For 3 Months</option>
+                                <option value="2" {{old('package') == '2' ? 'selected':''}}>Basic For 6 Months</option>
+                                <option value="3" {{old('package') == '3' ? 'selected':''}}>Basic For 12 Months</option>
+                                <option value="4" {{old('package') == '4' ? 'selected':''}}>Standard For 3 Months</option>
+                                <option value="5" {{old('package') == '5' ? 'selected':''}}>Standard For 6 Months</option>
+                                <option value="6" {{old('package') == '6' ? 'selected':''}}>Standard For 12 Months</option>
+                                <option value="7" {{old('package') == '7' ? 'selected':''}}>Premium For 3 Months</option>
+                                <option value="8" {{old('package') == '8' ? 'selected':''}}>Premium For 6 Months</option>
+                                <option value="9" {{old('package') == '9' ? 'selected':''}}>Premium For 12 Months</option>
 
                             </select>
                         </div>
@@ -106,12 +106,11 @@
                     </div>
                     <br>
                 </div>
+                <div class="d-flex">
                 <button type="button" id="ES" class="sc-button sc-button-primary sc-js-button-wave-light uk-width-1-3 waves-effect waves-button waves-light">Extend Services</button><br><br>
 
-                <div class="float-right">
-                    <button type="submit" class="client-btn bmenu uk-button uk-button-primary">Register </button>
+                <button type="submit" class="ml-auto client-btn bmenu uk-button uk-button-primary">Register </button>
                 </div>
-
                 <input type="text" value="" id="is_service" name="is_service" hidden>
             </fieldset>
         </div>

@@ -64,15 +64,15 @@
                 <div class="form-group">
                     <label>Select Package </label>
                     <select class="form-control" name="package" id="package">
-                        <option value="1" {{$package == '1' ? 'selected':''}}>Basic For 3Months</option>
-                        <option value="2" {{$package == '2' ? 'selected':''}}>Basic For 6Months</option>
-                        <option value="3" {{$package == '3' ? 'selected':''}}>Basic For 12Months</option>
-                        <option value="4" {{$package == '4' ? 'selected':''}}>Standard For 3Months</option>
-                        <option value="5" {{$package == '5' ? 'selected':''}}>Standard For 6Months</option>
-                        <option value="6" {{$package == '6' ? 'selected':''}}>Standard For 12Months</option>
-                        <option value="7" {{$package == '7' ? 'selected':''}}>Premium For 3Months</option>
-                        <option value="8" {{$package == '8' ? 'selected':''}}>Premium For 6Months</option>
-                        <option value="9" {{$package == '9' ? 'selected':''}}>Premium For 12Months</option>
+                        <option value="1" {{$package == '1' ? 'selected':''}}>Basic For 3 Months</option>
+                        <option value="2" {{$package == '2' ? 'selected':''}}>Basic For 6 Months</option>
+                        <option value="3" {{$package == '3' ? 'selected':''}}>Basic For 12 Months</option>
+                        <option value="4" {{$package == '4' ? 'selected':''}}>Standard For 3 Months</option>
+                        <option value="5" {{$package == '5' ? 'selected':''}}>Standard For 6 Months</option>
+                        <option value="6" {{$package == '6' ? 'selected':''}}>Standard For 12 Months</option>
+                        <option value="7" {{$package == '7' ? 'selected':''}}>Premium For 3 Months</option>
+                        <option value="8" {{$package == '8' ? 'selected':''}}>Premium For 6 Months</option>
+                        <option value="9" {{$package == '9' ? 'selected':''}}>Premium For 12 Months</option>
 
                     </select>
                 </div>
