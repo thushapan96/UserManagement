@@ -250,11 +250,11 @@
                     <li>
                         <a href="#">
                             @if(auth()->user())
-                            Login As
+                            Logged In As
                             @if(auth()->user()->role == 'candidate')
                             Candidate
-                            @else
-                            Service Provider
+                            @else 
+                            {{auth()->user()->service}}
                             @endif
                             @endif
                         </a>
