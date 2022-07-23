@@ -437,7 +437,7 @@
                                                 <label class="custom-control-label" for="checkboxPost"> Post Graduation </label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="checkboxDoctorate" name="certificate_type[]" value="Doctorate" {{ (is_array(old('certificate_type')e) and in_array("Doctorate", old('certificate_type'))) ? ' checked' : '' }}>
+                                                <input class="custom-control-input" type="checkbox" id="checkboxDoctorate" name="certificate_type[]" value="Doctorate" {{ (is_array(old('certificate_type')) and in_array("Doctorate", old('certificate_type'))) ? ' checked' : '' }}>
                                                 <label class="custom-control-label" for="checkboxDoctorate"> Doctorate </label>
                                             </div>
 
