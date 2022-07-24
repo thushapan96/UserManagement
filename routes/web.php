@@ -196,6 +196,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/register/institude', [App\Http\Controllers\InstitutionController::class, 'index'])->name('register.institude');
+    Route::get('/register/institude/form', [App\Http\Controllers\InstitutionController::class, 'registerform'])->name('regiter.form');
+
+    
     Route::post('/register/institude', [App\Http\Controllers\InstitutionController::class, 'store'])->name('add.institution');
     Route::get('/edit/institude', [App\Http\Controllers\ProviderProfileController::class, 'editInstitude'])->name('edit.institution');
     Route::post('/update/institude/{id}', [App\Http\Controllers\ProviderProfileController::class, 'updateInstitude'])->name('update.institution');
