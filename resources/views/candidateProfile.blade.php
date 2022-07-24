@@ -29,9 +29,9 @@
 
     <div class="row">
 
-        <div class="col-md-8">
-            <h5 style="text-align:center;color:#3f6791">Profile</h5>
-            <u1 class="col-md-10" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+        <div class="col-md-8 bg-light m-1">
+            <h5  class="text-center p-4 " style="">{{$personal->first_name}}</h5>
+            <u1 class="col-md-10 justify-content-between d-md-flex d-sm-block " data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
                 <li class="nav-linkk" id="amenu"><a style="cursor:pointer;padding: .5rem 3rem;" aria-current="page">personal</a></li>
                 <li class="nav-linkk" id="amenu1"><a style="cursor:pointer;padding: .5rem 3rem;">academic</a></li>
                 <li class="nav-linkk" id="amenu2"><a style="cursor:pointer;padding: .5rem 3rem;">work</a></li>
@@ -685,7 +685,7 @@
             </u1>
         </div>
 
-        <div class="col-md-3 uk-card" style="margin-top:9%;height:100% !important; box-shadow:none !important;">
+        <div class="col-md-3 uk-card" style="height:100% !important; box-shadow:none !important;">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                     <div class="d-flex flex-column align-items-center text-center py-1">
