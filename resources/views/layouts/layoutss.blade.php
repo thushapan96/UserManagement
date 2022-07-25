@@ -439,7 +439,9 @@
                                 <ul class="sc-sidebar-menu-sub">
                                     <li class="page-School page-active">
                                         @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
-                                        <a href="{{route('dashboard.view.school')}}"> School </a>
+                                        <a href="{{route('register.term')}}"> School </a>
+                                        <!-- <a href="{{route('dashboard.view.school')}}"> School </a> -->
+
                                         @else
                                         <a href="#" class="sc-js-notify-status-warningg"> School </a>
                                         @endif

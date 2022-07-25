@@ -85,7 +85,7 @@ Other qualifications</br>
 
             </div>
             <div class="float-right">
-                                    <a  href="{{route('regiter.form')}}" class="client-btn uk-button uk-button-primary m-5">Continue To Registration </a>
+                                    <a  href="{{route('dashboard.view.school')}}" class="client-btn uk-button uk-button-primary m-5">View Schools</a>
                                 </div>
         </div> 
             </div></div>

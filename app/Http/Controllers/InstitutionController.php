@@ -16,13 +16,14 @@ class InstitutionController extends Controller
 {
     public function index()
     {
-        return view('register.terms');
+        return view('register.institude');
+
 
     }
-    public function registerform()
+    public function registerterm()
     {
 
-        return view('register.institude');
+        return view('register.terms');
     }
     
 
