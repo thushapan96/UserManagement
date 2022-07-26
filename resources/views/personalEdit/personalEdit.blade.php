@@ -11,7 +11,7 @@
     }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
-<div class="container ">
+<div class=" ">
 
     <!--
         <div class="whiteBoxtab ">
@@ -33,12 +33,12 @@
 
 
     <div id="menu" class="tab-pane">
-        <h5 style="text-align:center">edit Personal Information </h5><br>
+        <h5 style="text-align:center">edit Profile </h5><br>
         <form action="{{route('profilePersonalupdate',['id' => $personal->user_id])}}" method="POST">
             @csrf
 
-            <div class='uk-card col-md-10' style="margin:auto  ">
-                <div class="uk-card-body sc-padding-medium">
+            <div class='uk-card col-md-12' style="  ">
+                <div class="uk-card-body ">
                     <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                         <!--div class="news-title">You have questions, let's have a conversation </div-->
                         <div class="row custom-box">
@@ -111,7 +111,7 @@
 
                             <div class="col-lg-3 col-md-3 col-12 m-1 ">
                                 <div class="form-group">
-                                    <label class="uk-form-label">Corosponding Address</label>
+                                    <label class="uk-form-label">Corresponding Address</label>
                                 </div>
                             </div>
 

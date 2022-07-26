@@ -145,6 +145,13 @@
         align-items: center;
         position: relative;
     }
+    .disabled {
+    opacity:0.4;         }
+
+    .disabled-nd {
+        pointer-events: none;
+    opacity:0.2;     
+       }
 </style>
 
 <body>
@@ -401,7 +408,7 @@
 
                         <ul class="sc-sidebar-menu " style="">
                             <li title="" class=" page-active">
-                                <a href="#" class=" sc-js-notify-status-warning" disabled>
+                                <a href="#" class=" sc-js-notify-status-warning" >
                                     <span class="uk-nav-icon"><i class="mdi mdi-view-dashboard-variant"></i>
 
                                     </span><span class="uk-nav-title">Dashboard</span>
@@ -438,7 +445,7 @@
                                 @endif
                             </li>
 
-                            <li title="Dashboards" class="page-Dashboards page-active">
+                            <li title="Dashboards" class="page-Dashboards disabled page-active">
                                 @if(auth()->user()->role == 'candidate')
                                 <a href="#" class=" sc-js-notify-status-warning">
                                     @elseif(auth()->user()->service_type == 'Institution')
@@ -452,7 +459,7 @@
 
                             </li>
 
-                            <li title="institution" class="page-institution page-active">
+                            <li title="institution" class="page-institution disabled page-active">
                                 <a href="#" class=" ">
                                     <span class="uk-nav-icon"> <i class="nav-icon fa fa-university"></i></span>
                                     <span class="uk-nav-title">institution</span>
@@ -476,7 +483,7 @@
 
                                 </ul>
                             </li>
-                            <li title="consultant" class=" page-active">
+                            <li title="consultant" class="disabled page-active">
                                 <a href="#" class="">
                                     <span class="uk-nav-icon"> <i class=" fa fa-building"></i>
                                     </span><span class="uk-nav-title">consultant</span>
@@ -496,7 +503,7 @@
 
                                 </ul>
                             </li>
-                            <li title="Business">
+                            <li title="Business" class="disabled">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="nav-icon fas fa-handshake"></i>
 
@@ -513,23 +520,23 @@
 
                             </li>
                             @if(auth()->user()->role == 'candidate')
-                            <li title="CRS Calculator" class="page-Calculator page-active">
-                                <a href="#" class=" sc-js-notify-status-warning">
+                            <li title="CRS Calculator" class="page-Calculator  disabled page-active">
+                                <a href="#" class=" sc-js-notify-status-warning" >
                                     <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
-                                    </span><span class="uk-nav-title" style="color:red">CRS Calculator</span>
+                                    </span><span class="uk-nav-title" style="" >CRS Calculator</span>
                                 </a>
 
 
                             </li>
-                            <li title="Educational Assessment" class="page-Educational page-active">
+                            <li title="Educational Assessment" class="page-Educational disabled page-active">
                                 <a href="#" class=" sc-js-notify-status-warning">
                                     <span class="uk-nav-icon"><i class="fab fa-readme"></i>
-                                    </span><span class="uk-nav-title" style="color:red">Educ Assessment</span>
+                                    </span><span class="uk-nav-title" style="">Educ Assessment</span>
                                 </a>
                             </li>
                             @endif
-                            <li title="enquiries" class="page-enquiries page-active">
+                            <li title="enquiries" class="page-enquiries disabled page-active">
                                 @if(auth()->user()->role == 'candidate')
                                 <a href="#" class=" sc-js-notify-status-warning">
                                     @else
@@ -540,7 +547,7 @@
                                         </span><span class="uk-nav-title">enquiries</span>
                                     </a>
                             </li>
-                            <li title="report">
+                            <li title="report" class="disabled-nd">
                                 <a href="#" class=" ">
                                     <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>
 
@@ -549,12 +556,12 @@
                                 <ul class="sc-sidebar-menu-sub">
                                     <li class="page-Summary page-active">
 
-                                        <a href="#" class=" sc-js-notify-status-warning">Summary</a>
+                                        <a href="#" class="disabled sc-js-notify-status-warning">Summary</a>
 
                                     </li>
                                     <li class="page-Details page-active">
 
-                                        <a href="#" class=" sc-js-notify-status-warning">Details</a>
+                                        <a href="#" class="disabled sc-js-notify-status-warning">Details</a>
 
                                     </li>
 
@@ -563,7 +570,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="" style="padding:0 !important">
+                    <li class="disabled-nd" style="padding:0 !important">
                         <a><span style="color:#d81400;font-size: 17px;">Application</span></a>
 
                         <ul class="sc-sidebar-menu">
@@ -591,7 +598,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="" style="padding:0 !important">
+                    <li class="disabled-nd" style="padding:0 !important">
                         <a href="#" class=" "><span style="color:#d81400;font-size: 17px;">Utilities</span></a>
 
                         <ul class="sc-sidebar-menu">
@@ -647,7 +654,7 @@
                     </li>
 
                     @if(Auth::user())
-                    <li class="" style="padding:0 !important">
+                    <li class="disabled-nd" style="padding:0 !important">
                         <a><span style="color:#d81400;font-size: 17px;">Canada inspire</span></a>
 
                         <ul class="sc-sidebar-menu">

@@ -17,14 +17,14 @@
 <section>
     <form id="form" action="{{route('add.consultant')}}" method="post" enctype="multipart/form-data">
         @csrf
-        <div class="col-md-12" style="margin-left:auto !important;margin-right:auto !important">
+        <div class="col-md-12 " style="margin-left:auto !important;margin-right:auto !important">
             <h4 style="text-align:center">{{request()->query('service')}} Enrollment</h4>
-            <u1 class="" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">
+            <u1 class="justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">
                 <li class="nav-linkk " id="amenu"><a style="" aria-current="page">Main</a></li>
                 <li class="nav-linkk " id="amenu1"><a style="">Team </a></li>
                 <li class="nav-linkk " id="amenu2"><a style="">About Company</a></li>
                 <li class="nav-linkk " id="amenu7"><a>Our Services</a></li>
-                <li class="nav-linkk" id="amenu3"><a style=""> Award & Recognization</a></li>
+                <li class="nav-linkk" id="amenu3"><a style=""> Award & Recognition</a></li>
                 <li class="nav-linkk" id="amenu4"><a style="">News and Events</a></li>
                 <li class="nav-linkk" id="amenu5"><a style="">Canada Inspire</a></li>
                 <li class="nav-linkk" id="amenu6"><a style="">Feedback</a></li>
@@ -56,7 +56,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>First Name *
+                                            <label>First Name <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " type="text" name="first_name" value="{{old('first_name')}}">
                                             <input class="form-control " type="text" name="type" value="{{request()->query('service')}}" hidden>
@@ -65,7 +65,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>Last Name *
+                                            <label>Last Name <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " type="text" name="last_name" value="{{old('last_name')}}">
                                         </div>
@@ -73,7 +73,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>Registration Number *
+                                            <label>Registration Number <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " id="pac-input5" type="text" name="registration_number" value="{{old('registration_number')}}">
                                         </div>
@@ -86,7 +86,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>Company Name *
+                                            <label>Company Name <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " type="text" name="company_name" value="{{old('company_name')}}">
                                         </div>
@@ -94,7 +94,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Registered Office - Location *
+                                            <label>Registered Office - Location <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " type="text" placeholder="Area" name="registrar_office_area" value="{{old('registrar_office_area')}}">
                                         </div>
@@ -102,7 +102,7 @@
 
                                     <div class="col-lg-2 col-md-2 col-12">
                                         <div class="form-group">
-                                            <label>Status *
+                                            <label>Status <span style="color: red;"> *</span>
                                             </label>
                                             <select class="form-control" name="status">
                                                 <option value="Active" {{old('status') == "Active" ? "checked":""}}>Active</option>
@@ -113,7 +113,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Languages Known *
+                                            <label>Languages Known <span style="color: red;"> *</span>
                                             </label>
                                             <div class="custom-control custom-checkbox">
                                                 <input class="custom-control-input" type="checkbox" id="Languages1" name="language_known[]" value="English" {{ (is_array(old('language_known')) and in_array("English", old('language_known'))) ? ' checked' : '' }}>
@@ -136,7 +136,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Country *
+                                            <label>Country <span style="color: red;"> *</span>
 
                                             </label>
                                             <input class="form-control " id="pac-input1" type="text" name="country" value="{{old('country')}}">
@@ -145,7 +145,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Province/Region *
+                                            <label>Province/Region <span style="color: red;"> *</span>
 
                                             </label>
                                             <input class="form-control " id="pac-input2" type="text" name="region" value="{{old('region')}}">
@@ -154,7 +154,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>City *
+                                            <label>City <span style="color: red;"> *</span>
 
                                             </label>
                                             <input class="form-control " id="pac-input3" type="text" name="city" value="{{old('city')}}">
@@ -163,7 +163,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Street *
+                                            <label>Street <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " id="pac-input4" type="text" name="streat" value="{{old('streat')}}">
                                         </div>
@@ -176,7 +176,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Postal Code *
+                                            <label>Postal Code <span style="color: red;"> *</span>
                                             </label>
 
                                             <input class="form-control " type="text" name="postal_code" value="{{old('postal_code')}}">
@@ -185,7 +185,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Email address for correspondence *
+                                            <label>Email address for correspondence <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " type="text" name="email" value="{{old('email')}}">
                                         </div>
@@ -193,7 +193,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>URL - Website Address *
+                                            <label>URL - Website Address <span style="color: red;"> *</span>
                                             </label>
 
                                             <input class="form-control " type="text" name="website_address" value="{{old('website_address')}}">
@@ -202,7 +202,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Contact Number *
+                                            <label>Contact Number <span style="color: red;"> *</span>
                                             </label>
 
                                             <input class="form-control " type="text" name="phone" value="{{old('phone')}}">
@@ -216,7 +216,7 @@
 
                                     <!-- <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Specialization *
+                                            <label>Specialization <span style="color: red;"> *</span>
                                             </label>
                                             <div class="custom-control custom-checkbox">
                                                 <input class="custom-control-input" type="checkbox" id="Specialization1" name="specialization[]" value="Accounting & Auditing" {{ (is_array(old('specialization')) and in_array("Accounting & Auditing", old('specialization'))) ? ' checked' : '' }}>
@@ -239,7 +239,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Service Offered *</label>
+                                            <label>Service Offered <span style="color: red;"> *</span></label>
 
                                             <div class="custom-control custom-checkbox">
                                                 <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Business Incorporation" {{ (is_array(old('offering_service')) and in_array("Business Incorporation", old('offering_service'))) ? ' checked' : '' }}>
@@ -318,7 +318,7 @@
                                         <div class="form-group">
                                             <label>Year of Establishment
                                             </label>
-                                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{old('establishment_year')}}">
+                                            <input class="form-control " type="text"  name="establishment_year" value="{{old('establishment_year')}}">
                                             <small>Year of Registration</small>
                                         </div>
                                     </div>
@@ -326,7 +326,7 @@
                                         <div class="form-group">
                                             <label>Offering Services Since
                                             </label>
-                                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{old('offering_year')}}">
+                                            <input class="form-control " type="text"  name="offering_year" value="{{old('offering_year')}}">
                                             <small>Number of Years</small>
                                         </div>
                                     </div>
@@ -490,7 +490,7 @@
                                     <div class="form-group">
                                         <label>Select Provide Services </label><br><br>
                                         <div class="row col-lg-12 col-md-12 col-12 ">
-                                            <div class="col-lg-3 col-md-3 col-12 custom-control custom-checkbox">
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
                                                 <input class="custom-control-input" type="checkbox" id="Specialization1" name="offering_service[]" value="Business Incorporation" {{ (is_array(old('offering_service')) and in_array("Business Incorporation", old('offering_service'))) ? ' checked' : '' }}>
                                                 <label class="custom-control-label" for="Specialization1">Business Incorporation </label><br>
                                             </div>
@@ -503,7 +503,7 @@
                                                 <label class="custom-control-label" for="Specialization3"> Auditing</label><br>
                                             </div>
 
-                                            <div class="col-lg-3 col-md-3 col-12 custom-control custom-checkbox">
+                                            <div class="col-lg-2 col-md-2 col-12 custom-control custom-checkbox">
                                                 <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Commercial Filing" {{ (is_array(old('offering_service')) and in_array("Commercial Filing", old('offering_service'))) ? ' checked' : '' }}>
                                                 <label class="custom-control-label" for="Service1">Commercial Filing</label><br>
                                             </div>
@@ -530,7 +530,7 @@
 
 
 
-                                <div class="float-right">
+                                <div class="float-right mt-5">
                                     <button class="sc-button sc-button-success sc-js-button-wave-light waves-effect waves-button waves-light" type="submit">Submit</button>
 
                                     <button type="button" class="client-btn bmenu5 uk-button uk-button-primary">Next </button>
@@ -594,7 +594,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <label>Your Introductory Video URL Link display on Canada Inspire Portal
+                                            <label>Provide University URL Video Link to know more about your Company
                                             </label>
                                             <input class="form-control " type="text" name="vedio_url" value="{{old('vedio_url')}}">
                                         </div>
@@ -603,7 +603,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <label>Kindly provide Weblinks for News and Events, Immigration Updates and much more to help Candidates to have more information
+                                            <label>Provide weblinks for News and Events for Entrepreneur’s and Corporates to know more about your services
                                             </label>
                                             <br>
 

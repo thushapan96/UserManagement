@@ -153,6 +153,13 @@
         transition-timing-function: ease-out;
         width: 500px;
     }
+    .disabled {
+    opacity:0.4;         }
+
+    .disabled-nd {
+        pointer-events: none;
+    opacity:0.2;     
+       }
 </style>
 
 <body>
@@ -511,12 +518,12 @@
                                 <a href="{{route('calculator')}}">
                                     <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
-                                    </span><span class="uk-nav-title" style="color:#00008b">CRS Calculator</span>
+                                    </span><span class="uk-nav-title" >CRS Calculator</span>
                                 </a> @else
-                                <a href="#" class="sc-js-notify-status-warningg">
+                                <a href="#" class="sc-js-notify-status-warningg disabled">
                                     <span class="uk-nav-icon"><i class="fa fa-calculator" aria-hidden="true"></i>
 
-                                    </span><span class="uk-nav-title" style="color:red">CRS Calculator</span>
+                                    </span><span class="uk-nav-title" >CRS Calculator</span>
                                 </a>
                                 @endif
 
@@ -525,11 +532,11 @@
                                 @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
                                 <a href="{{route('education')}}">
                                     <span class="uk-nav-icon"><i class="fab fa-readme"></i>
-                                    </span><span class="uk-nav-title" style="color:#00008b">Educ Assessment</span>
+                                    </span><span class="uk-nav-title">Educ Assessment</span>
                                 </a> @else
-                                <a href="#" class="sc-js-notify-status-warningg">
+                                <a href="#" class="sc-js-notify-status-warningg disabled">
                                     <span class="uk-nav-icon"><i class="fab fa-readme"></i>
-                                    </span><span class="uk-nav-title" style="color:red">Educ Assessment</span>
+                                    </span><span class="uk-nav-title" >Educ Assessment</span>
                                 </a>
                                 @endif
                             </li>
@@ -553,7 +560,7 @@
                                                 </span><span class="uk-nav-title">enquiries</span>
                                             </a>
                             </li>
-                            <li title="report">
+                            <li title="report" class="disabled-nd">
                                 <a href="#">
                                     <span class="uk-nav-icon"><i class="fas fa-clipboard"></i>
 
@@ -576,7 +583,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="" style="padding:0 !important">
+                    <li class="disabled-nd" style="padding:0 !important">
                         <a><span style="color:#d81400;font-size: 17px;">Application</span></a>
 
                         <ul class="sc-sidebar-menu">
@@ -604,7 +611,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="" style="padding:0 !important">
+                    <li class="disabled-nd" style="padding:0 !important">
                         <a><span style="color:#d81400;font-size: 17px;">Utilities</span></a>
 
                         <ul class="sc-sidebar-menu">
@@ -660,7 +667,7 @@
                     </li>
 
                     @if(Auth::user())
-                    <li class="" style="padding:0 !important">
+                    <li class="disabled-nd" style="padding:0 !important">
                         <a><span style="color:#d81400;font-size: 17px;">Canada inspire</span></a>
 
                         <ul class="sc-sidebar-menu">

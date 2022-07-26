@@ -66,12 +66,12 @@
 
         <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
             <h3 class="float-center" style="text-align:center">{{$consultants->company_name}} </h3>
-            <u1 class="col-md-12" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:3%">
+            <u1 class="col-md-12 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">
                 <li class=" uk-active" id="amenu"><a aria-current="page">Main </a></li>
                 <li class="" id="amenu2"><a>About Company </a></li>
                 <li class="" id="amenu5"><a>Our Services </a></li>
                 <li class="" id="amenu1"><a>Team </a></li>
-                <li class="" id="amenu3"><a> Award & Recognization</a></li>
+                <li class="" id="amenu3"><a> Award & Recognition</a></li>
                 <li class="" id="amenu4"><a>News and Events</a></li>
                 <!-- <li class="" id="amenu5"><a>Canada Inspire</a></li>
                 <li class="" id="amenu6"><a>Feedback</a></li> -->

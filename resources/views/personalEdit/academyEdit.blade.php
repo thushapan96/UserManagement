@@ -13,10 +13,10 @@
 </style>
 <!-- Subscribe & Stay Connected. Start -->
 
-<div class="container ">
+<div class=" ">
 
-    <div class="tab-pane  " style="width:80%;margin-left:5% !important">
-        <h5 style="text-align:center">edit Academic Information </h5><br>
+    <div class="tab-pane  ">
+        <h5 style="text-align:center">edit Profile </h5><br>
 
         <div class="uk-card ">
             <div class="uk-card-body sc-padding-medium">

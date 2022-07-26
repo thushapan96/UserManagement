@@ -16,7 +16,7 @@
                 </label>
                 <select name="language_proficiency" class="form-control">
                     <option value="English">English</option>
-                    <option value="Tamil">Tamil</option>
+                    <option value="Tamil">French</option>
                 </select>
             </div>
         </div>
@@ -102,8 +102,8 @@
     <u1 data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto !important">
         <li class="nav-linkk " id=""><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">School </a></li>
         <li class="nav-linkk " id=""><a style="cursor:pointer;padding: 0.5rem 1.8rem;">College </a></li>
-        <li class="nav-linkk " id=""><a style="cursor:pointer;padding: 0.5rem  1.8rem;">PostGraduation</a></li>
-        <li class="nav-linkk" id=""><a style="cursor:pointer;padding: 0.5rem  1.8rem;">OtherQualification</a></li>
+        <li class="nav-linkk " id=""><a style="cursor:pointer;padding: 0.5rem  1.8rem;">Post-Graduation</a></li>
+        <li class="nav-linkk" id=""><a style="cursor:pointer;padding: 0.5rem  1.8rem;">Other-Qualification</a></li>
 
     </u1>
     <u1 class="uk-switcher" class="">
@@ -132,7 +132,7 @@
             </div>
             <div class="col-lg-12 col-md-12 mt-2 col-12">
                 <button type="button" class="add-btn uk-button uk-button-primary" id="pgbtn"> + Add
-                    PostGraduation</button>
+                    Post-Graduation</button>
             </div>
         </li>
         <li id='' class='tab-pane '>
@@ -141,7 +141,7 @@
             </div>
             <div class="col-lg-12 col-md-12 mt-2 col-12">
                 <button type="button" class="add-btn uk-button uk-button-primary" id="otherbtn"> + Add
-                    OtherQualification</button>
+                    Other-Qualification</button>
             </div>
         </li>
     </u1>
@@ -208,7 +208,7 @@
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Applicable ECA Validity
+                                <label>If ECA Applicable
 
                                 </label>
                                 <select name="eca[]" class="form-control">
@@ -223,14 +223,14 @@
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Distant
+                                <label>Education Type
 
                                 </label>
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option value="distant">distant</option>
-                                    <option value="regular">regular</option>
-                                    <option value="online">online</option>
+                                    <option value="regular">Regular</option>
+                                    <option value="distant">Distant</option>
+                                    <option value="online">Online</option>
 
                                 </select>
                             </div>
@@ -301,7 +301,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="form-group">
-                                <label>PG/PHD Year Completed </label>
+                                <label>Year Completed </label>
                                 <input class="form-control " name="year_completed[]" type="date" >
                             </div>
                         </div>
@@ -311,7 +311,7 @@
 
                     <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Applicable ECA Validity
+                                <label>If ECA Applicable
 
                                 </label>
                                 <select name="eca[]" class="form-control">
@@ -324,14 +324,14 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Distant
+                                <label>Education Type
 
                                 </label>
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option value="distant">distant</option>
-                                    <option value="regular">regular</option>
-                                    <option value="online">online</option>
+                                    <option value="regular">Regular</option>
+                                    <option value="distant">Distant</option>
+                                    <option value="online">Online</option>
 
                                 </select>
                             </div>
@@ -407,7 +407,7 @@
                     <div class="row custom-box">
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label>Applicable ECA Validity
+                                <label>If ECA Applicable
 
                                 </label>
                                 <select name="eca[]" class="form-control">
@@ -511,7 +511,7 @@
                         </div>
                            <div class="col-lg-3 col-md-3 col-12">
                             <div class="form-group">
-                                <label>Applicable ECA Validity
+                                <label>If ECA Applicable
 
                                 </label>
                                 <select name="eca[]" class="form-control">

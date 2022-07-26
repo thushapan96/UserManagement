@@ -8,19 +8,19 @@
 
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>First Name</label><span style="color: red;"> *</span>
                     <input name="first_name" class="form-control " type="text" placeholder="First Name" required>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-12 mt-2">
                 <div class="form-group">
-                    <label> </label>
+                    <label>Middle Name </label>
                     <input name="middle_name" class="form-control " type="text" placeholder="Middle Name">
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-12 mt-2">
                 <div class="form-group">
-                    <label> </label>
+                    <label> Last Name</label><span style="color: red;"> *</span>
                     <input name="last_name" class="form-control " type="text" placeholder="Last Name">
                 </div>
             </div>
@@ -205,16 +205,29 @@
 
         <div class="row mb-4">
             <div class="col-lg-6 col-md-6 col-12">
-                <label>Have you applied Visa for USA and Canada
+                <label>Have you applied visa for USA or Canada in the past
                 </label>
                 <div class="row">
-                    <div class="col-lg-2 col-md-2 col-2 ">
+                <div class="col-lg-2 col-md-2  col-sm-12 ">
+                        <div class="custom-control custom-radio ">
+                            <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
+                            <label class="custom-control-label mt-1" for="customradio4">USA</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2  col-sm-12">
+                        <div class="custom-control custom-radio ">
+                            <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no">
+                            <label class="custom-control-label mt-1" for="customradio5">Canada</label>
+                        </div>
+                    </div>
+<span class="mr-3 text-secondry d-md-block d-sm-none" style="font-size:large">|</span>
+                    <div class="col-lg-2 col-md-2  col-sm-12">
                         <div class="custom-control custom-radio ">
                             <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
                             <label class="custom-control-label mt-1" for="customradio4">Yes</label>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-2 ">
+                    <div class="col-lg-2 col-md-2  col-sm-12">
                         <div class="custom-control custom-radio ">
                             <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no">
                             <label class="custom-control-label mt-1" for="customradio5">No</label>
@@ -225,7 +238,7 @@
 
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="form-group">
-                    <label>Possible Start Date
+                    <label>If No, when would you like to start your application process? 
                     </label>
                     <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process">
                 </div>
@@ -287,8 +300,7 @@
                         <option value="Express Entry">Express Entry</option>
                         <option value="PNP">PNP</option>
                         <option value="AIP">AIP</option>
-                        <option value="Visit">Visit</option>
-                        <option value="Student">Student</option>
+                        
                         <option value="Business">Business</option>
                     </select>
                 </div>
