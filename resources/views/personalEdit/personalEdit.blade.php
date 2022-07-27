@@ -45,19 +45,19 @@
 
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
-                                    <label class="uk-form-label">Name</label>
+                                    <label class="uk-form-label">First Name</label> <span style="color: red;"> *</span>
                                     <input name="first_name" class="uk-input " type="text" placeholder="First Name" value="{{$personal->first_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                    <label class="uk-form-label"> </label>
+                                    <label class="uk-form-label"> Middle Name</label>
                                     <input name="middle_name" class="uk-input" type="text" placeholder="Middle Name" value="{{$personal->middle_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                    <label class="uk-form-label"> </label>
+                                    <label class="uk-form-label"> Last Name </label> <span style="color: red;"> *</span>
                                     <input name="last_name" class="uk-input " type="text" placeholder="Last Name" value="{{$personal->last_name}}">
                                 </div>
                             </div>
@@ -242,26 +242,39 @@
 
                         <div class="row mb-4">
                             <div class="col-lg-6 col-md-6 col-12">
-                                <label class="uk-form-label">Have you applied Visa for USA and Canada
+                                <label class="uk-form-label">Have you applied visa for USA or Canada in the past
                                 </label>
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-2 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes" {{$personal->is_already_apply == 'yes' ? 'checked':''}}>
-                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio4">Yes</label>
+                                        <div class="col-lg-2 col-md-2  col-sm-12 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
+                                                <label class="custom-control-label mt-1" for="customradio4">USA</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2  col-sm-12">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no">
+                                                <label class="custom-control-label mt-1" for="customradio5">Canada</label>
+                                            </div>
+                                        </div>
+                                        <span class="mr-3 text-secondry d-md-block d-sm-none" style="font-size:large">|</span>
+                                        <div class="col-lg-2 col-md-2  col-sm-12">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
+                                                <label class="custom-control-label mt-1" for="customradio4">Yes</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2  col-sm-12">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no">
+                                                <label class="custom-control-label mt-1" for="customradio5">No</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-2 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no" {{$personal->is_already_apply == 'no' ? 'checked':''}}>
-                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio5">No</label>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <label class="uk-form-label">Possible Start Date
+                                    <label class="uk-form-label">If No, when would you like to start your application process?
                                     </label>
                                     <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process" value='{{$personal->possible_start_date}}'>
                                 </div>
@@ -323,8 +336,6 @@
                                         <option value="Express Entry" {{$personal->immigration_preference == 'Express Entry' ? 'selected':''}}>Express Entry</option>
                                         <option value="PNP" {{$personal->immigration_preference == 'PNP' ? 'selected':''}}>PNP</option>
                                         <option value="AIPP" {{$personal->immigration_preference == 'AIP' ? 'selected':''}}>AIP</option>
-                                        <option value="Visit" {{$personal->immigration_preference == 'Visit' ? 'selected':''}}>Visit</option>
-                                        <option value="Student" {{$personal->immigration_preference == 'Student' ? 'selected':''}}>Student</option>
                                         <option value="Business" {{$personal->immigration_preference == 'Business' ? 'selected':''}}>Business</option>
                                     </select>
                                 </div>

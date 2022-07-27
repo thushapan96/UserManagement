@@ -208,7 +208,7 @@
                 <label>Have you applied visa for USA or Canada in the past
                 </label>
                 <div class="row">
-                <div class="col-lg-2 col-md-2  col-sm-12 ">
+                    <div class="col-lg-2 col-md-2  col-sm-12 ">
                         <div class="custom-control custom-radio ">
                             <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
                             <label class="custom-control-label mt-1" for="customradio4">USA</label>
@@ -220,7 +220,7 @@
                             <label class="custom-control-label mt-1" for="customradio5">Canada</label>
                         </div>
                     </div>
-<span class="mr-3 text-secondry d-md-block d-sm-none" style="font-size:large">|</span>
+                    <span class="mr-3 text-secondry d-md-block d-sm-none" style="font-size:large">|</span>
                     <div class="col-lg-2 col-md-2  col-sm-12">
                         <div class="custom-control custom-radio ">
                             <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
@@ -238,7 +238,7 @@
 
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="form-group">
-                    <label>If No, when would you like to start your application process? 
+                    <label>If No, when would you like to start your application process?
                     </label>
                     <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process">
                 </div>
@@ -300,7 +300,7 @@
                         <option value="Express Entry">Express Entry</option>
                         <option value="PNP">PNP</option>
                         <option value="AIP">AIP</option>
-                        
+
                         <option value="Business">Business</option>
                     </select>
                 </div>
