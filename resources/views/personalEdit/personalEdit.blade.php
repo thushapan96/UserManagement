@@ -43,7 +43,7 @@
                         <!--div class="news-title">You have questions, let's have a conversation </div-->
                         <div class="row custom-box">
 
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
                                     <label class="uk-form-label">First Name</label> <span style="color: red;"> *</span>
                                     <input name="first_name" class="uk-input " type="text" placeholder="First Name" value="{{$personal->first_name}}">
