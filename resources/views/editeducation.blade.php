@@ -3,14 +3,15 @@
 <form action="{{route('update.education')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-        <h5 class="" style="text-align:center;color:#3f6791">Edit Assessment for Overseas Education - Canada</h5>
+        <h5 class="" style="text-align:center;color:#3f6791">EDIT EDUCATIONAL ASSESSMENT FORM
+        </h5>
 
     </div>
 
-    <u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
-        <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">tab1 </a></li>
-        <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab2 </a></li>
-        <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab3</a></li>
+    <u1 class="col-md-10 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
+        <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">Personal + Academic </a></li>
+        <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">Employment + Technical </a></li>
+        <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">Others</a></li>
     </u1>
     <!-- <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
         <p>Candidates to provide correct information. We will assist and recommend based on your previous educational qualification and interest. All Universities and Colleges required IELTS Academic but some Universities also required GRE/TOEFL/GMAT/SAT in addition to IELTS. </p>
@@ -655,11 +656,23 @@
 
 
                             <label>Is your ECA (Education Certificate Assessment) completed from WES/IQAS/ICES/CES/etc.. If "YES" specify name of the Organization and Valid Upto?</label>
-                            <div class="col-lg-6 col-md-6">
-                                <input class="form-control" name="eca" value="{{$educations->eca}}">
+                            <div class="col-lg-4 col-md-4 d-flex mt-2 justify-content-around">
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input eca_check" id="Certificate" name="eca" value="Yes" {{ $educations->eca == "Yes" ? "checked":"" }}>
+                                    <label class="custom-control-label mt-1" for="Certificate">Yes </label>
+                                </div>
+                                <div class="custom-control custom-radio ">
+                                    <input type="radio" class="custom-control-input eca_check" id="Certificate1" name="eca" value="No" {{ $educations->eca == "No" ? "checked":"" }}>
+                                    <label class="custom-control-label mt-1" for="Certificate1">No</label>
+                                </div>
                             </div>
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-8 col-md-8 is_eca  {{ $educations->eca == 'No' ? 'd-none':'d-flex' }} ">
+                            <div class="col-lg-4 col-md-4">
+                                <input class="form-control" name="eca_type" value="{{$educations->eca}}">
+                            </div>
+                            <div class="col-lg-4 col-md-4">
                                 <input class="form-control" type="date" id="Prerequisite4" name="eca_date" value="{{$educations->eca_date}}">
+                            </div>
                             </div>
 
                         </div>
@@ -805,6 +818,7 @@
                                 <div class="form-group">
                                     <label>Are you interested to Attempt GRE/TOEFL/GMAT/SAT if required to fulfil the University/College eligibility criteria?
                                     </label>
+
                                     <div class="col-lg-2 col-md-2 col-2 ">
                                         <div class="custom-control custom-radio ">
                                             <input type="radio" class="custom-control-input " id="interested" name="interested_attempted" value="yes" {{ $educations->interested_attempted == "yes" ? "checked":"" }}>
@@ -853,7 +867,22 @@
 <div id="map" style=" height: 500px; width:100%"> </div>
 
 <script>
+
+
+
+
     $(document).ready(function() {
+
+        $('input[type=radio][name=eca]').change(function() {
+    if (this.value == 'Yes') {
+$('.is_eca').removeClass('d-none');
+$('.is_eca').addClass('d-flex');     }
+    else {
+        $('.is_eca').addClass('d-none');  
+        $('.is_eca').removeClass('d-flex');
+  }
+});
+
         $('.page-active').removeClass('sc-page-active')
         $('.page-Educational').addClass('sc-page-active')
 

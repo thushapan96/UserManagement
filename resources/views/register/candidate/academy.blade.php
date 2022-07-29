@@ -16,7 +16,7 @@
                 </label>
                 <select name="language_proficiency" class="form-control">
                     <option value="English">English</option>
-                    <option value="Tamil">French</option>
+                    <option value="French">French</option>
                 </select>
             </div>
         </div>
@@ -170,6 +170,16 @@
 
 
 <script>
+    $(document).on('change', '.ecaselect', function() {
+
+if ($(this).val() == 'Yes') {
+    $(this).closest('.d-flex').children('.validuptocal').removeClass('d-none');
+
+} else {
+    $(this).closest('.d-flex').children('.validuptocal').addClass('d-none');
+
+}
+});
     $(document).ready(function() {
 
         // for school
@@ -206,19 +216,31 @@
                     </div>
                     <div class="row custom-box">
 
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>If ECA Applicable
+                    <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="d-flex par">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If Applicable, ECA Valid up to
 
-                                </label>
-                                <select name="eca[]" class="form-control">
-                                    <option value="">Select Option</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
+                                                            </label>
+                                                            <select name="" class=" ecaselect form-control">
+                                                                <option value="">Select Option</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option value="No">No</option>
 
-                                </select>
-                            </div>
-                        </div>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 mt-2 col-md-6 col-6 validuptocal d-none">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
                         <div class="col-lg-4 col-md-4 col-12">
@@ -281,7 +303,7 @@
             var html = '';
 
             html = `<div  id="addschoolform">
-            <div class="container addcollege mt-4">
+            <div class=" addcollege mt-4">
                
                     <div class="row custom-box">
 
@@ -310,18 +332,30 @@
                     <div class="row custom-box">
 
                     <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>If ECA Applicable
+                                                <div class="d-flex par">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If Applicable, ECA Valid up to
 
-                                </label>
-                                <select name="eca[]" class="form-control">
-                                    <option value="">Select Option</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
+                                                            </label>
+                                                            <select name="" class=" ecaselect form-control">
+                                                                <option value="">Select Option</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option value="No">No</option>
 
-                                </select>
-                            </div>
-                        </div>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 mt-2 col-md-6 col-6 validuptocal d-none">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
                                 <label>Education Type
@@ -405,19 +439,31 @@
 
                     </div>
                     <div class="row custom-box">
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label>If ECA Applicable
+                    <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="d-flex par">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If Applicable, ECA Valid up to
 
-                                </label>
-                                <select name="eca[]" class="form-control">
-                                    <option value="">Select Option</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
+                                                            </label>
+                                                            <select name="" class=" ecaselect form-control">
+                                                                <option value="">Select Option</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option value="No">No</option>
 
-                                </select>
-                            </div>
-                        </div>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 mt-2 col-md-6 col-6 validuptocal d-none">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
                                 <label>Distant
@@ -509,19 +555,31 @@
                                 <input class="form-control " name="year_completed[]" type="date" >
                             </div>
                         </div>
-                           <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label>If ECA Applicable
+                        <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="d-flex par">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If Applicable, ECA Valid up to
 
-                                </label>
-                                <select name="eca[]" class="form-control">
-                                    <option value="">Select Option</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
+                                                            </label>
+                                                            <select name="" class=" ecaselect form-control">
+                                                                <option value="">Select Option</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option value="No">No</option>
 
-                                </select>
-                            </div>
-                            </div>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 mt-2 col-md-6 col-6 validuptocal d-none">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                             <div class="col-lg-3 col-md-3 col-12">
                             <div class="form-group">
                                 <label>Distant

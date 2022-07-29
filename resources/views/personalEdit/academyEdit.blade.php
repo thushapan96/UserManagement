@@ -33,7 +33,7 @@
                                     </label>
                                     <select name="language_proficiency" class="form-control">
                                         <option value="English" {{$Academy->language_proficiency == 'English' ? 'selected':''}}>English</option>
-                                        <option value="Tamil" {{$Academy->Tamil == 'English' ? 'selected':''}}>Tamil</option>
+                                        <option value="French" {{$Academy->language_proficiency == 'French' ? 'selected':''}}>French</option>
                                     </select>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                         </div>
 
                         <div class="row mt-4 custom-box">
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label class="uk-form-label">Applicant Test Scores</label>
                                     <select class="form-control" id="applicant_test" name="applicant_test_name[]">
@@ -95,20 +95,20 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-3 col-md-3 col-12">
                                 <div class="form-group">
                                     <label class="uk-form-label">If Other Applicant</label>
                                     <input id="applicant_test_other" class="form-control " type="text" name="applicant_test_name[]" value="{{$Academy->applicant_test_name}}">
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-12 ">
+                            <div class="col-lg-3 col-md-3 col-12 ">
                                 <div class="form-group">
                                     <label class="uk-form-label"> Valid Upto
                                     </label>
                                     <input class="form-control " name="test_valid_upto" type="date" placeholder="Valid Upto" value="{{$Academy->test_valid_upto}}">
                                 </div>
                             </div>
-                            <div class="col-lg-9 col-md-9 col-12 ">
+                            <div class="col-lg-3 col-md-3 col-12 ">
                                 <div class="form-group">
                                     <label class="uk-form-label">Applicant Test Scores Attachment
                                     </label>
@@ -158,32 +158,43 @@
 
                                         </div>
                                         <div class="row custom-box">
-
                                             <div class="col-lg-4 col-md-4 col-12">
-                                                <div class="form-group">
-                                                    <label class="uk-form-label">Applicable ECA Validity
 
-                                                    </label>
-                                                    <select name="eca[]" class="form-control">
-                                                        <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
-                                                        <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
-                                                        <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
+                                                <div class="d-flex">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If ECA Applicable 
 
-                                                    </select>
+                                                            </label>
+                                                            <select name="" class="form-control  ecaselect">
+                                                                <option value="" >Select Option</option>
+                                                                <option value="Yes" {{$row->applicable_eca_validity != '' ? 'selected':''}}>Yes</option>
+                                                                <option value="No" {{$row->applicable_eca_validity == '' ? 'selected':''}}>No</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-6 validuptocal {{ $row->applicable_eca_validity == '' ? 'd-none':'' }}">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">Valid up to
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" value="{{$row->applicable_eca_validity}}">
+                                                        </div>
+                                                    </div>
                                                 </div>
+
                                             </div>
-
-
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="form-group">
-                                                    <label class="uk-form-label">Distant
+                                                    <label class="uk-form-label">Education Type
 
                                                     </label>
                                                     <select name="distant[]" class="form-control">
                                                         <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
-                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}>regular</option>
-                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
+                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>Distant</option>
+                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}>Regular</option>
+                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>Online</option>
 
                                                     </select>
                                                 </div>
@@ -199,7 +210,7 @@
 
 
                                         </div>
-                                        <div class="row custom-box">
+                                        <div class="row custom-box mt-4">
                                             <div class="col-lg-8 col-md-8 col-12">
 
                                                 <div class="">
@@ -238,7 +249,7 @@
                             @if($row->type == 'college')
 
                             <div id="addcollegeform">
-                                <div class="container addcollege mt-4">
+                                <div class="addcollege mt-4">
                                     <div class="">
                                         <div class="row custom-box">
 
@@ -269,30 +280,42 @@
                                         <div class="row custom-box">
 
                                             <div class="col-lg-4 col-md-4 col-12">
-                                                <div class="form-group">
-                                                    <label class="uk-form-label">Applicable ECA Validity
+                                                <div class="d-flex test">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If ECA Applicable
 
-                                                    </label>
-                                                    <select name="eca[]" class="form-control">
-                                                        <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
-                                                        <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
-                                                        <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
+                                                            </label>
+                                                            <select name="" class="form-control ecaselect">
+                                                                <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
+                                                                <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
+                                                                <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
 
-                                                    </select>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-6 validuptocal {{$row->applicable_eca_validity == 'Yes' ? '':'d-none'}}">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">Valid up to
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" value="{{$row->applicable_eca_validity}}">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
 
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="form-group">
-                                                    <label class="uk-form-label">Distant
+                                                    <label class="uk-form-label">Education Type
 
                                                     </label>
                                                     <select name="distant[]" class="form-control">
                                                         <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
-                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}>regular</option>
-                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
+                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>Distant</option>
+                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}>Regular</option>
+                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>Online</option>
 
                                                     </select>
                                                 </div>
@@ -375,30 +398,42 @@
                                     <div class="row custom-box">
 
                                         <div class="col-lg-4 col-md-4 col-12">
-                                            <div class="form-group">
-                                                <label class="uk-form-label">Applicable ECA Validity
+                                            <div class="d-flex">
+                                                <div class="w-100">
+                                                    <div class="form-group">
+                                                        <label class="uk-form-label">If ECA Applicable
 
-                                                </label>
-                                                <select name="eca[]" class="form-control">
-                                                    <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
-                                                    <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
-                                                    <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
+                                                        </label>
+                                                        <select name="" class="form-control ecaselect">
+                                                            <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
+                                                            <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
+                                                            <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
 
-                                                </select>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-6 validuptocal {{$row->applicable_eca_validity == 'Yes' ? '':'d-none'}}">
+                                                    <div class="form-group">
+                                                        <label class="uk-form-label">Valid up to
+                                                        </label>
+                                                        <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" value="{{$Academy->test_valid_upto}}">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
 
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
-                                                <label class="uk-form-label">Distant
+                                                <label class="uk-form-label">Education Type
 
                                                 </label>
                                                 <select name="distant[]" class="form-control">
                                                     <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                    <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
-                                                    <option {{$row->Distant == 'regular' ? 'selected':''}}>regular</option>
-                                                    <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
+                                                    <option {{$row->Distant == 'distant' ? 'selected':''}}>Distant</option>
+                                                    <option {{$row->Distant == 'regular' ? 'selected':''}}>Regular</option>
+                                                    <option {{$row->Distant == 'online' ? 'selected':''}}>Online</option>
 
                                                 </select>
                                             </div>
@@ -441,7 +476,7 @@
 
                         <div class="col-lg-12 col-md-12 mt-2 col-12">
                             <button type="button" class="add-btn uk-button uk-button-primary profile-button" id="pgbtn"><i class="fa fa-solid fa-plus"></i> Add
-                                PostGraduation</button>
+                                Post-Graduation</button>
                         </div>
                     </fieldset>
                     <br>
@@ -451,7 +486,7 @@
                             @if($row->type == 'other')
 
                             <div id="addotherform">
-                                <div class="container addother mt-4">
+                                <div class=" addother mt-4">
                                     <div class="">
                                         <div class="row custom-box">
 
@@ -479,35 +514,47 @@
 
                                         </div>
                                         <div class="row custom-box">
-                                            <div class="col-lg-3 col-md-3 col-12 ">
+                                            <div class="col-lg-2 col-md-2 col-12 ">
                                                 <div class="form-group">
                                                     <label class="uk-form-label">Year Completed </label>
                                                     <input class="form-control " name="year_completed[]" type="text" value="{{$row->Year_completion}}">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-3 col-md-3 col-12">
-                                                <div class="form-group">
-                                                    <label class="uk-form-label">Applicable ECA Validity
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="d-flex par">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If ECA Applicable
 
-                                                    </label>
-                                                    <select name="eca[]" class="form-control">
-                                                        <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
-                                                        <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
-                                                        <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
+                                                            </label>
+                                                            <select name="" class=" ecaselect form-control">
+                                                                <option value="" {{$row->applicable_eca_validity == '' ? 'selected':''}}>Select Option</option>
+                                                                <option value="Yes" {{$row->applicable_eca_validity == 'Yes' ? 'selected':''}}>Yes</option>
+                                                                <option value="No" {{$row->applicable_eca_validity == 'No' ? 'selected':''}}>No</option>
 
-                                                    </select>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-6 validuptocal {{$row->applicable_eca_validity == 'Yes' ? '':'d-none'}}">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">Valid up to
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" value="{{$Academy->test_valid_upto}}">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-12">
                                                 <div class="form-group">
-                                                    <label class="uk-form-label">Distant
+                                                    <label class="uk-form-label">Education Type
 
                                                     </label>
                                                     <select name="distant[]" class="form-control">
                                                         <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>distant</option>
-                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}> regular</option>
-                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>online</option>
+                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>Distant</option>
+                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}> Regular</option>
+                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>Online</option>
 
                                                     </select>
                                                 </div>
@@ -636,9 +683,21 @@
 <!-- ...................end...script for google map view.................... -->
 
 <script>
+    $(document).on('change', '.ecaselect', function() {
+
+        if ($(this).val() == 'Yes') {
+            $(this).closest('.d-flex').children('.validuptocal').removeClass('d-none');
+
+        } else {
+            $(this).closest('.d-flex').children('.validuptocal').addClass('d-none');
+
+        }
+    });
+
+
     $(document).ready(function() {
 
-        // for school
+
         if ($('#applicant_test').val() != '') {
             $('#applicant_test_other').val('');
         }
@@ -647,7 +706,7 @@
             var html = '';
 
             html = `<div  id="addschoolform"> 
-                     <div class="col-lg-12 col-md-12 col-12 container addschool mt-4" >
+                     <div class="col-lg-12 col-md-12 col-12  addschool mt-4" >
                      <div class="">
                      <div class="row custom-box">
 
@@ -678,19 +737,32 @@
                     </div>
                     <div class="row custom-box">
 
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label class="uk-form-label" >Applicable ECA Validity
 
-                                </label >
-                                <select name="eca[]" class="form-control">
-                                    <option value="">Select Option</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="d-flex par">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If ECA Applicable
 
-                                </select>
-                            </div>
-                        </div>
+                                                            </label>
+                                                            <select name="" class=" ecaselect form-control">
+                                                                <option value="">Select Option</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option value="No">No</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-6 validuptocal d-none">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">Valid up to
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
                         <div class="col-lg-4 col-md-4 col-12">
@@ -700,9 +772,9 @@
                                 </label >
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option value="distant">distant</option>
-                                    <option value="regular">regular</option>
-                                    <option value="online">online</option>
+                                    <option value="distant">Distant</option>
+                                    <option value="regular">Regular</option>
+                                    <option value="online">Online</option>
 
                                 </select>
                             </div>
@@ -750,7 +822,7 @@
             var html = '';
 
             html = `<div  id="addcollegeform">
-                <div class="container addcollege mt-4">
+                <div class=" addcollege mt-4">
                   <div class="">
                     <div class="row custom-box">
 
@@ -781,18 +853,31 @@
                     <div class="row custom-box">
 
                     <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label class="uk-form-label" >Applicable ECA Validity
+                                                <div class="d-flex par">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If ECA Applicable
 
-                                </label >
-                                <select name="eca[]" class="form-control">
-                                    <option value="">Select Option</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                                            </label>
+                                                            <select name="" class=" ecaselect form-control">
+                                                                <option value="">Select Option</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option value="No">No</option>
 
-                                </select>
-                            </div>
-                        </div>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-6 validuptocal d-none">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">Valid up to
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
                                 <label class="uk-form-label" >Distant
@@ -800,9 +885,9 @@
                                 </label >
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>distant</option>
-                                    <option>regular</option>
-                                    <option>online</option>
+                                    <option>Distant</option>
+                                    <option>Regular</option>
+                                    <option>Online</option>
 
                                 </select>
                             </div>
@@ -851,7 +936,7 @@
 
             var html = '';
 
-            html = `<div  id="addpgform">  <div class="container addpg mt-4">
+            html = `<div  id="addpgform">  <div class=" addpg mt-4">
                         <div class="">
                     <div class="row custom-box">
 
@@ -881,18 +966,30 @@
                     </div>
                     <div class="row custom-box">
                     <div class="col-lg-4 col-md-4 col-12">
-                            <div class="form-group">
-                                <label class="uk-form-label" >Applicable ECA Validity
+                                                <div class="d-flex par">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If ECA Applicable
 
-                                </label >
-                                <select name="eca[]" class="form-control">
-                                    <option value="">Select Option</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                                            </label>
+                                                            <select name="" class=" ecaselect form-control">
+                                                                <option value="">Select Option</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option value="No">No</option>
 
-                                </select>
-                            </div>
-                        </div>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-6 validuptocal d-none">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">Valid up to
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
                                 <label class="uk-form-label" >Distant
@@ -900,9 +997,9 @@
                                 </label >
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>distant</option>
-                                    <option>regular</option>
-                                    <option>online</option>
+                                    <option>Distant</option>
+                                    <option>Regular</option>
+                                    <option>Online</option>
 
                                 </select>
                             </div>
@@ -949,7 +1046,7 @@
 
             html = `
            <div  id="addotherform">
-            <div class="container addother mt-4">
+            <div class=" addother mt-4">
                 <div class="">
                     <div class="row custom-box">
 
@@ -984,19 +1081,31 @@
                                 <input class="form-control " name="year_completed[]" type="text" >
                             </div>
                         </div>
-                    <div class="col-lg-3 col-md-3 col-12">
-                            <div class="form-group">
-                                <label class="uk-form-label" >Applicable ECA Validity
+                        <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="d-flex par">
+                                                    <div class="w-100">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">If ECA Applicable
 
-                                </label >
-                                <select name="eca[]" class="form-control">
-                                    <option value="">Select Option</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                                            </label>
+                                                            <select name="" class=" ecaselect form-control">
+                                                                <option value="">Select Option</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option value="No">No</option>
 
-                                </select>
-                            </div>
-                        </div>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-6 validuptocal d-none">
+                                                        <div class="form-group">
+                                                            <label class="uk-form-label">Valid up to
+                                                            </label>
+                                                            <input class="form-control " name="eca[]" type="date" placeholder="Valid Upto" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                         <div class="col-lg-3 col-md-3 col-12">
                             <div class="form-group">
                                 <label class="uk-form-label" >Distant
@@ -1004,9 +1113,9 @@
                                 </label >
                                 <select name="distant[]" class="form-control">
                                     <option value="">Select Option</option>
-                                    <option>distant</option>
-                                    <option>regular</option>
-                                    <option>online</option>
+                                    <option>Distant</option>
+                                    <option>Regular</option>
+                                    <option>Online</option>
 
                                 </select>
                             </div>

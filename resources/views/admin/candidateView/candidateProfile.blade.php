@@ -154,7 +154,7 @@
                                 </div>
                                 <div class="row ">
                                     <div class="col-md-5">
-                                        <strong class="labels"> corosponding Address </strong>
+                                        <strong class="labels"> Corresponding Address </strong>
                                     </div>
 
                                     <div class="col-md-7">

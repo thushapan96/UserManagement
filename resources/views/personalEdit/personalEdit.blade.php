@@ -240,46 +240,53 @@
                         </div>
                         <hr>
 
-                        <div class="row mb-4">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <label class="uk-form-label">Have you applied visa for USA or Canada in the past
+
+                        
+        <div class="row mb-4">
+            <div class="col-lg-12 col-md-12 col-12">
+                <label>Have you applied visa for USA or Canada in the past
+                </label>
+                <div class="d-flex">
+                    <div class="col-lg-2 col-md-2  col-sm-12">
+                        <div class="custom-control custom-radio ">
+                            <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
+                            <label class="custom-control-label mt-1" for="customradio4">Yes</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2  col-sm-12">
+                        <div class="custom-control custom-radio ">
+                            <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no">
+                            <label class="custom-control-label mt-1" for="customradio5">No</label>
+                        </div>
+                    </div>
+                    <div class="ifyes d-none ">
+                        <div class="d-flex">
+                            <div class="col-lg-12 col-md-12  col-sm-12">
+                                <input type="checkbox" id="f-car-extra-1" name="is_already_apply_usa" value="1" data-sc-icheck>
+                                <label for="f-car-extra-1">USA</label>
+                            </div class="col-lg-12 col-md-12  col-sm-12">
+                            <div class="col-lg-12 col-md-12  col-sm-12">
+                                <input type="checkbox" id="f-car-extra-2" name="is_already_apply_canada" value="1" data-sc-icheck>
+                                <label for="f-car-extra-2">Canada</label>
+                            </div class="col-lg-12 col-md-12  col-sm-12">
+                        </div>
+                    </div>
+                    <div class="ifno d-none">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label>When would you like to start your application process?
                                 </label>
-                                <div class="row">
-                                        <div class="col-lg-2 col-md-2  col-sm-12 ">
-                                            <div class="custom-control custom-radio ">
-                                                <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
-                                                <label class="custom-control-label mt-1" for="customradio4">USA</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2  col-sm-12">
-                                            <div class="custom-control custom-radio ">
-                                                <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no">
-                                                <label class="custom-control-label mt-1" for="customradio5">Canada</label>
-                                            </div>
-                                        </div>
-                                        <span class="mr-3 text-secondry d-md-block d-sm-none" style="font-size:large">|</span>
-                                        <div class="col-lg-2 col-md-2  col-sm-12">
-                                            <div class="custom-control custom-radio ">
-                                                <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
-                                                <label class="custom-control-label mt-1" for="customradio4">Yes</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2  col-sm-12">
-                                            <div class="custom-control custom-radio ">
-                                                <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no">
-                                                <label class="custom-control-label mt-1" for="customradio5">No</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="form-group">
-                                    <label class="uk-form-label">If No, when would you like to start your application process?
-                                    </label>
-                                    <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process" value='{{$personal->possible_start_date}}'>
-                                </div>
+                                <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process">
                             </div>
                         </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
 
 
 
@@ -502,6 +509,17 @@
 
 <script>
     $(document).ready(function() {
+        $('[name="is_already_apply"]').change(function() {
+            if ($(this).val() == 'yes') {
+                $('.ifno').addClass('d-none');
+                $('.ifyes').removeClass('d-none');
+
+            } else if ($(this).val() == 'no') {
+                $('.ifyes').addClass('d-none');
+                $('.ifno').removeClass('d-none');
+
+            };
+        });
 
         $(".progress-bar").css("width", "0%");
         $.ajaxSetup({

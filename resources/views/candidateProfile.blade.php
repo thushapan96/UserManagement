@@ -118,7 +118,7 @@
                                 </div>
                                 <div class="row ">
                                     <div class="col-md-5">
-                                        <strong class="labels"> mobile</strong>
+                                        <strong class="labels"> Contact Number</strong>
                                     </div>
 
                                     <div class="col-md-7">
@@ -198,7 +198,7 @@
                                     </div>
 
                                     <div class="col-md-7">
-                                        <label class="labels">{{$personal->is_vaccinate}}</label>
+                                        <label class="labels font-weight-bold {{$personal->is_vaccinate == 'Yes' ? 'text-info ' : 'text-danger'}}">{{$personal->is_vaccinate }}</label>
                                     </div>
                                 </div>
                             </fieldset>
@@ -240,7 +240,7 @@
 
                                 <div class="row ">
                                     <div class="col-md-5">
-                                        <strong class="labels"> corosponding Address </strong>
+                                        <strong class="labels"> Corresponding Address </strong>
                                     </div>
 
                                     <div class="col-md-7">

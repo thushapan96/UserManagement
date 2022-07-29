@@ -73,7 +73,7 @@
 
             <div class="col-lg-3 col-md-3 col-12 m-1 ">
                 <div class="form-group">
-                    <label class="uk-form-label">Corosponding Address</label>
+                    <label class="uk-form-label">Corresponding Address</label>
                 </div>
             </div>
 

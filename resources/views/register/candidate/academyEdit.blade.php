@@ -14,7 +14,7 @@
                 </label>
                 <select name="language_proficiency" class="form-control">
                     <option value="English" {{$Academy->language_proficiency == 'English' ? 'selected':''}}>English</option>
-                    <option value="Tamil" {{$Academy->language_proficiency == 'English' ? 'selected':''}}>Tamil</option>
+                    <option value="French" {{$Academy->language_proficiency == 'French' ? 'selected':''}}>French</option>
                 </select>
             </div>
         </div>
@@ -140,7 +140,7 @@
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label class="uk-form-label">Applicable ECA Validity
+                                <label class="uk-form-label">If Applicable, ECA Valid up to
 
                                 </label>
                                 <select name="eca[]" class="form-control">
@@ -237,7 +237,7 @@
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="form-group">
-                                <label class="uk-form-label">Applicable ECA Validity
+                                <label class="uk-form-label">If Applicable, ECA Valid up to
 
                                 </label>
                                 <select name="eca[]" class="form-control">
@@ -332,7 +332,7 @@
 
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="form-group">
-                            <label class="uk-form-label">Applicable ECA Validity
+                            <label class="uk-form-label">If Applicable, ECA Valid up to
 
                             </label>
                             <select name="eca[]" class="form-control">
@@ -428,7 +428,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-12">
                             <div class="form-group">
-                                <label class="uk-form-label">Applicable ECA Validity
+                                <label class="uk-form-label">If Applicable, ECA Valid up to
 
                                 </label>
                                 <select name="eca[]" class="form-control">
