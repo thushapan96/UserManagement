@@ -166,8 +166,7 @@
         </select>
 
     </div>
-    <div class="col-md-1">
-    </div>
+
     <div class="col-md-3">Search By
         <select class="form-control filter">
             <option value="Name">{{$type}} Name </option>
@@ -189,8 +188,14 @@
             </div>
         </div>
     </div>
+
+    <div class="col-md-1">
+        <div class="mt-4">
+            <a href="{{route('dashboard.view.'.Str::lower($type))}}" class="client-btn  uk-button uk-boarder">Clear </a>
+        </div>
+    </div>
+
 </div>
-<br><br>
 
 
 <div>

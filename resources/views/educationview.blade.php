@@ -2,21 +2,22 @@
 @section('content')
 
 <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-    <h5 class="" style="text-align:center;color:#3f6791">Assessment for Overseas Education - Canada</h5>
+    <h5 class="" style="text-align:center;color:#3f6791">EDUCATIONAL ASSESSMENT FORM
+</h5>
 
 </div>
 
-<u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
-    <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">tab1 </a></li>
-    <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab2 </a></li>
-    <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab3</a></li>
+<u1 class="col-md-10 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
+    <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">Personal + Academic </a></li>
+    <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">Employment + Technical </a></li>
+    <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">Others</a></li>
 </u1>
-<div class='col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
+<div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
     <p>Candidates to provide correct information. We will assist and recommend based on your previous educational qualification and interest. All Universities and Colleges required IELTS Academic but some Universities also required GRE/TOEFL/GMAT/ SAT in addition to IELTS. </p>
 </div>
 <u1 class="uk-switcher">
     <li id='menu' class='tab-pane '>
-        <div class='uk-card col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
+        <div class='uk-card col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                     <h6 style="text-decoration:underline;">Personal Information</h6>
@@ -323,7 +324,7 @@
         </div>
     </li>
     <li id='menu1' class='tab-pane '>
-        <div class='uk-card col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
+        <div class='uk-card col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
             <div class="uk-card-body sc-padding-medium">
                 @if($employments->count() || $technicalCertifications->count())
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
@@ -634,7 +635,7 @@
     </li>
 
     <li id='menu2' class='tab-pane '>
-        <div class='uk-card col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
+        <div class='uk-card col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                     <div class="row">
@@ -645,21 +646,12 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                &nbsp;<div class="is_rejected_college_yes ">Yes</div>
-                                &nbsp;&nbsp;&nbsp;
-                                <div class="is_rejected_college_no ">NO</div>
+                                <div class="font-weight-bold ml-2 {{$educations->is_rejected_college == 'yes' ? 'text-info ' : 'text-danger'}}">{{$educations->is_rejected_college}}</div>
+                                
 
                             </div>
                         </div>
-                        <script>
-                            if ("{{$educations->is_rejected_college}}" == 'yes') {
-                                $('.is_rejected_college_yes').css('text-decoration', 'underline')
-                                $('.is_rejected_college_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.is_rejected_college_no').css('text-decoration', 'underline')
-                                $('.is_rejected_college_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                        
                     </div>
                     @if($educations->rejected_college_reason)
                     <br>
@@ -696,21 +688,12 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                &nbsp;<div class="is_rejected_visa_past_yes ">Yes</div>
-                                &nbsp;&nbsp;&nbsp;
-                                <div class="is_rejected_visa_past_no ">NO</div>
+                                <div class="font-weight-bold ml-2 {{$educations->is_rejected_visa_past == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->is_rejected_visa_past}}</div>
+                               
 
                             </div>
                         </div>
-                        <script>
-                            if ("{{$educations->is_rejected_visa_past}}" == 'yes') {
-                                $('.is_rejected_visa_past_yes').css('text-decoration', 'underline')
-                                $('.is_rejected_visa_past_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.is_rejected_visa_past_no').css('text-decoration', 'underline')
-                                $('.is_rejected_visa_past_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                        
                     </div>
                     @if($educations->rejected_visa_reason_past)
                     <br>
@@ -746,22 +729,13 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                &nbsp;<div class="is_rejected_visa_yes ">Yes</div>
-                                &nbsp;&nbsp;&nbsp;
-                                <div class="is_rejected_visa_no ">NO</div>
+                            <div class="font-weight-bold ml-2 {{$educations->is_rejected_visa == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->is_rejected_visa}}</div>
+
 
                             </div>
                         </div>
 
-                        <script>
-                            if ("{{$educations->is_rejected_visa}}" == 'yes') {
-                                $('.is_rejected_visa_yes').css('text-decoration', 'underline')
-                                $('.is_rejected_visa_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.is_rejected_visa_no').css('text-decoration', 'underline')
-                                $('.is_rejected_visa_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                        
                     </div>
                     @if($educations->rejected_visa_reason)
                     <br>
@@ -848,21 +822,12 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                &nbsp;<div class="passport_valid_yes ">Yes</div> &nbsp;&nbsp;&nbsp;
+                            <div class="font-weight-bold ml-2 {{$educations->passport_valid == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->passport_valid}}</div>
 
-                                <div class="passport_valid_no ">NO</div>
 
                             </div>
                         </div>
-                        <script>
-                            if ("{{$educations->passport_valid}}" == 'yes') {
-                                $('.passport_valide_yes').css('text-decoration', 'underline')
-                                $('.passport_valide_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.passport_valid_no').css('text-decoration', 'underline')
-                                $('.passport_valid_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                       
                     </div><br>
                     <div class="row">
                         <div class="col-md-5">
@@ -872,8 +837,8 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                &nbsp;<div class="IELTS_attempted_yes ">Yes</div>&nbsp;&nbsp;&nbsp;
-                                <div class="IELTS_attempted_no ">NO</div>&nbsp;&nbsp;&nbsp;
+                            <div class="font-weight-bold ml-2 {{$educations->IELTS_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->IELTS_attempted}}</div>
+                            &nbsp;&nbsp;
                                 @if($educations->IELTS_attempted_date)
                                 @if($configureDate == '1')
                                 {{date('Y-m-d', strtotime($educations->IELTS_attempted_date))}}
@@ -885,15 +850,7 @@
                                 @endif
                             </div>
                         </div>
-                        <script>
-                            if ("{{$educations->IELTS_attempted}}" == 'yes') {
-                                $('.IELTS_attempted_yes').css('text-decoration', 'underline')
-                                $('.IELTS_attempted_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.IELTS_attempted_no').css('text-decoration', 'underline')
-                                $('.IELTS_attempted_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                       
                     </div><br>
                     <div class="row">
                         <div class="col-md-5">
@@ -903,8 +860,8 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                &nbsp;<div class="GRE_attempted_yes ">Yes</div> &nbsp;&nbsp;&nbsp;
-                                <div class="GRE_attempted_no ">NO</div> &nbsp;&nbsp;&nbsp;
+                            <div class="font-weight-bold ml-2 {{$educations->GRE_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->GRE_attempted}}</div>
+                            &nbsp;&nbsp;
                                 @if($educations->GRE_attempted_date)
                                 @if($configureDate == '1')
                                 {{date('Y-m-d', strtotime($educations->GRE_attempted_date))}}
@@ -916,15 +873,7 @@
                                 @endif
                             </div>
                         </div>
-                        <script>
-                            if ("{{$educations->GRE_attempted}}" == 'yes') {
-                                $('.GRE_attempted_yes').css('text-decoration', 'underline')
-                                $('.GRE_attempted_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.GRE_attempted_no').css('text-decoration', 'underline')
-                                $('.GRE_attempted_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                        
                     </div><br>
                     <div class="row">
                         <div class="col-md-5">
@@ -934,8 +883,8 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                &nbsp;<div class="TOEFL_attempted_yes ">Yes</div>&nbsp;&nbsp;&nbsp;
-                                <div class="TOEFL_attempted_no ">NO</div> &nbsp;&nbsp;&nbsp;
+                            <div class="font-weight-bold ml-2 {{$educations->TOEFL_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->TOEFL_attempted}}</div>
+                            &nbsp;&nbsp;
                                 @if($educations->TOEFL_attempted_date)
                                 @if($configureDate == '1')
                                 {{date('Y-m-d', strtotime($educations->TOEFL_attempted_date))}}
@@ -948,15 +897,7 @@
 
                             </div>
                         </div>
-                        <script>
-                            if ("{{$educations->TOEFL_attempted}}" == 'yes') {
-                                $('.TOEFL_attempted_yes').css('text-decoration', 'underline')
-                                $('.TOEFL_attempted_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.TOEFL_attempted_no').css('text-decoration', 'underline')
-                                $('.TOEFL_attempted_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                       
                     </div><br>
                     <div class="row">
                         <div class="col-md-5">
@@ -966,8 +907,8 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                &nbsp;<div class="GMAT_attempted_yes ">Yes</div> &nbsp;&nbsp;&nbsp;
-                                <div class="GMAT_attempted_no ">NO</div> &nbsp;&nbsp;&nbsp;
+                            <div class="font-weight-bold ml-2 {{$educations->GMAT_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->GMAT_attempted}} </div>
+                            &nbsp;&nbsp;
                                 @if($educations->GMAT_attempted_date)
                                 @if($configureDate == '1')
                                 {{date('Y-m-d', strtotime($educations->GMAT_attempted_date))}}
@@ -980,15 +921,7 @@
 
                             </div>
                         </div>
-                        <script>
-                            if ("{{$educations->GMAT_attempted}}" == 'yes') {
-                                $('.GMAT_attempted_yes').css('text-decoration', 'underline')
-                                $('.GMAT_attempted_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.GMAT_attempted_no').css('text-decoration', 'underline')
-                                $('.GMAT_attempted_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                        
                     </div><br>
                     <div class="row">
                         <div class="col-md-5">
@@ -998,9 +931,8 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                &nbsp;<div class="interested_attempted_yes ">Yes</div>
-                                &nbsp;&nbsp;&nbsp;
-                                <div class="interested_attempted_no ">NO</div>
+                            <div class="font-weight-bold ml-2 {{$educations->interested_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->interested_attempted}}</div>
+
 
                             </div>
                         </div>

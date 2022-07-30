@@ -17,7 +17,15 @@ class InstitutionController extends Controller
     public function index()
     {
         return view('register.institude');
+
+
     }
+    public function registerterm()
+    {
+
+        return view('register.terms');
+    }
+    
 
     /**
      * Store a newly created resource in storage.

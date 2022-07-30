@@ -51,4 +51,8 @@ class User extends Authenticatable
     public function provider(){
         return $this->HasOne(Provider::class);
     }
+
+    public function personal(){
+        return $this->HasOne(Personal::class);
+    }
 }

@@ -11,7 +11,7 @@
     }
 </style>
 <!-- Subscribe & Stay Connected. Start -->
-<div class="container ">
+<div class=" ">
 
     <!--
         <div class="whiteBoxtab ">
@@ -33,31 +33,31 @@
 
 
     <div id="menu" class="tab-pane">
-        <h5 style="text-align:center">edit Personal Information </h5><br>
+        <h5 style="text-align:center">edit Profile </h5><br>
         <form action="{{route('profilePersonalupdate',['id' => $personal->user_id])}}" method="POST">
             @csrf
 
-            <div class='uk-card col-md-10' style="margin:auto  ">
-                <div class="uk-card-body sc-padding-medium">
+            <div class='uk-card col-md-12' style="  ">
+                <div class="uk-card-body ">
                     <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                         <!--div class="news-title">You have questions, let's have a conversation </div-->
                         <div class="row custom-box">
 
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                    <label class="uk-form-label">Name</label>
+                                    <label class="uk-form-label">First Name</label> <span style="color: red;"> *</span>
                                     <input name="first_name" class="uk-input " type="text" placeholder="First Name" value="{{$personal->first_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                    <label class="uk-form-label"> </label>
+                                    <label class="uk-form-label"> Middle Name</label>
                                     <input name="middle_name" class="uk-input" type="text" placeholder="Middle Name" value="{{$personal->middle_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12 mt-2">
                                 <div class="form-group">
-                                    <label class="uk-form-label"> </label>
+                                    <label class="uk-form-label"> Last Name </label> <span style="color: red;"> *</span>
                                     <input name="last_name" class="uk-input " type="text" placeholder="Last Name" value="{{$personal->last_name}}">
                                 </div>
                             </div>
@@ -111,7 +111,7 @@
 
                             <div class="col-lg-3 col-md-3 col-12 m-1 ">
                                 <div class="form-group">
-                                    <label class="uk-form-label">Corosponding Address</label>
+                                    <label class="uk-form-label">Corresponding Address</label>
                                 </div>
                             </div>
 
@@ -240,33 +240,53 @@
                         </div>
                         <hr>
 
-                        <div class="row mb-4">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <label class="uk-form-label">Have you applied Visa for USA and Canada
+
+                        
+        <div class="row mb-4">
+            <div class="col-lg-12 col-md-12 col-12">
+                <label>Have you applied visa for USA or Canada in the past
+                </label>
+                <div class="d-flex">
+                    <div class="col-lg-2 col-md-2  col-sm-12">
+                        <div class="custom-control custom-radio ">
+                            <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
+                            <label class="custom-control-label mt-1" for="customradio4">Yes</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2  col-sm-12">
+                        <div class="custom-control custom-radio ">
+                            <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no">
+                            <label class="custom-control-label mt-1" for="customradio5">No</label>
+                        </div>
+                    </div>
+                    <div class="ifyes d-none ">
+                        <div class="d-flex">
+                            <div class="col-lg-12 col-md-12  col-sm-12">
+                                <input type="checkbox" id="f-car-extra-1" name="is_already_apply_usa" value="1" data-sc-icheck>
+                                <label for="f-car-extra-1">USA</label>
+                            </div class="col-lg-12 col-md-12  col-sm-12">
+                            <div class="col-lg-12 col-md-12  col-sm-12">
+                                <input type="checkbox" id="f-car-extra-2" name="is_already_apply_canada" value="1" data-sc-icheck>
+                                <label for="f-car-extra-2">Canada</label>
+                            </div class="col-lg-12 col-md-12  col-sm-12">
+                        </div>
+                    </div>
+                    <div class="ifno d-none">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label>When would you like to start your application process?
                                 </label>
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-2 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes" {{$personal->is_already_apply == 'yes' ? 'checked':''}}>
-                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio4">Yes</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-2 ">
-                                        <div class="custom-control custom-radio ">
-                                            <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no" {{$personal->is_already_apply == 'no' ? 'checked':''}}>
-                                            <label class="custom-control-label" class="custom-control-label mt-1" for="customradio5">No</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="form-group">
-                                    <label class="uk-form-label">Possible Start Date
-                                    </label>
-                                    <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process" value='{{$personal->possible_start_date}}'>
-                                </div>
+                                <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process">
                             </div>
                         </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
 
 
 
@@ -323,8 +343,6 @@
                                         <option value="Express Entry" {{$personal->immigration_preference == 'Express Entry' ? 'selected':''}}>Express Entry</option>
                                         <option value="PNP" {{$personal->immigration_preference == 'PNP' ? 'selected':''}}>PNP</option>
                                         <option value="AIPP" {{$personal->immigration_preference == 'AIP' ? 'selected':''}}>AIP</option>
-                                        <option value="Visit" {{$personal->immigration_preference == 'Visit' ? 'selected':''}}>Visit</option>
-                                        <option value="Student" {{$personal->immigration_preference == 'Student' ? 'selected':''}}>Student</option>
                                         <option value="Business" {{$personal->immigration_preference == 'Business' ? 'selected':''}}>Business</option>
                                     </select>
                                 </div>
@@ -491,6 +509,17 @@
 
 <script>
     $(document).ready(function() {
+        $('[name="is_already_apply"]').change(function() {
+            if ($(this).val() == 'yes') {
+                $('.ifno').addClass('d-none');
+                $('.ifyes').removeClass('d-none');
+
+            } else if ($(this).val() == 'no') {
+                $('.ifyes').addClass('d-none');
+                $('.ifno').removeClass('d-none');
+
+            };
+        });
 
         $(".progress-bar").css("width", "0%");
         $.ajaxSetup({

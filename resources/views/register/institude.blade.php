@@ -33,14 +33,14 @@
         @csrf
         <div class="col-md-12" style="margin-left:auto !important;margin-right:auto !important">
             <h4 style="text-align:center">{{request()->query('service')}} Enrollment</h4>
-
-            <u1 class="" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">
+<hr>
+            <u1 class="justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;">
                 <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 1.8rem;" aria-current="page">Main </a></li>
                 <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Programs </a></li>
-                <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">About Company</a></li>
-                <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.8rem;"> Award & Recognization</a></li>
+                <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">About {{request()->query('service')}}</a></li>
+                <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: 0.5rem  1.8rem;"> Award & Recognition</a></li>
                 <li class="nav-linkk" id="amenu4"><a style="cursor:pointer;padding: 0.5rem  1.8rem;">News and Events</a></li>
-                <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Canada Inspire</a></li>
+                <!-- <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">{{request()->query('service') === "School" ? "School Education in Canada" : "Canada Inspire" }}</a></li> -->
                 <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.8rem;">Feedback</a></li>
 
             </u1>
@@ -67,7 +67,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>Name of the {{request()->query('service')}} *
+                                            <label>{{request()->query('service')}} Name <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control" type="text" name="name" id="name" value="{{old('name')}}" />
                                             <input class="form-control " type="text" name="type" value="{{request()->query('service')}}" hidden>
@@ -76,7 +76,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>{{request()->query('service')}} Registration Number *
+                                            <label>{{request()->query('service')}} Registration Number <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " type="text" id="registration_number" name="registration_number" value="{{old('registration_number')}}">
 
@@ -85,7 +85,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>{{request()->query('service')}} Registrar Office area*
+                                            <label>{{request()->query('service')}} Registrar Office area<span style="color: red;"> *</span>
 
                                             </label>
                                             <input class="form-control " type="text" id="pac-input5" name="registrar_office_area" value="{{old('registrar_office_area')}}">
@@ -98,7 +98,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Country *
+                                            <label>Country <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " id="pac-input1" type="text" name="country" value="{{old('country')}}">
                                         </div>
@@ -106,7 +106,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Province/Region *
+                                            <label>Province/Region <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " id="pac-input2" type="text" name="region" value="{{old('region')}}">
                                         </div>
@@ -114,7 +114,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>City *
+                                            <label>City <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " id="pac-input3" type="text" name="city" value="{{old('city')}}">
                                         </div>
@@ -122,7 +122,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Street *
+                                            <label>Street <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " id="pac-input4" type="text" name="streat" value="{{old('streat')}}">
                                         </div>
@@ -134,7 +134,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Postal Code *
+                                            <label>Postal Code <span style="color: red;"> *</span>
                                             </label>
 
                                             <input class="form-control " type="text" name="postal_code" value="{{old('postal_code')}}">
@@ -143,7 +143,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Email address for correspondence *
+                                            <label>Email address for correspondence <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control" type="email" id="email" name="email" value="{{old('email')}}">
                                             <div id="append_email" class="mail" style="color:#f30404"></div>
@@ -152,7 +152,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>URL - Website Address *
+                                            <label>URL - Website Address <span style="color: red;"> *</span>
                                             </label>
 
                                             <input class="form-control " type="text" name="website_address" value="{{old('website_address')}}">
@@ -161,7 +161,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Contact Number *
+                                            <label>Contact Number <span style="color: red;"> *</span>
                                             </label>
 
                                             <input class="form-control " type="number" name="phone" value="{{old('phone')}}">
@@ -175,7 +175,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>Admission Cell - Contact Person *
+                                            <label>Admission Cell - Contact Person <span style="color: red;"> *</span>
 
                                             </label>
                                             <input class="form-control " type="text" name="admission_phone" value="{{old('admission_phone')}}">
@@ -184,7 +184,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>Email address of Admission Cell *
+                                            <label>Email address of Admission Cell <span style="color: red;"> *</span>
 
                                             </label>
                                             <input class="form-control " type="email" id="admission_email" name="admission_email" value="{{old('admission_email')}}">
@@ -195,7 +195,7 @@
 
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group">
-                                            <label>Dean - Contact Name *
+                                            <label>Dean - Contact Name <span style="color: red;"> *</span>
 
                                             </label>
 
@@ -209,7 +209,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="form-group">
-                                            <label>Dean Email ID *
+                                            <label>Dean Email ID <span style="color: red;"> *</span>
                                             </label>
 
                                             <input class="form-control " id="dean_email" type="email" name="dean_email" value="{{old('dean_email')}}">
@@ -219,7 +219,7 @@
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="form-group">
-                                            <label>Dean Contact Number *
+                                            <label>Dean Contact Number <span style="color: red;"> *</span>
                                             </label>
                                             <input class="form-control " type="number" name="dean_phone" value="{{old('dean_phone')}}">
                                         </div>
@@ -245,7 +245,7 @@
                                         <div class="form-group">
                                             <label>Year of Establishment
                                             </label>
-                                            <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{old('establishment_year')}}">
+                                            <input class="form-control " type="text" placeholder="" name="establishment_year" value="{{old('establishment_year')}}">
                                             <small>Year of Registration</small>
                                         </div>
                                     </div>
@@ -253,7 +253,7 @@
                                         <div class="form-group">
                                             <label>Offering Services Since
                                             </label>
-                                            <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{old('offering_year')}}">
+                                            <input class="form-control " type="text" placeholder="" name="offering_year" value="{{old('offering_year')}}">
                                             <small>Number of Years</small>
                                         </div>
                                     </div>
@@ -285,7 +285,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Type of Courses *
+                                            <label>Mode of Education
                                             </label>
                                             <br>
 
@@ -310,7 +310,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Intake *
+                                            <label>Enrolment Intake <span style="color: red;"> *</span>
                                             </label>
                                             <br>
                                             <div class="custom-control custom-checkbox">
@@ -359,7 +359,7 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="form-group">
-                                            <label>Admission Type *
+                                            <label>Admission Type <span style="color: red;"> *</span>
                                             </label>
                                             <br>
                                             <br>
@@ -413,33 +413,22 @@
 
                                     <div class="col-lg-3 col-md-3 col-12">
                                         <div class="custom-control custom-checkbox">
-                                            <label>What type of Certificate do you Offer?
+                                            <label>What type of School Education you have?
                                             </label>
                                             <br>
                                             <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="checkbox12" name="certificate_type[]" value="Diploma" {{ (is_array(old('certificate_type')) and in_array("Diploma", old('certificate_type'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="checkbox12"> Diploma</label><br>
+                                                <input class="custom-control-input" type="checkbox" id="checkbox12" name="certificate_type[]" value="Primary" {{ (is_array(old('certificate_type')) and in_array("Primary", old('certificate_type'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="checkbox12"> Primary (Elementary)</label><br>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="checkbox13" name="certificate_type[]" value="PG Diploma" {{ (is_array(old('certificate_type')) and in_array("PG Diploma", old('certificate_type'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="checkbox13"> PG Diploma</label><br>
+                                                <input class="custom-control-input" type="checkbox" id="checkbox13" name="certificate_type[]" value="Secondary" {{ (is_array(old('certificate_type')) and in_array("Secondary", old('certificate_type'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for="checkbox13"> Secondary</label><br>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id=" checkbox14" name=" certificate_type[]" value="Certification" {{ (is_array(old('certificate_type')) and in_array("Certification", old('certificate_type'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for=" checkbox14"> Certification</label><br>
+                                                <input class="custom-control-input" type="checkbox" id=" checkbox14" name=" certificate_type[]" value="Post-Secondary" {{ (is_array(old('certificate_type')) and in_array("Post-Secondary", old('certificate_type'))) ? ' checked' : '' }}>
+                                                <label class="custom-control-label" for=" checkbox14"> Post-Secondary</label><br>
                                             </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="checkboxGraduation" name="certificate_type[]" value="Graduation" {{ (is_array(old('certificate_type')) and in_array("Graduation", old('certificate_type'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="checkboxGraduation"> Graduation </label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="checkboxPost" name="certificate_type[]" value="Post Graduation" {{ (is_array(old('certificate_type')) and in_array("Post Graduation", old('certificate_type'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="checkboxPost"> Post Graduation </label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="checkboxDoctorate" name="certificate_type[]" value="Doctorate" {{ (is_array(old('certificate_type')) and in_array("Doctorate", old('certificate_type'))) ? ' checked' : '' }}>
-                                                <label class="custom-control-label" for="checkboxDoctorate"> Doctorate </label>
-                                            </div>
+                                        
 
                                         </div>
                                     </div>
@@ -775,7 +764,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <label>Company Achievements
+                                            <label>{{request()->query('service')}} Achievements
                                             </label>
                                             <br>
 
@@ -811,7 +800,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <label>Your Introductory Video URL Link display on Canada Inspire Portal
+                                            <label> {{request()->query('service') === "School" ? "Provide University URL Video Link to know more about your College" : "Provide University URL Video Link to know more about your College" }} 
                                             </label>
                                             <input class="form-control " type="text" name="vedio_url" value="{{old('vedio_url')}}">
                                         </div>
@@ -820,7 +809,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <label>Kindly provide Weblinks for News and Events, Immigration Updates and much more to help Candidates to have more information
+                                            <label>{{request()->query('service') === "School" ? "Provide Weblinks for News And Events to know more about your College to help Candidates know more" : "Provide Weblinks for News And Events to know more about your College to help Candidates know more"}}
                                             </label>
                                             <br>
 
@@ -908,12 +897,22 @@
                                             </label>
                                             <br>
 
-                                            <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">We have a Team of professionals who are having expert in Application Development, Solutions and Services. 
-                                  1. Is your Company looking for Website Design/Re Design or Development to give professional look and exposure for International community?
-                                  2. Are you looking for development of Online Appointments and Payment Gateway or Integration on your Website?
-                                  3. Are you looking for Mobile Application Development to ease your Prospects and Customers?
-                                  4. Are you interested to develop Enquiry form, Query, Survey or feedback form to improve and enhance your services?
-                                  5. Are you looking for CRM - Customer Relation Management Solutions to maintain and manage your company marketing activities, follow-up, and efficiency to generate good revenues for your company and always ahead with your competitors?</textarea>
+                                            <textarea style="width:100%;" rows="9" id="field_cutjx" data-invmsg="Canada Inspire provides Additional Services :- is invalid" aria-invalid="false" spellcheck="false">
+Primary (or elementary) school
+    Primary education for Age Group: 5 to 12 years old 
+
+Preschool (Optional)
+    Kindergarten
+    Grade 1 to 6
+
+Secondary (or High) School
+    Secondary education for Age Group: for 12 to 18 years old. 
+    Grade 7 to 12
+
+Post-secondary
+
+
+                                        </textarea>
                                         </div>
                                     </div>
                                 </div>

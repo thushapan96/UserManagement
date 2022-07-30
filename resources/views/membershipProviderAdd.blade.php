@@ -28,10 +28,11 @@
 
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="form-group">
-                            <label>Select Package </label>
+                            <label>Select Package                                
+</label>
                             <select class="form-control" name="package" id="package">
                                 @foreach($packagePriceList as $row)
-                                <option value="{{$row->id}}" {{old('package') == $row->id ? 'selected' :''}}>{{$row->type == 'Stanadard' ? 'Standard':$row->type}} For {{$row->duration}} Months - {{$row->price}} {{$currencyPrice}}</option>
+                                <option value="{{$row->id}}" {{old('package') == $row->id ? 'selected' :''}}>{{$row->type == 'Stanadard' ? 'Standard':$row->type}} For {{$row->duration}} Months & Number of Enquiries: {{$row->EnquiriesBusiness}} with {{$row->price}} {{$currencyPrice}}</option>
                                 @endforeach
                             </select>
                         </div>

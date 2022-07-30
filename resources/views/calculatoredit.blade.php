@@ -9,8 +9,8 @@
     </div>
 
     <u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
-        <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">tab1 </a></li>
-        <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab2 </a></li>
+        <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">PERSONAL + ACADEMIC </a></li>
+        <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">EMPLOYMENT + TECHNICAL </a></li>
     </u1>
     <!-- <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
         <p>Candidates to provide correct information. We will assist and recommend based on your previous educational qualification and interest. All Universities and Colleges required IELTS Academic but some Universities also required GRE/TOEFL/GMAT/SAT in addition to IELTS. </p>
@@ -24,13 +24,13 @@
 
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <label>First Name </label>
+                                    <label>First Name </label><span style="color: red;"> *</span>
                                     <input class="form-control" type="text" name="first_name" value="{{$calculators->first_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <label>Last Name</label>
+                                    <label>Last Name</label><span style="color: red;"> *</span>
                                     <input class="form-control" type="text" value="{{$calculators->last_name}}" name="last_name">
                                 </div>
 
@@ -46,18 +46,46 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 col-md-4 col-12">
+                            <!-- <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Gender</label>
-                                    <input class="form-control" type="text" value="{{$calculators->gender}}" name="gender">
-                                    <small>Male/Female</small>
+                                    <select class="form-control" type="text" value="{{$calculators->gender}}" name="gender">
+
+                                    </select>
+                                </div>
+                            </div> -->
+
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <label>Gender</label>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-12 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input" id="customradio" name="gender" value="male">
+                                                <label class="custom-control-label mt-1" for="customradio">Male</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input" id="customradio1" name="gender" value="female">
+                                                <label class="custom-control-label mt-1" for="customradio1">Female</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input" id="customradio2" name="gender" value="other">
+                                                <label class="custom-control-label mt-1" for="customradio2">Other</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Email address for correspondence</label>
                                     <input class="form-control" type="text" value="{{$calculators->email}}" name="email">
-                                    <small>Valid Email Address</small>
                                 </div>
                             </div>
                         </div>

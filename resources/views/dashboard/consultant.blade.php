@@ -157,7 +157,6 @@
             <option value="City">City </option>
         </select>
     </div>
-    <div class="col-md-1"></div>
     <div class="col-md-8">
         <br>
         <div class="p-1 bg-light rounded rounded-pill shadow-sm ">
@@ -167,6 +166,11 @@
                     <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <div class="mt-4">
+            <a href="{{route('dashboard.view.immigration')}}" class="client-btn  uk-button uk-boarder">Clear </a>
         </div>
     </div>
 </div>

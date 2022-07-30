@@ -142,13 +142,13 @@
 
     <div class="row">
 
-        <div class="col-md-8" style="margin-left:auto !important;margin-right:auto !important">
-            <h3 class="float-center" style="text-align:center">{{$institutions->name}} </h3>
-            <u1 class="col-md-11" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto;text-align:center">
+        <div class="col-md-8 bg-light " style="margin-left:auto !important;margin-right:auto !important">
+            <h3 class="text-center p-4" style="">{{$institutions->name}} </h3>
+            <u1 class="col-md-11  justify-content-between d-md-flex d-sm-block" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto;text-align:center">
                 <li class=" uk-active" id="amenu"><a style="padding: .5rem 1rem;" aria-current="page">Main </a></li>
                 <li class="" id="amenu1"><a style="padding: .5rem 1rem;">Programs </a></li>
                 <li class="" id="amenu2"><a style="padding: .5rem 1rem;">About {{$institutions->type}} </a></li>
-                <li class="" id="amenu3"><a style="padding: .5rem 1rem;"> Award & Recognization</a></li>
+                <li class="" id="amenu3"><a style="padding: .5rem 1rem;"> Award & Recognition</a></li>
                 <li class="" id="amenu4"><a style="padding: .5rem 1rem;">News and Events</a></li>
             </u1>
 
@@ -823,7 +823,7 @@
 
         </div>
 
-        <div class="col-md-3 uk-card" style="margin-top:110px;height:100% !important; box-shadow:none !important;margin-left:auto !important;margin-right:auto;">
+        <div class="col-md-3 uk-card" style="height:100% !important; box-shadow:none !important;margin-left:auto !important;margin-right:auto;">
             <div class="uk-card-body sc-padding-medium">
                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 

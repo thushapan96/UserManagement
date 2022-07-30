@@ -6,11 +6,11 @@
 
 </div>
 
-<u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
-    <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">tab1 </a></li>
-    <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab2 </a></li>
+<u1 class="col-md-7 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
+    <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">Personal + Academic </a></li>
+    <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">Employment + Technical </a></li>
 </u1>
-<div class='col-md-9 ' style="margin-left:auto !important;margin-right:auto !important">
+<div class='col-md-9 justify-content-around' style="margin-left:auto !important;margin-right:auto !important">
     <p>Candidates to provide correct information. We will assist and recommend based on your Academic, Technical Qualification and Work Experience.</p>
 </div>
 <u1 class="uk-switcher">
@@ -60,7 +60,7 @@
 
                         <div class="col-md-7">
                             <p class="ps">
-                                {{$calculators->gender }}
+                                {{$calculators->email }}
                             </p>
                         </div>
                     </div>
@@ -486,21 +486,12 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                                &nbsp;<div class="is_rejected_college_yes ">Yes</div>
-                                &nbsp;&nbsp;&nbsp;
-                                <div class="is_rejected_college_no ">NO</div>
+                            <div class="font-weight-bold ml-2 {{$calculators->is_rejected_college == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->is_rejected_college}} </div>
+
 
                             </div><br>
                         </div>
-                        <script>
-                            if ("{{$calculators->is_rejected_college}}" == 'yes') {
-                                $('.is_rejected_college_yes').css('text-decoration', 'underline')
-                                $('.is_rejected_college_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.is_rejected_college_no').css('text-decoration', 'underline')
-                                $('.is_rejected_college_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                       
                     </div>
                     @if($calculators->rejected_college_reason)
                     <div class="row custom-box">
@@ -537,21 +528,11 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                                &nbsp;<div class="is_rejected_visa_past_yes ">Yes</div>
-                                &nbsp;&nbsp;&nbsp;
-                                <div class="is_rejected_visa_past_no ">NO</div>
+                            <div class="font-weight-bold ml-2 {{$calculators->is_rejected_visa_past == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->is_rejected_visa_past}} </div>
 
                             </div><br>
                         </div>
-                        <script>
-                            if ("{{$calculators->is_rejected_visa_past}}" == 'yes') {
-                                $('.is_rejected_visa_past_yes').css('text-decoration', 'underline')
-                                $('.is_rejected_visa_past_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.is_rejected_visa_past_no').css('text-decoration', 'underline')
-                                $('.is_rejected_visa_past_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                        
                     </div>
                     @if($calculators->rejected_visa_reason_past)
                     <div class="row custom-box">
@@ -588,21 +569,12 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                                &nbsp;<div class="is_rejected_visa_yes ">Yes</div>
-                                &nbsp;&nbsp;&nbsp;
-                                <div class="is_rejected_visa_no ">NO</div>
+                            <div class="font-weight-bold ml-2 {{$calculators->is_rejected_visa == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->is_rejected_visa}} </div>
+
 
                             </div><br>
                         </div>
-                        <script>
-                            if ("{{$calculators->is_rejected_visa}}" == 'yes') {
-                                $('.is_rejected_visa_yes').css('text-decoration', 'underline')
-                                $('.is_rejected_visa_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.is_rejected_visa_no').css('text-decoration', 'underline')
-                                $('.is_rejected_visa_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                       
                     </div>
                     @if($calculators->rejected_visa_reason)
                     <div class="row custom-box">
@@ -640,8 +612,9 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                                &nbsp;<div class="EOI_profile_yes ">Yes</div> &nbsp;&nbsp;&nbsp;
-                                <div class="EOI_profile_no ">NO</div>&nbsp;&nbsp;&nbsp;
+                            <div class="font-weight-bold ml-2 {{$calculators->EOI_profile == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->EOI_profile}} </div>
+
+                                &nbsp;&nbsp;
                                 @if($calculators->EOI_profile_date)
                                 @if($configureDate == '1')
                                 {{date('Y-m-d', strtotime($calculators->EOI_profile_date))}}
@@ -653,15 +626,7 @@
                                 @endif
                             </div><br>
                         </div>
-                        <script>
-                            if ("{{$calculators->EOI_profile}}" == 'yes') {
-                                $('.EOI_profile_yes').css('text-decoration', 'underline')
-                                $('.EOI_profile_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.EOI_profile_no').css('text-decoration', 'underline')
-                                $('.EOI_profile_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                       
                     </div><br>
                     <div class="row">
                         <div class="col-md-9">
@@ -671,8 +636,9 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                                &nbsp;<div class="Provincial_profile_yes ">Yes</div> &nbsp;&nbsp;&nbsp;
-                                <div class="Provincial_profile_no ">NO</div>&nbsp;&nbsp;&nbsp;
+                            <div class="font-weight-bold ml-2 {{$calculators->Provincial_profile == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->Provincial_profile}} </div>
+   
+                            &nbsp;&nbsp;
                                 @if($calculators->Provincial_profile_date)
                                 @if($configureDate == '1')
                                 {{date('Y-m-d', strtotime($calculators->Provincial_profile_date))}}
@@ -684,15 +650,7 @@
                                 @endif
                             </div>
                         </div>
-                        <script>
-                            if ("{{$calculators->Provincial_profile}}" == 'yes') {
-                                $('.Provincial_profile_yes').css('text-decoration', 'underline')
-                                $('.Provincial_profile_yes').css('text-decoration-color', 'green')
-                            } else {
-                                $('.Provincial_profile_no').css('text-decoration', 'underline')
-                                $('.Provincial_profile_no').css('text-decoration-color', 'green')
-                            }
-                        </script>
+                        
                     </div><br>
 
                 </fieldset>

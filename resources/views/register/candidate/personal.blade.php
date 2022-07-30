@@ -8,19 +8,19 @@
 
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>First Name</label><span style="color: red;"> *</span>
                     <input name="first_name" class="form-control " type="text" placeholder="First Name" required>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-12 mt-2">
+            <div class="col-lg-4 col-md-4 col-12">
                 <div class="form-group">
-                    <label> </label>
+                    <label>Middle Name </label>
                     <input name="middle_name" class="form-control " type="text" placeholder="Middle Name">
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-12 mt-2">
+            <div class="col-lg-4 col-md-4 col-12 ">
                 <div class="form-group">
-                    <label> </label>
+                    <label> Last Name</label><span style="color: red;"> *</span>
                     <input name="last_name" class="form-control " type="text" placeholder="Last Name">
                 </div>
             </div>
@@ -76,7 +76,7 @@
 
             <div class="col-lg-3 col-md-3 col-12 m-1 ">
                 <div class="form-group">
-                    <label>Corosponding Address</label>
+                    <label>Corresponding Address</label>
                 </div>
             </div>
 
@@ -204,32 +204,49 @@
         <hr>
 
         <div class="row mb-4">
-            <div class="col-lg-6 col-md-6 col-12">
-                <label>Have you applied Visa for USA and Canada
+            <div class="col-lg-12 col-md-12 col-12">
+                <label>Have you applied visa for USA or Canada in the past
                 </label>
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-2 ">
+                <div class="d-flex">
+                    <div class="col-lg-2 col-md-2  col-sm-12">
                         <div class="custom-control custom-radio ">
                             <input type="radio" class="custom-control-input " id="customradio4" name="is_already_apply" value="yes">
                             <label class="custom-control-label mt-1" for="customradio4">Yes</label>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-2 ">
+                    <div class="col-lg-2 col-md-2  col-sm-12">
                         <div class="custom-control custom-radio ">
                             <input type="radio" class="custom-control-input " id="customradio5" name="is_already_apply" value="no">
                             <label class="custom-control-label mt-1" for="customradio5">No</label>
                         </div>
                     </div>
+                    <div class="ifyes d-none ">
+                        <div class="d-flex">
+                            <div class="col-lg-12 col-md-12  col-sm-12">
+                                <input type="checkbox" id="f-car-extra-1" name="is_already_apply_usa" value="1" data-sc-icheck>
+                                <label for="f-car-extra-1">USA</label>
+                            </div class="col-lg-12 col-md-12  col-sm-12">
+                            <div class="col-lg-12 col-md-12  col-sm-12">
+                                <input type="checkbox" id="f-car-extra-2" name="is_already_apply_canada" value="1" data-sc-icheck>
+                                <label for="f-car-extra-2">Canada</label>
+                            </div class="col-lg-12 col-md-12  col-sm-12">
+                        </div>
+                    </div>
+                    <div class="ifno d-none">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="form-group">
+                                <label>When would you like to start your application process?
+                                </label>
+                                <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process">
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="form-group">
-                    <label>Possible Start Date
-                    </label>
-                    <input class="form-control" type="date" name="possible_start_date" placeholder="For Immigration Process">
-                </div>
-            </div>
+
         </div>
 
         <div class="row mb-4">
@@ -287,8 +304,7 @@
                         <option value="Express Entry">Express Entry</option>
                         <option value="PNP">PNP</option>
                         <option value="AIP">AIP</option>
-                        <option value="Visit">Visit</option>
-                        <option value="Student">Student</option>
+
                         <option value="Business">Business</option>
                     </select>
                 </div>
@@ -401,7 +417,19 @@
 
 <script>
     $(document).ready(function() {
-        console.log("hi")
+        $('[name="is_already_apply"]').change(function() {
+            if ($(this).val() == 'yes') {
+                $('.ifno').addClass('d-none');
+                $('.ifyes').removeClass('d-none');
+
+            } else if ($(this).val() == 'no') {
+                $('.ifyes').addClass('d-none');
+                $('.ifno').removeClass('d-none');
+
+            };
+        });
+
+
 
         $('[name="same_Correspondence_address"]').change(function() {
             if ($(this).is(':checked')) {
@@ -428,6 +456,7 @@
 
 <script>
     $(document).ready(function() {
+
 
 
 

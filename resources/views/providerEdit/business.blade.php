@@ -11,12 +11,12 @@
             <form id="form" action="{{route('update.consultant' ,['id'=>$consultants->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <h5 style="text-align:center"> edit </h5><br>
-                <u1 class="col-md-9" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto;margin-right:auto">
+                <u1 class="col-md-12 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto;margin-right:auto">
                     <li class="nav-linkk " id="amenu"><a aria-current="page">Main </a></li>
                     <li class="nav-linkk " id="amenu1"><a>Team </a></li>
                     <li class="nav-linkk " id="amenu2"><a>About Company</a></li>
                     <li class="nav-linkk " id="amenu5"><a>Our Services</a></li>
-                    <li class="nav-linkk" id="amenu3"><a> Award & Recognization</a></li>
+                    <li class="nav-linkk" id="amenu3"><a> Award & Recognition</a></li>
                     <li class="nav-linkk" id="amenu4"><a>News and Events</a></li>
                     <!-- <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Canada Inspire</a></li>
                     <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Feedback</a></li> -->
@@ -24,14 +24,14 @@
                 <u1 class="uk-switcher">
 
                     <li id='menu' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
+                        <div class='uk-card col-md-12 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box " id="">
 
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
-                                                <label>First Name *
+                                                <label>First Name <span style="color: red;"> *</span>
                                                 </label>
                                                 <input class="form-control " type="text" name="first_name" value="{{$consultants->first_name}}">
                                                 <input class="form-control " type="text" name="type" value="{{$consultants->type}}" hidden>
@@ -41,7 +41,7 @@
 
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
-                                                <label>Last Name *
+                                                <label>Last Name <span style="color: red;"> *</span>
                                                 </label>
                                                 <input class="form-control " type="text" name="last_name" value="{{$consultants->last_name}}">
                                             </div>
@@ -49,7 +49,7 @@
 
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
-                                                <label>Registration Number *
+                                                <label>Registration Number <span style="color: red;"> *</span>
                                                 </label>
                                                 <input class="form-control " type="text" name="registration_number" value="{{$consultants->registration_number}}">
                                             </div>
@@ -61,7 +61,7 @@
 
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
-                                                <label>Company Name *
+                                                <label>Company Name <span style="color: red;"> *</span>
                                                 </label>
                                                 <input class="form-control " type="text" name="company_name" value="{{$consultants->company_name}}">
                                             </div>
@@ -69,7 +69,7 @@
 
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
-                                                <label>Registered Office - Location *
+                                                <label>Registered Office - Location <span style="color: red;"> *</span>
                                                 </label>
                                                 <input class="form-control " id="pac-input1" type="text" placeholder="Area" name="registrar_office_area" value="{{$consultants->registrar_office_area}}">
                                             </div>
@@ -77,7 +77,7 @@
 
                                         <div class="col-lg-4 col-md-4 col-12">
                                             <div class="form-group">
-                                                <label>Status *
+                                                <label>Status <span style="color: red;"> *</span>
                                                 </label>
                                                 <select class="form-control" name="status">
                                                     <option value="Active" {{$consultants->status == "Active" ? "checked":""}}>Active</option>
@@ -93,14 +93,14 @@
                                     <div class="row custom-box">
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>Street *
+                                                <label>Street <span style="color: red;"> *</span>
                                                 </label>
                                                 <input class="form-control " id="pac-input2" type="text" name="streat" value="{{$consultants->streat}}">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>City *
+                                                <label>City <span style="color: red;"> *</span>
 
                                                 </label>
                                                 <input class="form-control " id="pac-input3" type="text" name="city" value="{{$consultants->city}}">
@@ -108,7 +108,7 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>Province/Region *
+                                                <label>Province/Region <span style="color: red;"> *</span>
 
                                                 </label>
                                                 <input class="form-control " id="pac-input4" type="text" name="region" value="{{$consultants->region}}">
@@ -116,7 +116,7 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>Country *
+                                                <label>Country <span style="color: red;"> *</span>
 
                                                 </label>
                                                 <input class="form-control " id="pac-input5" type="text" name="country" value="{{$consultants->country}}">
@@ -129,7 +129,7 @@
 
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>Postal Code *
+                                                <label>Postal Code <span style="color: red;"> *</span>
                                                 </label>
 
 
@@ -141,7 +141,7 @@
 
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>Contact Number *
+                                                <label>Contact Number <span style="color: red;"> *</span>
                                                 </label>
 
 
@@ -151,7 +151,7 @@
 
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>Email address for correspondence *
+                                                <label>Email address for correspondence <span style="color: red;"> *</span>
                                                 </label>
 
                                                 <input class="form-control " type="email" name="email" value="{{$consultants->email}}">
@@ -160,7 +160,7 @@
 
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
-                                                <label>URL - Website Address *
+                                                <label>URL - Website Address <span style="color: red;"> *</span>
                                                 </label>
 
                                                 <input class="form-control " type="text" name="website_address" value="{{$consultants->website_address}}">
@@ -172,7 +172,7 @@
 
                                         <!-- <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
-                                                <label>Specialization *
+                                                <label>Specialization <span style="color: red;"> *</span>
                                                 </label>
                                                 <div class="custom-control custom-checkbox">
                                                     <input class="custom-control-input" type="checkbox" id="Specialization1" name="specialization[]" value="Accounting & Auditing" {{ (is_array($consultants->specialization) and in_array("Accounting & Auditing", $consultants->specialization)) ? ' checked' : '' }}>
@@ -195,7 +195,7 @@
 
                                         <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
-                                                <label>Service Offered *</label>
+                                                <label>Service Offered <span style="color: red;"> *</span></label>
 
                                                 <div class="custom-control custom-checkbox">
                                                     <input class="custom-control-input" type="checkbox" id="Service1" name="offering_service[]" value="Business Incorporation" {{ (is_array($consultants->offering_service) and in_array("Business Incorporation", $consultants->offering_service)) ? ' checked' : '' }}>
@@ -268,7 +268,7 @@
                                             <div class="form-group">
                                                 <label>Year of Establishment
                                                 </label>
-                                                <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{$consultants->establishment_year}}">
+                                                <input class="form-control " type="text"  name="establishment_year" value="{{$consultants->establishment_year}}">
                                                 <small>Year of Registration</small>
                                             </div>
                                         </div>
@@ -276,7 +276,7 @@
                                             <div class="form-group">
                                                 <label>Offering Services Since
                                                 </label>
-                                                <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{$consultants->offering_year}}">
+                                                <input class="form-control " type="text"  name="offering_year" value="{{$consultants->offering_year}}">
                                                 <small>Number of Years</small>
                                             </div>
                                         </div>
@@ -306,7 +306,7 @@
                     </li>
 
                     <li id='menu1' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
+                        <div class='uk-card col-md-12 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box">
@@ -390,7 +390,7 @@
                     </li>
 
                     <li id='menu2' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
+                        <div class='uk-card col-md-12 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
@@ -493,7 +493,7 @@
                         </div>
                     </li>
                     <li id='menu5' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
+                        <div class='uk-card col-md-12 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
 
@@ -551,7 +551,7 @@
                         </div>
                     </li>
                     <li id='menu3' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
+                        <div class='uk-card col-md-12 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <!-- <div class="row custom-box">
@@ -615,13 +615,13 @@
                     </li>
 
                     <li id='menu4' class='tab-pane'>
-                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
+                        <div class='uk-card col-md-12 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box">
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <label>Your Introductory Video URL Link display on Canada Inspire Portal
+                                                <label>Provide University URL Video Link to know more about your Company
                                                 </label>
                                                 <input class="form-control " type="text" name="vedio_url" value="{{$consultants->vedio_url}}">
                                             </div>
@@ -630,7 +630,7 @@
                                     <div class="row custom-box">
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <label>Kindly provide Weblinks for News and Events, Immigration Updates and much more to help Candidates to have more information
+                                                <label>Provide weblinks for News and Events for Entrepreneur’s and Corporates to know more about your services
                                                 </label>
                                                 <br>
 

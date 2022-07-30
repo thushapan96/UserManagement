@@ -3,10 +3,10 @@
 
 @section('content')
 <!-- Subscribe & Stay Connected. Start -->
-<div class="container ">
+<div class=" ">
 
-    <div class="tab-pane  " style="width:80%;margin-left:5% !important">
-        <h6 style="text-align:center">edit Work Place Information </h6><br>
+    <div class="tab-pane  " >
+        <h6 style="text-align:center">edit Profile </h6><br>
         <div class="uk-card ">
             <div class="uk-card-body sc-padding-medium">
                 <form id="work_form" action="{{route('profileWorkupdate',['id' => $userId ])}}" method="POST" enctype="multipart/form-data">

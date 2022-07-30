@@ -11,12 +11,12 @@
             <form id="form" action="{{route('update.consultant' ,['id'=>$consultants->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <h5 style="text-align:center"> edit </h5><br>
-                <u1 class="col-md-9" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto;margin-right:auto">
+                <u1 class="col-md-12 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto;margin-right:auto">
                     <li class="nav-linkk " id="amenu"><a aria-current="page">Main </a></li>
                     <li class="nav-linkk " id="amenu1"><a>Team </a></li>
                     <li class="nav-linkk " id="amenu2"><a>About Company</a></li>
                     <li class="nav-linkk " id="amenu5"><a>Our Services</a></li>
-                    <li class="nav-linkk" id="amenu3"><a>Award & Recognization</a></li>
+                    <li class="nav-linkk" id="amenu3"><a>Award & Recognition</a></li>
                     <li class="nav-linkk" id="amenu4"><a>News and Events</a></li>
                     <!-- <li class="nav-linkk" id="amenu5"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Canada Inspire</a></li>
                     <li class="nav-linkk" id="amenu6"><a style="cursor:pointer;padding: 0.5rem 1.5rem;">Feedback</a></li> -->
@@ -24,7 +24,7 @@
                 <u1 class="uk-switcher">
 
                     <li id='menu' class='tab-pane '>
-                        <div class='uk-card col-md-10 ' style="margin-left:auto;margin-right:auto">
+                        <div class='uk-card col-md-12 ' style="margin-left:auto;margin-right:auto">
                             <div class="uk-card-body sc-padding-medium">
                                 <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                                     <div class="row custom-box " id="">
@@ -176,7 +176,7 @@
                                             <div class="form-group">
                                                 <label>Year of Establishment
                                                 </label>
-                                                <input class="form-control " type="text" placeholder="Year of Registration" name="establishment_year" value="{{$consultants->establishment_year}}">
+                                                <input class="form-control " type="text"  name="establishment_year" value="{{$consultants->establishment_year}}">
                                                 <small>Year of Registration</small>
                                             </div>
                                         </div>
@@ -184,7 +184,7 @@
                                             <div class="form-group">
                                                 <label>Offering Services Since
                                                 </label>
-                                                <input class="form-control " type="text" placeholder="Number of Years" name="offering_year" value="{{$consultants->offering_year}}">
+                                                <input class="form-control " type="text"  name="offering_year" value="{{$consultants->offering_year}}">
                                                 <small>Number of Years</small>
                                             </div>
                                         </div>
@@ -192,7 +192,7 @@
                                             <div class="form-group">
                                                 <label>Total Cases Taken
                                                 </label>
-                                                <input class="form-control " type="text" placeholder="24 or 48 or 72 Hours" name="total_cases_taken" value="{{$consultants->total_cases_taken}}">
+                                                <input class="form-control " type="text"  name="total_cases_taken" value="{{$consultants->total_cases_taken}}">
                                                 <small>Number of Cases Enrolled till Date</small>
                                             </div>
                                         </div>
@@ -227,7 +227,7 @@
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-12">
                                             <div class="form-group">
-                                                <label>Is your Initial Consultation chargeable?
+                                                <label>Is Your Initial Consultation Chargeable ?
                                                 </label>
                                                 <div class="col-lg-2 col-md-2 col-2 ">
                                                     <div class="custom-control custom-radio ">
@@ -834,7 +834,7 @@
                                     <div class="row custom-box">
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <label>Your Introductory Video URL Link display on Canada Inspire Portal
+                                                <label>Provide University URL Video Link to know more about your Company
                                                 </label>
                                                 <input class="form-control " type="text" name="vedio_url" value="{{$consultants->vedio_url}}">
                                             </div>
@@ -843,7 +843,7 @@
                                     <div class="row custom-box">
                                         <div class="col-lg-12 col-md-12 col-12">
                                             <div class="form-group">
-                                                <label>Kindly provide Weblinks for News and Events, Immigration Updates and much more to help Candidates to have more information
+                                                <label>Provide weblinks for News and Events, Immigration Updates and much More to help Candidates to have more information
                                                 </label>
                                                 <br>
 

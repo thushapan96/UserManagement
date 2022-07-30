@@ -4,34 +4,34 @@
 
     @csrf
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
-        <h5 class="" style="text-align:center;color:#3f6791">Assessment Form for Education - Canada</h5>
-
+        <h5 class="" style="text-align:center;color:#3f6791">Educational Assessment Form</h5>
+<hr>
     </div>
 
-    <u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
-        <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">tab1 </a></li>
-        <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab2 </a></li>
-        <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">tab3</a></li>
+    <u1 class="col-md-7 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
+        <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">Personal + Academic </a></li>
+        <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">Employment + Technical </a></li>
+        <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">Others</a></li>
     </u1>
     <div class='col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
         <p>Candidates to provide correct information. We will assist and recommend based on your previous educational qualification and interest. All Universities and Colleges required IELTS Academic but some Universities also required GRE/TOEFL/GMAT/SAT in addition to IELTS. </p>
     </div>
     <u1 class="uk-switcher">
         <li id='menu' class='tab-pane '>
-            <div class='uk-card col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
+            <div class='uk-card col-md-12 ' style="margin-left:auto !important;margin-right:auto !important">
                 <div class="uk-card-body sc-padding-medium">
                     <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                         <div class="row custom-box " id="">
 
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <label>First Name </label>
+                                    <label>First Name </label><span style="color: red;"> *</span>
                                     <input class="form-control" type="text" name="first_name" value="{{old('first_name')}}">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <label>Last Name</label>
+                                    <label>Last Name</label><span style="color: red;"> *</span>
                                     <input class="form-control" type="text" value="{{old('last_name')}}" name="last_name">
                                 </div>
 
@@ -50,8 +50,12 @@
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Gender</label>
-                                    <input class="form-control" type="text" value="{{old('gender')}}" name="gender">
-                                    <small>Male/Female</small>
+                                    <select class="form-control" name="gender">
+                                        <option value="none" selected>Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">other</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
@@ -285,7 +289,7 @@
             </div>
         </li>
         <li id='menu1' class='tab-pane '>
-            <div class='uk-card col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
+            <div class='uk-card col-md-12 ' style="margin-left:auto !important;margin-right:auto !important">
                 <div class="uk-card-body sc-padding-medium">
                     <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                         <div id="add_employment_row">
@@ -412,7 +416,7 @@
             </div>
         </li>
         <li id='menu2' class='tab-pane '>
-            <div class='uk-card col-md-10 ' style="margin-left:auto !important;margin-right:auto !important">
+            <div class='uk-card col-md-12 ' style="margin-left:auto !important;margin-right:auto !important">
                 <div class="uk-card-body sc-padding-medium">
                     <fieldset class="uk-fieldset md-bg-grey-100 sc-padding">
                         <div class="row">
