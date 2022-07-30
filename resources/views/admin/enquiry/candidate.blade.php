@@ -223,12 +223,7 @@
                                     </div>
                                 </li>
 
-                                <li class="sc-list-group">
-                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                    <div class="sc-list-body">
-                                        <p class="uk-margin-remove uk-text-wrap">{{$candidates->residential_city}} {{$candidates->residential_region}} {{$candidates->residential_country}}</p>
-                                    </div>
-                                </li>
+
 
                                 <li class="sc-list-group">
                                     <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
@@ -236,6 +231,19 @@
                                         <p class="uk-margin-remove uk-text-wrap">
                                             {{$candidates->immigration_purpose}}
                                         </p>
+                                    </div>
+                                </li>
+
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-School: {{$candidates->currentEnquirySchool}}/{{$candidates->MembershipCandidateEnquiriesSchool == '' ? 0  :$candidates->MembershipCandidateEnquiriesSchool}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-College: {{$candidates->currentEnquiryCollege}}/{{$candidates->MembershipCandidateEnquiriesCollege == '' ? 0  :$candidates->MembershipCandidateEnquiriesCollege}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-University: {{$candidates->currentEnquiryUniversity}}/{{$candidates->MembershipCandidateEnquiriesUniversity == '' ? 0  :$candidates->MembershipCandidateEnquiriesUniversity}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-Consultant: {{$candidates->currentEnquiryConsultant}}/{{$candidates->MembershipCandidateEnquiriesRCICConsultant == '' ? 0  :$candidates->MembershipCandidateEnquiriesRCICConsultant}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-Immigration: {{$candidates->currentEnquiryImmigration}}/{{$candidates->MembershipCandidateEnquiriesImmigration == '' ? 0  :$candidates->MembershipCandidateEnquiriesImmigration}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-Business: {{$candidates->currentEnquiryAccountant}}/{{$candidates->MembershipCandidateEnquiriesBusiness == '' ? 0  : $candidates->MembershipCandidateEnquiriesBusiness}}</p>
+
                                     </div>
                                 </li>
                             </ul>
@@ -321,12 +329,7 @@
                                                     <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                                 </div>
                                             </li>
-                                            <li class="sc-list-group">
-                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                                <div class="sc-list-body">
-                                                    <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                                </div>
-                                            </li>
+                                          
                                             <li class="sc-list-group">
                                                 <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                                 <div class="sc-list-body">
@@ -337,6 +340,13 @@
 
                                                         @endif
                                                     </p>
+                                                </div>
+                                            </li>
+
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$row->currentEnquirySchool}}/{{$row->limitedEnquirySchool == '' ? 0  :$row->limitedEnquirySchool}}</p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -422,12 +432,7 @@
                                                     <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                                 </div>
                                             </li>
-                                            <li class="sc-list-group">
-                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                                <div class="sc-list-body">
-                                                    <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                                </div>
-                                            </li>
+                                          
                                             <li class="sc-list-group">
                                                 <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                                 <div class="sc-list-body">
@@ -438,6 +443,16 @@
 
                                                         @endif
                                                     </p>
+                                                </div>
+                                            </li>
+
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry-Diploma:{{$row->currentDiploma}}/{{$row->limitedEnquiryDiploma == '' ? 0  :$row->limitedEnquiryDiploma}}</p>
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry-PG Diploma:{{$row->currentPG_Diploma}}/{{$row->limitedEnquiryPG_Diploma == '' ? 0  :$row->limitedEnquiryPG_Diploma}}</p>
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry-Certification:{{$row->currentCertification}}/{{$row->limitedEnquiryCertification == '' ? 0  :$row->limitedEnquiryCertification}}</p>
+
                                                 </div>
                                             </li>
                                         </ul>
@@ -522,12 +537,7 @@
                                                     <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                                 </div>
                                             </li>
-                                            <li class="sc-list-group">
-                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                                <div class="sc-list-body">
-                                                    <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                                </div>
-                                            </li>
+                                           
                                             <li class="sc-list-group">
                                                 <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                                 <div class="sc-list-body">
@@ -538,6 +548,15 @@
 
                                                         @endif
                                                     </p>
+                                                </div>
+                                            </li>
+
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry-Graduation:{{$row->currentGraduation}}/{{$row->limitedEnquiryGraduation == '' ? 0  :$row->limitedEnquiryPost_Graduation}}</p>
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry-Post Graduation:{{$row->currentPost_Graduation}}/{{$row->limitedEnquiryPost_Graduation == '' ? 0  :$row->limitedEnquiryPost_Graduation}}</p>
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry-Doctorate:{{$row->currentDoctorate}}/{{$row->limitedEnquiryDoctorate == '' ? 0  :$row->limitedEnquiryDoctorate}}</p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -618,13 +637,7 @@
                                                     <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                                 </div>
                                             </li>
-                                            <li class="sc-list-group">
-                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                                <div class="sc-list-body">
-                                                    <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                                </div>
-                                            </li>
-
+                                           
                                             <li class="sc-list-group">
                                                 <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                                 <div class="sc-list-body">
@@ -637,6 +650,14 @@
                                                     </p>
                                                 </div>
                                             </li>
+
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$row->currentEnquiryProvider}}/{{$row->limitedEnquiryProvider == '' ? 0  :$row->limitedEnquiryProvider}}</p>
+                                                </div>
+                                            </li>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -716,12 +737,7 @@
                                                     <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                                 </div>
                                             </li>
-                                            <li class="sc-list-group">
-                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                                <div class="sc-list-body">
-                                                    <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                                </div>
-                                            </li>
+                                           
 
                                             <li class="sc-list-group">
                                                 <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
@@ -733,6 +749,13 @@
 
                                                         @endif
                                                     </p>
+                                                </div>
+                                            </li>
+
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$row->currentEnquiryProvider}}/{{$row->limitedEnquiryProvider == '' ? 0  :$row->limitedEnquiryProvider}}</p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -813,13 +836,7 @@
                                                     <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                                 </div>
                                             </li>
-                                            <li class="sc-list-group">
-                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                                <div class="sc-list-body">
-                                                    <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                                </div>
-                                            </li>
-
+                                           
                                             <li class="sc-list-group">
                                                 <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                                 <div class="sc-list-body">
@@ -830,6 +847,13 @@
 
                                                         @endif
                                                     </p>
+                                                </div>
+                                            </li>
+
+                                            <li class="sc-list-group">
+                                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                <div class="sc-list-body">
+                                                    <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$row->currentEnquiryProvider}}/{{$row->limitedEnquiryProvider == '' ? 0  :$row->limitedEnquiryProvider}}</p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -2343,9 +2367,9 @@
 
     $(document).ready(function() {
 
-     
-          
-       
+
+
+
         $('.confirmEnquiry').on('click', function() {
             var type = $(this).attr('data-type')
             var serviceId = $(this).attr('data-serviceId')

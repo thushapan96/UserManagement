@@ -20,10 +20,7 @@ Route::get('/', function () {
 
     return view('index');
 });
-Route::get('/indexx', function () {
 
-    return view('indexx');
-})->name('indexx');
 
 Route::get('/test', function () {
 
@@ -115,6 +112,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/providerProfile', function () {
         return view('providerProfile.institudeProfile');
     });
+
+    Route::get('/indexx', function () {
+
+        return view('indexx');
+    })->name('indexx');
 
     Route::post('/services/confirmEnquiry/user', 'App\Http\Controllers\SearchController@servicesConfirmEnquiryUser');
     Route::post('/services/confirmEnquiry/user/reject', 'App\Http\Controllers\SearchController@servicesConfirmEnquiryUserReject');
@@ -216,36 +218,22 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/register/candidate/personal', [App\Http\Controllers\CandidatePersonalController::class, 'index'])->name('candidate_personal');
 
-  
+    Route::get('/membership', [App\Http\Controllers\HomeController::class, 'membership'])->name('membership');
+    Route::get('/membership/add', [App\Http\Controllers\HomeController::class, 'membershipAdd'])->name('add.membership');
+    Route::post('/membership/add', [App\Http\Controllers\HomeController::class, 'membershipStore'])->name('membership.add');
+    Route::post('/extend/add', [App\Http\Controllers\HomeController::class, 'extendService'])->name('service.add');
+    Route::post('/package/add', [App\Http\Controllers\HomeController::class, 'packageAdd'])->name('package.add');
 
-    Route::get('register/candidate/workexperience', function () {
-        return view('register.workexperience');
-    })->name('candidate_workexperience');
 
-    Route::get('register/candidate/sponsor', function () {
-        return view('register.sponsor');
-    })->name('candidate_sponsor');
-    
-    Route::get('/register/candidate/acadamic', function () {
-        return view('register/registerformone');
-    })->name('candidate_acadamic');
+    Route::get('/membership/institude', [App\Http\Controllers\HomeController::class, 'membershipInstitude'])->name('membership.institude');
+    Route::get('/membership/add/institude', [App\Http\Controllers\HomeController::class, 'membershipAddInstitude'])->name('add.membership.institude');
+    Route::post('/membership/add/institude', [App\Http\Controllers\HomeController::class, 'membershipStoreInstitude'])->name('membership.add.institude');
+    Route::post('/package/add/institude', [App\Http\Controllers\HomeController::class, 'packageAddInstitude'])->name('package.add.institude');
+
+    Route::get('/membership/provider', [App\Http\Controllers\HomeController::class, 'membershipProvider'])->name('membership.provider');
+    Route::get('/membership/add/provider', [App\Http\Controllers\HomeController::class, 'membershipAddProvider'])->name('add.membership.provider');
+    Route::post('/membership/add/provider', [App\Http\Controllers\HomeController::class, 'membershipStoreProvider'])->name('membership.add.provider');
+    Route::post('/package/add/provider', [App\Http\Controllers\HomeController::class, 'packageAddProvider'])->name('package.add.provider');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/membership', [App\Http\Controllers\HomeController::class, 'membership'])->name('membership');
-Route::get('/membership/add', [App\Http\Controllers\HomeController::class, 'membershipAdd'])->name('add.membership');
-Route::post('/membership/add', [App\Http\Controllers\HomeController::class, 'membershipStore'])->name('membership.add');
-Route::post('/extend/add', [App\Http\Controllers\HomeController::class, 'extendService'])->name('service.add');
-Route::post('/package/add', [App\Http\Controllers\HomeController::class, 'packageAdd'])->name('package.add');
-
-
-Route::get('/membership/institude', [App\Http\Controllers\HomeController::class, 'membershipInstitude'])->name('membership.institude');
-Route::get('/membership/add/institude', [App\Http\Controllers\HomeController::class, 'membershipAddInstitude'])->name('add.membership.institude');
-Route::post('/membership/add/institude', [App\Http\Controllers\HomeController::class, 'membershipStoreInstitude'])->name('membership.add.institude');
-Route::post('/package/add/institude', [App\Http\Controllers\HomeController::class, 'packageAddInstitude'])->name('package.add.institude');
-
-Route::get('/membership/provider', [App\Http\Controllers\HomeController::class, 'membershipProvider'])->name('membership.provider');
-Route::get('/membership/add/provider', [App\Http\Controllers\HomeController::class, 'membershipAddProvider'])->name('add.membership.provider');
-Route::post('/membership/add/provider', [App\Http\Controllers\HomeController::class, 'membershipStoreProvider'])->name('membership.add.provider');
-Route::post('/package/add/provider', [App\Http\Controllers\HomeController::class, 'packageAddProvider'])->name('package.add.provider');

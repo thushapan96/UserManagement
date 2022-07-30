@@ -225,13 +225,15 @@
                                         <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                     </div>
                                 </li>
+                                @if(request()->query('select') )
+
                                 <li class="sc-list-group">
                                     <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
                                     <div class="sc-list-body">
-                                        <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$row->currentEnquiryProvider}}/{{$row->limitedEnquiryProvider == '' ? 0  :$row->limitedEnquiryProvider}}</p>
                                     </div>
                                 </li>
-
+                                @else
                                 <li class="sc-list-group">
                                     <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                     <div class="sc-list-body">
@@ -244,6 +246,17 @@
                                         </p>
                                     </div>
                                 </li>
+                                @endif
+
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
+                                    </div>
+                                </li>
+
+
+
                             </ul>
                         </div>
                     </div>

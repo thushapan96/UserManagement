@@ -236,24 +236,47 @@
                                             <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                         </div>
                                     </li>
+                                    @if($row->type == 'School')
                                     <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
                                         <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">{{$row->streat}} {{$row->city}} {{$row->region}} {{$row->country}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$row->currentEnquirySchool}}/{{$row->limitedEnquirySchool == '' ? 0  :$row->limitedEnquirySchool}}</p>
                                         </div>
                                     </li>
+                                    @elseif($row->type == 'College')
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Diploma:{{$row->currentDiploma}}/{{$row->limitedEnquiryDiploma == '' ? 0  :$row->limitedEnquiryDiploma}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-PG Diploma:{{$row->currentPG_Diploma}}/{{$row->limitedEnquiryPG_Diploma == '' ? 0  :$row->limitedEnquiryPG_Diploma}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Certification:{{$row->currentCertification}}/{{$row->limitedEnquiryCertification == '' ? 0  :$row->limitedEnquiryCertification}}</p>
+
+                                        </div>
+                                    </li>
+                                    @elseif($row->type == 'University')
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Graduation:{{$row->currentGraduation}}/{{$row->limitedEnquiryGraduation == '' ? 0  :$row->limitedEnquiryPost_Graduation}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Post Graduation:{{$row->currentPost_Graduation}}/{{$row->limitedEnquiryPost_Graduation == '' ? 0  :$row->limitedEnquiryPost_Graduation}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Doctorate:{{$row->currentDoctorate}}/{{$row->limitedEnquiryDoctorate == '' ? 0  :$row->limitedEnquiryDoctorate}}</p>
+                                        </div>
+                                    </li>
+
+                                    @endif
                                     <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                         <div class="sc-list-body">
                                             <p class="uk-margin-remove uk-text-wrap">
-                                                @if($row->offer_course)
+                                                @if($row->offering_service)
 
-                                                {{$row->offer_course}}
+                                                {{$row->offering_service}}
 
                                                 @endif
                                             </p>
                                         </div>
                                     </li>
+
                                 </ul>
                             </div>
                         </div>
@@ -296,7 +319,7 @@
         if ($('#type').val() == 'School') {
             $('.page-active').removeClass('sc-page-active')
             $('.page-enquiries-School').addClass('sc-page-active')
-        } else if ('College') {
+        } else if ($('#type').val() == 'College') {
             $('.page-active').removeClass('sc-page-active')
             $('.page-enquiries-College ').addClass('sc-page-active')
         } else {

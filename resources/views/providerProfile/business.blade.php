@@ -677,35 +677,45 @@
     $(document).ready(function() {
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
+
+        var currentEnquiryAccountant = "{{$currentEnquiryAccountant}}";
+        var MembershipCandidateEnquiriesBusiness = "{{$MembershipCandidateEnquiriesBusiness}}";
+
+
         $("#enquiry").click(function() {
             var text = $(this).text()
             if (text == 'New Enquiry') {
-                if (confirm("Are You Sure Want To Select Service ?") == true) {
-                    var id = $(this).attr('data-id');
-                    var text = $(this).text()
+                if (currentEnquiryAccountant < MembershipCandidateEnquiriesBusiness) {
+                    if (confirm("Are You Sure Want To Select Service ?") == true) {
+                        var id = $(this).attr('data-id');
+                        var text = $(this).text()
 
-                    var status = 'Request';
-                    var statuss = 1;
+                        var status = 'Request';
+                        var statuss = 1;
 
-                    $.ajax({
+                        $.ajax({
 
-                        method: "post",
-                        url: "/candidate/request",
-                        dataType: 'json',
+                            method: "post",
+                            url: "/candidate/request",
+                            dataType: 'json',
 
-                        data: {
-                            '_token': '{{ csrf_token() }}',
-                            id: id,
-                            status: status,
-                            statuss: statuss,
-                            type: 'provider'
-                        },
-                        success: function(result) {
-                            console.log(result);
-                            location.reload();
-                        }
+                            data: {
+                                '_token': '{{ csrf_token() }}',
+                                id: id,
+                                status: status,
+                                statuss: statuss,
+                                type: 'provider'
+                            },
+                            success: function(result) {
+                                console.log(result);
+                                location.reload();
+                            }
 
-                    });
+                        });
+
+                    }
+                } else {
+                    alert('You need to extend package for extend your Enquires')
 
                 }
             } else {

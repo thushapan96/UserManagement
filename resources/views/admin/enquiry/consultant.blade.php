@@ -217,12 +217,6 @@
                                         <p class="uk-margin-remove uk-text-wrap">{{$consultants->website_address}}</p>
                                     </div>
                                 </li>
-                                <li class="sc-list-group">
-                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                    <div class="sc-list-body">
-                                        <p class="uk-margin-remove uk-text-wrap">{{$consultants->city}} {{$consultants->region}} {{$consultants->country}}</p>
-                                    </div>
-                                </li>
 
                                 <li class="sc-list-group">
                                     <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
@@ -234,6 +228,13 @@
                                             @endforeach
                                             @endif
                                         </p>
+                                    </div>
+                                </li>
+
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$consultants->currentEnquiryProvider}}/{{$consultants->limitedEnquiryProvider == '' ? 0  :$consultants->limitedEnquiryProvider}}</p>
                                     </div>
                                 </li>
                             </ul>
@@ -304,12 +305,7 @@
                                             </div>
                                         </li>
 
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$row->residential_city}} {{$row->residential_region}} {{$row->residential_country}}</p>
-                                            </div>
-                                        </li>
+
 
                                         <li class="sc-list-group">
                                             <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
@@ -317,6 +313,19 @@
                                                 <p class="uk-margin-remove uk-text-wrap">
                                                     {{$row->immigration_purpose}}
                                                 </p>
+                                            </div>
+                                        </li>
+
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-School: {{$row->currentEnquirySchool}}/{{$row->MembershipCandidateEnquiriesSchool == '' ? 0  :$row->MembershipCandidateEnquiriesSchool}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-College: {{$row->currentEnquiryCollege}}/{{$row->MembershipCandidateEnquiriesCollege == '' ? 0  :$row->MembershipCandidateEnquiriesCollege}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-University: {{$row->currentEnquiryUniversity}}/{{$row->MembershipCandidateEnquiriesUniversity == '' ? 0  :$row->MembershipCandidateEnquiriesUniversity}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-Consultant: {{$row->currentEnquiryConsultant}}/{{$row->MembershipCandidateEnquiriesRCICConsultant == '' ? 0  :$row->MembershipCandidateEnquiriesRCICConsultant}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-Immigration: {{$row->currentEnquiryImmigration}}/{{$row->MembershipCandidateEnquiriesImmigration == '' ? 0  :$row->MembershipCandidateEnquiriesImmigration}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-Business: {{$row->currentEnquiryAccountant}}/{{$row->MembershipCandidateEnquiriesBusiness == '' ? 0  :$row->MembershipCandidateEnquiriesBusiness}}</p>
+
                                             </div>
                                         </li>
                                     </ul>
@@ -574,7 +583,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-  
+
     $('.confirmEnquiry').on('click', function() {
         if (confirm("Are You Sure Want To Select as Service ?") == true) {
             var type = $('#type').val();

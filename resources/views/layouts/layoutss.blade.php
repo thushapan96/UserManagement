@@ -453,7 +453,7 @@
                                     </li>
                                     <li class="page-University page-active">
                                         @if(Auth::user()->membership_plan_id || Auth::user()->membership_institution_id || Auth::user()->membership_provider_id )
-                                        <a href="{{route('dashboard.view.university')}}" class="sc-js-notify-status-warningg"> university </a>
+                                        <a href="{{route('dashboard.view.university')}}" > university </a>
                                         @else
                                         <a href="#" class="sc-js-notify-status-warningg"> university </a>
                                         @endif

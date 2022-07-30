@@ -216,12 +216,6 @@
                                         <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                     </div>
                                 </li>
-                                <li class="sc-list-group">
-                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                    <div class="sc-list-body">
-                                        <p class="uk-margin-remove uk-text-wrap">{{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                    </div>
-                                </li>
 
                                 <li class="sc-list-group">
                                     <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
@@ -235,6 +229,16 @@
                                         </p>
                                     </div>
                                 </li>
+                                
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$row->currentEnquiryProvider}}/{{$row->limitedEnquiryProvider == '' ? 0  :$row->limitedEnquiryProvider}}</p>
+                                    </div>
+                                </li>
+
+                              
+
                             </ul>
                         </div>
                     </div>

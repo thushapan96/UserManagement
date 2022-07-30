@@ -217,20 +217,23 @@
                                         <p class="uk-margin-remove uk-text-wrap">{{$row->website_address}}</p>
                                     </div>
                                 </li>
-                                <li class="sc-list-group">
-                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                    <div class="sc-list-body">
-                                        <p class="uk-margin-remove uk-text-wrap">{{$row->streat}} {{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                    </div>
-                                </li>
+
                                 <li class="sc-list-group">
                                     <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                     <div class="sc-list-body">
                                         <p class="uk-margin-remove uk-text-wrap">
                                             @if($row->offering_service)
-                                            {{$row->offering_service}},
+
+                                            {{$row->offering_service}}
+
                                             @endif
                                         </p>
+                                    </div>
+                                </li>
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$row->currentEnquiryProvider}}/{{$row->limitedEnquiryProvider == '' ? 0  :$row->limitedEnquiryProvider}}</p>
                                     </div>
                                 </li>
                             </ul>
@@ -270,13 +273,13 @@
 
     $(document).ready(function() {
 
-     
+
         $('.page-active').removeClass('sc-page-active')
         $('.page-enquiries-Business').addClass('sc-page-active')
-   
+
         const baseUrlAsset = "{{url('files/')}}";
         var type = $('#type').val();
-      
+
 
         $('#searchbar').on('keyup', function() {
             var searchValue = $('#searchbar').val();

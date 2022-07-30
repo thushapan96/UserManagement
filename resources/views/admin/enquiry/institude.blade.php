@@ -220,12 +220,7 @@
                                         <p class="uk-margin-remove uk-text-wrap">{{$institutions->website_address}}</p>
                                     </div>
                                 </li>
-                                <li class="sc-list-group">
-                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                    <div class="sc-list-body">
-                                        <p class="uk-margin-remove uk-text-wrap">{{$institutions->streat}} {{$institutions->city}} {{$institutions->region}} {{$institutions->country}}</p>
-                                    </div>
-                                </li>
+                               
                                 <li class="sc-list-group">
                                     <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                     <div class="sc-list-body">
@@ -238,6 +233,34 @@
                                         </p>
                                     </div>
                                 </li>
+
+                                @if($institutions->type == 'School')
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$institutions->currentEnquirySchool}}/{{$institutions->limitedEnquirySchool == '' ? 0  :$institutions->limitedEnquirySchool}}</p>
+                                    </div>
+                                </li>
+                                @elseif($institutions->type == 'College')
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-Diploma:{{$institutions->currentDiploma}}/{{$institutions->limitedEnquiryDiploma == '' ? 0  :$institutions->limitedEnquiryDiploma}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-PG Diploma:{{$institutions->currentPG_Diploma}}/{{$institutions->limitedEnquiryPG_Diploma == '' ? 0  :$institutions->limitedEnquiryPG_Diploma}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-Certification:{{$institutions->currentCertification}}/{{$institutions->limitedEnquiryCertification == '' ? 0  :$institutions->limitedEnquiryCertification}}</p>
+
+                                    </div>
+                                </li>
+                                @else
+                                <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-Graduation:{{$institutions->currentGraduation}}/{{$institutions->limitedEnquiryGraduation == '' ? 0  :$institutions->limitedEnquiryPost_Graduation}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-Post Graduation:{{$institutions->currentPost_Graduation}}/{{$institutions->limitedEnquiryPost_Graduation == '' ? 0  :$institutions->limitedEnquiryPost_Graduation}}</p>
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry-Doctorate:{{$institutions->currentDoctorate}}/{{$institutions->limitedEnquiryDoctorate == '' ? 0  :$institutions->limitedEnquiryDoctorate}}</p>
+                                    </div>
+                                </li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -304,12 +327,7 @@
                                             </div>
                                         </li>
 
-                                        <li class="sc-list-group">
-                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                            <div class="sc-list-body">
-                                                <p class="uk-margin-remove uk-text-wrap">{{$row->residential_city}} {{$row->residential_region}} {{$row->residential_country}}</p>
-                                            </div>
-                                        </li>
+                                      
 
                                         <li class="sc-list-group">
                                             <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
@@ -317,6 +335,19 @@
                                                 <p class="uk-margin-remove uk-text-wrap">
                                                     {{$row->immigration_purpose}}
                                                 </p>
+                                            </div>
+                                        </li>
+
+                                        <li class="sc-list-group">
+                                            <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                            <div class="sc-list-body">
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-School: {{$row->currentEnquirySchool}}/{{$row->MembershipCandidateEnquiriesSchool == '' ? 0  :$row->MembershipCandidateEnquiriesSchool}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-College: {{$row->currentEnquiryCollege}}/{{$row->MembershipCandidateEnquiriesCollege == '' ? 0  :$row->MembershipCandidateEnquiriesCollege}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-University: {{$row->currentEnquiryUniversity}}/{{$row->MembershipCandidateEnquiriesUniversity == '' ? 0  :$row->MembershipCandidateEnquiriesUniversity}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-Consultant: {{$row->currentEnquiryConsultant}}/{{$row->MembershipCandidateEnquiriesRCICConsultant == '' ? 0  :$row->MembershipCandidateEnquiriesRCICConsultant}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-Immigration: {{$row->currentEnquiryImmigration}}/{{$row->MembershipCandidateEnquiriesImmigration == '' ? 0  :$row->MembershipCandidateEnquiriesImmigration}}</p>
+                                                <p class="uk-margin-remove uk-text-wrap">Enquiry-Business: {{$row->currentEnquiryAccountant}}/{{$row->MembershipCandidateEnquiriesBusiness == '' ? 0  :$row->MembershipCandidateEnquiriesBusiness}}</p>
+
                                             </div>
                                         </li>
                                     </ul>
@@ -576,7 +607,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-   
+
 
     $('.confirmEnquiry').on('click', function() {
 

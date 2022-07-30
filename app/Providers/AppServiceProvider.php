@@ -12,6 +12,9 @@ use App\Models\User;
 use App\Models\MembershipCandidate;
 use App\Models\MembershipInstitution;
 use App\Models\MembershipProvider;
+use App\Models\Enquiry;
+use App\Models\Personal;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -178,23 +181,120 @@ class AppServiceProvider extends ServiceProvider
             }
 
             if (Auth::user()) {
+                $currencyPrice = Setting::where('type', 'currency')->value('value');
+                $configureDate = Setting::where('type', 'date')->value('value');
+
                 if (Auth::user()->service_type == 'Institution') {
-                    Auth::user()->membership_institution_id;
-                    
+                    if (Auth::user()->membership_institution_id) {
+                        $MembershipInstitution  =  MembershipInstitution::find(Auth::user()->membership_institution_id);
+
+                        $MembershipInstitutionDiploma  = $MembershipInstitution->Diploma;
+                        $MembershipInstitutionPG_Diploma   = $MembershipInstitution->PG_Diploma;
+                        $MembershipInstitutionCertification   = $MembershipInstitution->Certification;
+                        $MembershipInstitutionGraduation   = $MembershipInstitution->Graduation;
+                        $MembershipInstitutionPost_Graduation   = $MembershipInstitution->Post_Graduation;
+                        $MembershipInstitutionDoctorate   = $MembershipInstitution->Doctorate;
+                        $MembershipInstitutionSchool   = $MembershipInstitution->Enquiries;
+
+
+                        $view->with('currencyPrice', $currencyPrice)
+                            ->with('configureDate', $configureDate)
+                            
+                            ->with('MembershipInstitutionDiploma', $MembershipInstitutionDiploma)
+                            ->with('MembershipInstitutionPG_Diploma', $MembershipInstitutionPG_Diploma)
+                            ->with('MembershipInstitutionCertification', $MembershipInstitutionCertification)
+                            ->with('MembershipInstitutionGraduation', $MembershipInstitutionGraduation)
+                            ->with('MembershipInstitutionPost_Graduation', $MembershipInstitutionPost_Graduation)
+                            ->with('MembershipInstitutionDoctorate', $MembershipInstitutionDoctorate)
+                            ->with('MembershipInstitutionSchool', $MembershipInstitutionSchool);
+                    }
                 } else if (Auth::user()->service_type == 'Business' || Auth::user()->service_type == 'Consultation') {
+                    if (Auth::user()->membership_provider_id) {
+                        $MembershipProvider  =  MembershipProvider::find(Auth::user()->membership_provider_id);
 
-                }else{
+                        if (Auth::user()->service == 'RCIC Consultant') {
+                            $MembershipProviderEnquiries  =  $MembershipProvider->EnquiriesRCICConsultant;
+                        } else if (Auth::user()->service == 'Chartered Accountant') {
+                            $MembershipProviderEnquiries   =  $MembershipProvider->EnquiriesBusiness;
+                        } else {
+                            $MembershipProviderEnquiries  =  $MembershipProvider->EnquiriesImmigration;
+                        }
 
+                        $view->with('currencyPrice', $currencyPrice)
+                            ->with('configureDate', $configureDate)
+                            ->with('MembershipProviderEnquiries', $MembershipProviderEnquiries);
+                    }
+                } else {
+                    if (Auth::user()->membership_plan_id) {
+
+                        $MembershipCandidate  =  MembershipCandidate::find(Auth::user()->membership_plan_id);
+
+                        $MembershipCandidateEnquiriesSchool =  $MembershipCandidate->EnquiriesSchool;
+                        $MembershipCandidateEnquiriesUniversity =  $MembershipCandidate->EnquiriesUniversity;
+                        $MembershipCandidateEnquiriesCollege =  $MembershipCandidate->EnquiriesCollege;
+                        $MembershipCandidateEnquiriesRCICConsultant =  $MembershipCandidate->EnquiriesRCICConsultant;
+                        $MembershipCandidateEnquiriesImmigration =  $MembershipCandidate->EnquiriesImmigration;
+                        $MembershipCandidateEnquiriesBusiness =  $MembershipCandidate->EnquiriesBusiness;
+
+                        $candidate_id  =  Personal::where('user_id', Auth::user()->id)->value('id');
+
+                        $currentEnquirySchool  = Enquiry::where('candidate_id', $candidate_id)
+                            ->join('institutions', 'institutions.id', 'enquiries.institution_id')
+                            ->where('enquiries.statuss', '>', 0)
+                            ->where('institutions.type', 'School')
+                            ->count();
+
+                        $currentEnquiryCollege  = Enquiry::where('candidate_id', $candidate_id)
+                            ->join('institutions', 'institutions.id', 'enquiries.institution_id')
+                            ->where('enquiries.statuss', '>', 0)
+                            ->where('institutions.type', 'College')
+                            ->count();
+
+                        $currentEnquiryUniversity  = Enquiry::where('candidate_id', $candidate_id)
+                            ->join('institutions', 'institutions.id', 'enquiries.institution_id')
+                            ->where('enquiries.statuss', '>', 0)
+                            ->where('institutions.type', 'University')
+                            ->count();
+
+                        $currentEnquiryConsultant  = Enquiry::where('candidate_id', $candidate_id)
+                            ->join('providers', 'providers.id', 'enquiries.provider_id',)
+                            ->where('enquiries.statuss', '>', 0)
+                            ->where('providers.type', 'RCIC Consultant')
+                            ->count();
+
+                        $currentEnquiryImmigration  = Enquiry::where('candidate_id', $candidate_id)
+                            ->join('providers', 'providers.id', 'enquiries.provider_id',)
+                            ->where('enquiries.statuss', '>', 0)
+                            ->where('providers.type', 'Immigration Lawyer/Attorney')
+                            ->count();
+
+                        $currentEnquiryAccountant = Enquiry::where('candidate_id', $candidate_id)
+                            ->join('providers', 'providers.id', 'enquiries.provider_id',)
+                            ->where('enquiries.statuss', '>', 0)
+                            ->where('providers.type', 'Chartered Accountant')
+                            ->count();
+
+
+                        $view->with('currencyPrice', $currencyPrice)
+                            ->with('configureDate', $configureDate)
+
+                            ->with('currentEnquirySchool', $currentEnquirySchool)
+                            ->with('currentEnquiryCollege', $currentEnquiryCollege)
+                            ->with('currentEnquiryUniversity', $currentEnquiryUniversity)
+
+                            ->with('currentEnquiryConsultant', $currentEnquiryConsultant)
+                            ->with('currentEnquiryImmigration', $currentEnquiryImmigration)
+                            ->with('currentEnquiryAccountant', $currentEnquiryAccountant)
+
+                            ->with('MembershipCandidateEnquiriesSchool', $MembershipCandidateEnquiriesSchool)
+                            ->with('MembershipCandidateEnquiriesUniversity', $MembershipCandidateEnquiriesUniversity)
+                            ->with('MembershipCandidateEnquiriesCollege', $MembershipCandidateEnquiriesCollege)
+                            ->with('MembershipCandidateEnquiriesRCICConsultant', $MembershipCandidateEnquiriesRCICConsultant)
+                            ->with('MembershipCandidateEnquiriesImmigration', $MembershipCandidateEnquiriesImmigration)
+                            ->with('MembershipCandidateEnquiriesBusiness', $MembershipCandidateEnquiriesBusiness);
+                    }
                 }
-
             }
-
-            $currencyPrice = Setting::where('type', 'currency')->value('value');
-            $configureDate = Setting::where('type', 'date')->value('value');
-
-
-            $view->with('currencyPrice', $currencyPrice)
-                ->with('configureDate', $configureDate);
         });
     }
 }
