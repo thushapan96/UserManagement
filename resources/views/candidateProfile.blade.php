@@ -430,7 +430,7 @@
                                 </div>
                                 <div class="row ">
                                     <div class="col-md-4">
-                                        <strong class="labels">Distant</strong>
+                                        <strong class="labels">Education Type</strong>
                                     </div>
                                     <div class="col-md-1">
                                         <strong class="labels"> :</strong>

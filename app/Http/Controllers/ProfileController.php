@@ -486,16 +486,18 @@ class ProfileController extends Controller
     public function deletefile($id, $model, $atr)
     {
         if($model == 'other') {
-            $data =  Qualification::find($id)->first();
-            return $data;
-            $data->attachment = '';
+            $data =  Qualification::find($id);
+            $data['attachment'] = null;
             $data->save();
+            return $data ;
         }
          
         else {
-            $data =  Academy::find($id)->first();
-            $data->$atr = '';
+            $data =  Academy::find($id);
+            $data[$atr] = null;
             $data->save();
+            return $data ;
+
         }
     }
 }
