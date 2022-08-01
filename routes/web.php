@@ -62,10 +62,13 @@ Route::group(['middleware' => ['is_admin']], function () {
     Route::get('/privillage/setup', 'App\Http\Controllers\UserController@privillage')->name('admin.privillage');
     Route::post('/add/privillage', 'App\Http\Controllers\UserController@addPrivillage')->name('add.privillage');
 
+    Route::post('/admin/search/candidate', 'App\Http\Controllers\SearchController@candidateSearch')->name('admin.candidateSearch');
     Route::post('/admin/search', 'App\Http\Controllers\SearchController@providerSearch')->name('admin.providerSearch');
     Route::post('/admin/institude/search', 'App\Http\Controllers\SearchController@institudeSearch')->name('admin.institudeSearch');
     Route::post('/admin/institude/enquiry/search', 'App\Http\Controllers\SearchController@institudeEnquirySearch');
     Route::post('/admin/enquiry/search', 'App\Http\Controllers\SearchController@providerEnquirySearch');
+    Route::post('/admin/search/enquiry/candidate', 'App\Http\Controllers\SearchController@candidateEnquirySearch');
+
     Route::post('/confirmEnquiry', 'App\Http\Controllers\SearchController@confirmEnquiry');
     Route::post('/services/confirmEnquiry', 'App\Http\Controllers\SearchController@servicesConfirmEnquiry');
 

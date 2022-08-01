@@ -192,6 +192,7 @@
                             <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
                                 {{$row->company_name}}
                             </p>
+                            
                             <p class="uk-margin-remove sc-color-secondary uk-text-medium">{{$row->registration_number}}</p>
 
                         </div>
@@ -280,6 +281,9 @@
         const baseUrlAsset = "{{url('files/')}}";
         var type = $('#type').val();
 
+        var CharteredformsviewIdExist = "{{$CharteredformsviewIdExist}}"
+        var CharteredEnquiryIdExist ="{{$CharteredEnquiryIdExist}}"
+        var CharteredformsviewIdExist2 ="{{$CharteredformsviewIdExist2}}"
 
         $('#searchbar').on('keyup', function() {
             var searchValue = $('#searchbar').val();
@@ -344,13 +348,7 @@
                                             <p class="uk-margin-remove uk-text-wrap">${row.website_address}</p>
                                         </div>
                                     </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">${row.city} ${row.region} ${row.country}</p>
-                                        </div>
-                                    </li> 
-
+                                   
                                     <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                         <div class="sc-list-body">
@@ -359,6 +357,13 @@
                                             </p>
                                         </div>
                                     </li>
+
+                                    <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">Enquiry:${row.currentEnquiryProvider}/${row.limitedEnquiryProvider == '' ? 0  :row.limitedEnquiryProvider}</p>
+                                    </div>
+                                </li>
                                 </ul>
                             </div>
                         </div>
@@ -367,9 +372,9 @@
             </div>
             <div data-uk-dropdown="pos: bottom-center">
                  <ul class="uk-nav uk-dropdown-nav">
-                <li><a href="/admin/business/${row.id}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
-                <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
-                <li><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
+                <li class="link1"><a href="/admin/business/${row.providersId}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                <li class="link2"><a href="/admin/consultantEnquiry/${row.providersId}" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                <li class="link3"><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
                  </ul>
              </div>
        </li>`;
@@ -380,6 +385,18 @@
                         //     $('#services-' + first_index).append(service);
 
                         // });
+                        if (CharteredformsviewIdExist == '') {
+                            $('.link1').hide()
+                        }
+                        if (CharteredEnquiryIdExist == '') {
+                            $('.link2').hide()
+                        }
+                        if (CharteredformsviewIdExist2 == '') {
+                            $('.link3').hide()
+                        }
+
+
+
                         if (row.img) {
                             $('#img-' + first_index).attr('src', baseUrlAsset + '/' + row.img);
                         } else {

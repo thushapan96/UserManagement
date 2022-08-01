@@ -63,6 +63,7 @@ class AdminController extends Controller
             $row->setAttribute('limitedEnquirySchool',  $limitedEnquirySchool);
         }
 
+        
         $type = "School";
 
 
@@ -107,7 +108,7 @@ class AdminController extends Controller
             $row->setAttribute('currentPG_Diploma', $currentPG_Diploma);
             $row->setAttribute('currentCertification',  $currentCertification);
         }
-
+       
         return view('admin.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'College');
     }
     public function universityIndex(Request $request)
@@ -149,9 +150,10 @@ class AdminController extends Controller
         }
         $type = "University";
 
+      
         return view('admin.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'University');
     }
-    public function consultantIndex()
+    public function consultantIndex(Request $request)
     {
         $consultants = Consultant::join('users', 'users.id', 'providers.user_id')->where('type', 'RCIC Consultant')->select('providers.*', 'users.img as img')->get();
         $type = "RCIC Consultant";
@@ -171,10 +173,10 @@ class AdminController extends Controller
             $row->setAttribute('limitedEnquiryProvider', $limitedEnquiryProvider);
             $row->setAttribute('currentEnquiryProvider',  $currentEnquiryProvider);
         }
-
+       
         return view('admin.consultant')->with('consultants', $consultants)->with('type', $type)->with('unique', 'RCIC Consultant');
     }
-    public function immigrationIndex()
+    public function immigrationIndex(Request $request)
     {
         $type = "Immigration Lawyer/Attorney";
         $consultants = Consultant::join('users', 'users.id', 'providers.user_id')->where('type', 'Immigration Lawyer/Attorney')->select('providers.*', 'users.img as img')->get();
@@ -194,10 +196,10 @@ class AdminController extends Controller
             $row->setAttribute('limitedEnquiryProvider', $limitedEnquiryProvider);
             $row->setAttribute('currentEnquiryProvider',  $currentEnquiryProvider);
         }
-
+       
         return view('admin.consultant')->with('consultants', $consultants)->with('type', $type)->with('unique', 'Immigration Lawyer/Attorney');
     }
-    public function businessIndex()
+    public function businessIndex(Request $request)
     {
         $consultants = Consultant::join('users', 'users.id', 'providers.user_id')->where('type', 'Chartered Accountant')->select('providers.*', 'users.img as img')->get();
         $type = "Chartered Accountant";
@@ -218,6 +220,7 @@ class AdminController extends Controller
             $row->setAttribute('currentEnquiryProvider',  $currentEnquiryProvider);
         }
 
+        
         return view('admin.business')->with('consultants', $consultants)->with('type', $type)->with('unique', '');
     }
 

@@ -337,6 +337,14 @@
 
 
         const baseUrlAsset = "{{url('files/')}}";
+        var ConsultantformsviewIdExist = "{{$ConsultantformsviewIdExist}}"
+        var ImmigrationformsviewIdExist = "{{$ImmigrationformsviewIdExist}}"
+
+        var ConsultantEnquiryIdExist = "{{$ConsultantEnquiryIdExist}}"
+        var ImmigrationEnquiryIdExist = "{{$ImmigrationEnquiryIdExist}}"
+
+        var ConsultantformsviewIdExist2 = "{{$ConsultantformsviewIdExist2}}"
+        var ImmigrationformsviewIdExist2 = "{{$ImmigrationformsviewIdExist2}}"
 
         $('#searchbar').on('keyup', function() {
             var searchValue = $('#searchbar').val();
@@ -365,72 +373,74 @@
 
                         var first_index = index;
                         order_row = `<li>
-        <input id="type" value="${row.type}" hidden>
-            <div class="uk-card uk-card-hover " style="height:280px">
-                <div class="uk-card-body sc-padding-remove">
-                    <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
-                        <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
-
+                          <input id="type" value="${row.type}" hidden>
+                              <div class="uk-card uk-card-hover " style="height:280px">
+                                  <div class="uk-card-body sc-padding-remove">
+                                      <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                                          <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
+                  
                             <div class="sc-padding-medium uk-text-center">
-                                <img id="img-${index}" style="width:100px;height:100px" src="" class="sc-avatar sc-border" alt="xerdman" />
-                                
-                                <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
-                                   ${row.company_name}
-                                </p>
-                                <p class="uk-margin-remove sc-color-secondary uk-text-medium">${row.registration_number}</p>
-                            </div>
-                        </div>
-                        <div class="uk-width-2-3@l ">
-                            <div class="sc-padding-medium">
-                                <ul class="uk-list uk-list-divider">
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove sc-text-semibold">${row.phone}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove">${row.email}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">${row.website_address}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">${row.city} ${row.region} ${row.country}</p>
-                                        </div>
-                                    </li> 
+                                                  <img id="img-${index}" style="width:100px;height:100px" src="" class="sc-avatar sc-border" alt="xerdman" />
+                                                  
+                                                  <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                                     ${row.company_name}
+                                                  </p>
+                                                  <p class="uk-margin-remove sc-color-secondary uk-text-medium">${row.registration_number}</p>
+                                              </div>
+                                          </div>
+                                          <div class="uk-width-2-3@l ">
+                                              <div class="sc-padding-medium">
+                                                  <ul class="uk-list uk-list-divider">
+                                                      <li class="sc-list-group">
+                                                          <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                                          <div class="sc-list-body">
+                                                              <p class="uk-margin-remove sc-text-semibold">${row.phone}</p>
+                                                          </div>
+                                                      </li>
+                                                      <li class="sc-list-group">
+                                                          <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                                          <div class="sc-list-body">
+                                                              <p class="uk-margin-remove">${row.email}</p>
+                                                          </div>
+                                                       </li>
+                                                      <li class="sc-list-group">
+                                                          <div class="sc-list-addon"> <i class="fas fa-cloud"></i></div>
+                                                          <div class="sc-list-body">
+                                                          <p class="uk-margin-remove uk-text-wrap">${row.website_address}</p>
+                                                          </div>
+                                                      </li>
+                                                     
+                  
+                                                      <li class="sc-list-group">
+                                                          <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                                              <div class="sc-list-body">
+                                                              <p class="uk-margin-remove uk-text-wrap" id="services-${index}">
+                                          
+                                                              </p>
+                                                              </div>
+                                                      </li>
 
-                                    <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap" id="services-${index}">
-                        
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <div data-uk-dropdown="pos: bottom-center">
-                 <ul class="uk-nav uk-dropdown-nav">
-                <li><a href="/admin/consultant/${row.id}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
-                <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
-                <li><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
-                 </ul>
-             </div>
+                                                      <li class="sc-list-group">
+                                                          <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                                          <div class="sc-list-body">
+                                                              <p class="uk-margin-remove uk-text-wrap">Enquiry:${row.currentEnquiryProvider}/${row.limitedEnquiryProvider == '' ? 0  :row.limitedEnquiryProvider}</p>
+                                                          </div>
+                                                      </li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                           </div>
+                                  </div>
+                              </div>
+                               <div data-uk-dropdown="pos: bottom-center">
+                                   <ul class="uk-nav uk-dropdown-nav">
+                                   <li class="link1"><a href="/admin/consultant/${row.id}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                                   <li class="link1"><a href="/admin/consultantEnquiry/${row.id}" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                                   <li class="link1"><a href="#" style="color:#17a2b8;">3) View Case progress reports</a></li>
+                                  </ul>
+                               </div>
       
-       </li>`;
+                         </li>`;
 
 
                         $('#sc-contact-list').append(order_row);
@@ -438,6 +448,20 @@
                             $('#services-' + first_index).append(service);
 
                         });
+
+                        $('.link1').hide()
+                        $('.link2').hide()
+                        $('.link3').hide()
+                        if (ConsultantformsviewIdExist || ImmigrationformsviewIdExist) {
+                            $('.link1').show()
+                        }
+                        if (ConsultantEnquiryIdExist || ImmigrationEnquiryIdExist) {
+                            $('.link2').show()
+                        }
+                        if (ConsultantformsviewIdExist2 || ImmigrationformsviewIdExist2) {
+                            $('.link3').show()
+                        }
+
                         if (row.img) {
                             $('#img-' + first_index).attr('src', baseUrlAsset + '/' + row.img);
                         } else {

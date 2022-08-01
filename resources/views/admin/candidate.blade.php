@@ -162,14 +162,12 @@
     )
 </script>
 @endif
-<!-- <div class="row">
+<div class="row">
     <div class="col-md-3">Search By
         <select class="form-control filter">
-            <option value="RCIC Number">RCIC Number</option>
-            <option value="Owner Name">Owner Name</option>
-            <option value="Company Name ">Company Name </option>
-            <option value="Specialization">Specialization </option>
-            <option value="Service Type">Service Type </option>
+            <option value="first_name">Name</option>
+            <option value="phone">Phone</option>
+            <option value="immigration_purpose">Purpose </option>
             <option value="Country">Country </option>
             <option value="Province">Province </option>
             <option value="City">City </option>
@@ -188,7 +186,7 @@
         </div>
     </div>
 </div>
-<br><br> -->
+<br><br>
 <u1 id="sc-contact-list" class="uk-child-width-1-1 uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid>
 
     @if($candidates)
@@ -255,13 +253,13 @@
                 <li><a href="{{route('candidate.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">1) View Registration form </a></li>
                 @endif
                 @if($CandidateformsViewIdExist2)
-                <li><a href="{{route('edu.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">2) View Assessment for Education</a></li>
+                <li><a href="{{route('edu.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">2) View Education Assesment form</a></li>
                 @endif
                 @if($CandidateformsViewIdExist3)
-                <li><a href="{{route('crs.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">3) View CRS Calculator for Immigration</a></li>
+                <li><a href="{{route('crs.admin.view',['id' => $row->user_id])}}" style="color:#17a2b8;">3) View CRS Calculator form</a></li>
                 @endif
                 @if($CandidateEnquiryIdExist)
-                <li><a href="{{route('admin.candidateEnquiry',['id' => $row->id])}}" style="color:#17a2b8;">4) View Enquiries for Education</a></li>
+                <li><a href="{{route('admin.candidateEnquiry',['id' => $row->id])}}" style="color:#17a2b8;">4) View Enquiries </a></li>
                 @endif
             </ul>
         </div>
@@ -280,13 +278,148 @@
 
 
     $(document).ready(function() {
-
+       
 
         $('.page-active').removeClass('sc-page-active')
         $('.page-can').addClass('sc-page-active')
 
+        const baseUrlAsset = "{{url('files/')}}";
+        var CandidateEnquiryIdExist = "{{$CandidateEnquiryIdExist}}"
+        var CandidateformsViewIdExist3 = "{{$CandidateformsViewIdExist3}}"
+        var CandidateformsViewIdExist2 = "{{$CandidateformsViewIdExist2}}"
+        var CandidateformsViewIdExist = "{{$CandidateformsViewIdExist}}"
 
 
+        $('#searchbar').on('keyup', function() {
+            var searchValue = $('#searchbar').val();
+            var searchType = $('.filter').val();
+
+            $.ajax({
+
+                method: "post",
+                url: "/admin/search/candidate",
+                dataType: 'json',
+
+                data: {
+                    '_token': '{{csrf_token()}}',
+                    search: searchValue,
+                    searchType: searchType,
+
+                },
+                success: function(result) {
+                    console.log(result)
+                    var order_row = '';
+                    $('#sc-contact-list').html('');
+
+                    $.each(result, function(index, row) {
+
+                        var first_index = index;
+                        order_row = `<li>
+         
+              <div class="uk-card uk-card-hover " style="height:230px">
+                  <div class="uk-card-body sc-padding-remove">
+                      <div class="uk-grid-divider uk-grid-collapse" data-uk-grid>
+                          <div class="uk-width-1-3@l uk-flex uk-flex-middle uk-flex-center uk-position-relative md-bg-light-green-50">
+  
+                       <div class="sc-padding-medium uk-text-center">
+                                  <img id="img-${index}" style="width:100px;height:100px" src="" class="sc-avatar sc-border" alt="xerdman" />
+                                  
+                                  <p class="sc-text-semibold uk-margin uk-margin-remove-bottom sc-js-contact-name">
+                                     ${row.first_name}
+                                  </p>
+                                  <p class="uk-margin-remove sc-color-secondary uk-text-medium">${row.last_name}</p>
+                              </div>
+                          </div>
+                          <div class="uk-width-2-3@l ">
+                              <div class="sc-padding-medium">
+                                  <ul class="uk-list uk-list-divider">
+                                      <li class="sc-list-group">
+                                          <div class="sc-list-addon"><i class="mdi mdi-phone"></i></div>
+                                          <div class="sc-list-body">
+                                              <p class="uk-margin-remove sc-text-semibold">${row.phone}</p>
+                                          </div>
+                                      </li>
+                                      <li class="sc-list-group">
+                                          <div class="sc-list-addon"><i class="mdi mdi-email"></i></div>
+                                          <div class="sc-list-body">
+                                              <p class="uk-margin-remove">${row.email}</p>
+                                          </div>
+                                       </li>
+                                     
+                                      <li class="sc-list-group">
+                                          <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                          <div class="sc-list-body">
+                                              <p class="uk-margin-remove uk-text-wrap">${row.residential_city} ${row.residential_region} ${row.residential_country}</p>
+                                          </div>
+                                      </li> 
+  
+                                      <li class="sc-list-group">
+                                    <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
+                                    <div class="sc-list-body">
+                                        <p class="uk-margin-remove uk-text-wrap">
+                                            ${row.immigration_purpose}
+                                        </p>
+                                    </div>
+                                </li>
+                                  </ul>
+                              </div>
+                          </div>
+                           </div>
+                  </div>
+              </div>
+               <div data-uk-dropdown="pos: bottom-center">
+                   <ul class="uk-nav uk-dropdown-nav">
+                      <li class="link1"><a class="url1-${index}" href="#" style="color:#17a2b8;">1) View Registration form </a></li>
+                      <li class="link2"><a class="url2-${index}" href="#" style="color:#17a2b8;">2) View Assessment for Education</a></li>
+                      <li class="link3"><a class="url3-${index}" href="#" style="color:#17a2b8;">3) View CRS Calculator for Immigration</a></li>
+                      <li class="link4"><a class="url4-${index}" href="#" style="color:#17a2b8;">4) View Enquiries for Education</a></li>
+                  </ul>
+               </div>
+
+              </li>`;
+
+
+                        $('#sc-contact-list').append(order_row);
+                        var url1 = "{{route('candidate.admin.view', '')}}" + "/" + row.user_id;
+                        var url2 = "{{route('edu.admin.view', '')}}" + "/" + row.user_id;
+                        var url3 = "{{route('crs.admin.view', '')}}" + "/" + row.user_id;
+                        var url4 = "{{route('admin.candidateEnquiry', '')}}" + "/" + row.id;
+
+                        $('.url1-' + index).attr("href", url1)
+                        $('.url2-' + index).attr("href", url2)
+                        $('.url3-' + index).attr("href", url3)
+                        $('.url4-' + index).attr("href", url4)
+
+                        if (CandidateformsViewIdExist == '') {
+                            $('.link1').hide()
+                        }
+                        if (CandidateformsViewIdExist2 == '') {
+                            $('.link2').hide()
+                        }
+                        if (CandidateformsViewIdExist3 == '') {
+                            $('.link3').hide()
+                        }
+                        if (CandidateEnquiryIdExist == '') {
+                            $('.link4').hide()
+                        }
+
+
+
+                        if (row.img) {
+                            $('#img-' + first_index).attr('src', baseUrlAsset + '/' + row.img);
+                        } else {
+                            $('#img-' + first_index).attr('src', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
+                        }
+
+
+
+                    });
+
+
+                }
+
+            });
+        });
     });
 </script>
 

@@ -30,69 +30,69 @@
     <div class="row">
 
         <div class="col-md-12 bg-light ">
-        <div class="col-md-4 offset-md-4" >
-            <div class="uk-card-body sc-padding-medium">
-                <fieldset class="uk-fieldset  sc-padding">
-                    <div class="d-flex flex-column align-items-center text-center py-1">
-                        <div class="row">
-                            @if($image)
-                            <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="{{url('files/'.$image)}}">
-                            @else
-                            <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
-                            @endif
+            <div class="col-md-4 offset-md-4">
+                <div class="uk-card-body sc-padding-medium">
+                    <fieldset class="uk-fieldset  sc-padding">
+                        <div class="d-flex flex-column align-items-center text-center py-1">
+                            <div class="row">
+                                @if($image)
+                                <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="{{url('files/'.$image)}}">
+                                @else
+                                <img class="rounded-circle  img " style="width:200px !important;height:180px; margin: 0 auto;" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                                @endif
+                            </div>
+                            <div class="spinner" style=" margin: 0 auto;"></div>
+
+                            <form method="post" id="upload_form" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+
+
+                                <label class="custom-file-upload float-center">
+                                    <input id="profile_img" name="profile_img" type="file" />
+                                    <i class="fa fa-camera" style="font-size:18px;color:#004e75; margin: 0 auto;"> </i>
+                                </label>
+
+
+                            </form>
+
+                            <div class="row">
+                                <a class="facebook" href="{{$personal->fb_link}}" target="_blank">
+                                    <div class="icon col-lg-1 col-md-1 col-1 fa-2xl">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </div>
+                                </a>
+                                <a class="twitter" href="{{$personal->twitter_link}}" target="_blank">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+
+                                </a>
+                                <a class="instagram" href="{{$personal->insta_link}}" target="_blank">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+
+                                </a>
+                                <a class="linkedin" href="{{$personal->Linkedin_link}}" target="_blank">
+                                    <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <br>
+
+
+                            <a class="editlink " data-id="{{$personal->user_id}}" href="{{route('personalEdit', ['id' => $personal->user_id])}}"><button class="btn uk-button uk-button-primary profile-button editbtn" type="button" style="width: 140px;font-size:12px">Edit Personal </button></a>
+
                         </div>
-                        <div class="spinner" style=" margin: 0 auto;"></div>
-
-                        <form method="post" id="upload_form" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-
-
-                            <label class="custom-file-upload float-center">
-                                <input id="profile_img" name="profile_img" type="file" />
-                                <i class="fa fa-camera" style="font-size:18px;color:#004e75; margin: 0 auto;"> </i>
-                            </label>
-
-
-                        </form>
-
-                        <div class="row">
-                            <a class="facebook" href="{{$personal->fb_link}}" target="_blank">
-                                <div class="icon col-lg-1 col-md-1 col-1 fa-2xl">
-                                    <i class="fab fa-facebook-f"></i>
-                                </div>
-                            </a>
-                            <a class="twitter" href="{{$personal->twitter_link}}" target="_blank">
-                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
-                                    <i class="fab fa-twitter"></i>
-                                </div>
-
-                            </a>
-                            <a class="instagram" href="{{$personal->insta_link}}" target="_blank">
-                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
-                                    <i class="fab fa-instagram"></i>
-                                </div>
-
-                            </a>
-                            <a class="linkedin" href="{{$personal->Linkedin_link}}" target="_blank">
-                                <div class="icon col-lg-1 col-md-1 col-12 fa-2xl">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </div>
-
-                            </a>
-
-                        </div>
-                        <br>
-
-
-                        <a class="editlink " data-id="{{$personal->user_id}}" href="{{route('personalEdit', ['id' => $personal->user_id])}}"><button class="btn uk-button uk-button-primary profile-button editbtn" type="button" style="width: 140px;font-size:12px">Edit Profile </button></a>
-
-                    </div>
-                </fieldset>
+                    </fieldset>
+                </div>
             </div>
-        </div>
             <u1 class="col-md-10  justify-content-between d-md-flex d-sm-block " data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
-    
-            <li class="nav-linkk" id="amenu"><a style="cursor:pointer;padding: .5rem 3rem;" aria-current="page">personal</a></li>
+
+                <li class="nav-linkk" id="amenu"><a style="cursor:pointer;padding: .5rem 3rem;" aria-current="page">personal</a></li>
                 <li class="nav-linkk" id="amenu1"><a style="cursor:pointer;padding: .5rem 3rem;">academic</a></li>
                 <li class="nav-linkk" id="amenu2"><a style="cursor:pointer;padding: .5rem 3rem;">work</a></li>
                 <li class="nav-linkk" id="amenu3"><a style="cursor:pointer;padding: .5rem 3rem;">sponsor</a></li>
@@ -745,37 +745,36 @@
             </u1>
         </div>
 
-        
+
     </div>
 
 </section>
 <script>
     $(document).ready(function() {
 
-
         console.log('hiii')
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
         $("#amenu").click(function() {
-            // $('.editbtn').html('Edit Profile')
+            $('.editbtn').html('Edit Profile')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('personalEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
         });
         $("#amenu1").click(function() {
-            // $('.editbtn').html('Edit Academic ')
+            $('.editbtn').html('Edit Academic ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('academyEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
         });
         $("#amenu2").click(function() {
-            // $('.editbtn').html('Edit Work ')
+            $('.editbtn').html('Edit Work ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('workEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
         });
         $("#amenu3").click(function() {
-            // $('.editbtn').html('Edit Sponsor ')
+            $('.editbtn').html('Edit Sponsor ')
             var id = $('.editlink').attr('data-id')
             var url = "{{route('sponsorEdit', '')}}" + "/" + id;
             $('.editlink').attr('href', url)
