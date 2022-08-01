@@ -252,6 +252,7 @@ class ProfileController extends Controller
 
         $academy->save();
 
+
         if ($request->type) {
             $count = count($request->type);
 
@@ -260,6 +261,19 @@ class ProfileController extends Controller
                 $newKeys_experience = array_fill_keys(range(0,   $newcount), "");
                 $request->attachment += $newKeys_experience;
             }
+
+            $dbid = Qualification::where('candidate_academic_id', $academy->id)->pluck('id');
+            $bladeid = $request->qualificationId;
+
+            foreach ($dbid as $row) {
+                if (in_array($row, $bladeid)) {
+                } else {
+                    $Qualification =  Qualification::find($row);
+                    $Qualification->delete();
+                }
+            }
+
+
             for ($i = 0; $i < $count; $i++) {
 
                 if ($request->qualificationId[$i] != '') {

@@ -835,7 +835,7 @@
         $("#amenu1").addClass('uk-active');
         $('.tab-pane').removeClass('uk-active');
         $("#menu1").addClass('uk-active');
-        // $('.editbtn').html('Edit Academic ')
+        $('.editbtn').html('Edit Academic ')
         var id = $('.editlink').attr('data-id')
         var url = "{{route('academyEdit', '')}}" + "/" + id;
         $('.editlink').attr('href', url)
@@ -856,7 +856,7 @@
         $("#amenu2").addClass('uk-active');
         $('.tab-pane').removeClass('uk-active');
         $("#menu2").addClass('uk-active');
-        // $('.editbtn').html('Edit Work ')
+        $('.editbtn').html('Edit Work ')
         var id = $('.editlink').attr('data-id')
         var url = "{{route('workEdit', '')}}" + "/" + id;
         $('.editlink').attr('href', url)
@@ -877,7 +877,7 @@
         $("#amenu3").addClass('uk-active');
         $('.tab-pane').removeClass('uk-active');
         $("#menu3").addClass('uk-active');
-        // $('.editbtn').html('Edit Sponsor ')
+        $('.editbtn').html('Edit Sponsor ')
         var id = $('.editlink').attr('data-id')
         var url = "{{route('sponsorEdit', '')}}" + "/" + id;
         $('.editlink').attr('href', url)
