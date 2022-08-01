@@ -57,7 +57,7 @@
 
                         <div class="row mt-4 custom-box">
                             <div class="col-lg-6 col-md-6 col-12">
-                                <div class="upload-images">
+                                <div class="">
                                     <label class="uk-form-label">
                                         <p>Certified By </p>
                                     </label>
@@ -67,17 +67,19 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="upload-images">
                                     <label class="uk-form-label">
-                                        <p>Language Certified Attachment </p>
-
+                                        <p class="mr-2"> Language Certified Attachment </p>
                                     </label>
-                                    <a href="{{url('files/'.$Academy->language_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->language_attachment}}</a>
+                                    <a href="{{url('files/'.$Academy->language_attachment)}}" class="uploaded_file" target="_blank" style=" text-decoration: underline;">{{$Academy->language_attachment}}</a>
+                                    @if($Academy->language_attachment)
+                                    <a data-model="Academy" data-atr="language_attachment" data-id="{{$Academy->id}}" class="ml-2 delete_file_button"><i class="fa fa-times-circle text-danger" aria-hidden="true"></i> </a>
+                                    @endif
                                     <input type="file" title="change file" class="form-control" name="language_attachment" value="{{$Academy->language_attachment}}">
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row mt-4 custom-box">
-                            <div class="col-lg-3 col-md-3 col-12">
+                        <div class="row mt-5 custom-box">
+                            <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label class="uk-form-label">Applicant Test Scores</label>
                                     <select class="form-control" id="applicant_test" name="applicant_test_name[]">
@@ -95,27 +97,34 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-12">
+                            <div class="col-lg-2 col-md-2 col-12">
                                 <div class="form-group">
                                     <label class="uk-form-label">If Other Applicant</label>
                                     <input id="applicant_test_other" class="form-control " type="text" name="applicant_test_name[]" value="{{$Academy->applicant_test_name}}">
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-12 ">
+                            <div class="col-lg-2 col-md-2 col-12 ">
                                 <div class="form-group">
                                     <label class="uk-form-label"> Valid Upto
                                     </label>
                                     <input class="form-control " name="test_valid_upto" type="date" placeholder="Valid Upto" value="{{$Academy->test_valid_upto}}">
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-12 ">
+                            <div class="col-lg-6 col-md-6 col-12 ">
                                 <div class="form-group">
                                     <label class="uk-form-label">Applicant Test Scores Attachment
                                     </label>
 
 
 
-                                    <span> <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->test_attachment}}</a> <input type="file" class="form-control" name="test_attachment" value="{{$Academy->test_attachment}}"></span>
+
+                                    <span>
+                                        <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank" class="uploaded_file" style=" text-decoration: underline;">{{$Academy->test_attachment}}</a>
+                                        @if($Academy->test_attachment)
+                                        <a data-model="Academy" data-atr="test_attachment" data-file="{{$Academy->test_attachment}}" data-id="{{$Academy->id}}" class="ml-2 delete_file_button"><i class="fa fa-times-circle text-danger" aria-hidden="true"></i> </a>
+                                        @endif
+                                        <input type="file" class="form-control" name="test_attachment" value="{{$Academy->test_attachment}}"></span>
+
                                 </div>
                             </div>
                         </div>
@@ -163,11 +172,11 @@
                                                 <div class="d-flex">
                                                     <div class="w-100">
                                                         <div class="form-group">
-                                                            <label class="uk-form-label">If ECA Applicable 
+                                                            <label class="uk-form-label">If ECA Applicable
 
                                                             </label>
                                                             <select name="" class="form-control  ecaselect">
-                                                                <option value="" >Select Option</option>
+                                                                <option value="">Select Option</option>
                                                                 <option value="Yes" {{$row->applicable_eca_validity != '' ? 'selected':''}}>Yes</option>
                                                                 <option value="No" {{$row->applicable_eca_validity == '' ? 'selected':''}}>No</option>
 
@@ -212,12 +221,14 @@
                                         </div>
                                         <div class="row custom-box mt-4">
                                             <div class="col-lg-8 col-md-8 col-12">
-
                                                 <div class="">
                                                     <label class="uk-form-label">
                                                         <p>Other Attachment </p>
                                                     </label>
-                                                    <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
+                                                    <a href="{{url('files/'.$row->attachment)}}" target="_blank" class="uploaded_file" style=" text-decoration: underline;">{{$row->attachment}} </a>
+                                                    @if($row->attachment)
+                                                    <a data-model="other" data-atr="attachment" data-id="{{$row->id}}" data-file="{{$row->attachment}}" class="ml-2 delete_file_button"><i class="fa fa-times-circle text-danger" aria-hidden="true"></i> </a>
+                                                    @endif
                                                     <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
                                                 </div>
                                             </div>
@@ -334,12 +345,19 @@
                                         <div class="row custom-box">
                                             <div class="col-lg-8 col-md-8 col-12 ">
 
-                                                <div class="">
-                                                    <label class="uk-form-label">
-                                                        <p>Other Attachment </p>
-                                                    </label>
-                                                    <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
-                                                    <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                                <div class="col-lg-8 col-md-8 col-12">
+
+
+                                                    <div class="">
+                                                        <label class="uk-form-label">
+                                                            <p>Other Attachment </p>
+                                                        </label>
+                                                        <a href="{{url('files/'.$row->attachment)}}" target="_blank" class="uploaded_file" style=" text-decoration: underline;">{{$row->attachment}} </a>
+                                                        @if($row->attachment)
+                                                        <a data-model="other" data-atr="attachment" data-id="{{$row->id}}" data-file="{{$row->attachment}}" class="ml-2 delete_file_button"><i class="fa fa-times-circle text-danger" aria-hidden="true"></i> </a>
+                                                        @endif
+                                                        <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -450,12 +468,17 @@
                                     <div class="row custom-box">
                                         <div class="col-lg-8 col-md-8 col-12">
 
-                                            <div class="">
-                                                <label class="uk-form-label">
-                                                    <p>Other Attachment </p>
-                                                </label>
-                                                <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
-                                                <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                        <div class="col-lg-8 col-md-8 col-12">
+                                                <div class="">
+                                                    <label class="uk-form-label">
+                                                        <p>Other Attachment </p>
+                                                    </label>
+                                                    <a href="{{url('files/'.$row->attachment)}}" target="_blank" class="uploaded_file" style=" text-decoration: underline;">{{$row->attachment}} </a>
+                                                    @if($row->attachment)
+                                                    <a data-model="other" data-atr="attachment" data-id="{{$row->id}}" data-file="{{$row->attachment}}" class="ml-2 delete_file_button"><i class="fa fa-times-circle text-danger" aria-hidden="true"></i> </a>
+                                                    @endif
+                                                    <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="float-right" style="margin-left:10% !important">
@@ -570,12 +593,16 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-8 col-md-8 col-12">
-                                                <label class="uk-form-label">
-                                                    <p>Other Attachment </p>
-                                                </label>
-                                                <a href="{{url('files/'.$row->attachment)}}" target="_blank" style=" text-decoration: underline;">{{$row->attachment}}</a>
-                                                <input type="file" class="form-control" name="attachment[]">
-
+                                                <div class="">
+                                                    <label class="uk-form-label">
+                                                        <p>Other Attachment </p>
+                                                    </label>
+                                                    <a href="{{url('files/'.$row->attachment)}}" target="_blank" class="uploaded_file" style=" text-decoration: underline;">{{$row->attachment}} </a>
+                                                    @if($row->attachment)
+                                                    <a data-model="other" data-atr="attachment" data-id="{{$row->id}}" data-file="{{$row->attachment}}" class="ml-2 delete_file_button"><i class="fa fa-times-circle text-danger" aria-hidden="true"></i> </a>
+                                                    @endif
+                                                    <input type="file" class="form-control" name="attachment[]" value="{{$row->attachment}}">
+                                                </div>
                                             </div>
                                             <div class="float-right" style="margin-left:10% !important">
                                                 <br><br>
@@ -687,7 +714,6 @@
 
         if ($(this).val() == 'Yes') {
             $(this).closest('.d-flex').children('.validuptocal').removeClass('d-none');
-
         } else {
             $(this).closest('.d-flex').children('.validuptocal').addClass('d-none');
 
@@ -1154,6 +1180,40 @@
         // remove row
         $(document).on('click', '#removeother', function() {
             $(this).closest('#addotherform').remove();
+        });
+
+
+
+        // if ($(this).val() == 'Yes') {
+        //     $(this).closest('.d-flex').children('.validuptocal').removeClass('d-none');
+
+        // } else {
+        //     $(this).closest('.d-flex').children('.validuptocal').addClass('d-none');
+
+        // }
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $(document).on('click', '.delete_file_button', function(event) {
+            event.preventDefault(); // avoid to execute the actual submit of the form.
+            filename = 'delete/file/' + $(this).data('id') + '/' + $(this).data('model') + '/' + $(this).data('atr');
+            element = this;
+
+            console.log(filename)
+            $.ajax({
+                type: "GET",
+                url: filename,
+
+                success: function(data) {
+                    $(element).fadeOut()
+                    $(element).siblings('.uploaded_file').fadeOut();
+
+                }
+            });
+
         });
 
     });

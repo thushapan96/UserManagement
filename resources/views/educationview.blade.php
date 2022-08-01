@@ -7,7 +7,7 @@
 
 </div>
 
-<u1 class="col-md-10 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
+<u1 class="col-md-8 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
     <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">Personal + Academic </a></li>
     <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">Employment + Technical </a></li>
     <li class="nav-linkk " id="amenu2"><a style="cursor:pointer;padding: 0.5rem  2rem;">Others</a></li>
@@ -646,7 +646,7 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                <div class="font-weight-bold ml-2 {{$educations->is_rejected_college == 'yes' ? 'text-info ' : 'text-danger'}}">{{$educations->is_rejected_college}}</div>
+                                <div class="font-weight-bold ml-2 {{$educations->is_rejected_college == 'yes' ? 'text-info ' : 'text-danger'}}">{{$educations->is_rejected_college == 'yes' ? 'Yes ' : 'No'}}</div>
                                 
 
                             </div>
@@ -688,7 +688,7 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                                <div class="font-weight-bold ml-2 {{$educations->is_rejected_visa_past == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->is_rejected_visa_past}}</div>
+                                <div class="font-weight-bold ml-2 {{$educations->is_rejected_visa_past == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->is_rejected_visa_past == 'yes' ? 'Yes' : 'No'}}</div>
                                
 
                             </div>
@@ -729,7 +729,7 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$educations->is_rejected_visa == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->is_rejected_visa}}</div>
+                            <div class="font-weight-bold ml-2 {{$educations->is_rejected_visa == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->is_rejected_visa == 'yes' ? 'Yes' : 'No'}}</div>
 
 
                             </div>
@@ -785,7 +785,9 @@
                         </div>
                         <div class="col-md-7">
                             <p class="ps">
-                                {{$educations->eca}}
+                               
+                                <div class="font-weight-bold  {{$educations->eca == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->eca == 'yes' ? 'Yes' : 'No'}}</div>
+
                             </p>
                         </div>
                     </div>
@@ -822,7 +824,7 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$educations->passport_valid == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->passport_valid}}</div>
+                            <div class="font-weight-bold ml-2 {{$educations->passport_valid == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->passport_valid == 'yes' ? 'Yes' : 'No'}}</div>
 
 
                             </div>
@@ -837,7 +839,7 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$educations->IELTS_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->IELTS_attempted}}</div>
+                            <div class="font-weight-bold ml-2 {{$educations->IELTS_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->IELTS_attempted == 'yes' ? 'Yes' : 'No'}}</div>
                             &nbsp;&nbsp;
                                 @if($educations->IELTS_attempted_date)
                                 @if($configureDate == '1')
@@ -860,7 +862,7 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$educations->GRE_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->GRE_attempted}}</div>
+                            <div class="font-weight-bold ml-2 {{$educations->GRE_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->GRE_attempted == 'yes' ? 'Yes' : 'No'}}</div>
                             &nbsp;&nbsp;
                                 @if($educations->GRE_attempted_date)
                                 @if($configureDate == '1')
@@ -883,7 +885,7 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$educations->TOEFL_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->TOEFL_attempted}}</div>
+                            <div class="font-weight-bold ml-2 {{$educations->TOEFL_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->TOEFL_attempted == 'yes' ? 'Yes' : 'No'}}</div>
                             &nbsp;&nbsp;
                                 @if($educations->TOEFL_attempted_date)
                                 @if($configureDate == '1')
@@ -907,7 +909,7 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$educations->GMAT_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->GMAT_attempted}} </div>
+                            <div class="font-weight-bold ml-2 {{$educations->GMAT_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->GMAT_attempted == 'yes' ? 'Yes' : 'No'}}</div>
                             &nbsp;&nbsp;
                                 @if($educations->GMAT_attempted_date)
                                 @if($configureDate == '1')
@@ -931,7 +933,7 @@
                         <div class="col-md-7">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$educations->interested_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->interested_attempted}}</div>
+                            <div class="font-weight-bold ml-2 {{$educations->interested_attempted == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$educations->interested_attempted == 'yes' ? 'Yes' : 'No'}} </div>
 
 
                             </div>

@@ -800,7 +800,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <label> {{request()->query('service') === "School" ? "Provide University URL Video Link to know more about your College" : "Provide University URL Video Link to know more about your College" }} 
+                                            <label> {{request()->query('service') === "School" ? "Provide University URL Video Link to know more about your College" : "Provide University URL Video Link to know more about your ".request()->query('service') }} 
                                             </label>
                                             <input class="form-control " type="text" name="vedio_url" value="{{old('vedio_url')}}">
                                         </div>
@@ -809,7 +809,7 @@
                                 <div class="row custom-box">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <label>{{request()->query('service') === "School" ? "Provide Weblinks for News And Events to know more about your College to help Candidates know more" : "Provide Weblinks for News And Events to know more about your College to help Candidates know more"}}
+                                            <label>{{request()->query('service') === "School" ? "Provide Weblinks for News And Events to know more about your College to help Candidates know more" : "Provide Weblinks for News And Events to know more about your " .request()->query('service'). " to help Candidates know more"}}
                                             </label>
                                             <br>
 

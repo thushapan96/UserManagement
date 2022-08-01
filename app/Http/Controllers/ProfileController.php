@@ -482,4 +482,20 @@ class ProfileController extends Controller
 
         return $name;
     }
+
+    public function deletefile($id, $model, $atr)
+    {
+        if($model == 'other') {
+            $data =  Qualification::find($id)->first();
+            return $data;
+            $data->attachment = '';
+            $data->save();
+        }
+         
+        else {
+            $data =  Academy::find($id)->first();
+            $data->$atr = '';
+            $data->save();
+        }
+    }
 }

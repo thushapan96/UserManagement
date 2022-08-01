@@ -172,7 +172,7 @@
 </div>
 <br><br>
  -->
-<u1 class="col-md-6" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
+<u1 class="col-md-6 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="cursor:pointer;margin-left:auto !important;margin-right:auto">
     <li class="uk-active" id="amenu"><a style="cursor:pointer;padding: 0.5rem 1rem;" aria-current="page"> Initiated </a></li>
     <li class="" id="amenu1"><a style="cursor:pointer;padding: 0.5rem  1rem;">Substitute/Forward</a></li>
     <li class="" id="amenu2"><a style="cursor:pointer;padding: 0.5rem  1rem;">Progress </a></li>

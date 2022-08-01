@@ -198,7 +198,7 @@
                                     </div>
 
                                     <div class="col-md-7">
-                                        <label class="labels font-weight-bold {{$personal->is_vaccinate == 'Yes' ? 'text-info ' : 'text-danger'}}">{{$personal->is_vaccinate }}</label>
+                                        <label class="labels font-weight-bold {{$personal->is_vaccinate == 'Yes' ? 'text-info ' : 'text-danger'}}">{{$personal->is_vaccinate == 'Yes' ? 'Yes ' : 'No'}}</label>
                                     </div>
                                 </div>
                             </fieldset>

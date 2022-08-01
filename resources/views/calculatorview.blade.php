@@ -486,7 +486,7 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$calculators->is_rejected_college == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->is_rejected_college}} </div>
+                            <div class="font-weight-bold ml-2 {{$calculators->is_rejected_college == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->is_rejected_college == 'yes' ? 'Yes' : 'No'}} </div>
 
 
                             </div><br>
@@ -528,7 +528,7 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$calculators->is_rejected_visa_past == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->is_rejected_visa_past}} </div>
+                            <div class="font-weight-bold ml-2 {{$calculators->is_rejected_visa_past == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->is_rejected_visa_past == 'yes' ? 'Yes' : 'No'}} </div>
 
                             </div><br>
                         </div>
@@ -569,7 +569,7 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$calculators->is_rejected_visa == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->is_rejected_visa}} </div>
+                            <div class="font-weight-bold ml-2 {{$calculators->is_rejected_visa == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->is_rejected_visa == 'yes' ? 'Yes' : 'No'}} </div>
 
 
                             </div><br>
@@ -612,7 +612,7 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$calculators->EOI_profile == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->EOI_profile}} </div>
+                            <div class="font-weight-bold ml-2 {{$calculators->EOI_profile == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->EOI_profile == 'yes' ? 'Yes' : 'No'}}</div>
 
                                 &nbsp;&nbsp;
                                 @if($calculators->EOI_profile_date)
@@ -636,7 +636,7 @@
                         <div class="col-md-3">
 
                             <div class="row">
-                            <div class="font-weight-bold ml-2 {{$calculators->Provincial_profile == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->Provincial_profile}} </div>
+                            <div class="font-weight-bold ml-2 {{$calculators->Provincial_profile == 'yes' ? 'text-info ' : 'text-danger'}} ">{{$calculators->Provincial_profile == 'yes' ? 'Yes' : 'No'}}</div>
    
                             &nbsp;&nbsp;
                                 @if($calculators->Provincial_profile_date)
