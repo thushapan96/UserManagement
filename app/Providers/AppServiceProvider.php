@@ -184,72 +184,8 @@ class AppServiceProvider extends ServiceProvider
                 $currencyPrice = Setting::where('type', 'currency')->value('value');
                 $configureDate = Setting::where('type', 'date')->value('value');
 
-                if (Auth::user()->service_type == 'Institution') {
-                    if (Auth::user()->membership_institution_id) {
-                        $MembershipInstitution  =  MembershipInstitution::find(Auth::user()->membership_institution_id);
+                if (Auth::user()->role == 'candidate') {
 
-                        $MembershipInstitutionDiploma  = $MembershipInstitution->Diploma;
-                        $MembershipInstitutionPG_Diploma   = $MembershipInstitution->PG_Diploma;
-                        $MembershipInstitutionCertification   = $MembershipInstitution->Certification;
-                        $MembershipInstitutionGraduation   = $MembershipInstitution->Graduation;
-                        $MembershipInstitutionPost_Graduation   = $MembershipInstitution->Post_Graduation;
-                        $MembershipInstitutionDoctorate   = $MembershipInstitution->Doctorate;
-                        $MembershipInstitutionSchool   = $MembershipInstitution->Enquiries;
-
-
-                        $view->with('currencyPrice', $currencyPrice)
-                            ->with('configureDate', $configureDate)
-
-                            ->with('MembershipInstitutionDiploma', $MembershipInstitutionDiploma)
-                            ->with('MembershipInstitutionPG_Diploma', $MembershipInstitutionPG_Diploma)
-                            ->with('MembershipInstitutionCertification', $MembershipInstitutionCertification)
-                            ->with('MembershipInstitutionGraduation', $MembershipInstitutionGraduation)
-                            ->with('MembershipInstitutionPost_Graduation', $MembershipInstitutionPost_Graduation)
-                            ->with('MembershipInstitutionDoctorate', $MembershipInstitutionDoctorate)
-                            ->with('MembershipInstitutionSchool', $MembershipInstitutionSchool)
-                            
-                            ->with('currentEnquirySchool', '')
-                            ->with('currentEnquiryCollege', '')
-                            ->with('currentEnquiryUniversity', '')
-                            ->with('currentEnquiryConsultant', '')
-                            ->with('currentEnquiryImmigration', '')
-                            ->with('currentEnquiryAccountant', '')
-                            ->with('MembershipCandidateEnquiriesSchool', '')
-                            ->with('MembershipCandidateEnquiriesUniversity', '')
-                            ->with('MembershipCandidateEnquiriesCollege', '')
-                            ->with('MembershipCandidateEnquiriesRCICConsultant', '')
-                            ->with('MembershipCandidateEnquiriesImmigration', '')
-                            ->with('MembershipCandidateEnquiriesBusiness', '');
-                    }
-                } else if (Auth::user()->service_type == 'Business' || Auth::user()->service_type == 'Consultation') {
-                    if (Auth::user()->membership_provider_id) {
-                        $MembershipProvider  =  MembershipProvider::find(Auth::user()->membership_provider_id);
-
-                        if (Auth::user()->service == 'RCIC Consultant') {
-                            $MembershipProviderEnquiries  =  $MembershipProvider->EnquiriesRCICConsultant;
-                        } else if (Auth::user()->service == 'Chartered Accountant') {
-                            $MembershipProviderEnquiries   =  $MembershipProvider->EnquiriesBusiness;
-                        } else {
-                            $MembershipProviderEnquiries  =  $MembershipProvider->EnquiriesImmigration;
-                        }
-
-                        $view->with('currencyPrice', $currencyPrice)
-                            ->with('configureDate', $configureDate)
-                            ->with('MembershipProviderEnquiries', $MembershipProviderEnquiries)
-                            ->with('currentEnquirySchool', '')
-                            ->with('currentEnquiryCollege', '')
-                            ->with('currentEnquiryUniversity', '')
-                            ->with('currentEnquiryConsultant', '')
-                            ->with('currentEnquiryImmigration', '')
-                            ->with('currentEnquiryAccountant', '')
-                            ->with('MembershipCandidateEnquiriesSchool', '')
-                            ->with('MembershipCandidateEnquiriesUniversity', '')
-                            ->with('MembershipCandidateEnquiriesCollege', '')
-                            ->with('MembershipCandidateEnquiriesRCICConsultant', '')
-                            ->with('MembershipCandidateEnquiriesImmigration', '')
-                            ->with('MembershipCandidateEnquiriesBusiness', '');
-                    }
-                } else {
                     if (Auth::user()->membership_plan_id) {
 
                         $MembershipCandidate  =  MembershipCandidate::find(Auth::user()->membership_plan_id);
@@ -318,6 +254,42 @@ class AppServiceProvider extends ServiceProvider
                             ->with('MembershipCandidateEnquiriesImmigration', $MembershipCandidateEnquiriesImmigration)
                             ->with('MembershipCandidateEnquiriesBusiness', $MembershipCandidateEnquiriesBusiness);
                     }
+                    
+                } else {
+
+
+                    $MembershipCandidateEnquiriesSchool =  '';
+                    $MembershipCandidateEnquiriesUniversity = '';
+                    $MembershipCandidateEnquiriesCollege =  '';
+                    $MembershipCandidateEnquiriesRCICConsultant = '';
+                    $MembershipCandidateEnquiriesImmigration = '';
+                    $MembershipCandidateEnquiriesBusiness = '';
+
+
+                    $currentEnquirySchool  = '';
+                    $currentEnquiryCollege = '';
+                    $currentEnquiryUniversity = '';
+                    $currentEnquiryConsultant  = '';
+                    $currentEnquiryImmigration  = '';
+                    $currentEnquiryAccountant = '';
+
+                    $view->with('currencyPrice', $currencyPrice)
+                        ->with('configureDate', $configureDate)
+
+                        ->with('currentEnquirySchool', $currentEnquirySchool)
+                        ->with('currentEnquiryCollege', $currentEnquiryCollege)
+                        ->with('currentEnquiryUniversity', $currentEnquiryUniversity)
+
+                        ->with('currentEnquiryConsultant', $currentEnquiryConsultant)
+                        ->with('currentEnquiryImmigration', $currentEnquiryImmigration)
+                        ->with('currentEnquiryAccountant', $currentEnquiryAccountant)
+
+                        ->with('MembershipCandidateEnquiriesSchool', $MembershipCandidateEnquiriesSchool)
+                        ->with('MembershipCandidateEnquiriesUniversity', $MembershipCandidateEnquiriesUniversity)
+                        ->with('MembershipCandidateEnquiriesCollege', $MembershipCandidateEnquiriesCollege)
+                        ->with('MembershipCandidateEnquiriesRCICConsultant', $MembershipCandidateEnquiriesRCICConsultant)
+                        ->with('MembershipCandidateEnquiriesImmigration', $MembershipCandidateEnquiriesImmigration)
+                        ->with('MembershipCandidateEnquiriesBusiness', $MembershipCandidateEnquiriesBusiness);
                 }
             }
         });
