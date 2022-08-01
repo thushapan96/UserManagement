@@ -223,7 +223,7 @@
                                             <div class="col-lg-8 col-md-8 col-12">
                                                 <div class="">
                                                     <label class="uk-form-label">
-                                                        <p>Other Attachment </p>
+                                                        <p>Other Attachment {{$row->id}}</p>
                                                     </label>
                                                     <a href="{{url('files/'.$row->attachment)}}" target="_blank" class="uploaded_file" style=" text-decoration: underline;">{{$row->attachment}} </a>
                                                     @if($row->attachment)
