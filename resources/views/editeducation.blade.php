@@ -25,13 +25,13 @@
 
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <label>First Name </label>
+                                    <label>First Name </label><span style="color: red;"> *</span>
                                     <input class="form-control" type="text" name="first_name" value="{{$educations->first_name}}">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
-                                    <label>Last Name</label>
+                                    <label>Last Name</label><span style="color: red;"> *</span>
                                     <input class="form-control" type="text" value="{{$educations->last_name}}" name="last_name">
                                 </div>
 
@@ -48,17 +48,35 @@
                             </div>
 
                             <div class="col-lg-4 col-md-4 col-12">
-                                <div class="form-group">
+                                <div class="col-lg-12 col-md-12 col-12">
                                     <label>Gender</label>
-                                    <input class="form-control" type="text" value="{{$educations->gender}}" name="gender">
-                                    <small>Male/Female</small>
+                                    <div class="row mt-1">
+                                        <div class="col-lg-4 col-md-4 col-12 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input" id="customradio" name="gender" value="male">
+                                                <label class="custom-control-label mt-1" for="customradio">Male</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input" id="customradio1" name="gender" value="female">
+                                                <label class="custom-control-label mt-1" for="customradio1">Female</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-12 ">
+                                            <div class="custom-control custom-radio ">
+                                                <input type="radio" class="custom-control-input" id="customradio2" name="gender" value="other">
+                                                <label class="custom-control-label mt-1" for="customradio2">Other</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Email address for correspondence</label>
                                     <input class="form-control" type="text" value="{{$educations->email}}" name="email">
-                                    <small>Valid Email Address</small>
                                 </div>
                             </div>
                         </div>
@@ -100,6 +118,11 @@
                                         <option value="Doctorate" {{$educations->enrollment_request  == 'Doctorate' ? 'selected':''}}>Doctorate</option>
                                         <option value="PG Diploma" {{$educations->enrollment_request  == 'PG Diploma' ? 'selected':''}}>PG Diploma</option>
                                     </select>
+                                    <label class="mt-2">Certificate</label>
+
+                                    <input class="form-control" type="text" value="" name="">
+
+
                                 </div>
                             </div>
                             <div class="col-lg-9 col-md-9 col-12">

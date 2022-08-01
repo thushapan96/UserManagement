@@ -8,7 +8,7 @@
 
     </div>
 
-    <u1 class="col-md-4" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
+    <u1 class="col-md-8 justify-content-around" data-uk-tab="animation: uk-animation-scale-up" style="margin-left:auto !important;margin-right:auto !important">
         <li class="nav-linkk " id="amenu"><a style="cursor:pointer;padding: 0.5rem 2rem;" aria-current="page">PERSONAL + ACADEMIC </a></li>
         <li class="nav-linkk " id="amenu1"><a style="cursor:pointer;padding: 0.5rem  2rem;">EMPLOYMENT + TECHNICAL </a></li>
     </u1>

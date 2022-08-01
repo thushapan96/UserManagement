@@ -160,6 +160,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/profilePersonalupdate/{id}', 'App\Http\Controllers\ProfileController@profileUpdate')->name('profilePersonalupdate');
 
     Route::get('/academyEdit/{id}', 'App\Http\Controllers\ProfileController@academyEdit')->name('academyEdit');
+    Route::get('/academyEdit/delete/file/{id}/{atr}/{model}/', 'App\Http\Controllers\ProfileController@deletefile')->name('deletefile');
+
     Route::post('/profileAcademyupdate/{id}', 'App\Http\Controllers\ProfileController@academyUpdate')->name('profileAcademyupdate');
 
     Route::get('/workEdit/{id}', 'App\Http\Controllers\ProfileController@workEdit')->name('workEdit');
@@ -200,6 +202,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     
     Route::post('/register/institude', [App\Http\Controllers\InstitutionController::class, 'store'])->name('add.institution');
+
     Route::get('/edit/institude', [App\Http\Controllers\ProviderProfileController::class, 'editInstitude'])->name('edit.institution');
     Route::post('/update/institude/{id}', [App\Http\Controllers\ProviderProfileController::class, 'updateInstitude'])->name('update.institution');
 
