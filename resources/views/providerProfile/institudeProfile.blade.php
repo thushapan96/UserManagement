@@ -912,7 +912,7 @@
 
 
         if (institype == 'School') {
-            var currentEnquiryInstitution = "{{$currentEnquirySchool}}";
+            var currentEnquiryInstitution = "{{$currentEnquirySchool ? ''}}";
             var MembershipCandidateEnquiriesInstitution = "{{$MembershipCandidateEnquiriesSchool}}";
             // alert(currentEnquiryInstitution);
             // alert(MembershipCandidateEnquiriesInstitution);
