@@ -196,7 +196,7 @@
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <div class="form-group">
-                                                    <label class="uk-form-label">Education Type
+                                                    <label class="uk-form-label">Education Type 
 
                                                     </label>
                                                     <select name="distant[]" class="form-control">

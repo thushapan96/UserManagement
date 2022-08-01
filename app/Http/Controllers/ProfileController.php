@@ -470,12 +470,12 @@ class ProfileController extends Controller
     }
 
     public function deletefile($id, $model, $atr)
-    {
+    {dd("ada");
         if($model == 'other') {
             $data =  Qualification::find($id)->first();
-            return $data;
-            $data->attachment = '';
+            $data->attachment = 'hi';
             $data->save();
+            return $data->attachment ;
         }
          
         else {
