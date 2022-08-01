@@ -199,14 +199,27 @@ class AppServiceProvider extends ServiceProvider
 
                         $view->with('currencyPrice', $currencyPrice)
                             ->with('configureDate', $configureDate)
-                            
+
                             ->with('MembershipInstitutionDiploma', $MembershipInstitutionDiploma)
                             ->with('MembershipInstitutionPG_Diploma', $MembershipInstitutionPG_Diploma)
                             ->with('MembershipInstitutionCertification', $MembershipInstitutionCertification)
                             ->with('MembershipInstitutionGraduation', $MembershipInstitutionGraduation)
                             ->with('MembershipInstitutionPost_Graduation', $MembershipInstitutionPost_Graduation)
                             ->with('MembershipInstitutionDoctorate', $MembershipInstitutionDoctorate)
-                            ->with('MembershipInstitutionSchool', $MembershipInstitutionSchool);
+                            ->with('MembershipInstitutionSchool', $MembershipInstitutionSchool)
+                            
+                            ->with('currentEnquirySchool', '')
+                            ->with('currentEnquiryCollege', '')
+                            ->with('currentEnquiryUniversity', '')
+                            ->with('currentEnquiryConsultant', '')
+                            ->with('currentEnquiryImmigration', '')
+                            ->with('currentEnquiryAccountant', '')
+                            ->with('MembershipCandidateEnquiriesSchool', '')
+                            ->with('MembershipCandidateEnquiriesUniversity', '')
+                            ->with('MembershipCandidateEnquiriesCollege', '')
+                            ->with('MembershipCandidateEnquiriesRCICConsultant', '')
+                            ->with('MembershipCandidateEnquiriesImmigration', '')
+                            ->with('MembershipCandidateEnquiriesBusiness', '');
                     }
                 } else if (Auth::user()->service_type == 'Business' || Auth::user()->service_type == 'Consultation') {
                     if (Auth::user()->membership_provider_id) {
@@ -222,7 +235,19 @@ class AppServiceProvider extends ServiceProvider
 
                         $view->with('currencyPrice', $currencyPrice)
                             ->with('configureDate', $configureDate)
-                            ->with('MembershipProviderEnquiries', $MembershipProviderEnquiries);
+                            ->with('MembershipProviderEnquiries', $MembershipProviderEnquiries)
+                            ->with('currentEnquirySchool', '')
+                            ->with('currentEnquiryCollege', '')
+                            ->with('currentEnquiryUniversity', '')
+                            ->with('currentEnquiryConsultant', '')
+                            ->with('currentEnquiryImmigration', '')
+                            ->with('currentEnquiryAccountant', '')
+                            ->with('MembershipCandidateEnquiriesSchool', '')
+                            ->with('MembershipCandidateEnquiriesUniversity', '')
+                            ->with('MembershipCandidateEnquiriesCollege', '')
+                            ->with('MembershipCandidateEnquiriesRCICConsultant', '')
+                            ->with('MembershipCandidateEnquiriesImmigration', '')
+                            ->with('MembershipCandidateEnquiriesBusiness', '');
                     }
                 } else {
                     if (Auth::user()->membership_plan_id) {

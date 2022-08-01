@@ -76,7 +76,7 @@
 
                 <!-- <li class="" id="amenu5"><a>Canada Inspire</a></li>
                 <li class="" id="amenu6"><a>Feedback</a></li> -->
-                
+
             </u1>
             <u1 class="uk-switcher">
                 <li id='menu' class='tab-pane '>
@@ -918,20 +918,22 @@
     $(document).ready(function() {
         console.log(2)
         var consultType = "{{$consultants->type}}";
-        if (consultType == 'RCIC Consultant') {
-            var currentEnquiryConsultant = "{{$currentEnquiryConsultant}}";
-            var MembershipCandidateEnquiriesConsultant = "{{$MembershipCandidateEnquiriesRCICConsultant}}";
+        var view = "{{$view}}"
 
-        } else {
-            var currentEnquiryConsultant = "{{$currentEnquiryImmigration}}";
-            var MembershipCandidateEnquiriesConsultant = "{{$MembershipCandidateEnquiriesImmigration}}";
-
-        }
-
+       
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
 
         $("#enquiry").click(function() {
+            if (consultType == 'RCIC Consultant') {
+                var currentEnquiryConsultant = "{{$currentEnquiryConsultant}}";
+                var MembershipCandidateEnquiriesConsultant = "{{$MembershipCandidateEnquiriesRCICConsultant}}";
+
+            } else {
+                var currentEnquiryConsultant = "{{$currentEnquiryImmigration}}";
+                var MembershipCandidateEnquiriesConsultant = "{{$MembershipCandidateEnquiriesImmigration}}";
+
+            }
             var text = $(this).text()
             if (text == 'New Enquiry') {
                 if (currentEnquiryConsultant < MembershipCandidateEnquiriesConsultant) {

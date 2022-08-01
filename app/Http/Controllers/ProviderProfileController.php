@@ -18,7 +18,7 @@ class ProviderProfileController extends Controller
         $institutions =  Institution::where('user_id', $id)->first();
         $view = "";
         $img = Auth::user()->img;
-       
+
         if ($institutions) {
             return view('providerProfile.institudeProfile')->with('institutions', $institutions)->with('view', $view)->with('img', $img);
         } else {
@@ -31,12 +31,16 @@ class ProviderProfileController extends Controller
         $id = Auth::user()->id;
         $consultants =  Consultant::where('user_id', $id)->first();
         $view = "";
-       
+
         $img = Auth::user()->img;
         $teams = Team::where('provider_id', $consultants->id)->get();
 
         if ($consultants) {
-            return view('providerProfile.consultantProfile')->with('consultants', $consultants)->with('teams', $teams)->with('view', $view)->with('img', $img);
+            return view('providerProfile.consultantProfile')
+                ->with('consultants', $consultants)
+                ->with('teams', $teams)
+                ->with('view', $view)
+                ->with('img', $img);
         } else {
             return redirect(route('register.consultant'));
         }
@@ -51,7 +55,11 @@ class ProviderProfileController extends Controller
         $view = "";
         $img = Auth::user()->img;
         if ($consultants) {
-            return view('providerProfile.business')->with('consultants', $consultants)->with('teams', $teams)->with('view', $view)->with('img', $img);
+            return view('providerProfile.business')
+                ->with('consultants', $consultants)
+                ->with('teams', $teams)
+                ->with('view', $view)
+                ->with('img', $img);
         } else {
             return redirect(route('register.business'));
         }
