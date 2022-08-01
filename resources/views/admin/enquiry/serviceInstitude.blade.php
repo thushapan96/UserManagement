@@ -237,12 +237,6 @@
                                         </div>
                                     </li>
                                     <li class="sc-list-group">
-                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                        <div class="sc-list-body">
-                                            <p class="uk-margin-remove uk-text-wrap">{{$row->streat}} {{$row->city}} {{$row->region}} {{$row->country}}</p>
-                                        </div>
-                                    </li>
-                                    <li class="sc-list-group">
                                         <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                         <div class="sc-list-body">
                                             <p class="uk-margin-remove uk-text-wrap">
@@ -254,6 +248,36 @@
                                             </p>
                                         </div>
                                     </li>
+                                    @if($row->type == 'School')
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry:{{$row->currentEnquirySchool}}/{{$row->limitedEnquirySchool == '' ? 0  :$row->limitedEnquirySchool}}</p>
+                                        </div>
+                                    </li>
+                                    @elseif($row->type == 'College')
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Diploma:{{$row->currentDiploma}}/{{$row->limitedEnquiryDiploma == '' ? 0  :$row->limitedEnquiryDiploma}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-PG Diploma:{{$row->currentPG_Diploma}}/{{$row->limitedEnquiryPG_Diploma == '' ? 0  :$row->limitedEnquiryPG_Diploma}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Certification:{{$row->currentCertification}}/{{$row->limitedEnquiryCertification == '' ? 0  :$row->limitedEnquiryCertification}}</p>
+
+                                        </div>
+                                    </li>
+                                    @elseif($row->type == 'University')
+                                    <li class="sc-list-group">
+                                        <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Graduation:{{$row->currentGraduation}}/{{$row->limitedEnquiryGraduation == '' ? 0  :$row->limitedEnquiryPost_Graduation}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Post Graduation:{{$row->currentPost_Graduation}}/{{$row->limitedEnquiryPost_Graduation == '' ? 0  :$row->limitedEnquiryPost_Graduation}}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Doctorate:{{$row->currentDoctorate}}/{{$row->limitedEnquiryDoctorate == '' ? 0  :$row->limitedEnquiryDoctorate}}</p>
+                                        </div>
+                                    </li>
+
+                                    @endif
+
+
                                 </ul>
                             </div>
                         </div>
@@ -296,7 +320,7 @@
         if ($('#type').val() == 'School') {
             $('.page-active').removeClass('sc-page-active')
             $('.page-enquiries-School').addClass('sc-page-active')
-        } else if ('College') {
+        } else if ($('#type').val() == 'College') {
             $('.page-active').removeClass('sc-page-active')
             $('.page-enquiries-College ').addClass('sc-page-active')
         } else {
@@ -305,16 +329,9 @@
         }
 
         const baseUrlAsset = "{{url('files/')}}";
-        // if ($('#type').val() == 'School') {
-        //     $('.page-active').removeClass('sc-page-active')
-        //     $('.page-School').addClass('sc-page-active')
-        // } else if ($('#type').val() == 'College') {
-        //     $('.page-active').removeClass('sc-page-active')
-        //     $('.page-College ').addClass('sc-page-active')
-        // } else {
-        //     $('.page-active').removeClass('sc-page-active')
-        //     $('.page-University ').addClass('sc-page-active')
-        // }
+        var InstitudeformsviewIdExist = "{{$CandidateEnquiryIdExist}}"
+        var InstitutionEnquiryIdExist = "{{$CandidateformsViewIdExist3}}"
+        var InstitudeformsviewIdExist2 = "{{$CandidateformsViewIdExist2}}"
 
         $('#searchbar').on('keyup', function() {
             if ($('#medium').length) {
@@ -390,21 +407,20 @@
                                     <p class="uk-margin-remove uk-text-wrap">${row.website_address}</p>
                                 </div>
                             </li>
-                            <li class="sc-list-group">
-                                <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
-                                <div class="sc-list-body">
-                                    <p class="uk-margin-remove uk-text-wrap">${row.city} ${row.region} ${row.country}</p>
-                                </div>
-                            </li>
-
+                          
                             <li class="sc-list-group">
                                 <div class="sc-list-addon"><i class="mdi mdi-information-outline"></i></div>
                                 <div class="sc-list-body">
                                     <p class="uk-margin-remove uk-text-wrap" id="services-${index}">
                                     ${row.offer_course}
-                                    </p>
+                                    </p>  
                                 </div>
                             </li>
+
+                            <li class="sc-list-group institutionType-${index}">
+                               
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -413,9 +429,9 @@
     </div>
             <div data-uk-dropdown="pos: bottom-center">
                 <ul class="uk-nav uk-dropdown-nav">
-                    <li><a href="/admin/institution/${row.id}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
-                    <li><a href="#" style="color:#17a2b8;">2) View Enquiry Report</a></li>
-                    <li><a href="#" style="color:#17a2b8;">3) View Status progress reports</a></li>
+                    <li class="link1"><a href="/admin/institution/${row.institutionsId}" style="color:#17a2b8;">1) View Registration/Enrollment </a></li>
+                    <li class="link2"><a href="/admin/institudeEnquiry/${row.institutionsId}" style="color:#17a2b8;">2) View Enquiry Report</a></li>
+                    <li class="link3"><a href="#" style="color:#17a2b8;">3) View Status progress reports</a></li>
                 </ul>
             </div>
                   </li>
@@ -423,17 +439,61 @@
 
 
                         $('#sc-contact-list').append(order_row);
-                        // $.each(row.offer_course, function(index, service) {
-                        //     $('#services-' + first_index).append(service);
+                        if (InstitudeformsviewIdExist == '') {
+                            $('.link1').hide()
+                        }
+                        if (InstitutionEnquiryIdExist == '') {
+                            $('.link2').hide()
+                        }
+                        if (InstitudeformsviewIdExist2 == '') {
+                            $('.link3').hide()
+                        }
 
-                        // });
+
+
                         if (row.img) {
                             $('#img-' + first_index).attr('src', baseUrlAsset + '/' + row.img);
                         } else {
                             $('#img-' + first_index).attr('src', 'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg');
                         }
 
+                        if ($('#type').val() == 'School') {
+                            $('.institutionType-' + index).html('');
+                            var appendInstitution =
+                                `<div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                               <div class="sc-list-body">
+                                    <p class="uk-margin-remove uk-text-wrap">Enquiry:${row.currentEnquirySchool}/${row.limitedEnquirySchool == '' ? 0:row.limitedEnquirySchool}</p>
+                                </div>`
+                            $('.institutionType-' + index).append(appendInstitution);
 
+                        } else if ($('#type').val() == 'College') {
+                            $('.institutionType-' + index).html('');
+                            
+                            var appendInstitution =
+                                ` <div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                                        <div class="sc-list-body">
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Diploma:${row.currentDiploma}/${row.limitedEnquiryDiploma == '' ? 0:row.limitedEnquiryDiploma}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-PG Diploma:${row.currentPG_Diploma}/${row.limitedEnquiryPG_Diploma == '' ? 0:row.limitedEnquiryPG_Diploma}</p>
+                                            <p class="uk-margin-remove uk-text-wrap">Enquiry-Certification:${row.currentCertification}/${row.limitedEnquiryCertification == '' ? 0:row.limitedEnquiryCertification}</p>
+
+                                        </div>`
+
+                            $('.institutionType-' + index).append(appendInstitution);
+
+                        } else {
+                            $('.institutionType-' + index).html('');
+                            var appendInstitution =
+                                `<div class="sc-list-addon"><i class="mdi mdi-office-building"></i></div>
+                       <div class="sc-list-body">
+                       <p class="uk-margin-remove uk-text-wrap">Enquiry-Graduation:${row.currentGraduation}/${row.limitedEnquiryGraduation == '' ? 0:row.limitedEnquiryGraduation}</p>
+                       <p class="uk-margin-remove uk-text-wrap">Enquiry-Post Graduation:${row.currentPost_Graduation}/${row.limitedEnquiryPost_Graduation == '' ? 0:row.limitedEnquiryPost_Graduation}</p>
+                       <p class="uk-margin-remove uk-text-wrap">Enquiry-Doctorate:${row.currentDoctorate}/${row.limitedEnquiryDoctorate == '' ? 0:row.limitedEnquiryDoctorate}</p>
+
+                       </div>`
+
+                            $('.institutionType-' + index).append(appendInstitution);
+
+                        }
 
                     });
 

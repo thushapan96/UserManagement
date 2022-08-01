@@ -289,6 +289,10 @@
                                 <label>Enquiries-Doctorate</label>
                             </div><br>
                             <div class="">
+                                <input class="" type="number"  style="width:12%;height:50%" name="Enquiries1" value="{{$membershipCandidate1->Enquiries}}">
+                                <label>Enquiries-School</label>
+                            </div><br>
+                            <div class="">
                                 <input class="" type="number" style="width:32%;height:50%" min="0" name="price1" value="{{$membershipCandidate1->price}}">
                                 {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
@@ -420,6 +424,10 @@
                                 <label>Enquiries-Doctorate</label>
                             </div><br>
                             <div class="">
+                                <input class="" type="number"  style="width:12%;height:50%" name="Enquiries4" value="{{$membershipCandidate2->Enquiries}}">
+                                <label>Enquiries-School</label>
+                            </div><br>
+                            <div class="">
                                 <input class="" type="number" style="width:32%;height:50%" min="0" name="price4" value="{{$membershipCandidate2->price}}">
                                 {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
@@ -549,6 +557,10 @@
                             <div class="">
                                 <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate7" value="{{$membershipCandidate3->Doctorate}}">
                                 <label>Enquiries-Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number"  style="width:12%;height:50%" name="Enquiries7" value="{{$membershipCandidate3->Enquiries}}">
+                                <label>Enquiries-School</label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" style="width:32%;height:50%" min="0" name="price7" value="{{$membershipCandidate3->price}}">
@@ -689,6 +701,10 @@
                                 <label>Enquiries-Doctorate</label>
                             </div><br>
                             <div class="">
+                                <input class="" type="number"  style="width:12%;height:50%" name="Enquiries2" value="{{$membershipCandidate4->Enquiries}}">
+                                <label>Enquiries-School</label>
+                            </div><br>
+                            <div class="">
                                 <input class="" type="number" style="width:32%;height:50%" min="0" name="price2" value="{{$membershipCandidate4->price}}">
                                 {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
@@ -819,6 +835,10 @@
                                 <label>Enquiries-Doctorate</label>
                             </div><br>
                             <div class="">
+                                <input class="" type="number"  style="width:12%;height:50%" name="Enquiries5" value="{{$membershipCandidate5->Enquiries}}">
+                                <label>Enquiries-School</label>
+                            </div><br>
+                            <div class="">
                                 <input class="" type="number" style="width:32%;height:50%" min="0" name="price5" value="{{$membershipCandidate5->price}}">
                                 {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
@@ -947,6 +967,10 @@
                             <div class="">
                                 <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate8" value="{{$membershipCandidate6->Doctorate}}">
                                 <label>Enquiries-Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number"  style="width:12%;height:50%" name="Enquiries8" value="{{$membershipCandidate6->Enquiries}}">
+                                <label>Enquiries-School</label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" style="width:32%;height:50%" min="0" name="price8" value="{{$membershipCandidate6->price}}">
@@ -1084,6 +1108,10 @@
                                 <label>Enquiries-Doctorate</label>
                             </div><br>
                             <div class="">
+                                <input class="" type="number"  style="width:12%;height:50%" name="Enquiries3" value="{{$membershipCandidate7->Enquiries}}">
+                                <label>Enquiries-School</label>
+                            </div><br>
+                            <div class="">
                                 <input class="" type="number" style="width:32%;height:50%" min="0" name="price3" value="{{$membershipCandidate7->price}}">
                                 {{$currencyPrice}} :<label> Package Price</label>
                             </div><br>
@@ -1211,6 +1239,10 @@
                             <div class="">
                                 <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate6" value="{{$membershipCandidate8->Doctorate}}">
                                 <label>Enquiries-Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number"  style="width:12%;height:50%" name="Enquiries6" value="{{$membershipCandidate8->Enquiries}}">
+                                <label>Enquiries-School</label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" style="width:32%;height:50%" min="0" name="price6" value="{{$membershipCandidate8->price}}">
@@ -1342,6 +1374,10 @@
                             <div class="">
                                 <input class="" type="number" id="3BEnquiries" style="width:12%;height:50%" name="Doctorate9" value="{{$membershipCandidate9->Doctorate}}">
                                 <label>Enquiries-Doctorate</label>
+                            </div><br>
+                            <div class="">
+                                <input class="" type="number"  style="width:12%;height:50%" name="Enquiries9" value="{{$membershipCandidate9->Enquiries}}">
+                                <label>Enquiries-School</label>
                             </div><br>
                             <div class="">
                                 <input class="" type="number" style="width:32%;height:50%" min="0" name="price9" value="{{$membershipCandidate9->price}}">

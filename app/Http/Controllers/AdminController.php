@@ -19,6 +19,11 @@ use App\Models\TechnicalCertification;
 use App\Models\Employment;
 use App\Models\Calculator;
 use App\Models\Education;
+use App\Models\MembershipCandidate;
+use App\Models\MembershipInstitution;
+use App\Models\MembershipProvider;
+use App\Models\Enquiry;
+
 
 
 class AdminController extends Controller
@@ -33,17 +38,34 @@ class AdminController extends Controller
     }
     public function schoolIndex(Request $request)
     {
-        $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'School')->select('institutions.*', 'users.img as img');
+        $institutions = Institution::join('users', 'users.id', 'institutions.user_id')->where('type', 'School');
         if ($request->financial != '') {
             $institutions = $institutions->where('is_financial', $request->financial);
         }
-
-
         if ($request->course_type != '') {
-            // $institutions = $institutions->whereIn('course_type', $request->course_type);
+            $institutions = $institutions->whereJsonContains('course_type',  $request->course_type);
         }
-        $institutions = $institutions->get();
+        $institutions = $institutions->select('institutions.*', 'users.img as img')->get();
+
+        foreach ($institutions as $row) {
+            $limitedEnquiryId =   User::where('id', $row->user_id)->value('membership_institution_id');
+
+            if ($limitedEnquiryId) {
+                $limitedEnquiry =  MembershipInstitution::find($limitedEnquiryId);
+                $limitedEnquirySchool = $limitedEnquiry->Enquiries;
+            } else {
+                $limitedEnquirySchool = '';
+            }
+
+            $currentEnquirySchool = Enquiry::where('institution_id', $row->id)->where('statuss', '>', 0)->count();
+
+            $row->setAttribute('currentEnquirySchool', $currentEnquirySchool);
+            $row->setAttribute('limitedEnquirySchool',  $limitedEnquirySchool);
+        }
+
+        
         $type = "School";
+
 
         return view('admin.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'School');
     }
@@ -53,7 +75,7 @@ class AdminController extends Controller
         $type = "College";
 
         if ($request->financial != '') {
-            // $institutions = $institutions->where('is_financial', $request->financial);
+            $institutions = $institutions->whereJsonContains('course_type',  $request->course_type);
         }
 
         if ($request->course_type != '') {
@@ -61,6 +83,32 @@ class AdminController extends Controller
 
         $institutions = $institutions->get();
 
+        foreach ($institutions as $row) {
+            $limitedEnquiryId =   User::where('id', $row->user_id)->value('membership_institution_id');
+
+            if ($limitedEnquiryId) {
+                $limitedEnquiry =  MembershipInstitution::find($limitedEnquiryId);
+                $limitedEnquiryDiploma = $limitedEnquiry->Diploma;
+                $limitedEnquiryPG_Diploma = $limitedEnquiry->PG_Diploma;
+                $limitedEnquiryCertification = $limitedEnquiry->Certification;
+            } else {
+                $limitedEnquiryDiploma = '';
+                $limitedEnquiryPG_Diploma = '';
+                $limitedEnquiryCertification = '';
+            }
+
+            $currentDiploma = Enquiry::where('institution_id', $row->id)->whereJsonContains('course_enquiry', 'Diploma')->where('statuss', '>', 0)->count();
+            $currentPG_Diploma = Enquiry::where('institution_id', $row->id)->whereJsonContains('course_enquiry', 'PG Diploma')->where('statuss', '>', 0)->count();
+            $currentCertification = Enquiry::where('institution_id', $row->id)->whereJsonContains('course_enquiry', 'Certification')->where('statuss', '>', 0)->count();
+
+            $row->setAttribute('limitedEnquiryDiploma', $limitedEnquiryDiploma);
+            $row->setAttribute('limitedEnquiryPG_Diploma',  $limitedEnquiryPG_Diploma);
+            $row->setAttribute('limitedEnquiryCertification', $limitedEnquiryCertification);
+            $row->setAttribute('currentDiploma',  $currentDiploma);
+            $row->setAttribute('currentPG_Diploma', $currentPG_Diploma);
+            $row->setAttribute('currentCertification',  $currentCertification);
+        }
+       
         return view('admin.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'College');
     }
     public function universityIndex(Request $request)
@@ -71,31 +119,108 @@ class AdminController extends Controller
             $institutions = $institutions->where('is_financial', $request->financial);
         }
         if ($request->course_type != '') {
-            // $institutions = $institutions->whereIn('course_type', $request->course_type);
+            $institutions = $institutions->whereJsonContains('course_type',  $request->course_type);
         }
 
         $institutions = $institutions->get();
+        foreach ($institutions as $row) {
+            $limitedEnquiryId =   User::where('id', $row->user_id)->value('membership_institution_id');
 
+            if ($limitedEnquiryId) {
+                $limitedEnquiry =  MembershipInstitution::find($limitedEnquiryId);
+                $limitedEnquiryGraduation = $limitedEnquiry->Graduation;
+                $limitedEnquiryPost_Graduation = $limitedEnquiry->Post_Graduation;
+                $limitedEnquiryDoctorate = $limitedEnquiry->Doctorate;
+            } else {
+                $limitedEnquiryGraduation = '';
+                $limitedEnquiryPost_Graduation = '';
+                $limitedEnquiryDoctorate = '';
+            }
+
+            $currentGraduation = Enquiry::where('institution_id',  $row->id)->whereJsonContains('course_enquiry', 'Graduation')->where('statuss', '>', 0)->count();
+            $currentPost_Graduation = Enquiry::where('institution_id',  $row->id)->whereJsonContains('course_enquiry', 'Post Graduation')->where('statuss', '>', 0)->count();
+            $currentDoctorate = Enquiry::where('institution_id',  $row->id)->whereJsonContains('course_enquiry', 'Doctorate')->where('statuss', '>', 0)->count();
+
+            $row->setAttribute('limitedEnquiryGraduation', $limitedEnquiryGraduation);
+            $row->setAttribute('limitedEnquiryPost_Graduation',  $limitedEnquiryPost_Graduation);
+            $row->setAttribute('limitedEnquiryDoctorate', $limitedEnquiryDoctorate);
+            $row->setAttribute('currentGraduation',  $currentGraduation);
+            $row->setAttribute('currentPost_Graduation', $currentPost_Graduation);
+            $row->setAttribute('currentDoctorate',  $currentDoctorate);
+        }
         $type = "University";
 
+      
         return view('admin.institution')->with('institutions', $institutions)->with('type', $type)->with('unique', 'University');
     }
-    public function consultantIndex()
+    public function consultantIndex(Request $request)
     {
         $consultants = Consultant::join('users', 'users.id', 'providers.user_id')->where('type', 'RCIC Consultant')->select('providers.*', 'users.img as img')->get();
         $type = "RCIC Consultant";
+
+        foreach ($consultants as $row) {
+            $limitedEnquiryId =   User::where('id', $row->user_id)->value('membership_provider_id');
+
+            if ($limitedEnquiryId) {
+                $limitedEnquiry =  MembershipProvider::find($limitedEnquiryId);
+                $limitedEnquiryProvider = $limitedEnquiry->EnquiriesRCICConsultant;
+            } else {
+                $limitedEnquiryProvider = '';
+            }
+
+            $currentEnquiryProvider = Enquiry::where('provider_id', $row->id)->where('statuss', '>', 0)->count();
+
+            $row->setAttribute('limitedEnquiryProvider', $limitedEnquiryProvider);
+            $row->setAttribute('currentEnquiryProvider',  $currentEnquiryProvider);
+        }
+       
         return view('admin.consultant')->with('consultants', $consultants)->with('type', $type)->with('unique', 'RCIC Consultant');
     }
-    public function immigrationIndex()
+    public function immigrationIndex(Request $request)
     {
         $type = "Immigration Lawyer/Attorney";
         $consultants = Consultant::join('users', 'users.id', 'providers.user_id')->where('type', 'Immigration Lawyer/Attorney')->select('providers.*', 'users.img as img')->get();
+
+        foreach ($consultants as $row) {
+            $limitedEnquiryId =   User::where('id', $row->user_id)->value('membership_provider_id');
+
+            if ($limitedEnquiryId) {
+                $limitedEnquiry =  MembershipProvider::find($limitedEnquiryId);
+                $limitedEnquiryProvider = $limitedEnquiry->EnquiriesImmigration;
+            } else {
+                $limitedEnquiryProvider = '';
+            }
+
+            $currentEnquiryProvider = Enquiry::where('provider_id', $row->id)->where('statuss', '>', 0)->count();
+
+            $row->setAttribute('limitedEnquiryProvider', $limitedEnquiryProvider);
+            $row->setAttribute('currentEnquiryProvider',  $currentEnquiryProvider);
+        }
+       
         return view('admin.consultant')->with('consultants', $consultants)->with('type', $type)->with('unique', 'Immigration Lawyer/Attorney');
     }
-    public function businessIndex()
+    public function businessIndex(Request $request)
     {
         $consultants = Consultant::join('users', 'users.id', 'providers.user_id')->where('type', 'Chartered Accountant')->select('providers.*', 'users.img as img')->get();
         $type = "Chartered Accountant";
+
+        foreach ($consultants as $row) {
+            $limitedEnquiryId =   User::where('id', $row->user_id)->value('membership_provider_id');
+
+            if ($limitedEnquiryId) {
+                $limitedEnquiry =  MembershipProvider::find($limitedEnquiryId);
+                $limitedEnquiryProvider = $limitedEnquiry->EnquiriesBusiness;
+            } else {
+                $limitedEnquiryProvider = '';
+            }
+
+            $currentEnquiryProvider = Enquiry::where('provider_id', $row->id)->where('statuss', '>', 0)->count();
+
+            $row->setAttribute('limitedEnquiryProvider', $limitedEnquiryProvider);
+            $row->setAttribute('currentEnquiryProvider',  $currentEnquiryProvider);
+        }
+
+        
         return view('admin.business')->with('consultants', $consultants)->with('type', $type)->with('unique', '');
     }
 
@@ -140,7 +265,6 @@ class AdminController extends Controller
             ->join('qualifications', 'qualifications.candidate_academic_id', '=', 'candidate_academics.id')
             ->where('candidate_academics.user_id', $id)
             ->get();
-
 
 
         return view('admin.candidateView.candidateProfile')

@@ -302,7 +302,7 @@ class EnquiryController extends Controller
 
     public function providerEnquiry($id)
     {
-        
+
         if ($id == 'Institution') {
             $institutionId =   Institution::where('user_id', Auth::user()->id)->value('id');
 
@@ -312,7 +312,6 @@ class EnquiryController extends Controller
                 ->where('enquiries.statuss', 0)
                 ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
                 ->get();
-
 
             $EnquiryCandidate2 =   Enquiry::where('institution_id',  $institutionId)
                 ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
@@ -336,7 +335,7 @@ class EnquiryController extends Controller
         } else {
             $consultantId =   Consultant::where('user_id', Auth::user()->id)->value('id');
 
-           
+
             $EnquiryCandidate =   Enquiry::where('provider_id',  $consultantId)
                 ->join('candidate_personals', 'candidate_personals.id', 'enquiries.candidate_id')
                 ->join('users', 'users.id', 'candidate_personals.user_id')
@@ -359,7 +358,7 @@ class EnquiryController extends Controller
                 ->select('enquiries.*', 'users.img as img', 'enquiries.id as enquiriesId', 'candidate_personals.id as candidate_personalsId', 'candidate_personals.*')
                 ->get();
 
-               
+
             return view('enquiry.consultant')
                 ->with('EnquiryCandidate', $EnquiryCandidate)
                 ->with('EnquiryCandidate2', $EnquiryCandidate2)

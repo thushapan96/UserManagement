@@ -109,6 +109,7 @@ class MembershipController extends Controller
             $MembershipCandidate->Graduation = $request->input("Graduation$i");
             $MembershipCandidate->Post_Graduation = $request->input("Post_Graduation$i");
             $MembershipCandidate->Doctorate = $request->input("Doctorate$i");
+            $MembershipCandidate->Enquiries = $request->input("Enquiries$i");
             $MembershipCandidate->DefaultReports = $request->input("DefaultReports$i");
             $MembershipCandidate->CustomizedReports = $request->input("CustomizedReports$i");
             $MembershipCandidate->ChatAgents = $request->input("ChatAgents$i");

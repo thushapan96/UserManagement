@@ -73,9 +73,10 @@
                 <li class="" id="amenu1"><a>Team </a></li>
                 <li class="" id="amenu3"><a> Award & Recognition</a></li>
                 <li class="" id="amenu4"><a>News and Events</a></li>
+
                 <!-- <li class="" id="amenu5"><a>Canada Inspire</a></li>
                 <li class="" id="amenu6"><a>Feedback</a></li> -->
-
+                
             </u1>
             <u1 class="uk-switcher">
                 <li id='menu' class='tab-pane '>
@@ -836,7 +837,6 @@
                     });
                 </script>
             </u1>
-
         </div>
 
         <div class="col-md-3 uk-card" style="margin-top:110px;height:100% !important; box-shadow:none !important;margin-left:auto !important;margin-right:auto !important">
@@ -917,6 +917,16 @@
 <script>
     $(document).ready(function() {
         console.log(2)
+        var consultType = "{{$consultants->type}}";
+        if (consultType == 'RCIC Consultant') {
+            var currentEnquiryConsultant = "{{$currentEnquiryConsultant}}";
+            var MembershipCandidateEnquiriesConsultant = "{{$MembershipCandidateEnquiriesRCICConsultant}}";
+
+        } else {
+            var currentEnquiryConsultant = "{{$currentEnquiryImmigration}}";
+            var MembershipCandidateEnquiriesConsultant = "{{$MembershipCandidateEnquiriesImmigration}}";
+
+        }
 
         $('.page-active').removeClass('sc-page-active')
         $('.page-Profile').addClass('sc-page-active')
@@ -924,33 +934,37 @@
         $("#enquiry").click(function() {
             var text = $(this).text()
             if (text == 'New Enquiry') {
-                if (confirm("Are You Sure Want To Select Service ?") == true) {
-                    var id = $(this).attr('data-id');
-                    var text = $(this).text()
+                if (currentEnquiryConsultant < MembershipCandidateEnquiriesConsultant) {
+                    if (confirm("Are You Sure Want To Select Service ?") == true) {
+                        var id = $(this).attr('data-id');
+                        var text = $(this).text()
 
-                    var status = 'Request';
-                    var statuss = 1;
+                        var status = 'Request';
+                        var statuss = 1;
 
-                    $.ajax({
+                        $.ajax({
 
-                        method: "post",
-                        url: "/candidate/request",
-                        dataType: 'json',
+                            method: "post",
+                            url: "/candidate/request",
+                            dataType: 'json',
 
-                        data: {
-                            '_token': '{{ csrf_token() }}',
-                            id: id,
-                            status: status,
-                            statuss: statuss,
-                            type: 'provider'
-                        },
-                        success: function(result) {
-                            console.log(result);
-                            location.reload();
-                        }
+                            data: {
+                                '_token': '{{ csrf_token() }}',
+                                id: id,
+                                status: status,
+                                statuss: statuss,
+                                type: 'provider'
+                            },
+                            success: function(result) {
+                                console.log(result);
+                                location.reload();
+                            }
 
-                    });
+                        });
 
+                    }
+                } else {
+                    alert('You need to extend package for extend your Enquires')
                 }
             } else {
                 alert("You Can Not Cancel Request")

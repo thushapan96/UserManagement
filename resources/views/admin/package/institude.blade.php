@@ -6,35 +6,35 @@
         <button class="uk-modal-close-default" type="button" data-uk-close></button>
         <form action="{{route('institution.price.post')}}" method="post">
             @csrf
-                <div class="uk-overflow-auto">
-                    <table class="uk-table uk-table-hover uk-table-divider">
+            <div class="uk-overflow-auto">
+                <table class="uk-table uk-table-hover uk-table-divider">
 
-                        <thead>
-                            <tr>
-                                <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Package Name</th>
-                                <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Duration</th>
-                                <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Price</th>
-                                <!-- <th class="uk-text-nowrap">Change Price</th> -->
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($membershipCandidate as $row)
-                            <tr>
-                                <td>{{$row->type == 'Stanadard' ? 'Standard':$row->type}}</td><input type="text" value="{{$row->type}}" name="type[]" hidden>
-                                <td>{{$row->duration}} Months</td><input type="text" value="{{$row->duration}}" name="duration[]" hidden>
-                                <td> <input type="number" id="price" class="form-control" name="price[]" min="0" value="{{$row->price}}">
-                                </td>
-                                <!-- <td>
+                    <thead>
+                        <tr>
+                            <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Package Name</th>
+                            <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Duration</th>
+                            <th class="uk-text-nowrap" style="color: white !important; background-color: #343a40 !important;">Price</th>
+                            <!-- <th class="uk-text-nowrap">Change Price</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($membershipCandidate as $row)
+                        <tr>
+                            <td>{{$row->type == 'Stanadard' ? 'Standard':$row->type}}</td><input type="text" value="{{$row->type}}" name="type[]" hidden>
+                            <td>{{$row->duration}} Months</td><input type="text" value="{{$row->duration}}" name="duration[]" hidden>
+                            <td> <input type="number" id="price" class="form-control" name="price[]" min="0" value="{{$row->price}}">
+                            </td>
+                            <!-- <td>
                             <button class="sc-button sc-button-mini" data-price="{{$row->price}}" data-type="{{$row->type}}" data-duration="{{$row->duration}}" data-uk-toggle="target: #modal-close-Price">Change Price</button>
                         </td> -->
-                            </tr>
-                            @endforeach
-                        </tbody>
+                        </tr>
+                        @endforeach
+                    </tbody>
 
-                    </table>
+                </table>
 
-                </div>
-            
+            </div>
+
             <p class="uk-text-right">
                 <button class="sc-button" type="submit">Confirm</button>
             </p>
