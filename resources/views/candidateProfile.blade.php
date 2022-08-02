@@ -144,11 +144,11 @@
                                         <label class="labels">
 
                                             @if($personal->birth_date)
-                                            @if($configureDate == '1')
+                                            @if($configureDate ?? '' == '1')
                                             {{date('Y-m-d', strtotime($personal->birth_date))}}
-                                            @elseif($configureDate == '2')
+                                            @elseif($configureDate ?? '' == '2')
                                             {{date('d-m-Y', strtotime($personal->birth_date))}}
-                                            @elseif($configureDate == '3')
+                                            @elseif($configureDate ?? '' == '3')
                                             {{date('m-d-Y', strtotime($personal->birth_date))}}
                                             @endif
                                             @endif
@@ -172,11 +172,11 @@
                                     <div class="col-md-7">
                                         <label class="labels">
                                             @if($personal->possible_start_date)
-                                            @if($configureDate == '1')
+                                            @if($configureDate ?? '' == '1')
                                             {{date('Y-m-d', strtotime($personal->possible_start_date))}}
-                                            @elseif($configureDate == '2')
+                                            @elseif($configureDate ?? '' == '2')
                                             {{date('d-m-Y', strtotime($personal->possible_start_date))}}
-                                            @elseif($configureDate == '3')
+                                            @elseif($configureDate ?? '' == '3')
                                             {{date('m-d-Y', strtotime($personal->possible_start_date))}}
                                             @endif
                                             @endif
@@ -344,11 +344,11 @@
                                     <div class="col-md-7">
                                         <label class="labels">
                                             @if($Academy->test_valid_upto)
-                                            @if($configureDate == '1')
+                                            @if($configureDate ?? '' == '1')
                                             {{date('Y-m-d', strtotime($Academy->test_valid_upto))}}
-                                            @elseif($configureDate == '2')
+                                            @elseif($configureDate ?? '' == '2')
                                             {{date('d-m-Y', strtotime($Academy->test_valid_upto))}}
-                                            @elseif($configureDate == '3')
+                                            @elseif($configureDate ?? '' == '3')
                                             {{date('m-d-Y', strtotime($Academy->test_valid_upto))}}
                                             @endif
                                             @endif
