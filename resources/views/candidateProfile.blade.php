@@ -282,52 +282,52 @@
                                 <h6 class="labels" style="text-decoration: underline;">Language Qualification</h6><br>
                                 @if($Academy->language_proficiency)
                                 <div class="row ">
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <strong class="labels"> Language Proficiency </strong>
                                     </div>
                                     <div class="col-md-1">
                                         <strong class="labels"> :</strong>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-7">
                                         <label class="labels">{{$Academy->language_proficiency}}</label>
                                     </div>
                                 </div>
                                 @endif
                                 @if($Academy->language_level)
                                 <div class="row ">
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <strong class="labels"> Language Level </strong>
                                     </div>
                                     <div class="col-md-1">
                                         <strong class="labels"> :</strong>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-7">
                                         <label class="labels">{{$Academy->language_level}}</label>
                                     </div>
                                 </div>
                                 @endif
                                 @if($Academy->language_certified_by)
                                 <div class="row ">
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <strong class="labels"> Certified By</strong>
                                     </div>
                                     <div class="col-md-1">
                                         <strong class="labels"> :</strong>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-7">
                                         <label class="labels">{{$Academy->language_certified_by}}</label><br>
                                     </div>
                                 </div>
                                 @endif
                                 @if($Academy->applicant_test_name)
                                 <div class="row ">
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <strong class="labels"> Applicant Test Scores </strong>
                                     </div>
                                     <div class="col-md-1">
                                         <strong class="labels"> :</strong>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-7">
                                         <label class="labels">{{$Academy->applicant_test_name}}</label><br>
 
                                     </div>
@@ -335,13 +335,13 @@
                                 @endif
                                 @if($Academy->test_valid_upto)
                                 <div class="row ">
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <strong class="labels"> Valid Upto</strong>
                                     </div>
                                     <div class="col-md-1">
                                         <strong class="labels"> :</strong>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-7">
                                         <label class="labels">
                                             @if($Academy->test_valid_upto)
                                             @if($configureDate == '1')
@@ -358,26 +358,26 @@
                                 @endif
                                 @if($Academy->language_attachment)
                                 <div class="row ">
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <strong class="labels"> Language Certified Attachment</strong>
                                     </div>
                                     <div class="col-md-1">
                                         <strong class="labels"> :</strong>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-7">
                                         <a href="{{url('files/'.$Academy->language_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->language_attachment}}</a>
                                     </div>
                                 </div>
                                 @endif
                                 @if($Academy->test_attachment)
                                 <div class="row ">
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <strong class="labels">Applicant Test Scores Attachment</strong>
                                     </div>
                                     <div class="col-md-1">
                                         <strong class="labels"> :</strong>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-7">
                                         <a href="{{url('files/'.$Academy->test_attachment)}}" target="_blank" style=" text-decoration: underline;">{{$Academy->test_attachment}}</a>
                                     </div>
                                 </div>
@@ -641,22 +641,47 @@
                                         </div>
                                         <div class="col-md-7">
                                             @if($Sponsor->sponsor_street)
-                                            <strong> Street 1 :</strong><label class="labels">{{$Sponsor->sponsor_street}}</label><br>
+                                            <div class="row mt-4">
+
+                                                <strong class="col-md-3"> Street 1 </strong><span class="col-md-1">:</span><label class=" col-md-8 labels">{{$Sponsor->sponsor_street}}</label><br>
+                                            </div>
+
                                             @endif
+
                                             @if($Sponsor->sponsor_street2)
-                                            <strong> Street 2 :</strong><label class="labels">{{$Sponsor->sponsor_street2}}</label><br>
+                                            <div class="row mt-4">
+
+                                                <strong class="col-md-3"> Street 2 </strong><span class="col-md-1">:</span><label class="col-md-8 labels">{{$Sponsor->sponsor_street2}}</label><br>
+                                            </div>
+
                                             @endif
                                             @if($Sponsor->sponsor_city)
-                                            <strong> City :</strong><label class="labels">{{$Sponsor->sponsor_city}}</label><br>
+                                            <div class="row mt-4">
+
+                                                <strong class="col-md-3 "> City</strong> <span class="col-md-1 ">:</span> <label class="col-md-8 labels">{{$Sponsor->sponsor_city}}</label><br>
+                                            </div>
+
                                             @endif
                                             @if($Sponsor->sponsor_region)
-                                            <strong> Region :</strong><label class="labels">{{$Sponsor->sponsor_region}}</label><br>
+                                            <div class="row mt-4">
+
+                                                <strong class="col-md-3"> Region </strong><span class="col-md-1">:</span><label class="col-md-8 labels">{{$Sponsor->sponsor_region}}</label><br>
+                                            </div>
+
                                             @endif
                                             @if($Sponsor->sponsor_country)
-                                            <strong> Country :</strong><label class="labels">{{$Sponsor->sponsor_country}}</label><br>
+                                            <div class="row mt-4">
+
+                                                <strong class="col-md-3"> Country </strong><span class="col-md-1">:</span><label class="col-md-8 labels">{{$Sponsor->sponsor_country}}</label><br>
+                                            </div>
+
                                             @endif
                                             @if($Sponsor->sponsor_pincode)
-                                            <strong> Pincode :</strong><label class="labels">{{$Sponsor->sponsor_pincode}}</label><br>
+                                            <div class="row mt-4">
+
+                                                <strong class="col-md-3"> Pincode </strong><span class="col-md-1">:</span><label class="col-md-8 labels">{{$Sponsor->sponsor_pincode}}</label><br>
+                                            </div>
+
                                             @endif
 
                                         </div>
@@ -710,20 +735,36 @@
                                         </div>
                                         <div class="col-md-7">
                                             @if($Sponsor->guardian_street)
-                                            <strong> Street 1 :</strong><label class="labels">{{$Sponsor->guardian_street}}</label><br>
+                                            <div class="row mt-4">
+                                            <strong class="col-md-3"> Street 1 </strong><span class="col-md-1">:</span><label class="labels col-md-8">{{$Sponsor->guardian_street}}</label><br>
+                                            </div>
                                             @endif
                                             @if($Sponsor->guardian_street2)
-                                            <strong> Street 2 :</strong><label class="labels">{{$Sponsor->guardian_street2}}</label><br>
+                                            <div class="row" >
+                                            <strong class="col-md-3"> Street 2 </strong><span class="col-md-1">:</span><label class="labels col-md-8">{{$Sponsor->guardian_street2}}</label><br>
+                                            </div>
                                             @endif
                                             @if($Sponsor->guardian_city)
-                                            <strong> City :</strong><label class="labels">{{$Sponsor->guardian_city}}</label><br>
+                                            <div class="row" >
+
+                                            <strong class="col-md-3"> City </strong><span class="col-md-1">:</span><label class="labels col-md-8">{{$Sponsor->guardian_city}}</label><br>
+                                            </div>
+
                                             @endif
                                             @if($Sponsor->guardian_region)
-                                            <strong> Region :</strong><label class="labels">{{$Sponsor->guardian_region}}</label><br>
+
+                                            <div class="row" >
+
+                                            <strong class="col-md-3"> Region </strong><span class="col-md-1">:</span><label class="labels col-md-8">{{$Sponsor->guardian_region}}</label><br>
+                                            </div>
+
                                             @endif
 
                                             @if($Sponsor->guardian_country)
-                                            <strong> Country :</strong><label class="labels">{{$Sponsor->guardian_country}}</label>
+                                            <div class="row" >
+
+                                            <strong class="col-md-3"> Country </strong><span class="col-md-1">:</span><label class="labels col-md-8">{{$Sponsor->guardian_country}}</label>
+                                            </div>
                                             @endif
                                         </div>
                                     </div>

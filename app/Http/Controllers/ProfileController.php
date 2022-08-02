@@ -275,20 +275,19 @@ class ProfileController extends Controller
 
 
             for ($i = 0; $i < $count; $i++) {
-
                 if ($request->qualificationId[$i] != '') {
-
                     $qualificationId = $request->qualificationId[$i];
                     $qualification =  Qualification::find($qualificationId);
-                    $qualification->candidate_academic_id = $academy->id;
-                    $qualification->type = $request->type[$i];
-                    $qualification->name = $request->name[$i];
-                    $qualification->tech = $request->tech[$i];
-                    $qualification->address = $request->address[$i];
-                    $qualification->distant = $request->distant[$i];
-                    $qualification->Year_completion = $request->year_completed[$i];
-                    $qualification->applicable_eca_validity = $request->eca[$i];
-                    $qualification->country = $request->country[$i];
+
+                    $qualification['candidate_academic_id'] = $academy->id;
+                    $qualification['type'] = $request->type[$i];
+                    $qualification['name'] = $request->name[$i];
+                    $qualification['tech'] = $request->tech[$i];
+                    $qualification['address'] = $request->address[$i];
+                    $qualification['distant'] = $request->distant[$i];
+                    $qualification['Year_completion'] = $request->year_completed[$i];
+                    $qualification['applicable_eca_validity'] = $request->eca[$i];
+                    $qualification['country'] = $request->country[$i];
                     if ($request->attachment) {
 
                         if ($request->attachment[$i]) {
