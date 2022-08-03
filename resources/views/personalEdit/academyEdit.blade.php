@@ -201,9 +201,9 @@
                                                     </label>
                                                     <select name="distant[]" class="form-control">
                                                         <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>Distant</option>
-                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}>Regular</option>
-                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>Online</option>
+                                                        <option value="Distant" {{$row->Distant == 'Distant' ? 'selected':''}}>Distant</option>
+                                                        <option value="Regular" {{$row->Distant == 'Regular' ? 'selected':''}}>Regular</option>
+                                                        <option value="Online" {{$row->Distant == 'Online' ? 'selected':''}}>Online</option>
 
                                                     </select>
                                                 </div>
@@ -324,9 +324,9 @@
                                                     </label>
                                                     <select name="distant[]" class="form-control">
                                                         <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>Distant</option>
-                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}>Regular</option>
-                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>Online</option>
+                                                        <option value="Distant" {{$row->Distant == 'Distant' ? 'selected':''}}>Distant</option>
+                                                        <option value="Regular" {{$row->Distant == 'Regular' ? 'selected':''}}>Regular</option>
+                                                        <option value="Online" {{$row->Distant == 'Online' ? 'selected':''}}>Online</option>
 
                                                     </select>
                                                 </div>
@@ -449,9 +449,9 @@
                                                 </label>
                                                 <select name="distant[]" class="form-control">
                                                     <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                    <option {{$row->Distant == 'distant' ? 'selected':''}}>Distant</option>
-                                                    <option {{$row->Distant == 'regular' ? 'selected':''}}>Regular</option>
-                                                    <option {{$row->Distant == 'online' ? 'selected':''}}>Online</option>
+                                                    <option value="Distant" {{$row->Distant == 'Distant' ? 'selected':''}}>Distant</option>
+                                                        <option value="Regular" {{$row->Distant == 'Regular' ? 'selected':''}}>Regular</option>
+                                                        <option value="Online" {{$row->Distant == 'Online' ? 'selected':''}}>Online</option>
 
                                                 </select>
                                             </div>
@@ -575,10 +575,9 @@
                                                     </label>
                                                     <select name="distant[]" class="form-control">
                                                         <option value="" {{$row->Distant == '' ? 'selected':''}}>Select Option</option>
-                                                        <option {{$row->Distant == 'distant' ? 'selected':''}}>Distant</option>
-                                                        <option {{$row->Distant == 'regular' ? 'selected':''}}> Regular</option>
-                                                        <option {{$row->Distant == 'online' ? 'selected':''}}>Online</option>
-
+                                                        <option value="Distant" {{$row->Distant == 'Distant' ? 'selected':''}}>Distant</option>
+                                                        <option value="Regular" {{$row->Distant == 'Regular' ? 'selected':''}}>Regular</option>
+                                                        <option value="Online" {{$row->Distant == 'Online' ? 'selected':''}}>Online</option>
                                                     </select>
                                                 </div>
                                             </div>
