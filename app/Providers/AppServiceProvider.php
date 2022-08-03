@@ -253,8 +253,40 @@ class AppServiceProvider extends ServiceProvider
                             ->with('MembershipCandidateEnquiriesRCICConsultant', $MembershipCandidateEnquiriesRCICConsultant)
                             ->with('MembershipCandidateEnquiriesImmigration', $MembershipCandidateEnquiriesImmigration)
                             ->with('MembershipCandidateEnquiriesBusiness', $MembershipCandidateEnquiriesBusiness);
+                    } else {
+                        $MembershipCandidateEnquiriesSchool =  '';
+                        $MembershipCandidateEnquiriesUniversity = '';
+                        $MembershipCandidateEnquiriesCollege =  '';
+                        $MembershipCandidateEnquiriesRCICConsultant = '';
+                        $MembershipCandidateEnquiriesImmigration = '';
+                        $MembershipCandidateEnquiriesBusiness = '';
+
+
+                        $currentEnquirySchool  = '';
+                        $currentEnquiryCollege = '';
+                        $currentEnquiryUniversity = '';
+                        $currentEnquiryConsultant  = '';
+                        $currentEnquiryImmigration  = '';
+                        $currentEnquiryAccountant = '';
+
+                        $view->with('currencyPrice', $currencyPrice)
+                            ->with('configureDate', $configureDate)
+
+                            ->with('currentEnquirySchool', $currentEnquirySchool)
+                            ->with('currentEnquiryCollege', $currentEnquiryCollege)
+                            ->with('currentEnquiryUniversity', $currentEnquiryUniversity)
+
+                            ->with('currentEnquiryConsultant', $currentEnquiryConsultant)
+                            ->with('currentEnquiryImmigration', $currentEnquiryImmigration)
+                            ->with('currentEnquiryAccountant', $currentEnquiryAccountant)
+
+                            ->with('MembershipCandidateEnquiriesSchool', $MembershipCandidateEnquiriesSchool)
+                            ->with('MembershipCandidateEnquiriesUniversity', $MembershipCandidateEnquiriesUniversity)
+                            ->with('MembershipCandidateEnquiriesCollege', $MembershipCandidateEnquiriesCollege)
+                            ->with('MembershipCandidateEnquiriesRCICConsultant', $MembershipCandidateEnquiriesRCICConsultant)
+                            ->with('MembershipCandidateEnquiriesImmigration', $MembershipCandidateEnquiriesImmigration)
+                            ->with('MembershipCandidateEnquiriesBusiness', $MembershipCandidateEnquiriesBusiness);
                     }
-                    
                 } else {
 
 
