@@ -325,7 +325,7 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="text" style="width:40%;height:50%" name="price" min="0" value="{{$membershipCandidate1->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} : <label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -449,7 +449,7 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="text" style="width:40%;height:50%" name="price" min="0" value="{{$membershipCandidate4->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} : <label> Package Price</label>
                             </div><br>
                         </div>
                     </li>
@@ -570,7 +570,7 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="text" style="width:40%;height:50%" name="price" min="0" value="{{$membershipCandidate7->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} : <label> Package Price</label>
                             </div><br>
                         </div>
                     </li>
@@ -709,7 +709,7 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="text" style="width:40%;height:50%" name="price" min="0" value="{{$membershipCandidate2->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} : <label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -832,7 +832,7 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="text" style="width:40%;height:50%" name="price" min="0" value="{{$membershipCandidate5->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} : <label> Package Price</label>
                             </div><br>
                         </div>
                     </li>
@@ -954,7 +954,7 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="text" style="width:40%;height:50%" name="price" min="0" value="{{$membershipCandidate8->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} : <label> Package Price</label>
                             </div><br>
                         </div>
                     </li>
@@ -1093,7 +1093,7 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="text" style="width:40%;height:50%" name="price" min="0" value="{{$membershipCandidate3->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} : <label> Package Price</label>
                             </div><br>
 
                         </div>
@@ -1216,7 +1216,7 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="text" style="width:40%;height:50%" name="price" min="0" value="{{$membershipCandidate6->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} : <label> Package Price</label>
                             </div><br>
                         </div>
                     </li>
@@ -1340,7 +1340,7 @@
                             </div><br>
                             <div class="">
                                 <input class="" type="text" style="width:40%;height:50%" name="price" min="0" value="{{$membershipCandidate9->price}}">
-                                <label> Package Price</label>
+                                {{$currencyPrice}} : <label> Package Price</label>
                             </div><br>
 
                         </div>
