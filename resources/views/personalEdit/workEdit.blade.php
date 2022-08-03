@@ -5,7 +5,7 @@
 <!-- Subscribe & Stay Connected. Start -->
 <div class=" ">
 
-    <div class="tab-pane  " >
+    <div class="tab-pane  ">
         <h6 style="text-align:center">edit Profile </h6><br>
         <div class="uk-card ">
             <div class="uk-card-body sc-padding-medium">
@@ -58,8 +58,16 @@
                                             <label>
                                                 Attach Experience Certificate
                                             </label>
-                                            <a href="{{url('files/'.$row->attach_experience_certificate)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_experience_certificate}}</a>
+
+
+                                            <a href="{{url('files/'.$row->attach_experience_certificate)}}" target="_blank" class="uploaded_file" style=" text-decoration: underline;">{{$row->attach_experience_certificate}}</a>
+                                            @if($row->attach_experience_certificate)
+                                            <a data-model="work" data-atr="attach_experience_certificate" data-id="{{$row->id}}" data-file="{{$row->attach_experience_certificate}}" class="ml-2 delete_file_button"><i class="fa fa-times-circle text-danger" aria-hidden="true"></i> </a>
+                                            @endif
                                             <input class="form-control" type="file" value="" name="attach_experience_certificate[]" value="{{$row->attach_experience_certificate}}">
+
+
+                                           
                                         </div>
                                     </div>
 
@@ -72,7 +80,10 @@
                                         <div class="form-group">
                                             <label>Attach Salary Slip
                                             </label>
-                                            <a href="{{url('files/'.$row->attach_salary_slip)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_salary_slip}}</a>
+                                            <a href="{{url('files/'.$row->attach_salary_slip)}}" target="_blank" class="uploaded_file" style=" text-decoration: underline;">{{$row->attach_salary_slip}}</a>
+                                            @if($row->attach_salary_slip)
+                                            <a data-model="work" data-atr="attach_salary_slip" data-id="{{$row->id}}" data-file="{{$row->attach_salary_slip}}" class="ml-2 delete_file_button"><i class="fa fa-times-circle text-danger" aria-hidden="true"></i> </a>
+                                            @endif
                                             <input class="form-control " type="file" name="attach_salary_slip[]" value="{{$row->attach_salary_slip}}">
                                         </div>
                                     </div>
@@ -82,7 +93,10 @@
                                             <label>
                                                 Attach Offer/Recommendation Letter
                                             </label>
-                                            <a href="{{url('files/'.$row->attach_offer_letter)}}" target="_blank" style=" text-decoration: underline;">{{$row->attach_offer_letter}}</a>
+                                            <a href="{{url('files/'.$row->attach_offer_letter)}}" target="_blank" class="uploaded_file" style=" text-decoration: underline;">{{$row->attach_offer_letter}}</a>
+                                            @if($row->attach_offer_letter)
+                                            <a data-model="work" data-atr="attach_offer_letter" data-id="{{$row->id}}" data-file="{{$row->attach_offer_letter}}" class="ml-2 delete_file_button"><i class="fa fa-times-circle text-danger" aria-hidden="true"></i> </a>
+                                            @endif
                                             <input class="form-control " type="file" name="attach_offer_letter[]" value="{{$row->attach_offer_letter}}">
                                         </div>
                                     </div>
@@ -95,7 +109,7 @@
                                         <div class="form-group">
                                             <label>Work Profile
                                             </label>
-                                            <textarea class="form-control" style="width:100%;"  name="work_profile_letter[]" value="{{$row->work_profile_letter}}">{{$row->work_profile_letter}}</textarea>
+                                            <textarea class="form-control" style="width:100%;" name="work_profile_letter[]" value="{{$row->work_profile_letter}}">{{$row->work_profile_letter}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -250,6 +264,33 @@
         });
 
     });
+
+
+
+    $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $(document).on('click', '.delete_file_button', function(event) {
+            event.preventDefault(); // avoid to execute the actual submit of the form.
+            filename = 'delete/file/' + $(this).data('id') + '/' + $(this).data('model') + '/' + $(this).data('atr');
+            element = this;
+
+            console.log(filename)
+            $.ajax({
+                type: "GET",
+                url: filename,
+
+                success: function(data) {
+                    $(element).fadeOut()
+                    $(element).siblings('.uploaded_file').fadeOut();
+
+                }
+            });
+
+        });
 </script>
 <!-- ...................end...script for google map view.................... -->
 

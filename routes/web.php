@@ -166,6 +166,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/academyEdit/{id}', 'App\Http\Controllers\ProfileController@academyEdit')->name('academyEdit');
     Route::get('/academyEdit/delete/file/{id}/{atr}/{model}/', 'App\Http\Controllers\ProfileController@deletefile')->name('deletefile');
+    Route::get('/workEdit/delete/file/{id}/{atr}/{model}/', 'App\Http\Controllers\ProfileController@deletefilework')->name('workdelete');
 
     Route::post('/profileAcademyupdate/{id}', 'App\Http\Controllers\ProfileController@academyUpdate')->name('profileAcademyupdate');
 

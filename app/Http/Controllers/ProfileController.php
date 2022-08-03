@@ -490,7 +490,7 @@ class ProfileController extends Controller
             $data->save();
             return $data ;
         }
-         
+        
         else {
             $data =  Academy::find($id);
             $data[$atr] = null;
@@ -498,5 +498,13 @@ class ProfileController extends Controller
             return $data ;
 
         }
+    }
+    public function deletefilework($id, $model, $atr){
+            $data =  Work::find($id);
+            $data[$atr] = null;
+            $data->save();
+            return $data ;
+        
+         
     }
 }
